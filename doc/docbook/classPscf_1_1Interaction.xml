@@ -346,7 +346,7 @@ Referenced by Pscf::Homogeneous::Mixture::computePhi().</para>
 <para>Get number of monomer types. </para>
 </para>
 <para>
-Definition at line 118 of file Interaction.h.</para>
+Definition at line 124 of file Interaction.h.</para>
 <para>
 Referenced by Pscf::ChiInteraction::computeC(), Pscf::ChiInteraction::computeDwDc(), Pscf::Homogeneous::Mixture::computeMu(), Pscf::Homogeneous::Mixture::computePhi(), Pscf::ChiInteraction::computeW(), Pscf::ChiInteraction::computeXi(), Pscf::ChiInteraction::fHelmholtz(), Pscf::ChiInteraction::readParameters(), and setNMonomer().</para>
 </section>

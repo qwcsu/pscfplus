@@ -123,9 +123,6 @@ TESTFLAGS= -Wall $(CXX_STD)
 # Cuda compiler command
 NVXX=nvcc
 
-# Flags always passed to cuda compiler
-NVXXFLAGS=$(CXX_STD) 
-NVXXFLAGS+= -O3 -arch=sm_75 -DREPS=4 -DCHN=1 -DDFT=0 -DNBP=0 -DCMP=0
 
 # ---------------------------------------------------------------
 # Linker / Loader 

@@ -99,7 +99,7 @@ cp src/util/config.mk bld/util/config.mk
 cp src/pscf/config.mk bld/pscf/config.mk
 cp src/pspg/config.mk bld/pspg/config.mk
 cp src/pgc/config.mk  bld/pgc/config.mk
-cp src/pgd/config.mk  bld/pgc/config.mk
+cp src/pgd/config.mk  bld/pgd/config.mk
 
 # Copy main and namespace level makefiles
 cp src/makefile bld/makefile

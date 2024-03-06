@@ -68,7 +68,8 @@ The case ID can be anything, even an empty string.
 ``"omega"`` for conjugate field or ``"phi"`` for volume-fraction field. ``"Format"`` specifies the format of the field, which can be either ``"basis"``
 for the basis format, ``"real"`` for the real-space-grid format, or ``"reciprocal"`` for the reciprocal-space-grid format; see this <a href="https://dmorse.github.io/pscfpp-man/user_field_page.html">PSCF documentation</a> for the explaination of these formats.
 ``"Directory"`` specifies the 
-directory of the file. Finally, the file name is specified by the case ID, field type and format as ``your_case_id_type.format``;
+directory of the file. Finally, the file name is specified by the case ID, field type and abbreviation of format 
+(.rf, .rcf, and . bf for real-space-grid, reciprocal-space-grid, and basis format) as ``your_case_id_type.format``;
 for example, to read a conjugate field in the basis format as input of your SCF calculation with the case ID 1234, the file name must be
 ```1234_omega.basis```.
 

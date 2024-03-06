@@ -86,7 +86,7 @@ class Pscf::Pspg::Continuous::AmIterator&lt; D &gt;</title></simplesect>
 
 <para>Anderson mixing iterator for the pseudo spectral method. </para>
 <para>
-Definition at line 36 of file pgc/iterator/AmIterator.h.</para>
+Definition at line 39 of file pgc/iterator/AmIterator.h.</para>
 </section>
 <section>
 <title>Constructor &amp; Destructor Documentation</title>
@@ -99,7 +99,7 @@ Definition at line 36 of file pgc/iterator/AmIterator.h.</para>
 <para>Default constructor. </para>
 </para>
 <para>
-Definition at line 28 of file pgc/iterator/AmIterator.tpp.</para>
+Definition at line 30 of file pgc/iterator/AmIterator.tpp.</para>
 <para>
 References Util::ParamComposite::setClassName().</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1AmIterator_1aa3d847b04ac9296e75605bc10678697f"/>    <section>
@@ -134,7 +134,7 @@ Parameters                    </title>
                 </formalpara>
                 </para>
 <para>
-Definition at line 40 of file pgc/iterator/AmIterator.tpp.</para>
+Definition at line 42 of file pgc/iterator/AmIterator.tpp.</para>
 <para>
 References Util::ParamComposite::setClassName().</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1AmIterator_1a62a9df415adb09ef46bac12aed262a6b"/>    <section>
@@ -146,7 +146,7 @@ References Util::ParamComposite::setClassName().</para>
 <para>Destructor. </para>
 </para>
 <para>
-Definition at line 52 of file pgc/iterator/AmIterator.tpp.</para>
+Definition at line 54 of file pgc/iterator/AmIterator.tpp.</para>
 </section>
 </section>
 <section>
@@ -185,7 +185,7 @@ Parameters                    </title>
 <para>
 Reimplemented from <link linkend="_classUtil_1_1ParamComposite_1a172a3a656b5829c8d758424ad09a22a6">Util::ParamComposite</link>.</para>
 <para>
-Definition at line 59 of file pgc/iterator/AmIterator.tpp.</para>
+Definition at line 61 of file pgc/iterator/AmIterator.tpp.</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1AmIterator_1afa438523bca46cc98aa42fb7221db001"/>    <section>
     <title>allocate()</title>
 <indexterm><primary>allocate</primary><secondary>Pscf::Pspg::Continuous::AmIterator&lt; D &gt;</secondary></indexterm>
@@ -195,7 +195,7 @@ Definition at line 59 of file pgc/iterator/AmIterator.tpp.</para>
 <para>Allocate all arrays. </para>
 </para>
 <para>
-Definition at line 69 of file pgc/iterator/AmIterator.tpp.</para>
+Definition at line 71 of file pgc/iterator/AmIterator.tpp.</para>
 <para>
 References Pscf::Pspg::ThreadGrid::setThreadsLogical().</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1AmIterator_1a6ef3c575bf850f1d9db43113d7ddc4f8"/>    <section>
@@ -209,7 +209,7 @@ References Pscf::Pspg::ThreadGrid::setThreadsLogical().</para>
 <para>
 Implements <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Iterator_1ac2074acbad8407e1bcb86a7cd83b4019">Pscf::Pspg::Continuous::Iterator&lt; D &gt;</link>.</para>
 <para>
-Definition at line 118 of file pgc/iterator/AmIterator.tpp.</para>
+Definition at line 120 of file pgc/iterator/AmIterator.tpp.</para>
 <para>
 References Util::Log::file(), Util::Timer::now(), Util::Timer::start(), Util::Timer::stop(), and Util::Timer::time().</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1AmIterator_1a50ac6b19534adc4029a421b83300f3a3"/>    <section>
@@ -221,7 +221,7 @@ References Util::Log::file(), Util::Timer::now(), Util::Timer::start(), Util::Ti
 <para>Getter for epsilon. </para>
 </para>
 <para>
-Definition at line 196 of file pgc/iterator/AmIterator.h.</para>
+Definition at line 199 of file pgc/iterator/AmIterator.h.</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1AmIterator_1a9bf1dbe296103edc96c5cb4a575daac5"/>    <section>
     <title>maxHist()</title>
 <indexterm><primary>maxHist</primary><secondary>Pscf::Pspg::Continuous::AmIterator&lt; D &gt;</secondary></indexterm>
@@ -231,7 +231,7 @@ Definition at line 196 of file pgc/iterator/AmIterator.h.</para>
 <para>Getter for the maximum number of field histories to convolute into a new field. </para>
 </para>
 <para>
-Definition at line 202 of file pgc/iterator/AmIterator.h.</para>
+Definition at line 205 of file pgc/iterator/AmIterator.h.</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1AmIterator_1a2a25d2e6277e5ad9d843caeaab217737"/>    <section>
     <title>maxItr()</title>
 <indexterm><primary>maxItr</primary><secondary>Pscf::Pspg::Continuous::AmIterator&lt; D &gt;</secondary></indexterm>
@@ -241,7 +241,7 @@ Definition at line 202 of file pgc/iterator/AmIterator.h.</para>
 <para>Getter for the maximum number of iteration before convergence. </para>
 </para>
 <para>
-Definition at line 208 of file pgc/iterator/AmIterator.h.</para>
+Definition at line 211 of file pgc/iterator/AmIterator.h.</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1AmIterator_1a413c7a0085e91c106c315cee53fefd85"/>    <section>
     <title>computeDeviation()</title>
 <indexterm><primary>computeDeviation</primary><secondary>Pscf::Pspg::Continuous::AmIterator&lt; D &gt;</secondary></indexterm>
@@ -251,7 +251,7 @@ Definition at line 208 of file pgc/iterator/AmIterator.h.</para>
 <para>Compute the deviation of wFields from a mean field solution. </para>
 </para>
 <para>
-Definition at line 343 of file pgc/iterator/AmIterator.tpp.</para>
+Definition at line 345 of file pgc/iterator/AmIterator.tpp.</para>
 <para>
 References Pscf::Pspg::ThreadGrid::setThreadsLogical().</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1AmIterator_1a5fab6e50b2b44f444cc02c777389e31b"/>    <section>
@@ -269,7 +269,7 @@ References Pscf::Pspg::ThreadGrid::setThreadsLogical().</para>
 </formalpara>
 </para>
 <para>
-Definition at line 523 of file pgc/iterator/AmIterator.tpp.</para>
+Definition at line 525 of file pgc/iterator/AmIterator.tpp.</para>
 <para>
 References Util::Log::file().</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1AmIterator_1a2ce4ade9f5f2f3216179611d65f846b7"/>    <section>
@@ -281,7 +281,7 @@ References Util::Log::file().</para>
 <para>Determine the coefficients that would minimize invertMatrix_ Umn. </para>
 </para>
 <para>
-Definition at line 586 of file pgc/iterator/AmIterator.tpp.</para>
+Definition at line 588 of file pgc/iterator/AmIterator.tpp.</para>
 <para>
 References Pscf::LuSolver::allocate(), Pscf::Pspg::RDField&lt; D &gt;::allocate(), Pscf::Pspg::DField&lt; cudaReal &gt;::cDField(), Pscf::LuSolver::computeLU(), Pscf::Pspg::DField&lt; cudaReal &gt;::deallocate(), Pscf::Pspg::ThreadGrid::setThreadsLogical(), and Pscf::LuSolver::solve().</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1AmIterator_1aa65e0500562b1d529611cb28f5409a33"/>    <section>
@@ -293,7 +293,7 @@ References Pscf::LuSolver::allocate(), Pscf::Pspg::RDField&lt; D &gt;::allocate(
 <para>Rebuild wFields for the next iteration from minimized coefficients. </para>
 </para>
 <para>
-Definition at line 791 of file pgc/iterator/AmIterator.tpp.</para>
+Definition at line 793 of file pgc/iterator/AmIterator.tpp.</para>
 <para>
 References Pscf::Pspg::ThreadGrid::setThreadsLogical().</para>
 </section>

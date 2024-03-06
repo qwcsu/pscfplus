@@ -78,7 +78,7 @@ Definition at line 44 of file Polymer.h.</para>
 <para>Compute solution to MDE and concentrations. </para>
 </para>
 <para>
-Definition at line 63 of file Polymer.tpp.</para>
+Definition at line 66 of file Polymer.tpp.</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Polymer_1a72fbfc1ba61aafc6a80cb42c275ddbff"/>    <section>
     <title>computeVertex()</title>
 <indexterm><primary>computeVertex</primary><secondary>Pscf::Pspg::Continuous::Polymer&lt; D &gt;</secondary></indexterm>
@@ -88,7 +88,7 @@ Definition at line 63 of file Polymer.tpp.</para>
 <para>Compute vertex density fields. </para>
 </para>
 <para>
-Definition at line 132 of file Polymer.tpp.</para>
+Definition at line 135 of file Polymer.tpp.</para>
 <para>
 References Pscf::Mesh&lt; D &gt;::dimensions(), Pscf::Pspg::ThreadGrid::setThreadsLogical(), and Pscf::Mesh&lt; D &gt;::size().</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Polymer_1a5498e3962284b04e2d20721c041808cf"/>    <section>
@@ -100,7 +100,7 @@ References Pscf::Mesh&lt; D &gt;::dimensions(), Pscf::Pspg::ThreadGrid::setThrea
 <para>Compute stress from a polymer chain, needs a pointer to basis. </para>
 </para>
 <para>
-Definition at line 183 of file Polymer.tpp.</para>
+Definition at line 186 of file Polymer.tpp.</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Polymer_1a703f4cb83c97bc22bdfff9c659939d5f"/>    <section>
     <title>stress()</title>
 <indexterm><primary>stress</primary><secondary>Pscf::Pspg::Continuous::Polymer&lt; D &gt;</secondary></indexterm>

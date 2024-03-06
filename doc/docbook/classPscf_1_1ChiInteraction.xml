@@ -155,7 +155,7 @@ Parameters                    </title>
 <para>
 Implements <link linkend="_classPscf_1_1Interaction_1a3ec2bef30f4763bf5b64e4d12fc65acd">Pscf::Interaction</link>.</para>
 <para>
-Definition at line 93 of file ChiInteraction.cpp.</para>
+Definition at line 101 of file ChiInteraction.cpp.</para>
 <para>
 References Pscf::Interaction::nMonomer().</para>
     </section><anchor xml:id="_classPscf_1_1ChiInteraction_1a1609f12544f165c29f3542cf6ec544ac"/>    <section>
@@ -198,7 +198,7 @@ Parameters                    </title>
 <para>
 Implements <link linkend="_classPscf_1_1Interaction_1aa04ae1ec8eecdcece17b04137c73b9a7">Pscf::Interaction</link>.</para>
 <para>
-Definition at line 109 of file ChiInteraction.cpp.</para>
+Definition at line 117 of file ChiInteraction.cpp.</para>
 <para>
 References Pscf::Interaction::nMonomer().</para>
     </section><anchor xml:id="_classPscf_1_1ChiInteraction_1a8c7f57c8ca96a643fe1914d994df5ccc"/>    <section>
@@ -247,7 +247,7 @@ Parameters                    </title>
 <para>
 Implements <link linkend="_classPscf_1_1Interaction_1af89cdbdd9a054d5bfe33bbbfcabffa77">Pscf::Interaction</link>.</para>
 <para>
-Definition at line 125 of file ChiInteraction.cpp.</para>
+Definition at line 133 of file ChiInteraction.cpp.</para>
 <para>
 References Pscf::Interaction::nMonomer().</para>
     </section><anchor xml:id="_classPscf_1_1ChiInteraction_1a5a4fbcd72ead10de48b0eddf59bd2eef"/>    <section>
@@ -290,7 +290,7 @@ Parameters                    </title>
 <para>
 Implements <link linkend="_classPscf_1_1Interaction_1ab77996b50808f636b0bdb7b6ed7c8d0f">Pscf::Interaction</link>.</para>
 <para>
-Definition at line 151 of file ChiInteraction.cpp.</para>
+Definition at line 159 of file ChiInteraction.cpp.</para>
 <para>
 References Pscf::Interaction::nMonomer().</para>
     </section><anchor xml:id="_classPscf_1_1ChiInteraction_1a62ebea2ebb240a0ec101555b37eba3bc"/>    <section>
@@ -335,7 +335,7 @@ Parameters                    </title>
 <para>
 Implements <link linkend="_classPscf_1_1Interaction_1a979231dcf58ef659e167ddbb397b0514">Pscf::Interaction</link>.</para>
 <para>
-Definition at line 170 of file ChiInteraction.cpp.</para>
+Definition at line 178 of file ChiInteraction.cpp.</para>
 <para>
 References Pscf::Interaction::nMonomer().</para>
     </section><anchor xml:id="_classPscf_1_1ChiInteraction_1a03f37c9da0f544ada15bcd22ed79b8a4"/>    <section>

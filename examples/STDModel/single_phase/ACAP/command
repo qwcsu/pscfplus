@@ -1,0 +1,50 @@
+[
+    {"CaseId": "1"},
+    {
+        "FieldIO":
+        {
+            "IO" : "read",
+            "Type": "omega",
+            "Format": "basis",
+            "Directory": "in/"
+        }
+    },
+    {
+        "ACAP":
+        {
+            "Variable": ["b", 0],      
+            "InitialValue": 1.2,
+            "FinalValue": 1.09,
+            "InitialStep": 0.1,
+            "SmallestStep": 0.0001,
+            "LargestStep": 0.5,
+            "StepScale": 1.1,  
+            "OutputDirectory": "out/",
+            "IntermediateOuput":
+            [
+                {
+                    "OutputPoints": [1.19, 1.196, 1.18]
+                },
+                {
+                    "Field" : "omega",
+                    "Format": "basis", 
+                    "OutputDirectory": "out/omega/"
+                },
+                {
+                    "Field" : "phi",
+                    "Format": "real", 
+                    "OutputDirectory": "out/phi/"
+                }
+            ]
+        }
+    },
+    {
+        "FieldIO":
+        {
+            "IO" : "write",
+            "Type": "omega",
+            "Format": "basis",
+            "Directory": "out/omega/"
+        }
+    }
+]

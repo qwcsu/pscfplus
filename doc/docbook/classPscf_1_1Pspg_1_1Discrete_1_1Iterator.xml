@@ -29,7 +29,7 @@ class Pscf::Pspg::Discrete::Iterator&lt; D &gt;</title></simplesect>
 
 <para>Base class for iterative solvers for SCF equations. </para>
 <para>
-Definition at line 24 of file pgd/iterator/Iterator.h.</para>
+Definition at line 32 of file pgd/iterator/Iterator.h.</para>
 <para>
 The documentation for this class was generated from the following files:</para>
 pgd/iterator/Iterator.hpgd/iterator/Iterator.tpp</section>

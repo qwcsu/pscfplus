@@ -103,15 +103,15 @@ int main(int argc, char **argv)
           dim1 = 0;
           dim2 = 1;
         }
-        else if (dArg[0] == '3' && dArg[2] == '-1')
+        else if (dArg[0] == '3')
         {
           dim1 = 3;
         }
-        else if (dArg[0] == '2' && dArg[2] == '-1')
+        else if (dArg[0] == '2')
         {
           dim1 = 2;
         }
-        else if (dArg[0] == '1' && dArg[2] == '-1')
+        else if (dArg[0] == '1')
         {
           dim1 = 1;
         }

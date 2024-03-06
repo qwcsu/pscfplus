@@ -225,6 +225,23 @@ namespace Pscf
                     fieldIo().convertRGridToBasis(wFieldsRGrid(), wFields());
                     fieldIo().writeFieldsBasis(fieldFileName, wFields());
                 }
+                else if (   io == "write"
+                         && type == "omega"
+                         && format == "reciprocal")
+                {
+                    Log::file() << std::endl;
+                    Log::file() << "Writing omega field in reciprocal-space grid:" << std::endl;
+                    std::string fieldFileName = dir;
+                    fieldFileName += "/";
+                    fieldFileName += prefix;
+                    fieldFileName += caseid;
+                    fieldFileName += "_omega.rcf";
+                    Log::file() << Str(fieldFileName, 20) << std::endl;
+                    Log::file() << std::endl;
+                    fieldIo().convertRGridToBasis(wFieldsRGrid(), wFields());
+                    fieldIo().convertBasisToKGrid(wFields(), wFieldsKGrid());
+                    fieldIo().writeFieldsKGrid(fieldFileName, wFieldsKGrid());
+                }
                 else if (   io == "read"
                          && type == "omega"
                          && format == "real")
@@ -287,9 +304,26 @@ namespace Pscf
                     fieldIo().convertRGridToBasis(cFieldsRGrid(), cFields());
                     fieldIo().writeFieldsBasis(fieldFileName, cFields());
                 }
+                else if (   io == "write"
+                         && type == "phi"
+                         && format == "reciprocal")
+                {
+                    Log::file() << std::endl;
+                    Log::file() << "Writing volume fraction in reciprocal-space grid:" << std::endl;
+                    std::string fieldFileName = dir;
+                    fieldFileName += "/";
+                    fieldFileName += prefix;
+                    fieldFileName += caseid;
+                    fieldFileName += "_phi.rcf";
+                    Log::file() << Str(fieldFileName, 20) << std::endl;
+                    Log::file() << std::endl;
+                    fieldIo().convertRGridToBasis(cFieldsRGrid(), cFields());
+                    fieldIo().convertBasisToKGrid(cFields(), cFieldsKGrid());
+                    fieldIo().writeFieldsKGrid(fieldFileName, cFieldsKGrid());
+                }
                 else
                 {
-                    std::cout << "      I/O type should be either read or write." << std::endl;
+                    std::cout << "      I/O type not included." << std::endl;
                     exit(1);
                 }
             }

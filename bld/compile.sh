@@ -10,7 +10,7 @@ helpFunction()
                     DGC : discrete Gaussian chain
                     FJC : freely jointed chain"
    echo ""
-   echo "\t-B CMP specifying the system compressibility
+   echo "\t-C CMP specifying the system compressibility
                     I : incompressible system (default)
                     C : compressible system"
    echo ""
@@ -39,6 +39,9 @@ CMP="I";
 NBP="DLT";
 K="1";
 DFT="FFT";
+
+CMPFLAG="0";
+
 while getopts "B:C:N:K:T:h" opt
 do
    case "$opt" in

@@ -109,7 +109,7 @@ class Pscf::Pspg::Continuous::Propagator&lt; D &gt;</title></simplesect>
 
 <para>MDE solver for one-direction of one block. </para>
 <para>
-Definition at line 38 of file Propagator.h.</para>
+Definition at line 41 of file Propagator.h.</para>
 </section>
 <section>
 <title>Member Typedef Documentation</title>
@@ -122,7 +122,7 @@ Definition at line 38 of file Propagator.h.</para>
 <para>Generic field (function of position). </para>
 </para>
 <para>
-Definition at line 48 of file Propagator.h.</para>
+Definition at line 51 of file Propagator.h.</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Propagator_1acc3b5360e34f50c41aa6e2c80d17a5f8"/>    <section>
     <title>WField</title>
 <indexterm><primary>WField</primary><secondary>Pscf::Pspg::Continuous::Propagator&lt; D &gt;</secondary></indexterm>
@@ -132,7 +132,7 @@ Definition at line 48 of file Propagator.h.</para>
 <para>Chemical potential field type. </para>
 </para>
 <para>
-Definition at line 54 of file Propagator.h.</para>
+Definition at line 57 of file Propagator.h.</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Propagator_1a95e5ffa498a5656dcb8f14eb75f3aea9"/>    <section>
     <title>CField</title>
 <indexterm><primary>CField</primary><secondary>Pscf::Pspg::Continuous::Propagator&lt; D &gt;</secondary></indexterm>
@@ -142,7 +142,7 @@ Definition at line 54 of file Propagator.h.</para>
 <para><link linkend="_classPscf_1_1Monomer">Monomer</link> concentration field type. </para>
 </para>
 <para>
-Definition at line 59 of file Propagator.h.</para>
+Definition at line 62 of file Propagator.h.</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Propagator_1a7b3a677b9b9ba1af7051872e1043fe11"/>    <section>
     <title>QField</title>
 <indexterm><primary>QField</primary><secondary>Pscf::Pspg::Continuous::Propagator&lt; D &gt;</secondary></indexterm>
@@ -152,7 +152,7 @@ Definition at line 59 of file Propagator.h.</para>
 <para><link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Propagator">Propagator</link> q-field type. </para>
 </para>
 <para>
-Definition at line 64 of file Propagator.h.</para>
+Definition at line 67 of file Propagator.h.</para>
 </section>
 </section>
 <section>
@@ -166,7 +166,7 @@ Definition at line 64 of file Propagator.h.</para>
 <para>Constructor. </para>
 </para>
 <para>
-Definition at line 35 of file Propagator.tpp.</para>
+Definition at line 38 of file Propagator.tpp.</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Propagator_1ab5741bba4360bd5f23ed2d7a274457a6"/>    <section>
     <title>~Propagator()</title>
 <indexterm><primary>~Propagator</primary><secondary>Pscf::Pspg::Continuous::Propagator&lt; D &gt;</secondary></indexterm>
@@ -176,7 +176,7 @@ Definition at line 35 of file Propagator.tpp.</para>
 <para>Destructor. </para>
 </para>
 <para>
-Definition at line 47 of file Propagator.tpp.</para>
+Definition at line 50 of file Propagator.tpp.</para>
 </section>
 </section>
 <section>
@@ -213,7 +213,7 @@ Parameters                    </title>
                 </formalpara>
                 </para>
 <para>
-Definition at line 269 of file Propagator.h.</para>
+Definition at line 272 of file Propagator.h.</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Propagator_1a15a7cc30222a80f847a4692f3c941b93"/>    <section>
     <title>allocate()</title>
 <indexterm><primary>allocate</primary><secondary>Pscf::Pspg::Continuous::Propagator&lt; D &gt;</secondary></indexterm>
@@ -252,7 +252,7 @@ Parameters                    </title>
                 </formalpara>
                 </para>
 <para>
-Definition at line 56 of file Propagator.tpp.</para>
+Definition at line 59 of file Propagator.tpp.</para>
 <para>
 References Pscf::Mesh&lt; D &gt;::dimensions(), Pscf::Pspg::ThreadGrid::nBlocks(), Pscf::Pspg::ThreadGrid::setThreadsLogical(), and Pscf::Mesh&lt; D &gt;::size().</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Propagator_1af62360f1015be591e6c93bde8c5a45fc"/>    <section>
@@ -264,7 +264,7 @@ References Pscf::Mesh&lt; D &gt;::dimensions(), Pscf::Pspg::ThreadGrid::nBlocks(
 <para>Compute the forward propagators and store the &quot;slices&quot; for the corresponding block. </para>
 </para>
 <para>
-Definition at line 121 of file Propagator.tpp.</para>
+Definition at line 124 of file Propagator.tpp.</para>
 <para>
 References UTIL_CHECK.</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Propagator_1ac7e272efcba9851d7acfb9133f560283"/>    <section>
@@ -280,7 +280,7 @@ References UTIL_CHECK.</para>
 <literallayout>&#160;&#xa;</literallayout>
  </para>
 <para>
-Definition at line 223 of file Propagator.tpp.</para>
+Definition at line 226 of file Propagator.tpp.</para>
 <para>
 References Pscf::Pspg::ThreadGrid::setThreadsLogical(), and UTIL_CHECK.</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Propagator_1ab137ed09c7e9cc1492949d315a0850c4"/>    <section>
@@ -294,7 +294,7 @@ References Pscf::Pspg::ThreadGrid::setThreadsLogical(), and UTIL_CHECK.</para>
 
 <para>This function is called by void <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Propagator_1ac7e272efcba9851d7acfb9133f560283">solveBackward(cudaReal *q, int n)</link> </para>
 <para>
-Definition at line 308 of file Propagator.tpp.</para>
+Definition at line 311 of file Propagator.tpp.</para>
 <para>
 References Pscf::Pspg::ThreadGrid::setThreadsLogical().</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Propagator_1a61eb6a6a9f58c6c0a42089afe5757294"/>    <section>
@@ -329,7 +329,7 @@ Parameters                    </title>
                 </formalpara>
                 </para>
 <para>
-Definition at line 238 of file Propagator.h.</para>
+Definition at line 241 of file Propagator.h.</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Propagator_1aa2b9cfdf2714f3c4da731817c93ddf9f"/>    <section>
     <title>head()</title>
 <indexterm><primary>head</primary><secondary>Pscf::Pspg::Continuous::Propagator&lt; D &gt;</secondary></indexterm>
@@ -339,7 +339,7 @@ Definition at line 238 of file Propagator.h.</para>
 <para>Return q-field at beginning of block (initial condition). </para>
 </para>
 <para>
-Definition at line 205 of file Propagator.h.</para>
+Definition at line 208 of file Propagator.h.</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Propagator_1a2b0efc3347c336469b97ed13e8d82970"/>    <section>
     <title>qtail()</title>
 <indexterm><primary>qtail</primary><secondary>Pscf::Pspg::Continuous::Propagator&lt; D &gt;</secondary></indexterm>
@@ -349,7 +349,7 @@ Definition at line 205 of file Propagator.h.</para>
 <para>Return q-field at end of block. </para>
 </para>
 <para>
-Definition at line 229 of file Propagator.h.</para>
+Definition at line 232 of file Propagator.h.</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Propagator_1a376d3a15ac7add3a562c5223e542ab77"/>    <section>
     <title>block()</title>
 <indexterm><primary>block</primary><secondary>Pscf::Pspg::Continuous::Propagator&lt; D &gt;</secondary></indexterm>
@@ -359,7 +359,7 @@ Definition at line 229 of file Propagator.h.</para>
 <para>Get the associated <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block">Block</link> object by reference. </para>
 </para>
 <para>
-Definition at line 253 of file Propagator.h.</para>
+Definition at line 256 of file Propagator.h.</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Propagator_1a455f6f0a0d633bff77e0f3a1d09c7f59"/>    <section>
     <title>isAllocated()</title>
 <indexterm><primary>isAllocated</primary><secondary>Pscf::Pspg::Continuous::Propagator&lt; D &gt;</secondary></indexterm>
@@ -369,7 +369,7 @@ Definition at line 253 of file Propagator.h.</para>
 <para>Has memory been allocated for this propagator? </para>
 </para>
 <para>
-Definition at line 260 of file Propagator.h.</para>
+Definition at line 263 of file Propagator.h.</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Propagator_1ad595057c05e19aeaabfd161d62bbb36a"/>    <section>
     <title>computeHead()</title>
 <indexterm><primary>computeHead</primary><secondary>Pscf::Pspg::Continuous::Propagator&lt; D &gt;</secondary></indexterm>
@@ -379,7 +379,7 @@ Definition at line 260 of file Propagator.h.</para>
 <para>Compute initial QField at head from tail QFields of sources. </para>
 </para>
 <para>
-Definition at line 84 of file Propagator.tpp.</para>
+Definition at line 87 of file Propagator.tpp.</para>
 <para>
 References Pscf::Pspg::ThreadGrid::setThreadsLogical(), and UTIL_THROW.</para>
 </section>

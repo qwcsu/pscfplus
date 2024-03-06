@@ -1,0 +1,70 @@
+[
+	{
+		"HelmholtzFreeEnergy" : 
+		{
+			"EntropyContribution" : 
+			{
+				"BlockComponent" : 
+				[
+					[
+						0,
+						0,
+						null
+					],
+					[
+						0,
+						1,
+						null
+					]
+				],
+				"Total" : null,
+				"VertexComponent" : 
+				[
+					[
+						0,
+						0,
+						null
+					],
+					[
+						0,
+						1,
+						null
+					],
+					[
+						0,
+						2,
+						null
+					]
+				]
+			},
+			"InternalEnergyContribution" : 
+			{
+				"Compressibility" : 0,
+				"FloryHugginsRepulsion" : 
+				{
+					"Total" : null
+				},
+				"Total" : null
+			},
+			"Total" : null
+		},
+		"SegmentLength" : 
+		[
+			[
+				0,
+				1
+			],
+			[
+				1,
+				1
+			]
+		],
+		"Unitcell" : 
+		[
+			[
+				"P_-1",
+				3.7557089058491644
+			]
+		]
+	}
+]

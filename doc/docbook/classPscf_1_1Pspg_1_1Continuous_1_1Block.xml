@@ -146,7 +146,7 @@ class Pscf::Pspg::Continuous::Block&lt; D &gt;</title></simplesect>
 
 <para>Derived from <link linkend="_classPscf_1_1BlockTmpl">BlockTmpl</link>&lt; Propagator&lt;D&gt; &gt;. A <link linkend="_classPscf_1_1BlockTmpl">BlockTmpl</link>&lt; Propagator&lt;D&gt; &gt; has two Propagator&lt;D&gt; members and is derived from <link linkend="_classPscf_1_1BlockDescriptor">BlockDescriptor</link>. </para>
 <para>
-Definition at line 48 of file Block.h.</para>
+Definition at line 51 of file Block.h.</para>
 </section>
 <section>
 <title>Member Typedef Documentation</title>
@@ -159,7 +159,7 @@ Definition at line 48 of file Block.h.</para>
 <para>Generic field (base class) </para>
 </para>
 <para>
-Definition at line 55 of file Block.h.</para>
+Definition at line 58 of file Block.h.</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1a592dc978fb65bdbea2d3f975a7f9cbb3"/>    <section>
     <title>WField</title>
 <indexterm><primary>WField</primary><secondary>Pscf::Pspg::Continuous::Block&lt; D &gt;</secondary></indexterm>
@@ -169,7 +169,7 @@ Definition at line 55 of file Block.h.</para>
 <para><link linkend="_classPscf_1_1Monomer">Monomer</link> chemical potential field. </para>
 </para>
 <para>
-Definition at line 60 of file Block.h.</para>
+Definition at line 63 of file Block.h.</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1ae33b6c239ebb8cdce5dacc3567c3e4d1"/>    <section>
     <title>QField</title>
 <indexterm><primary>QField</primary><secondary>Pscf::Pspg::Continuous::Block&lt; D &gt;</secondary></indexterm>
@@ -179,7 +179,7 @@ Definition at line 60 of file Block.h.</para>
 <para>Constrained partition function q(r,s) for fixed s. </para>
 </para>
 <para>
-Definition at line 65 of file Block.h.</para>
+Definition at line 68 of file Block.h.</para>
 </section>
 </section>
 <section>
@@ -193,7 +193,7 @@ Definition at line 65 of file Block.h.</para>
 <para>Constructor. </para>
 </para>
 <para>
-Definition at line 328 of file Block.tpp.</para>
+Definition at line 331 of file Block.tpp.</para>
 <para>
 References Pscf::BlockTmpl&lt; Propagator&lt; D &gt; &gt;::propagator().</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1a1bd806151a7aa9d8f27c7fd3394e0562"/>    <section>
@@ -205,7 +205,7 @@ References Pscf::BlockTmpl&lt; Propagator&lt; D &gt; &gt;::propagator().</para>
 <para>Destructor. </para>
 </para>
 <para>
-Definition at line 341 of file Block.tpp.</para>
+Definition at line 344 of file Block.tpp.</para>
 </section>
 </section>
 <section>
@@ -248,7 +248,7 @@ Parameters                    </title>
                 </formalpara>
                 </para>
 <para>
-Definition at line 407 of file Block.tpp.</para>
+Definition at line 410 of file Block.tpp.</para>
 <para>
 References Pscf::Pspg::ThreadGrid::setThreadsLogical(), Pscf::Mesh&lt; D &gt;::size(), and UTIL_CHECK.</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1aada75114932c8fd0b58cf7a5ca5063a7"/>    <section>
@@ -289,7 +289,7 @@ Parameters                    </title>
                 </formalpara>
                 </para>
 <para>
-Definition at line 689 of file Block.tpp.</para>
+Definition at line 692 of file Block.tpp.</para>
 <para>
 References Pscf::MeshIterator&lt; D &gt;::atEnd(), Pscf::MeshIterator&lt; D &gt;::begin(), Pscf::UnitCellBase&lt; D &gt;::dksq(), Pscf::UnitCellBase&lt; D &gt;::ksq(), Pscf::UnitCellBase&lt; D &gt;::nParameter(), Pscf::MeshIterator&lt; D &gt;::position(), Pscf::MeshIterator&lt; D &gt;::rank(), and Pscf::MeshIterator&lt; D &gt;::setDimensions().</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1acbe2b9e40ebc7a766f85adf9215dca8f"/>    <section>
@@ -324,7 +324,7 @@ Parameters                    </title>
                 </formalpara>
                 </para>
 <para>
-Definition at line 858 of file Block.tpp.</para>
+Definition at line 861 of file Block.tpp.</para>
 <para>
 References Pscf::Pspg::DField&lt; Data &gt;::cDField(), Pscf::Pspg::ThreadGrid::setThreadsLogical(), and UTIL_CHECK.</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1a3e6440e1c223eb2d92efeb26268e92df"/>    <section>
@@ -336,7 +336,7 @@ References Pscf::Pspg::DField&lt; Data &gt;::cDField(), Pscf::Pspg::ThreadGrid::
 <para>Initialize <link linkend="_classPscf_1_1Pspg_1_1FFT">FFT</link> and batch <link linkend="_classPscf_1_1Pspg_1_1FFT">FFT</link> classes. </para>
 </para>
 <para>
-Definition at line 899 of file Block.tpp.</para>
+Definition at line 902 of file Block.tpp.</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1ae700b2422a5de629aca4f4e91c0e5fb4"/>    <section>
     <title>step()</title>
 <indexterm><primary>step</primary><secondary>Pscf::Pspg::Continuous::Block&lt; D &gt;</secondary></indexterm>
@@ -348,7 +348,7 @@ Definition at line 899 of file Block.tpp.</para>
 
 <para>Apply pseudo-spectral algorithm</para>
 <para>
-Definition at line 943 of file Block.tpp.</para>
+Definition at line 946 of file Block.tpp.</para>
 <para>
 References Pscf::Pspg::ThreadGrid::setThreadsLogical(), and UTIL_CHECK.</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1a563cc6e0a07baa7d04fb04f77bc9a091"/>    <section>
@@ -389,7 +389,7 @@ Parameters                    </title>
                 </formalpara>
                 </para>
 <para>
-Definition at line 1181 of file Block.tpp.</para>
+Definition at line 1184 of file Block.tpp.</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1af2b7511e4c242a0f386cbcf112f9de67"/>    <section>
     <title>computeInt()</title>
 <indexterm><primary>computeInt</primary><secondary>Pscf::Pspg::Continuous::Block&lt; D &gt;</secondary></indexterm>
@@ -434,7 +434,7 @@ Parameters                    </title>
                 </formalpara>
                 </para>
 <para>
-Definition at line 1201 of file Block.tpp.</para>
+Definition at line 1204 of file Block.tpp.</para>
 <para>
 References Pscf::Pspg::ThreadGrid::setThreadsLogical(), and UTIL_CHECK.</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1ae32b0a0d0229112beea0b1feb2dd561f"/>    <section>
@@ -469,7 +469,7 @@ Parameters                    </title>
                 </formalpara>
                 </para>
 <para>
-Definition at line 336 of file Block.h.</para>
+Definition at line 339 of file Block.h.</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1aaa1acc7d8d890ffc06082c00982e4cf7"/>    <section>
     <title>mesh()</title>
 <indexterm><primary>mesh</primary><secondary>Pscf::Pspg::Continuous::Block&lt; D &gt;</secondary></indexterm>
@@ -481,7 +481,7 @@ Definition at line 336 of file Block.h.</para>
 
 <para>Get <link linkend="_classPscf_1_1Mesh">Mesh</link> by reference. </para>
 <para>
-Definition at line 343 of file Block.h.</para>
+Definition at line 346 of file Block.h.</para>
 <para>
 References UTIL_ASSERT.</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1a5153e1dcbdeab426d9747b029218844d"/>    <section>
@@ -495,7 +495,7 @@ References UTIL_ASSERT.</para>
 
 <para>Get number of contour steps. </para>
 <para>
-Definition at line 329 of file Block.h.</para>
+Definition at line 332 of file Block.h.</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1aa7eb0d81f097cd0c154ada32f41da84a"/>    <section>
     <title>ns()</title>
 <indexterm><primary>ns</primary><secondary>Pscf::Pspg::Continuous::Block&lt; D &gt;</secondary></indexterm>
@@ -507,7 +507,7 @@ Definition at line 329 of file Block.h.</para>
 
 <para>Get number of contour steps. </para>
 <para>
-Definition at line 322 of file Block.h.</para>
+Definition at line 325 of file Block.h.</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1ae70390994f52d6c366114cfa334e0357"/>    <section>
     <title>fft()</title>
 <indexterm><primary>fft</primary><secondary>Pscf::Pspg::Continuous::Block&lt; D &gt;</secondary></indexterm>
@@ -517,7 +517,7 @@ Definition at line 322 of file Block.h.</para>
 <para>Return the fast Fourier transform object by reference. </para>
 </para>
 <para>
-Definition at line 350 of file Block.h.</para>
+Definition at line 353 of file Block.h.</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1ae6d146ea95e29c6dd75810a1173e25d7"/>    <section>
     <title>id()</title>
 <indexterm><primary>id</primary><secondary>Pscf::Pspg::Continuous::Block&lt; D &gt;</secondary></indexterm>

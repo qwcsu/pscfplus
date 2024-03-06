@@ -63,7 +63,7 @@ class Pscf::Pspg::Solvent&lt; D &gt;</title></simplesect>
 
 <para>Class representing a solvent species. </para>
 <para>
-Definition at line 27 of file Solvent.h.</para>
+Definition at line 30 of file Solvent.h.</para>
 </section>
 <section>
 <title>Member Typedef Documentation</title>
@@ -76,7 +76,7 @@ Definition at line 27 of file Solvent.h.</para>
 <para><link linkend="_classPscf_1_1Monomer">Monomer</link> concentration field. </para>
 </para>
 <para>
-Definition at line 33 of file Solvent.h.</para>
+Definition at line 36 of file Solvent.h.</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Solvent_1ab2a893f0c7c622da0b7c485b1f6231e8"/>    <section>
     <title>WField</title>
 <indexterm><primary>WField</primary><secondary>Pscf::Pspg::Solvent&lt; D &gt;</secondary></indexterm>
@@ -86,7 +86,7 @@ Definition at line 33 of file Solvent.h.</para>
 <para><link linkend="_classPscf_1_1Monomer">Monomer</link> chemical potential field. </para>
 </para>
 <para>
-Definition at line 38 of file Solvent.h.</para>
+Definition at line 41 of file Solvent.h.</para>
 </section>
 </section>
 <section>
@@ -100,7 +100,7 @@ Definition at line 38 of file Solvent.h.</para>
 <para>Constructor. </para>
 </para>
 <para>
-Definition at line 43 of file Solvent.h.</para>
+Definition at line 46 of file Solvent.h.</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Solvent_1a120494905d47d284f395888f5f4cf0ad"/>    <section>
     <title>~Solvent()</title>
 <indexterm><primary>~Solvent</primary><secondary>Pscf::Pspg::Solvent&lt; D &gt;</secondary></indexterm>
@@ -110,7 +110,7 @@ Definition at line 43 of file Solvent.h.</para>
 <para>Constructor. </para>
 </para>
 <para>
-Definition at line 50 of file Solvent.h.</para>
+Definition at line 53 of file Solvent.h.</para>
 </section>
 </section>
 <section>
@@ -149,7 +149,7 @@ Parameters                    </title>
                 </formalpara>
                 </para>
 <para>
-Definition at line 62 of file Solvent.h.</para>
+Definition at line 65 of file Solvent.h.</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Solvent_1af9058364495c875f22c09b0968a30345"/>    <section>
     <title>concentration()</title>
 <indexterm><primary>concentration</primary><secondary>Pscf::Pspg::Solvent&lt; D &gt;</secondary></indexterm>
@@ -159,7 +159,7 @@ Definition at line 62 of file Solvent.h.</para>
 <para>Get monomer concentration field for this solvent. </para>
 </para>
 <para>
-Definition at line 67 of file Solvent.h.</para>
+Definition at line 70 of file Solvent.h.</para>
 </section>
 <para>
 The documentation for this class was generated from the following file:</para>

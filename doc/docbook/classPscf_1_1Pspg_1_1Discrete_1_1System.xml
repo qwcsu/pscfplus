@@ -17,7 +17,7 @@
 class Pscf::Pspg::Discrete::System&lt; D &gt;</title></simplesect>
 
 <para>
-Definition at line 14 of file pgd/iterator/Iterator.h.</para>
+Definition at line 22 of file pgd/iterator/Iterator.h.</para>
 </section>
 <section>
 <title>Member Function Documentation</title>
@@ -30,7 +30,7 @@ Definition at line 14 of file pgd/iterator/Iterator.h.</para>
 <para>Accessors (access objects by reference) </para>
 </para>
 <para>
-Definition at line 187 of file pgd/System.h.</para>
+Definition at line 206 of file pgd/System.h.</para>
 </section>
 <para>
 The documentation for this class was generated from the following files:</para>
