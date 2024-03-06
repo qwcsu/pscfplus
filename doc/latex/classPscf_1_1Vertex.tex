@@ -1,0 +1,197 @@
+\hypertarget{classPscf_1_1Vertex}{}\doxysubsection{Pscf\+::Vertex Class Reference}
+\label{classPscf_1_1Vertex}\index{Pscf::Vertex@{Pscf::Vertex}}
+
+
+A junction or chain end in a block polymer.  
+
+
+
+
+{\ttfamily \#include $<$Vertex.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classPscf_1_1Vertex_a4886c8b75829e44d8c4fa8e2cc45de91}{set\+Id}} (int \mbox{\hyperlink{classPscf_1_1Vertex_aeca96441f6123402032e2f1f04ddb018}{id}})
+\begin{DoxyCompactList}\small\item\em Set the integer identifier of this vertex. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1Vertex_a3cc984d7ae76503b739d54a8da12189f}{add\+Block}} (const \mbox{\hyperlink{classPscf_1_1BlockDescriptor}{Block\+Descriptor}} \&block)
+\begin{DoxyCompactList}\small\item\em Add block to the list of attached blocks. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1Vertex_aa8fcd89d1feaa40feffa7880a57f334f}{add\+Bond}} (const \mbox{\hyperlink{classPscf_1_1BondDescriptor}{Bond\+Descriptor}} \&bond)
+\begin{DoxyCompactList}\small\item\em Add bond to the list of attached bonds. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPscf_1_1Vertex_aeca96441f6123402032e2f1f04ddb018}{id}} () const
+\begin{DoxyCompactList}\small\item\em Get the id of this vertex. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPscf_1_1Vertex_a38e95b84f27905d8c2d2bd27b0f022d5}{size}} () const
+\begin{DoxyCompactList}\small\item\em Get the number of attached blocks or bonds. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classUtil_1_1Pair}{Pair}}$<$ int $>$ \& \mbox{\hyperlink{classPscf_1_1Vertex_a8f7d6442cdb421846f48820c274ee534}{in\+Propagator\+Id}} (int i) const
+\begin{DoxyCompactList}\small\item\em Get the block/bonds and direction of an incoming propagator. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classUtil_1_1Pair}{Pair}}$<$ int $>$ \& \mbox{\hyperlink{classPscf_1_1Vertex_a0b89febd83f748810e564b2f154f5446}{out\+Propagator\+Id}} (int i) const
+\begin{DoxyCompactList}\small\item\em Get the block/bond and direction of an outgoing propagator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+A junction or chain end in a block polymer. 
+
+Definition at line 26 of file Vertex.\+h.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPscf_1_1Vertex_a4886c8b75829e44d8c4fa8e2cc45de91}\label{classPscf_1_1Vertex_a4886c8b75829e44d8c4fa8e2cc45de91}} 
+\index{Pscf::Vertex@{Pscf::Vertex}!setId@{setId}}
+\index{setId@{setId}!Pscf::Vertex@{Pscf::Vertex}}
+\doxyparagraph{\texorpdfstring{setId()}{setId()}}
+{\footnotesize\ttfamily void Pscf\+::\+Vertex\+::set\+Id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Set the integer identifier of this vertex. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & identifier \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 25 of file Vertex.\+cpp.
+
+\mbox{\Hypertarget{classPscf_1_1Vertex_a3cc984d7ae76503b739d54a8da12189f}\label{classPscf_1_1Vertex_a3cc984d7ae76503b739d54a8da12189f}} 
+\index{Pscf::Vertex@{Pscf::Vertex}!addBlock@{addBlock}}
+\index{addBlock@{addBlock}!Pscf::Vertex@{Pscf::Vertex}}
+\doxyparagraph{\texorpdfstring{addBlock()}{addBlock()}}
+{\footnotesize\ttfamily void Pscf\+::\+Vertex\+::add\+Block (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPscf_1_1BlockDescriptor}{Block\+Descriptor}} \&}]{block }\end{DoxyParamCaption})}
+
+
+
+Add block to the list of attached blocks. 
+
+Preconditions\+: The id for this vertex must have been set, vertex ids must have been set for the block, and the id of this vertex must match one of the ids for the two vertices attached to the block.
+
+
+\begin{DoxyParams}{Parameters}
+{\em block} & attached \mbox{\hyperlink{classPscf_1_1BlockDescriptor}{Block\+Descriptor}} object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 28 of file Vertex.\+cpp.
+
+
+
+References Pscf\+::\+Block\+Descriptor\+::id(), U\+T\+I\+L\+\_\+\+T\+H\+R\+OW, and Pscf\+::\+Block\+Descriptor\+::vertex\+Id().
+
+\mbox{\Hypertarget{classPscf_1_1Vertex_aa8fcd89d1feaa40feffa7880a57f334f}\label{classPscf_1_1Vertex_aa8fcd89d1feaa40feffa7880a57f334f}} 
+\index{Pscf::Vertex@{Pscf::Vertex}!addBond@{addBond}}
+\index{addBond@{addBond}!Pscf::Vertex@{Pscf::Vertex}}
+\doxyparagraph{\texorpdfstring{addBond()}{addBond()}}
+{\footnotesize\ttfamily void Pscf\+::\+Vertex\+::add\+Bond (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPscf_1_1BondDescriptor}{Bond\+Descriptor}} \&}]{bond }\end{DoxyParamCaption})}
+
+
+
+Add bond to the list of attached bonds. 
+
+Preconditions\+: The id for this vertex must have been set, vertex ids must have been set for the bond, and the id of this vertex must match one of the ids for the two vertices attached to the bond.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bond} & attached \mbox{\hyperlink{classPscf_1_1BondDescriptor}{Bond\+Descriptor}} object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 59 of file Vertex.\+cpp.
+
+
+
+References Pscf\+::\+Bond\+Descriptor\+::id(), U\+T\+I\+L\+\_\+\+T\+H\+R\+OW, and Pscf\+::\+Bond\+Descriptor\+::vertex\+Id().
+
+\mbox{\Hypertarget{classPscf_1_1Vertex_aeca96441f6123402032e2f1f04ddb018}\label{classPscf_1_1Vertex_aeca96441f6123402032e2f1f04ddb018}} 
+\index{Pscf::Vertex@{Pscf::Vertex}!id@{id}}
+\index{id@{id}!Pscf::Vertex@{Pscf::Vertex}}
+\doxyparagraph{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily int Pscf\+::\+Vertex\+::id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the id of this vertex. 
+
+
+
+Definition at line 107 of file Vertex.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Vertex_a38e95b84f27905d8c2d2bd27b0f022d5}\label{classPscf_1_1Vertex_a38e95b84f27905d8c2d2bd27b0f022d5}} 
+\index{Pscf::Vertex@{Pscf::Vertex}!size@{size}}
+\index{size@{size}!Pscf::Vertex@{Pscf::Vertex}}
+\doxyparagraph{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily int Pscf\+::\+Vertex\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the number of attached blocks or bonds. 
+
+
+
+Definition at line 110 of file Vertex.\+h.
+
+
+
+Referenced by Pscf\+::\+D\+Polymer\+Tmpl$<$ Bond$<$ D $>$ $>$\+::read\+Parameters(), and Pscf\+::\+Polymer\+Tmpl$<$ Block$<$ D $>$ $>$\+::read\+Parameters().
+
+\mbox{\Hypertarget{classPscf_1_1Vertex_a8f7d6442cdb421846f48820c274ee534}\label{classPscf_1_1Vertex_a8f7d6442cdb421846f48820c274ee534}} 
+\index{Pscf::Vertex@{Pscf::Vertex}!inPropagatorId@{inPropagatorId}}
+\index{inPropagatorId@{inPropagatorId}!Pscf::Vertex@{Pscf::Vertex}}
+\doxyparagraph{\texorpdfstring{inPropagatorId()}{inPropagatorId()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classUtil_1_1Pair}{Pair}}$<$ int $>$ \& Pscf\+::\+Vertex\+::in\+Propagator\+Id (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the block/bonds and direction of an incoming propagator. 
+
+The first element of the integer pair is the block/bond id, and the second is a direction id which is 0 if this vertex is vertex 1 of the block/bond, and 1 if this vertex is vertex 0.
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & index of incoming propagator \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classUtil_1_1Pair}{Pair$<$int$>$}} containing block/bond index, direction index 
+\end{DoxyReturn}
+
+
+Definition at line 114 of file Vertex.\+h.
+
+
+
+Referenced by Pscf\+::\+D\+Polymer\+Tmpl$<$ Bond$<$ D $>$ $>$\+::read\+Parameters(), and Pscf\+::\+Polymer\+Tmpl$<$ Block$<$ D $>$ $>$\+::read\+Parameters().
+
+\mbox{\Hypertarget{classPscf_1_1Vertex_a0b89febd83f748810e564b2f154f5446}\label{classPscf_1_1Vertex_a0b89febd83f748810e564b2f154f5446}} 
+\index{Pscf::Vertex@{Pscf::Vertex}!outPropagatorId@{outPropagatorId}}
+\index{outPropagatorId@{outPropagatorId}!Pscf::Vertex@{Pscf::Vertex}}
+\doxyparagraph{\texorpdfstring{outPropagatorId()}{outPropagatorId()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classUtil_1_1Pair}{Pair}}$<$ int $>$ \& Pscf\+::\+Vertex\+::out\+Propagator\+Id (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the block/bond and direction of an outgoing propagator. 
+
+The first element of the integer pair is the block/bond id, and the second is a direction id which is 0 if this vertex is vertex 0 of the block/bond, and 1 if this vertex is vertex 1.
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & index of incoming propagator \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classUtil_1_1Pair}{Pair$<$int$>$}} containing block/bond index, direction index 
+\end{DoxyReturn}
+
+
+Definition at line 118 of file Vertex.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Vertex.\+h\item 
+Vertex.\+cpp\end{DoxyCompactItemize}

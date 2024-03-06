@@ -1,0 +1,221 @@
+\hypertarget{group__Misc__Module}{}\doxysubsection{Miscellaneous Utilities}
+\label{group__Misc__Module}\index{Miscellaneous Utilities@{Miscellaneous Utilities}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classUtil_1_1Bit}{Util\+::\+Bit}}
+\begin{DoxyCompactList}\small\item\em Represents a specific bit location within an unsigned int. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classUtil_1_1Exception}{Util\+::\+Exception}}
+\begin{DoxyCompactList}\small\item\em A user-\/defined exception. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classUtil_1_1FileMaster}{Util\+::\+File\+Master}}
+\begin{DoxyCompactList}\small\item\em A \mbox{\hyperlink{classUtil_1_1FileMaster}{File\+Master}} manages input and output files for a simulation. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classUtil_1_1FlagSet}{Util\+::\+Flag\+Set}}
+\begin{DoxyCompactList}\small\item\em A set of boolean variables represented by characters. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classUtil_1_1Log}{Util\+::\+Log}}
+\begin{DoxyCompactList}\small\item\em A static class that holds a log output stream. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classUtil_1_1Memory}{Util\+::\+Memory}}
+\begin{DoxyCompactList}\small\item\em Provides method to allocate array. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classUtil_1_1Notifier}{Util\+::\+Notifier$<$ Event $>$}}
+\begin{DoxyCompactList}\small\item\em Abstract template for a notifier (or subject) in the \mbox{\hyperlink{classUtil_1_1Observer}{Observer}} design pattern. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classUtil_1_1Observer}{Util\+::\+Observer$<$ Event $>$}}
+\begin{DoxyCompactList}\small\item\em Abstract class template for observer in the observer design pattern. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classUtil_1_1Setable}{Util\+::\+Setable$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em Template for a value that can be set or declared null (i.\+e., unknown). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classUtil_1_1Timer}{Util\+::\+Timer}}
+\begin{DoxyCompactList}\small\item\em Wall clock timer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{group__Misc__Module_ga69d6f862289b96b4b0c0591357c8823e}{Util\+::to\+String}} (int n)
+\begin{DoxyCompactList}\small\item\em Return string representation of an integer. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__Misc__Module_gaccdfb499eefe47a9f4831ebf6670a87c}{Util\+::r\+Strip}} (std\+::string \&string)
+\begin{DoxyCompactList}\small\item\em Strip trailing whitespace from a string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__Misc__Module_ga4cd93415cf228d797c4aed0ee3b495a5}{Util\+::check\+String}} (std\+::istream \&in, const std\+::string \&expected)
+\begin{DoxyCompactList}\small\item\em Extract string from stream, and compare to expected value. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__Misc__Module_gae9fc3c33d8ea0780790a683554afa949}{Util\+::get\+Line}} (std\+::istream \&in, std\+::stringstream \&line)
+\begin{DoxyCompactList}\small\item\em Read the next line into a stringstream. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__Misc__Module_ga68d0c067bdff7f1daa80e2efa94269dd}{Util\+::get\+Next\+Line}} (std\+::istream \&in, std\+::string \&line)
+\begin{DoxyCompactList}\small\item\em Read the next non-\/empty line into a string, strip trailing whitespace. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__Misc__Module_gab2cae028b0ffb7733bc133ca6a6bf5e2}{Util\+::get\+Next\+Line}} (std\+::istream \&in, std\+::stringstream \&line)
+\begin{DoxyCompactList}\small\item\em Read next non-\/empty line into a stringstream, strip trailing whitespace. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename D , typename B , typename M $>$ }\\ptrdiff\+\_\+t \mbox{\hyperlink{group__Misc__Module_ga67d014efd4872847fdf364d4ac0eeda6}{Util\+::member\+Offset}} (D \&object, M B\+::$\ast$mem\+Ptr)
+\begin{DoxyCompactList}\small\item\em Template for calculating offsets of data members. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Miscellaneous utility classes and functions. 
+
+\doxysubsubsection{Function Documentation}
+\mbox{\Hypertarget{group__Misc__Module_ga69d6f862289b96b4b0c0591357c8823e}\label{group__Misc__Module_ga69d6f862289b96b4b0c0591357c8823e}} 
+\index{Miscellaneous Utilities@{Miscellaneous Utilities}!toString@{toString}}
+\index{toString@{toString}!Miscellaneous Utilities@{Miscellaneous Utilities}}
+\doxyparagraph{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily std\+::string Util\+::to\+String (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Return string representation of an integer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & integer to be converted. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 52 of file io\+Util.\+cpp.
+
+\mbox{\Hypertarget{group__Misc__Module_gaccdfb499eefe47a9f4831ebf6670a87c}\label{group__Misc__Module_gaccdfb499eefe47a9f4831ebf6670a87c}} 
+\index{Miscellaneous Utilities@{Miscellaneous Utilities}!rStrip@{rStrip}}
+\index{rStrip@{rStrip}!Miscellaneous Utilities@{Miscellaneous Utilities}}
+\doxyparagraph{\texorpdfstring{rStrip()}{rStrip()}}
+{\footnotesize\ttfamily int Util\+::r\+Strip (\begin{DoxyParamCaption}\item[{std\+::string \&}]{string }\end{DoxyParamCaption})}
+
+
+
+Strip trailing whitespace from a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & string (stripped upon return). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+length of stripped string. 
+\end{DoxyReturn}
+
+
+Definition at line 18 of file io\+Util.\+cpp.
+
+
+
+Referenced by Util\+::get\+Next\+Line(), and Util\+::\+Xml\+Attribute\+::match().
+
+\mbox{\Hypertarget{group__Misc__Module_ga4cd93415cf228d797c4aed0ee3b495a5}\label{group__Misc__Module_ga4cd93415cf228d797c4aed0ee3b495a5}} 
+\index{Miscellaneous Utilities@{Miscellaneous Utilities}!checkString@{checkString}}
+\index{checkString@{checkString}!Miscellaneous Utilities@{Miscellaneous Utilities}}
+\doxyparagraph{\texorpdfstring{checkString()}{checkString()}}
+{\footnotesize\ttfamily void Util\+::check\+String (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in,  }\item[{const std\+::string \&}]{expected }\end{DoxyParamCaption})}
+
+
+
+Extract string from stream, and compare to expected value. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{classUtil_1_1Exception}{Exception}}} & if input value differs from expected value.\\
+\hline
+\end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+{\em in} & input stream \\
+\hline
+{\em expected} & expected value of string read from stream \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 37 of file io\+Util.\+cpp.
+
+
+
+References Util\+::\+Log\+::file(), and U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{group__Misc__Module_gae9fc3c33d8ea0780790a683554afa949}\label{group__Misc__Module_gae9fc3c33d8ea0780790a683554afa949}} 
+\index{Miscellaneous Utilities@{Miscellaneous Utilities}!getLine@{getLine}}
+\index{getLine@{getLine}!Miscellaneous Utilities@{Miscellaneous Utilities}}
+\doxyparagraph{\texorpdfstring{getLine()}{getLine()}}
+{\footnotesize\ttfamily bool Util\+::get\+Line (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in,  }\item[{std\+::stringstream \&}]{line }\end{DoxyParamCaption})}
+
+
+
+Read the next line into a stringstream. 
+
+Variant of std\+::getline(). Does not strip trailing whitespace.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & input stream from which to read. \\
+\hline
+{\em line} & stringstream containing line, on output. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 62 of file io\+Util.\+cpp.
+
+\mbox{\Hypertarget{group__Misc__Module_ga68d0c067bdff7f1daa80e2efa94269dd}\label{group__Misc__Module_ga68d0c067bdff7f1daa80e2efa94269dd}} 
+\index{Miscellaneous Utilities@{Miscellaneous Utilities}!getNextLine@{getNextLine}}
+\index{getNextLine@{getNextLine}!Miscellaneous Utilities@{Miscellaneous Utilities}}
+\doxyparagraph{\texorpdfstring{getNextLine()}{getNextLine()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Util\+::get\+Next\+Line (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in,  }\item[{std\+::string \&}]{line }\end{DoxyParamCaption})}
+
+
+
+Read the next non-\/empty line into a string, strip trailing whitespace. 
+
+Variant of std\+::getline() that skips empty lines.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & input stream from which to read. \\
+\hline
+{\em line} & string with next non-\/empty line, on output. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if not end-\/of-\/file, false if end-\/of-\/file. 
+\end{DoxyReturn}
+
+
+Definition at line 79 of file io\+Util.\+cpp.
+
+
+
+References Util\+::r\+Strip().
+
+\mbox{\Hypertarget{group__Misc__Module_gab2cae028b0ffb7733bc133ca6a6bf5e2}\label{group__Misc__Module_gab2cae028b0ffb7733bc133ca6a6bf5e2}} 
+\index{Miscellaneous Utilities@{Miscellaneous Utilities}!getNextLine@{getNextLine}}
+\index{getNextLine@{getNextLine}!Miscellaneous Utilities@{Miscellaneous Utilities}}
+\doxyparagraph{\texorpdfstring{getNextLine()}{getNextLine()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Util\+::get\+Next\+Line (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in,  }\item[{std\+::stringstream \&}]{line }\end{DoxyParamCaption})}
+
+
+
+Read next non-\/empty line into a stringstream, strip trailing whitespace. 
+
+Variant of std\+::getline() that skips empty lines and uses stringstream.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & input stream from which to read. \\
+\hline
+{\em line} & stringstream containing next non-\/empty line, on output. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if not end-\/of-\/file, false if end-\/of-\/file. 
+\end{DoxyReturn}
+
+
+Definition at line 100 of file io\+Util.\+cpp.
+
+
+
+References Util\+::r\+Strip().
+
+\mbox{\Hypertarget{group__Misc__Module_ga67d014efd4872847fdf364d4ac0eeda6}\label{group__Misc__Module_ga67d014efd4872847fdf364d4ac0eeda6}} 
+\index{Miscellaneous Utilities@{Miscellaneous Utilities}!memberOffset@{memberOffset}}
+\index{memberOffset@{memberOffset}!Miscellaneous Utilities@{Miscellaneous Utilities}}
+\doxyparagraph{\texorpdfstring{memberOffset()}{memberOffset()}}
+{\footnotesize\ttfamily template$<$typename D , typename B , typename M $>$ \\
+ptrdiff\+\_\+t Util\+::member\+Offset (\begin{DoxyParamCaption}\item[{D \&}]{object,  }\item[{M B\+::$\ast$}]{mem\+Ptr }\end{DoxyParamCaption})}
+
+
+
+Template for calculating offsets of data members. 
+
+Types\+: D -\/ derived class B -\/ base class M -\/ member type 
+
+Definition at line 27 of file Offset.\+h.
+

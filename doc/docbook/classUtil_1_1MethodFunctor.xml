@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1MethodFunctor">
+<title>Util::MethodFunctor&lt; Object, T &gt; Class Template Reference</title>
+<indexterm><primary>Util::MethodFunctor&lt; Object, T &gt;</primary></indexterm>
+<para>
+
+<para>Functor that wraps a one-argument class member function. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;MethodFunctor.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Util::MethodFunctor&lt; Object, T &gt;:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classUtil_1_1MethodFunctor.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1MethodFunctor_1a0ed650622f138fa47ecdb9144ec4bec0">MethodFunctor</link> (Object &amp;object, Method1Ptr methodPtr)</para>
+
+<para>Constructor. </para>
+</listitem>
+            <listitem><para>virtual <link linkend="_classUtil_1_1MethodFunctor_1a1070b1927ebf237aba0c2da9589765ee">~MethodFunctor</link> ()</para>
+
+<para>Destructor. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classUtil_1_1MethodFunctor_1ac48a27bb67f2916dd6ab2dd355006f99">operator()</link> (const T &amp;t)</para>
+
+<para>Operator (). </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;class Object, typename T = void&gt;
+class Util::MethodFunctor&lt; Object, T &gt;</title></simplesect>
+
+
+<para>Functor that wraps a one-argument class member function. </para>
+
+
+
+<para>The constructor to MethodFunctor&lt;T&gt; takes pointers to an invoking instance of class Object and a member function that takes one T argument. The operator () (const T&amp;) invokes that method on that object. </para>
+<para>
+Definition at line 26 of file MethodFunctor.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1MethodFunctor_1a0ed650622f138fa47ecdb9144ec4bec0"/>    <section>
+    <title>MethodFunctor()</title>
+<indexterm><primary>MethodFunctor</primary><secondary>Util::MethodFunctor&lt; Object, T &gt;</secondary></indexterm>
+<indexterm><primary>Util::MethodFunctor&lt; Object, T &gt;</primary><secondary>MethodFunctor</secondary></indexterm>
+<computeroutput>template&lt;class Object , typename T  = void&gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1MethodFunctor">Util::MethodFunctor</link>&lt; Object, T &gt;::<link linkend="_classUtil_1_1MethodFunctor">MethodFunctor</link> (Object &amp; object, Method1Ptr methodPtr)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>object</entry>
+                                <entry>
+<para>invoking object </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>methodPtr</entry>
+                                <entry>
+<para>pointer to member function </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 38 of file MethodFunctor.h.</para>
+    </section><anchor xml:id="_classUtil_1_1MethodFunctor_1a1070b1927ebf237aba0c2da9589765ee"/>    <section>
+    <title>~MethodFunctor()</title>
+<indexterm><primary>~MethodFunctor</primary><secondary>Util::MethodFunctor&lt; Object, T &gt;</secondary></indexterm>
+<indexterm><primary>Util::MethodFunctor&lt; Object, T &gt;</primary><secondary>~MethodFunctor</secondary></indexterm>
+<computeroutput>template&lt;class Object , typename T  = void&gt; </computeroutput><para><computeroutput>virtual <link linkend="_classUtil_1_1MethodFunctor">Util::MethodFunctor</link>&lt; Object, T &gt;::~<link linkend="_classUtil_1_1MethodFunctor">MethodFunctor</link> ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Destructor. </para>
+</para>
+<para>
+Definition at line 46 of file MethodFunctor.h.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1MethodFunctor_1ac48a27bb67f2916dd6ab2dd355006f99"/>    <section>
+    <title>operator()()</title>
+<indexterm><primary>operator()</primary><secondary>Util::MethodFunctor&lt; Object, T &gt;</secondary></indexterm>
+<indexterm><primary>Util::MethodFunctor&lt; Object, T &gt;</primary><secondary>operator()</secondary></indexterm>
+<computeroutput>template&lt;class Object , typename T  = void&gt; </computeroutput><para><computeroutput>virtual void <link linkend="_classUtil_1_1MethodFunctor">Util::MethodFunctor</link>&lt; Object, T &gt;::operator() (const T &amp; t)<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Operator (). </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>t</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Parameter">Parameter</link> passed to method of associated T object. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 53 of file MethodFunctor.h.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+MethodFunctor.h</section>
+</section>

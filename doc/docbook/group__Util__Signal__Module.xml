@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_group__Util__Signal__Module">
+<title>Signals (Observer Pattern)</title>
+<indexterm><primary>Signals (Observer Pattern)</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classUtil_1_1IFunctor">Util::IFunctor&lt; T &gt;</link></para>
+
+<para>Interface for functor that wraps a void function with one argument (abstract). </para>
+</listitem>
+            <listitem><para>class <link linkend="_classUtil_1_1MethodFunctor">Util::MethodFunctor&lt; Object, T &gt;</link></para>
+
+<para>Functor that wraps a one-argument class member function. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classUtil_1_1Signal">Util::Signal&lt; T &gt;</link></para>
+
+<para><link linkend="_classUtil_1_1Notifier">Notifier</link> (or subject) in the <link linkend="_classUtil_1_1Observer">Observer</link> design pattern. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Classes used to implement the observer design pattern. A <link linkend="_classUtil_1_1Signal">Signal</link> maintains a list of registered &quot;observers&quot; and &quot;notifies&quot; each observer when <link linkend="_classUtil_1_1Signal_1ae4c8adf7cb5ed88454aa2a2ca19d330b">Signal::notify()</link> is called, by calling a specific method of each observer object. Observers are stored internally as a list pointers to <link linkend="_classUtil_1_1IFunctor">IFunctor</link> objects, each of which can be called using an overloaded () operator. Each Functor is created as an instance of the MethodFunctor&lt;T&gt;, which stores a pointer to a T object and to pointer to a method of class T, and which uses the () operator to call a specific method of a specific object.</para>
+
+<para>The <link linkend="_classUtil_1_1Signal">Signal</link>, <link linkend="_classUtil_1_1IFunctor">IFunctor</link>, and <link linkend="_classUtil_1_1MethodFunctor">MethodFunctor</link> classes are all templates that take an optional parameter T that represents the typename of of a parameter that should be passed to the notify method of the Signal&lt;T&gt;, which then passes it to the void (const T&amp;) operator of the IFunctor&lt;T&gt;. In each template, setting typename T to the the default value of T=void invokes a explicit specialization in which the void <link linkend="_classUtil_1_1Signal_1ae4c8adf7cb5ed88454aa2a2ca19d330b">Signal&lt;&gt;::notify()</link> and void IFunctor&lt;&gt;::operator () take no parameters. An instance of Signal&lt;&gt; is thus a signal that notifies observers by calling methods that take no arguments, while a Signal&lt;T&gt; is a signal that notifies observers by calling methods with a signature void (const &amp;T). <link linkend="_classUtil_1_1MethodFunctor">MethodFunctor</link> takes two template parameters: <link linkend="_classUtil_1_1MethodFunctor">MethodFunctor</link>&lt;ObserverClass, typename T=void&gt; is a subclass of IFunctor&lt;T&gt; for which the (const T&amp;) operator calls a specific void (const T&amp;) methodof an observer of type class ObserverObject. </para>
+</section>
+</section>

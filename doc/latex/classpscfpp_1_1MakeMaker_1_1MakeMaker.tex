@@ -1,0 +1,86 @@
+\hypertarget{classpscfpp_1_1MakeMaker_1_1MakeMaker}{}\doxysubsection{pscfpp.\+Make\+Maker.\+Make\+Maker Class Reference}
+\label{classpscfpp_1_1MakeMaker_1_1MakeMaker}\index{pscfpp.MakeMaker.MakeMaker@{pscfpp.MakeMaker.MakeMaker}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classpscfpp_1_1MakeMaker_1_1MakeMaker_a1e6e4077cf2ff4d73c5454e35ece2129}{make\+Include}} (self, base)
+\item 
+def \mbox{\hyperlink{classpscfpp_1_1MakeMaker_1_1MakeMaker_ae5231084772c35d9a95e71177d73ec40}{src\+Suffix}} (self)
+\item 
+def \mbox{\hyperlink{classpscfpp_1_1MakeMaker_1_1MakeMaker_af867f65345ada41fa3f9304431f399f2}{find}} (self)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+
+
+Definition at line 11 of file Make\+Maker.\+py.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classpscfpp_1_1MakeMaker_1_1MakeMaker_a1e6e4077cf2ff4d73c5454e35ece2129}\label{classpscfpp_1_1MakeMaker_1_1MakeMaker_a1e6e4077cf2ff4d73c5454e35ece2129}} 
+\index{pscfpp.MakeMaker.MakeMaker@{pscfpp.MakeMaker.MakeMaker}!makeInclude@{makeInclude}}
+\index{makeInclude@{makeInclude}!pscfpp.MakeMaker.MakeMaker@{pscfpp.MakeMaker.MakeMaker}}
+\doxyparagraph{\texorpdfstring{makeInclude()}{makeInclude()}}
+{\footnotesize\ttfamily def pscfpp.\+Make\+Maker.\+Make\+Maker.\+make\+Include (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{base }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Make include line suitable for a makefile\end{DoxyVerb}
+ 
+
+Definition at line 85 of file Make\+Maker.\+py.
+
+
+
+References pscfpp.\+Make\+Maker.\+Make\+Maker.\+path\+From\+Src.
+
+
+
+Referenced by pscfpp.\+Make\+Maker.\+Make\+Maker.\+find().
+
+\mbox{\Hypertarget{classpscfpp_1_1MakeMaker_1_1MakeMaker_ae5231084772c35d9a95e71177d73ec40}\label{classpscfpp_1_1MakeMaker_1_1MakeMaker_ae5231084772c35d9a95e71177d73ec40}} 
+\index{pscfpp.MakeMaker.MakeMaker@{pscfpp.MakeMaker.MakeMaker}!srcSuffix@{srcSuffix}}
+\index{srcSuffix@{srcSuffix}!pscfpp.MakeMaker.MakeMaker@{pscfpp.MakeMaker.MakeMaker}}
+\doxyparagraph{\texorpdfstring{srcSuffix()}{srcSuffix()}}
+{\footnotesize\ttfamily def pscfpp.\+Make\+Maker.\+Make\+Maker.\+src\+Suffix (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return suffix for source files: cpp or cc \end{DoxyVerb}
+ 
+
+Definition at line 92 of file Make\+Maker.\+py.
+
+
+
+References pscfpp.\+File\+Editor.\+File\+Editor.\+is\+Test, and pscfpp.\+Make\+Maker.\+Make\+Maker.\+is\+Test.
+
+
+
+Referenced by pscfpp.\+Make\+Maker.\+Make\+Maker.\+find().
+
+\mbox{\Hypertarget{classpscfpp_1_1MakeMaker_1_1MakeMaker_af867f65345ada41fa3f9304431f399f2}\label{classpscfpp_1_1MakeMaker_1_1MakeMaker_af867f65345ada41fa3f9304431f399f2}} 
+\index{pscfpp.MakeMaker.MakeMaker@{pscfpp.MakeMaker.MakeMaker}!find@{find}}
+\index{find@{find}!pscfpp.MakeMaker.MakeMaker@{pscfpp.MakeMaker.MakeMaker}}
+\doxyparagraph{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily def pscfpp.\+Make\+Maker.\+Make\+Maker.\+find (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find all header and source files in this directory.
+Note: Does not recursively descend into subdirectories
+\end{DoxyVerb}
+ ~\newline
+ 
+
+Definition at line 99 of file Make\+Maker.\+py.
+
+
+
+References pscfpp.\+Make\+Maker.\+Make\+Maker.\+dirname, pscfpp.\+Directory.\+Directory.\+dirs, pscfpp.\+Make\+Maker.\+Make\+Maker.\+dirs, Pscf\+::\+Symmetry\+Group$<$ Symmetry $>$.\+find(), pscfpp.\+Make\+Maker.\+Make\+Maker.\+find(), pscfpp.\+Make\+Maker.\+Make\+Maker.\+generation, pscfpp.\+Make\+Maker.\+Make\+Maker.\+global\+Include, pscfpp.\+Make\+Maker.\+Make\+Maker.\+has\+Hdrs, pscfpp.\+Make\+Maker.\+Make\+Maker.\+has\+Lib, pscfpp.\+Make\+Maker.\+Make\+Maker.\+has\+Srcs, pscfpp.\+Make\+Maker.\+Make\+Maker.\+hdrs, pscfpp.\+File\+Editor.\+File\+Editor.\+is\+Test, pscfpp.\+Make\+Maker.\+Make\+Maker.\+is\+Test, pscfpp.\+Make\+Maker.\+Make\+Maker.\+lib\+Name, pscfpp.\+Make\+Maker.\+Make\+Maker.\+lib\+Objs, pscfpp.\+Make\+Maker.\+Make\+Maker.\+link\+Objs, pscfpp.\+Make\+Maker.\+Make\+Maker.\+make\+Include(), pscfpp.\+Make\+Maker.\+Make\+Maker.\+make\+Path(), pscfpp.\+Make\+Maker.\+Make\+Maker.\+make\+Path\+From\+Src(), pscfpp.\+File.\+File.\+path, pscfpp.\+Directory.\+Directory.\+path, pscfpp.\+Make\+Maker.\+Make\+Maker.\+path, pscfpp.\+Make\+Maker.\+Make\+Maker.\+path\+From\+Src, pscfpp.\+Make\+Maker.\+Make\+Maker.\+path\+To\+Src, pscfpp.\+Make\+Maker.\+Make\+Maker.\+srcs, and pscfpp.\+Make\+Maker.\+Make\+Maker.\+src\+Suffix().
+
+
+
+Referenced by pscfpp.\+Make\+Maker.\+Make\+Maker.\+find().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Make\+Maker.\+py\end{DoxyCompactItemize}

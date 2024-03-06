@@ -1,0 +1,319 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classPscf_1_1UnitCell_3_012_01_4">
+<title>Pscf::UnitCell&lt; 2 &gt; Class Reference</title>
+<indexterm><primary>Pscf::UnitCell&lt; 2 &gt;</primary></indexterm>
+<para>
+
+<para>2D crystal unit cell. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;UnitCell.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Pscf::UnitCell&lt; 2 &gt;:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classPscf_1_1UnitCell_3_012_01_4.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Types    </title>
+        <itemizedlist>
+            <listitem><para>enum <link linkend="_classPscf_1_1UnitCell_3_012_01_4_1aef9fcf7153b54d7fa86fa47e46e67a3a">LatticeSystem</link> </para>
+
+<para>Enumeration of 2D lattice system types. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classPscf_1_1UnitCell_3_012_01_4_1a6b3903f1fbf8d2a3aa65482c66f6a6b8">UnitCell</link> ()</para>
+
+<para>Constructor. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Friends    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;int D&gt; </para><para>std::istream &amp; <link linkend="_classPscf_1_1UnitCell_3_012_01_4_1a4b9338c8fc39384c4e1c29aa2be75501">operator&gt;&gt;</link> (std::istream &amp;, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; D &gt; &amp;)</para>
+
+<para>istream input extractor for a UnitCell&lt;D&gt;. </para>
+</listitem>
+            <listitem><para>template&lt;int D&gt; </para><para>std::ostream &amp; <link linkend="_classPscf_1_1UnitCell_3_012_01_4_1ab3e85ce0506242801a8b2d3d31a8ef44">operator&lt;&lt;</link> (std::ostream &amp;, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; D &gt; const &amp;)</para>
+
+<para>ostream output inserter for a UnitCell&lt;D&gt;. </para>
+</listitem>
+            <listitem><para>template&lt;class Archive , int D&gt; </para><para>void <link linkend="_classPscf_1_1UnitCell_3_012_01_4_1a9fa758ba4478d138fe748ec88c94ffb4">serialize</link> (Archive &amp;, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; D &gt; &amp;, const unsigned int)</para>
+
+<para>Serialize to/from an archive. </para>
+</listitem>
+            <listitem><para>template&lt;int D&gt; </para><para>void <link linkend="_classPscf_1_1UnitCell_3_012_01_4_1a6567bd7351b8460086778ed2c8462ba1">readUnitCellHeader</link> (std::istream &amp;, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; D &gt; &amp;)</para>
+
+<para>Read UnitCell&lt;D&gt; from a field file header (fortran pscf format). </para>
+</listitem>
+            <listitem><para>template&lt;int D&gt; </para><para>void <link linkend="_classPscf_1_1UnitCell_3_012_01_4_1a871bc1b3739f5366689a8c7938d8dec7">writeUnitCellHeader</link> (std::ostream &amp;, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; D &gt; const &amp;)</para>
+
+<para>Write UnitCell&lt;D&gt; to a field file header (fortran pscf format). </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>2D crystal unit cell. </para>
+<para>
+Definition at line 180 of file UnitCell.h.</para>
+</section>
+<section>
+<title>Member Enumeration Documentation</title>
+<anchor xml:id="_classPscf_1_1UnitCell_3_012_01_4_1aef9fcf7153b54d7fa86fa47e46e67a3a"/>    <section>
+    <title>LatticeSystem</title>
+<indexterm><primary>LatticeSystem</primary><secondary>Pscf::UnitCell&lt; 2 &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::UnitCell&lt; 2 &gt;</primary><secondary>LatticeSystem</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_classPscf_1_1UnitCell">Pscf::UnitCell</link>&lt; 2 &gt;::<link linkend="_classPscf_1_1UnitCell_3_012_01_4_1aef9fcf7153b54d7fa86fa47e46e67a3a">LatticeSystem</link></computeroutput></para><para>
+
+<para>Enumeration of 2D lattice system types. </para>
+</para>
+<para>
+Definition at line 187 of file UnitCell.h.</para>
+</section>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classPscf_1_1UnitCell_3_012_01_4_1a6b3903f1fbf8d2a3aa65482c66f6a6b8"/>    <section>
+    <title>UnitCell()</title>
+<indexterm><primary>UnitCell</primary><secondary>Pscf::UnitCell&lt; 2 &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::UnitCell&lt; 2 &gt;</primary><secondary>UnitCell</secondary></indexterm>
+<para><computeroutput><link linkend="_classPscf_1_1UnitCell">Pscf::UnitCell</link>&lt; 2 &gt;::<link linkend="_classPscf_1_1UnitCell">UnitCell</link> ( )</computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+<para>
+Definition at line 19 of file UnitCell2.cpp.</para>
+</section>
+</section>
+<section>
+<title>Friends And Related Function Documentation</title>
+<anchor xml:id="_classPscf_1_1UnitCell_3_012_01_4_1a4b9338c8fc39384c4e1c29aa2be75501"/>    <section>
+    <title>operator&gt;&gt;</title>
+<indexterm><primary>operator&gt;&gt;</primary><secondary>Pscf::UnitCell&lt; 2 &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::UnitCell&lt; 2 &gt;</primary><secondary>operator&gt;&gt;</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>std::istream&amp; operator&gt;&gt; (std::istream &amp; in, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; D &gt; &amp; cell)<computeroutput>[friend]</computeroutput></computeroutput></para><para>
+
+<para>istream input extractor for a UnitCell&lt;D&gt;. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>cell</entry>
+                                <entry>
+<para>UnitCell&lt;D&gt; to be read </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified input stream </para>
+</formalpara>
+</para>
+<para>
+Definition at line 21 of file UnitCell.tpp.</para>
+    </section><anchor xml:id="_classPscf_1_1UnitCell_3_012_01_4_1ab3e85ce0506242801a8b2d3d31a8ef44"/>    <section>
+    <title>operator&lt;&lt;</title>
+<indexterm><primary>operator&lt;&lt;</primary><secondary>Pscf::UnitCell&lt; 2 &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::UnitCell&lt; 2 &gt;</primary><secondary>operator&lt;&lt;</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>std::ostream&amp; operator&lt;&lt; (std::ostream &amp; out, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; D &gt; const &amp; cell)<computeroutput>[friend]</computeroutput></computeroutput></para><para>
+
+<para>ostream output inserter for a UnitCell&lt;D&gt;. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>out</entry>
+                                <entry>
+<para>output stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>cell</entry>
+                                <entry>
+<para>UnitCell&lt;D&gt; to be written </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified output stream </para>
+</formalpara>
+</para>
+<para>
+Definition at line 34 of file UnitCell.tpp.</para>
+    </section><anchor xml:id="_classPscf_1_1UnitCell_3_012_01_4_1a9fa758ba4478d138fe748ec88c94ffb4"/>    <section>
+    <title>serialize</title>
+<indexterm><primary>serialize</primary><secondary>Pscf::UnitCell&lt; 2 &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::UnitCell&lt; 2 &gt;</primary><secondary>serialize</secondary></indexterm>
+<computeroutput>template&lt;class Archive , int D&gt; </computeroutput><para><computeroutput>void serialize (Archive &amp; ar, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; D &gt; &amp; cell, const unsigned int version)<computeroutput>[friend]</computeroutput></computeroutput></para><para>
+
+<para>Serialize to/from an archive. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>input or output archive </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>cell</entry>
+                                <entry>
+<para>UnitCell&lt;D&gt; object to be serialized </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>version</entry>
+                                <entry>
+<para>archive version id </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 48 of file UnitCell.tpp.</para>
+    </section><anchor xml:id="_classPscf_1_1UnitCell_3_012_01_4_1a6567bd7351b8460086778ed2c8462ba1"/>    <section>
+    <title>readUnitCellHeader</title>
+<indexterm><primary>readUnitCellHeader</primary><secondary>Pscf::UnitCell&lt; 2 &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::UnitCell&lt; 2 &gt;</primary><secondary>readUnitCellHeader</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>void readUnitCellHeader (std::istream &amp; in, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; D &gt; &amp; cell)<computeroutput>[friend]</computeroutput></computeroutput></para><para>
+
+<para>Read UnitCell&lt;D&gt; from a field file header (fortran pscf format). </para>
+</para>
+
+<para>If the unit cell has a non-null lattice system on entry, the value read from file must match this existing value, or this function throws an exception. If the lattice system is null on entry, the lattice system value is read from file. In either case, unit cell parameters (dimensions and angles) are updated using values read from file.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>cell</entry>
+                                <entry>
+<para>UnitCell&lt;D&gt; to be read </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 59 of file UnitCell.tpp.</para>
+    </section><anchor xml:id="_classPscf_1_1UnitCell_3_012_01_4_1a871bc1b3739f5366689a8c7938d8dec7"/>    <section>
+    <title>writeUnitCellHeader</title>
+<indexterm><primary>writeUnitCellHeader</primary><secondary>Pscf::UnitCell&lt; 2 &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::UnitCell&lt; 2 &gt;</primary><secondary>writeUnitCellHeader</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>void writeUnitCellHeader (std::ostream &amp; out, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; D &gt; const &amp; cell)<computeroutput>[friend]</computeroutput></computeroutput></para><para>
+
+<para>Write UnitCell&lt;D&gt; to a field file header (fortran pscf format). </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>out</entry>
+                                <entry>
+<para>output stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>cell</entry>
+                                <entry>
+<para>UnitCell&lt;D&gt; to be written </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 88 of file UnitCell.tpp.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+UnitCell.hUnitCell2.cpp</section>
+</section>

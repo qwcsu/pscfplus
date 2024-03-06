@@ -1,0 +1,271 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1DMatrix">
+<title>Util::DMatrix&lt; Data &gt; Class Template Reference</title>
+<indexterm><primary>Util::DMatrix&lt; Data &gt;</primary></indexterm>
+<para>
+
+<para>Dynamically allocated <link linkend="_classUtil_1_1Matrix">Matrix</link>. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;DMatrix.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Util::DMatrix&lt; Data &gt;:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classUtil_1_1DMatrix.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1DMatrix_1a915e63b4182c912a7b3e824d8294e1d5">DMatrix</link> ()</para>
+
+<para>Constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1DMatrix_1a667a0ef842f2ce01facd591f7f3352a1">DMatrix</link> (const <link linkend="_classUtil_1_1DMatrix">DMatrix</link>&lt; Data &gt; &amp;other)</para>
+
+<para>Copy constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1DMatrix">DMatrix</link>&lt; Data &gt; &amp; <link linkend="_classUtil_1_1DMatrix_1ad7f0ca9b56c6243c7d0a3afc308f61e9">operator=</link> (const <link linkend="_classUtil_1_1DMatrix">DMatrix</link>&lt; Data &gt; &amp;other)</para>
+
+<para>Assignment. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1DMatrix_1ae78ec62d306902cd9b1a0454cc032a69">~DMatrix</link> ()</para>
+
+<para>Destructor. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1DMatrix_1a8a6eee18a2a8458ccad0cd58df0d6846">allocate</link> (int <link linkend="_classUtil_1_1Matrix_1ac9dae1ea955cf776d7915e8126ffdf04">capacity1</link>, int <link linkend="_classUtil_1_1Matrix_1a479ba9941d5e43042e8382baa433c07f">capacity2</link>)</para>
+
+<para>Allocate memory for a matrix. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1DMatrix_1aa988d5f2e55572e801e44cdedba4ce69">deallocate</link> ()</para>
+
+<para>Deallocate the underlying memory block. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_classUtil_1_1DMatrix_1aa30c56e4ba49d083f22f0200219746cd">isAllocated</link> () const</para>
+
+<para>Return true if the <link linkend="_classUtil_1_1DMatrix">DMatrix</link> has been allocated, false otherwise. </para>
+</listitem>
+            <listitem><para>template&lt;class Archive &gt; </para><para>void <link linkend="_classUtil_1_1DMatrix_1a78d6c405fc3a05d4a154e19bcf9cd2e1">serialize</link> (Archive &amp;ar, const unsigned int version)</para>
+
+<para>Serialize a <link linkend="_classUtil_1_1DMatrix">DMatrix</link> to/from an Archive. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;typename Data&gt;
+class Util::DMatrix&lt; Data &gt;</title></simplesect>
+
+
+<para>Dynamically allocated <link linkend="_classUtil_1_1Matrix">Matrix</link>. </para>
+<para>
+Definition at line 24 of file DMatrix.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1DMatrix_1a915e63b4182c912a7b3e824d8294e1d5"/>    <section>
+    <title>DMatrix()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>DMatrix</primary><secondary>Util::DMatrix&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::DMatrix&lt; Data &gt;</primary><secondary>DMatrix</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1DMatrix">Util::DMatrix</link>&lt; Data &gt;::<link linkend="_classUtil_1_1DMatrix">DMatrix</link></computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+<para>
+Definition at line 94 of file DMatrix.h.</para>
+    </section><anchor xml:id="_classUtil_1_1DMatrix_1a667a0ef842f2ce01facd591f7f3352a1"/>    <section>
+    <title>DMatrix()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>DMatrix</primary><secondary>Util::DMatrix&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::DMatrix&lt; Data &gt;</primary><secondary>DMatrix</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1DMatrix">Util::DMatrix</link>&lt; Data &gt;::<link linkend="_classUtil_1_1DMatrix">DMatrix</link> (const <link linkend="_classUtil_1_1DMatrix">DMatrix</link>&lt; Data &gt; &amp; other)</computeroutput></para><para>
+
+<para>Copy constructor. </para>
+</para>
+<para>
+Definition at line 102 of file DMatrix.h.</para>
+    </section><anchor xml:id="_classUtil_1_1DMatrix_1ae78ec62d306902cd9b1a0454cc032a69"/>    <section>
+    <title>~DMatrix()</title>
+<indexterm><primary>~DMatrix</primary><secondary>Util::DMatrix&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::DMatrix&lt; Data &gt;</primary><secondary>~DMatrix</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1DMatrix">Util::DMatrix</link>&lt; Data &gt;::~<link linkend="_classUtil_1_1DMatrix">DMatrix</link></computeroutput></para><para>
+
+<para>Destructor. </para>
+</para>
+
+<para>Delete dynamically allocated C array. </para>
+<para>
+Definition at line 156 of file DMatrix.h.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1DMatrix_1ad7f0ca9b56c6243c7d0a3afc308f61e9"/>    <section>
+    <title>operator=()</title>
+<indexterm><primary>operator=</primary><secondary>Util::DMatrix&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::DMatrix&lt; Data &gt;</primary><secondary>operator=</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1DMatrix">DMatrix</link>&lt; Data &gt; &amp; <link linkend="_classUtil_1_1DMatrix">Util::DMatrix</link>&lt; Data &gt;::operator= (const <link linkend="_classUtil_1_1DMatrix">DMatrix</link>&lt; Data &gt; &amp; other)</computeroutput></para><para>
+
+<para>Assignment. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Exceptions                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry><link linkend="_classUtil_1_1Exception">Exception</link></entry>
+                                <entry>
+<para>if LHS and RHS dimensions do not match. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 121 of file DMatrix.h.</para>
+    </section><anchor xml:id="_classUtil_1_1DMatrix_1a8a6eee18a2a8458ccad0cd58df0d6846"/>    <section>
+    <title>allocate()</title>
+<indexterm><primary>allocate</primary><secondary>Util::DMatrix&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::DMatrix&lt; Data &gt;</primary><secondary>allocate</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1DMatrix">Util::DMatrix</link>&lt; Data &gt;::allocate (int capacity1, int capacity2)</computeroutput></para><para>
+
+<para>Allocate memory for a matrix. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>capacity1</entry>
+                                <entry>
+<para>number of rows (range of first index) </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>capacity2</entry>
+                                <entry>
+<para>number of columns (range of second index) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 170 of file DMatrix.h.</para>
+<para>
+Referenced by Pscf::Homogeneous::Mixture::computePhi(), and Pscf::ChiInteraction::readParameters().</para>
+    </section><anchor xml:id="_classUtil_1_1DMatrix_1aa988d5f2e55572e801e44cdedba4ce69"/>    <section>
+    <title>deallocate()</title>
+<indexterm><primary>deallocate</primary><secondary>Util::DMatrix&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::DMatrix&lt; Data &gt;</primary><secondary>deallocate</secondary></indexterm>
+<computeroutput>template&lt;class Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1DMatrix">Util::DMatrix</link>&lt; Data &gt;::deallocate</computeroutput></para><para>
+
+<para>Deallocate the underlying memory block. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Exceptions                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry><link linkend="_classUtil_1_1Exception">Exception</link></entry>
+                                <entry>
+<para>if the <link linkend="_classUtil_1_1DMatrix">DMatrix</link> is not allocated. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 188 of file DMatrix.h.</para>
+    </section><anchor xml:id="_classUtil_1_1DMatrix_1aa30c56e4ba49d083f22f0200219746cd"/>    <section>
+    <title>isAllocated()</title>
+<indexterm><primary>isAllocated</primary><secondary>Util::DMatrix&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::DMatrix&lt; Data &gt;</primary><secondary>isAllocated</secondary></indexterm>
+<computeroutput>template&lt;class Data &gt; </computeroutput><para><computeroutput>bool <link linkend="_classUtil_1_1DMatrix">Util::DMatrix</link>&lt; Data &gt;::isAllocated<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return true if the <link linkend="_classUtil_1_1DMatrix">DMatrix</link> has been allocated, false otherwise. </para>
+</para>
+<para>
+Definition at line 202 of file DMatrix.h.</para>
+<para>
+Referenced by Util::bcast(), Util::recv(), and Util::send().</para>
+    </section><anchor xml:id="_classUtil_1_1DMatrix_1a78d6c405fc3a05d4a154e19bcf9cd2e1"/>    <section>
+    <title>serialize()</title>
+<indexterm><primary>serialize</primary><secondary>Util::DMatrix&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::DMatrix&lt; Data &gt;</primary><secondary>serialize</secondary></indexterm>
+<computeroutput>template&lt;class Data &gt; </computeroutput><computeroutput>template&lt;class Archive &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1DMatrix">Util::DMatrix</link>&lt; Data &gt;::serialize (Archive &amp; ar, const unsigned int version)</computeroutput></para><para>
+
+<para>Serialize a <link linkend="_classUtil_1_1DMatrix">DMatrix</link> to/from an Archive. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>archive </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>version</entry>
+                                <entry>
+<para>archive version id </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 210 of file DMatrix.h.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+DMatrix.h</section>
+</section>

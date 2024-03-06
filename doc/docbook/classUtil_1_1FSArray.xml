@@ -1,0 +1,487 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1FSArray">
+<title>Util::FSArray&lt; Data, Capacity &gt; Class Template Reference</title>
+<indexterm><primary>Util::FSArray&lt; Data, Capacity &gt;</primary></indexterm>
+<para>
+
+<para>A fixed capacity (static) contiguous array with a variable logical size. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;FSArray.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1FSArray_1a28374df579a3876bef32480e1207470d">FSArray</link> ()</para>
+
+<para>Constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1FSArray_1a38231ded1875a70d61eee34500e15a58">FSArray</link> (const <link linkend="_classUtil_1_1FSArray">FSArray</link>&lt; Data, Capacity &gt; &amp;other)</para>
+
+<para>Copy constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1FSArray">FSArray</link>&lt; Data, Capacity &gt; &amp; <link linkend="_classUtil_1_1FSArray_1a9c2e9918825c71c1f5c9cf3467c19a45">operator=</link> (const <link linkend="_classUtil_1_1FSArray">FSArray</link>&lt; Data, Capacity &gt; &amp;other)</para>
+
+<para>Assignment, element by element. </para>
+</listitem>
+            <listitem><para>virtual <link linkend="_classUtil_1_1FSArray_1aff16f80f768df10b45d6ecccd2c0f112">~FSArray</link> ()</para>
+
+<para>Destructor. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1FSArray_1ace7d8e452881d24fea9fcf52e2679532">capacity</link> () const</para>
+
+<para>Return physical capacity of array. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1FSArray_1a468667c217ce52ab6229f1ae21b8f7f1">size</link> () const</para>
+
+<para>Return logical size of this array (i.e., number of elements). </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1FSArray_1a6c6452f7b7ccdcc9ff1f36bdcd55e4c1">begin</link> (<link linkend="_classUtil_1_1ArrayIterator">ArrayIterator</link>&lt; Data &gt; &amp;iterator)</para>
+
+<para>Set an <link linkend="_classUtil_1_1ArrayIterator">ArrayIterator</link> to the beginning of this container. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1FSArray_1aac0cdb2b0313f08f70062452f1cbbe5b">begin</link> (<link linkend="_classUtil_1_1ConstArrayIterator">ConstArrayIterator</link>&lt; Data &gt; &amp;iterator) const</para>
+
+<para>Set a <link linkend="_classUtil_1_1ConstArrayIterator">ConstArrayIterator</link> to the beginning of this container. </para>
+</listitem>
+            <listitem><para>Data &amp; <link linkend="_classUtil_1_1FSArray_1a04b469f944a47a443f04bbed2568d166">operator[]</link> (int i)</para>
+
+<para>Mimic C array subscripting. </para>
+</listitem>
+            <listitem><para>const Data &amp; <link linkend="_classUtil_1_1FSArray_1a7d4b401fec98dfc8f5e11cc190d19de8">operator[]</link> (int i) const</para>
+
+<para>Mimic C array subscripting. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1FSArray_1a74ef93eabdb54ff1453a3252019984bc">append</link> (const Data &amp;data)</para>
+
+<para>Append data to the end of the array. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1FSArray_1aa5da5b07a40d627d37e0dac7e8e39207">clear</link> ()</para>
+
+<para>Set logical size to zero. </para>
+</listitem>
+            <listitem><para>template&lt;class Archive &gt; </para><para>void <link linkend="_classUtil_1_1FSArray_1a0d4a8a4d8d87f270afd78d3bafed0051">serialize</link> (Archive &amp;ar, const unsigned int version)</para>
+
+<para>Serialize to/from an archive. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1FSArray_1a841622a1f6cc358fb72b69a4e8694ba2">packedSize</link> ()</para>
+
+<para>Packed size of <link linkend="_classUtil_1_1FSArray">FSArray</link> in a MemoryArchive, in bytes. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para>Data <link linkend="_classUtil_1_1FSArray_1a49fa4f65033d7bffda661a2aba978fe3">data_</link> [Capacity]</para>
+
+<para><link linkend="_classUtil_1_1Array">Array</link> of Data elements. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1FSArray_1ac52acf5996728db40a36c18138260b2a">size_</link></para>
+
+<para>Logical size of array (number of elements used). </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;typename Data, int Capacity&gt;
+class Util::FSArray&lt; Data, Capacity &gt;</title></simplesect>
+
+
+<para>A fixed capacity (static) contiguous array with a variable logical size. </para>
+
+
+
+<para>An <link linkend="_classUtil_1_1FSArray">FSArray</link> &lt; Data, Capacity &gt; is a wrapper for a statically allocated C array containing Capacity objects of type Data. An <link linkend="_classUtil_1_1FSArray">FSArray</link> has both a Capacity that is set at compile time, which is the physical size of the underlying C array, and a logical size, which is the number of contiguous elements (from 0 to one less than its size) that contain valid data. The size is initialized to zero, and can only be increased only by the <link linkend="_classUtil_1_1FSArray_1a74ef93eabdb54ff1453a3252019984bc">append()</link> method, which adds a new element to the end of the array. 
+<literallayout>&#160;&#xa;</literallayout>
+</para>
+
+<para>When compiled in debug mode (i.e., when NDEBUG is defined) the subcript operator [] checks that the index is less than the logical size, and not merely less than the capacity. </para>
+<para>
+Definition at line 37 of file FSArray.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1FSArray_1a28374df579a3876bef32480e1207470d"/>    <section>
+    <title>FSArray()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>FSArray</primary><secondary>Util::FSArray&lt; Data, Capacity &gt;</secondary></indexterm>
+<indexterm><primary>Util::FSArray&lt; Data, Capacity &gt;</primary><secondary>FSArray</secondary></indexterm>
+<computeroutput>template&lt;class Data , int Capacity&gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1FSArray">Util::FSArray</link>&lt; Data, Capacity &gt;::<link linkend="_classUtil_1_1FSArray">FSArray</link><computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+<para>
+Definition at line 148 of file FSArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1FSArray_1a38231ded1875a70d61eee34500e15a58"/>    <section>
+    <title>FSArray()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>FSArray</primary><secondary>Util::FSArray&lt; Data, Capacity &gt;</secondary></indexterm>
+<indexterm><primary>Util::FSArray&lt; Data, Capacity &gt;</primary><secondary>FSArray</secondary></indexterm>
+<computeroutput>template&lt;class Data , int Capacity&gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1FSArray">Util::FSArray</link>&lt; Data, Capacity &gt;::<link linkend="_classUtil_1_1FSArray">FSArray</link> (const <link linkend="_classUtil_1_1FSArray">FSArray</link>&lt; Data, Capacity &gt; &amp; other)</computeroutput></para><para>
+
+<para>Copy constructor. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>other</entry>
+                                <entry>
+<para>the <link linkend="_classUtil_1_1FSArray">FSArray</link> to be copied. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 158 of file FSArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1FSArray_1aff16f80f768df10b45d6ecccd2c0f112"/>    <section>
+    <title>~FSArray()</title>
+<indexterm><primary>~FSArray</primary><secondary>Util::FSArray&lt; Data, Capacity &gt;</secondary></indexterm>
+<indexterm><primary>Util::FSArray&lt; Data, Capacity &gt;</primary><secondary>~FSArray</secondary></indexterm>
+<computeroutput>template&lt;class Data , int Capacity&gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1FSArray">Util::FSArray</link>&lt; Data, Capacity &gt;::~<link linkend="_classUtil_1_1FSArray">FSArray</link><computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Destructor. </para>
+</para>
+<para>
+Definition at line 193 of file FSArray.h.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1FSArray_1a9c2e9918825c71c1f5c9cf3467c19a45"/>    <section>
+    <title>operator=()</title>
+<indexterm><primary>operator=</primary><secondary>Util::FSArray&lt; Data, Capacity &gt;</secondary></indexterm>
+<indexterm><primary>Util::FSArray&lt; Data, Capacity &gt;</primary><secondary>operator=</secondary></indexterm>
+<computeroutput>template&lt;class Data , int Capacity&gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1FSArray">FSArray</link>&lt; Data, Capacity &gt; &amp; <link linkend="_classUtil_1_1FSArray">Util::FSArray</link>&lt; Data, Capacity &gt;::operator= (const <link linkend="_classUtil_1_1FSArray">FSArray</link>&lt; Data, Capacity &gt; &amp; other)</computeroutput></para><para>
+
+<para>Assignment, element by element. </para>
+</para>
+
+<para>Capacity of LHS <link linkend="_classUtil_1_1FSArray">FSArray</link> must be &gt;= size of RHS <link linkend="_classUtil_1_1FSArray">FSArray</link>.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>other</entry>
+                                <entry>
+<para>the RHS <link linkend="_classUtil_1_1FSArray">FSArray</link> </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 175 of file FSArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1FSArray_1ace7d8e452881d24fea9fcf52e2679532"/>    <section>
+    <title>capacity()</title>
+<indexterm><primary>capacity</primary><secondary>Util::FSArray&lt; Data, Capacity &gt;</secondary></indexterm>
+<indexterm><primary>Util::FSArray&lt; Data, Capacity &gt;</primary><secondary>capacity</secondary></indexterm>
+<computeroutput>template&lt;class Data , int Capacity&gt; </computeroutput><para><computeroutput>int <link linkend="_classUtil_1_1FSArray">Util::FSArray</link>&lt; Data, Capacity &gt;::capacity</computeroutput></para><para>
+
+<para>Return physical capacity of array. </para>
+</para>
+<para>
+Definition at line 200 of file FSArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1FSArray_1a468667c217ce52ab6229f1ae21b8f7f1"/>    <section>
+    <title>size()</title>
+<indexterm><primary>size</primary><secondary>Util::FSArray&lt; Data, Capacity &gt;</secondary></indexterm>
+<indexterm><primary>Util::FSArray&lt; Data, Capacity &gt;</primary><secondary>size</secondary></indexterm>
+<computeroutput>template&lt;class Data , int Capacity&gt; </computeroutput><para><computeroutput>int <link linkend="_classUtil_1_1FSArray">Util::FSArray</link>&lt; Data, Capacity &gt;::size</computeroutput></para><para>
+
+<para>Return logical size of this array (i.e., number of elements). </para>
+</para>
+<para>
+Definition at line 207 of file FSArray.h.</para>
+<para>
+Referenced by Pscf::UnitCellBase&lt; 3 &gt;::setParameters().</para>
+    </section><anchor xml:id="_classUtil_1_1FSArray_1a6c6452f7b7ccdcc9ff1f36bdcd55e4c1"/>    <section>
+    <title>begin()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>begin</primary><secondary>Util::FSArray&lt; Data, Capacity &gt;</secondary></indexterm>
+<indexterm><primary>Util::FSArray&lt; Data, Capacity &gt;</primary><secondary>begin</secondary></indexterm>
+<computeroutput>template&lt;class Data , int Capacity&gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1FSArray">Util::FSArray</link>&lt; Data, Capacity &gt;::begin (<link linkend="_classUtil_1_1ArrayIterator">ArrayIterator</link>&lt; Data &gt; &amp; iterator)</computeroutput></para><para>
+
+<para>Set an <link linkend="_classUtil_1_1ArrayIterator">ArrayIterator</link> to the beginning of this container. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>iterator</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1ArrayIterator">ArrayIterator</link>, initialized on output. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 216 of file FSArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1FSArray_1aac0cdb2b0313f08f70062452f1cbbe5b"/>    <section>
+    <title>begin()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>begin</primary><secondary>Util::FSArray&lt; Data, Capacity &gt;</secondary></indexterm>
+<indexterm><primary>Util::FSArray&lt; Data, Capacity &gt;</primary><secondary>begin</secondary></indexterm>
+<computeroutput>template&lt;class Data , int Capacity&gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1FSArray">Util::FSArray</link>&lt; Data, Capacity &gt;::begin (<link linkend="_classUtil_1_1ConstArrayIterator">ConstArrayIterator</link>&lt; Data &gt; &amp; iterator) const</computeroutput></para><para>
+
+<para>Set a <link linkend="_classUtil_1_1ConstArrayIterator">ConstArrayIterator</link> to the beginning of this container. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>iterator</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1ConstArrayIterator">ConstArrayIterator</link>, initialized on output. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 226 of file FSArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1FSArray_1a04b469f944a47a443f04bbed2568d166"/>    <section>
+    <title>operator[]()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator[]</primary><secondary>Util::FSArray&lt; Data, Capacity &gt;</secondary></indexterm>
+<indexterm><primary>Util::FSArray&lt; Data, Capacity &gt;</primary><secondary>operator[]</secondary></indexterm>
+<computeroutput>template&lt;class Data , int Capacity&gt; </computeroutput><para><computeroutput>Data &amp; <link linkend="_classUtil_1_1FSArray">Util::FSArray</link>&lt; Data, Capacity &gt;::operator[] (int i)</computeroutput></para><para>
+
+<para>Mimic C array subscripting. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>i</entry>
+                                <entry>
+<para>array index </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to element i </para>
+</formalpara>
+</para>
+<para>
+Definition at line 236 of file FSArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1FSArray_1a7d4b401fec98dfc8f5e11cc190d19de8"/>    <section>
+    <title>operator[]()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator[]</primary><secondary>Util::FSArray&lt; Data, Capacity &gt;</secondary></indexterm>
+<indexterm><primary>Util::FSArray&lt; Data, Capacity &gt;</primary><secondary>operator[]</secondary></indexterm>
+<computeroutput>template&lt;class Data , int Capacity&gt; </computeroutput><para><computeroutput>const Data &amp; <link linkend="_classUtil_1_1FSArray">Util::FSArray</link>&lt; Data, Capacity &gt;::operator[] (int i) const</computeroutput></para><para>
+
+<para>Mimic C array subscripting. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>i</entry>
+                                <entry>
+<para>array index </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>const reference to element i </para>
+</formalpara>
+</para>
+<para>
+Definition at line 247 of file FSArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1FSArray_1a74ef93eabdb54ff1453a3252019984bc"/>    <section>
+    <title>append()</title>
+<indexterm><primary>append</primary><secondary>Util::FSArray&lt; Data, Capacity &gt;</secondary></indexterm>
+<indexterm><primary>Util::FSArray&lt; Data, Capacity &gt;</primary><secondary>append</secondary></indexterm>
+<computeroutput>template&lt;class Data , int Capacity&gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1FSArray">Util::FSArray</link>&lt; Data, Capacity &gt;::append (const Data &amp; data)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Append data to the end of the array. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>data</entry>
+                                <entry>
+<para>Data to add to end of array. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 258 of file FSArray.h.</para>
+<para>
+Referenced by Pscf::UnitCellBase&lt; 3 &gt;::parameters().</para>
+    </section><anchor xml:id="_classUtil_1_1FSArray_1aa5da5b07a40d627d37e0dac7e8e39207"/>    <section>
+    <title>clear()</title>
+<indexterm><primary>clear</primary><secondary>Util::FSArray&lt; Data, Capacity &gt;</secondary></indexterm>
+<indexterm><primary>Util::FSArray&lt; Data, Capacity &gt;</primary><secondary>clear</secondary></indexterm>
+<computeroutput>template&lt;class Data , int Capacity&gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1FSArray">Util::FSArray</link>&lt; Data, Capacity &gt;::clear<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Set logical size to zero. </para>
+</para>
+<para>
+Definition at line 271 of file FSArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1FSArray_1a0d4a8a4d8d87f270afd78d3bafed0051"/>    <section>
+    <title>serialize()</title>
+<indexterm><primary>serialize</primary><secondary>Util::FSArray&lt; Data, Capacity &gt;</secondary></indexterm>
+<indexterm><primary>Util::FSArray&lt; Data, Capacity &gt;</primary><secondary>serialize</secondary></indexterm>
+<computeroutput>template&lt;class Data , int Capacity&gt; </computeroutput><computeroutput>template&lt;class Archive &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1FSArray">Util::FSArray</link>&lt; Data, Capacity &gt;::serialize (Archive &amp; ar, const unsigned int version)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Serialize to/from an archive. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>archive </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>version</entry>
+                                <entry>
+<para>archive version id </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 279 of file FSArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1FSArray_1a841622a1f6cc358fb72b69a4e8694ba2"/>    <section>
+    <title>packedSize()</title>
+<indexterm><primary>packedSize</primary><secondary>Util::FSArray&lt; Data, Capacity &gt;</secondary></indexterm>
+<indexterm><primary>Util::FSArray&lt; Data, Capacity &gt;</primary><secondary>packedSize</secondary></indexterm>
+<computeroutput>template&lt;typename Data , int Capacity&gt; </computeroutput><para><computeroutput>int <link linkend="_classUtil_1_1FSArray">Util::FSArray</link>&lt; Data, Capacity &gt;::packedSize<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Packed size of <link linkend="_classUtil_1_1FSArray">FSArray</link> in a MemoryArchive, in bytes. </para>
+</para>
+<para>
+Definition at line 295 of file FSArray.h.</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classUtil_1_1FSArray_1a49fa4f65033d7bffda661a2aba978fe3"/>    <section>
+    <title>data_</title>
+<indexterm><primary>data_</primary><secondary>Util::FSArray&lt; Data, Capacity &gt;</secondary></indexterm>
+<indexterm><primary>Util::FSArray&lt; Data, Capacity &gt;</primary><secondary>data_</secondary></indexterm>
+<computeroutput>template&lt;typename Data , int Capacity&gt; </computeroutput><para><computeroutput>Data <link linkend="_classUtil_1_1FSArray">Util::FSArray</link>&lt; Data, Capacity &gt;::data_[Capacity]<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para><link linkend="_classUtil_1_1Array">Array</link> of Data elements. </para>
+</para>
+<para>
+Definition at line 137 of file FSArray.h.</para>
+<para>
+Referenced by Util::FSArray&lt; double, 6 &gt;::FSArray().</para>
+    </section><anchor xml:id="_classUtil_1_1FSArray_1ac52acf5996728db40a36c18138260b2a"/>    <section>
+    <title>size_</title>
+<indexterm><primary>size_</primary><secondary>Util::FSArray&lt; Data, Capacity &gt;</secondary></indexterm>
+<indexterm><primary>Util::FSArray&lt; Data, Capacity &gt;</primary><secondary>size_</secondary></indexterm>
+<computeroutput>template&lt;typename Data , int Capacity&gt; </computeroutput><para><computeroutput>int <link linkend="_classUtil_1_1FSArray">Util::FSArray</link>&lt; Data, Capacity &gt;::size_<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Logical size of array (number of elements used). </para>
+</para>
+<para>
+Definition at line 140 of file FSArray.h.</para>
+<para>
+Referenced by Util::FSArray&lt; double, 6 &gt;::FSArray(), and Util::FSArray&lt; double, 6 &gt;::operator=().</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+FSArray.h</section>
+</section>

@@ -1,0 +1,17 @@
+\hypertarget{group__Util__Signal__Module}{}\doxysubsection{Signals (Observer Pattern)}
+\label{group__Util__Signal__Module}\index{Signals (Observer Pattern)@{Signals (Observer Pattern)}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classUtil_1_1IFunctor}{Util\+::\+I\+Functor$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em Interface for functor that wraps a void function with one argument (abstract). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classUtil_1_1MethodFunctor}{Util\+::\+Method\+Functor$<$ Object, T $>$}}
+\begin{DoxyCompactList}\small\item\em Functor that wraps a one-\/argument class member function. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classUtil_1_1Signal}{Util\+::\+Signal$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classUtil_1_1Notifier}{Notifier}} (or subject) in the \mbox{\hyperlink{classUtil_1_1Observer}{Observer}} design pattern. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Classes used to implement the observer design pattern. A \mbox{\hyperlink{classUtil_1_1Signal}{Signal}} maintains a list of registered \char`\"{}observers\char`\"{} and \char`\"{}notifies\char`\"{} each observer when \mbox{\hyperlink{classUtil_1_1Signal_ae4c8adf7cb5ed88454aa2a2ca19d330b}{Signal\+::notify()}} is called, by calling a specific method of each observer object. Observers are stored internally as a list pointers to \mbox{\hyperlink{classUtil_1_1IFunctor}{I\+Functor}} objects, each of which can be called using an overloaded () operator. Each Functor is created as an instance of the Method\+Functor$<$\+T$>$, which stores a pointer to a T object and to pointer to a method of class T, and which uses the () operator to call a specific method of a specific object.
+
+The \mbox{\hyperlink{classUtil_1_1Signal}{Signal}}, \mbox{\hyperlink{classUtil_1_1IFunctor}{I\+Functor}}, and \mbox{\hyperlink{classUtil_1_1MethodFunctor}{Method\+Functor}} classes are all templates that take an optional parameter T that represents the typename of of a parameter that should be passed to the notify method of the Signal$<$\+T$>$, which then passes it to the void (const T\&) operator of the I\+Functor$<$\+T$>$. In each template, setting typename T to the the default value of T=void invokes a explicit specialization in which the void \mbox{\hyperlink{classUtil_1_1Signal_ae4c8adf7cb5ed88454aa2a2ca19d330b}{Signal$<$$>$\+::notify()}} and void I\+Functor$<$$>$\+::operator () take no parameters. An instance of Signal$<$$>$ is thus a signal that notifies observers by calling methods that take no arguments, while a Signal$<$\+T$>$ is a signal that notifies observers by calling methods with a signature void (const \&T). \mbox{\hyperlink{classUtil_1_1MethodFunctor}{Method\+Functor}} takes two template parameters\+: \mbox{\hyperlink{classUtil_1_1MethodFunctor}{Method\+Functor}}$<$Observer\+Class, typename T=void$>$ is a subclass of I\+Functor$<$\+T$>$ for which the (const T\&) operator calls a specific void (const T\&) methodof an observer of type class Observer\+Object. 

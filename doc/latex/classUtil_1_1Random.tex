@@ -1,0 +1,441 @@
+\hypertarget{classUtil_1_1Random}{}\doxysubsection{Util\+::Random Class Reference}
+\label{classUtil_1_1Random}\index{Util::Random@{Util::Random}}
+
+
+\mbox{\hyperlink{classUtil_1_1Random}{Random}} number generator.  
+
+
+
+
+{\ttfamily \#include $<$Random.\+h$>$}
+
+Inheritance diagram for Util\+::Random\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classUtil_1_1Random}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1Random_a6bad1de57bdb28a3f5ff19d2ef9930b6}{Random}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classUtil_1_1Random_a400d90d6f16a04474bf6a6878b2bc2d1}{$\sim$\+Random}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUtil_1_1Random_a0a5f4eb6295c6ca1845678f7bfa9e978}{read\+Parameters}} (std\+::istream \&in)
+\begin{DoxyCompactList}\small\item\em Read seed from file, initialize R\+NG. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUtil_1_1Random_a3aa452ad91349afc2c3c08b00db64510}{load\+Parameters}} (\mbox{\hyperlink{classUtil_1_1Serializable_ac6bcbf9bac926cada5a398804410e891}{Serializable\+::\+I\+Archive}} \&ar)
+\begin{DoxyCompactList}\small\item\em Load internal state from file. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUtil_1_1Random_aff18b17a0f4d6383d8ed881a8910b3b8}{save}} (\mbox{\hyperlink{classUtil_1_1Serializable_aca43a1eea5ec5f13189a57892a7a6d04}{Serializable\+::\+O\+Archive}} \&ar)
+\begin{DoxyCompactList}\small\item\em Save internal state to file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1Random_a0754dc23b091036f86564d2e5e6dd310}{set\+Seed}} (Seed\+Type \mbox{\hyperlink{classUtil_1_1Random_aee711f2c8b484046b148af207950c15d}{seed}})
+\begin{DoxyCompactList}\small\item\em Sets of random seed, and initializes random number generator. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classUtil_1_1Random_ae18b83cdfb994352aa0ac1efc451e6ae}{uniform}} ()
+\begin{DoxyCompactList}\small\item\em Return a random floating point number x, uniformly distributed in the range 0 $<$= x $<$ 1. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classUtil_1_1Random_a3beaaca47a8a62535b86b545061574ce}{uniform}} (double range1, double range2)
+\begin{DoxyCompactList}\small\item\em Return a random floating point number x, uniformly distributed in the range range1 $<$= x $<$ range2. \end{DoxyCompactList}\item 
+long \mbox{\hyperlink{classUtil_1_1Random_a2a7f4c20d13a3ea0bc532c224aecc40e}{uniform\+Int}} (long range1, long range2)
+\begin{DoxyCompactList}\small\item\em Return random long int x uniformly distributed in range1 $<$= x $<$ range2. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1Random_a1b4a276aed589e7c73f33e2d22a8ebb5}{get\+Point}} (double minR\mbox{[}$\,$\mbox{]}, double maxR\mbox{[}$\,$\mbox{]}, double r\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Generate a random point in a box. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classUtil_1_1Random_ae4056fb996c7072ec2a8815d818c7102}{gaussian}} (void)
+\begin{DoxyCompactList}\small\item\em Return a Gaussian random number with zero average and unit variance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1Random_a790b5d37cebb4f9d5bf711eba68d0948}{unit\+Vector}} (\mbox{\hyperlink{classUtil_1_1Vector}{Vector}} \&v)
+\begin{DoxyCompactList}\small\item\em Generate unit vector with uniform probability over the unit sphere. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUtil_1_1Random_aca8c04b92484ed95768827d6ad411e40}{metropolis}} (double ratio)
+\begin{DoxyCompactList}\small\item\em Metropolis algorithm for whether to accept a MC move. \end{DoxyCompactList}\item 
+long \mbox{\hyperlink{classUtil_1_1Random_af1c8a9ff314e8aa7d802da8e0b59792b}{draw\+From}} (double probability\mbox{[}$\,$\mbox{]}, long size)
+\begin{DoxyCompactList}\small\item\em Choose one of several outcomes with a specified set of probabilities. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Archive $>$ }\\void \mbox{\hyperlink{classUtil_1_1Random_afe74c68515ca9266a504360f96ca2e01}{serialize}} (Archive \&ar, const unsigned int version)
+\begin{DoxyCompactList}\small\item\em Serialize to/from an archive. \end{DoxyCompactList}\item 
+long \mbox{\hyperlink{classUtil_1_1Random_aee711f2c8b484046b148af207950c15d}{seed}} ()
+\begin{DoxyCompactList}\small\item\em Returns value of random seed (private member variable seed\+\_\+). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+
+
+\doxysubsubsection{Detailed Description}
+\mbox{\hyperlink{classUtil_1_1Random}{Random}} number generator. 
+
+This class provides functions that return several forms of random numbers, using an internal Mersenne-\/\+Twister random number generator. ~\newline
+
+
+The generator may be seeded either by reading a seed from file, using the \mbox{\hyperlink{classUtil_1_1ParamComposite_a6fc094b057fd9a21641b089f6f063b39}{read\+Param()}} method, or by using set\+Seed() to set or reset it explicitly. In either case, inputting a positive integer causes that value to be used as a seed, but inputting a value of 0 causes the use of a seed that is generated from the system clock.
+
+If the program is compiled with M\+PI, and M\+PI is initialized, then any automatically generated seed is also offset by a value that depends on the rank of the processor within the M\+PI world communicator, so that different processor use different seeds. 
+
+Definition at line 46 of file Random.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1Random_a6bad1de57bdb28a3f5ff19d2ef9930b6}\label{classUtil_1_1Random_a6bad1de57bdb28a3f5ff19d2ef9930b6}} 
+\index{Util::Random@{Util::Random}!Random@{Random}}
+\index{Random@{Random}!Util::Random@{Util::Random}}
+\doxyparagraph{\texorpdfstring{Random()}{Random()}}
+{\footnotesize\ttfamily Util\+::\+Random\+::\+Random (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+
+Definition at line 13 of file Random.\+cpp.
+
+
+
+References Util\+::\+Param\+Composite\+::set\+Class\+Name().
+
+\mbox{\Hypertarget{classUtil_1_1Random_a400d90d6f16a04474bf6a6878b2bc2d1}\label{classUtil_1_1Random_a400d90d6f16a04474bf6a6878b2bc2d1}} 
+\index{Util::Random@{Util::Random}!````~Random@{$\sim$Random}}
+\index{````~Random@{$\sim$Random}!Util::Random@{Util::Random}}
+\doxyparagraph{\texorpdfstring{$\sim$Random()}{~Random()}}
+{\footnotesize\ttfamily Util\+::\+Random\+::$\sim$\+Random (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+Definition at line 22 of file Random.\+cpp.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1Random_a0a5f4eb6295c6ca1845678f7bfa9e978}\label{classUtil_1_1Random_a0a5f4eb6295c6ca1845678f7bfa9e978}} 
+\index{Util::Random@{Util::Random}!readParameters@{readParameters}}
+\index{readParameters@{readParameters}!Util::Random@{Util::Random}}
+\doxyparagraph{\texorpdfstring{readParameters()}{readParameters()}}
+{\footnotesize\ttfamily void Util\+::\+Random\+::read\+Parameters (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Read seed from file, initialize R\+NG. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & input stream. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classUtil_1_1ParamComposite_a172a3a656b5829c8d758424ad09a22a6}{Util\+::\+Param\+Composite}}.
+
+
+
+Definition at line 28 of file Random.\+cpp.
+
+
+
+References set\+Seed().
+
+\mbox{\Hypertarget{classUtil_1_1Random_a3aa452ad91349afc2c3c08b00db64510}\label{classUtil_1_1Random_a3aa452ad91349afc2c3c08b00db64510}} 
+\index{Util::Random@{Util::Random}!loadParameters@{loadParameters}}
+\index{loadParameters@{loadParameters}!Util::Random@{Util::Random}}
+\doxyparagraph{\texorpdfstring{loadParameters()}{loadParameters()}}
+{\footnotesize\ttfamily void Util\+::\+Random\+::load\+Parameters (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1Serializable_ac6bcbf9bac926cada5a398804410e891}{Serializable\+::\+I\+Archive}} \&}]{ar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Load internal state from file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & input/loading archive \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classUtil_1_1ParamComposite_adec07dcba0895ba69463147314cde7ce}{Util\+::\+Param\+Composite}}.
+
+
+
+Definition at line 37 of file Random.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1Random_aff18b17a0f4d6383d8ed881a8910b3b8}\label{classUtil_1_1Random_aff18b17a0f4d6383d8ed881a8910b3b8}} 
+\index{Util::Random@{Util::Random}!save@{save}}
+\index{save@{save}!Util::Random@{Util::Random}}
+\doxyparagraph{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily void Util\+::\+Random\+::save (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1Serializable_aca43a1eea5ec5f13189a57892a7a6d04}{Serializable\+::\+O\+Archive}} \&}]{ar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Save internal state to file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & output/saving archive \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classUtil_1_1ParamComposite_a3c430a4e31a9573eadb06ab89d3bf780}{Util\+::\+Param\+Composite}}.
+
+
+
+Definition at line 46 of file Random.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1Random_a0754dc23b091036f86564d2e5e6dd310}\label{classUtil_1_1Random_a0754dc23b091036f86564d2e5e6dd310}} 
+\index{Util::Random@{Util::Random}!setSeed@{setSeed}}
+\index{setSeed@{setSeed}!Util::Random@{Util::Random}}
+\doxyparagraph{\texorpdfstring{setSeed()}{setSeed()}}
+{\footnotesize\ttfamily void Util\+::\+Random\+::set\+Seed (\begin{DoxyParamCaption}\item[{Random\+::\+Seed\+Type}]{seed }\end{DoxyParamCaption})}
+
+
+
+Sets of random seed, and initializes random number generator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seed} & value for random seed (private member variable idum) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 57 of file Random.\+cpp.
+
+
+
+References seed(), and set\+Seed().
+
+
+
+Referenced by read\+Parameters(), and set\+Seed().
+
+\mbox{\Hypertarget{classUtil_1_1Random_ae18b83cdfb994352aa0ac1efc451e6ae}\label{classUtil_1_1Random_ae18b83cdfb994352aa0ac1efc451e6ae}} 
+\index{Util::Random@{Util::Random}!uniform@{uniform}}
+\index{uniform@{uniform}!Util::Random@{Util::Random}}
+\doxyparagraph{\texorpdfstring{uniform()}{uniform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double Util\+::\+Random\+::uniform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return a random floating point number x, uniformly distributed in the range 0 $<$= x $<$ 1. 
+
+\begin{DoxyReturn}{Returns}
+random double precision number 
+\end{DoxyReturn}
+
+
+Definition at line 203 of file Random.\+h.
+
+
+
+Referenced by draw\+From(), gaussian(), get\+Point(), metropolis(), uniform\+Int(), and unit\+Vector().
+
+\mbox{\Hypertarget{classUtil_1_1Random_a3beaaca47a8a62535b86b545061574ce}\label{classUtil_1_1Random_a3beaaca47a8a62535b86b545061574ce}} 
+\index{Util::Random@{Util::Random}!uniform@{uniform}}
+\index{uniform@{uniform}!Util::Random@{Util::Random}}
+\doxyparagraph{\texorpdfstring{uniform()}{uniform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily double Util\+::\+Random\+::uniform (\begin{DoxyParamCaption}\item[{double}]{range1,  }\item[{double}]{range2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return a random floating point number x, uniformly distributed in the range range1 $<$= x $<$ range2. 
+
+\begin{DoxyReturn}{Returns}
+random double precision number 
+\end{DoxyReturn}
+
+
+Definition at line 212 of file Random.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Random_a2a7f4c20d13a3ea0bc532c224aecc40e}\label{classUtil_1_1Random_a2a7f4c20d13a3ea0bc532c224aecc40e}} 
+\index{Util::Random@{Util::Random}!uniformInt@{uniformInt}}
+\index{uniformInt@{uniformInt}!Util::Random@{Util::Random}}
+\doxyparagraph{\texorpdfstring{uniformInt()}{uniformInt()}}
+{\footnotesize\ttfamily long Util\+::\+Random\+::uniform\+Int (\begin{DoxyParamCaption}\item[{long}]{range1,  }\item[{long}]{range2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return random long int x uniformly distributed in range1 $<$= x $<$ range2. 
+
+Parameters range1 and range2 must be within the range of long integers.
+
+\begin{DoxyReturn}{Returns}
+random integer 
+\end{DoxyReturn}
+
+
+Definition at line 224 of file Random.\+h.
+
+
+
+References uniform().
+
+\mbox{\Hypertarget{classUtil_1_1Random_a1b4a276aed589e7c73f33e2d22a8ebb5}\label{classUtil_1_1Random_a1b4a276aed589e7c73f33e2d22a8ebb5}} 
+\index{Util::Random@{Util::Random}!getPoint@{getPoint}}
+\index{getPoint@{getPoint}!Util::Random@{Util::Random}}
+\doxyparagraph{\texorpdfstring{getPoint()}{getPoint()}}
+{\footnotesize\ttfamily void Util\+::\+Random\+::get\+Point (\begin{DoxyParamCaption}\item[{double}]{minR\mbox{[}$\,$\mbox{]},  }\item[{double}]{maxR\mbox{[}$\,$\mbox{]},  }\item[{double}]{r\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Generate a random point in a box. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min\+R\mbox{[}$\,$\mbox{]}} & array of minimum coordinate values along three axes \\
+\hline
+{\em max\+R\mbox{[}$\,$\mbox{]}} & array of maximum coordinate values along three axes \\
+\hline
+{\em r\mbox{[}$\,$\mbox{]}} & random position such that minR\mbox{[}axis\mbox{]} $<$ r\mbox{[}axis\mbox{]} $<$ maxR\mbox{[}axis\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 251 of file Random.\+h.
+
+
+
+References uniform().
+
+\mbox{\Hypertarget{classUtil_1_1Random_ae4056fb996c7072ec2a8815d818c7102}\label{classUtil_1_1Random_ae4056fb996c7072ec2a8815d818c7102}} 
+\index{Util::Random@{Util::Random}!gaussian@{gaussian}}
+\index{gaussian@{gaussian}!Util::Random@{Util::Random}}
+\doxyparagraph{\texorpdfstring{gaussian()}{gaussian()}}
+{\footnotesize\ttfamily double Util\+::\+Random\+::gaussian (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Return a Gaussian random number with zero average and unit variance. 
+
+\begin{DoxyReturn}{Returns}
+Gaussian distributed random number. 
+\end{DoxyReturn}
+
+
+Definition at line 92 of file Random.\+cpp.
+
+
+
+References uniform().
+
+
+
+Referenced by Util\+::\+Ar1\+Process\+::init(), and Util\+::\+Ar1\+Process\+::operator()().
+
+\mbox{\Hypertarget{classUtil_1_1Random_a790b5d37cebb4f9d5bf711eba68d0948}\label{classUtil_1_1Random_a790b5d37cebb4f9d5bf711eba68d0948}} 
+\index{Util::Random@{Util::Random}!unitVector@{unitVector}}
+\index{unitVector@{unitVector}!Util::Random@{Util::Random}}
+\doxyparagraph{\texorpdfstring{unitVector()}{unitVector()}}
+{\footnotesize\ttfamily void Util\+::\+Random\+::unit\+Vector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1Vector}{Vector}} \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Generate unit vector with uniform probability over the unit sphere. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & random unit vector (upon return) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 122 of file Random.\+cpp.
+
+
+
+References uniform().
+
+\mbox{\Hypertarget{classUtil_1_1Random_aca8c04b92484ed95768827d6ad411e40}\label{classUtil_1_1Random_aca8c04b92484ed95768827d6ad411e40}} 
+\index{Util::Random@{Util::Random}!metropolis@{metropolis}}
+\index{metropolis@{metropolis}!Util::Random@{Util::Random}}
+\doxyparagraph{\texorpdfstring{metropolis()}{metropolis()}}
+{\footnotesize\ttfamily bool Util\+::\+Random\+::metropolis (\begin{DoxyParamCaption}\item[{double}]{ratio }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Metropolis algorithm for whether to accept a MC move. 
+
+If ratio $>$ 1, this function return true. If 0 $<$ ratio $<$ 1, this function returns true with probability ratio, and false with probability 1 -\/ ratio.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ratio} & ratio of old to new equilibrium weights \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if accepted, false if rejected 
+\end{DoxyReturn}
+
+
+Definition at line 260 of file Random.\+h.
+
+
+
+References uniform().
+
+\mbox{\Hypertarget{classUtil_1_1Random_af1c8a9ff314e8aa7d802da8e0b59792b}\label{classUtil_1_1Random_af1c8a9ff314e8aa7d802da8e0b59792b}} 
+\index{Util::Random@{Util::Random}!drawFrom@{drawFrom}}
+\index{drawFrom@{drawFrom}!Util::Random@{Util::Random}}
+\doxyparagraph{\texorpdfstring{drawFrom()}{drawFrom()}}
+{\footnotesize\ttfamily long Util\+::\+Random\+::draw\+From (\begin{DoxyParamCaption}\item[{double}]{probability\mbox{[}$\,$\mbox{]},  }\item[{long}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Choose one of several outcomes with a specified set of probabilities. 
+
+Precondition\+: Elements of probability array must add to 1.\+0
+
+
+\begin{DoxyParams}{Parameters}
+{\em probability\mbox{[}$\,$\mbox{]}} & array of probabilities, for indices 0,...,size-\/1 \\
+\hline
+{\em size} & number of options\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+random integer index of element of probability\mbox{[}\mbox{]} array 
+\end{DoxyReturn}
+
+
+Definition at line 237 of file Random.\+h.
+
+
+
+References uniform().
+
+\mbox{\Hypertarget{classUtil_1_1Random_afe74c68515ca9266a504360f96ca2e01}\label{classUtil_1_1Random_afe74c68515ca9266a504360f96ca2e01}} 
+\index{Util::Random@{Util::Random}!serialize@{serialize}}
+\index{serialize@{serialize}!Util::Random@{Util::Random}}
+\doxyparagraph{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$class Archive $>$ \\
+void Util\+::\+Random\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{ar,  }\item[{const unsigned int}]{version }\end{DoxyParamCaption})}
+
+
+
+Serialize to/from an archive. 
+
+
+
+Definition at line 284 of file Random.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Random_aee711f2c8b484046b148af207950c15d}\label{classUtil_1_1Random_aee711f2c8b484046b148af207950c15d}} 
+\index{Util::Random@{Util::Random}!seed@{seed}}
+\index{seed@{seed}!Util::Random@{Util::Random}}
+\doxyparagraph{\texorpdfstring{seed()}{seed()}}
+{\footnotesize\ttfamily long Util\+::\+Random\+::seed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns value of random seed (private member variable seed\+\_\+). 
+
+\begin{DoxyReturn}{Returns}
+value of random number generator seed. 
+\end{DoxyReturn}
+
+
+Definition at line 277 of file Random.\+h.
+
+
+
+Referenced by set\+Seed().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Random.\+h\item 
+Random.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,279 @@
+\hypertarget{classUtil_1_1Matrix}{}\doxysubsection{Util\+::Matrix$<$ Data $>$ Class Template Reference}
+\label{classUtil_1_1Matrix}\index{Util::Matrix$<$ Data $>$@{Util::Matrix$<$ Data $>$}}
+
+
+Two-\/dimensional array container template (abstract).  
+
+
+
+
+{\ttfamily \#include $<$Matrix.\+h$>$}
+
+Inheritance diagram for Util\+::Matrix$<$ Data $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classUtil_1_1Matrix}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classUtil_1_1Matrix_a7d92f340e4123a6a45ae8d77c74244a3}{$\sim$\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUtil_1_1Matrix_ac9dae1ea955cf776d7915e8126ffdf04}{capacity1}} () const
+\begin{DoxyCompactList}\small\item\em Get number of rows (range of the first array index). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUtil_1_1Matrix_a479ba9941d5e43042e8382baa433c07f}{capacity2}} () const
+\begin{DoxyCompactList}\small\item\em Get number of columns (range of the second array index). \end{DoxyCompactList}\item 
+const Data \& \mbox{\hyperlink{classUtil_1_1Matrix_a2b0d5688f3c4d72fb6470ff305842579}{operator()}} (int i, int j) const
+\begin{DoxyCompactList}\small\item\em Return element (i,j) of matrix by const reference. \end{DoxyCompactList}\item 
+Data \& \mbox{\hyperlink{classUtil_1_1Matrix_a07e47001d8275fb7ad593bd195ba3906}{operator()}} (int i, int j)
+\begin{DoxyCompactList}\small\item\em Return element (i,j) of matrix by reference. \end{DoxyCompactList}\item 
+Data $\ast$ \mbox{\hyperlink{classUtil_1_1Matrix_a80af4092dd146c5c16bb3f09cd763ce5}{c\+Array}} ()
+\begin{DoxyCompactList}\small\item\em Return pointer to underlying one-\/dimensional C array. \end{DoxyCompactList}\item 
+const Data $\ast$ \mbox{\hyperlink{classUtil_1_1Matrix_adf0fa8bfcff6c3a5fd92b51a965f8665}{c\+Array}} () const
+\begin{DoxyCompactList}\small\item\em Return pointer to const to underlying one-\/dimensional C array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1Matrix_ab405e09dfdf9c17a7ca3ba09dc80d9a0}{Matrix}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Data $\ast$ \mbox{\hyperlink{classUtil_1_1Matrix_a58613069a43b06ca55b00760e9f2a025}{data\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Pointer to 1D C array of all elements. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUtil_1_1Matrix_ab2aa000328441c9173452ebed40a52b9}{capacity1\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Number of rows (range of first index). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUtil_1_1Matrix_a6c524474706b1819f6f20f245c5bbf85}{capacity2\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Number of columns (range of first index). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$typename Data$>$\newline
+class Util\+::\+Matrix$<$ Data $>$}
+
+Two-\/dimensional array container template (abstract). 
+
+An \mbox{\hyperlink{classUtil_1_1Matrix}{Matrix}} object A is a two-\/dimensional array in which the operator A(i, j) returns a reference to element in column j of row i.
+
+The memory for a \mbox{\hyperlink{classUtil_1_1Matrix}{Matrix}} is stored in a single one-\/dimensional C array, in which each row is stored as a consecutive block.
+
+Class \mbox{\hyperlink{classUtil_1_1Matrix}{Matrix}} is an abstract class because it cannot allocate memory. Concrete subclasses include \mbox{\hyperlink{classUtil_1_1DMatrix}{D\+Matrix}} and \mbox{\hyperlink{classUtil_1_1FMatrix}{F\+Matrix}}. 
+
+Definition at line 31 of file Matrix.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1Matrix_a7d92f340e4123a6a45ae8d77c74244a3}\label{classUtil_1_1Matrix_a7d92f340e4123a6a45ae8d77c74244a3}} 
+\index{Util::Matrix$<$ Data $>$@{Util::Matrix$<$ Data $>$}!````~Matrix@{$\sim$Matrix}}
+\index{````~Matrix@{$\sim$Matrix}!Util::Matrix$<$ Data $>$@{Util::Matrix$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{$\sim$Matrix()}{~Matrix()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+\mbox{\hyperlink{classUtil_1_1Matrix}{Util\+::\+Matrix}}$<$ Data $>$\+::$\sim$\mbox{\hyperlink{classUtil_1_1Matrix}{Matrix}}\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+Definition at line 129 of file Matrix.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Matrix_ab405e09dfdf9c17a7ca3ba09dc80d9a0}\label{classUtil_1_1Matrix_ab405e09dfdf9c17a7ca3ba09dc80d9a0}} 
+\index{Util::Matrix$<$ Data $>$@{Util::Matrix$<$ Data $>$}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Util::Matrix$<$ Data $>$@{Util::Matrix$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{Matrix()}{Matrix()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+\mbox{\hyperlink{classUtil_1_1Matrix}{Util\+::\+Matrix}}$<$ Data $>$\+::\mbox{\hyperlink{classUtil_1_1Matrix}{Matrix}}\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Default constructor. 
+
+Constructor (protected).
+
+Protected to prevent direct instantiation. 
+
+Definition at line 119 of file Matrix.\+h.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1Matrix_ac9dae1ea955cf776d7915e8126ffdf04}\label{classUtil_1_1Matrix_ac9dae1ea955cf776d7915e8126ffdf04}} 
+\index{Util::Matrix$<$ Data $>$@{Util::Matrix$<$ Data $>$}!capacity1@{capacity1}}
+\index{capacity1@{capacity1}!Util::Matrix$<$ Data $>$@{Util::Matrix$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{capacity1()}{capacity1()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+int \mbox{\hyperlink{classUtil_1_1Matrix}{Util\+::\+Matrix}}$<$ Data $>$\+::capacity1\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get number of rows (range of the first array index). 
+
+
+
+Definition at line 136 of file Matrix.\+h.
+
+
+
+Referenced by Util\+::bcast(), Pscf\+::\+Lu\+Solver\+::compute\+L\+U(), Util\+::recv(), and Util\+::send().
+
+\mbox{\Hypertarget{classUtil_1_1Matrix_a479ba9941d5e43042e8382baa433c07f}\label{classUtil_1_1Matrix_a479ba9941d5e43042e8382baa433c07f}} 
+\index{Util::Matrix$<$ Data $>$@{Util::Matrix$<$ Data $>$}!capacity2@{capacity2}}
+\index{capacity2@{capacity2}!Util::Matrix$<$ Data $>$@{Util::Matrix$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{capacity2()}{capacity2()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+int \mbox{\hyperlink{classUtil_1_1Matrix}{Util\+::\+Matrix}}$<$ Data $>$\+::capacity2\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get number of columns (range of the second array index). 
+
+
+
+Definition at line 143 of file Matrix.\+h.
+
+
+
+Referenced by Util\+::bcast(), Pscf\+::\+Lu\+Solver\+::compute\+L\+U(), Util\+::recv(), and Util\+::send().
+
+\mbox{\Hypertarget{classUtil_1_1Matrix_a2b0d5688f3c4d72fb6470ff305842579}\label{classUtil_1_1Matrix_a2b0d5688f3c4d72fb6470ff305842579}} 
+\index{Util::Matrix$<$ Data $>$@{Util::Matrix$<$ Data $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!Util::Matrix$<$ Data $>$@{Util::Matrix$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+const Data \& \mbox{\hyperlink{classUtil_1_1Matrix}{Util\+::\+Matrix}}$<$ Data $>$\+::operator() (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return element (i,j) of matrix by const reference. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & row index. \\
+\hline
+{\em j} & column index. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 150 of file Matrix.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Matrix_a07e47001d8275fb7ad593bd195ba3906}\label{classUtil_1_1Matrix_a07e47001d8275fb7ad593bd195ba3906}} 
+\index{Util::Matrix$<$ Data $>$@{Util::Matrix$<$ Data $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!Util::Matrix$<$ Data $>$@{Util::Matrix$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+Data \& \mbox{\hyperlink{classUtil_1_1Matrix}{Util\+::\+Matrix}}$<$ Data $>$\+::operator() (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return element (i,j) of matrix by reference. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & row index. \\
+\hline
+{\em j} & column index. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 164 of file Matrix.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Matrix_a80af4092dd146c5c16bb3f09cd763ce5}\label{classUtil_1_1Matrix_a80af4092dd146c5c16bb3f09cd763ce5}} 
+\index{Util::Matrix$<$ Data $>$@{Util::Matrix$<$ Data $>$}!cArray@{cArray}}
+\index{cArray@{cArray}!Util::Matrix$<$ Data $>$@{Util::Matrix$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{cArray()}{cArray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+const Data $\ast$ \mbox{\hyperlink{classUtil_1_1Matrix}{Util\+::\+Matrix}}$<$ Data $>$\+::c\+Array\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return pointer to underlying one-\/dimensional C array. 
+
+
+
+Definition at line 178 of file Matrix.\+h.
+
+
+
+Referenced by Pscf\+::\+Lu\+Solver\+::inverse().
+
+\mbox{\Hypertarget{classUtil_1_1Matrix_adf0fa8bfcff6c3a5fd92b51a965f8665}\label{classUtil_1_1Matrix_adf0fa8bfcff6c3a5fd92b51a965f8665}} 
+\index{Util::Matrix$<$ Data $>$@{Util::Matrix$<$ Data $>$}!cArray@{cArray}}
+\index{cArray@{cArray}!Util::Matrix$<$ Data $>$@{Util::Matrix$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{cArray()}{cArray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+const Data$\ast$ \mbox{\hyperlink{classUtil_1_1Matrix}{Util\+::\+Matrix}}$<$ Data $>$\+::c\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return pointer to const to underlying one-\/dimensional C array. 
+
+
+
+\doxysubsubsection{Member Data Documentation}
+\mbox{\Hypertarget{classUtil_1_1Matrix_a58613069a43b06ca55b00760e9f2a025}\label{classUtil_1_1Matrix_a58613069a43b06ca55b00760e9f2a025}} 
+\index{Util::Matrix$<$ Data $>$@{Util::Matrix$<$ Data $>$}!data\_@{data\_}}
+\index{data\_@{data\_}!Util::Matrix$<$ Data $>$@{Util::Matrix$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{data\_}{data\_}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+Data$\ast$ \mbox{\hyperlink{classUtil_1_1Matrix}{Util\+::\+Matrix}}$<$ Data $>$\+::data\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Pointer to 1D C array of all elements. 
+
+
+
+Definition at line 84 of file Matrix.\+h.
+
+
+
+Referenced by Util\+::\+D\+Matrix$<$ Type $>$\+::\+D\+Matrix(), and Util\+::\+D\+Matrix$<$ Type $>$\+::operator=().
+
+\mbox{\Hypertarget{classUtil_1_1Matrix_ab2aa000328441c9173452ebed40a52b9}\label{classUtil_1_1Matrix_ab2aa000328441c9173452ebed40a52b9}} 
+\index{Util::Matrix$<$ Data $>$@{Util::Matrix$<$ Data $>$}!capacity1\_@{capacity1\_}}
+\index{capacity1\_@{capacity1\_}!Util::Matrix$<$ Data $>$@{Util::Matrix$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{capacity1\_}{capacity1\_}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+int \mbox{\hyperlink{classUtil_1_1Matrix}{Util\+::\+Matrix}}$<$ Data $>$\+::capacity1\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Number of rows (range of first index). 
+
+
+
+Definition at line 87 of file Matrix.\+h.
+
+
+
+Referenced by Util\+::\+D\+Matrix$<$ Type $>$\+::\+D\+Matrix(), and Util\+::\+D\+Matrix$<$ Type $>$\+::operator=().
+
+\mbox{\Hypertarget{classUtil_1_1Matrix_a6c524474706b1819f6f20f245c5bbf85}\label{classUtil_1_1Matrix_a6c524474706b1819f6f20f245c5bbf85}} 
+\index{Util::Matrix$<$ Data $>$@{Util::Matrix$<$ Data $>$}!capacity2\_@{capacity2\_}}
+\index{capacity2\_@{capacity2\_}!Util::Matrix$<$ Data $>$@{Util::Matrix$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{capacity2\_}{capacity2\_}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+int \mbox{\hyperlink{classUtil_1_1Matrix}{Util\+::\+Matrix}}$<$ Data $>$\+::capacity2\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Number of columns (range of first index). 
+
+
+
+Definition at line 90 of file Matrix.\+h.
+
+
+
+Referenced by Util\+::\+D\+Matrix$<$ Type $>$\+::\+D\+Matrix(), and Util\+::\+D\+Matrix$<$ Type $>$\+::operator=().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Matrix.\+h\end{DoxyCompactItemize}

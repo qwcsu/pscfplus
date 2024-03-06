@@ -1,0 +1,339 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classPscf_1_1PropagatorTmpl">
+<title>Pscf::PropagatorTmpl&lt; TP &gt; Class Template Reference</title>
+<indexterm><primary>Pscf::PropagatorTmpl&lt; TP &gt;</primary></indexterm>
+<para>
+
+<para>Template for propagator classes. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;PropagatorTmpl.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classPscf_1_1PropagatorTmpl_1ae10622e3f32581d329805356b41b73a5">PropagatorTmpl</link> ()</para>
+
+<para>Constructor. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect><title>Mutators</title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_classPscf_1_1PropagatorTmpl_1a5590bab1688380936fab98fadae752f8">setDirectionId</link> (int <link linkend="_classPscf_1_1PropagatorTmpl_1a6502dd072870ebc485a2a360ec93f136">directionId</link>)</para>
+
+<para>Associate this propagator with a direction index. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classPscf_1_1PropagatorTmpl_1adeac58f52fe90fe96c0ffe9e485e75ce">setPartner</link> (const TP &amp;<link linkend="_classPscf_1_1PropagatorTmpl_1a24e0cc27574f4a7953e2cebbab398efc">partner</link>)</para>
+
+<para>Set the partner of this propagator. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classPscf_1_1PropagatorTmpl_1a17956f30957a7dde5234bb906b0d67ac">addSource</link> (const TP &amp;<link linkend="_classPscf_1_1PropagatorTmpl_1a26b1abc2d10158da46d49fba5dc8fe5f">source</link>)</para>
+
+<para>Add a propagator to the list of sources for this one. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classPscf_1_1PropagatorTmpl_1a05315758e7567ff08d1aea4166dbbc93">setIsSolved</link> (bool <link linkend="_classPscf_1_1PropagatorTmpl_1a63edc883faabf165c833071db58ac9fa">isSolved</link>)</para>
+
+<para>Set the isSolved flag to true or false. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Accessors    </title>
+        <itemizedlist>
+            <listitem><para>const TP &amp; <link linkend="_classPscf_1_1PropagatorTmpl_1a26b1abc2d10158da46d49fba5dc8fe5f">source</link> (int id) const</para>
+
+<para>Get a source propagator. </para>
+</listitem>
+            <listitem><para>const TP &amp; <link linkend="_classPscf_1_1PropagatorTmpl_1a24e0cc27574f4a7953e2cebbab398efc">partner</link> () const</para>
+
+<para>Get partner propagator. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classPscf_1_1PropagatorTmpl_1a6502dd072870ebc485a2a360ec93f136">directionId</link> () const</para>
+
+<para>Get direction index for this propagator. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classPscf_1_1PropagatorTmpl_1af7b58cb39720994b0b95168ebf95799a">nSource</link> () const</para>
+
+<para>Number of source / prerequisite propagators. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_classPscf_1_1PropagatorTmpl_1ada82db8c7e34d219ec91927ceb14c118">hasPartner</link> () const</para>
+
+<para>Does this have a partner propagator? </para>
+</listitem>
+            <listitem><para>bool <link linkend="_classPscf_1_1PropagatorTmpl_1a63edc883faabf165c833071db58ac9fa">isSolved</link> () const</para>
+
+<para>Has the modified diffusion equation been solved? </para>
+</listitem>
+            <listitem><para>bool <link linkend="_classPscf_1_1PropagatorTmpl_1adba1597dd24cb3f60d45da15e6160ea2">isReady</link> () const</para>
+
+<para>Are all source propagators are solved? </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;class TP&gt;
+class Pscf::PropagatorTmpl&lt; TP &gt;</title></simplesect>
+
+
+<para>Template for propagator classes. </para>
+
+
+
+<para>The template argument TP should be a concrete propagator class that is derived from the template PropagatorTmpl&lt;TP&gt;. By convention, each implementation of SCFT is defined in a different sub-namespace of namespace <link linkend="_namespacePscf">Pscf</link>. For each such implementation, there is a concrete propagator class, named Propagator by convention, that is a subclass of the template instance PropagatorTmpl&lt;Propagator&gt;, using the syntax shown below: <literallayout><computeroutput>class&#32;Propagator&#32;:&#32;public&#32;PropagatorTmpl&lt;Propagator&gt;
+{
+&#32;...
+};
+</computeroutput></literallayout> This usage is an example of the so-called &quot;curiously recurring
+template pattern&quot; (CRTP). It is used here to allow the template PropagatorTmpl&lt;Propagator&gt; to have a member variables that store pointers to other instances of derived class Propagator (or TP).</para>
+
+<para>The TP propagator class is used in templates <link linkend="_classPscf_1_1BlockTmpl">BlockTmpl</link>, <link linkend="_classPscf_1_1PolymerTmpl">PolymerTmpl</link> and SystemTmpl. The usage in those templates require that it define the following public typedefs and member functions: <literallayout><computeroutput>class&#32;TP&#32;:&#32;public&#32;PropagatorTmpl&lt;TP&gt;
+{
+public:
+
+&#32;&#32;&#32;&#32;//&#32;Chemical&#32;potential&#32;field&#32;type.
+&#32;&#32;&#32;&#32;typedef&#32;DArray&lt;double&gt;&#32;WField;
+
+&#32;&#32;&#32;&#32;//&#32;Monomer&#32;concentration&#32;field&#32;type.
+&#32;&#32;&#32;&#32;typedef&#32;DArray&lt;double&gt;&#32;CField;
+
+&#32;&#32;&#32;&#32;//&#32;Solve&#32;the&#32;modified&#32;diffusion&#32;equation&#32;for&#32;this&#32;direction.
+&#32;&#32;&#32;&#32;void&#32;solve();
+
+&#32;&#32;&#32;&#32;//&#32;Compute&#32;and&#32;return&#32;the&#32;molecular&#32;partition&#32;function&#32;Q.
+&#32;&#32;&#32;&#32;double&#32;computeQ();
+
+};
+</computeroutput></literallayout> The typedefs WField and CField define the types of the objects used to represent a chemical potential field for a particular monomer type and a monomer concentration field. In the above example, both of these type names are defined to be synonyms for <link linkend="_classUtil_1_1DArray">DArray&lt;double&gt;</link>, i.e., for dynamically allocated arrays of double precision floating point numbers. Other implementations may use more specialized types. </para>
+<para>
+Definition at line 76 of file PropagatorTmpl.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classPscf_1_1PropagatorTmpl_1ae10622e3f32581d329805356b41b73a5"/>    <section>
+    <title>PropagatorTmpl()</title>
+<indexterm><primary>PropagatorTmpl</primary><secondary>Pscf::PropagatorTmpl&lt; TP &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::PropagatorTmpl&lt; TP &gt;</primary><secondary>PropagatorTmpl</secondary></indexterm>
+<computeroutput>template&lt;class TP &gt; </computeroutput><para><computeroutput><link linkend="_classPscf_1_1PropagatorTmpl">Pscf::PropagatorTmpl</link>&lt; TP &gt;::<link linkend="_classPscf_1_1PropagatorTmpl">PropagatorTmpl</link></computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+<para>
+Definition at line 226 of file PropagatorTmpl.h.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classPscf_1_1PropagatorTmpl_1a5590bab1688380936fab98fadae752f8"/>    <section>
+    <title>setDirectionId()</title>
+<indexterm><primary>setDirectionId</primary><secondary>Pscf::PropagatorTmpl&lt; TP &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::PropagatorTmpl&lt; TP &gt;</primary><secondary>setDirectionId</secondary></indexterm>
+<computeroutput>template&lt;class TP &gt; </computeroutput><para><computeroutput>void <link linkend="_classPscf_1_1PropagatorTmpl">Pscf::PropagatorTmpl</link>&lt; TP &gt;::setDirectionId (int directionId)</computeroutput></para><para>
+
+<para>Associate this propagator with a direction index. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>directionId</entry>
+                                <entry>
+<para>direction = 0 or 1. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 237 of file PropagatorTmpl.h.</para>
+    </section><anchor xml:id="_classPscf_1_1PropagatorTmpl_1adeac58f52fe90fe96c0ffe9e485e75ce"/>    <section>
+    <title>setPartner()</title>
+<indexterm><primary>setPartner</primary><secondary>Pscf::PropagatorTmpl&lt; TP &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::PropagatorTmpl&lt; TP &gt;</primary><secondary>setPartner</secondary></indexterm>
+<computeroutput>template&lt;class TP &gt; </computeroutput><para><computeroutput>void <link linkend="_classPscf_1_1PropagatorTmpl">Pscf::PropagatorTmpl</link>&lt; TP &gt;::setPartner (const TP &amp; partner)</computeroutput></para><para>
+
+<para>Set the partner of this propagator. </para>
+</para>
+
+<para>The partner of a propagator is the propagator for the same block that propagates in the opposite direction.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>partner</entry>
+                                <entry>
+<para>reference to partner propagator </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 244 of file PropagatorTmpl.h.</para>
+    </section><anchor xml:id="_classPscf_1_1PropagatorTmpl_1a17956f30957a7dde5234bb906b0d67ac"/>    <section>
+    <title>addSource()</title>
+<indexterm><primary>addSource</primary><secondary>Pscf::PropagatorTmpl&lt; TP &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::PropagatorTmpl&lt; TP &gt;</primary><secondary>addSource</secondary></indexterm>
+<computeroutput>template&lt;class TP &gt; </computeroutput><para><computeroutput>void <link linkend="_classPscf_1_1PropagatorTmpl">Pscf::PropagatorTmpl</link>&lt; TP &gt;::addSource (const TP &amp; source)</computeroutput></para><para>
+
+<para>Add a propagator to the list of sources for this one. </para>
+</para>
+
+<para>A source is a propagator that terminates at the root vertex of this one and is needed to compute the initial condition for this one, and that thus must be computed before this.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>source</entry>
+                                <entry>
+<para>reference to source propagator </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 251 of file PropagatorTmpl.h.</para>
+    </section><anchor xml:id="_classPscf_1_1PropagatorTmpl_1a05315758e7567ff08d1aea4166dbbc93"/>    <section>
+    <title>setIsSolved()</title>
+<indexterm><primary>setIsSolved</primary><secondary>Pscf::PropagatorTmpl&lt; TP &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::PropagatorTmpl&lt; TP &gt;</primary><secondary>setIsSolved</secondary></indexterm>
+<computeroutput>template&lt;class TP &gt; </computeroutput><para><computeroutput>void <link linkend="_classPscf_1_1PropagatorTmpl">Pscf::PropagatorTmpl</link>&lt; TP &gt;::setIsSolved (bool isSolved)</computeroutput></para><para>
+
+<para>Set the isSolved flag to true or false. </para>
+</para>
+<para>
+Definition at line 269 of file PropagatorTmpl.h.</para>
+    </section><anchor xml:id="_classPscf_1_1PropagatorTmpl_1a26b1abc2d10158da46d49fba5dc8fe5f"/>    <section>
+    <title>source()</title>
+<indexterm><primary>source</primary><secondary>Pscf::PropagatorTmpl&lt; TP &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::PropagatorTmpl&lt; TP &gt;</primary><secondary>source</secondary></indexterm>
+<computeroutput>template&lt;class TP &gt; </computeroutput><para><computeroutput>const TP &amp; <link linkend="_classPscf_1_1PropagatorTmpl">Pscf::PropagatorTmpl</link>&lt; TP &gt;::source (int id) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get a source propagator. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>id</entry>
+                                <entry>
+<para>index of source propagator, &lt; nSource </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 202 of file PropagatorTmpl.h.</para>
+    </section><anchor xml:id="_classPscf_1_1PropagatorTmpl_1a24e0cc27574f4a7953e2cebbab398efc"/>    <section>
+    <title>partner()</title>
+<indexterm><primary>partner</primary><secondary>Pscf::PropagatorTmpl&lt; TP &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::PropagatorTmpl&lt; TP &gt;</primary><secondary>partner</secondary></indexterm>
+<computeroutput>template&lt;class TP &gt; </computeroutput><para><computeroutput>const TP &amp; <link linkend="_classPscf_1_1PropagatorTmpl">Pscf::PropagatorTmpl</link>&lt; TP &gt;::partner</computeroutput></para><para>
+
+<para>Get partner propagator. </para>
+</para>
+<para>
+Definition at line 258 of file PropagatorTmpl.h.</para>
+    </section><anchor xml:id="_classPscf_1_1PropagatorTmpl_1a6502dd072870ebc485a2a360ec93f136"/>    <section>
+    <title>directionId()</title>
+<indexterm><primary>directionId</primary><secondary>Pscf::PropagatorTmpl&lt; TP &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::PropagatorTmpl&lt; TP &gt;</primary><secondary>directionId</secondary></indexterm>
+<computeroutput>template&lt;class TP &gt; </computeroutput><para><computeroutput>int <link linkend="_classPscf_1_1PropagatorTmpl">Pscf::PropagatorTmpl</link>&lt; TP &gt;::directionId<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get direction index for this propagator. </para>
+</para>
+<para>
+Definition at line 187 of file PropagatorTmpl.h.</para>
+    </section><anchor xml:id="_classPscf_1_1PropagatorTmpl_1af7b58cb39720994b0b95168ebf95799a"/>    <section>
+    <title>nSource()</title>
+<indexterm><primary>nSource</primary><secondary>Pscf::PropagatorTmpl&lt; TP &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::PropagatorTmpl&lt; TP &gt;</primary><secondary>nSource</secondary></indexterm>
+<computeroutput>template&lt;class TP &gt; </computeroutput><para><computeroutput>int <link linkend="_classPscf_1_1PropagatorTmpl">Pscf::PropagatorTmpl</link>&lt; TP &gt;::nSource<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Number of source / prerequisite propagators. </para>
+</para>
+<para>
+Definition at line 194 of file PropagatorTmpl.h.</para>
+    </section><anchor xml:id="_classPscf_1_1PropagatorTmpl_1ada82db8c7e34d219ec91927ceb14c118"/>    <section>
+    <title>hasPartner()</title>
+<indexterm><primary>hasPartner</primary><secondary>Pscf::PropagatorTmpl&lt; TP &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::PropagatorTmpl&lt; TP &gt;</primary><secondary>hasPartner</secondary></indexterm>
+<computeroutput>template&lt;class TP &gt; </computeroutput><para><computeroutput>bool <link linkend="_classPscf_1_1PropagatorTmpl">Pscf::PropagatorTmpl</link>&lt; TP &gt;::hasPartner<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Does this have a partner propagator? </para>
+</para>
+<para>
+Definition at line 210 of file PropagatorTmpl.h.</para>
+    </section><anchor xml:id="_classPscf_1_1PropagatorTmpl_1a63edc883faabf165c833071db58ac9fa"/>    <section>
+    <title>isSolved()</title>
+<indexterm><primary>isSolved</primary><secondary>Pscf::PropagatorTmpl&lt; TP &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::PropagatorTmpl&lt; TP &gt;</primary><secondary>isSolved</secondary></indexterm>
+<computeroutput>template&lt;class TP &gt; </computeroutput><para><computeroutput>bool <link linkend="_classPscf_1_1PropagatorTmpl">Pscf::PropagatorTmpl</link>&lt; TP &gt;::isSolved<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Has the modified diffusion equation been solved? </para>
+</para>
+<para>
+Definition at line 217 of file PropagatorTmpl.h.</para>
+    </section><anchor xml:id="_classPscf_1_1PropagatorTmpl_1adba1597dd24cb3f60d45da15e6160ea2"/>    <section>
+    <title>isReady()</title>
+<indexterm><primary>isReady</primary><secondary>Pscf::PropagatorTmpl&lt; TP &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::PropagatorTmpl&lt; TP &gt;</primary><secondary>isReady</secondary></indexterm>
+<computeroutput>template&lt;class TP &gt; </computeroutput><para><computeroutput>bool <link linkend="_classPscf_1_1PropagatorTmpl">Pscf::PropagatorTmpl</link>&lt; TP &gt;::isReady</computeroutput></para><para>
+
+<para>Are all source propagators are solved? </para>
+</para>
+<para>
+Definition at line 276 of file PropagatorTmpl.h.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+PropagatorTmpl.h</section>
+</section>

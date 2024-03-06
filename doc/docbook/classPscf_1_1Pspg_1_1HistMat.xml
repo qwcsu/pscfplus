@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classPscf_1_1Pspg_1_1HistMat">
+<title>Pscf::Pspg::HistMat&lt; Data &gt; Class Template Reference</title>
+<indexterm><primary>Pscf::Pspg::HistMat&lt; Data &gt;</primary></indexterm>
+<para>Inheritance diagram for Pscf::Pspg::HistMat&lt; Data &gt;:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classPscf_1_1Pspg_1_1HistMat.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;typename Data&gt;
+class Pscf::Pspg::HistMat&lt; Data &gt;</title></simplesect>
+
+<para>
+Definition at line 14 of file HistMat.h.</para>
+<para>
+The documentation for this class was generated from the following file:</para>
+HistMat.h</section>
+</section>

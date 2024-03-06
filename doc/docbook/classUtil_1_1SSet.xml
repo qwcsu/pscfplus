@@ -1,0 +1,584 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1SSet">
+<title>Util::SSet&lt; Data, Capacity &gt; Class Template Reference</title>
+<indexterm><primary>Util::SSet&lt; Data, Capacity &gt;</primary></indexterm>
+<para>
+
+<para>Statically allocated array of pointers to an unordered set. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;SSet.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1SSet_1a2b191b1d3f7c33b6cdc1b70c6104f044">SSet</link> ()</para>
+
+<para>Default constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1SSet_1adc80e364de544a8a54aa04026ebaf205">SSet</link> (const <link linkend="_classUtil_1_1SSet">SSet</link>&lt; Data, Capacity &gt; &amp;other)</para>
+
+<para>Copy constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1SSet">SSet</link>&lt; Data, Capacity &gt; &amp; <link linkend="_classUtil_1_1SSet_1aa24be2995e04cab52f87b4dd06f09903">operator=</link> (const <link linkend="_classUtil_1_1SSet">SSet</link>&lt; Data, Capacity &gt; &amp;other)</para>
+
+<para>Assignment, element by element. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1SSet_1a2c7cec56d731afdf3508257b385ef13c">~SSet</link> ()</para>
+
+<para>Destructor. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1SSet_1a501c50a581c92ea158553ba72adaa556">append</link> (Data &amp;data)</para>
+
+<para>Add an object to the set. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1SSet_1ad4d8da7889987726d40e003cde2d6684">remove</link> (const Data &amp;data)</para>
+
+<para>Remove an object from the set. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1SSet_1a5d8d1e22aefb0f699ed068ac3993c20d">clear</link> ()</para>
+
+<para>Set logical size to zero and nullify all elements. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1SSet_1a92ce369ddf298dd0b1cb06be8ede570f">capacity</link> () const</para>
+
+<para>Return physical capacity of array. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1SSet_1a7c5698fa49f4c842ee97c66e0003b2a5">size</link> () const</para>
+
+<para>Return logical size of this array. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_classUtil_1_1SSet_1ab5e591389fcf7fb7097c425d1fb3f575">isElement</link> (const Data &amp;data) const</para>
+
+<para>Is an object an element of the set? </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1SSet_1ad188453075d8672cb37e9b93c565e695">index</link> (const Data &amp;data) const</para>
+
+<para>Return the current index of an object within the set, if any. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1SSet_1ae01360a4f9ff7b84c4be04fcb96ad0f8">begin</link> (<link linkend="_classUtil_1_1PArrayIterator">PArrayIterator</link>&lt; Data &gt; &amp;iterator)</para>
+
+<para>Set a <link linkend="_classUtil_1_1PArrayIterator">PArrayIterator</link> to the beginning of this <link linkend="_classUtil_1_1Array">Array</link>. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1SSet_1aef1c2bb79bd2eeebad7359e3b6c21b3f">begin</link> (<link linkend="_classUtil_1_1ConstPArrayIterator">ConstPArrayIterator</link>&lt; Data &gt; &amp;iterator) const</para>
+
+<para>Set a <link linkend="_classUtil_1_1ConstPArrayIterator">ConstPArrayIterator</link> to the beginning of this <link linkend="_classUtil_1_1Array">Array</link>. </para>
+</listitem>
+            <listitem><para>Data &amp; <link linkend="_classUtil_1_1SSet_1a5981e6fe654eb9bec38807a27522a618">operator[]</link> (int i)</para>
+
+<para>Mimic C array subscripting. </para>
+</listitem>
+            <listitem><para>const Data &amp; <link linkend="_classUtil_1_1SSet_1adf07d65136db8e669023bf8c97ee960a">operator[]</link> (int i) const</para>
+
+<para>Mimic C array subscripting. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para>Data * <link linkend="_classUtil_1_1SSet_1a9c6ef3a80f57dfebda6f021a1dc22640">ptrs_</link> [Capacity]</para>
+
+<para><link linkend="_classUtil_1_1Array">Array</link> of pointers to Data objects. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1SSet_1af5614a63e67c67a0a179fd150d9c1d1c">size_</link></para>
+
+<para>Logical size of array (number of elements in array). </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;typename Data, int Capacity&gt;
+class Util::SSet&lt; Data, Capacity &gt;</title></simplesect>
+
+
+<para>Statically allocated array of pointers to an unordered set. </para>
+
+
+
+<para>An <link linkend="_classUtil_1_1SSet">SSet</link> is a statically allocated array that holds pointers to a set of objects. It implements the same interface as <link linkend="_classUtil_1_1PArray">PArray</link> and <link linkend="_classUtil_1_1FPArray">FPArray</link>, plus additional <link linkend="_classUtil_1_1SSet_1ad4d8da7889987726d40e003cde2d6684">remove()</link> and <link linkend="_classUtil_1_1SSet_1ad188453075d8672cb37e9b93c565e695">index()</link> methods. As for any pointer array container, the [] operator returns an associated object by reference .</para>
+
+<para>An <link linkend="_classUtil_1_1SSet">SSet</link> holds a set of pointers in a contiguous array. The size is the number of pointers now in the container, and the Capacity is the maximum number it can hold. The class is implemented as a wrapper for a statically allocated C array of Capacity elements.</para>
+
+<para>The append method adds a pointer to the end of the sequence. The remove method removes an object from the set, or throws an exception if the object is not found in the set. As for an <link linkend="_classUtil_1_1ArraySet">ArraySet</link>, the remove method repacks the sequence of pointers by moving the last element to the position of the element that is being removed. Removal of an element thus generally changes the order in which the remaining elements are stored. </para>
+<para>
+Definition at line 43 of file SSet.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1SSet_1a2b191b1d3f7c33b6cdc1b70c6104f044"/>    <section>
+    <title>SSet()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>SSet</primary><secondary>Util::SSet&lt; Data, Capacity &gt;</secondary></indexterm>
+<indexterm><primary>Util::SSet&lt; Data, Capacity &gt;</primary><secondary>SSet</secondary></indexterm>
+<computeroutput>template&lt;typename Data , int Capacity&gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1SSet">Util::SSet</link>&lt; Data, Capacity &gt;::<link linkend="_classUtil_1_1SSet">SSet</link><computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Default constructor. </para>
+</para>
+<para>
+Definition at line 177 of file SSet.h.</para>
+    </section><anchor xml:id="_classUtil_1_1SSet_1adc80e364de544a8a54aa04026ebaf205"/>    <section>
+    <title>SSet()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>SSet</primary><secondary>Util::SSet&lt; Data, Capacity &gt;</secondary></indexterm>
+<indexterm><primary>Util::SSet&lt; Data, Capacity &gt;</primary><secondary>SSet</secondary></indexterm>
+<computeroutput>template&lt;typename Data , int Capacity&gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1SSet">Util::SSet</link>&lt; Data, Capacity &gt;::<link linkend="_classUtil_1_1SSet">SSet</link> (const <link linkend="_classUtil_1_1SSet">SSet</link>&lt; Data, Capacity &gt; &amp; other)</computeroutput></para><para>
+
+<para>Copy constructor. </para>
+</para>
+
+<para>Copies all pointers.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>other</entry>
+                                <entry>
+<para>the <link linkend="_classUtil_1_1SSet">SSet</link> to be copied. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 185 of file SSet.h.</para>
+<para>
+References Util::SSet&lt; Data, Capacity &gt;::ptrs_, and Util::SSet&lt; Data, Capacity &gt;::size_.</para>
+    </section><anchor xml:id="_classUtil_1_1SSet_1a2c7cec56d731afdf3508257b385ef13c"/>    <section>
+    <title>~SSet()</title>
+<indexterm><primary>~SSet</primary><secondary>Util::SSet&lt; Data, Capacity &gt;</secondary></indexterm>
+<indexterm><primary>Util::SSet&lt; Data, Capacity &gt;</primary><secondary>~SSet</secondary></indexterm>
+<computeroutput>template&lt;typename Data , int Capacity&gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1SSet">Util::SSet</link>&lt; Data, Capacity &gt;::~<link linkend="_classUtil_1_1SSet">SSet</link></computeroutput></para><para>
+
+<para>Destructor. </para>
+</para>
+<para>
+Definition at line 240 of file SSet.h.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1SSet_1aa24be2995e04cab52f87b4dd06f09903"/>    <section>
+    <title>operator=()</title>
+<indexterm><primary>operator=</primary><secondary>Util::SSet&lt; Data, Capacity &gt;</secondary></indexterm>
+<indexterm><primary>Util::SSet&lt; Data, Capacity &gt;</primary><secondary>operator=</secondary></indexterm>
+<computeroutput>template&lt;typename Data , int Capacity&gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1SSet">SSet</link>&lt; Data, Capacity &gt; &amp; <link linkend="_classUtil_1_1SSet">Util::SSet</link>&lt; Data, Capacity &gt;::operator= (const <link linkend="_classUtil_1_1SSet">SSet</link>&lt; Data, Capacity &gt; &amp; other)</computeroutput></para><para>
+
+<para>Assignment, element by element. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>other</entry>
+                                <entry>
+<para>the rhs <link linkend="_classUtil_1_1SSet">SSet</link> </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 209 of file SSet.h.</para>
+<para>
+References Util::SSet&lt; Data, Capacity &gt;::size_, and UTIL_THROW.</para>
+    </section><anchor xml:id="_classUtil_1_1SSet_1a501c50a581c92ea158553ba72adaa556"/>    <section>
+    <title>append()</title>
+<indexterm><primary>append</primary><secondary>Util::SSet&lt; Data, Capacity &gt;</secondary></indexterm>
+<indexterm><primary>Util::SSet&lt; Data, Capacity &gt;</primary><secondary>append</secondary></indexterm>
+<computeroutput>template&lt;typename Data , int Capacity&gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1SSet">Util::SSet</link>&lt; Data, Capacity &gt;::append (Data &amp; data)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Add an object to the set. </para>
+</para>
+
+<para>Appends a pointer to the object to the end of the sequence.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>data</entry>
+                                <entry>
+<para>Data to add to end of array. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 307 of file SSet.h.</para>
+<para>
+References UTIL_THROW.</para>
+    </section><anchor xml:id="_classUtil_1_1SSet_1ad4d8da7889987726d40e003cde2d6684"/>    <section>
+    <title>remove()</title>
+<indexterm><primary>remove</primary><secondary>Util::SSet&lt; Data, Capacity &gt;</secondary></indexterm>
+<indexterm><primary>Util::SSet&lt; Data, Capacity &gt;</primary><secondary>remove</secondary></indexterm>
+<computeroutput>template&lt;typename Data , int Capacity&gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1SSet">Util::SSet</link>&lt; Data, Capacity &gt;::remove (const Data &amp; data)</computeroutput></para><para>
+
+<para>Remove an object from the set. </para>
+</para>
+
+<para>Removal of an object generally changes the storage order of the remaining objects.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Exceptions                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry><link linkend="_classUtil_1_1Exception">Exception</link></entry>
+                                <entry>
+<para>if object data is not in the Set.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>data</entry>
+                                <entry>
+<para>object to be removed. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 332 of file SSet.h.</para>
+<para>
+References UTIL_THROW.</para>
+    </section><anchor xml:id="_classUtil_1_1SSet_1a5d8d1e22aefb0f699ed068ac3993c20d"/>    <section>
+    <title>clear()</title>
+<indexterm><primary>clear</primary><secondary>Util::SSet&lt; Data, Capacity &gt;</secondary></indexterm>
+<indexterm><primary>Util::SSet&lt; Data, Capacity &gt;</primary><secondary>clear</secondary></indexterm>
+<computeroutput>template&lt;typename Data , int Capacity&gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1SSet">Util::SSet</link>&lt; Data, Capacity &gt;::clear<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Set logical size to zero and nullify all elements. </para>
+</para>
+<para>
+Definition at line 320 of file SSet.h.</para>
+    </section><anchor xml:id="_classUtil_1_1SSet_1a92ce369ddf298dd0b1cb06be8ede570f"/>    <section>
+    <title>capacity()</title>
+<indexterm><primary>capacity</primary><secondary>Util::SSet&lt; Data, Capacity &gt;</secondary></indexterm>
+<indexterm><primary>Util::SSet&lt; Data, Capacity &gt;</primary><secondary>capacity</secondary></indexterm>
+<computeroutput>template&lt;typename Data , int Capacity&gt; </computeroutput><para><computeroutput>int <link linkend="_classUtil_1_1SSet">Util::SSet</link>&lt; Data, Capacity &gt;::capacity<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return physical capacity of array. </para>
+</para>
+<para>
+Definition at line 247 of file SSet.h.</para>
+    </section><anchor xml:id="_classUtil_1_1SSet_1a7c5698fa49f4c842ee97c66e0003b2a5"/>    <section>
+    <title>size()</title>
+<indexterm><primary>size</primary><secondary>Util::SSet&lt; Data, Capacity &gt;</secondary></indexterm>
+<indexterm><primary>Util::SSet&lt; Data, Capacity &gt;</primary><secondary>size</secondary></indexterm>
+<computeroutput>template&lt;typename Data , int Capacity&gt; </computeroutput><para><computeroutput>int <link linkend="_classUtil_1_1SSet">Util::SSet</link>&lt; Data, Capacity &gt;::size<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return logical size of this array. </para>
+</para>
+<para>
+Definition at line 254 of file SSet.h.</para>
+    </section><anchor xml:id="_classUtil_1_1SSet_1ab5e591389fcf7fb7097c425d1fb3f575"/>    <section>
+    <title>isElement()</title>
+<indexterm><primary>isElement</primary><secondary>Util::SSet&lt; Data, Capacity &gt;</secondary></indexterm>
+<indexterm><primary>Util::SSet&lt; Data, Capacity &gt;</primary><secondary>isElement</secondary></indexterm>
+<computeroutput>template&lt;typename Data , int Capacity&gt; </computeroutput><para><computeroutput>bool <link linkend="_classUtil_1_1SSet">Util::SSet</link>&lt; Data, Capacity &gt;::isElement (const Data &amp; data) const</computeroutput></para><para>
+
+<para>Is an object an element of the set? </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>data</entry>
+                                <entry>
+<para>object of interest. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 364 of file SSet.h.</para>
+    </section><anchor xml:id="_classUtil_1_1SSet_1ad188453075d8672cb37e9b93c565e695"/>    <section>
+    <title>index()</title>
+<indexterm><primary>index</primary><secondary>Util::SSet&lt; Data, Capacity &gt;</secondary></indexterm>
+<indexterm><primary>Util::SSet&lt; Data, Capacity &gt;</primary><secondary>index</secondary></indexterm>
+<computeroutput>template&lt;typename Data , int Capacity&gt; </computeroutput><para><computeroutput>int <link linkend="_classUtil_1_1SSet">Util::SSet</link>&lt; Data, Capacity &gt;::index (const Data &amp; data) const</computeroutput></para><para>
+
+<para>Return the current index of an object within the set, if any. </para>
+</para>
+
+<para>Return the current index of an element within the set, or return -1 if the element is not in the set.</para>
+
+<para>This method returns the current index of the pointer to object data within this <link linkend="_classUtil_1_1SSet">SSet</link>, in the range 0 &lt; index &lt; <link linkend="_classUtil_1_1SSet_1a7c5698fa49f4c842ee97c66e0003b2a5">size()</link> - 1. The method returns -1 if data is the object is not in the set.</para>
+
+<para>Throws an exception if data is not in the associated array.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>data</entry>
+                                <entry>
+<para>object of interest. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>current index of pointer to element within this <link linkend="_classUtil_1_1SSet">SSet</link>. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 385 of file SSet.h.</para>
+    </section><anchor xml:id="_classUtil_1_1SSet_1ae01360a4f9ff7b84c4be04fcb96ad0f8"/>    <section>
+    <title>begin()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>begin</primary><secondary>Util::SSet&lt; Data, Capacity &gt;</secondary></indexterm>
+<indexterm><primary>Util::SSet&lt; Data, Capacity &gt;</primary><secondary>begin</secondary></indexterm>
+<computeroutput>template&lt;typename Data , int Capacity&gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1SSet">Util::SSet</link>&lt; Data, Capacity &gt;::begin (<link linkend="_classUtil_1_1PArrayIterator">PArrayIterator</link>&lt; Data &gt; &amp; iterator)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Set a <link linkend="_classUtil_1_1PArrayIterator">PArrayIterator</link> to the beginning of this <link linkend="_classUtil_1_1Array">Array</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>iterator</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1PArrayIterator">PArrayIterator</link>, initialized on output. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 263 of file SSet.h.</para>
+<para>
+References Util::PArrayIterator&lt; Data &gt;::setCurrent(), and Util::PArrayIterator&lt; Data &gt;::setEnd().</para>
+    </section><anchor xml:id="_classUtil_1_1SSet_1aef1c2bb79bd2eeebad7359e3b6c21b3f"/>    <section>
+    <title>begin()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>begin</primary><secondary>Util::SSet&lt; Data, Capacity &gt;</secondary></indexterm>
+<indexterm><primary>Util::SSet&lt; Data, Capacity &gt;</primary><secondary>begin</secondary></indexterm>
+<computeroutput>template&lt;typename Data , int Capacity&gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1SSet">Util::SSet</link>&lt; Data, Capacity &gt;::begin (<link linkend="_classUtil_1_1ConstPArrayIterator">ConstPArrayIterator</link>&lt; Data &gt; &amp; iterator) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Set a <link linkend="_classUtil_1_1ConstPArrayIterator">ConstPArrayIterator</link> to the beginning of this <link linkend="_classUtil_1_1Array">Array</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>iterator</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1ConstPArrayIterator">ConstPArrayIterator</link>, initialized on output. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 273 of file SSet.h.</para>
+<para>
+References Util::ConstPArrayIterator&lt; Data &gt;::setCurrent(), and Util::ConstPArrayIterator&lt; Data &gt;::setEnd().</para>
+    </section><anchor xml:id="_classUtil_1_1SSet_1a5981e6fe654eb9bec38807a27522a618"/>    <section>
+    <title>operator[]()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator[]</primary><secondary>Util::SSet&lt; Data, Capacity &gt;</secondary></indexterm>
+<indexterm><primary>Util::SSet&lt; Data, Capacity &gt;</primary><secondary>operator[]</secondary></indexterm>
+<computeroutput>template&lt;typename Data , int Capacity&gt; </computeroutput><para><computeroutput>Data &amp; <link linkend="_classUtil_1_1SSet">Util::SSet</link>&lt; Data, Capacity &gt;::operator[] (int i)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Mimic C array subscripting. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>i</entry>
+                                <entry>
+<para>array index </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to element i </para>
+</formalpara>
+</para>
+<para>
+Definition at line 283 of file SSet.h.</para>
+    </section><anchor xml:id="_classUtil_1_1SSet_1adf07d65136db8e669023bf8c97ee960a"/>    <section>
+    <title>operator[]()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator[]</primary><secondary>Util::SSet&lt; Data, Capacity &gt;</secondary></indexterm>
+<indexterm><primary>Util::SSet&lt; Data, Capacity &gt;</primary><secondary>operator[]</secondary></indexterm>
+<computeroutput>template&lt;typename Data , int Capacity&gt; </computeroutput><para><computeroutput>const Data &amp; <link linkend="_classUtil_1_1SSet">Util::SSet</link>&lt; Data, Capacity &gt;::operator[] (int i) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Mimic C array subscripting. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>i</entry>
+                                <entry>
+<para>array index </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>const reference to element i </para>
+</formalpara>
+</para>
+<para>
+Definition at line 294 of file SSet.h.</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classUtil_1_1SSet_1a9c6ef3a80f57dfebda6f021a1dc22640"/>    <section>
+    <title>ptrs_</title>
+<indexterm><primary>ptrs_</primary><secondary>Util::SSet&lt; Data, Capacity &gt;</secondary></indexterm>
+<indexterm><primary>Util::SSet&lt; Data, Capacity &gt;</primary><secondary>ptrs_</secondary></indexterm>
+<computeroutput>template&lt;typename Data , int Capacity&gt; </computeroutput><para><computeroutput>Data* <link linkend="_classUtil_1_1SSet">Util::SSet</link>&lt; Data, Capacity &gt;::ptrs_[Capacity]<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para><link linkend="_classUtil_1_1Array">Array</link> of pointers to Data objects. </para>
+</para>
+<para>
+Definition at line 164 of file SSet.h.</para>
+<para>
+Referenced by Util::SSet&lt; Data, Capacity &gt;::SSet().</para>
+    </section><anchor xml:id="_classUtil_1_1SSet_1af5614a63e67c67a0a179fd150d9c1d1c"/>    <section>
+    <title>size_</title>
+<indexterm><primary>size_</primary><secondary>Util::SSet&lt; Data, Capacity &gt;</secondary></indexterm>
+<indexterm><primary>Util::SSet&lt; Data, Capacity &gt;</primary><secondary>size_</secondary></indexterm>
+<computeroutput>template&lt;typename Data , int Capacity&gt; </computeroutput><para><computeroutput>int <link linkend="_classUtil_1_1SSet">Util::SSet</link>&lt; Data, Capacity &gt;::size_<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Logical size of array (number of elements in array). </para>
+</para>
+<para>
+Definition at line 167 of file SSet.h.</para>
+<para>
+Referenced by Util::SSet&lt; Data, Capacity &gt;::operator=(), and Util::SSet&lt; Data, Capacity &gt;::SSet().</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+SSet.h</section>
+</section>

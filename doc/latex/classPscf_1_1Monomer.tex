@@ -1,0 +1,179 @@
+\hypertarget{classPscf_1_1Monomer}{}\doxysubsection{Pscf\+::Monomer Class Reference}
+\label{classPscf_1_1Monomer}\index{Pscf::Monomer@{Pscf::Monomer}}
+
+
+Descriptor for a monomer or particle type.  
+
+
+
+
+{\ttfamily \#include $<$Monomer.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPscf_1_1Monomer_a8c983cc8501ad757a26aed87223ac85b}{Monomer}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPscf_1_1Monomer_abc264a0b568f51b9ac38fad47bfe1a83}{id}} () const
+\begin{DoxyCompactList}\small\item\em Unique integer index for monomer type. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classPscf_1_1Monomer_a5d615d7ebddff41aaf1cf156ca11201a}{step}} () const
+\begin{DoxyCompactList}\small\item\em Statistical segment length (random walk step size). \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classPscf_1_1Monomer_a1d46ea48a666c35635eb9bcef75fef66}{name}} () const
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classPscf_1_1Monomer}{Monomer}} name string. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Archive $>$ }\\void \mbox{\hyperlink{classPscf_1_1Monomer_a7bd61716c26f37e7729685f09ebe17f8}{serialize}} (Archive ar, const unsigned int version)
+\begin{DoxyCompactList}\small\item\em Serialize to or from an archive. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::istream \& \mbox{\hyperlink{classPscf_1_1Monomer_ae6fb04cfc21e3a0af4256243108a0a2e}{operator$>$$>$}} (std\+::istream \&in, \mbox{\hyperlink{classPscf_1_1Monomer}{Monomer}} \&monomer)
+\begin{DoxyCompactList}\small\item\em istream extractor for a \mbox{\hyperlink{classPscf_1_1Monomer}{Monomer}}. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{classPscf_1_1Monomer_aa6d0069061cf69723bbfbc26ee58da56}{operator$<$$<$}} (std\+::ostream \&out, const \mbox{\hyperlink{classPscf_1_1Monomer}{Monomer}} \&monomer)
+\begin{DoxyCompactList}\small\item\em ostream inserter for a \mbox{\hyperlink{classPscf_1_1Monomer}{Monomer}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Descriptor for a monomer or particle type. 
+
+Definition at line 22 of file Monomer.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPscf_1_1Monomer_a8c983cc8501ad757a26aed87223ac85b}\label{classPscf_1_1Monomer_a8c983cc8501ad757a26aed87223ac85b}} 
+\index{Pscf::Monomer@{Pscf::Monomer}!Monomer@{Monomer}}
+\index{Monomer@{Monomer}!Pscf::Monomer@{Pscf::Monomer}}
+\doxyparagraph{\texorpdfstring{Monomer()}{Monomer()}}
+{\footnotesize\ttfamily Pscf\+::\+Monomer\+::\+Monomer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+
+Definition at line 13 of file Monomer.\+cpp.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPscf_1_1Monomer_abc264a0b568f51b9ac38fad47bfe1a83}\label{classPscf_1_1Monomer_abc264a0b568f51b9ac38fad47bfe1a83}} 
+\index{Pscf::Monomer@{Pscf::Monomer}!id@{id}}
+\index{id@{id}!Pscf::Monomer@{Pscf::Monomer}}
+\doxyparagraph{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily int Pscf\+::\+Monomer\+::id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Unique integer index for monomer type. 
+
+
+
+Definition at line 96 of file Monomer.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Monomer_a5d615d7ebddff41aaf1cf156ca11201a}\label{classPscf_1_1Monomer_a5d615d7ebddff41aaf1cf156ca11201a}} 
+\index{Pscf::Monomer@{Pscf::Monomer}!step@{step}}
+\index{step@{step}!Pscf::Monomer@{Pscf::Monomer}}
+\doxyparagraph{\texorpdfstring{step()}{step()}}
+{\footnotesize\ttfamily double Pscf\+::\+Monomer\+::step (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Statistical segment length (random walk step size). 
+
+
+
+Definition at line 102 of file Monomer.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Monomer_a1d46ea48a666c35635eb9bcef75fef66}\label{classPscf_1_1Monomer_a1d46ea48a666c35635eb9bcef75fef66}} 
+\index{Pscf::Monomer@{Pscf::Monomer}!name@{name}}
+\index{name@{name}!Pscf::Monomer@{Pscf::Monomer}}
+\doxyparagraph{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily std\+::string Pscf\+::\+Monomer\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\mbox{\hyperlink{classPscf_1_1Monomer}{Monomer}} name string. 
+
+
+
+Definition at line 108 of file Monomer.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Monomer_a7bd61716c26f37e7729685f09ebe17f8}\label{classPscf_1_1Monomer_a7bd61716c26f37e7729685f09ebe17f8}} 
+\index{Pscf::Monomer@{Pscf::Monomer}!serialize@{serialize}}
+\index{serialize@{serialize}!Pscf::Monomer@{Pscf::Monomer}}
+\doxyparagraph{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$class Archive $>$ \\
+void Pscf\+::\+Monomer\+::serialize (\begin{DoxyParamCaption}\item[{Archive}]{ar,  }\item[{const unsigned int}]{version }\end{DoxyParamCaption})}
+
+
+
+Serialize to or from an archive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & Archive object \\
+\hline
+{\em version} & archive format version index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 115 of file Monomer.\+h.
+
+
+
+\doxysubsubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classPscf_1_1Monomer_ae6fb04cfc21e3a0af4256243108a0a2e}\label{classPscf_1_1Monomer_ae6fb04cfc21e3a0af4256243108a0a2e}} 
+\index{Pscf::Monomer@{Pscf::Monomer}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Pscf::Monomer@{Pscf::Monomer}}
+\doxyparagraph{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily std\+::istream\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in,  }\item[{\mbox{\hyperlink{classPscf_1_1Monomer}{Monomer}} \&}]{monomer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+istream extractor for a \mbox{\hyperlink{classPscf_1_1Monomer}{Monomer}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & input stream \\
+\hline
+{\em monomer} & \mbox{\hyperlink{classPscf_1_1Monomer}{Monomer}} to be read from stream \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+modified input stream 
+\end{DoxyReturn}
+
+
+Definition at line 27 of file Monomer.\+cpp.
+
+\mbox{\Hypertarget{classPscf_1_1Monomer_aa6d0069061cf69723bbfbc26ee58da56}\label{classPscf_1_1Monomer_aa6d0069061cf69723bbfbc26ee58da56}} 
+\index{Pscf::Monomer@{Pscf::Monomer}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Pscf::Monomer@{Pscf::Monomer}}
+\doxyparagraph{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{const \mbox{\hyperlink{classPscf_1_1Monomer}{Monomer}} \&}]{monomer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+ostream inserter for a \mbox{\hyperlink{classPscf_1_1Monomer}{Monomer}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & output stream \\
+\hline
+{\em monomer} & \mbox{\hyperlink{classPscf_1_1Monomer}{Monomer}} to be written to stream \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+modified output stream 
+\end{DoxyReturn}
+
+
+Definition at line 38 of file Monomer.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Monomer.\+h\item 
+Monomer.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,371 @@
+\hypertarget{classUtil_1_1ParamComponent}{}\doxysubsection{Util\+::Param\+Component Class Reference}
+\label{classUtil_1_1ParamComponent}\index{Util::ParamComponent@{Util::ParamComponent}}
+
+
+Abstract base class for classes that input and output parameters to file.  
+
+
+
+
+{\ttfamily \#include $<$Param\+Component.\+h$>$}
+
+Inheritance diagram for Util\+::Param\+Component\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.839416cm]{classUtil_1_1ParamComponent}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classUtil_1_1ParamComponent_a4714eb00e44cdca1f1efc019bea99492}{$\sim$\+Param\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUtil_1_1ParamComponent_a5234b604f9e852f53eedd7de7c354a1e}{read\+Param}} (std\+::istream \&in)=0
+\begin{DoxyCompactList}\small\item\em Read parameter(s) from file. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUtil_1_1ParamComponent_ac17d6ab63f9b0e5f966d6a3cfbc26d86}{write\+Param}} (std\+::ostream \&out)=0
+\begin{DoxyCompactList}\small\item\em Read parameter(s) to file. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUtil_1_1ParamComponent_a7925e60ccaf7ecf2ea866e689983124d}{load}} (\mbox{\hyperlink{classUtil_1_1Serializable_ac6bcbf9bac926cada5a398804410e891}{Serializable\+::\+I\+Archive}} \&ar)
+\begin{DoxyCompactList}\small\item\em Load internal state from an archive. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUtil_1_1ParamComponent_a433717dd5bb0a1ac3e4dec06459b7bde}{save}} (\mbox{\hyperlink{classUtil_1_1Serializable_aca43a1eea5ec5f13189a57892a7a6d04}{Serializable\+::\+O\+Archive}} \&ar)
+\begin{DoxyCompactList}\small\item\em Save internal state to an archive. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUtil_1_1ParamComponent_a57e24c95c5bcbf1f473628b6b2d51eb8}{reset\+Param}} ()
+\begin{DoxyCompactList}\small\item\em Nontrivial implementation provided by \mbox{\hyperlink{classUtil_1_1ParamComposite}{Param\+Composite}} subclass. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1ParamComponent_a71952c63913050d18e8ec5d1b146d191}{set\+Indent}} (const \mbox{\hyperlink{classUtil_1_1ParamComponent}{Param\+Component}} \&parent, bool next=true)
+\begin{DoxyCompactList}\small\item\em Set indent level. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classUtil_1_1ParamComponent_a0912a10c960c7e21ff77ff963c10a43a}{indent}} () const
+\begin{DoxyCompactList}\small\item\em Return indent string for this object (string of spaces). \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Archive $>$ }\\void \mbox{\hyperlink{classUtil_1_1ParamComponent_adede3e45dbd8497c7ed87db1fe00343c}{serialize}} (Archive \&ar, const unsigned int version)
+\begin{DoxyCompactList}\small\item\em Serialize this \mbox{\hyperlink{classUtil_1_1ParamComponent}{Param\+Component}} as a string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classUtil_1_1ParamComponent_a5350c0432130f7feba8392f5b3a75cb4}{init\+Static}} ()
+\begin{DoxyCompactList}\small\item\em Initialize static echo member to false. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classUtil_1_1ParamComponent_add72ad7add98e0b90979ee2638c7468d}{set\+Echo}} (bool \mbox{\hyperlink{classUtil_1_1ParamComponent_ac5808de278115409092e94f9c72362c2}{echo}}=true)
+\begin{DoxyCompactList}\small\item\em Enable or disable echoing for all subclasses of \mbox{\hyperlink{classUtil_1_1ParamComponent}{Param\+Component}}. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classUtil_1_1ParamComponent_ac5808de278115409092e94f9c72362c2}{echo}} ()
+\begin{DoxyCompactList}\small\item\em Get echo parameter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1ParamComponent_a6f859f325ca7d36747d28c9677fe0bfc}{Param\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1ParamComponent_ae979e22ecef3a94c0e826224b3761df9}{Param\+Component}} (const \mbox{\hyperlink{classUtil_1_1ParamComponent}{Param\+Component}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+
+
+\doxysubsubsection{Detailed Description}
+Abstract base class for classes that input and output parameters to file. 
+
+The read\+Param method reads a parameter or parameter list from iostream. The write\+Param method writes a parameter or parameter list to an ostream. The same io format should be used by write and read methods. 
+
+Definition at line 31 of file Param\+Component.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1ParamComponent_a4714eb00e44cdca1f1efc019bea99492}\label{classUtil_1_1ParamComponent_a4714eb00e44cdca1f1efc019bea99492}} 
+\index{Util::ParamComponent@{Util::ParamComponent}!````~ParamComponent@{$\sim$ParamComponent}}
+\index{````~ParamComponent@{$\sim$ParamComponent}!Util::ParamComponent@{Util::ParamComponent}}
+\doxyparagraph{\texorpdfstring{$\sim$ParamComponent()}{~ParamComponent()}}
+{\footnotesize\ttfamily Util\+::\+Param\+Component\+::$\sim$\+Param\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+Definition at line 36 of file Param\+Component.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1ParamComponent_a6f859f325ca7d36747d28c9677fe0bfc}\label{classUtil_1_1ParamComponent_a6f859f325ca7d36747d28c9677fe0bfc}} 
+\index{Util::ParamComponent@{Util::ParamComponent}!ParamComponent@{ParamComponent}}
+\index{ParamComponent@{ParamComponent}!Util::ParamComponent@{Util::ParamComponent}}
+\doxyparagraph{\texorpdfstring{ParamComponent()}{ParamComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Util\+::\+Param\+Component\+::\+Param\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Constructor. 
+
+Protected to prevent instantiation of a conceptually abstract class.
+
+On return the indent string is empty. If U\+T\+I\+L\+\_\+\+M\+PI is defined, no communicator is set upon construction. 
+
+Definition at line 20 of file Param\+Component.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1ParamComponent_ae979e22ecef3a94c0e826224b3761df9}\label{classUtil_1_1ParamComponent_ae979e22ecef3a94c0e826224b3761df9}} 
+\index{Util::ParamComponent@{Util::ParamComponent}!ParamComponent@{ParamComponent}}
+\index{ParamComponent@{ParamComponent}!Util::ParamComponent@{Util::ParamComponent}}
+\doxyparagraph{\texorpdfstring{ParamComponent()}{ParamComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Util\+::\+Param\+Component\+::\+Param\+Component (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1ParamComponent}{Param\+Component}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Copy constructor. 
+
+
+
+Definition at line 28 of file Param\+Component.\+cpp.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1ParamComponent_a5234b604f9e852f53eedd7de7c354a1e}\label{classUtil_1_1ParamComponent_a5234b604f9e852f53eedd7de7c354a1e}} 
+\index{Util::ParamComponent@{Util::ParamComponent}!readParam@{readParam}}
+\index{readParam@{readParam}!Util::ParamComponent@{Util::ParamComponent}}
+\doxyparagraph{\texorpdfstring{readParam()}{readParam()}}
+{\footnotesize\ttfamily virtual void Util\+::\+Param\+Component\+::read\+Param (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Read parameter(s) from file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & input stream \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classUtil_1_1ParamComposite_a6fc094b057fd9a21641b089f6f063b39}{Util\+::\+Param\+Composite}}, \mbox{\hyperlink{classUtil_1_1Parameter_a814c4defbb8111a23a97eac7908332a3}{Util\+::\+Parameter}}, \mbox{\hyperlink{classUtil_1_1Manager_a115f9d62a9e538f20660683eb0eb3a10}{Util\+::\+Manager$<$ Data $>$}}, \mbox{\hyperlink{classUtil_1_1Begin_a346ec866e4f12597c51f153ca203fc31}{Util\+::\+Begin}}, \mbox{\hyperlink{classUtil_1_1Blank_a3c9364578b5cef16e47254d25c75c9fe}{Util\+::\+Blank}}, and \mbox{\hyperlink{classUtil_1_1End_aee1e9af21f8bb3e71af5c26fa3d6d081}{Util\+::\+End}}.
+
+
+
+Referenced by serialize().
+
+\mbox{\Hypertarget{classUtil_1_1ParamComponent_ac17d6ab63f9b0e5f966d6a3cfbc26d86}\label{classUtil_1_1ParamComponent_ac17d6ab63f9b0e5f966d6a3cfbc26d86}} 
+\index{Util::ParamComponent@{Util::ParamComponent}!writeParam@{writeParam}}
+\index{writeParam@{writeParam}!Util::ParamComponent@{Util::ParamComponent}}
+\doxyparagraph{\texorpdfstring{writeParam()}{writeParam()}}
+{\footnotesize\ttfamily virtual void Util\+::\+Param\+Component\+::write\+Param (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Read parameter(s) to file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & output stream \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classUtil_1_1ParamComposite_addf0c36c3560471bfe47f0be008575b9}{Util\+::\+Param\+Composite}}, \mbox{\hyperlink{classUtil_1_1CArray2DParam_a10869aa76660f24fd722182efde9fabe}{Util\+::\+C\+Array2\+D\+Param$<$ Type $>$}}, \mbox{\hyperlink{classUtil_1_1ScalarParam_ad3c118b4337e4e4f945eb44f741d1855}{Util\+::\+Scalar\+Param$<$ Type $>$}}, \mbox{\hyperlink{classUtil_1_1Begin_a3e6bf2e4c32cd9665de186a2499f9fb4}{Util\+::\+Begin}}, \mbox{\hyperlink{classUtil_1_1DMatrixParam_a488b27f2ba7aff5cbafb7892bc1d3acd}{Util\+::\+D\+Matrix\+Param$<$ Type $>$}}, \mbox{\hyperlink{classUtil_1_1DSymmMatrixParam_a2b79cac29d99726a7acc6aee366544c3}{Util\+::\+D\+Symm\+Matrix\+Param$<$ Type $>$}}, \mbox{\hyperlink{classUtil_1_1Blank_a4d27c1308396b16fe880ac37d777a45e}{Util\+::\+Blank}}, \mbox{\hyperlink{classUtil_1_1End_acd48f61a7319190675987c84a658143b}{Util\+::\+End}}, \mbox{\hyperlink{classUtil_1_1FArrayParam_a63c5e0963f1053555d310bd7e2838801}{Util\+::\+F\+Array\+Param$<$ Type, N $>$}}, \mbox{\hyperlink{classUtil_1_1DArrayParam_aab8066ee6857f293866b4753de196473}{Util\+::\+D\+Array\+Param$<$ Type $>$}}, and \mbox{\hyperlink{classUtil_1_1CArrayParam_ae632242e2fd3dd5ab357e80c71e58296}{Util\+::\+C\+Array\+Param$<$ Type $>$}}.
+
+
+
+Referenced by Util\+::\+Parameter\+::load(), Util\+::\+Parameter\+::read\+Param(), and serialize().
+
+\mbox{\Hypertarget{classUtil_1_1ParamComponent_a7925e60ccaf7ecf2ea866e689983124d}\label{classUtil_1_1ParamComponent_a7925e60ccaf7ecf2ea866e689983124d}} 
+\index{Util::ParamComponent@{Util::ParamComponent}!load@{load}}
+\index{load@{load}!Util::ParamComponent@{Util::ParamComponent}}
+\doxyparagraph{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily virtual void Util\+::\+Param\+Component\+::load (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1Serializable_ac6bcbf9bac926cada5a398804410e891}{Serializable\+::\+I\+Archive}} \&}]{ar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Load internal state from an archive. 
+
+The default implementation is empty. This default is used by the \mbox{\hyperlink{classUtil_1_1Begin}{Begin}}, \mbox{\hyperlink{classUtil_1_1End}{End}}, and \mbox{\hyperlink{classUtil_1_1Blank}{Blank}} subclasses. 
+
+Implements \mbox{\hyperlink{classUtil_1_1Serializable_a1b54bcc9cb4fbb5a416533142f2c683d}{Util\+::\+Serializable}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classUtil_1_1ParamComposite_a02a1172d7cd86d4015be8d9e65fe750f}{Util\+::\+Param\+Composite}}, \mbox{\hyperlink{classUtil_1_1Parameter_afee158d4448a9db32b8469c1e447e75c}{Util\+::\+Parameter}}, and \mbox{\hyperlink{classUtil_1_1AutoCorrelation_acbc41a7ab175fcd6422ab15b05886840}{Util\+::\+Auto\+Correlation$<$ Data, Product $>$}}.
+
+
+
+Definition at line 61 of file Param\+Component.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1ParamComponent_a433717dd5bb0a1ac3e4dec06459b7bde}\label{classUtil_1_1ParamComponent_a433717dd5bb0a1ac3e4dec06459b7bde}} 
+\index{Util::ParamComponent@{Util::ParamComponent}!save@{save}}
+\index{save@{save}!Util::ParamComponent@{Util::ParamComponent}}
+\doxyparagraph{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily virtual void Util\+::\+Param\+Component\+::save (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1Serializable_aca43a1eea5ec5f13189a57892a7a6d04}{Serializable\+::\+O\+Archive}} \&}]{ar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Save internal state to an archive. 
+
+The default implementation is empty. This default is used by the \mbox{\hyperlink{classUtil_1_1Begin}{Begin}}, \mbox{\hyperlink{classUtil_1_1End}{End}}, and \mbox{\hyperlink{classUtil_1_1Blank}{Blank}} subclasses. 
+
+Implements \mbox{\hyperlink{classUtil_1_1Serializable_a9c0a18b68dcf064f6293ddebff894850}{Util\+::\+Serializable}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classUtil_1_1ParamComposite_a3c430a4e31a9573eadb06ab89d3bf780}{Util\+::\+Param\+Composite}}, \mbox{\hyperlink{classUtil_1_1FileMaster_a242dce8b12bc4a5d8539308f2a702500}{Util\+::\+File\+Master}}, \mbox{\hyperlink{classUtil_1_1Parameter_a43ae1276ea1ef6562035bec15ea6fdc9}{Util\+::\+Parameter}}, \mbox{\hyperlink{classUtil_1_1Manager_a676a1b986d066d8cd6a303f369d7403f}{Util\+::\+Manager$<$ Data $>$}}, \mbox{\hyperlink{classUtil_1_1AutoCorrArray_aecc9a9d807bf780d2b5f0405f0f2f642}{Util\+::\+Auto\+Corr\+Array$<$ Data, Product $>$}}, \mbox{\hyperlink{classUtil_1_1AutoCorr_add693694d3f06a007ff10fa46d804bfb}{Util\+::\+Auto\+Corr$<$ Data, Product $>$}}, \mbox{\hyperlink{classUtil_1_1Average_a6bb1a12d32f87d40483ae7bb0d8c4708}{Util\+::\+Average}}, \mbox{\hyperlink{classUtil_1_1MeanSqDispArray_ad0a01b9aeba80e0421fd0416db7fbb51}{Util\+::\+Mean\+Sq\+Disp\+Array$<$ Data $>$}}, \mbox{\hyperlink{classUtil_1_1Distribution_a7ca406d44ab9c1c6ab2594882196d807}{Util\+::\+Distribution}}, \mbox{\hyperlink{classUtil_1_1TensorAverage_a88d6b99a9fbac6185490c5508f8805e4}{Util\+::\+Tensor\+Average}}, \mbox{\hyperlink{classUtil_1_1SymmTensorAverage_adbf1f3a1efc1eac27d43516d8490e7a9}{Util\+::\+Symm\+Tensor\+Average}}, \mbox{\hyperlink{classUtil_1_1Random_aff18b17a0f4d6383d8ed881a8910b3b8}{Util\+::\+Random}}, \mbox{\hyperlink{classUtil_1_1IntDistribution_a7fe2cf76d34574e8cdfa52735438b484}{Util\+::\+Int\+Distribution}}, \mbox{\hyperlink{classUtil_1_1RadialDistribution_a51fa4e62a87856912ec2d6d9b9cf8cb3}{Util\+::\+Radial\+Distribution}}, and \mbox{\hyperlink{classUtil_1_1AutoCorrelation_adc342d958fd2ab000573de8100c91043}{Util\+::\+Auto\+Correlation$<$ Data, Product $>$}}.
+
+
+
+Definition at line 70 of file Param\+Component.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1ParamComponent_a57e24c95c5bcbf1f473628b6b2d51eb8}\label{classUtil_1_1ParamComponent_a57e24c95c5bcbf1f473628b6b2d51eb8}} 
+\index{Util::ParamComponent@{Util::ParamComponent}!resetParam@{resetParam}}
+\index{resetParam@{resetParam}!Util::ParamComponent@{Util::ParamComponent}}
+\doxyparagraph{\texorpdfstring{resetParam()}{resetParam()}}
+{\footnotesize\ttfamily virtual void Util\+::\+Param\+Component\+::reset\+Param (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Nontrivial implementation provided by \mbox{\hyperlink{classUtil_1_1ParamComposite}{Param\+Composite}} subclass. 
+
+The default implementation is empty. This default is used by all leaf nodes (all other than \mbox{\hyperlink{classUtil_1_1ParamComposite}{Param\+Composite}} and subclasses). 
+
+Reimplemented in \mbox{\hyperlink{classUtil_1_1ParamComposite_a38068a7ef2846b9301df02b32f6f5bfd}{Util\+::\+Param\+Composite}}, \mbox{\hyperlink{classUtil_1_1Begin_aeea1722fc898943ef1f0fed3b9351284}{Util\+::\+Begin}}, and \mbox{\hyperlink{classUtil_1_1End_a0fbe4e4b94e2032cf9e6b6b2a432861d}{Util\+::\+End}}.
+
+
+
+Definition at line 79 of file Param\+Component.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1ParamComponent_a71952c63913050d18e8ec5d1b146d191}\label{classUtil_1_1ParamComponent_a71952c63913050d18e8ec5d1b146d191}} 
+\index{Util::ParamComponent@{Util::ParamComponent}!setIndent@{setIndent}}
+\index{setIndent@{setIndent}!Util::ParamComponent@{Util::ParamComponent}}
+\doxyparagraph{\texorpdfstring{setIndent()}{setIndent()}}
+{\footnotesize\ttfamily void Util\+::\+Param\+Component\+::set\+Indent (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1ParamComponent}{Param\+Component}} \&}]{parent,  }\item[{bool}]{next = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Set indent level. 
+
+If next=true (default) set indent level one higher than that of parent. If next=false, set indent level the same as parent.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & parent \mbox{\hyperlink{classUtil_1_1ParamComponent}{Param\+Component}} object \\
+\hline
+{\em next} & If true, set level one higher than for parent. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 48 of file Param\+Component.\+cpp.
+
+
+
+References indent().
+
+
+
+Referenced by Util\+::\+Factory$<$ Data $>$\+::read\+Object(), and Util\+::\+Param\+Composite\+::set\+Parent().
+
+\mbox{\Hypertarget{classUtil_1_1ParamComponent_a0912a10c960c7e21ff77ff963c10a43a}\label{classUtil_1_1ParamComponent_a0912a10c960c7e21ff77ff963c10a43a}} 
+\index{Util::ParamComponent@{Util::ParamComponent}!indent@{indent}}
+\index{indent@{indent}!Util::ParamComponent@{Util::ParamComponent}}
+\doxyparagraph{\texorpdfstring{indent()}{indent()}}
+{\footnotesize\ttfamily std\+::string Util\+::\+Param\+Component\+::indent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return indent string for this object (string of spaces). 
+
+
+
+Definition at line 42 of file Param\+Component.\+cpp.
+
+
+
+Referenced by Util\+::\+Parameter\+::load(), Util\+::\+Param\+Composite\+::load\+Optional(), Util\+::\+Begin\+::read\+Param(), Util\+::\+Parameter\+::read\+Param(), set\+Indent(), Util\+::\+End\+::write\+Param(), and Util\+::\+Begin\+::write\+Param().
+
+\mbox{\Hypertarget{classUtil_1_1ParamComponent_adede3e45dbd8497c7ed87db1fe00343c}\label{classUtil_1_1ParamComponent_adede3e45dbd8497c7ed87db1fe00343c}} 
+\index{Util::ParamComponent@{Util::ParamComponent}!serialize@{serialize}}
+\index{serialize@{serialize}!Util::ParamComponent@{Util::ParamComponent}}
+\doxyparagraph{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$class Archive $>$ \\
+void Util\+::\+Param\+Component\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{ar,  }\item[{const unsigned int}]{version }\end{DoxyParamCaption})}
+
+
+
+Serialize this \mbox{\hyperlink{classUtil_1_1ParamComponent}{Param\+Component}} as a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & saving or loading archive \\
+\hline
+{\em version} & version id for archive \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 177 of file Param\+Component.\+h.
+
+
+
+References read\+Param(), and write\+Param().
+
+\mbox{\Hypertarget{classUtil_1_1ParamComponent_a5350c0432130f7feba8392f5b3a75cb4}\label{classUtil_1_1ParamComponent_a5350c0432130f7feba8392f5b3a75cb4}} 
+\index{Util::ParamComponent@{Util::ParamComponent}!initStatic@{initStatic}}
+\index{initStatic@{initStatic}!Util::ParamComponent@{Util::ParamComponent}}
+\doxyparagraph{\texorpdfstring{initStatic()}{initStatic()}}
+{\footnotesize\ttfamily void Util\+::\+Param\+Component\+::init\+Static (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Initialize static echo member to false. 
+
+
+
+Definition at line 77 of file Param\+Component.\+cpp.
+
+
+
+Referenced by Util\+::init\+Static().
+
+\mbox{\Hypertarget{classUtil_1_1ParamComponent_add72ad7add98e0b90979ee2638c7468d}\label{classUtil_1_1ParamComponent_add72ad7add98e0b90979ee2638c7468d}} 
+\index{Util::ParamComponent@{Util::ParamComponent}!setEcho@{setEcho}}
+\index{setEcho@{setEcho}!Util::ParamComponent@{Util::ParamComponent}}
+\doxyparagraph{\texorpdfstring{setEcho()}{setEcho()}}
+{\footnotesize\ttfamily void Util\+::\+Param\+Component\+::set\+Echo (\begin{DoxyParamCaption}\item[{bool}]{echo = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Enable or disable echoing for all subclasses of \mbox{\hyperlink{classUtil_1_1ParamComponent}{Param\+Component}}. 
+
+When echoing is enabled, all parameters are echoed to a log file immediately after being read. This is useful as an aid to debugging the parameter file, by showing where the error occurred.
+
+
+\begin{DoxyParams}{Parameters}
+{\em echo} & set true to enable echoing, false to disable. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 62 of file Param\+Component.\+cpp.
+
+
+
+References echo().
+
+
+
+Referenced by Pscf\+::\+Pspg\+::\+Continuous\+::\+System$<$ D $>$\+::set\+Options().
+
+\mbox{\Hypertarget{classUtil_1_1ParamComponent_ac5808de278115409092e94f9c72362c2}\label{classUtil_1_1ParamComponent_ac5808de278115409092e94f9c72362c2}} 
+\index{Util::ParamComponent@{Util::ParamComponent}!echo@{echo}}
+\index{echo@{echo}!Util::ParamComponent@{Util::ParamComponent}}
+\doxyparagraph{\texorpdfstring{echo()}{echo()}}
+{\footnotesize\ttfamily bool Util\+::\+Param\+Component\+::echo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get echo parameter. 
+
+\begin{DoxyReturn}{Returns}
+true if echoing is enabled, false if disabled. 
+\end{DoxyReturn}
+
+
+Definition at line 68 of file Param\+Component.\+cpp.
+
+
+
+Referenced by Util\+::\+Manager$<$ Data $>$\+::end\+Read\+Manager(), Util\+::\+Parameter\+::load(), Util\+::\+Param\+Composite\+::load(), Util\+::\+Param\+Composite\+::load\+Optional(), Util\+::\+Factory$<$ Data $>$\+::read\+Object(), Util\+::\+Blank\+::read\+Param(), Util\+::\+End\+::read\+Param(), Util\+::\+Begin\+::read\+Param(), Util\+::\+Parameter\+::read\+Param(), and set\+Echo().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Param\+Component.\+h\item 
+Param\+Component.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1MpiTraits_3_01long_01_4">
+<title>Util::MpiTraits&lt; long &gt; Class Reference</title>
+<indexterm><primary>Util::MpiTraits&lt; long &gt;</primary></indexterm>
+<para>
+
+<para><link linkend="_classUtil_1_1MpiTraits_3_01long_01_4">MpiTraits&lt;long&gt;</link> explicit specialization. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;MpiTraits.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Static Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>static const MPI::Datatype <link linkend="_classUtil_1_1MpiTraits_3_01long_01_4_1a94515335b175d78c088d59f0068df527">type</link> = MPI::LONG</para>
+
+<para>MPI Datatype. </para>
+</listitem>
+            <listitem><para>static const bool <link linkend="_classUtil_1_1MpiTraits_3_01long_01_4_1a93ab59153bac8aac123df30c49d7321d">hasType</link> = true</para>
+
+<para>Is the MPI type initialized? </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para><link linkend="_classUtil_1_1MpiTraits_3_01long_01_4">MpiTraits&lt;long&gt;</link> explicit specialization. </para>
+<para>
+Definition at line 94 of file MpiTraits.h.</para>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classUtil_1_1MpiTraits_3_01long_01_4_1a94515335b175d78c088d59f0068df527"/>    <section>
+    <title>type</title>
+<indexterm><primary>type</primary><secondary>Util::MpiTraits&lt; long &gt;</secondary></indexterm>
+<indexterm><primary>Util::MpiTraits&lt; long &gt;</primary><secondary>type</secondary></indexterm>
+<para><computeroutput>const MPI::Datatype <link linkend="_classUtil_1_1MpiTraits">Util::MpiTraits</link>&lt; long &gt;::type = MPI::LONG<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>MPI Datatype. </para>
+</para>
+<para>
+Definition at line 97 of file MpiTraits.h.</para>
+    </section><anchor xml:id="_classUtil_1_1MpiTraits_3_01long_01_4_1a93ab59153bac8aac123df30c49d7321d"/>    <section>
+    <title>hasType</title>
+<indexterm><primary>hasType</primary><secondary>Util::MpiTraits&lt; long &gt;</secondary></indexterm>
+<indexterm><primary>Util::MpiTraits&lt; long &gt;</primary><secondary>hasType</secondary></indexterm>
+<para><computeroutput>const bool <link linkend="_classUtil_1_1MpiTraits">Util::MpiTraits</link>&lt; long &gt;::hasType = true<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Is the MPI type initialized? </para>
+</para>
+<para>
+Definition at line 98 of file MpiTraits.h.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+MpiTraits.hMpiTraits.cpp</section>
+</section>

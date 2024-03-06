@@ -1,0 +1,323 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1RaggedMatrix">
+<title>Util::RaggedMatrix&lt; Data &gt; Class Template Reference</title>
+<indexterm><primary>Util::RaggedMatrix&lt; Data &gt;</primary></indexterm>
+<para>
+
+<para>A 2D array in which different rows can have different lengths. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;RaggedMatrix.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Util::RaggedMatrix&lt; Data &gt;:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classUtil_1_1RaggedMatrix.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>virtual <link linkend="_classUtil_1_1RaggedMatrix_1ab5d6d0c5035ef413c00c9f5a46f5bf74">~RaggedMatrix</link> ()</para>
+
+<para>Destructor. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1RaggedMatrix_1aaaffc093e16d4ee2c9fd7f53a7a2e5f2">capacity1</link> ()</para>
+
+<para>Get number of rows. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1RaggedMatrix_1aab0e5ababbfdfb815fa1543fbcd202f0">capacity2</link> (int i)</para>
+
+<para>Get number of elements in row number i. </para>
+</listitem>
+            <listitem><para>const Data &amp; <link linkend="_classUtil_1_1RaggedMatrix_1a1e55e82b74843ba671d341c542ba7981">operator()</link> (int i, int j) const</para>
+
+<para>Return element (i,j) of matrix by const reference. </para>
+</listitem>
+            <listitem><para>Data &amp; <link linkend="_classUtil_1_1RaggedMatrix_1a5fddfe42f2b86b89b3fafe6bf32ec3f7">operator()</link> (int i, int j)</para>
+
+<para>Return element (i,j) of matrix by reference. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1RaggedMatrix_1a8fbfb6aa200fcc4565d6842a3067138d">RaggedMatrix</link> ()</para>
+
+<para>Default constructor. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para>Data * <link linkend="_classUtil_1_1RaggedMatrix_1af2229af07e06e9f96bb635ef9973dcee">data_</link></para>
+
+<para>One-dimensional C array of all elements. </para>
+</listitem>
+            <listitem><para>Data ** <link linkend="_classUtil_1_1RaggedMatrix_1a8ce54c378b94b80b259f485c9e891c57">rows_</link></para>
+
+<para><link linkend="_classUtil_1_1Array">Array</link> of pointers to rows. </para>
+</listitem>
+            <listitem><para>int * <link linkend="_classUtil_1_1RaggedMatrix_1a68f184744aa3e2fd9f95534c936f5f7f">capacity2_</link></para>
+
+<para><link linkend="_classUtil_1_1Array">Array</link> containing number of elements in each row. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1RaggedMatrix_1a532f33c6a0c5700ec76df69264527afa">capacity1_</link></para>
+
+<para>Number of rows (range of first index). </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1RaggedMatrix_1a8deac823fa3e931b568c1d867b6013f2">capacity_</link></para>
+
+<para>Total number of elements. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;typename Data&gt;
+class Util::RaggedMatrix&lt; Data &gt;</title></simplesect>
+
+
+<para>A 2D array in which different rows can have different lengths. </para>
+
+
+
+<para>A <link linkend="_classUtil_1_1RaggedMatrix">RaggedMatrix</link> object A is a two-dimensional array in which the operator A(i,j) returns a reference to element j of row i, and in which different rows have different lengths. Class <link linkend="_classUtil_1_1RaggedMatrix">RaggedMatrix</link> cannot be instantiated, and functions like an abstract base class.</para>
+
+<para>The memory for a <link linkend="_classUtil_1_1RaggedMatrix">RaggedMatrix</link> is stored in a one-dimensional C array. </para>
+<para>
+Definition at line 29 of file RaggedMatrix.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1RaggedMatrix_1ab5d6d0c5035ef413c00c9f5a46f5bf74"/>    <section>
+    <title>~RaggedMatrix()</title>
+<indexterm><primary>~RaggedMatrix</primary><secondary>Util::RaggedMatrix&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::RaggedMatrix&lt; Data &gt;</primary><secondary>~RaggedMatrix</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1RaggedMatrix">Util::RaggedMatrix</link>&lt; Data &gt;::~<link linkend="_classUtil_1_1RaggedMatrix">RaggedMatrix</link><computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Destructor. </para>
+</para>
+<para>
+Definition at line 129 of file RaggedMatrix.h.</para>
+    </section><anchor xml:id="_classUtil_1_1RaggedMatrix_1a8fbfb6aa200fcc4565d6842a3067138d"/>    <section>
+    <title>RaggedMatrix()</title>
+<indexterm><primary>RaggedMatrix</primary><secondary>Util::RaggedMatrix&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::RaggedMatrix&lt; Data &gt;</primary><secondary>RaggedMatrix</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1RaggedMatrix">Util::RaggedMatrix</link>&lt; Data &gt;::<link linkend="_classUtil_1_1RaggedMatrix">RaggedMatrix</link><computeroutput>[inline]</computeroutput>, <computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Default constructor. </para>
+</para>
+
+<para>Constructor (protected).</para>
+
+<para>Protected to prevent direct instantiation. </para>
+<para>
+Definition at line 117 of file RaggedMatrix.h.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1RaggedMatrix_1aaaffc093e16d4ee2c9fd7f53a7a2e5f2"/>    <section>
+    <title>capacity1()</title>
+<indexterm><primary>capacity1</primary><secondary>Util::RaggedMatrix&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::RaggedMatrix&lt; Data &gt;</primary><secondary>capacity1</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>int <link linkend="_classUtil_1_1RaggedMatrix">Util::RaggedMatrix</link>&lt; Data &gt;::capacity1<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get number of rows. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Number of rows (i.e., range of first array index) </para>
+</formalpara>
+</para>
+<para>
+Definition at line 136 of file RaggedMatrix.h.</para>
+    </section><anchor xml:id="_classUtil_1_1RaggedMatrix_1aab0e5ababbfdfb815fa1543fbcd202f0"/>    <section>
+    <title>capacity2()</title>
+<indexterm><primary>capacity2</primary><secondary>Util::RaggedMatrix&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::RaggedMatrix&lt; Data &gt;</primary><secondary>capacity2</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>int <link linkend="_classUtil_1_1RaggedMatrix">Util::RaggedMatrix</link>&lt; Data &gt;::capacity2 (int i)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get number of elements in row number i. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>i</entry>
+                                <entry>
+<para>row index </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Number of elements in row i. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 143 of file RaggedMatrix.h.</para>
+    </section><anchor xml:id="_classUtil_1_1RaggedMatrix_1a1e55e82b74843ba671d341c542ba7981"/>    <section>
+    <title>operator()()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator()</primary><secondary>Util::RaggedMatrix&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::RaggedMatrix&lt; Data &gt;</primary><secondary>operator()</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>const Data &amp; <link linkend="_classUtil_1_1RaggedMatrix">Util::RaggedMatrix</link>&lt; Data &gt;::operator() (int i, int j) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return element (i,j) of matrix by const reference. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>i</entry>
+                                <entry>
+<para>row index. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>j</entry>
+                                <entry>
+<para>column index. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>element (i, j) </para>
+</formalpara>
+</para>
+<para>
+Definition at line 150 of file RaggedMatrix.h.</para>
+    </section><anchor xml:id="_classUtil_1_1RaggedMatrix_1a5fddfe42f2b86b89b3fafe6bf32ec3f7"/>    <section>
+    <title>operator()()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator()</primary><secondary>Util::RaggedMatrix&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::RaggedMatrix&lt; Data &gt;</primary><secondary>operator()</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>Data &amp; <link linkend="_classUtil_1_1RaggedMatrix">Util::RaggedMatrix</link>&lt; Data &gt;::operator() (int i, int j)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return element (i,j) of matrix by reference. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>i</entry>
+                                <entry>
+<para>row index. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>j</entry>
+                                <entry>
+<para>column index. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>element (i, j) </para>
+</formalpara>
+</para>
+<para>
+Definition at line 164 of file RaggedMatrix.h.</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classUtil_1_1RaggedMatrix_1af2229af07e06e9f96bb635ef9973dcee"/>    <section>
+    <title>data_</title>
+<indexterm><primary>data_</primary><secondary>Util::RaggedMatrix&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::RaggedMatrix&lt; Data &gt;</primary><secondary>data_</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>Data* <link linkend="_classUtil_1_1RaggedMatrix">Util::RaggedMatrix</link>&lt; Data &gt;::data_<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>One-dimensional C array of all elements. </para>
+</para>
+<para>
+Definition at line 79 of file RaggedMatrix.h.</para>
+    </section><anchor xml:id="_classUtil_1_1RaggedMatrix_1a8ce54c378b94b80b259f485c9e891c57"/>    <section>
+    <title>rows_</title>
+<indexterm><primary>rows_</primary><secondary>Util::RaggedMatrix&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::RaggedMatrix&lt; Data &gt;</primary><secondary>rows_</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>Data** <link linkend="_classUtil_1_1RaggedMatrix">Util::RaggedMatrix</link>&lt; Data &gt;::rows_<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para><link linkend="_classUtil_1_1Array">Array</link> of pointers to rows. </para>
+</para>
+<para>
+Definition at line 82 of file RaggedMatrix.h.</para>
+    </section><anchor xml:id="_classUtil_1_1RaggedMatrix_1a68f184744aa3e2fd9f95534c936f5f7f"/>    <section>
+    <title>capacity2_</title>
+<indexterm><primary>capacity2_</primary><secondary>Util::RaggedMatrix&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::RaggedMatrix&lt; Data &gt;</primary><secondary>capacity2_</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>int* <link linkend="_classUtil_1_1RaggedMatrix">Util::RaggedMatrix</link>&lt; Data &gt;::capacity2_<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para><link linkend="_classUtil_1_1Array">Array</link> containing number of elements in each row. </para>
+</para>
+<para>
+Definition at line 85 of file RaggedMatrix.h.</para>
+    </section><anchor xml:id="_classUtil_1_1RaggedMatrix_1a532f33c6a0c5700ec76df69264527afa"/>    <section>
+    <title>capacity1_</title>
+<indexterm><primary>capacity1_</primary><secondary>Util::RaggedMatrix&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::RaggedMatrix&lt; Data &gt;</primary><secondary>capacity1_</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>int <link linkend="_classUtil_1_1RaggedMatrix">Util::RaggedMatrix</link>&lt; Data &gt;::capacity1_<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Number of rows (range of first index). </para>
+</para>
+<para>
+Definition at line 88 of file RaggedMatrix.h.</para>
+    </section><anchor xml:id="_classUtil_1_1RaggedMatrix_1a8deac823fa3e931b568c1d867b6013f2"/>    <section>
+    <title>capacity_</title>
+<indexterm><primary>capacity_</primary><secondary>Util::RaggedMatrix&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::RaggedMatrix&lt; Data &gt;</primary><secondary>capacity_</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>int <link linkend="_classUtil_1_1RaggedMatrix">Util::RaggedMatrix</link>&lt; Data &gt;::capacity_<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Total number of elements. </para>
+</para>
+<para>
+Definition at line 91 of file RaggedMatrix.h.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+RaggedMatrix.h</section>
+</section>

@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1MpiTraits_3_01unsigned_01char_01_4">
+<title>Util::MpiTraits&lt; unsigned char &gt; Class Reference</title>
+<indexterm><primary>Util::MpiTraits&lt; unsigned char &gt;</primary></indexterm>
+<para>
+
+<para><link linkend="_classUtil_1_1MpiTraits_3_01unsigned_01char_01_4">MpiTraits&lt;unsigned char&gt;</link> explicit specialization. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;MpiTraits.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Static Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>static const MPI::Datatype <link linkend="_classUtil_1_1MpiTraits_3_01unsigned_01char_01_4_1ad1ffeed5d17d0e9977c9cf71511a6162">type</link> = MPI::UNSIGNED_CHAR</para>
+
+<para>MPI Datatype. </para>
+</listitem>
+            <listitem><para>static const bool <link linkend="_classUtil_1_1MpiTraits_3_01unsigned_01char_01_4_1a08e10d63a3c8607c2c74afc8b72ef75a">hasType</link> = true</para>
+
+<para>Is the MPI type initialized? </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para><link linkend="_classUtil_1_1MpiTraits_3_01unsigned_01char_01_4">MpiTraits&lt;unsigned char&gt;</link> explicit specialization. </para>
+<para>
+Definition at line 61 of file MpiTraits.h.</para>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classUtil_1_1MpiTraits_3_01unsigned_01char_01_4_1ad1ffeed5d17d0e9977c9cf71511a6162"/>    <section>
+    <title>type</title>
+<indexterm><primary>type</primary><secondary>Util::MpiTraits&lt; unsigned char &gt;</secondary></indexterm>
+<indexterm><primary>Util::MpiTraits&lt; unsigned char &gt;</primary><secondary>type</secondary></indexterm>
+<para><computeroutput>const MPI::Datatype <link linkend="_classUtil_1_1MpiTraits">Util::MpiTraits</link>&lt; unsigned char &gt;::type = MPI::UNSIGNED_CHAR<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>MPI Datatype. </para>
+</para>
+<para>
+Definition at line 64 of file MpiTraits.h.</para>
+    </section><anchor xml:id="_classUtil_1_1MpiTraits_3_01unsigned_01char_01_4_1a08e10d63a3c8607c2c74afc8b72ef75a"/>    <section>
+    <title>hasType</title>
+<indexterm><primary>hasType</primary><secondary>Util::MpiTraits&lt; unsigned char &gt;</secondary></indexterm>
+<indexterm><primary>Util::MpiTraits&lt; unsigned char &gt;</primary><secondary>hasType</secondary></indexterm>
+<para><computeroutput>const bool <link linkend="_classUtil_1_1MpiTraits">Util::MpiTraits</link>&lt; unsigned char &gt;::hasType = true<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Is the MPI type initialized? </para>
+</para>
+<para>
+Definition at line 65 of file MpiTraits.h.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+MpiTraits.hMpiTraits.cpp</section>
+</section>

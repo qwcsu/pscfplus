@@ -1,0 +1,545 @@
+\hypertarget{classUtil_1_1Polynomial}{}\doxysubsection{Util\+::Polynomial$<$ T $>$ Class Template Reference}
+\label{classUtil_1_1Polynomial}\index{Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}}
+
+
+A \mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}} (i.\+e,.  
+
+
+
+
+{\ttfamily \#include $<$Polynomial.\+h$>$}
+
+Inheritance diagram for Util\+::Polynomial$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classUtil_1_1Polynomial}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{Indent}\textbf{ Constructors, Destructors, and Assignment}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1Polynomial_a8f5756ae819fd48688a2d7a2362d09a5}{Polynomial}} (int \mbox{\hyperlink{classUtil_1_1GArray_a95de2f1b3d2aac8cdc04a4cae5cdd891}{capacity}}=10)
+\begin{DoxyCompactList}\small\item\em Construct a zero polynomial. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1Polynomial_abd28dcec1c83b7ca02f0812cf498cce6}{Polynomial}} (T c)
+\begin{DoxyCompactList}\small\item\em Construct a constant polynomial. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1Polynomial_a73729b3456181ab52448969e592a6db4}{Polynomial}} (\mbox{\hyperlink{classUtil_1_1Array}{Array}}$<$ T $>$ const \&coeffs)
+\begin{DoxyCompactList}\small\item\em Construct a polynomial from array of coefficients. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1Polynomial_adc0ad51c4f9703fcf9892b8937774057}{Polynomial}} (\mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}}$<$ T $>$ const \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename U $>$ }\\\mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}}$<$ T $>$ \& \mbox{\hyperlink{classUtil_1_1Polynomial_a550880e07f558b0702a3e7a30276e095}{operator=}} (\mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}}$<$ U $>$ const \&other)
+\begin{DoxyCompactList}\small\item\em Assignment from another polynomial. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1Polynomial_acc106c34179a667f3cc826ed09bde731}{set\+To\+Zero}} ()
+\begin{DoxyCompactList}\small\item\em Assign this polynomial a value of zero. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Simple Accessors}\par
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classUtil_1_1Polynomial_a812bd83ab3e911bb2368386be0186b56}{degree}} () const
+\begin{DoxyCompactList}\small\item\em Return degree of polynomial. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Arithmetic Assignment Operators}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}}$<$ T $>$ \& \mbox{\hyperlink{classUtil_1_1Polynomial_ab47d4fabce096c49b3866e569b26832e}{operator+=}} (const \mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}}$<$ T $>$ \&a)
+\begin{DoxyCompactList}\small\item\em Add another polynomial to this one. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}}$<$ T $>$ \& \mbox{\hyperlink{classUtil_1_1Polynomial_a823b1aa2a24192dc07d498e045fc3f48}{operator+=}} (T a)
+\begin{DoxyCompactList}\small\item\em Add a constant to this polynomial. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}}$<$ T $>$ \& \mbox{\hyperlink{classUtil_1_1Polynomial_a3b11bb2ff102cfc685e261272afa2927}{operator-\/=}} (const \mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}}$<$ T $>$ \&a)
+\begin{DoxyCompactList}\small\item\em Subtract another polynomial from this one. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}}$<$ T $>$ \& \mbox{\hyperlink{classUtil_1_1Polynomial_a615c4cb1d5c182d19ae755aea43aa33e}{operator-\/=}} (T a)
+\begin{DoxyCompactList}\small\item\em Subtract a constant from this polynomial. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}}$<$ T $>$ \& \mbox{\hyperlink{classUtil_1_1Polynomial_acf6affe22221027c97256b15027ed333}{operator$\ast$=}} (T a)
+\begin{DoxyCompactList}\small\item\em Multiply this polynomial by a scalar. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}}$<$ T $>$ \& \mbox{\hyperlink{classUtil_1_1Polynomial_a16e67d48ed0864f64aa3103f1ec87ca0}{operator/=}} (T a)
+\begin{DoxyCompactList}\small\item\em Divide this polynomial by a scalar. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}}$<$ T $>$ \& \mbox{\hyperlink{classUtil_1_1Polynomial_a1bcd39d67a7af8f34a86fa1b4b527ba2}{operator$\ast$=}} (const \mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}}$<$ T $>$ \&a)
+\begin{DoxyCompactList}\small\item\em Multiply this polynomial by another. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Mathematical Functions (return polynomials)}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}}$<$ T $>$ \mbox{\hyperlink{classUtil_1_1Polynomial_ab0b8c33b704c7143fa42bf777e18ed32}{integrate}} () const
+\begin{DoxyCompactList}\small\item\em Compute and return indefinite integral of this polynomial. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}}$<$ T $>$ \mbox{\hyperlink{classUtil_1_1Polynomial_af0c558118e3566b144c80dc34eed620f}{differentiate}} () const
+\begin{DoxyCompactList}\small\item\em Compute and return derivative of this polynomial. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}}$<$ T $>$ \mbox{\hyperlink{classUtil_1_1Polynomial_a8e8ab561f0fe66900c37f4420e999642}{reflect}} () const
+\begin{DoxyCompactList}\small\item\em Compute and return reflected polynomial f(-\/x). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}}$<$ T $>$ \mbox{\hyperlink{classUtil_1_1Polynomial_a948cf01af7581e7f9d2ae035338ecc35}{shift}} (T a) const
+\begin{DoxyCompactList}\small\item\em Compute and return shifted polynomial f(x+a). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Polynomial Evaluation Functions}
+\begin{DoxyCompactItemize}
+\item 
+T \mbox{\hyperlink{classUtil_1_1Polynomial_a4b94c96af332c12cb117f34a72241996}{operator()}} (T x) const
+\begin{DoxyCompactList}\small\item\em Evaluate polynomial at specific argument of type T. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classUtil_1_1Polynomial_ac263c5e8aeb6aef9a4e82ef4e59fab65}{evaluate}} (double x) const
+\begin{DoxyCompactList}\small\item\em Evaluate polynomial at specific floating point argument. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}}$<$ T $>$ \mbox{\hyperlink{classUtil_1_1Polynomial_aa1d136d94b8c323bce738340774dca6c}{monomial}} (int n)
+\begin{DoxyCompactList}\small\item\em Return a monomial f(x) = x$^\wedge$\{n\}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$typename T = Rational$>$\newline
+class Util\+::\+Polynomial$<$ T $>$}
+
+A \mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}} (i.\+e,. 
+
+a list of coefficents). 
+
+Definition at line 30 of file Polynomial.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1Polynomial_a8f5756ae819fd48688a2d7a2362d09a5}\label{classUtil_1_1Polynomial_a8f5756ae819fd48688a2d7a2362d09a5}} 
+\index{Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}!Polynomial@{Polynomial}}
+\index{Polynomial@{Polynomial}!Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{Polynomial()}{Polynomial()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classUtil_1_1Polynomial}{Util\+::\+Polynomial}}$<$ T $>$\+::\mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}} (\begin{DoxyParamCaption}\item[{int}]{capacity = {\ttfamily 10} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a zero polynomial. 
+
+Creates a zero polynomial f(x) = 0, with no stored coefficients. The capacity parameter specifies how much physical space to allocate for subsqequent growth in the array of coefficients.
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & initial capacity of coefficient array. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 264 of file Polynomial.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Polynomial_abd28dcec1c83b7ca02f0812cf498cce6}\label{classUtil_1_1Polynomial_abd28dcec1c83b7ca02f0812cf498cce6}} 
+\index{Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}!Polynomial@{Polynomial}}
+\index{Polynomial@{Polynomial}!Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{Polynomial()}{Polynomial()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classUtil_1_1Polynomial}{Util\+::\+Polynomial}}$<$ T $>$\+::\mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}} (\begin{DoxyParamCaption}\item[{T}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Construct a constant polynomial. 
+
+Creates a polynomial f(x) = c, with \mbox{\hyperlink{classUtil_1_1Polynomial_a812bd83ab3e911bb2368386be0186b56}{degree()}} = 0.
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & constant coefficient value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 272 of file Polynomial.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Polynomial_a73729b3456181ab52448969e592a6db4}\label{classUtil_1_1Polynomial_a73729b3456181ab52448969e592a6db4}} 
+\index{Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}!Polynomial@{Polynomial}}
+\index{Polynomial@{Polynomial}!Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{Polynomial()}{Polynomial()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classUtil_1_1Polynomial}{Util\+::\+Polynomial}}$<$ T $>$\+::\mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1Array}{Array}}$<$ T $>$ const \&}]{coeffs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a polynomial from array of coefficients. 
+
+Constructs a polynomial in which the coefficient of x$^\wedge$\{i\} is given by coeffs\mbox{[}i\mbox{]}. The logical and physical size of the coefficient array are both set to the capacity of coeffs.
+
+
+\begin{DoxyParams}{Parameters}
+{\em coeffs} & array of coefficients. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 283 of file Polynomial.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Polynomial_adc0ad51c4f9703fcf9892b8937774057}\label{classUtil_1_1Polynomial_adc0ad51c4f9703fcf9892b8937774057}} 
+\index{Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}!Polynomial@{Polynomial}}
+\index{Polynomial@{Polynomial}!Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{Polynomial()}{Polynomial()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classUtil_1_1Polynomial}{Util\+::\+Polynomial}}$<$ T $>$\+::\mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}}$<$ T $>$ const \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}} to be copied \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 298 of file Polynomial.\+h.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1Polynomial_a550880e07f558b0702a3e7a30276e095}\label{classUtil_1_1Polynomial_a550880e07f558b0702a3e7a30276e095}} 
+\index{Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+template$<$typename U $>$ \\
+\mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}}$<$ T $>$ \& \mbox{\hyperlink{classUtil_1_1Polynomial}{Util\+::\+Polynomial}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}}$<$ U $>$ const \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Assignment from another polynomial. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}} to assign. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 314 of file Polynomial.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Polynomial_acc106c34179a667f3cc826ed09bde731}\label{classUtil_1_1Polynomial_acc106c34179a667f3cc826ed09bde731}} 
+\index{Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}!setToZero@{setToZero}}
+\index{setToZero@{setToZero}!Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{setToZero()}{setToZero()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classUtil_1_1Polynomial}{Util\+::\+Polynomial}}$<$ T $>$\+::set\+To\+Zero\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Assign this polynomial a value of zero. 
+
+Equivalent to \mbox{\hyperlink{classUtil_1_1GArray_aca73c195a08afe7f22fff01f80e8feac}{G\+Array\+::clear()}}\+: Clears all coefficients, setting size = 0 and degree = -\/1. 
+
+Definition at line 335 of file Polynomial.\+h.
+
+
+
+Referenced by Util\+::\+Polynomial$<$ double $>$\+::differentiate(), and Util\+::\+Polynomial$<$ double $>$\+::integrate().
+
+\mbox{\Hypertarget{classUtil_1_1Polynomial_a812bd83ab3e911bb2368386be0186b56}\label{classUtil_1_1Polynomial_a812bd83ab3e911bb2368386be0186b56}} 
+\index{Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}!degree@{degree}}
+\index{degree@{degree}!Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{degree()}{degree()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int \mbox{\hyperlink{classUtil_1_1Polynomial}{Util\+::\+Polynomial}}$<$ T $>$\+::degree\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return degree of polynomial. 
+
+Returns \mbox{\hyperlink{classUtil_1_1GArray_a6d44bce57ca63ed069af80eaf9ac016f}{size()}} -\/ 1, number of coefficients -\/ 1. By convention, a zero polynomial has degree = -\/1. 
+
+Definition at line 343 of file Polynomial.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Polynomial_ab47d4fabce096c49b3866e569b26832e}\label{classUtil_1_1Polynomial_ab47d4fabce096c49b3866e569b26832e}} 
+\index{Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}}$<$ T $>$ \& \mbox{\hyperlink{classUtil_1_1Polynomial}{Util\+::\+Polynomial}}$<$ T $>$\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}}$<$ T $>$ \&}]{a }\end{DoxyParamCaption})}
+
+
+
+Add another polynomial to this one. 
+
+Upon return, $\ast$this = this + a.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & increment (input) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 350 of file Polynomial.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Polynomial_a823b1aa2a24192dc07d498e045fc3f48}\label{classUtil_1_1Polynomial_a823b1aa2a24192dc07d498e045fc3f48}} 
+\index{Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}}$<$ T $>$ \& \mbox{\hyperlink{classUtil_1_1Polynomial}{Util\+::\+Polynomial}}$<$ T $>$\+::operator+= (\begin{DoxyParamCaption}\item[{T}]{a }\end{DoxyParamCaption})}
+
+
+
+Add a constant to this polynomial. 
+
+Upon return, $\ast$this = this + a.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & increment (input) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 373 of file Polynomial.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Polynomial_a3b11bb2ff102cfc685e261272afa2927}\label{classUtil_1_1Polynomial_a3b11bb2ff102cfc685e261272afa2927}} 
+\index{Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{operator-\/=()}{operator-=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}}$<$ T $>$ \& \mbox{\hyperlink{classUtil_1_1Polynomial}{Util\+::\+Polynomial}}$<$ T $>$\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}}$<$ T $>$ \&}]{a }\end{DoxyParamCaption})}
+
+
+
+Subtract another polynomial from this one. 
+
+Upon return, $\ast$this = this + a.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & decrement (input) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 387 of file Polynomial.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Polynomial_a615c4cb1d5c182d19ae755aea43aa33e}\label{classUtil_1_1Polynomial_a615c4cb1d5c182d19ae755aea43aa33e}} 
+\index{Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{operator-\/=()}{operator-=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}}$<$ T $>$ \& \mbox{\hyperlink{classUtil_1_1Polynomial}{Util\+::\+Polynomial}}$<$ T $>$\+::operator-\/= (\begin{DoxyParamCaption}\item[{T}]{a }\end{DoxyParamCaption})}
+
+
+
+Subtract a constant from this polynomial. 
+
+Upon return, $\ast$this = this + a.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & increment (input) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 410 of file Polynomial.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Polynomial_acf6affe22221027c97256b15027ed333}\label{classUtil_1_1Polynomial_acf6affe22221027c97256b15027ed333}} 
+\index{Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{operator$\ast$=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}}$<$ T $>$ \& \mbox{\hyperlink{classUtil_1_1Polynomial}{Util\+::\+Polynomial}}$<$ T $>$\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{T}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Multiply this polynomial by a scalar. 
+
+Upon return, $\ast$this = this$\ast$a.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & scalar factor \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 425 of file Polynomial.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Polynomial_a16e67d48ed0864f64aa3103f1ec87ca0}\label{classUtil_1_1Polynomial_a16e67d48ed0864f64aa3103f1ec87ca0}} 
+\index{Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{operator/=()}{operator/=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}}$<$ T $>$ \& \mbox{\hyperlink{classUtil_1_1Polynomial}{Util\+::\+Polynomial}}$<$ T $>$\+::operator/= (\begin{DoxyParamCaption}\item[{T}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Divide this polynomial by a scalar. 
+
+Upon return, $\ast$this = this$\ast$a.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & scalar factor (input) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 440 of file Polynomial.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Polynomial_a1bcd39d67a7af8f34a86fa1b4b527ba2}\label{classUtil_1_1Polynomial_a1bcd39d67a7af8f34a86fa1b4b527ba2}} 
+\index{Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{operator$\ast$=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}}$<$ T $>$ \& \mbox{\hyperlink{classUtil_1_1Polynomial}{Util\+::\+Polynomial}}$<$ T $>$\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}}$<$ T $>$ \&}]{a }\end{DoxyParamCaption})}
+
+
+
+Multiply this polynomial by another. 
+
+Upon return, $\ast$this = this$\ast$a.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & increment (input) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 454 of file Polynomial.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Polynomial_ab0b8c33b704c7143fa42bf777e18ed32}\label{classUtil_1_1Polynomial_ab0b8c33b704c7143fa42bf777e18ed32}} 
+\index{Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}!integrate@{integrate}}
+\index{integrate@{integrate}!Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{integrate()}{integrate()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}}$<$ T $>$ \mbox{\hyperlink{classUtil_1_1Polynomial}{Util\+::\+Polynomial}}$<$ T $>$\+::integrate}
+
+
+
+Compute and return indefinite integral of this polynomial. 
+
+Returns an indefinite integral with zero constant term.
+
+\begin{DoxyReturn}{Returns}
+indefinite integral polynomial. 
+\end{DoxyReturn}
+
+
+Definition at line 502 of file Polynomial.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Polynomial_af0c558118e3566b144c80dc34eed620f}\label{classUtil_1_1Polynomial_af0c558118e3566b144c80dc34eed620f}} 
+\index{Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}!differentiate@{differentiate}}
+\index{differentiate@{differentiate}!Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{differentiate()}{differentiate()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}}$<$ T $>$ \mbox{\hyperlink{classUtil_1_1Polynomial}{Util\+::\+Polynomial}}$<$ T $>$\+::differentiate}
+
+
+
+Compute and return derivative of this polynomial. 
+
+Returns a polynomial of one smaller degree.
+
+\begin{DoxyReturn}{Returns}
+derivative polynomial 
+\end{DoxyReturn}
+
+
+Definition at line 528 of file Polynomial.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Polynomial_a8e8ab561f0fe66900c37f4420e999642}\label{classUtil_1_1Polynomial_a8e8ab561f0fe66900c37f4420e999642}} 
+\index{Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}!reflect@{reflect}}
+\index{reflect@{reflect}!Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{reflect()}{reflect()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}}$<$ T $>$ \mbox{\hyperlink{classUtil_1_1Polynomial}{Util\+::\+Polynomial}}$<$ T $>$\+::reflect}
+
+
+
+Compute and return reflected polynomial f(-\/x). 
+
+If this polynomial is f(x), this returns a polynomial g(x) = f(-\/x) created by the reflection operation x-\/$>$ -\/x. This yields a polynomial in which the sign is reversed for all coefficients of odd powers of x.
+
+\begin{DoxyReturn}{Returns}
+polynomial created by reflection x -\/$>$ -\/x. 
+\end{DoxyReturn}
+
+
+Definition at line 557 of file Polynomial.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Polynomial_a948cf01af7581e7f9d2ae035338ecc35}\label{classUtil_1_1Polynomial_a948cf01af7581e7f9d2ae035338ecc35}} 
+\index{Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}!shift@{shift}}
+\index{shift@{shift}!Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{shift()}{shift()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}}$<$ T $>$ \mbox{\hyperlink{classUtil_1_1Polynomial}{Util\+::\+Polynomial}}$<$ T $>$\+::shift (\begin{DoxyParamCaption}\item[{T}]{a }\end{DoxyParamCaption}) const}
+
+
+
+Compute and return shifted polynomial f(x+a). 
+
+If this polynomial is f(x), this returns a polynomial g(x) = f(x+a) created by the shift operation x-\/$>$ x + a.
+
+\begin{DoxyReturn}{Returns}
+polynomial created by shift operation x -\/$>$ x + a. 
+\end{DoxyReturn}
+
+
+Definition at line 576 of file Polynomial.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Polynomial_a4b94c96af332c12cb117f34a72241996}\label{classUtil_1_1Polynomial_a4b94c96af332c12cb117f34a72241996}} 
+\index{Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{classUtil_1_1Polynomial}{Util\+::\+Polynomial}}$<$ T $>$\+::operator() (\begin{DoxyParamCaption}\item[{T}]{x }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Evaluate polynomial at specific argument of type T. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & value of argument \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value f(x) of this polynomial at specified x 
+\end{DoxyReturn}
+
+
+Definition at line 602 of file Polynomial.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Polynomial_ac263c5e8aeb6aef9a4e82ef4e59fab65}\label{classUtil_1_1Polynomial_ac263c5e8aeb6aef9a4e82ef4e59fab65}} 
+\index{Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{evaluate()}{evaluate()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+double \mbox{\hyperlink{classUtil_1_1Polynomial}{Util\+::\+Polynomial}}$<$ T $>$\+::evaluate (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Evaluate polynomial at specific floating point argument. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & value of argument x \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value f(x) of polynomial at specified x 
+\end{DoxyReturn}
+
+
+Definition at line 623 of file Polynomial.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Polynomial_aa1d136d94b8c323bce738340774dca6c}\label{classUtil_1_1Polynomial_aa1d136d94b8c323bce738340774dca6c}} 
+\index{Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}!monomial@{monomial}}
+\index{monomial@{monomial}!Util::Polynomial$<$ T $>$@{Util::Polynomial$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{monomial()}{monomial()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}}$<$ T $>$ \mbox{\hyperlink{classUtil_1_1Polynomial}{Util\+::\+Polynomial}}$<$ T $>$\+::monomial (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Return a monomial f(x) = x$^\wedge$\{n\}. 
+
+Return a monomial.
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & power of x in monomial. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 646 of file Polynomial.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Polynomial.\+h\end{DoxyCompactItemize}

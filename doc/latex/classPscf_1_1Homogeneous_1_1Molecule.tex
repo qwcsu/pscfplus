@@ -1,0 +1,250 @@
+\hypertarget{classPscf_1_1Homogeneous_1_1Molecule}{}\doxysubsection{Pscf\+::Homogeneous\+::Molecule Class Reference}
+\label{classPscf_1_1Homogeneous_1_1Molecule}\index{Pscf::Homogeneous::Molecule@{Pscf::Homogeneous::Molecule}}
+
+
+Descriptor of a molecular species in a homogeneous mixture.  
+
+
+
+
+{\ttfamily \#include $<$Molecule.\+h$>$}
+
+Inheritance diagram for Pscf\+::Homogeneous\+::Molecule\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classPscf_1_1Homogeneous_1_1Molecule}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPscf_1_1Homogeneous_1_1Molecule_acb4e211705eefd180bcfc0c25f847b62}{Molecule}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1Homogeneous_1_1Molecule_ad0fd66817ea6eec19a6fc7df42961ecd}{$\sim$\+Molecule}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPscf_1_1Homogeneous_1_1Molecule_a8b2106c7c5cce72b5e96b89b1fceb105}{read\+Parameters}} (std\+::istream \&in)
+\begin{DoxyCompactList}\small\item\em Read and initialize. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1Homogeneous_1_1Molecule_a513071324e4aa0883a47f3a5df628246}{set\+N\+Clump}} (int \mbox{\hyperlink{classPscf_1_1Homogeneous_1_1Molecule_a2b5ae4b8552b36bf7b83364e42dacae6}{n\+Clump}})
+\begin{DoxyCompactList}\small\item\em Set the number of clumps, and allocate memory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1Homogeneous_1_1Molecule_a5a2a17ab9b963c43a81a85e730ab657b}{compute\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Compute total molecule size by adding clump sizes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Accessors}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPscf_1_1Homogeneous_1_1Clump}{Clump}} \& \mbox{\hyperlink{classPscf_1_1Homogeneous_1_1Molecule_a329de9c343102959cd4c60f498e3ca15}{clump}} (int id)
+\begin{DoxyCompactList}\small\item\em Get a specified \mbox{\hyperlink{classPscf_1_1Homogeneous_1_1Clump}{Clump}}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classPscf_1_1Homogeneous_1_1Clump}{Clump}} \& \mbox{\hyperlink{classPscf_1_1Homogeneous_1_1Molecule_ad58672cc05ae3253bc15fdafcb2d9fae}{clump}} (int id) const
+\begin{DoxyCompactList}\small\item\em Get a specified \mbox{\hyperlink{classPscf_1_1Homogeneous_1_1Clump}{Clump}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPscf_1_1Homogeneous_1_1Molecule_a2b5ae4b8552b36bf7b83364e42dacae6}{n\+Clump}} () const
+\begin{DoxyCompactList}\small\item\em Number of monomer clumps (monomer types). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classPscf_1_1Homogeneous_1_1Molecule_aec45a17689c0b7767f75517daf91f529}{size}} () const
+\begin{DoxyCompactList}\small\item\em Total molecule size = volume / reference volume. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+
+
+\doxysubsubsection{Detailed Description}
+Descriptor of a molecular species in a homogeneous mixture. 
+
+A \mbox{\hyperlink{classPscf_1_1Homogeneous_1_1Molecule}{Homogeneous\+::\+Molecule}} has\+:
+
+
+\begin{DoxyItemize}
+\item An array of \mbox{\hyperlink{classPscf_1_1Homogeneous_1_1Clump}{Homogeneous\+::\+Clump}} objects
+\item An overall size (volume/monomer volume)
+\end{DoxyItemize}
+
+Each \mbox{\hyperlink{classPscf_1_1Homogeneous_1_1Clump}{Clump}} has a monomer type id and a size. The size is the total volume of monomers of that type in a molecule of this species. 
+
+Definition at line 38 of file Molecule.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPscf_1_1Homogeneous_1_1Molecule_acb4e211705eefd180bcfc0c25f847b62}\label{classPscf_1_1Homogeneous_1_1Molecule_acb4e211705eefd180bcfc0c25f847b62}} 
+\index{Pscf::Homogeneous::Molecule@{Pscf::Homogeneous::Molecule}!Molecule@{Molecule}}
+\index{Molecule@{Molecule}!Pscf::Homogeneous::Molecule@{Pscf::Homogeneous::Molecule}}
+\doxyparagraph{\texorpdfstring{Molecule()}{Molecule()}}
+{\footnotesize\ttfamily Pscf\+::\+Homogeneous\+::\+Molecule\+::\+Molecule (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+
+Definition at line 15 of file Molecule.\+cpp.
+
+
+
+References Util\+::\+Param\+Composite\+::set\+Class\+Name().
+
+\mbox{\Hypertarget{classPscf_1_1Homogeneous_1_1Molecule_ad0fd66817ea6eec19a6fc7df42961ecd}\label{classPscf_1_1Homogeneous_1_1Molecule_ad0fd66817ea6eec19a6fc7df42961ecd}} 
+\index{Pscf::Homogeneous::Molecule@{Pscf::Homogeneous::Molecule}!````~Molecule@{$\sim$Molecule}}
+\index{````~Molecule@{$\sim$Molecule}!Pscf::Homogeneous::Molecule@{Pscf::Homogeneous::Molecule}}
+\doxyparagraph{\texorpdfstring{$\sim$Molecule()}{~Molecule()}}
+{\footnotesize\ttfamily Pscf\+::\+Homogeneous\+::\+Molecule\+::$\sim$\+Molecule (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+Definition at line 25 of file Molecule.\+cpp.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPscf_1_1Homogeneous_1_1Molecule_a8b2106c7c5cce72b5e96b89b1fceb105}\label{classPscf_1_1Homogeneous_1_1Molecule_a8b2106c7c5cce72b5e96b89b1fceb105}} 
+\index{Pscf::Homogeneous::Molecule@{Pscf::Homogeneous::Molecule}!readParameters@{readParameters}}
+\index{readParameters@{readParameters}!Pscf::Homogeneous::Molecule@{Pscf::Homogeneous::Molecule}}
+\doxyparagraph{\texorpdfstring{readParameters()}{readParameters()}}
+{\footnotesize\ttfamily void Pscf\+::\+Homogeneous\+::\+Molecule\+::read\+Parameters (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Read and initialize. 
+
+Call either this or set\+N\+Clump to initialize, not both.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & input parameter stream \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classUtil_1_1ParamComposite_a172a3a656b5829c8d758424ad09a22a6}{Util\+::\+Param\+Composite}}.
+
+
+
+Definition at line 31 of file Molecule.\+cpp.
+
+
+
+References U\+T\+I\+L\+\_\+\+A\+S\+S\+E\+RT.
+
+\mbox{\Hypertarget{classPscf_1_1Homogeneous_1_1Molecule_a513071324e4aa0883a47f3a5df628246}\label{classPscf_1_1Homogeneous_1_1Molecule_a513071324e4aa0883a47f3a5df628246}} 
+\index{Pscf::Homogeneous::Molecule@{Pscf::Homogeneous::Molecule}!setNClump@{setNClump}}
+\index{setNClump@{setNClump}!Pscf::Homogeneous::Molecule@{Pscf::Homogeneous::Molecule}}
+\doxyparagraph{\texorpdfstring{setNClump()}{setNClump()}}
+{\footnotesize\ttfamily void Pscf\+::\+Homogeneous\+::\+Molecule\+::set\+N\+Clump (\begin{DoxyParamCaption}\item[{int}]{n\+Clump }\end{DoxyParamCaption})}
+
+
+
+Set the number of clumps, and allocate memory. 
+
+Call either this or read\+Parameters to initialize, not both. If this is used to allocate memory, all clump properties must be set using \mbox{\hyperlink{classPscf_1_1Homogeneous_1_1Clump_ac309f4bc48a1a5d0f1217fe46e6b8bdd}{Clump\+::set\+Monomer\+Id()}} and \mbox{\hyperlink{classPscf_1_1Homogeneous_1_1Clump_a280c3f34fc40b1fb6e43cbc0390df05a}{Clump\+::set\+Size()}}. 
+
+Definition at line 47 of file Molecule.\+cpp.
+
+
+
+References U\+T\+I\+L\+\_\+\+A\+S\+S\+E\+RT.
+
+\mbox{\Hypertarget{classPscf_1_1Homogeneous_1_1Molecule_a5a2a17ab9b963c43a81a85e730ab657b}\label{classPscf_1_1Homogeneous_1_1Molecule_a5a2a17ab9b963c43a81a85e730ab657b}} 
+\index{Pscf::Homogeneous::Molecule@{Pscf::Homogeneous::Molecule}!computeSize@{computeSize}}
+\index{computeSize@{computeSize}!Pscf::Homogeneous::Molecule@{Pscf::Homogeneous::Molecule}}
+\doxyparagraph{\texorpdfstring{computeSize()}{computeSize()}}
+{\footnotesize\ttfamily void Pscf\+::\+Homogeneous\+::\+Molecule\+::compute\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Compute total molecule size by adding clump sizes. 
+
+
+
+Definition at line 58 of file Molecule.\+cpp.
+
+
+
+References U\+T\+I\+L\+\_\+\+A\+S\+S\+E\+RT.
+
+\mbox{\Hypertarget{classPscf_1_1Homogeneous_1_1Molecule_a329de9c343102959cd4c60f498e3ca15}\label{classPscf_1_1Homogeneous_1_1Molecule_a329de9c343102959cd4c60f498e3ca15}} 
+\index{Pscf::Homogeneous::Molecule@{Pscf::Homogeneous::Molecule}!clump@{clump}}
+\index{clump@{clump}!Pscf::Homogeneous::Molecule@{Pscf::Homogeneous::Molecule}}
+\doxyparagraph{\texorpdfstring{clump()}{clump()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPscf_1_1Homogeneous_1_1Clump}{Homogeneous\+::\+Clump}} \& Pscf\+::\+Homogeneous\+::\+Molecule\+::clump (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get a specified \mbox{\hyperlink{classPscf_1_1Homogeneous_1_1Clump}{Clump}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & clump index, 0 $<$= id $<$ n\+Clump \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 141 of file Molecule.\+h.
+
+
+
+Referenced by Pscf\+::\+Homogeneous\+::\+Mixture\+::compute\+Mu(), Pscf\+::\+Homogeneous\+::\+Mixture\+::compute\+Phi(), and Pscf\+::\+Homogeneous\+::\+Mixture\+::validate().
+
+\mbox{\Hypertarget{classPscf_1_1Homogeneous_1_1Molecule_ad58672cc05ae3253bc15fdafcb2d9fae}\label{classPscf_1_1Homogeneous_1_1Molecule_ad58672cc05ae3253bc15fdafcb2d9fae}} 
+\index{Pscf::Homogeneous::Molecule@{Pscf::Homogeneous::Molecule}!clump@{clump}}
+\index{clump@{clump}!Pscf::Homogeneous::Molecule@{Pscf::Homogeneous::Molecule}}
+\doxyparagraph{\texorpdfstring{clump()}{clump()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classPscf_1_1Homogeneous_1_1Clump}{Homogeneous\+::\+Clump}} \& Pscf\+::\+Homogeneous\+::\+Molecule\+::clump (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get a specified \mbox{\hyperlink{classPscf_1_1Homogeneous_1_1Clump}{Clump}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & clump index, 0 $<$= id $<$ n\+Clump \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 147 of file Molecule.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Homogeneous_1_1Molecule_a2b5ae4b8552b36bf7b83364e42dacae6}\label{classPscf_1_1Homogeneous_1_1Molecule_a2b5ae4b8552b36bf7b83364e42dacae6}} 
+\index{Pscf::Homogeneous::Molecule@{Pscf::Homogeneous::Molecule}!nClump@{nClump}}
+\index{nClump@{nClump}!Pscf::Homogeneous::Molecule@{Pscf::Homogeneous::Molecule}}
+\doxyparagraph{\texorpdfstring{nClump()}{nClump()}}
+{\footnotesize\ttfamily int Pscf\+::\+Homogeneous\+::\+Molecule\+::n\+Clump (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Number of monomer clumps (monomer types). 
+
+
+
+Definition at line 126 of file Molecule.\+h.
+
+
+
+Referenced by Pscf\+::\+Homogeneous\+::\+Mixture\+::compute\+Mu(), Pscf\+::\+Homogeneous\+::\+Mixture\+::compute\+Phi(), and Pscf\+::\+Homogeneous\+::\+Mixture\+::validate().
+
+\mbox{\Hypertarget{classPscf_1_1Homogeneous_1_1Molecule_aec45a17689c0b7767f75517daf91f529}\label{classPscf_1_1Homogeneous_1_1Molecule_aec45a17689c0b7767f75517daf91f529}} 
+\index{Pscf::Homogeneous::Molecule@{Pscf::Homogeneous::Molecule}!size@{size}}
+\index{size@{size}!Pscf::Homogeneous::Molecule@{Pscf::Homogeneous::Molecule}}
+\doxyparagraph{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily double Pscf\+::\+Homogeneous\+::\+Molecule\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Total molecule size = volume / reference volume. 
+
+
+
+Definition at line 132 of file Molecule.\+h.
+
+
+
+References U\+T\+I\+L\+\_\+\+C\+H\+E\+CK.
+
+
+
+Referenced by Pscf\+::\+Homogeneous\+::\+Mixture\+::compute\+Mu(), and Pscf\+::\+Homogeneous\+::\+Mixture\+::compute\+Phi().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Molecule.\+h\item 
+Molecule.\+cpp\end{DoxyCompactItemize}

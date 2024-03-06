@@ -1,0 +1,153 @@
+\hypertarget{classUtil_1_1MpiStructBuilder}{}\doxysubsection{Util\+::Mpi\+Struct\+Builder Class Reference}
+\label{classUtil_1_1MpiStructBuilder}\index{Util::MpiStructBuilder@{Util::MpiStructBuilder}}
+
+
+A \mbox{\hyperlink{classUtil_1_1MpiStructBuilder}{Mpi\+Struct\+Builder}} objects is used to create an M\+PI Struct datatype.  
+
+
+
+
+{\ttfamily \#include $<$Mpi\+Struct\+Builder.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1MpiStructBuilder_a3a65505e0cd724576e4f64a32c23fda9}{Mpi\+Struct\+Builder}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1MpiStructBuilder_a34f85f4a1e1c296ba324fe274ea22f24}{set\+Base}} (void $\ast$object\+Address)
+\begin{DoxyCompactList}\small\item\em Set address of an class instance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1MpiStructBuilder_a0b7815cfc8afac5fb7f225de784b07a1}{add\+Member}} (void $\ast$member\+Address, M\+P\+I\+::\+Datatype type, int count=1)
+\begin{DoxyCompactList}\small\item\em Add a new member variable to the type map. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1MpiStructBuilder_ae95e12f80d3991fe0bd7848010924c25}{commit}} (M\+P\+I\+::\+Datatype \&new\+Type)
+\begin{DoxyCompactList}\small\item\em Build and commit a user-\/defined M\+PI Struct datatype. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+A \mbox{\hyperlink{classUtil_1_1MpiStructBuilder}{Mpi\+Struct\+Builder}} objects is used to create an M\+PI Struct datatype. 
+
+This class provides methods to simplify construction of an M\+PI data type that can stores instances of a C struct or C++ class.
+
+As an example, consider the creation of an M\+PI datatype My\+Class\+Mpi for class My\+Class, with a class definition\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class }MyClass }
+\DoxyCodeLine{\{}
+\DoxyCodeLine{   \textcolor{keywordtype}{double} x[3];}
+\DoxyCodeLine{   \textcolor{keywordtype}{int}    i, j;}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+ The code required to build and commit the M\+PI datatype My\+Class\+Mpi is\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{MyClass          object;}
+\DoxyCodeLine{MPI::Datatype  MyClassMpi;}
+\DoxyCodeLine{\mbox{\hyperlink{classUtil_1_1MpiStructBuilder_a3a65505e0cd724576e4f64a32c23fda9}{MpiStructBuilder}} builder;}
+\DoxyCodeLine{}
+\DoxyCodeLine{builder.setBase(\&\textcolor{keywordtype}{object})}
+\DoxyCodeLine{builder.addMember(\&\textcolor{keywordtype}{object}.x, MPI::DOUBLE, 3);}
+\DoxyCodeLine{builder.addMember(\&\textcolor{keywordtype}{object}.i, MPI::INT, 1);}
+\DoxyCodeLine{builder.addMember(\&\textcolor{keywordtype}{object}.j, MPI::INT, 1);}
+\DoxyCodeLine{builder.commit(\&MyClassMpi);}
+\end{DoxyCode}
+ The set\+Base and add\+Member classes require addresses of an instance of the class and of its members, respectively. These addresses must all refer to same instance. The commit method calculates the offset of each member by subtracting the address of the object from the address of each of its members. 
+
+Definition at line 54 of file Mpi\+Struct\+Builder.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1MpiStructBuilder_a3a65505e0cd724576e4f64a32c23fda9}\label{classUtil_1_1MpiStructBuilder_a3a65505e0cd724576e4f64a32c23fda9}} 
+\index{Util::MpiStructBuilder@{Util::MpiStructBuilder}!MpiStructBuilder@{MpiStructBuilder}}
+\index{MpiStructBuilder@{MpiStructBuilder}!Util::MpiStructBuilder@{Util::MpiStructBuilder}}
+\doxyparagraph{\texorpdfstring{MpiStructBuilder()}{MpiStructBuilder()}}
+{\footnotesize\ttfamily Util\+::\+Mpi\+Struct\+Builder\+::\+Mpi\+Struct\+Builder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+
+
+Definition at line 10 of file Mpi\+Struct\+Builder.\+cpp.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1MpiStructBuilder_a34f85f4a1e1c296ba324fe274ea22f24}\label{classUtil_1_1MpiStructBuilder_a34f85f4a1e1c296ba324fe274ea22f24}} 
+\index{Util::MpiStructBuilder@{Util::MpiStructBuilder}!setBase@{setBase}}
+\index{setBase@{setBase}!Util::MpiStructBuilder@{Util::MpiStructBuilder}}
+\doxyparagraph{\texorpdfstring{setBase()}{setBase()}}
+{\footnotesize\ttfamily void Util\+::\+Mpi\+Struct\+Builder\+::set\+Base (\begin{DoxyParamCaption}\item[{void $\ast$}]{object\+Address }\end{DoxyParamCaption})}
+
+
+
+Set address of an class instance. 
+
+
+
+Definition at line 18 of file Mpi\+Struct\+Builder.\+cpp.
+
+
+
+Referenced by Util\+::\+Pair$<$ D\+Propagator $>$\+::commit\+Mpi\+Type(), Util\+::\+F\+Array$<$ D\+Propagator, 2 $>$\+::commit\+Mpi\+Type(), Util\+::\+Tensor\+::commit\+Mpi\+Type(), Util\+::\+Vector\+::commit\+Mpi\+Type(), and Util\+::\+Int\+Vector\+::commit\+Mpi\+Type().
+
+\mbox{\Hypertarget{classUtil_1_1MpiStructBuilder_a0b7815cfc8afac5fb7f225de784b07a1}\label{classUtil_1_1MpiStructBuilder_a0b7815cfc8afac5fb7f225de784b07a1}} 
+\index{Util::MpiStructBuilder@{Util::MpiStructBuilder}!addMember@{addMember}}
+\index{addMember@{addMember}!Util::MpiStructBuilder@{Util::MpiStructBuilder}}
+\doxyparagraph{\texorpdfstring{addMember()}{addMember()}}
+{\footnotesize\ttfamily void Util\+::\+Mpi\+Struct\+Builder\+::add\+Member (\begin{DoxyParamCaption}\item[{void $\ast$}]{member\+Address,  }\item[{M\+P\+I\+::\+Datatype}]{type,  }\item[{int}]{count = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+
+
+Add a new member variable to the type map. 
+
+This method must be called once for each member. The address parameter must be a pointer to a member variable of the object whose base address is passed to \mbox{\hyperlink{classUtil_1_1MpiStructBuilder_a34f85f4a1e1c296ba324fe274ea22f24}{set\+Base()}}.
+
+The count parameter is required only for array members\+: the default value of count=1 may be used for scalar members.
+
+
+\begin{DoxyParams}{Parameters}
+{\em member\+Address} & displacement of variable, in bytes. \\
+\hline
+{\em type} & data type (M\+P\+I\+::\+I\+NT, M\+P\+I\+::\+D\+O\+U\+B\+LE, etc.) \\
+\hline
+{\em count} & number of contiguous variables (array count) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 26 of file Mpi\+Struct\+Builder.\+cpp.
+
+
+
+Referenced by Util\+::\+Pair$<$ D\+Propagator $>$\+::commit\+Mpi\+Type(), Util\+::\+F\+Array$<$ D\+Propagator, 2 $>$\+::commit\+Mpi\+Type(), Util\+::\+Tensor\+::commit\+Mpi\+Type(), Util\+::\+Vector\+::commit\+Mpi\+Type(), and Util\+::\+Int\+Vector\+::commit\+Mpi\+Type().
+
+\mbox{\Hypertarget{classUtil_1_1MpiStructBuilder_ae95e12f80d3991fe0bd7848010924c25}\label{classUtil_1_1MpiStructBuilder_ae95e12f80d3991fe0bd7848010924c25}} 
+\index{Util::MpiStructBuilder@{Util::MpiStructBuilder}!commit@{commit}}
+\index{commit@{commit}!Util::MpiStructBuilder@{Util::MpiStructBuilder}}
+\doxyparagraph{\texorpdfstring{commit()}{commit()}}
+{\footnotesize\ttfamily void Util\+::\+Mpi\+Struct\+Builder\+::commit (\begin{DoxyParamCaption}\item[{M\+P\+I\+::\+Datatype \&}]{new\+Type }\end{DoxyParamCaption})}
+
+
+
+Build and commit a user-\/defined M\+PI Struct datatype. 
+
+The \mbox{\hyperlink{classUtil_1_1MpiStructBuilder_a34f85f4a1e1c296ba324fe274ea22f24}{set\+Base()}} method must be called once and the \mbox{\hyperlink{classUtil_1_1MpiStructBuilder_a0b7815cfc8afac5fb7f225de784b07a1}{add\+Member()}} method must be called once per member before calling this method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Type} & new M\+PI datatype (on output). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 39 of file Mpi\+Struct\+Builder.\+cpp.
+
+
+
+Referenced by Util\+::\+Pair$<$ D\+Propagator $>$\+::commit\+Mpi\+Type(), Util\+::\+F\+Array$<$ D\+Propagator, 2 $>$\+::commit\+Mpi\+Type(), Util\+::\+Tensor\+::commit\+Mpi\+Type(), Util\+::\+Vector\+::commit\+Mpi\+Type(), and Util\+::\+Int\+Vector\+::commit\+Mpi\+Type().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Mpi\+Struct\+Builder.\+h\item 
+Mpi\+Struct\+Builder.\+cpp\end{DoxyCompactItemize}

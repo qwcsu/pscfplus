@@ -1,0 +1,1428 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1Vector">
+<title>Util::Vector Class Reference</title>
+<indexterm><primary>Util::Vector</primary></indexterm>
+<para>
+
+<para>A <link linkend="_classUtil_1_1Vector">Vector</link> is a Cartesian vector. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;Vector.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+<simplesect><title>Constructors</title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1Vector_1ad6fdb9f471d4f4a0b5dd482156104ee4">Vector</link> ()</para>
+
+<para>Default constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Vector_1aa5cb566e52d41a0f7e33e568dd636161">Vector</link> (const <link linkend="_classUtil_1_1Vector">Vector</link> &amp;v)</para>
+
+<para>Copy constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Vector_1a17f195f96bf897f72e4c466387e1e2c6">Vector</link> (double scalar)</para>
+
+<para>Constructor, initialize all elements to a scalar value. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Vector_1ad1c8a0c7b11b7e58a9060adac3bfd2c2">Vector</link> (const double *v)</para>
+
+<para>Construct <link linkend="_classUtil_1_1Vector">Vector</link> from C double[3] array. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Vector_1ac56846fe9884cf39f3e9a2855fa527b1">Vector</link> (double x, double y, double z=0.0)</para>
+
+<para>Construct <link linkend="_classUtil_1_1Vector">Vector</link> from its coordinates. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Vector">Vector</link> &amp; <link linkend="_classUtil_1_1Vector_1ad3c344d3bd1142b3afadaed0dc3c1f4d">zero</link> ()</para>
+
+<para>Set all elements of a 3D vector to zero. </para>
+</listitem>
+            <listitem><para>template&lt;class Archive &gt; </para><para>void <link linkend="_classUtil_1_1Vector_1acaa86fd12d8787bc3933f2fd90afc755">serialize</link> (Archive &amp;ar, const unsigned int version)</para>
+
+<para>Serialize to/from an archive. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</simplesect>
+<simplesect><title>Assignment</title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1Vector">Vector</link> &amp; <link linkend="_classUtil_1_1Vector_1a24fca0505af1ef3471e4934ec969e9c4">operator=</link> (const <link linkend="_classUtil_1_1Vector">Vector</link> &amp;v)</para>
+
+<para>Copy assignment. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Vector">Vector</link> &amp; <link linkend="_classUtil_1_1Vector_1a601b0bcd76ab56e616cfad52b49a4193">operator=</link> (const double *v)</para>
+
+<para>Assignment from C double[3] array. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect><title>Arithmetic Assignment</title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_classUtil_1_1Vector_1a6b1033abc2455eaab7ae799cb8aee104">operator+=</link> (const <link linkend="_classUtil_1_1Vector">Vector</link> &amp;dv)</para>
+
+<para>Add vector dv to this vector. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1Vector_1aeb79aff8fc2020e47d2b9a94f341cf2c">operator-=</link> (const <link linkend="_classUtil_1_1Vector">Vector</link> &amp;dv)</para>
+
+<para>Subtract vector dv from this vector. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1Vector_1a809f5ccc451aaed927d73c8132d98bfc">operator*=</link> (double s)</para>
+
+<para>Multiply this vector by scalar s. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1Vector_1aeecc86282cea53b2949309553fdaf759">operator/=</link> (double s)</para>
+
+<para>Divide this vector by scalar s. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect><title>Array Subscript</title>
+        <itemizedlist>
+            <listitem><para>const double &amp; <link linkend="_classUtil_1_1Vector_1ae1e80b4e6e5786b4f8bc93cf7adbfe94">operator[]</link> (int i) const</para>
+
+<para>Return one Cartesian element by value. </para>
+</listitem>
+            <listitem><para>double &amp; <link linkend="_classUtil_1_1Vector_1a11bacc5f4fb04257200b5f86b5530395">operator[]</link> (int i)</para>
+
+<para>Return one element of the vector by references. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect><title>Scalar-valued functions</title>
+        <itemizedlist>
+            <listitem><para>double <link linkend="_classUtil_1_1Vector_1a0263a929c7569726544ecbefbe26af77">square</link> () const</para>
+
+<para>Return square magnitude of this vector. </para>
+</listitem>
+            <listitem><para>double <link linkend="_classUtil_1_1Vector_1af350e83e1af777d10a2a825f3e755ca3">abs</link> () const</para>
+
+<para>Return absolute magnitude of this vector. </para>
+</listitem>
+            <listitem><para>double <link linkend="_classUtil_1_1Vector_1a365779992b780455cbf9205367202d24">dot</link> (const <link linkend="_classUtil_1_1Vector">Vector</link> &amp;v) const</para>
+
+<para>Return dot product of this vector and vector v. </para>
+</listitem>
+            <listitem><para>double <link linkend="_classUtil_1_1Vector_1ab9cd39ab1f8d527b32e40e05725e877b">projection</link> (const <link linkend="_classUtil_1_1Vector">Vector</link> &amp;p) const</para>
+
+<para>Return projection of this vector along vector p. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect><title>Vector valued functions (result assigned to invoking object)</title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1Vector">Vector</link> &amp; <link linkend="_classUtil_1_1Vector_1a5cbed49c2710da766a8fa04ecab61ad0">add</link> (const <link linkend="_classUtil_1_1Vector">Vector</link> &amp;v1, const <link linkend="_classUtil_1_1Vector">Vector</link> &amp;v2)</para>
+
+<para>Add vectors v1 and v2. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Vector">Vector</link> &amp; <link linkend="_classUtil_1_1Vector_1a7e6de9bb77beddc412ab6055957656cc">subtract</link> (const <link linkend="_classUtil_1_1Vector">Vector</link> &amp;v1, const <link linkend="_classUtil_1_1Vector">Vector</link> &amp;v2)</para>
+
+<para>Subtract vector v2 from v1. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Vector">Vector</link> &amp; <link linkend="_classUtil_1_1Vector_1a6841cd7fd279b44b58551b6c7ca18315">multiply</link> (const <link linkend="_classUtil_1_1Vector">Vector</link> &amp;v, double s)</para>
+
+<para>Multiply a vector v by a scalar s. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Vector">Vector</link> &amp; <link linkend="_classUtil_1_1Vector_1a797c6184c20e1a93715c01000e348673">divide</link> (const <link linkend="_classUtil_1_1Vector">Vector</link> &amp;v, double s)</para>
+
+<para>Divide vector v by scalar s. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Vector">Vector</link> &amp; <link linkend="_classUtil_1_1Vector_1ae284d23015bbd6a89a9b0ab6c65cd6c2">cross</link> (const <link linkend="_classUtil_1_1Vector">Vector</link> &amp;v1, const <link linkend="_classUtil_1_1Vector">Vector</link> &amp;v2)</para>
+
+<para>Calculate cross product of vectors v1 and v2. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Vector">Vector</link> &amp; <link linkend="_classUtil_1_1Vector_1a4400f5fc2f9210abf54ad13c8925a758">versor</link> (const <link linkend="_classUtil_1_1Vector">Vector</link> &amp;v)</para>
+
+<para>Calculate unit vector parallel to input vector v. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Vector">Vector</link> &amp; <link linkend="_classUtil_1_1Vector_1ab71ff4952aef81b2a19b8c5870783f5a">parallel</link> (const <link linkend="_classUtil_1_1Vector">Vector</link> &amp;v, const <link linkend="_classUtil_1_1Vector">Vector</link> &amp;p)</para>
+
+<para>Calculate component of vector v parallel to vector p. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Vector">Vector</link> &amp; <link linkend="_classUtil_1_1Vector_1ad93141d8304b646db5879d5b17e33517">transverse</link> (const <link linkend="_classUtil_1_1Vector">Vector</link> &amp;v, const <link linkend="_classUtil_1_1Vector">Vector</link> &amp;p)</para>
+
+<para>Calculate component of vector v transverse to vector p. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1Vector_1a75801b71ceec0824f346122e240232e6">minId</link> (const <link linkend="_classUtil_1_1Vector">Vector</link> &amp;v)</para>
+
+<para>Computes the index corresponding to minimum element in a vector. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1Vector_1a51b960a86f7515e7f4f5c8a84a101287">maxId</link> (const <link linkend="_classUtil_1_1Vector">Vector</link> &amp;v)</para>
+
+<para>Computes the index corresponding to maximum element in a vector. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Members    </title>
+        <itemizedlist>
+            <listitem><para>static const <link linkend="_classUtil_1_1Vector">Vector</link> <link linkend="_classUtil_1_1Vector_1a2c73b39815ee066d611da4e55aa7e0e1">Zero</link> = <link linkend="_classUtil_1_1Vector">Vector</link>(0.0)</para>
+
+<para>Zero <link linkend="_classUtil_1_1Vector">Vector</link> = {0.0, 0.0, 0.0}. </para>
+</listitem>
+            <listitem><para>static void <link linkend="_classUtil_1_1Vector_1ae3c6e32ed95201071590256c1607bf1e">initStatic</link> ()</para>
+
+<para>Initialize Zero <link linkend="_classUtil_1_1Vector">Vector</link>. </para>
+</listitem>
+            <listitem><para>static void <link linkend="_classUtil_1_1Vector_1a318292420f45f49eb52592c0d74610dc">commitMpiType</link> ()</para>
+
+<para>Commit MPI datatype <link linkend="_classUtil_1_1MpiTraits_3_01Vector_01_4_1a72bd6346fa7232c0b4dcb8224849b3d1">MpiTraits&lt;Vector&gt;::type</link>. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_classUtil_1_1Vector_1a7910afb9c9dbb82f155e980c6eba1538">operator==</link> (const <link linkend="_classUtil_1_1Vector">Vector</link> &amp;v1, const <link linkend="_classUtil_1_1Vector">Vector</link> &amp;v2)</para>
+
+<para>Equality for Vectors. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_classUtil_1_1Vector_1a1b7feb421e65a35a2ba4e6452fce39e6">operator==</link> (const <link linkend="_classUtil_1_1Vector">Vector</link> &amp;v1, const double *v2)</para>
+
+<para>Equality of <link linkend="_classUtil_1_1Vector">Vector</link> and C array. </para>
+</listitem>
+            <listitem><para>std::istream &amp; <link linkend="_classUtil_1_1Vector_1a010b803aa828265fbea4ea76c25b02b2">operator&gt;&gt;</link> (std::istream &amp;in, <link linkend="_classUtil_1_1Vector">Vector</link> &amp;vector)</para>
+
+<para>istream extractor for a <link linkend="_classUtil_1_1Vector">Vector</link>. </para>
+</listitem>
+            <listitem><para>std::ostream &amp; <link linkend="_classUtil_1_1Vector_1ae295e87eb813266c27e75d2809df2acc">operator&lt;&lt;</link> (std::ostream &amp;out, const <link linkend="_classUtil_1_1Vector">Vector</link> &amp;vector)</para>
+
+<para>ostream inserter for a <link linkend="_classUtil_1_1Vector">Vector</link>. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>A <link linkend="_classUtil_1_1Vector">Vector</link> is a Cartesian vector. </para>
+
+
+
+<para>The Cartesian elements of a <link linkend="_classUtil_1_1Vector">Vector</link> can be accessed using array notation: The elements of a three dimensional <link linkend="_classUtil_1_1Vector">Vector</link> v are v[0], v[1], and v[2]. The subscript operator [] returns elements as references, which can be used on either the left or right side of an assignment operator.</para>
+
+<para>The arithmetic assignment operators +=, -=, *=, and /= are overloaded. The operators += and -= represent increment or decrement by a vector, while *= and /= represent multiplication or division by a scalar.</para>
+
+<para>All other unary and binary mathematical operations are implemented as methods. Operations that yield a scalar result, such as a dot product, are implemented as methods that return the resulting value. Operations that yield a <link linkend="_classUtil_1_1Vector">Vector</link>, such as vector addition, are implemented by methods that assign the result to the invoking vector, and return a reference to the invoking vector. For example, <literallayout><computeroutput>Vector&#32;a,&#32;b,&#32;c;
+double&#32;s;
+
+a[0]&#32;=&#32;0.0
+a[1]&#32;=&#32;1.0
+a[2]&#32;=&#32;2.0
+
+b[0]&#32;=&#32;&#32;0.5
+b[1]&#32;=&#32;-0.5
+b[2]&#32;=&#32;-1.5
+
+//&#32;Set&#32;s&#32;=&#32;a.b
+s&#32;=&#32;a.dot(b)
+
+//&#32;Set&#32;c&#32;=&#32;a&#32;+&#32;b
+c.add(a,&#32;b)
+
+//&#32;Set&#32;a&#32;=&#32;a&#32;+&#32;b
+a&#32;+=&#32;b
+
+//&#32;Set&#32;b&#32;=&#32;b*2
+b&#32;*=&#32;2
+</computeroutput></literallayout> This syntax for <link linkend="_classUtil_1_1Vector">Vector</link> valued operations avoids dynamic allocation of temporary <link linkend="_classUtil_1_1Vector">Vector</link> objects, by requiring that the invoking function provide an object to hold the result.</para>
+
+<para>For efficiency, all methods in this class are declared inline. </para>
+<para>
+Definition at line 75 of file Vector.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1Vector_1ad6fdb9f471d4f4a0b5dd482156104ee4"/>    <section>
+    <title>Vector()<computeroutput>[1/5]</computeroutput></title>
+<indexterm><primary>Vector</primary><secondary>Util::Vector</secondary></indexterm>
+<indexterm><primary>Util::Vector</primary><secondary>Vector</secondary></indexterm>
+<para><computeroutput>Util::Vector::Vector ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Default constructor. </para>
+</para>
+<para>
+Definition at line 463 of file Vector.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Vector_1aa5cb566e52d41a0f7e33e568dd636161"/>    <section>
+    <title>Vector()<computeroutput>[2/5]</computeroutput></title>
+<indexterm><primary>Vector</primary><secondary>Util::Vector</secondary></indexterm>
+<indexterm><primary>Util::Vector</primary><secondary>Vector</secondary></indexterm>
+<para><computeroutput>Util::Vector::Vector (const <link linkend="_classUtil_1_1Vector">Vector</link> &amp; v)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Copy constructor. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>v</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Vector">Vector</link> to be copied </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 470 of file Vector.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Vector_1a17f195f96bf897f72e4c466387e1e2c6"/>    <section>
+    <title>Vector()<computeroutput>[3/5]</computeroutput></title>
+<indexterm><primary>Vector</primary><secondary>Util::Vector</secondary></indexterm>
+<indexterm><primary>Util::Vector</primary><secondary>Vector</secondary></indexterm>
+<para><computeroutput>Util::Vector::Vector (double scalar)<computeroutput>[inline]</computeroutput>, <computeroutput>[explicit]</computeroutput></computeroutput></para><para>
+
+<para>Constructor, initialize all elements to a scalar value. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>scalar</entry>
+                                <entry>
+<para>initial value for all elements. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 481 of file Vector.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Vector_1ad1c8a0c7b11b7e58a9060adac3bfd2c2"/>    <section>
+    <title>Vector()<computeroutput>[4/5]</computeroutput></title>
+<indexterm><primary>Vector</primary><secondary>Util::Vector</secondary></indexterm>
+<indexterm><primary>Util::Vector</primary><secondary>Vector</secondary></indexterm>
+<para><computeroutput>Util::Vector::Vector (const double * v)<computeroutput>[inline]</computeroutput>, <computeroutput>[explicit]</computeroutput></computeroutput></para><para>
+
+<para>Construct <link linkend="_classUtil_1_1Vector">Vector</link> from C double[3] array. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>v</entry>
+                                <entry>
+<para>array of 3 coordinates </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 492 of file Vector.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Vector_1ac56846fe9884cf39f3e9a2855fa527b1"/>    <section>
+    <title>Vector()<computeroutput>[5/5]</computeroutput></title>
+<indexterm><primary>Vector</primary><secondary>Util::Vector</secondary></indexterm>
+<indexterm><primary>Util::Vector</primary><secondary>Vector</secondary></indexterm>
+<para><computeroutput>Util::Vector::Vector (double x, double y, double z = <computeroutput>0.0</computeroutput>
+)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Construct <link linkend="_classUtil_1_1Vector">Vector</link> from its coordinates. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>x</entry>
+                                <entry>
+<para>x-axis coordinate, v[0] </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>y</entry>
+                                <entry>
+<para>y-axis coordinate, v[1] </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>z</entry>
+                                <entry>
+<para>z-axis coordinate, v[2] </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 503 of file Vector.h.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1Vector_1ad3c344d3bd1142b3afadaed0dc3c1f4d"/>    <section>
+    <title>zero()</title>
+<indexterm><primary>zero</primary><secondary>Util::Vector</secondary></indexterm>
+<indexterm><primary>Util::Vector</primary><secondary>zero</secondary></indexterm>
+<para><computeroutput><link linkend="_classUtil_1_1Vector">Vector</link> &amp; Util::Vector::zero ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Set all elements of a 3D vector to zero. </para>
+</para>
+<para>
+Definition at line 514 of file Vector.h.</para>
+<para>
+Referenced by Util::setToZero().</para>
+    </section><anchor xml:id="_classUtil_1_1Vector_1acaa86fd12d8787bc3933f2fd90afc755"/>    <section>
+    <title>serialize()</title>
+<indexterm><primary>serialize</primary><secondary>Util::Vector</secondary></indexterm>
+<indexterm><primary>Util::Vector</primary><secondary>serialize</secondary></indexterm>
+<computeroutput>template&lt;class Archive &gt; </computeroutput><para><computeroutput>void Util::Vector::serialize (Archive &amp; ar, const unsigned int version)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Serialize to/from an archive. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>archive </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>version</entry>
+                                <entry>
+<para>archive version id </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 818 of file Vector.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Vector_1a24fca0505af1ef3471e4934ec969e9c4"/>    <section>
+    <title>operator=()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator=</primary><secondary>Util::Vector</secondary></indexterm>
+<indexterm><primary>Util::Vector</primary><secondary>operator=</secondary></indexterm>
+<para><computeroutput><link linkend="_classUtil_1_1Vector">Vector</link> &amp; Util::Vector::operator= (const <link linkend="_classUtil_1_1Vector">Vector</link> &amp; v)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Copy assignment. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>v</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Vector">Vector</link> to assign. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 526 of file Vector.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Vector_1a601b0bcd76ab56e616cfad52b49a4193"/>    <section>
+    <title>operator=()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator=</primary><secondary>Util::Vector</secondary></indexterm>
+<indexterm><primary>Util::Vector</primary><secondary>operator=</secondary></indexterm>
+<para><computeroutput><link linkend="_classUtil_1_1Vector">Vector</link> &amp; Util::Vector::operator= (const double * v)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Assignment from C double[3] array. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>v</entry>
+                                <entry>
+<para>C-array of components </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 538 of file Vector.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Vector_1a6b1033abc2455eaab7ae799cb8aee104"/>    <section>
+    <title>operator+=()</title>
+<indexterm><primary>operator+=</primary><secondary>Util::Vector</secondary></indexterm>
+<indexterm><primary>Util::Vector</primary><secondary>operator+=</secondary></indexterm>
+<para><computeroutput>void Util::Vector::operator+= (const <link linkend="_classUtil_1_1Vector">Vector</link> &amp; dv)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Add vector dv to this vector. </para>
+</para>
+
+<para>Upon return, *this = this + dv.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>dv</entry>
+                                <entry>
+<para>vector increment (input) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 550 of file Vector.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Vector_1aeb79aff8fc2020e47d2b9a94f341cf2c"/>    <section>
+    <title>operator-=()</title>
+<indexterm><primary>operator-=</primary><secondary>Util::Vector</secondary></indexterm>
+<indexterm><primary>Util::Vector</primary><secondary>operator-=</secondary></indexterm>
+<para><computeroutput>void Util::Vector::operator-= (const <link linkend="_classUtil_1_1Vector">Vector</link> &amp; dv)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Subtract vector dv from this vector. </para>
+</para>
+
+<para>Upon return, *this = this + dv.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>dv</entry>
+                                <entry>
+<para>vector increment (input) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 561 of file Vector.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Vector_1a809f5ccc451aaed927d73c8132d98bfc"/>    <section>
+    <title>operator*=()</title>
+<indexterm><primary>operator*=</primary><secondary>Util::Vector</secondary></indexterm>
+<indexterm><primary>Util::Vector</primary><secondary>operator*=</secondary></indexterm>
+<para><computeroutput>void Util::Vector::operator*= (double s)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Multiply this vector by scalar s. </para>
+</para>
+
+<para>Upon return, *this = (*this)*s.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>s</entry>
+                                <entry>
+<para>scalar multiplier </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 572 of file Vector.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Vector_1aeecc86282cea53b2949309553fdaf759"/>    <section>
+    <title>operator/=()</title>
+<indexterm><primary>operator/=</primary><secondary>Util::Vector</secondary></indexterm>
+<indexterm><primary>Util::Vector</primary><secondary>operator/=</secondary></indexterm>
+<para><computeroutput>void Util::Vector::operator/= (double s)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Divide this vector by scalar s. </para>
+</para>
+
+<para>Upon return, *this = (*this)/s.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>s</entry>
+                                <entry>
+<para>scalar divisor (input) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 583 of file Vector.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Vector_1ae1e80b4e6e5786b4f8bc93cf7adbfe94"/>    <section>
+    <title>operator[]()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator[]</primary><secondary>Util::Vector</secondary></indexterm>
+<indexterm><primary>Util::Vector</primary><secondary>operator[]</secondary></indexterm>
+<para><computeroutput>const double &amp; Util::Vector::operator[] (int i) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return one Cartesian element by value. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>i</entry>
+                                <entry>
+<para>element index </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>element i of the vector </para>
+</formalpara>
+</para>
+<para>
+Definition at line 594 of file Vector.h.</para>
+<para>
+References Util::Dimension.</para>
+    </section><anchor xml:id="_classUtil_1_1Vector_1a11bacc5f4fb04257200b5f86b5530395"/>    <section>
+    <title>operator[]()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator[]</primary><secondary>Util::Vector</secondary></indexterm>
+<indexterm><primary>Util::Vector</primary><secondary>operator[]</secondary></indexterm>
+<para><computeroutput>double &amp; Util::Vector::operator[] (int i)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return one element of the vector by references. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>i</entry>
+                                <entry>
+<para>element index </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>element i of this vector </para>
+</formalpara>
+</para>
+<para>
+Definition at line 605 of file Vector.h.</para>
+<para>
+References Util::Dimension.</para>
+    </section><anchor xml:id="_classUtil_1_1Vector_1a0263a929c7569726544ecbefbe26af77"/>    <section>
+    <title>square()</title>
+<indexterm><primary>square</primary><secondary>Util::Vector</secondary></indexterm>
+<indexterm><primary>Util::Vector</primary><secondary>square</secondary></indexterm>
+<para><computeroutput>double Util::Vector::square ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return square magnitude of this vector. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>square magnitude of this vector </para>
+</formalpara>
+</para>
+<para>
+Definition at line 616 of file Vector.h.</para>
+<para>
+Referenced by abs(), parallel(), and transverse().</para>
+    </section><anchor xml:id="_classUtil_1_1Vector_1af350e83e1af777d10a2a825f3e755ca3"/>    <section>
+    <title>abs()</title>
+<indexterm><primary>abs</primary><secondary>Util::Vector</secondary></indexterm>
+<indexterm><primary>Util::Vector</primary><secondary>abs</secondary></indexterm>
+<para><computeroutput>double Util::Vector::abs ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return absolute magnitude of this vector. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>absolute magnitude (norm) of this vector. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 625 of file Vector.h.</para>
+<para>
+References square().</para>
+<para>
+Referenced by projection(), and versor().</para>
+    </section><anchor xml:id="_classUtil_1_1Vector_1a365779992b780455cbf9205367202d24"/>    <section>
+    <title>dot()</title>
+<indexterm><primary>dot</primary><secondary>Util::Vector</secondary></indexterm>
+<indexterm><primary>Util::Vector</primary><secondary>dot</secondary></indexterm>
+<para><computeroutput>double Util::Vector::dot (const <link linkend="_classUtil_1_1Vector">Vector</link> &amp; v) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return dot product of this vector and vector v. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>v</entry>
+                                <entry>
+<para>input vector </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>dot product of this vector and vector v </para>
+</formalpara>
+</para>
+<para>
+Definition at line 632 of file Vector.h.</para>
+<para>
+Referenced by parallel(), Util::product(), projection(), and transverse().</para>
+    </section><anchor xml:id="_classUtil_1_1Vector_1ab9cd39ab1f8d527b32e40e05725e877b"/>    <section>
+    <title>projection()</title>
+<indexterm><primary>projection</primary><secondary>Util::Vector</secondary></indexterm>
+<indexterm><primary>Util::Vector</primary><secondary>projection</secondary></indexterm>
+<para><computeroutput>double Util::Vector::projection (const <link linkend="_classUtil_1_1Vector">Vector</link> &amp; p) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return projection of this vector along vector p. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>p</entry>
+                                <entry>
+<para>vector parallel to direction along which to project </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>scalar projection this-&gt;dot(p)/p.<link linkend="_classUtil_1_1Vector_1af350e83e1af777d10a2a825f3e755ca3">abs()</link> </para>
+</formalpara>
+</para>
+<para>
+Definition at line 641 of file Vector.h.</para>
+<para>
+References abs(), and dot().</para>
+    </section><anchor xml:id="_classUtil_1_1Vector_1a5cbed49c2710da766a8fa04ecab61ad0"/>    <section>
+    <title>add()</title>
+<indexterm><primary>add</primary><secondary>Util::Vector</secondary></indexterm>
+<indexterm><primary>Util::Vector</primary><secondary>add</secondary></indexterm>
+<para><computeroutput><link linkend="_classUtil_1_1Vector">Vector</link> &amp; Util::Vector::add (const <link linkend="_classUtil_1_1Vector">Vector</link> &amp; v1, const <link linkend="_classUtil_1_1Vector">Vector</link> &amp; v2)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Add vectors v1 and v2. </para>
+</para>
+
+<para>Upon return, *this = v1 + v2.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>v1</entry>
+                                <entry>
+<para>vector (input) </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>v2</entry>
+                                <entry>
+<para>vector (input) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified invoking vector </para>
+</formalpara>
+</para>
+<para>
+Definition at line 657 of file Vector.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Vector_1a7e6de9bb77beddc412ab6055957656cc"/>    <section>
+    <title>subtract()</title>
+<indexterm><primary>subtract</primary><secondary>Util::Vector</secondary></indexterm>
+<indexterm><primary>Util::Vector</primary><secondary>subtract</secondary></indexterm>
+<para><computeroutput><link linkend="_classUtil_1_1Vector">Vector</link> &amp; Util::Vector::subtract (const <link linkend="_classUtil_1_1Vector">Vector</link> &amp; v1, const <link linkend="_classUtil_1_1Vector">Vector</link> &amp; v2)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Subtract vector v2 from v1. </para>
+</para>
+
+<para>Upon return, *this = v1 - v2.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>v1</entry>
+                                <entry>
+<para>vector (input) </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>v2</entry>
+                                <entry>
+<para>vector (input) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified invoking vector </para>
+</formalpara>
+</para>
+<para>
+Definition at line 672 of file Vector.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Vector_1a6841cd7fd279b44b58551b6c7ca18315"/>    <section>
+    <title>multiply()</title>
+<indexterm><primary>multiply</primary><secondary>Util::Vector</secondary></indexterm>
+<indexterm><primary>Util::Vector</primary><secondary>multiply</secondary></indexterm>
+<para><computeroutput><link linkend="_classUtil_1_1Vector">Vector</link> &amp; Util::Vector::multiply (const <link linkend="_classUtil_1_1Vector">Vector</link> &amp; v, double s)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Multiply a vector v by a scalar s. </para>
+</para>
+
+<para>Upon return, *this = v*s.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>v</entry>
+                                <entry>
+<para>vector input </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>s</entry>
+                                <entry>
+<para>scalar input </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified invoking vector </para>
+</formalpara>
+</para>
+<para>
+Definition at line 686 of file Vector.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Vector_1a797c6184c20e1a93715c01000e348673"/>    <section>
+    <title>divide()</title>
+<indexterm><primary>divide</primary><secondary>Util::Vector</secondary></indexterm>
+<indexterm><primary>Util::Vector</primary><secondary>divide</secondary></indexterm>
+<para><computeroutput><link linkend="_classUtil_1_1Vector">Vector</link> &amp; Util::Vector::divide (const <link linkend="_classUtil_1_1Vector">Vector</link> &amp; v, double s)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Divide vector v by scalar s. </para>
+</para>
+
+<para>Upon return, *this = v/s;</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>v</entry>
+                                <entry>
+<para>vector input </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>s</entry>
+                                <entry>
+<para>scalar input </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified invoking vector </para>
+</formalpara>
+</para>
+<para>
+Definition at line 700 of file Vector.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Vector_1ae284d23015bbd6a89a9b0ab6c65cd6c2"/>    <section>
+    <title>cross()</title>
+<indexterm><primary>cross</primary><secondary>Util::Vector</secondary></indexterm>
+<indexterm><primary>Util::Vector</primary><secondary>cross</secondary></indexterm>
+<para><computeroutput><link linkend="_classUtil_1_1Vector">Vector</link> &amp; Util::Vector::cross (const <link linkend="_classUtil_1_1Vector">Vector</link> &amp; v1, const <link linkend="_classUtil_1_1Vector">Vector</link> &amp; v2)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Calculate cross product of vectors v1 and v2. </para>
+</para>
+
+<para>Upon return, *this = v1 x v2.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>v1</entry>
+                                <entry>
+<para>input vector </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>v2</entry>
+                                <entry>
+<para>input vector </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified invoking vector </para>
+</formalpara>
+</para>
+<para>
+Definition at line 714 of file Vector.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Vector_1a4400f5fc2f9210abf54ad13c8925a758"/>    <section>
+    <title>versor()</title>
+<indexterm><primary>versor</primary><secondary>Util::Vector</secondary></indexterm>
+<indexterm><primary>Util::Vector</primary><secondary>versor</secondary></indexterm>
+<para><computeroutput><link linkend="_classUtil_1_1Vector">Vector</link> &amp; Util::Vector::versor (const <link linkend="_classUtil_1_1Vector">Vector</link> &amp; v)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Calculate unit vector parallel to input vector v. </para>
+</para>
+
+<para>Upon return *this = unit vector.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>v</entry>
+                                <entry>
+<para>input vector </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified invoking <link linkend="_classUtil_1_1Vector">Vector</link> </para>
+</formalpara>
+</para>
+<para>
+Definition at line 726 of file Vector.h.</para>
+<para>
+References abs().</para>
+    </section><anchor xml:id="_classUtil_1_1Vector_1ab71ff4952aef81b2a19b8c5870783f5a"/>    <section>
+    <title>parallel()</title>
+<indexterm><primary>parallel</primary><secondary>Util::Vector</secondary></indexterm>
+<indexterm><primary>Util::Vector</primary><secondary>parallel</secondary></indexterm>
+<para><computeroutput><link linkend="_classUtil_1_1Vector">Vector</link> &amp; Util::Vector::parallel (const <link linkend="_classUtil_1_1Vector">Vector</link> &amp; v, const <link linkend="_classUtil_1_1Vector">Vector</link> &amp; p)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Calculate component of vector v parallel to vector p. </para>
+</para>
+
+<para>Upon return, the invoking vector is equal to the vector projection of vector v along a direction parallel to vector p.</para>
+
+<para>The vector projection of v along p is parallel to p and has an absolute magnitude equal to the scalar projection of v along p.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>v</entry>
+                                <entry>
+<para>vector to project </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>p</entry>
+                                <entry>
+<para>vector along which to project </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified invoking <link linkend="_classUtil_1_1Vector">Vector</link> </para>
+</formalpara>
+</para>
+<para>
+Definition at line 749 of file Vector.h.</para>
+<para>
+References dot(), and square().</para>
+    </section><anchor xml:id="_classUtil_1_1Vector_1ad93141d8304b646db5879d5b17e33517"/>    <section>
+    <title>transverse()</title>
+<indexterm><primary>transverse</primary><secondary>Util::Vector</secondary></indexterm>
+<indexterm><primary>Util::Vector</primary><secondary>transverse</secondary></indexterm>
+<para><computeroutput><link linkend="_classUtil_1_1Vector">Vector</link> &amp; Util::Vector::transverse (const <link linkend="_classUtil_1_1Vector">Vector</link> &amp; v, const <link linkend="_classUtil_1_1Vector">Vector</link> &amp; p)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Calculate component of vector v transverse to vector p. </para>
+</para>
+
+<para>Upon return, the invoking vector is equal to the vector projection of vector v perpendicular to vector p.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>v</entry>
+                                <entry>
+<para>input vector </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>p</entry>
+                                <entry>
+<para>vector perpendicular to which to project. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified invoking <link linkend="_classUtil_1_1Vector">Vector</link> </para>
+</formalpara>
+</para>
+<para>
+Definition at line 771 of file Vector.h.</para>
+<para>
+References dot(), and square().</para>
+    </section><anchor xml:id="_classUtil_1_1Vector_1a75801b71ceec0824f346122e240232e6"/>    <section>
+    <title>minId()</title>
+<indexterm><primary>minId</primary><secondary>Util::Vector</secondary></indexterm>
+<indexterm><primary>Util::Vector</primary><secondary>minId</secondary></indexterm>
+<para><computeroutput>int Util::Vector::minId (const <link linkend="_classUtil_1_1Vector">Vector</link> &amp; v)</computeroutput></para><para>
+
+<para>Computes the index corresponding to minimum element in a vector. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>v</entry>
+                                <entry>
+<para>input vector </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>index of the minimum element. </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_classUtil_1_1Vector_1a51b960a86f7515e7f4f5c8a84a101287"/>    <section>
+    <title>maxId()</title>
+<indexterm><primary>maxId</primary><secondary>Util::Vector</secondary></indexterm>
+<indexterm><primary>Util::Vector</primary><secondary>maxId</secondary></indexterm>
+<para><computeroutput>int Util::Vector::maxId (const <link linkend="_classUtil_1_1Vector">Vector</link> &amp; v)</computeroutput></para><para>
+
+<para>Computes the index corresponding to maximum element in a vector. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>v</entry>
+                                <entry>
+<para>input vector </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>index of the maximum element. </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_classUtil_1_1Vector_1ae3c6e32ed95201071590256c1607bf1e"/>    <section>
+    <title>initStatic()</title>
+<indexterm><primary>initStatic</primary><secondary>Util::Vector</secondary></indexterm>
+<indexterm><primary>Util::Vector</primary><secondary>initStatic</secondary></indexterm>
+<para><computeroutput>void Util::Vector::initStatic ( )<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Initialize Zero <link linkend="_classUtil_1_1Vector">Vector</link>. </para>
+</para>
+<para>
+Definition at line 119 of file Vector.cpp.</para>
+<para>
+Referenced by Util::initStatic().</para>
+    </section><anchor xml:id="_classUtil_1_1Vector_1a318292420f45f49eb52592c0d74610dc"/>    <section>
+    <title>commitMpiType()</title>
+<indexterm><primary>commitMpiType</primary><secondary>Util::Vector</secondary></indexterm>
+<indexterm><primary>Util::Vector</primary><secondary>commitMpiType</secondary></indexterm>
+<para><computeroutput>void Util::Vector::commitMpiType ( )<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Commit MPI datatype <link linkend="_classUtil_1_1MpiTraits_3_01Vector_01_4_1a72bd6346fa7232c0b4dcb8224849b3d1">MpiTraits&lt;Vector&gt;::type</link>. </para>
+</para>
+
+<para>Commit MPI Datatype. </para>
+<para>
+Definition at line 97 of file Vector.cpp.</para>
+<para>
+References Util::MpiStructBuilder::addMember(), Util::MpiStructBuilder::commit(), and Util::MpiStructBuilder::setBase().</para>
+</section>
+</section>
+<section>
+<title>Friends And Related Function Documentation</title>
+<anchor xml:id="_classUtil_1_1Vector_1a7910afb9c9dbb82f155e980c6eba1538"/>    <section>
+    <title>operator==<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator==</primary><secondary>Util::Vector</secondary></indexterm>
+<indexterm><primary>Util::Vector</primary><secondary>operator==</secondary></indexterm>
+<para><computeroutput>bool operator== (const <link linkend="_classUtil_1_1Vector">Vector</link> &amp; v1, const <link linkend="_classUtil_1_1Vector">Vector</link> &amp; v2)<computeroutput>[friend]</computeroutput></computeroutput></para><para>
+
+<para>Equality for Vectors. </para>
+</para>
+<para>
+Definition at line 26 of file Vector.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1Vector_1a1b7feb421e65a35a2ba4e6452fce39e6"/>    <section>
+    <title>operator==<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator==</primary><secondary>Util::Vector</secondary></indexterm>
+<indexterm><primary>Util::Vector</primary><secondary>operator==</secondary></indexterm>
+<para><computeroutput>bool operator== (const <link linkend="_classUtil_1_1Vector">Vector</link> &amp; v1, const double * v2)<computeroutput>[friend]</computeroutput></computeroutput></para><para>
+
+<para>Equality of <link linkend="_classUtil_1_1Vector">Vector</link> and C array. </para>
+</para>
+<para>
+Definition at line 36 of file Vector.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1Vector_1a010b803aa828265fbea4ea76c25b02b2"/>    <section>
+    <title>operator&gt;&gt;</title>
+<indexterm><primary>operator&gt;&gt;</primary><secondary>Util::Vector</secondary></indexterm>
+<indexterm><primary>Util::Vector</primary><secondary>operator&gt;&gt;</secondary></indexterm>
+<para><computeroutput>std::istream&amp; operator&gt;&gt; (std::istream &amp; in, <link linkend="_classUtil_1_1Vector">Vector</link> &amp; vector)<computeroutput>[friend]</computeroutput></computeroutput></para><para>
+
+<para>istream extractor for a <link linkend="_classUtil_1_1Vector">Vector</link>. </para>
+</para>
+
+<para>Input elements of a vector from stream, without line breaks.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>vector</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Vector">Vector</link> to be read from stream </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified input stream </para>
+</formalpara>
+</para>
+<para>
+Definition at line 65 of file Vector.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1Vector_1ae295e87eb813266c27e75d2809df2acc"/>    <section>
+    <title>operator&lt;&lt;</title>
+<indexterm><primary>operator&lt;&lt;</primary><secondary>Util::Vector</secondary></indexterm>
+<indexterm><primary>Util::Vector</primary><secondary>operator&lt;&lt;</secondary></indexterm>
+<para><computeroutput>std::ostream&amp; operator&lt;&lt; (std::ostream &amp; out, const <link linkend="_classUtil_1_1Vector">Vector</link> &amp; vector)<computeroutput>[friend]</computeroutput></computeroutput></para><para>
+
+<para>ostream inserter for a <link linkend="_classUtil_1_1Vector">Vector</link>. </para>
+</para>
+
+<para>Output elements of a vector to stream, without line breaks. 
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>out</entry>
+                                <entry>
+<para>output stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>vector</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Vector">Vector</link> to be written to stream </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified output stream </para>
+</formalpara>
+</para>
+<para>
+Definition at line 76 of file Vector.cpp.</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classUtil_1_1Vector_1a2c73b39815ee066d611da4e55aa7e0e1"/>    <section>
+    <title>Zero</title>
+<indexterm><primary>Zero</primary><secondary>Util::Vector</secondary></indexterm>
+<indexterm><primary>Util::Vector</primary><secondary>Zero</secondary></indexterm>
+<para><computeroutput>const <link linkend="_classUtil_1_1Vector">Vector</link> Util::Vector::Zero = <link linkend="_classUtil_1_1Vector">Vector</link>(0.0)<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Zero <link linkend="_classUtil_1_1Vector">Vector</link> = {0.0, 0.0, 0.0}. </para>
+</para>
+<para>
+Definition at line 369 of file Vector.h.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+Vector.hVector.cpp</section>
+</section>

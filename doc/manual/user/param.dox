@@ -1,0 +1,198 @@
+/*! \page user_param_page  Parameter Files
+
+\ref user_usage_page  (Prev) &nbsp; &nbsp; &nbsp; &nbsp; 
+\ref user_command_page (Next) 
+<BR>
+
+The structure of parameter file is adapted from the C++/CUDA version of PSCF, 
+and contain one ``System`` block as shown below.
+
+
+
+\code
+System{
+  Mixture{
+    nMonomer   ...
+    monomers   ...  ...  
+               ...  ... 
+    nPolymer   ...
+    Polymer{
+      nBlock  ...
+      nVertex ...
+      blocks  ...  ... ... ...  ...    
+              ...  ... ... ...  ...
+      phi     ...
+    }
+    DPolymer{
+      nBlock  ...
+      nVertex ...
+      bonds   ...  ... ... ...  ...  ...  
+              ...  ... ... ...  ...  ...
+      phi     ...
+    }
+    [ns	      ...]
+  }
+  Interaction{
+     chi ... ... ...
+         ... ... ...
+     [kappa    ...]
+     sigma     ...
+  }
+  unitCell ... ... ...
+  mesh ....
+  groupName ...
+  AmIterator{
+     maxItr  ...
+     epsilon ...
+     maxHist ...
+     isMinimized ...
+  }
+}
+\endcode
+
+Each sub-block and required parameter (represented by ... ) is explained as follows:
+
+   - **Mixture**: Description of molecular components (each is considered as a block
+   copolymer in general with each block being a linear homopolymer) and composition 
+   in the system (which is considered as a mixture
+   in general). 
+   
+   	- **nMonomer**: Number of monomer (segment) types in the system; this includes
+    solvent molecules.
+   	- **monomers**: Description of each segment type in a seperate line (thus a total of ``nMonomer`` lines). 
+    The first parameter in each line is a unique integer index starting from 0 for the segment type, and
+   	the second parameter specifies its statistical segment length.
+   	- **nPolymer**: Number of molecular components in the system.
+   	- **Polymer** (only used for continuous-Gaussian-chain models): Description of each molecular component 
+    in a seperate sub-block (thus a total of ``nPolymer`` sub-blocks), which
+    includes its chain architecture (specified by ``nBlock``, ``nVertex``, and ``blocks`` as explained below)
+    and its overall volume fraction ``phi`` in the system. 
+        - **nBlock**: Number of blocks of this molecular component.
+        - **nVertex**: Number of vertices of this molecular component. A vertex is either a joint 
+        (where at least two blocks meet) or a free end.
+        - **blocks**: Description of each block in a seperate line (thus a total of ``nBlock`` lines). The first parameter
+        in each line is a unique integer index starting from 0 for the block, the second
+        parameter specifies its segment type, the next two parameters
+        are the indices of the two vertices it connects, and the last parameter
+        specifies its length.
+      - **DPolymer** (only used for discrete-chain models): Description of each molecular 
+      component in a seperate sub-block (thus a total of ``nPolymer`` sub-blocks), which
+    includes its chain architecture (specified by ``nBond``, ``nVertex``, and ``bonds`` as explained below; see 
+        <a href="https://github.com/qwcsu/PSCFplus/blob/master/doc/notes/Models.pdf">Models.pdf</a> for details.)
+    and its overall volume fraction ``phi`` in the system. 
+        - **nBond**: Number of v-bonds (including both block bonds and joint bonds)
+        of this molecular component.
+        - **nVertex**: Number of vertices of this molecular component. A vertex here is 
+        either a joint (which is connected by at least two v-bonds) or a free end (which
+        is connected by one v-bond).
+        - **bonds**: Description of each v-bond in a seperate line (thus a total of ``nBond`` lines). The first parameter
+        in each line is a unique integer index starting from 0 for the bond, the second and the third parameters
+        are the indices of the two vertices it connects, the next two parameters
+        specify the types of these vertices (segments), and the last parameter is its number of segments (0 for a joint bond). 
+   	- **ns**: Total number of discretization steps along the chain contour of length 1. This line is used only 
+    for continuous-Gaussian-chain models, and is omitted for discrete-chain models.
+
+   - **Interaction**: Description of non-bonded interactions in the system.
+   	- **chi**: Value of the (generalized) Flory-Huggins &chi; parameter for each pair of 
+    different segment types in a seperate line. The first two parameters in each line are the segment-type indices,
+   	and the third one is the corresponding value of &chi;. By default, the value between segments of the same type is 0, and thus not needed.
+   	- **kappa**: Compressibility parameter &kappa;, used only for compressible systems and omitted for 
+    incompressible systems.
+   	- **sigma**: Interaction range of the non-bounded potential, which is 0 for Dirac <i>&delta;</i>-function interaction.
+
+   - **unitCell**: The first parameter in this line is the lattice system of the unit cell
+   and the rest is a list of real numbers needed to describe the unit cell;
+   see <a href="https://dmorse.github.io/pscfpp-man/user_unitcell_page.html">PSCF documentation</a> for details.
+
+   - **mesh**: Description of the mesh size used for spatial discretization, given by D integer numbers with D being the 
+   dimensionality of the system.
+
+   - **groupName**: Name of the crystallographic space group.
+ 
+   - **AmIterator**: Parameters required by Anderson mixing for iteratively solving the SCF equations;
+   see <a href="https://epje.epj.org/articles/epje/abs/2009/12/10189_2009_Article_9411/10189_2009_Article_9411.html"><i>Matsen</i>, <b>Eur. Phys. J. E 53</b>, 361 (2009)</a> for details.
+   
+   	- **maxItr**: Maximum number of iterations.
+   	- **epsilon**: Criterion of convergence for SCF equations.
+   	- **maxHist**: A positive integer for the maximum size of the history matrix used in Anderson mixing.
+   	- **isMinimized**: 1 for finding the bulk period of the ordered phase, and 0 otherwise. 
+
+Below are two examples of the parameter file:
+   	
+	- ***Example for SCF calculations of the BCC phase formed by the "Standard" model of compositionally asymmetric A-B diblock copolymer***
+
+
+\code
+System{
+  Mixture{
+    nMonomer  2     
+    monomers  0   A   1.0   
+              1   B   1.0 
+    nPolymer  1     
+    Polymer{
+      nBlock  2     
+      nVertex 3
+      blocks  0  0  0  1  2.50000000E-01    
+              1  1  1  2  7.50000000E-01
+      phi     1.0
+    }
+    ns	     128
+  }
+  Interaction{
+    chi   1   0   20.0
+    sigma 0.0
+  }
+  unitCell cubic      4.6662857614e+00
+  mesh      64   64  64
+  groupName         I_m_-3_m
+  AmIterator{
+    maxItr 5000
+    epsilon 1e-9
+    maxHist 20
+    isMinimized 1
+  }
+}
+\endcode
+
+- ***Example for SCF calculations of the &sigma; phase formed by the DPDC 
+model of conformationally asymmetric A-B diblock copolymer***
+
+\code
+System{
+  Mixture{
+    nMonomer  2
+    monomers  0   A   3.0
+              1   B   1.0 
+    nPolymer  1
+    DPolymer{
+      nBond   3 
+      nVertex 4
+      bonds   0  0  1  0  0   3
+              1  2  3  1  1   7
+              2  1  2  0  1   0
+      phi     1.0
+    }
+  }
+  Interaction{
+    chi   1   0   2.0
+    kappa 0.06366197723676
+    sigma 0.89442719099992
+  }
+  unitCell tetragonal 	   2.8767371691e+01      1.5168759856e+01
+  mesh    128  128  64
+  groupName         P_42%m_n_m
+  AmIterator{
+    maxItr 5000
+    epsilon 1e-8
+    maxHist 20
+    isMinimized 1
+  }
+}
+\endcode
+
+
+\ref user_usage_page  (Prev) &nbsp; &nbsp; &nbsp; &nbsp; 
+\ref user_page  (Up) &nbsp; &nbsp; &nbsp; &nbsp; 
+\ref user_command_page (Next) 
+
+*/

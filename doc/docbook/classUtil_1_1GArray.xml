@@ -1,0 +1,556 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1GArray">
+<title>Util::GArray&lt; Data &gt; Class Template Reference</title>
+<indexterm><primary>Util::GArray&lt; Data &gt;</primary></indexterm>
+<para>
+
+<para>An automatically growable array, analogous to a std::vector. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;GArray.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1GArray_1a26051708c1b99e2c7e55999cb5c0ba55">GArray</link> ()</para>
+
+<para>Constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1GArray_1ae078e8789a077baa7ef29bf8e0b2d5f5">GArray</link> (const <link linkend="_classUtil_1_1GArray">GArray</link>&lt; Data &gt; &amp;other)</para>
+
+<para>Copy constructor, copy pointers. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1GArray">GArray</link>&lt; Data &gt; &amp; <link linkend="_classUtil_1_1GArray_1a2eb4aae844fa393d2dd25f77b7399cd6">operator=</link> (const <link linkend="_classUtil_1_1GArray">GArray</link>&lt; Data &gt; &amp;other)</para>
+
+<para>Assignment, element by element. </para>
+</listitem>
+            <listitem><para>virtual <link linkend="_classUtil_1_1GArray_1a20d7b40e69ed5d4771d735b469c9528c">~GArray</link> ()</para>
+
+<para>Destructor. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1GArray_1ab2938b47a62b7990f2dc503aafe76cc5">reserve</link> (int <link linkend="_classUtil_1_1GArray_1a95de2f1b3d2aac8cdc04a4cae5cdd891">capacity</link>)</para>
+
+<para>Reserve memory for specified number of elements. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1GArray_1a95ba6f581768f0e7ab085430a67eb7c9">deallocate</link> ()</para>
+
+<para>Deallocate (delete) underlying array of pointers. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1GArray_1aca73c195a08afe7f22fff01f80e8feac">clear</link> ()</para>
+
+<para>Reset to empty state. </para>
+</listitem>
+            <listitem><para>template&lt;class Archive &gt; </para><para>void <link linkend="_classUtil_1_1GArray_1a530c2a4eea7ee4ec1183fe05bb9125ab">serialize</link> (Archive &amp;ar, const unsigned int version)</para>
+
+<para>Serialize a <link linkend="_classUtil_1_1GArray">GArray</link> to/from an Archive. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1GArray_1aba83cc8f58e6e9fce56c2a2299e7f31f">begin</link> (<link linkend="_classUtil_1_1ArrayIterator">ArrayIterator</link>&lt; Data &gt; &amp;iterator)</para>
+
+<para>Set an <link linkend="_classUtil_1_1ArrayIterator">ArrayIterator</link> to the beginning of this <link linkend="_classUtil_1_1Array">Array</link>. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1GArray_1aee654eb7e9af300f6ab6d5e127641918">begin</link> (<link linkend="_classUtil_1_1ConstArrayIterator">ConstArrayIterator</link>&lt; Data &gt; &amp;iterator) const</para>
+
+<para>Set a <link linkend="_classUtil_1_1ConstArrayIterator">ConstArrayIterator</link> to the beginning of this <link linkend="_classUtil_1_1Array">Array</link>. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1GArray_1a65241e6b949bb761c14487fbe863fac0">append</link> (const Data &amp;data)</para>
+
+<para>Append an element to the end of the sequence. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1GArray_1a574f946eb24fad2adbd38b17a04f6793">resize</link> (int n)</para>
+
+<para>Resizes array so that it contains n elements. </para>
+</listitem>
+            <listitem><para>Data &amp; <link linkend="_classUtil_1_1GArray_1a5ea3fe44d785b35f8a1f825843e47fc7">operator[]</link> (int i)</para>
+
+<para>Mimic C array subscripting. </para>
+</listitem>
+            <listitem><para>const Data &amp; <link linkend="_classUtil_1_1GArray_1a699eb16b07a0a5267402f025579267bc">operator[]</link> (int i) const</para>
+
+<para>Mimic C array subscripting. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1GArray_1a95de2f1b3d2aac8cdc04a4cae5cdd891">capacity</link> () const</para>
+
+<para>Return physical capacity of array. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1GArray_1a6d44bce57ca63ed069af80eaf9ac016f">size</link> () const</para>
+
+<para>Return logical size of this array (i.e., current number of elements). </para>
+</listitem>
+            <listitem><para>bool <link linkend="_classUtil_1_1GArray_1a8968475d236f9c373c01ee2b22d207ec">isAllocated</link> () const</para>
+
+<para>Is this array allocated? </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;typename Data&gt;
+class Util::GArray&lt; Data &gt;</title></simplesect>
+
+
+<para>An automatically growable array, analogous to a std::vector. </para>
+
+
+
+<para>An <link linkend="_classUtil_1_1GArray">GArray</link> is an array that grows as needed as objects are appended. It has a logical size that grows when objects are appended, which is always less than or equal to the current physical capacity. If an object is added when the size is already equal to the capacity, the array will be resized and copied to a new location in memory. The elements of a <link linkend="_classUtil_1_1GArray">GArray</link> are deleted when the <link linkend="_classUtil_1_1GArray">GArray</link> is destroyed or deallocated. </para>
+<para>
+Definition at line 33 of file GArray.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1GArray_1a26051708c1b99e2c7e55999cb5c0ba55"/>    <section>
+    <title>GArray()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>GArray</primary><secondary>Util::GArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::GArray&lt; Data &gt;</primary><secondary>GArray</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1GArray">Util::GArray</link>&lt; Data &gt;::<link linkend="_classUtil_1_1GArray">GArray</link></computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+<para>
+Definition at line 191 of file GArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1GArray_1ae078e8789a077baa7ef29bf8e0b2d5f5"/>    <section>
+    <title>GArray()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>GArray</primary><secondary>Util::GArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::GArray&lt; Data &gt;</primary><secondary>GArray</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1GArray">Util::GArray</link>&lt; Data &gt;::<link linkend="_classUtil_1_1GArray">GArray</link> (const <link linkend="_classUtil_1_1GArray">GArray</link>&lt; Data &gt; &amp; other)</computeroutput></para><para>
+
+<para>Copy constructor, copy pointers. </para>
+</para>
+
+<para>Allocates new C-array and copies pointers to Data objects.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>other</entry>
+                                <entry>
+<para>the <link linkend="_classUtil_1_1GArray">GArray</link> to be copied. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 203 of file GArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1GArray_1a20d7b40e69ed5d4771d735b469c9528c"/>    <section>
+    <title>~GArray()</title>
+<indexterm><primary>~GArray</primary><secondary>Util::GArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::GArray&lt; Data &gt;</primary><secondary>~GArray</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1GArray">Util::GArray</link>&lt; Data &gt;::~<link linkend="_classUtil_1_1GArray">GArray</link><computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Destructor. </para>
+</para>
+
+<para>Deletes array of pointers, if allocated previously. Does not delete the associated Data objects. </para>
+<para>
+Definition at line 226 of file GArray.h.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1GArray_1a2eb4aae844fa393d2dd25f77b7399cd6"/>    <section>
+    <title>operator=()</title>
+<indexterm><primary>operator=</primary><secondary>Util::GArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::GArray&lt; Data &gt;</primary><secondary>operator=</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1GArray">GArray</link>&lt; Data &gt; &amp; <link linkend="_classUtil_1_1GArray">Util::GArray</link>&lt; Data &gt;::operator= (const <link linkend="_classUtil_1_1GArray">GArray</link>&lt; Data &gt; &amp; other)</computeroutput></para><para>
+
+<para>Assignment, element by element. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>other</entry>
+                                <entry>
+<para>the rhs <link linkend="_classUtil_1_1GArray">GArray</link> </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 239 of file GArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1GArray_1ab2938b47a62b7990f2dc503aafe76cc5"/>    <section>
+    <title>reserve()</title>
+<indexterm><primary>reserve</primary><secondary>Util::GArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::GArray&lt; Data &gt;</primary><secondary>reserve</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1GArray">Util::GArray</link>&lt; Data &gt;::reserve (int capacity)</computeroutput></para><para>
+
+<para>Reserve memory for specified number of elements. </para>
+</para>
+
+<para>Resizes and copies array if requested capacity is less than the current capacity. Does nothing if requested capacity is greater than current capacity.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>capacity</entry>
+                                <entry>
+<para>number of elements for which to reserve space. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 255 of file GArray.h.</para>
+<para>
+Referenced by Util::Polynomial&lt; double &gt;::operator*=(), Util::Polynomial&lt; double &gt;::operator=(), and Util::Polynomial&lt; double &gt;::Polynomial().</para>
+    </section><anchor xml:id="_classUtil_1_1GArray_1a95ba6f581768f0e7ab085430a67eb7c9"/>    <section>
+    <title>deallocate()</title>
+<indexterm><primary>deallocate</primary><secondary>Util::GArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::GArray&lt; Data &gt;</primary><secondary>deallocate</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1GArray">Util::GArray</link>&lt; Data &gt;::deallocate</computeroutput></para><para>
+
+<para>Deallocate (delete) underlying array of pointers. </para>
+</para>
+
+<para>Sets capacity and size to zero. </para>
+<para>
+Definition at line 286 of file GArray.h.</para>
+<para>
+Referenced by Util::Binomial::clear().</para>
+    </section><anchor xml:id="_classUtil_1_1GArray_1aca73c195a08afe7f22fff01f80e8feac"/>    <section>
+    <title>clear()</title>
+<indexterm><primary>clear</primary><secondary>Util::GArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::GArray&lt; Data &gt;</primary><secondary>clear</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1GArray">Util::GArray</link>&lt; Data &gt;::clear</computeroutput></para><para>
+
+<para>Reset to empty state. </para>
+</para>
+
+<para>Sets size to zero, but leaves capacity unchanged. Does not call destructor for deleted elements. </para>
+<para>
+Definition at line 299 of file GArray.h.</para>
+<para>
+Referenced by Util::Polynomial&lt; double &gt;::setToZero().</para>
+    </section><anchor xml:id="_classUtil_1_1GArray_1a530c2a4eea7ee4ec1183fe05bb9125ab"/>    <section>
+    <title>serialize()</title>
+<indexterm><primary>serialize</primary><secondary>Util::GArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::GArray&lt; Data &gt;</primary><secondary>serialize</secondary></indexterm>
+<computeroutput>template&lt;class Data &gt; </computeroutput><computeroutput>template&lt;class Archive &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1GArray">Util::GArray</link>&lt; Data &gt;::serialize (Archive &amp; ar, const unsigned int version)</computeroutput></para><para>
+
+<para>Serialize a <link linkend="_classUtil_1_1GArray">GArray</link> to/from an Archive. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>archive </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>version</entry>
+                                <entry>
+<para>archive version id </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 380 of file GArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1GArray_1aba83cc8f58e6e9fce56c2a2299e7f31f"/>    <section>
+    <title>begin()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>begin</primary><secondary>Util::GArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::GArray&lt; Data &gt;</primary><secondary>begin</secondary></indexterm>
+<computeroutput>template&lt;class Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1GArray">Util::GArray</link>&lt; Data &gt;::begin (<link linkend="_classUtil_1_1ArrayIterator">ArrayIterator</link>&lt; Data &gt; &amp; iterator)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Set an <link linkend="_classUtil_1_1ArrayIterator">ArrayIterator</link> to the beginning of this <link linkend="_classUtil_1_1Array">Array</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>iterator</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1ArrayIterator">ArrayIterator</link>, initialized on output. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 405 of file GArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1GArray_1aee654eb7e9af300f6ab6d5e127641918"/>    <section>
+    <title>begin()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>begin</primary><secondary>Util::GArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::GArray&lt; Data &gt;</primary><secondary>begin</secondary></indexterm>
+<computeroutput>template&lt;class Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1GArray">Util::GArray</link>&lt; Data &gt;::begin (<link linkend="_classUtil_1_1ConstArrayIterator">ConstArrayIterator</link>&lt; Data &gt; &amp; iterator) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Set a <link linkend="_classUtil_1_1ConstArrayIterator">ConstArrayIterator</link> to the beginning of this <link linkend="_classUtil_1_1Array">Array</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>iterator</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1ConstArrayIterator">ConstArrayIterator</link>, initialized on output. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 416 of file GArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1GArray_1a65241e6b949bb761c14487fbe863fac0"/>    <section>
+    <title>append()</title>
+<indexterm><primary>append</primary><secondary>Util::GArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::GArray&lt; Data &gt;</primary><secondary>append</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1GArray">Util::GArray</link>&lt; Data &gt;::append (const Data &amp; data)</computeroutput></para><para>
+
+<para>Append an element to the end of the sequence. </para>
+</para>
+
+<para>Resizes array if space is inadequate.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>data</entry>
+                                <entry>
+<para>Data object to be appended </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 306 of file GArray.h.</para>
+<para>
+Referenced by Util::Polynomial&lt; double &gt;::operator*=(), Util::Polynomial&lt; double &gt;::operator+=(), Util::Polynomial&lt; double &gt;::operator-=(), Util::Polynomial&lt; double &gt;::operator=(), and Util::Polynomial&lt; double &gt;::Polynomial().</para>
+    </section><anchor xml:id="_classUtil_1_1GArray_1a574f946eb24fad2adbd38b17a04f6793"/>    <section>
+    <title>resize()</title>
+<indexterm><primary>resize</primary><secondary>Util::GArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::GArray&lt; Data &gt;</primary><secondary>resize</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1GArray">Util::GArray</link>&lt; Data &gt;::resize (int n)</computeroutput></para><para>
+
+<para>Resizes array so that it contains n elements. </para>
+</para>
+
+<para>This function changes the size of the array to n, and changes the capacity iff necesary to accomodate the change in size. Upon return, size is set to n. In what follows, &quot;size&quot; and &quot;capacity&quot; refer to values on entry:</para>
+
+<para>If n &lt; size, size is reset, but no destructors are called If n &gt; size, all added elements are value initialized If n &gt; capacity, new memory is allocated and the array is moved</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>n</entry>
+                                <entry>
+<para>desired number of elements </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 339 of file GArray.h.</para>
+<para>
+Referenced by Util::Binomial::setup().</para>
+    </section><anchor xml:id="_classUtil_1_1GArray_1a5ea3fe44d785b35f8a1f825843e47fc7"/>    <section>
+    <title>operator[]()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator[]</primary><secondary>Util::GArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::GArray&lt; Data &gt;</primary><secondary>operator[]</secondary></indexterm>
+<computeroutput>template&lt;class Data &gt; </computeroutput><para><computeroutput>Data &amp; <link linkend="_classUtil_1_1GArray">Util::GArray</link>&lt; Data &gt;::operator[] (int i)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Mimic C array subscripting. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>i</entry>
+                                <entry>
+<para>array index </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to element i </para>
+</formalpara>
+</para>
+<para>
+Definition at line 426 of file GArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1GArray_1a699eb16b07a0a5267402f025579267bc"/>    <section>
+    <title>operator[]()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator[]</primary><secondary>Util::GArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::GArray&lt; Data &gt;</primary><secondary>operator[]</secondary></indexterm>
+<computeroutput>template&lt;class Data &gt; </computeroutput><para><computeroutput>const Data &amp; <link linkend="_classUtil_1_1GArray">Util::GArray</link>&lt; Data &gt;::operator[] (int i) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Mimic C array subscripting. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>i</entry>
+                                <entry>
+<para>array index </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>const reference to element i </para>
+</formalpara>
+</para>
+<para>
+Definition at line 437 of file GArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1GArray_1a95de2f1b3d2aac8cdc04a4cae5cdd891"/>    <section>
+    <title>capacity()</title>
+<indexterm><primary>capacity</primary><secondary>Util::GArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::GArray&lt; Data &gt;</primary><secondary>capacity</secondary></indexterm>
+<computeroutput>template&lt;class Data &gt; </computeroutput><para><computeroutput>int <link linkend="_classUtil_1_1GArray">Util::GArray</link>&lt; Data &gt;::capacity<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return physical capacity of array. </para>
+</para>
+<para>
+Definition at line 448 of file GArray.h.</para>
+<para>
+Referenced by Util::Binomial::clear().</para>
+    </section><anchor xml:id="_classUtil_1_1GArray_1a6d44bce57ca63ed069af80eaf9ac016f"/>    <section>
+    <title>size()</title>
+<indexterm><primary>size</primary><secondary>Util::GArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::GArray&lt; Data &gt;</primary><secondary>size</secondary></indexterm>
+<computeroutput>template&lt;class Data &gt; </computeroutput><para><computeroutput>int <link linkend="_classUtil_1_1GArray">Util::GArray</link>&lt; Data &gt;::size<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return logical size of this array (i.e., current number of elements). </para>
+</para>
+<para>
+Definition at line 455 of file GArray.h.</para>
+<para>
+Referenced by Util::Polynomial&lt; double &gt;::degree(), and Util::Polynomial&lt; double &gt;::operator*=().</para>
+    </section><anchor xml:id="_classUtil_1_1GArray_1a8968475d236f9c373c01ee2b22d207ec"/>    <section>
+    <title>isAllocated()</title>
+<indexterm><primary>isAllocated</primary><secondary>Util::GArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::GArray&lt; Data &gt;</primary><secondary>isAllocated</secondary></indexterm>
+<computeroutput>template&lt;class Data &gt; </computeroutput><para><computeroutput>bool <link linkend="_classUtil_1_1GArray">Util::GArray</link>&lt; Data &gt;::isAllocated<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Is this array allocated? </para>
+</para>
+<para>
+Definition at line 462 of file GArray.h.</para>
+<para>
+Referenced by Util::GArray&lt; Rational &gt;::GArray().</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+GArray.h</section>
+</section>

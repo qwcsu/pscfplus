@@ -1,0 +1,138 @@
+\hypertarget{classUtil_1_1Ar1Process}{}\doxysubsection{Util\+::Ar1\+Process Class Reference}
+\label{classUtil_1_1Ar1Process}\index{Util::Ar1Process@{Util::Ar1Process}}
+
+
+Generator for a discrete A\+R(1) Markov process.  
+
+
+
+
+{\ttfamily \#include $<$Ar1\+Process.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1Ar1Process_ae3d25b29d622056190dc94cbe38a18db}{Ar1\+Process}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1Ar1Process_a47aad8b46f43dfe7e76b8d7560e2201f}{Ar1\+Process}} (\mbox{\hyperlink{classUtil_1_1Random}{Random}} \&random)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1Ar1Process_a9c60ab97782c9c20e96d8668f2391019}{set\+R\+NG}} (\mbox{\hyperlink{classUtil_1_1Random}{Random}} \&random)
+\begin{DoxyCompactList}\small\item\em Associate a random number generator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1Ar1Process_a9816d24784201773a2f3cc4d14b45070}{init}} (double tau)
+\begin{DoxyCompactList}\small\item\em Initialize process. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classUtil_1_1Ar1Process_a9619754ea96eab7f45c1ee3731138d32}{operator()}} ()
+\begin{DoxyCompactList}\small\item\em Generate and return a new value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Generator for a discrete A\+R(1) Markov process. 
+
+An auto-\/regressive A\+R(1) process is a discrete stationary Markov process x(n) with an autocorrelation function $<$x(n)$\ast$x(n+m)$>$ = exp(-\/m/tau), where tau is a decay time. It is a discrete version of the Ornstein-\/\+Uhlenbeck continuous Markov process. 
+
+Definition at line 27 of file Ar1\+Process.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1Ar1Process_ae3d25b29d622056190dc94cbe38a18db}\label{classUtil_1_1Ar1Process_ae3d25b29d622056190dc94cbe38a18db}} 
+\index{Util::Ar1Process@{Util::Ar1Process}!Ar1Process@{Ar1Process}}
+\index{Ar1Process@{Ar1Process}!Util::Ar1Process@{Util::Ar1Process}}
+\doxyparagraph{\texorpdfstring{Ar1Process()}{Ar1Process()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Util\+::\+Ar1\+Process\+::\+Ar1\+Process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+
+Definition at line 16 of file Ar1\+Process.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1Ar1Process_a47aad8b46f43dfe7e76b8d7560e2201f}\label{classUtil_1_1Ar1Process_a47aad8b46f43dfe7e76b8d7560e2201f}} 
+\index{Util::Ar1Process@{Util::Ar1Process}!Ar1Process@{Ar1Process}}
+\index{Ar1Process@{Ar1Process}!Util::Ar1Process@{Util::Ar1Process}}
+\doxyparagraph{\texorpdfstring{Ar1Process()}{Ar1Process()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Util\+::\+Ar1\+Process\+::\+Ar1\+Process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1Random}{Random}} \&}]{random }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em random} & associated random number generator. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 27 of file Ar1\+Process.\+cpp.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1Ar1Process_a9c60ab97782c9c20e96d8668f2391019}\label{classUtil_1_1Ar1Process_a9c60ab97782c9c20e96d8668f2391019}} 
+\index{Util::Ar1Process@{Util::Ar1Process}!setRNG@{setRNG}}
+\index{setRNG@{setRNG}!Util::Ar1Process@{Util::Ar1Process}}
+\doxyparagraph{\texorpdfstring{setRNG()}{setRNG()}}
+{\footnotesize\ttfamily void Util\+::\+Ar1\+Process\+::set\+R\+NG (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1Random}{Random}} \&}]{random }\end{DoxyParamCaption})}
+
+
+
+Associate a random number generator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em random} & associated random number generator. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 38 of file Ar1\+Process.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1Ar1Process_a9816d24784201773a2f3cc4d14b45070}\label{classUtil_1_1Ar1Process_a9816d24784201773a2f3cc4d14b45070}} 
+\index{Util::Ar1Process@{Util::Ar1Process}!init@{init}}
+\index{init@{init}!Util::Ar1Process@{Util::Ar1Process}}
+\doxyparagraph{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Util\+::\+Ar1\+Process\+::init (\begin{DoxyParamCaption}\item[{double}]{tau }\end{DoxyParamCaption})}
+
+
+
+Initialize process. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tau} & decay time (in discrete steps) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 46 of file Ar1\+Process.\+cpp.
+
+
+
+References Util\+::\+Random\+::gaussian(), and U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1Ar1Process_a9619754ea96eab7f45c1ee3731138d32}\label{classUtil_1_1Ar1Process_a9619754ea96eab7f45c1ee3731138d32}} 
+\index{Util::Ar1Process@{Util::Ar1Process}!operator()@{operator()}}
+\index{operator()@{operator()}!Util::Ar1Process@{Util::Ar1Process}}
+\doxyparagraph{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily double Util\+::\+Ar1\+Process\+::operator() (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Generate and return a new value. 
+
+
+
+Definition at line 77 of file Ar1\+Process.\+h.
+
+
+
+References Util\+::\+Random\+::gaussian().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Ar1\+Process.\+h\item 
+Ar1\+Process.\+cpp\end{DoxyCompactItemize}

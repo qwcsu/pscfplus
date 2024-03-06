@@ -1,0 +1,373 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_group__Misc__Module">
+<title>Miscellaneous Utilities</title>
+<indexterm><primary>Miscellaneous Utilities</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classUtil_1_1Bit">Util::Bit</link></para>
+
+<para>Represents a specific bit location within an unsigned int. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classUtil_1_1Exception">Util::Exception</link></para>
+
+<para>A user-defined exception. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classUtil_1_1FileMaster">Util::FileMaster</link></para>
+
+<para>A <link linkend="_classUtil_1_1FileMaster">FileMaster</link> manages input and output files for a simulation. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classUtil_1_1FlagSet">Util::FlagSet</link></para>
+
+<para>A set of boolean variables represented by characters. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classUtil_1_1Log">Util::Log</link></para>
+
+<para>A static class that holds a log output stream. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classUtil_1_1Memory">Util::Memory</link></para>
+
+<para>Provides method to allocate array. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classUtil_1_1Notifier">Util::Notifier&lt; Event &gt;</link></para>
+
+<para>Abstract template for a notifier (or subject) in the <link linkend="_classUtil_1_1Observer">Observer</link> design pattern. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classUtil_1_1Observer">Util::Observer&lt; Event &gt;</link></para>
+
+<para>Abstract class template for observer in the observer design pattern. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classUtil_1_1Setable">Util::Setable&lt; T &gt;</link></para>
+
+<para>Template for a value that can be set or declared null (i.e., unknown). </para>
+</listitem>
+            <listitem><para>class <link linkend="_classUtil_1_1Timer">Util::Timer</link></para>
+
+<para>Wall clock timer. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>std::string <link linkend="_group__Misc__Module_1ga69d6f862289b96b4b0c0591357c8823e">Util::toString</link> (int n)</para>
+
+<para>Return string representation of an integer. </para>
+</listitem>
+            <listitem><para>int <link linkend="_group__Misc__Module_1gaccdfb499eefe47a9f4831ebf6670a87c">Util::rStrip</link> (std::string &amp;string)</para>
+
+<para>Strip trailing whitespace from a string. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__Misc__Module_1ga4cd93415cf228d797c4aed0ee3b495a5">Util::checkString</link> (std::istream &amp;in, const std::string &amp;expected)</para>
+
+<para>Extract string from stream, and compare to expected value. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_group__Misc__Module_1gae9fc3c33d8ea0780790a683554afa949">Util::getLine</link> (std::istream &amp;in, std::stringstream &amp;line)</para>
+
+<para>Read the next line into a stringstream. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_group__Misc__Module_1ga68d0c067bdff7f1daa80e2efa94269dd">Util::getNextLine</link> (std::istream &amp;in, std::string &amp;line)</para>
+
+<para>Read the next non-empty line into a string, strip trailing whitespace. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_group__Misc__Module_1gab2cae028b0ffb7733bc133ca6a6bf5e2">Util::getNextLine</link> (std::istream &amp;in, std::stringstream &amp;line)</para>
+
+<para>Read next non-empty line into a stringstream, strip trailing whitespace. </para>
+</listitem>
+            <listitem><para>template&lt;typename D , typename B , typename M &gt; </para><para>ptrdiff_t <link linkend="_group__Misc__Module_1ga67d014efd4872847fdf364d4ac0eeda6">Util::memberOffset</link> (D &amp;object, M B::*memPtr)</para>
+
+<para>Template for calculating offsets of data members. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Miscellaneous utility classes and functions. </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_group__Misc__Module_1ga69d6f862289b96b4b0c0591357c8823e"/>    <section>
+    <title>toString()</title>
+<indexterm><primary>toString</primary><secondary>Miscellaneous Utilities</secondary></indexterm>
+<indexterm><primary>Miscellaneous Utilities</primary><secondary>toString</secondary></indexterm>
+<para><computeroutput>std::string Util::toString (int n)</computeroutput></para><para>
+
+<para>Return string representation of an integer. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>n</entry>
+                                <entry>
+<para>integer to be converted. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 52 of file ioUtil.cpp.</para>
+    </section><anchor xml:id="_group__Misc__Module_1gaccdfb499eefe47a9f4831ebf6670a87c"/>    <section>
+    <title>rStrip()</title>
+<indexterm><primary>rStrip</primary><secondary>Miscellaneous Utilities</secondary></indexterm>
+<indexterm><primary>Miscellaneous Utilities</primary><secondary>rStrip</secondary></indexterm>
+<para><computeroutput>int Util::rStrip (std::string &amp; string)</computeroutput></para><para>
+
+<para>Strip trailing whitespace from a string. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>string</entry>
+                                <entry>
+<para>string (stripped upon return). </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>length of stripped string. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 18 of file ioUtil.cpp.</para>
+<para>
+Referenced by Util::getNextLine(), and Util::XmlAttribute::match().</para>
+    </section><anchor xml:id="_group__Misc__Module_1ga4cd93415cf228d797c4aed0ee3b495a5"/>    <section>
+    <title>checkString()</title>
+<indexterm><primary>checkString</primary><secondary>Miscellaneous Utilities</secondary></indexterm>
+<indexterm><primary>Miscellaneous Utilities</primary><secondary>checkString</secondary></indexterm>
+<para><computeroutput>void Util::checkString (std::istream &amp; in, const std::string &amp; expected)</computeroutput></para><para>
+
+<para>Extract string from stream, and compare to expected value. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Exceptions                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry><link linkend="_classUtil_1_1Exception">Exception</link></entry>
+                                <entry>
+<para>if input value differs from expected value.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>expected</entry>
+                                <entry>
+<para>expected value of string read from stream </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 37 of file ioUtil.cpp.</para>
+<para>
+References Util::Log::file(), and UTIL_THROW.</para>
+    </section><anchor xml:id="_group__Misc__Module_1gae9fc3c33d8ea0780790a683554afa949"/>    <section>
+    <title>getLine()</title>
+<indexterm><primary>getLine</primary><secondary>Miscellaneous Utilities</secondary></indexterm>
+<indexterm><primary>Miscellaneous Utilities</primary><secondary>getLine</secondary></indexterm>
+<para><computeroutput>bool Util::getLine (std::istream &amp; in, std::stringstream &amp; line)</computeroutput></para><para>
+
+<para>Read the next line into a stringstream. </para>
+</para>
+
+<para>Variant of std::getline(). Does not strip trailing whitespace.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream from which to read. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>line</entry>
+                                <entry>
+<para>stringstream containing line, on output. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 62 of file ioUtil.cpp.</para>
+    </section><anchor xml:id="_group__Misc__Module_1ga68d0c067bdff7f1daa80e2efa94269dd"/>    <section>
+    <title>getNextLine()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>getNextLine</primary><secondary>Miscellaneous Utilities</secondary></indexterm>
+<indexterm><primary>Miscellaneous Utilities</primary><secondary>getNextLine</secondary></indexterm>
+<para><computeroutput>bool Util::getNextLine (std::istream &amp; in, std::string &amp; line)</computeroutput></para><para>
+
+<para>Read the next non-empty line into a string, strip trailing whitespace. </para>
+</para>
+
+<para>Variant of std::getline() that skips empty lines.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream from which to read. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>line</entry>
+                                <entry>
+<para>string with next non-empty line, on output. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>true if not end-of-file, false if end-of-file. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 79 of file ioUtil.cpp.</para>
+<para>
+References Util::rStrip().</para>
+    </section><anchor xml:id="_group__Misc__Module_1gab2cae028b0ffb7733bc133ca6a6bf5e2"/>    <section>
+    <title>getNextLine()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>getNextLine</primary><secondary>Miscellaneous Utilities</secondary></indexterm>
+<indexterm><primary>Miscellaneous Utilities</primary><secondary>getNextLine</secondary></indexterm>
+<para><computeroutput>bool Util::getNextLine (std::istream &amp; in, std::stringstream &amp; line)</computeroutput></para><para>
+
+<para>Read next non-empty line into a stringstream, strip trailing whitespace. </para>
+</para>
+
+<para>Variant of std::getline() that skips empty lines and uses stringstream.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream from which to read. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>line</entry>
+                                <entry>
+<para>stringstream containing next non-empty line, on output. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>true if not end-of-file, false if end-of-file. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 100 of file ioUtil.cpp.</para>
+<para>
+References Util::rStrip().</para>
+    </section><anchor xml:id="_group__Misc__Module_1ga67d014efd4872847fdf364d4ac0eeda6"/>    <section>
+    <title>memberOffset()</title>
+<indexterm><primary>memberOffset</primary><secondary>Miscellaneous Utilities</secondary></indexterm>
+<indexterm><primary>Miscellaneous Utilities</primary><secondary>memberOffset</secondary></indexterm>
+<computeroutput>template&lt;typename D , typename B , typename M &gt; </computeroutput><para><computeroutput>ptrdiff_t Util::memberOffset (D &amp; object, M B::* memPtr)</computeroutput></para><para>
+
+<para>Template for calculating offsets of data members. </para>
+</para>
+
+<para>Types: D - derived class B - base class M - member type </para>
+<para>
+Definition at line 27 of file Offset.h.</para>
+</section>
+</section>
+</section>

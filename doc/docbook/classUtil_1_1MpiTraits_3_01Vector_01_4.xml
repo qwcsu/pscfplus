@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1MpiTraits_3_01Vector_01_4">
+<title>Util::MpiTraits&lt; Vector &gt; Class Reference</title>
+<indexterm><primary>Util::MpiTraits&lt; Vector &gt;</primary></indexterm>
+<para>
+
+<para>Explicit specialization <link linkend="_classUtil_1_1MpiTraits_3_01Vector_01_4">MpiTraits&lt;Vector&gt;</link>. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;Vector.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Static Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>static MPI::Datatype <link linkend="_classUtil_1_1MpiTraits_3_01Vector_01_4_1a72bd6346fa7232c0b4dcb8224849b3d1">type</link> = MPI::BYTE</para>
+
+<para>MPI Datatype. </para>
+</listitem>
+            <listitem><para>static bool <link linkend="_classUtil_1_1MpiTraits_3_01Vector_01_4_1accb84a788966fbdeaa1b9cf773307bf2">hasType</link> = false</para>
+
+<para>Is the MPI type initialized? </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Explicit specialization <link linkend="_classUtil_1_1MpiTraits_3_01Vector_01_4">MpiTraits&lt;Vector&gt;</link>. </para>
+<para>
+Definition at line 449 of file Vector.h.</para>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classUtil_1_1MpiTraits_3_01Vector_01_4_1a72bd6346fa7232c0b4dcb8224849b3d1"/>    <section>
+    <title>type</title>
+<indexterm><primary>type</primary><secondary>Util::MpiTraits&lt; Vector &gt;</secondary></indexterm>
+<indexterm><primary>Util::MpiTraits&lt; Vector &gt;</primary><secondary>type</secondary></indexterm>
+<para><computeroutput>MPI::Datatype <link linkend="_classUtil_1_1MpiTraits">Util::MpiTraits</link>&lt; <link linkend="_classUtil_1_1Vector">Vector</link> &gt;::type = MPI::BYTE<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>MPI Datatype. </para>
+</para>
+
+<para>Initialize MPI Datatype. </para>
+<para>
+Definition at line 452 of file Vector.h.</para>
+    </section><anchor xml:id="_classUtil_1_1MpiTraits_3_01Vector_01_4_1accb84a788966fbdeaa1b9cf773307bf2"/>    <section>
+    <title>hasType</title>
+<indexterm><primary>hasType</primary><secondary>Util::MpiTraits&lt; Vector &gt;</secondary></indexterm>
+<indexterm><primary>Util::MpiTraits&lt; Vector &gt;</primary><secondary>hasType</secondary></indexterm>
+<para><computeroutput>bool <link linkend="_classUtil_1_1MpiTraits">Util::MpiTraits</link>&lt; <link linkend="_classUtil_1_1Vector">Vector</link> &gt;::hasType = false<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Is the MPI type initialized? </para>
+</para>
+<para>
+Definition at line 453 of file Vector.h.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+Vector.hVector.cpp</section>
+</section>

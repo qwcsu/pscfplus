@@ -1,0 +1,527 @@
+\hypertarget{classPscf_1_1UnitCellBase}{}\doxysubsection{Pscf\+::Unit\+Cell\+Base$<$ D $>$ Class Template Reference}
+\label{classPscf_1_1UnitCellBase}\index{Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}}
+
+
+Base class template for a crystallographic unit cell.  
+
+
+
+
+{\ttfamily \#include $<$Unit\+Cell\+Base.\+h$>$}
+
+Inheritance diagram for Pscf\+::Unit\+Cell\+Base$<$ D $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPscf_1_1UnitCellBase}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPscf_1_1UnitCellBase_ad89c64c43d5dcadf9964d11bc96d1b13}{Unit\+Cell\+Base}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1UnitCellBase_a8747888fa67dbea65d26062947801584}{$\sim$\+Unit\+Cell\+Base}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1UnitCellBase_a70f16278fa59a3e317eb485db1340248}{set\+Lattice}} ()
+\begin{DoxyCompactList}\small\item\em Compute all private data, given lattice\+System and parameters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1UnitCellBase_a4ffe7d850fd8cc53751d258d174213d8}{set\+Parameters}} (\mbox{\hyperlink{classUtil_1_1FSArray}{F\+S\+Array}}$<$ double, 6 $>$ const \&\mbox{\hyperlink{classPscf_1_1UnitCellBase_ab87b0b0df1657db2f84bcee837ffcb29}{parameters}})
+\begin{DoxyCompactList}\small\item\em Set all the parameters of unit cell (new version). \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{classPscf_1_1UnitCellBase_a81575d561eacfc79109dcbe89fe849d9}{ksq}} (\mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec}}$<$ D $>$ const \&k) const
+\begin{DoxyCompactList}\small\item\em Compute square magnitude of reciprocal lattice vector. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{classPscf_1_1UnitCellBase_a3df0eca0eec3b294f76c9380320a8223}{dksq}} (\mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec}}$<$ D $>$ const \&vec, int n) const
+\begin{DoxyCompactList}\small\item\em Compute derivative of square wavevector w/ respect to cell parameter. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPscf_1_1UnitCellBase_a3d42cb0762f66d99ce543f6d3c51e36d}{n\+Parameter}} () const
+\begin{DoxyCompactList}\small\item\em Get the number of parameters in the unit cell. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1FSArray}{F\+S\+Array}}$<$ double, 6 $>$ \mbox{\hyperlink{classPscf_1_1UnitCellBase_ab87b0b0df1657db2f84bcee837ffcb29}{parameters}} () const
+\begin{DoxyCompactList}\small\item\em Get the parameters of this unit cell. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classPscf_1_1UnitCellBase_aa1d08ed025990b4ccd3cb67adaec87cd}{parameter}} (int i) const
+\begin{DoxyCompactList}\small\item\em Get a single parameter of the unit cell. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classPscf_1_1RealVec}{Real\+Vec}}$<$ D $>$ \& \mbox{\hyperlink{classPscf_1_1UnitCellBase_ae937330b42d0ec604324c02f34bdb529}{r\+Basis}} (int i) const
+\begin{DoxyCompactList}\small\item\em Get Bravais basis vector i, denoted by a\+\_\+i. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classPscf_1_1RealVec}{Real\+Vec}}$<$ D $>$ \& \mbox{\hyperlink{classPscf_1_1UnitCellBase_a3f38ec4fb4d1e077d81f134222986a7e}{k\+Basis}} (int i) const
+\begin{DoxyCompactList}\small\item\em Get reciprocal basis vector i, denoted by b\+\_\+i. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classPscf_1_1UnitCellBase_ae83a88e16827b99e3fd6080ff20347af}{dr\+Basis}} (int k, int i, int j) const
+\begin{DoxyCompactList}\small\item\em Get component j of derivative of r\+Basis vector a\+\_\+i w/respect to k. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classPscf_1_1UnitCellBase_aa143c284402fa9241d9122ef6155cc33}{dk\+Basis}} (int k, int i, int j) const
+\begin{DoxyCompactList}\small\item\em Get component j of derivative of k\+Basis vector bi w/respect to k. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classPscf_1_1UnitCellBase_a528bdff04ca8d29126da2bfaae85fb03}{drr\+Basis}} (int k, int i, int j) const
+\begin{DoxyCompactList}\small\item\em Get the derivative of dot product ri.\+rj with respect to parameter k. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classPscf_1_1UnitCellBase_ae196ebbd2415dbc8926afd18d0835fc6}{dkk\+Basis}} (int k, int i, int j) const
+\begin{DoxyCompactList}\small\item\em Get the derivative of dot product bi.\+bj with respect to parameter k. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}}$<$ \mbox{\hyperlink{classPscf_1_1RealVec}{Real\+Vec}}$<$ D $>$, D $>$ \mbox{\hyperlink{classPscf_1_1UnitCellBase_aa4019d080655cdd1f4b18115d7c1883e}{r\+Basis\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Array of Bravais lattice basis vectors. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}}$<$ \mbox{\hyperlink{classPscf_1_1RealVec}{Real\+Vec}}$<$ D $>$, D $>$ \mbox{\hyperlink{classPscf_1_1UnitCellBase_af2035f1422fae972912acd6ca665cde1}{k\+Basis\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Array of reciprocal lattice basis vectors. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}}$<$ \mbox{\hyperlink{classUtil_1_1FMatrix}{F\+Matrix}}$<$ double, D, D $>$, 6 $>$ \mbox{\hyperlink{classPscf_1_1UnitCellBase_a0c211729843dda8843e5f516308b3cd1}{dr\+Basis\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Array of derivatives of r\+Basis. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}}$<$ \mbox{\hyperlink{classUtil_1_1FMatrix}{F\+Matrix}}$<$ double, D, D $>$, 6 $>$ \mbox{\hyperlink{classPscf_1_1UnitCellBase_a45c04d1a351bef6332082b5ef368ca04}{dk\+Basis\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Array of derivatives of k\+Basis. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}}$<$ \mbox{\hyperlink{classUtil_1_1FMatrix}{F\+Matrix}}$<$ double, D, D $>$, 6 $>$ \mbox{\hyperlink{classPscf_1_1UnitCellBase_a05aea8ecf93bcff194cb8aa978f81c38}{drr\+Basis\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Array of derivatives of a\+\_\+i.\+a\+\_\+j. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}}$<$ \mbox{\hyperlink{classUtil_1_1FMatrix}{F\+Matrix}}$<$ double, D, D $>$, 6 $>$ \mbox{\hyperlink{classPscf_1_1UnitCellBase_a59d5d6000caa8a70d6f905522da86164}{dkk\+Basis\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Array of derivatives of b\+\_\+i.\+b\+\_\+j. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}}$<$ double, 6 $>$ \mbox{\hyperlink{classPscf_1_1UnitCellBase_a2287e61b7d83679df5d3f5219f0a9485}{parameters\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Parameters used to describe the unit cell. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPscf_1_1UnitCellBase_a1d9cd19248ba7888ddc6f4a018558d6b}{n\+Parameter\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Number of parameters required to specify unit cell. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$int D$>$\newline
+class Pscf\+::\+Unit\+Cell\+Base$<$ D $>$}
+
+Base class template for a crystallographic unit cell. 
+
+Definition at line 29 of file Unit\+Cell\+Base.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPscf_1_1UnitCellBase_ad89c64c43d5dcadf9964d11bc96d1b13}\label{classPscf_1_1UnitCellBase_ad89c64c43d5dcadf9964d11bc96d1b13}} 
+\index{Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}!UnitCellBase@{UnitCellBase}}
+\index{UnitCellBase@{UnitCellBase}!Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{UnitCellBase()}{UnitCellBase()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classPscf_1_1UnitCellBase}{Pscf\+::\+Unit\+Cell\+Base}}$<$ D $>$\+::\mbox{\hyperlink{classPscf_1_1UnitCellBase}{Unit\+Cell\+Base}}}
+
+
+
+Constructor. 
+
+
+
+Definition at line 305 of file Unit\+Cell\+Base.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1UnitCellBase_a8747888fa67dbea65d26062947801584}\label{classPscf_1_1UnitCellBase_a8747888fa67dbea65d26062947801584}} 
+\index{Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}!````~UnitCellBase@{$\sim$UnitCellBase}}
+\index{````~UnitCellBase@{$\sim$UnitCellBase}!Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{$\sim$UnitCellBase()}{~UnitCellBase()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classPscf_1_1UnitCellBase}{Pscf\+::\+Unit\+Cell\+Base}}$<$ D $>$\+::$\sim$\mbox{\hyperlink{classPscf_1_1UnitCellBase}{Unit\+Cell\+Base}}}
+
+
+
+Destructor. 
+
+
+
+Definition at line 313 of file Unit\+Cell\+Base.\+h.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPscf_1_1UnitCellBase_a70f16278fa59a3e317eb485db1340248}\label{classPscf_1_1UnitCellBase_a70f16278fa59a3e317eb485db1340248}} 
+\index{Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}!setLattice@{setLattice}}
+\index{setLattice@{setLattice}!Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{setLattice()}{setLattice()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+void \mbox{\hyperlink{classPscf_1_1UnitCellBase}{Pscf\+::\+Unit\+Cell\+Base}}$<$ D $>$\+::set\+Lattice}
+
+
+
+Compute all private data, given lattice\+System and parameters. 
+
+Calls initialize\+To\+Zero, set\+Basis, compute\+Derivatives internally. 
+
+Definition at line 441 of file Unit\+Cell\+Base.\+h.
+
+
+
+Referenced by Pscf\+::operator$>$$>$(), and Pscf\+::read\+Unit\+Cell\+Header().
+
+\mbox{\Hypertarget{classPscf_1_1UnitCellBase_a4ffe7d850fd8cc53751d258d174213d8}\label{classPscf_1_1UnitCellBase_a4ffe7d850fd8cc53751d258d174213d8}} 
+\index{Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}!setParameters@{setParameters}}
+\index{setParameters@{setParameters}!Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{setParameters()}{setParameters()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+void \mbox{\hyperlink{classPscf_1_1UnitCellBase}{Pscf\+::\+Unit\+Cell\+Base}}$<$ D $>$\+::set\+Parameters (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1FSArray}{F\+S\+Array}}$<$ double, 6 $>$ const \&}]{parameters }\end{DoxyParamCaption})}
+
+
+
+Set all the parameters of unit cell (new version). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameters} & array of unit cell parameters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 320 of file Unit\+Cell\+Base.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1UnitCellBase_a81575d561eacfc79109dcbe89fe849d9}\label{classPscf_1_1UnitCellBase_a81575d561eacfc79109dcbe89fe849d9}} 
+\index{Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}!ksq@{ksq}}
+\index{ksq@{ksq}!Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{ksq()}{ksq()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+double \mbox{\hyperlink{classPscf_1_1UnitCellBase}{Pscf\+::\+Unit\+Cell\+Base}}$<$ D $>$\+::ksq (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec}}$<$ D $>$ const \&}]{k }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Compute square magnitude of reciprocal lattice vector. 
+
+
+
+Definition at line 333 of file Unit\+Cell\+Base.\+h.
+
+
+
+Referenced by Pscf\+::\+Pspg\+::\+Continuous\+::\+Block$<$ D $>$\+::setup\+Unit\+Cell(), and Pscf\+::\+Pspg\+::\+Continuous\+::\+Mixture$<$ D $>$\+::setup\+Unit\+Cell().
+
+\mbox{\Hypertarget{classPscf_1_1UnitCellBase_a3df0eca0eec3b294f76c9380320a8223}\label{classPscf_1_1UnitCellBase_a3df0eca0eec3b294f76c9380320a8223}} 
+\index{Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}!dksq@{dksq}}
+\index{dksq@{dksq}!Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{dksq()}{dksq()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+double \mbox{\hyperlink{classPscf_1_1UnitCellBase}{Pscf\+::\+Unit\+Cell\+Base}}$<$ D $>$\+::dksq (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec}}$<$ D $>$ const \&}]{vec,  }\item[{int}]{n }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Compute derivative of square wavevector w/ respect to cell parameter. 
+
+This function computes and returns a derivative with respect to unit cell parameter number n of the square of a reciprocal lattice vector with integer coefficients given by the elements of vec.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & vector of components of a reciprocal lattice vector \\
+\hline
+{\em n} & index of a unit cell parameter \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 352 of file Unit\+Cell\+Base.\+h.
+
+
+
+Referenced by Pscf\+::\+Pspg\+::\+Continuous\+::\+Block$<$ D $>$\+::setup\+Unit\+Cell().
+
+\mbox{\Hypertarget{classPscf_1_1UnitCellBase_a3d42cb0762f66d99ce543f6d3c51e36d}\label{classPscf_1_1UnitCellBase_a3d42cb0762f66d99ce543f6d3c51e36d}} 
+\index{Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}!nParameter@{nParameter}}
+\index{nParameter@{nParameter}!Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{nParameter()}{nParameter()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+int \mbox{\hyperlink{classPscf_1_1UnitCellBase}{Pscf\+::\+Unit\+Cell\+Base}}$<$ D $>$\+::n\+Parameter\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the number of parameters in the unit cell. 
+
+
+
+Definition at line 228 of file Unit\+Cell\+Base.\+h.
+
+
+
+Referenced by Pscf\+::\+Pspg\+::\+Continuous\+::\+Mixture$<$ D $>$\+::set\+Mesh(), Pscf\+::\+Pspg\+::\+Continuous\+::\+Block$<$ D $>$\+::setup\+Unit\+Cell(), and Pscf\+::\+Pspg\+::\+Continuous\+::\+Mixture$<$ D $>$\+::setup\+Unit\+Cell().
+
+\mbox{\Hypertarget{classPscf_1_1UnitCellBase_ab87b0b0df1657db2f84bcee837ffcb29}\label{classPscf_1_1UnitCellBase_ab87b0b0df1657db2f84bcee837ffcb29}} 
+\index{Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}!parameters@{parameters}}
+\index{parameters@{parameters}!Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{parameters()}{parameters()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classUtil_1_1FSArray}{F\+S\+Array}}$<$ double, 6 $>$ \mbox{\hyperlink{classPscf_1_1UnitCellBase}{Pscf\+::\+Unit\+Cell\+Base}}$<$ D $>$\+::parameters\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the parameters of this unit cell. 
+
+
+
+Definition at line 236 of file Unit\+Cell\+Base.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1UnitCellBase_aa1d08ed025990b4ccd3cb67adaec87cd}\label{classPscf_1_1UnitCellBase_aa1d08ed025990b4ccd3cb67adaec87cd}} 
+\index{Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}!parameter@{parameter}}
+\index{parameter@{parameter}!Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{parameter()}{parameter()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+double \mbox{\hyperlink{classPscf_1_1UnitCellBase}{Pscf\+::\+Unit\+Cell\+Base}}$<$ D $>$\+::parameter (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const}
+
+
+
+Get a single parameter of the unit cell. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & array index of the desired parameter \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 249 of file Unit\+Cell\+Base.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1UnitCellBase_ae937330b42d0ec604324c02f34bdb529}\label{classPscf_1_1UnitCellBase_ae937330b42d0ec604324c02f34bdb529}} 
+\index{Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}!rBasis@{rBasis}}
+\index{rBasis@{rBasis}!Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{rBasis()}{rBasis()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+const \mbox{\hyperlink{classPscf_1_1RealVec}{Real\+Vec}}$<$ D $>$ \& \mbox{\hyperlink{classPscf_1_1UnitCellBase}{Pscf\+::\+Unit\+Cell\+Base}}$<$ D $>$\+::r\+Basis (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const}
+
+
+
+Get Bravais basis vector i, denoted by a\+\_\+i. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & array index of the desired basis vector \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 256 of file Unit\+Cell\+Base.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1UnitCellBase_a3f38ec4fb4d1e077d81f134222986a7e}\label{classPscf_1_1UnitCellBase_a3f38ec4fb4d1e077d81f134222986a7e}} 
+\index{Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}!kBasis@{kBasis}}
+\index{kBasis@{kBasis}!Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{kBasis()}{kBasis()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+const \mbox{\hyperlink{classPscf_1_1RealVec}{Real\+Vec}}$<$ D $>$ \& \mbox{\hyperlink{classPscf_1_1UnitCellBase}{Pscf\+::\+Unit\+Cell\+Base}}$<$ D $>$\+::k\+Basis (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get reciprocal basis vector i, denoted by b\+\_\+i. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & array index of the desired reciprocal lattice basis vector \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 264 of file Unit\+Cell\+Base.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1UnitCellBase_ae83a88e16827b99e3fd6080ff20347af}\label{classPscf_1_1UnitCellBase_ae83a88e16827b99e3fd6080ff20347af}} 
+\index{Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}!drBasis@{drBasis}}
+\index{drBasis@{drBasis}!Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{drBasis()}{drBasis()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+double \mbox{\hyperlink{classPscf_1_1UnitCellBase}{Pscf\+::\+Unit\+Cell\+Base}}$<$ D $>$\+::dr\+Basis (\begin{DoxyParamCaption}\item[{int}]{k,  }\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get component j of derivative of r\+Basis vector a\+\_\+i w/respect to k. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & array index of the desired basis vector a\+\_\+i \\
+\hline
+{\em j} & index of a Cartesian component of a\+\_\+i \\
+\hline
+{\em k} & index of cell parameter \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 272 of file Unit\+Cell\+Base.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1UnitCellBase_aa143c284402fa9241d9122ef6155cc33}\label{classPscf_1_1UnitCellBase_aa143c284402fa9241d9122ef6155cc33}} 
+\index{Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}!dkBasis@{dkBasis}}
+\index{dkBasis@{dkBasis}!Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{dkBasis()}{dkBasis()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+double \mbox{\hyperlink{classPscf_1_1UnitCellBase}{Pscf\+::\+Unit\+Cell\+Base}}$<$ D $>$\+::dk\+Basis (\begin{DoxyParamCaption}\item[{int}]{k,  }\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get component j of derivative of k\+Basis vector bi w/respect to k. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & array index of the desired reciprocal basis vector b\+\_\+i \\
+\hline
+{\em j} & index of a Cartesian component of b\+\_\+i \\
+\hline
+{\em k} & index of cell parameter \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 280 of file Unit\+Cell\+Base.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1UnitCellBase_a528bdff04ca8d29126da2bfaae85fb03}\label{classPscf_1_1UnitCellBase_a528bdff04ca8d29126da2bfaae85fb03}} 
+\index{Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}!drrBasis@{drrBasis}}
+\index{drrBasis@{drrBasis}!Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{drrBasis()}{drrBasis()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+double \mbox{\hyperlink{classPscf_1_1UnitCellBase}{Pscf\+::\+Unit\+Cell\+Base}}$<$ D $>$\+::drr\+Basis (\begin{DoxyParamCaption}\item[{int}]{k,  }\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the derivative of dot product ri.\+rj with respect to parameter k. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & array index of 1st Bravais basis vector b\+\_\+i \\
+\hline
+{\em j} & array index of 2nd Bravais basis vector b\+\_\+i \\
+\hline
+{\em k} & index of cell parameter \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 296 of file Unit\+Cell\+Base.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1UnitCellBase_ae196ebbd2415dbc8926afd18d0835fc6}\label{classPscf_1_1UnitCellBase_ae196ebbd2415dbc8926afd18d0835fc6}} 
+\index{Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}!dkkBasis@{dkkBasis}}
+\index{dkkBasis@{dkkBasis}!Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{dkkBasis()}{dkkBasis()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+double \mbox{\hyperlink{classPscf_1_1UnitCellBase}{Pscf\+::\+Unit\+Cell\+Base}}$<$ D $>$\+::dkk\+Basis (\begin{DoxyParamCaption}\item[{int}]{k,  }\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the derivative of dot product bi.\+bj with respect to parameter k. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & array index of 1st reciprocal basis vector b\+\_\+i \\
+\hline
+{\em j} & array index of 2nd reciprocal basis vector b\+\_\+i \\
+\hline
+{\em k} & index of cell parameter \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 288 of file Unit\+Cell\+Base.\+h.
+
+
+
+\doxysubsubsection{Member Data Documentation}
+\mbox{\Hypertarget{classPscf_1_1UnitCellBase_aa4019d080655cdd1f4b18115d7c1883e}\label{classPscf_1_1UnitCellBase_aa4019d080655cdd1f4b18115d7c1883e}} 
+\index{Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}!rBasis\_@{rBasis\_}}
+\index{rBasis\_@{rBasis\_}!Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{rBasis\_}{rBasis\_}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}}$<$\mbox{\hyperlink{classPscf_1_1RealVec}{Real\+Vec}}$<$D$>$, D$>$ \mbox{\hyperlink{classPscf_1_1UnitCellBase}{Pscf\+::\+Unit\+Cell\+Base}}$<$ D $>$\+::r\+Basis\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Array of Bravais lattice basis vectors. 
+
+
+
+Definition at line 146 of file Unit\+Cell\+Base.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1UnitCellBase_af2035f1422fae972912acd6ca665cde1}\label{classPscf_1_1UnitCellBase_af2035f1422fae972912acd6ca665cde1}} 
+\index{Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}!kBasis\_@{kBasis\_}}
+\index{kBasis\_@{kBasis\_}!Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{kBasis\_}{kBasis\_}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}}$<$\mbox{\hyperlink{classPscf_1_1RealVec}{Real\+Vec}}$<$D$>$, D$>$ \mbox{\hyperlink{classPscf_1_1UnitCellBase}{Pscf\+::\+Unit\+Cell\+Base}}$<$ D $>$\+::k\+Basis\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Array of reciprocal lattice basis vectors. 
+
+
+
+Definition at line 151 of file Unit\+Cell\+Base.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1UnitCellBase_a0c211729843dda8843e5f516308b3cd1}\label{classPscf_1_1UnitCellBase_a0c211729843dda8843e5f516308b3cd1}} 
+\index{Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}!drBasis\_@{drBasis\_}}
+\index{drBasis\_@{drBasis\_}!Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{drBasis\_}{drBasis\_}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}}$<$\mbox{\hyperlink{classUtil_1_1FMatrix}{F\+Matrix}}$<$double, D, D$>$, 6$>$ \mbox{\hyperlink{classPscf_1_1UnitCellBase}{Pscf\+::\+Unit\+Cell\+Base}}$<$ D $>$\+::dr\+Basis\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Array of derivatives of r\+Basis. 
+
+Element dr\+Basis\+\_\+\mbox{[}k\mbox{]}(i,j) is derivative with respect to parameter k of component j of Bravais basis vector i. 
+
+Definition at line 159 of file Unit\+Cell\+Base.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1UnitCellBase_a45c04d1a351bef6332082b5ef368ca04}\label{classPscf_1_1UnitCellBase_a45c04d1a351bef6332082b5ef368ca04}} 
+\index{Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}!dkBasis\_@{dkBasis\_}}
+\index{dkBasis\_@{dkBasis\_}!Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{dkBasis\_}{dkBasis\_}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}}$<$\mbox{\hyperlink{classUtil_1_1FMatrix}{F\+Matrix}}$<$double, D, D$>$, 6$>$ \mbox{\hyperlink{classPscf_1_1UnitCellBase}{Pscf\+::\+Unit\+Cell\+Base}}$<$ D $>$\+::dk\+Basis\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Array of derivatives of k\+Basis. 
+
+Element dk\+Basis\+\_\+\mbox{[}k\mbox{]}(i,j) is derivative with respect to parameter k of component j of reciprocal basis vector i. 
+
+Definition at line 167 of file Unit\+Cell\+Base.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1UnitCellBase_a05aea8ecf93bcff194cb8aa978f81c38}\label{classPscf_1_1UnitCellBase_a05aea8ecf93bcff194cb8aa978f81c38}} 
+\index{Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}!drrBasis\_@{drrBasis\_}}
+\index{drrBasis\_@{drrBasis\_}!Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{drrBasis\_}{drrBasis\_}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}}$<$\mbox{\hyperlink{classUtil_1_1FMatrix}{F\+Matrix}}$<$double, D, D$>$, 6$>$ \mbox{\hyperlink{classPscf_1_1UnitCellBase}{Pscf\+::\+Unit\+Cell\+Base}}$<$ D $>$\+::drr\+Basis\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Array of derivatives of a\+\_\+i.\+a\+\_\+j. 
+
+Element drr\+Basis\+\_\+\mbox{[}k\mbox{]}(i,j) is derivative with respect to parameter k of the dot product (a\+\_\+i.\+a\+\_\+j) of Bravais lattice basis vectors a\+\_\+i and a\+\_\+j. 
+
+Definition at line 176 of file Unit\+Cell\+Base.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1UnitCellBase_a59d5d6000caa8a70d6f905522da86164}\label{classPscf_1_1UnitCellBase_a59d5d6000caa8a70d6f905522da86164}} 
+\index{Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}!dkkBasis\_@{dkkBasis\_}}
+\index{dkkBasis\_@{dkkBasis\_}!Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{dkkBasis\_}{dkkBasis\_}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}}$<$\mbox{\hyperlink{classUtil_1_1FMatrix}{F\+Matrix}}$<$double, D, D$>$, 6$>$ \mbox{\hyperlink{classPscf_1_1UnitCellBase}{Pscf\+::\+Unit\+Cell\+Base}}$<$ D $>$\+::dkk\+Basis\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Array of derivatives of b\+\_\+i.\+b\+\_\+j. 
+
+Element dkk\+Basis\+\_\+\mbox{[}k\mbox{]}(i,j) is derivative with respect to parameter k of the dot product (b\+\_\+i.\+b\+\_\+j) of reciprocal lattice basis vectors b\+\_\+i and b\+\_\+j. 
+
+Definition at line 185 of file Unit\+Cell\+Base.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1UnitCellBase_a2287e61b7d83679df5d3f5219f0a9485}\label{classPscf_1_1UnitCellBase_a2287e61b7d83679df5d3f5219f0a9485}} 
+\index{Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}!parameters\_@{parameters\_}}
+\index{parameters\_@{parameters\_}!Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{parameters\_}{parameters\_}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}}$<$double, 6$>$ \mbox{\hyperlink{classPscf_1_1UnitCellBase}{Pscf\+::\+Unit\+Cell\+Base}}$<$ D $>$\+::parameters\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Parameters used to describe the unit cell. 
+
+
+
+Definition at line 190 of file Unit\+Cell\+Base.\+h.
+
+
+
+Referenced by Pscf\+::operator$<$$<$(), Pscf\+::operator$>$$>$(), Pscf\+::read\+Unit\+Cell\+Header(), Pscf\+::serialize(), and Pscf\+::write\+Unit\+Cell\+Header().
+
+\mbox{\Hypertarget{classPscf_1_1UnitCellBase_a1d9cd19248ba7888ddc6f4a018558d6b}\label{classPscf_1_1UnitCellBase_a1d9cd19248ba7888ddc6f4a018558d6b}} 
+\index{Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}!nParameter\_@{nParameter\_}}
+\index{nParameter\_@{nParameter\_}!Pscf::UnitCellBase$<$ D $>$@{Pscf::UnitCellBase$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{nParameter\_}{nParameter\_}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+int \mbox{\hyperlink{classPscf_1_1UnitCellBase}{Pscf\+::\+Unit\+Cell\+Base}}$<$ D $>$\+::n\+Parameter\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Number of parameters required to specify unit cell. 
+
+
+
+Definition at line 195 of file Unit\+Cell\+Base.\+h.
+
+
+
+Referenced by Pscf\+::operator$<$$<$(), Pscf\+::operator$>$$>$(), Pscf\+::read\+Unit\+Cell\+Header(), Pscf\+::serialize(), and Pscf\+::write\+Unit\+Cell\+Header().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Unit\+Cell\+Base.\+h\end{DoxyCompactItemize}

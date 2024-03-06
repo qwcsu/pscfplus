@@ -1,0 +1,328 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1BinaryFileIArchive">
+<title>Util::BinaryFileIArchive Class Reference</title>
+<indexterm><primary>Util::BinaryFileIArchive</primary></indexterm>
+<para>
+
+<para>Saving archive for binary istream. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;BinaryFileIArchive.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1BinaryFileIArchive_1ad5174be566fe2cafb982e269bb1527d5">BinaryFileIArchive</link> ()</para>
+
+<para>Constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1BinaryFileIArchive_1a97f7bdd5924d9b8aa917ffdbf2f2f308">BinaryFileIArchive</link> (std::string filename)</para>
+
+<para>Constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1BinaryFileIArchive_1a5efac3bbbbb5e1ec7dd7f799e805da01">BinaryFileIArchive</link> (std::ifstream &amp;<link linkend="_classUtil_1_1BinaryFileIArchive_1a3da261733c9d8099c2326c7e43241e63">file</link>)</para>
+
+<para>Constructor. </para>
+</listitem>
+            <listitem><para>virtual <link linkend="_classUtil_1_1BinaryFileIArchive_1a4bf663b84ea5eca5c572530e8ff5fd31">~BinaryFileIArchive</link> ()</para>
+
+<para>Destructor. </para>
+</listitem>
+            <listitem><para>std::ifstream &amp; <link linkend="_classUtil_1_1BinaryFileIArchive_1a3da261733c9d8099c2326c7e43241e63">file</link> ()</para>
+
+<para>Get the underlying ifstream by reference. </para>
+</listitem>
+            <listitem><para>template&lt;typename T &gt; </para><para><link linkend="_classUtil_1_1BinaryFileIArchive">BinaryFileIArchive</link> &amp; <link linkend="_classUtil_1_1BinaryFileIArchive_1a595588d7b3e7e51eda11be4e5aa7d434">operator&amp;</link> (T &amp;data)</para>
+
+<para>Read one object. </para>
+</listitem>
+            <listitem><para>template&lt;typename T &gt; </para><para><link linkend="_classUtil_1_1BinaryFileIArchive">BinaryFileIArchive</link> &amp; <link linkend="_classUtil_1_1BinaryFileIArchive_1a0cadf7863507460503a54b4a0b6cc16e">operator&gt;&gt;</link> (T &amp;data)</para>
+
+<para>Read one object. </para>
+</listitem>
+            <listitem><para>template&lt;typename T &gt; </para><para>void <link linkend="_classUtil_1_1BinaryFileIArchive_1a31e6f783bdf9a7f8c2a6b5bf62a08773">unpack</link> (T &amp;data)</para>
+
+<para>Unpack a single T object. </para>
+</listitem>
+            <listitem><para>template&lt;typename T &gt; </para><para>void <link linkend="_classUtil_1_1BinaryFileIArchive_1a613c61724f5389ea1ec8250dcd0c8ab7">unpack</link> (T *array, int n)</para>
+
+<para>Unpack a C array. </para>
+</listitem>
+            <listitem><para>template&lt;typename T &gt; </para><para>void <link linkend="_classUtil_1_1BinaryFileIArchive_1a8a4ecf6761f971733a09e6efe477c7b0">unpack</link> (T *array, int m, int n, int np)</para>
+
+<para>Unpack a 2D C array. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static bool <link linkend="_classUtil_1_1BinaryFileIArchive_1a8b1befd1d6bb0bcf0a331dff17e1defa">is_saving</link> ()</para>
+
+<para>Returns true;. </para>
+</listitem>
+            <listitem><para>static bool <link linkend="_classUtil_1_1BinaryFileIArchive_1a13ee15265390400fad8754bd75c82efe">is_loading</link> ()</para>
+
+<para>Returns false;. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Saving archive for binary istream. </para>
+<para>
+Definition at line 30 of file BinaryFileIArchive.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1BinaryFileIArchive_1ad5174be566fe2cafb982e269bb1527d5"/>    <section>
+    <title>BinaryFileIArchive()<computeroutput>[1/3]</computeroutput></title>
+<indexterm><primary>BinaryFileIArchive</primary><secondary>Util::BinaryFileIArchive</secondary></indexterm>
+<indexterm><primary>Util::BinaryFileIArchive</primary><secondary>BinaryFileIArchive</secondary></indexterm>
+<para><computeroutput>Util::BinaryFileIArchive::BinaryFileIArchive ( )</computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+<para>
+Definition at line 18 of file BinaryFileIArchive.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1BinaryFileIArchive_1a97f7bdd5924d9b8aa917ffdbf2f2f308"/>    <section>
+    <title>BinaryFileIArchive()<computeroutput>[2/3]</computeroutput></title>
+<indexterm><primary>BinaryFileIArchive</primary><secondary>Util::BinaryFileIArchive</secondary></indexterm>
+<indexterm><primary>Util::BinaryFileIArchive</primary><secondary>BinaryFileIArchive</secondary></indexterm>
+<para><computeroutput>Util::BinaryFileIArchive::BinaryFileIArchive (std::string filename)</computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>filename</entry>
+                                <entry>
+<para>name of file to open for reading. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 27 of file BinaryFileIArchive.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1BinaryFileIArchive_1a5efac3bbbbb5e1ec7dd7f799e805da01"/>    <section>
+    <title>BinaryFileIArchive()<computeroutput>[3/3]</computeroutput></title>
+<indexterm><primary>BinaryFileIArchive</primary><secondary>Util::BinaryFileIArchive</secondary></indexterm>
+<indexterm><primary>Util::BinaryFileIArchive</primary><secondary>BinaryFileIArchive</secondary></indexterm>
+<para><computeroutput>Util::BinaryFileIArchive::BinaryFileIArchive (std::ifstream &amp; file)</computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>file</entry>
+                                <entry>
+<para>output file </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 36 of file BinaryFileIArchive.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1BinaryFileIArchive_1a4bf663b84ea5eca5c572530e8ff5fd31"/>    <section>
+    <title>~BinaryFileIArchive()</title>
+<indexterm><primary>~BinaryFileIArchive</primary><secondary>Util::BinaryFileIArchive</secondary></indexterm>
+<indexterm><primary>Util::BinaryFileIArchive</primary><secondary>~BinaryFileIArchive</secondary></indexterm>
+<para><computeroutput>Util::BinaryFileIArchive::~BinaryFileIArchive ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Destructor. </para>
+</para>
+<para>
+Definition at line 45 of file BinaryFileIArchive.cpp.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1BinaryFileIArchive_1a8b1befd1d6bb0bcf0a331dff17e1defa"/>    <section>
+    <title>is_saving()</title>
+<indexterm><primary>is_saving</primary><secondary>Util::BinaryFileIArchive</secondary></indexterm>
+<indexterm><primary>Util::BinaryFileIArchive</primary><secondary>is_saving</secondary></indexterm>
+<para><computeroutput>bool Util::BinaryFileIArchive::is_saving ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Returns true;. </para>
+</para>
+<para>
+Definition at line 128 of file BinaryFileIArchive.h.</para>
+    </section><anchor xml:id="_classUtil_1_1BinaryFileIArchive_1a13ee15265390400fad8754bd75c82efe"/>    <section>
+    <title>is_loading()</title>
+<indexterm><primary>is_loading</primary><secondary>Util::BinaryFileIArchive</secondary></indexterm>
+<indexterm><primary>Util::BinaryFileIArchive</primary><secondary>is_loading</secondary></indexterm>
+<para><computeroutput>bool Util::BinaryFileIArchive::is_loading ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Returns false;. </para>
+</para>
+<para>
+Definition at line 131 of file BinaryFileIArchive.h.</para>
+    </section><anchor xml:id="_classUtil_1_1BinaryFileIArchive_1a3da261733c9d8099c2326c7e43241e63"/>    <section>
+    <title>file()</title>
+<indexterm><primary>file</primary><secondary>Util::BinaryFileIArchive</secondary></indexterm>
+<indexterm><primary>Util::BinaryFileIArchive</primary><secondary>file</secondary></indexterm>
+<para><computeroutput>std::ifstream &amp; Util::BinaryFileIArchive::file ( )</computeroutput></para><para>
+
+<para>Get the underlying ifstream by reference. </para>
+</para>
+<para>
+Definition at line 55 of file BinaryFileIArchive.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1BinaryFileIArchive_1a595588d7b3e7e51eda11be4e5aa7d434"/>    <section>
+    <title>operator&amp;()</title>
+<indexterm><primary>operator&amp;</primary><secondary>Util::BinaryFileIArchive</secondary></indexterm>
+<indexterm><primary>Util::BinaryFileIArchive</primary><secondary>operator&amp;</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1BinaryFileIArchive">BinaryFileIArchive</link> &amp; Util::BinaryFileIArchive::operator&amp; (T &amp; data)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Read one object. </para>
+</para>
+<para>
+Definition at line 140 of file BinaryFileIArchive.h.</para>
+    </section><anchor xml:id="_classUtil_1_1BinaryFileIArchive_1a0cadf7863507460503a54b4a0b6cc16e"/>    <section>
+    <title>operator&gt;&gt;()</title>
+<indexterm><primary>operator&gt;&gt;</primary><secondary>Util::BinaryFileIArchive</secondary></indexterm>
+<indexterm><primary>Util::BinaryFileIArchive</primary><secondary>operator&gt;&gt;</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1BinaryFileIArchive">BinaryFileIArchive</link> &amp; Util::BinaryFileIArchive::operator&gt;&gt; (T &amp; data)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Read one object. </para>
+</para>
+<para>
+Definition at line 150 of file BinaryFileIArchive.h.</para>
+    </section><anchor xml:id="_classUtil_1_1BinaryFileIArchive_1a31e6f783bdf9a7f8c2a6b5bf62a08773"/>    <section>
+    <title>unpack()<computeroutput>[1/3]</computeroutput></title>
+<indexterm><primary>unpack</primary><secondary>Util::BinaryFileIArchive</secondary></indexterm>
+<indexterm><primary>Util::BinaryFileIArchive</primary><secondary>unpack</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>void Util::BinaryFileIArchive::unpack (T &amp; data)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Unpack a single T object. </para>
+</para>
+<para>
+Definition at line 162 of file BinaryFileIArchive.h.</para>
+<para>
+Referenced by Util::CArrayParam&lt; Type &gt;::loadValue(), and Util::CArray2DParam&lt; Type &gt;::loadValue().</para>
+    </section><anchor xml:id="_classUtil_1_1BinaryFileIArchive_1a613c61724f5389ea1ec8250dcd0c8ab7"/>    <section>
+    <title>unpack()<computeroutput>[2/3]</computeroutput></title>
+<indexterm><primary>unpack</primary><secondary>Util::BinaryFileIArchive</secondary></indexterm>
+<indexterm><primary>Util::BinaryFileIArchive</primary><secondary>unpack</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>void Util::BinaryFileIArchive::unpack (T * array, int n)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Unpack a C array. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>array</entry>
+                                <entry>
+<para>pointer to array (or first element) </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>n</entry>
+                                <entry>
+<para>number of elements </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 169 of file BinaryFileIArchive.h.</para>
+    </section><anchor xml:id="_classUtil_1_1BinaryFileIArchive_1a8a4ecf6761f971733a09e6efe477c7b0"/>    <section>
+    <title>unpack()<computeroutput>[3/3]</computeroutput></title>
+<indexterm><primary>unpack</primary><secondary>Util::BinaryFileIArchive</secondary></indexterm>
+<indexterm><primary>Util::BinaryFileIArchive</primary><secondary>unpack</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>void Util::BinaryFileIArchive::unpack (T * array, int m, int n, int np)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Unpack a 2D C array. </para>
+</para>
+
+<para>This unpacks the elements of an m x n logical array into a physical 2D C array of type array[][np], where np is the physical length of a row, i.e., the amount of memory allocated per row.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>array</entry>
+                                <entry>
+<para>pointer to first row </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>m</entry>
+                                <entry>
+<para>number of rows </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>n</entry>
+                                <entry>
+<para>logical number of columns </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>np</entry>
+                                <entry>
+<para>physical number of columns </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 180 of file BinaryFileIArchive.h.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+BinaryFileIArchive.hBinaryFileIArchive.cpp</section>
+</section>

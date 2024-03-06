@@ -1,0 +1,184 @@
+\hypertarget{classUtil_1_1Bit}{}\doxysubsection{Util\+::Bit Class Reference}
+\label{classUtil_1_1Bit}\index{Util::Bit@{Util::Bit}}
+
+
+Represents a specific bit location within an unsigned int.  
+
+
+
+
+{\ttfamily \#include $<$Bit.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1Bit_a76697e285fcd715ec31605976620a0cc}{Bit}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1Bit_a1bbf6179c564cf257d358aeee5480687}{Bit}} (unsigned int shift)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1Bit_a2a8df7ff3ab1251960b8b0175e512fc4}{set\+Mask}} (unsigned int shift)
+\begin{DoxyCompactList}\small\item\em Set or reset the bit mask. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1Bit_adcf13854931cef8b6b4d544984f58800}{set}} (unsigned int \&flags) const
+\begin{DoxyCompactList}\small\item\em Set this bit in the flags parameter. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1Bit_a04e6fe8d3afeadb5600e15fa0780bcc8}{clear}} (unsigned int \&flags) const
+\begin{DoxyCompactList}\small\item\em Clear this bit in the flags parameter. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUtil_1_1Bit_afe4862dedf91aa9a6f175912c72ee228}{is\+Set}} (unsigned int flags) const
+\begin{DoxyCompactList}\small\item\em Is this bit set in the flags integer? \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classUtil_1_1Bit_a0b890d6c3b82ff3f28b02fe0b80abbc7}{mask}} () const
+\begin{DoxyCompactList}\small\item\em Return integer with only this bit set. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Represents a specific bit location within an unsigned int. 
+
+Provides methods to query, set or clear a particular bit. 
+
+Definition at line 21 of file Bit.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1Bit_a76697e285fcd715ec31605976620a0cc}\label{classUtil_1_1Bit_a76697e285fcd715ec31605976620a0cc}} 
+\index{Util::Bit@{Util::Bit}!Bit@{Bit}}
+\index{Bit@{Bit}!Util::Bit@{Util::Bit}}
+\doxyparagraph{\texorpdfstring{Bit()}{Bit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Util\+::\+Bit\+::\+Bit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+
+
+Definition at line 18 of file Bit.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1Bit_a1bbf6179c564cf257d358aeee5480687}\label{classUtil_1_1Bit_a1bbf6179c564cf257d358aeee5480687}} 
+\index{Util::Bit@{Util::Bit}!Bit@{Bit}}
+\index{Bit@{Bit}!Util::Bit@{Util::Bit}}
+\doxyparagraph{\texorpdfstring{Bit()}{Bit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Util\+::\+Bit\+::\+Bit (\begin{DoxyParamCaption}\item[{unsigned int}]{shift }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shift} & location of the bit, 0 $<$ shift $<$= 32. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 25 of file Bit.\+cpp.
+
+
+
+References set\+Mask().
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1Bit_a2a8df7ff3ab1251960b8b0175e512fc4}\label{classUtil_1_1Bit_a2a8df7ff3ab1251960b8b0175e512fc4}} 
+\index{Util::Bit@{Util::Bit}!setMask@{setMask}}
+\index{setMask@{setMask}!Util::Bit@{Util::Bit}}
+\doxyparagraph{\texorpdfstring{setMask()}{setMask()}}
+{\footnotesize\ttfamily void Util\+::\+Bit\+::set\+Mask (\begin{DoxyParamCaption}\item[{unsigned int}]{shift }\end{DoxyParamCaption})}
+
+
+
+Set or reset the bit mask. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shift} & location of the bit, 0 $<$ shift $<$= 32. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 31 of file Bit.\+cpp.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+
+
+Referenced by Bit().
+
+\mbox{\Hypertarget{classUtil_1_1Bit_adcf13854931cef8b6b4d544984f58800}\label{classUtil_1_1Bit_adcf13854931cef8b6b4d544984f58800}} 
+\index{Util::Bit@{Util::Bit}!set@{set}}
+\index{set@{set}!Util::Bit@{Util::Bit}}
+\doxyparagraph{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily void Util\+::\+Bit\+::set (\begin{DoxyParamCaption}\item[{unsigned int \&}]{flags }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set this bit in the flags parameter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flags} & unsigned int to be modified \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 80 of file Bit.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Bit_a04e6fe8d3afeadb5600e15fa0780bcc8}\label{classUtil_1_1Bit_a04e6fe8d3afeadb5600e15fa0780bcc8}} 
+\index{Util::Bit@{Util::Bit}!clear@{clear}}
+\index{clear@{clear}!Util::Bit@{Util::Bit}}
+\doxyparagraph{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void Util\+::\+Bit\+::clear (\begin{DoxyParamCaption}\item[{unsigned int \&}]{flags }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Clear this bit in the flags parameter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flags} & unsigned int to be modified \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 86 of file Bit.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Bit_afe4862dedf91aa9a6f175912c72ee228}\label{classUtil_1_1Bit_afe4862dedf91aa9a6f175912c72ee228}} 
+\index{Util::Bit@{Util::Bit}!isSet@{isSet}}
+\index{isSet@{isSet}!Util::Bit@{Util::Bit}}
+\doxyparagraph{\texorpdfstring{isSet()}{isSet()}}
+{\footnotesize\ttfamily bool Util\+::\+Bit\+::is\+Set (\begin{DoxyParamCaption}\item[{unsigned int}]{flags }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Is this bit set in the flags integer? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flags} & unsigned int to be queried \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 92 of file Bit.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Bit_a0b890d6c3b82ff3f28b02fe0b80abbc7}\label{classUtil_1_1Bit_a0b890d6c3b82ff3f28b02fe0b80abbc7}} 
+\index{Util::Bit@{Util::Bit}!mask@{mask}}
+\index{mask@{mask}!Util::Bit@{Util::Bit}}
+\doxyparagraph{\texorpdfstring{mask()}{mask()}}
+{\footnotesize\ttfamily unsigned int Util\+::\+Bit\+::mask (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return integer with only this bit set. 
+
+
+
+Definition at line 98 of file Bit.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Bit.\+h\item 
+Bit.\+cpp\end{DoxyCompactItemize}

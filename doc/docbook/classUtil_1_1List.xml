@@ -1,0 +1,477 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1List">
+<title>Util::List&lt; Data &gt; Class Template Reference</title>
+<indexterm><primary>Util::List&lt; Data &gt;</primary></indexterm>
+<para>
+
+<para>Linked list class template. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;List.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1List_1ac8ba2c98c9ae136f52b86e851004f02d">List</link> ()</para>
+
+<para>Default constructor. </para>
+</listitem>
+            <listitem><para>virtual <link linkend="_classUtil_1_1List_1acf685d2a5be75ca6231008ca4bbf81b9">~List</link> ()</para>
+
+<para>Destructor (does nothing). </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1List_1ae61e57eb25257fffa52e8ba6dc5ccbd0">initialize</link> (<link linkend="_classUtil_1_1Node">Node</link>&lt; Data &gt; *nodes, int <link linkend="_classUtil_1_1List_1af90fd4a26edbace87d6ecd09dd51c372">capacity</link>)</para>
+
+<para>Provide an array of Node&lt;Data&gt; objects for this <link linkend="_classUtil_1_1List">List</link>. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1List_1abda07e7beebceebaf512d4252ba05cbc">size</link> () const</para>
+
+<para>Get the number of elements. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1List_1af90fd4a26edbace87d6ecd09dd51c372">capacity</link> () const</para>
+
+<para>Get capacity of the array. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1List_1aca748fb26b939d579655537b5fa0526a">pushBack</link> (<link linkend="_classUtil_1_1Node">Node</link>&lt; Data &gt; &amp;node)</para>
+
+<para>Push a node onto the the back of the <link linkend="_classUtil_1_1List">List</link>. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1List_1aac2b6544ae3512d67fe0bac0ed140a70">pushFront</link> (<link linkend="_classUtil_1_1Node">Node</link>&lt; Data &gt; &amp;node)</para>
+
+<para>Push a node onto the the front of the <link linkend="_classUtil_1_1List">List</link>. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Node">Node</link>&lt; Data &gt; &amp; <link linkend="_classUtil_1_1List_1a02809a8a953951bf639c8a0ad3bff317">popBack</link> ()</para>
+
+<para>Remove a node from the back of the list. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Node">Node</link>&lt; Data &gt; &amp; <link linkend="_classUtil_1_1List_1a1123671c92cc14b82a9dfd5015c087eb">popFront</link> ()</para>
+
+<para>Remove a node from the front of the list. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1List_1a2eabdf0d1935abed4212ba887c1f48d7">insertNext</link> (<link linkend="_classUtil_1_1Node">Node</link>&lt; Data &gt; &amp;node, <link linkend="_classUtil_1_1Node">Node</link>&lt; Data &gt; &amp;newNode)</para>
+
+<para>Insert newNode into list after node. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1List_1ae9806d319b67e1d8d6102d7198411005">insertPrev</link> (<link linkend="_classUtil_1_1Node">Node</link>&lt; Data &gt; &amp;node, <link linkend="_classUtil_1_1Node">Node</link>&lt; Data &gt; &amp;newNode)</para>
+
+<para>Insert newNode into list before node. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1List_1ad4e5c63d93d9362a26e17423e87bd434">insert</link> (<link linkend="_classUtil_1_1Node">Node</link>&lt; Data &gt; &amp;node)</para>
+
+<para>Insert node into list in sequential order. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1List_1a9a8460716f0d55fc3c0a6d79a6ab3663">remove</link> (<link linkend="_classUtil_1_1Node">Node</link>&lt; Data &gt; &amp;node)</para>
+
+<para>Remove node from list. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1List_1a0df1b660e6417421aa3c489e18defb12">begin</link> (<link linkend="_classUtil_1_1ListIterator">ListIterator</link>&lt; Data &gt; &amp;iterator) const</para>
+
+<para>Set an iterator to the front of this <link linkend="_classUtil_1_1List">List</link>. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_classUtil_1_1List_1a2fe9609a4f0a3604fcdfc17ca038436a">isValid</link> () const</para>
+
+<para>Check validity of linked list. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;typename Data&gt;
+class Util::List&lt; Data &gt;</title></simplesect>
+
+
+<para>Linked list class template. </para>
+
+
+
+<para>This list implementation is based on an underlying C array of Node&lt;Data&gt; objects. This array may be used by several <link linkend="_classUtil_1_1List">List</link> objects, and so must be allocated outside the Link class and provided via the initialize method. </para>
+<para>
+Definition at line 32 of file List.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1List_1ac8ba2c98c9ae136f52b86e851004f02d"/>    <section>
+    <title>List()</title>
+<indexterm><primary>List</primary><secondary>Util::List&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::List&lt; Data &gt;</primary><secondary>List</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1List">Util::List</link>&lt; Data &gt;::<link linkend="_classUtil_1_1List">List</link></computeroutput></para><para>
+
+<para>Default constructor. </para>
+</para>
+<para>
+Definition at line 192 of file List.h.</para>
+    </section><anchor xml:id="_classUtil_1_1List_1acf685d2a5be75ca6231008ca4bbf81b9"/>    <section>
+    <title>~List()</title>
+<indexterm><primary>~List</primary><secondary>Util::List&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::List&lt; Data &gt;</primary><secondary>~List</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>virtual <link linkend="_classUtil_1_1List">Util::List</link>&lt; Data &gt;::~<link linkend="_classUtil_1_1List">List</link> ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Destructor (does nothing). </para>
+</para>
+<para>
+Definition at line 45 of file List.h.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1List_1ae61e57eb25257fffa52e8ba6dc5ccbd0"/>    <section>
+    <title>initialize()</title>
+<indexterm><primary>initialize</primary><secondary>Util::List&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::List&lt; Data &gt;</primary><secondary>initialize</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1List">Util::List</link>&lt; Data &gt;::initialize (<link linkend="_classUtil_1_1Node">Node</link>&lt; Data &gt; * nodes, int capacity)</computeroutput></para><para>
+
+<para>Provide an array of Node&lt;Data&gt; objects for this <link linkend="_classUtil_1_1List">List</link>. </para>
+</para>
+<para>
+Definition at line 206 of file List.h.</para>
+    </section><anchor xml:id="_classUtil_1_1List_1abda07e7beebceebaf512d4252ba05cbc"/>    <section>
+    <title>size()</title>
+<indexterm><primary>size</primary><secondary>Util::List&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::List&lt; Data &gt;</primary><secondary>size</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>int <link linkend="_classUtil_1_1List">Util::List</link>&lt; Data &gt;::size<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get the number of elements. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Number of elements in this list. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 217 of file List.h.</para>
+    </section><anchor xml:id="_classUtil_1_1List_1af90fd4a26edbace87d6ecd09dd51c372"/>    <section>
+    <title>capacity()</title>
+<indexterm><primary>capacity</primary><secondary>Util::List&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::List&lt; Data &gt;</primary><secondary>capacity</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>int <link linkend="_classUtil_1_1List">Util::List</link>&lt; Data &gt;::capacity<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get capacity of the array. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Number of elements allocated in the associated arrays. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 224 of file List.h.</para>
+    </section><anchor xml:id="_classUtil_1_1List_1aca748fb26b939d579655537b5fa0526a"/>    <section>
+    <title>pushBack()</title>
+<indexterm><primary>pushBack</primary><secondary>Util::List&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::List&lt; Data &gt;</primary><secondary>pushBack</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1List">Util::List</link>&lt; Data &gt;::pushBack (<link linkend="_classUtil_1_1Node">Node</link>&lt; Data &gt; &amp; node)</computeroutput></para><para>
+
+<para>Push a node onto the the back of the <link linkend="_classUtil_1_1List">List</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>node</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Node">Node</link> object from associated node array. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 231 of file List.h.</para>
+<para>
+References Util::Node&lt; Data &gt;::attachNext(), Util::Node&lt; Data &gt;::setList(), and Util::Node&lt; Data &gt;::setNext().</para>
+    </section><anchor xml:id="_classUtil_1_1List_1aac2b6544ae3512d67fe0bac0ed140a70"/>    <section>
+    <title>pushFront()</title>
+<indexterm><primary>pushFront</primary><secondary>Util::List&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::List&lt; Data &gt;</primary><secondary>pushFront</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1List">Util::List</link>&lt; Data &gt;::pushFront (<link linkend="_classUtil_1_1Node">Node</link>&lt; Data &gt; &amp; node)</computeroutput></para><para>
+
+<para>Push a node onto the the front of the <link linkend="_classUtil_1_1List">List</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>node</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Node">Node</link> object from associated node array. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 251 of file List.h.</para>
+<para>
+References Util::Node&lt; Data &gt;::attachPrev(), Util::Node&lt; Data &gt;::setList(), and Util::Node&lt; Data &gt;::setPrev().</para>
+    </section><anchor xml:id="_classUtil_1_1List_1a02809a8a953951bf639c8a0ad3bff317"/>    <section>
+    <title>popBack()</title>
+<indexterm><primary>popBack</primary><secondary>Util::List&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::List&lt; Data &gt;</primary><secondary>popBack</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1Node">Node</link>&lt; Data &gt; &amp; <link linkend="_classUtil_1_1List">Util::List</link>&lt; Data &gt;::popBack</computeroutput></para><para>
+
+<para>Remove a node from the back of the list. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para><link linkend="_classUtil_1_1Node">Node</link> that was removed from this list. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 273 of file List.h.</para>
+<para>
+References Util::Node&lt; Data &gt;::clear(), Util::Node&lt; Data &gt;::prev(), and UTIL_THROW.</para>
+    </section><anchor xml:id="_classUtil_1_1List_1a1123671c92cc14b82a9dfd5015c087eb"/>    <section>
+    <title>popFront()</title>
+<indexterm><primary>popFront</primary><secondary>Util::List&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::List&lt; Data &gt;</primary><secondary>popFront</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1Node">Node</link>&lt; Data &gt; &amp; <link linkend="_classUtil_1_1List">Util::List</link>&lt; Data &gt;::popFront</computeroutput></para><para>
+
+<para>Remove a node from the front of the list. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para><link linkend="_classUtil_1_1Node">Node</link> that was removed from this list. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 298 of file List.h.</para>
+<para>
+References Util::Node&lt; Data &gt;::clear(), Util::Node&lt; Data &gt;::next(), and UTIL_THROW.</para>
+    </section><anchor xml:id="_classUtil_1_1List_1a2eabdf0d1935abed4212ba887c1f48d7"/>    <section>
+    <title>insertNext()</title>
+<indexterm><primary>insertNext</primary><secondary>Util::List&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::List&lt; Data &gt;</primary><secondary>insertNext</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1List">Util::List</link>&lt; Data &gt;::insertNext (<link linkend="_classUtil_1_1Node">Node</link>&lt; Data &gt; &amp; node, <link linkend="_classUtil_1_1Node">Node</link>&lt; Data &gt; &amp; newNode)</computeroutput></para><para>
+
+<para>Insert newNode into list after node. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>node</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Node">Node</link> in the existing list. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>newNode</entry>
+                                <entry>
+<para>new node, to be inserted as the next after node. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 323 of file List.h.</para>
+<para>
+References Util::Node&lt; Data &gt;::attachNext(), Util::Node&lt; Data &gt;::next(), and Util::Node&lt; Data &gt;::setNext().</para>
+    </section><anchor xml:id="_classUtil_1_1List_1ae9806d319b67e1d8d6102d7198411005"/>    <section>
+    <title>insertPrev()</title>
+<indexterm><primary>insertPrev</primary><secondary>Util::List&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::List&lt; Data &gt;</primary><secondary>insertPrev</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1List">Util::List</link>&lt; Data &gt;::insertPrev (<link linkend="_classUtil_1_1Node">Node</link>&lt; Data &gt; &amp; node, <link linkend="_classUtil_1_1Node">Node</link>&lt; Data &gt; &amp; newNode)</computeroutput></para><para>
+
+<para>Insert newNode into list before node. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>node</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Node">Node</link> in the existing list. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>newNode</entry>
+                                <entry>
+<para>new <link linkend="_classUtil_1_1Node">Node</link>, to be inserted previous to node. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 340 of file List.h.</para>
+<para>
+References Util::Node&lt; Data &gt;::attachPrev(), Util::Node&lt; Data &gt;::prev(), and Util::Node&lt; Data &gt;::setPrev().</para>
+    </section><anchor xml:id="_classUtil_1_1List_1ad4e5c63d93d9362a26e17423e87bd434"/>    <section>
+    <title>insert()</title>
+<indexterm><primary>insert</primary><secondary>Util::List&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::List&lt; Data &gt;</primary><secondary>insert</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1List">Util::List</link>&lt; Data &gt;::insert (<link linkend="_classUtil_1_1Node">Node</link>&lt; Data &gt; &amp; node)</computeroutput></para><para>
+
+<para>Insert node into list in sequential order. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>node</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Node">Node</link> to be inserted into the list. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 386 of file List.h.</para>
+<para>
+References Util::Node&lt; Data &gt;::attachNext(), Util::Node&lt; Data &gt;::list(), Util::Node&lt; Data &gt;::next(), Util::Node&lt; Data &gt;::prev(), Util::Node&lt; Data &gt;::setList(), Util::Node&lt; Data &gt;::setNext(), and Util::Node&lt; Data &gt;::setPrev().</para>
+    </section><anchor xml:id="_classUtil_1_1List_1a9a8460716f0d55fc3c0a6d79a6ab3663"/>    <section>
+    <title>remove()</title>
+<indexterm><primary>remove</primary><secondary>Util::List&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::List&lt; Data &gt;</primary><secondary>remove</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1List">Util::List</link>&lt; Data &gt;::remove (<link linkend="_classUtil_1_1Node">Node</link>&lt; Data &gt; &amp; node)</computeroutput></para><para>
+
+<para>Remove node from list. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>node</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Node">Node</link> to be removed from the list. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 357 of file List.h.</para>
+<para>
+References Util::Node&lt; Data &gt;::clear(), Util::Node&lt; Data &gt;::list(), Util::Node&lt; Data &gt;::next(), and Util::Node&lt; Data &gt;::prev().</para>
+    </section><anchor xml:id="_classUtil_1_1List_1a0df1b660e6417421aa3c489e18defb12"/>    <section>
+    <title>begin()</title>
+<indexterm><primary>begin</primary><secondary>Util::List&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::List&lt; Data &gt;</primary><secondary>begin</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1List">Util::List</link>&lt; Data &gt;::begin (<link linkend="_classUtil_1_1ListIterator">ListIterator</link>&lt; Data &gt; &amp; iterator) const</computeroutput></para><para>
+
+<para>Set an iterator to the front of this <link linkend="_classUtil_1_1List">List</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>iterator</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1ListIterator">ListIterator</link>, initialized on output. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 449 of file List.h.</para>
+<para>
+References Util::ListIterator&lt; Data &gt;::setCurrent().</para>
+<para>
+Referenced by Util::ListIterator&lt; Data &gt;::ListIterator().</para>
+    </section><anchor xml:id="_classUtil_1_1List_1a2fe9609a4f0a3604fcdfc17ca038436a"/>    <section>
+    <title>isValid()</title>
+<indexterm><primary>isValid</primary><secondary>Util::List&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::List&lt; Data &gt;</primary><secondary>isValid</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>bool <link linkend="_classUtil_1_1List">Util::List</link>&lt; Data &gt;::isValid</computeroutput></para><para>
+
+<para>Check validity of linked list. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>true if the list is valid, false otherwise. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 459 of file List.h.</para>
+<para>
+References Util::Node&lt; Data &gt;::list(), Util::Node&lt; Data &gt;::next(), Util::Node&lt; Data &gt;::prev(), and UTIL_THROW.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+List.h</section>
+</section>

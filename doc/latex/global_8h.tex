@@ -1,0 +1,109 @@
+\hypertarget{global_8h}{}\doxysubsection{global.\+h File Reference}
+\label{global_8h}\index{global.h@{global.h}}
+
+
+File containing preprocessor macros for error handling.  
+
+
+{\ttfamily \#include $<$mpi.\+h$>$}\newline
+{\ttfamily \#include $<$util/misc/\+Log.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}assert.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}misc/\+Exception.\+h\char`\"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{global_8h_a8de3ed741dadc9c979a4ff17c0a9116e}{N\+D\+E\+B\+UG}}
+\begin{DoxyCompactList}\small\item\em Include access to a Log file. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{global_8h_a36b40b7d270f4423cb39fa91d62c5351}{U\+T\+I\+L\+\_\+\+F\+U\+NC}}~\+\_\+\+\_\+\+P\+R\+E\+T\+T\+Y\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+\_\+
+\begin{DoxyCompactList}\small\item\em Macro for the name of the current function (compiler dependent). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{global_8h_ad2512f8bd062d41d66799cf900151487}{U\+T\+I\+L\+\_\+\+T\+H\+R\+OW}}(msg)
+\begin{DoxyCompactList}\small\item\em Macro for throwing an Exception, reporting function, file and line number. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{global_8h_aaf3bc07accafc94019d126e4cffa81e7}{U\+T\+I\+L\+\_\+\+C\+H\+E\+CK}}(condition)~if (!(condition)) \{ \mbox{\hyperlink{global_8h_ad2512f8bd062d41d66799cf900151487}{U\+T\+I\+L\+\_\+\+T\+H\+R\+OW}}(\char`\"{}Failed assertion\+: \char`\"{} \#condition); \}
+\begin{DoxyCompactList}\small\item\em Assertion macro suitable for serial or parallel production code. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{global_8h_aeb3d01af710489fd0112efe3054345b4}{U\+T\+I\+L\+\_\+\+A\+S\+S\+E\+RT}}(condition)~\{\}
+\begin{DoxyCompactList}\small\item\em Assertion macro suitable for debugging serial or parallel code. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+File containing preprocessor macros for error handling. 
+
+
+
+\doxysubsubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{global_8h_a8de3ed741dadc9c979a4ff17c0a9116e}\label{global_8h_a8de3ed741dadc9c979a4ff17c0a9116e}} 
+\index{global.h@{global.h}!NDEBUG@{NDEBUG}}
+\index{NDEBUG@{NDEBUG}!global.h@{global.h}}
+\doxyparagraph{\texorpdfstring{NDEBUG}{NDEBUG}}
+{\footnotesize\ttfamily \#define N\+D\+E\+B\+UG}
+
+
+
+Include access to a Log file. 
+
+If defined, disable all C assert(...) statements. 
+
+Definition at line 32 of file global.\+h.
+
+\mbox{\Hypertarget{global_8h_a36b40b7d270f4423cb39fa91d62c5351}\label{global_8h_a36b40b7d270f4423cb39fa91d62c5351}} 
+\index{global.h@{global.h}!UTIL\_FUNC@{UTIL\_FUNC}}
+\index{UTIL\_FUNC@{UTIL\_FUNC}!global.h@{global.h}}
+\doxyparagraph{\texorpdfstring{UTIL\_FUNC}{UTIL\_FUNC}}
+{\footnotesize\ttfamily \#define U\+T\+I\+L\+\_\+\+F\+U\+NC~\+\_\+\+\_\+\+P\+R\+E\+T\+T\+Y\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+\_\+}
+
+
+
+Macro for the name of the current function (compiler dependent). 
+
+
+
+Definition at line 42 of file global.\+h.
+
+\mbox{\Hypertarget{global_8h_ad2512f8bd062d41d66799cf900151487}\label{global_8h_ad2512f8bd062d41d66799cf900151487}} 
+\index{global.h@{global.h}!UTIL\_THROW@{UTIL\_THROW}}
+\index{UTIL\_THROW@{UTIL\_THROW}!global.h@{global.h}}
+\doxyparagraph{\texorpdfstring{UTIL\_THROW}{UTIL\_THROW}}
+{\footnotesize\ttfamily \#define U\+T\+I\+L\+\_\+\+T\+H\+R\+OW(\begin{DoxyParamCaption}\item[{}]{msg }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{      \{ \(\backslash\)}
+\DoxyCodeLine{      Exception e(\mbox{\hyperlink{global_8h_a36b40b7d270f4423cb39fa91d62c5351}{UTIL\_FUNC}}, msg, \_\_FILE\_\_, \_\_LINE\_\_); \(\backslash\)}
+\DoxyCodeLine{      MpiThrow(e); \}}
+
+\end{DoxyCode}
+
+
+Macro for throwing an Exception, reporting function, file and line number. 
+
+
+
+Definition at line 51 of file global.\+h.
+
+\mbox{\Hypertarget{global_8h_aaf3bc07accafc94019d126e4cffa81e7}\label{global_8h_aaf3bc07accafc94019d126e4cffa81e7}} 
+\index{global.h@{global.h}!UTIL\_CHECK@{UTIL\_CHECK}}
+\index{UTIL\_CHECK@{UTIL\_CHECK}!global.h@{global.h}}
+\doxyparagraph{\texorpdfstring{UTIL\_CHECK}{UTIL\_CHECK}}
+{\footnotesize\ttfamily \#define U\+T\+I\+L\+\_\+\+C\+H\+E\+CK(\begin{DoxyParamCaption}\item[{}]{condition }\end{DoxyParamCaption})~if (!(condition)) \{ \mbox{\hyperlink{global_8h_ad2512f8bd062d41d66799cf900151487}{U\+T\+I\+L\+\_\+\+T\+H\+R\+OW}}(\char`\"{}Failed assertion\+: \char`\"{} \#condition); \}}
+
+
+
+Assertion macro suitable for serial or parallel production code. 
+
+
+
+Definition at line 68 of file global.\+h.
+
+\mbox{\Hypertarget{global_8h_aeb3d01af710489fd0112efe3054345b4}\label{global_8h_aeb3d01af710489fd0112efe3054345b4}} 
+\index{global.h@{global.h}!UTIL\_ASSERT@{UTIL\_ASSERT}}
+\index{UTIL\_ASSERT@{UTIL\_ASSERT}!global.h@{global.h}}
+\doxyparagraph{\texorpdfstring{UTIL\_ASSERT}{UTIL\_ASSERT}}
+{\footnotesize\ttfamily \#define U\+T\+I\+L\+\_\+\+A\+S\+S\+E\+RT(\begin{DoxyParamCaption}\item[{}]{condition }\end{DoxyParamCaption})~\{\}}
+
+
+
+Assertion macro suitable for debugging serial or parallel code. 
+
+
+
+Definition at line 75 of file global.\+h.
+

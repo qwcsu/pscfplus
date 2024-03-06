@@ -1,0 +1,287 @@
+\hypertarget{classUtil_1_1Factory}{}\doxysubsection{Util\+::Factory$<$ Data $>$ Class Template Reference}
+\label{classUtil_1_1Factory}\index{Util::Factory$<$ Data $>$@{Util::Factory$<$ Data $>$}}
+
+
+\mbox{\hyperlink{classUtil_1_1Factory}{Factory}} template.  
+
+
+
+
+{\ttfamily \#include $<$Factory.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1Factory_abed74f57b3e4aa935aa9c6ac00237bf4}{Factory}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classUtil_1_1Factory_a7d0e3928c0ec7ac854b96d9201cc757a}{$\sim$\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1Factory_acc4e596c0a8636a5553ada58dfe898ce}{add\+Subfactory}} (\mbox{\hyperlink{classUtil_1_1Factory}{Factory}}$<$ Data $>$ \&subfactory)
+\begin{DoxyCompactList}\small\item\em Add a new subfactory to the list. \end{DoxyCompactList}\item 
+virtual Data $\ast$ \mbox{\hyperlink{classUtil_1_1Factory_a75ae49003fb0b92da58e370ceae64153}{factory}} (const std\+::string \&class\+Name) const =0
+\begin{DoxyCompactList}\small\item\em Returns a pointer to a new instance of specified subclass. \end{DoxyCompactList}\item 
+Data $\ast$ \mbox{\hyperlink{classUtil_1_1Factory_aff55a134e6b770ca6f656417f4519fd5}{read\+Object}} (std\+::istream \&in, \mbox{\hyperlink{classUtil_1_1ParamComposite}{Param\+Composite}} \&parent, std\+::string \&class\+Name, bool \&is\+End)
+\begin{DoxyCompactList}\small\item\em Read a class name, instantiate an object, and read its parameters. \end{DoxyCompactList}\item 
+Data $\ast$ \mbox{\hyperlink{classUtil_1_1Factory_ac1b7f10f4dc2adae114c4bcadb0b1b44}{load\+Object}} (\mbox{\hyperlink{classUtil_1_1Serializable_ac6bcbf9bac926cada5a398804410e891}{Serializable\+::\+I\+Archive}} \&ar, \mbox{\hyperlink{classUtil_1_1ParamComposite}{Param\+Composite}} \&parent, std\+::string \&class\+Name)
+\begin{DoxyCompactList}\small\item\em Load a class name, instantiate an object, and load the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Data $\ast$ \mbox{\hyperlink{classUtil_1_1Factory_a2119c2c8c8932225aa2287bc80f9d7c9}{try\+Subfactories}} (const std\+::string \&class\+Name) const
+\begin{DoxyCompactList}\small\item\em Search through subfactories for match. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1Factory_a91853b5c1badde4e641aa70ab8b92964}{set\+Io\+Communicator}} (M\+P\+I\+::\+Intracomm \&communicator)
+\begin{DoxyCompactList}\small\item\em Set associated Mpi communicator. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUtil_1_1Factory_a36eb4f0f8af72e65be731a795fe2bccb}{has\+Io\+Communicator}} () const
+\begin{DoxyCompactList}\small\item\em Does this factory have a param communicator? \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$typename Data$>$\newline
+class Util\+::\+Factory$<$ Data $>$}
+
+\mbox{\hyperlink{classUtil_1_1Factory}{Factory}} template. 
+
+Definition at line 32 of file Factory.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1Factory_abed74f57b3e4aa935aa9c6ac00237bf4}\label{classUtil_1_1Factory_abed74f57b3e4aa935aa9c6ac00237bf4}} 
+\index{Util::Factory$<$ Data $>$@{Util::Factory$<$ Data $>$}!Factory@{Factory}}
+\index{Factory@{Factory}!Util::Factory$<$ Data $>$@{Util::Factory$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{Factory()}{Factory()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+\mbox{\hyperlink{classUtil_1_1Factory}{Util\+::\+Factory}}$<$ Data $>$\+::\mbox{\hyperlink{classUtil_1_1Factory}{Factory}}}
+
+
+
+Constructor. 
+
+
+
+Definition at line 165 of file Factory.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Factory_a7d0e3928c0ec7ac854b96d9201cc757a}\label{classUtil_1_1Factory_a7d0e3928c0ec7ac854b96d9201cc757a}} 
+\index{Util::Factory$<$ Data $>$@{Util::Factory$<$ Data $>$}!````~Factory@{$\sim$Factory}}
+\index{````~Factory@{$\sim$Factory}!Util::Factory$<$ Data $>$@{Util::Factory$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{$\sim$Factory()}{~Factory()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+\mbox{\hyperlink{classUtil_1_1Factory}{Util\+::\+Factory}}$<$ Data $>$\+::$\sim$\mbox{\hyperlink{classUtil_1_1Factory}{Factory}}\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+Definition at line 173 of file Factory.\+h.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1Factory_acc4e596c0a8636a5553ada58dfe898ce}\label{classUtil_1_1Factory_acc4e596c0a8636a5553ada58dfe898ce}} 
+\index{Util::Factory$<$ Data $>$@{Util::Factory$<$ Data $>$}!addSubfactory@{addSubfactory}}
+\index{addSubfactory@{addSubfactory}!Util::Factory$<$ Data $>$@{Util::Factory$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{addSubfactory()}{addSubfactory()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+void \mbox{\hyperlink{classUtil_1_1Factory}{Util\+::\+Factory}}$<$ Data $>$\+::add\+Subfactory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1Factory}{Factory}}$<$ Data $>$ \&}]{subfactory }\end{DoxyParamCaption})}
+
+
+
+Add a new subfactory to the list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em subfactory} & New subfactory to be added \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 204 of file Factory.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Factory_a75ae49003fb0b92da58e370ceae64153}\label{classUtil_1_1Factory_a75ae49003fb0b92da58e370ceae64153}} 
+\index{Util::Factory$<$ Data $>$@{Util::Factory$<$ Data $>$}!factory@{factory}}
+\index{factory@{factory}!Util::Factory$<$ Data $>$@{Util::Factory$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{factory()}{factory()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+virtual Data$\ast$ \mbox{\hyperlink{classUtil_1_1Factory}{Util\+::\+Factory}}$<$ Data $>$\+::factory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{class\+Name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns a pointer to a new instance of specified subclass. 
+
+This method takes the name class\+Name of a subclass of Data as a parameter, and attempts to instantiate an object of that class. If it recognizes the class\+Name, it creates an instance of that class and returns a Data$\ast$ base class pointer to the new object. If it does not recognize the class\+Name, it returns a null pointer.
+
+An implementation should first call \char`\"{}try\+Subfactories(class\+Name)\char`\"{} and immediately return if this returns a non-\/null pointer, before attempting to match the class\+Name against specific strings.
+
+
+\begin{DoxyParams}{Parameters}
+{\em class\+Name} & name of subclass \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+base class pointer to new object, or a null pointer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUtil_1_1Factory_aff55a134e6b770ca6f656417f4519fd5}\label{classUtil_1_1Factory_aff55a134e6b770ca6f656417f4519fd5}} 
+\index{Util::Factory$<$ Data $>$@{Util::Factory$<$ Data $>$}!readObject@{readObject}}
+\index{readObject@{readObject}!Util::Factory$<$ Data $>$@{Util::Factory$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{readObject()}{readObject()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+Data $\ast$ \mbox{\hyperlink{classUtil_1_1Factory}{Util\+::\+Factory}}$<$ Data $>$\+::read\+Object (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in,  }\item[{\mbox{\hyperlink{classUtil_1_1ParamComposite}{Param\+Composite}} \&}]{parent,  }\item[{std\+::string \&}]{class\+Name,  }\item[{bool \&}]{is\+End }\end{DoxyParamCaption})}
+
+
+
+Read a class name, instantiate an object, and read its parameters. 
+
+This method\+:
+\begin{DoxyItemize}
+\item reads a comment line of the form class\+Name + \{
+\item invokes the factory method to create an instance of class\+Name
+\item invokes the read\+Param() method of the new object
+\end{DoxyItemize}
+
+When compiled with M\+PI, if the parent \mbox{\hyperlink{classUtil_1_1ParamComposite}{Param\+Composite}} has a param communicator, this method reads the comment line on the Io processor, broadcasts it to all others, and then lets each processor independently match this string.
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{classUtil_1_1Exception}{Exception}}} & if class\+Name is not recognized.\\
+\hline
+\end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+{\em in} & input stream \\
+\hline
+{\em parent} & parent \mbox{\hyperlink{classUtil_1_1ParamComposite}{Param\+Composite}} object \\
+\hline
+{\em class\+Name} & (output) name of subclass of Data \\
+\hline
+{\em is\+End} & (output) is the input a closing bracket \char`\"{}\}\char`\"{} ? \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to new instance of class\+Name 
+\end{DoxyReturn}
+
+
+Definition at line 214 of file Factory.\+h.
+
+
+
+References Util\+::\+Param\+Composite\+::add\+Param\+Composite(), Util\+::\+Param\+Component\+::echo(), Util\+::\+Log\+::file(), Util\+::\+Mpi\+File\+Io\+::has\+Io\+Communicator(), Util\+::\+Mpi\+File\+Io\+::io\+Communicator(), Util\+::\+Param\+Component\+::set\+Indent(), U\+T\+I\+L\+\_\+\+T\+H\+R\+OW, and Util\+::\+Begin\+::write\+Param().
+
+\mbox{\Hypertarget{classUtil_1_1Factory_ac1b7f10f4dc2adae114c4bcadb0b1b44}\label{classUtil_1_1Factory_ac1b7f10f4dc2adae114c4bcadb0b1b44}} 
+\index{Util::Factory$<$ Data $>$@{Util::Factory$<$ Data $>$}!loadObject@{loadObject}}
+\index{loadObject@{loadObject}!Util::Factory$<$ Data $>$@{Util::Factory$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{loadObject()}{loadObject()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+Data $\ast$ \mbox{\hyperlink{classUtil_1_1Factory}{Util\+::\+Factory}}$<$ Data $>$\+::load\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1Serializable_ac6bcbf9bac926cada5a398804410e891}{Serializable\+::\+I\+Archive}} \&}]{ar,  }\item[{\mbox{\hyperlink{classUtil_1_1ParamComposite}{Param\+Composite}} \&}]{parent,  }\item[{std\+::string \&}]{class\+Name }\end{DoxyParamCaption})}
+
+
+
+Load a class name, instantiate an object, and load the object. 
+
+This method\+:
+\begin{DoxyItemize}
+\item loads a class\+Name from an input archive
+\item invokes the factory method to create an instance of class\+Name
+\item invokes the load() method of the new object
+\end{DoxyItemize}
+
+When compiled with M\+PI, if the parent \mbox{\hyperlink{classUtil_1_1ParamComposite}{Param\+Composite}} has a param communicator, this method loads the comment line on the Io processor, broadcasts it to all others, and then lets each processor independently match this string.
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{classUtil_1_1Exception}{Exception}}} & if class\+Name is not recognized.\\
+\hline
+\end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & input/loading archive \\
+\hline
+{\em parent} & parent \mbox{\hyperlink{classUtil_1_1ParamComposite}{Param\+Composite}} object \\
+\hline
+{\em class\+Name} & (output) name of subclass of Data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to new instance of class\+Name 
+\end{DoxyReturn}
+
+
+Definition at line 303 of file Factory.\+h.
+
+
+
+References Util\+::\+Log\+::file(), Util\+::\+Mpi\+File\+Io\+::has\+Io\+Communicator(), Util\+::\+Mpi\+File\+Io\+::io\+Communicator(), and Util\+::\+Param\+Composite\+::load\+Param\+Composite().
+
+\mbox{\Hypertarget{classUtil_1_1Factory_a2119c2c8c8932225aa2287bc80f9d7c9}\label{classUtil_1_1Factory_a2119c2c8c8932225aa2287bc80f9d7c9}} 
+\index{Util::Factory$<$ Data $>$@{Util::Factory$<$ Data $>$}!trySubfactories@{trySubfactories}}
+\index{trySubfactories@{trySubfactories}!Util::Factory$<$ Data $>$@{Util::Factory$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{trySubfactories()}{trySubfactories()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+Data $\ast$ \mbox{\hyperlink{classUtil_1_1Factory}{Util\+::\+Factory}}$<$ Data $>$\+::try\+Subfactories (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{class\+Name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Search through subfactories for match. 
+
+This method iterates through all registered subfactories, calls the factory(const std\+::string\& ) method of each, and immediately returns a pointer to a new object if any of them returns a non-\/null pointer. If all of them return a null pointer, this method also returns a null pointer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em class\+Name} & name of subclass \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+base class pointer to new object, or a null pointer. 
+\end{DoxyReturn}
+
+
+Definition at line 340 of file Factory.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Factory_a91853b5c1badde4e641aa70ab8b92964}\label{classUtil_1_1Factory_a91853b5c1badde4e641aa70ab8b92964}} 
+\index{Util::Factory$<$ Data $>$@{Util::Factory$<$ Data $>$}!setIoCommunicator@{setIoCommunicator}}
+\index{setIoCommunicator@{setIoCommunicator}!Util::Factory$<$ Data $>$@{Util::Factory$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{setIoCommunicator()}{setIoCommunicator()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+void \mbox{\hyperlink{classUtil_1_1Factory}{Util\+::\+Factory}}$<$ Data $>$\+::set\+Io\+Communicator (\begin{DoxyParamCaption}\item[{M\+P\+I\+::\+Intracomm \&}]{communicator }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Set associated Mpi communicator. 
+
+Is not recursive (is not applied to subfactories).
+
+
+\begin{DoxyParams}{Parameters}
+{\em communicator} & M\+PI Intra-\/communicator to use for input \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 181 of file Factory.\+h.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1Factory_a36eb4f0f8af72e65be731a795fe2bccb}\label{classUtil_1_1Factory_a36eb4f0f8af72e65be731a795fe2bccb}} 
+\index{Util::Factory$<$ Data $>$@{Util::Factory$<$ Data $>$}!hasIoCommunicator@{hasIoCommunicator}}
+\index{hasIoCommunicator@{hasIoCommunicator}!Util::Factory$<$ Data $>$@{Util::Factory$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{hasIoCommunicator()}{hasIoCommunicator()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+bool \mbox{\hyperlink{classUtil_1_1Factory}{Util\+::\+Factory}}$<$ Data $>$\+::has\+Io\+Communicator\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Does this factory have a param communicator? 
+
+
+
+Definition at line 196 of file Factory.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Factory.\+h\end{DoxyCompactItemize}

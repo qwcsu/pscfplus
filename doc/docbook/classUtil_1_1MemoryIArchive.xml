@@ -1,0 +1,539 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1MemoryIArchive">
+<title>Util::MemoryIArchive Class Reference</title>
+<indexterm><primary>Util::MemoryIArchive</primary></indexterm>
+<para>
+
+<para>Input archive for packed heterogeneous binary data. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;MemoryIArchive.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1MemoryIArchive_1ad1b6b461d5523b030808b510f15e975d">MemoryIArchive</link> ()</para>
+
+<para>Constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1MemoryIArchive_1a553ed49f9f378b3f9240fffbab064d90">~MemoryIArchive</link> ()</para>
+
+<para>Destructor. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1MemoryIArchive_1a4365cb5b4e996c26f1f1bf784693aaac">allocate</link> (size_t <link linkend="_classUtil_1_1MemoryIArchive_1a5003545e69669aaac2f057f04b152bc3">capacity</link>)</para>
+
+<para>Allocate memory block. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1MemoryIArchive">MemoryIArchive</link> &amp; <link linkend="_classUtil_1_1MemoryIArchive_1a3448aacc330d1b81b1774309d980330b">operator=</link> (<link linkend="_classUtil_1_1MemoryOArchive">MemoryOArchive</link> &amp;other)</para>
+
+<para>Assignment from <link linkend="_classUtil_1_1MemoryOArchive">MemoryOArchive</link>. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1MemoryIArchive_1a4a3a6fb013f08ddebd1d00dc960d37f5">reset</link> ()</para>
+
+<para>Reset the cursor to the beginning (for rereading). </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1MemoryIArchive_1a52addbde62cee5bea45fc589eb3f465f">clear</link> ()</para>
+
+<para>Reset to empty state. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1MemoryIArchive_1abd9c8fcadbb564c1ef37134b928928b1">release</link> ()</para>
+
+<para>Release memory obtained by assignment. </para>
+</listitem>
+            <listitem><para>template&lt;typename T &gt; </para><para><link linkend="_classUtil_1_1MemoryIArchive">MemoryIArchive</link> &amp; <link linkend="_classUtil_1_1MemoryIArchive_1a2351b8ad2ba3b0b1b2f0e1d2cb0e172d">operator&amp;</link> (T &amp;data)</para>
+
+<para>Load one object. </para>
+</listitem>
+            <listitem><para>template&lt;typename T &gt; </para><para><link linkend="_classUtil_1_1MemoryIArchive">MemoryIArchive</link> &amp; <link linkend="_classUtil_1_1MemoryIArchive_1a8d1dbbb72a1aae14841c68770554a9bb">operator&gt;&gt;</link> (T &amp;data)</para>
+
+<para>Load one object. </para>
+</listitem>
+            <listitem><para>template&lt;typename T &gt; </para><para>void <link linkend="_classUtil_1_1MemoryIArchive_1a5dac6eaf477b457713449d1c4c4bf6de">unpack</link> (T &amp;data)</para>
+
+<para>Unpack one object of type T. </para>
+</listitem>
+            <listitem><para>template&lt;typename T &gt; </para><para>void <link linkend="_classUtil_1_1MemoryIArchive_1a71ca8251f6566f5bce28da8c8b9b2aac">unpack</link> (T *array, int n)</para>
+
+<para>Read a C-array of objects of type T. </para>
+</listitem>
+            <listitem><para>template&lt;typename T &gt; </para><para>void <link linkend="_classUtil_1_1MemoryIArchive_1a8a3491794a89173d9072f9659270f0e2">unpack</link> (T *array, int m, int n, int np)</para>
+
+<para>Unpack a 2D C array. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1MemoryIArchive_1a01542e31d8712cad4cf5e7c198656124">recv</link> (MPI::Intracomm &amp;comm, int source)</para>
+
+<para>Receive packed data via MPI. </para>
+</listitem>
+            <listitem><para><link linkend="_namespaceUtil_1aeb6f2071b71e3433dd3cfc1bce6c2e6d">Byte</link> * <link linkend="_classUtil_1_1MemoryIArchive_1a0172653810f64259d6ce085f65b88d35">begin</link> () const</para>
+
+<para>Return pointer to beginning of block. </para>
+</listitem>
+            <listitem><para><link linkend="_namespaceUtil_1aeb6f2071b71e3433dd3cfc1bce6c2e6d">Byte</link> * <link linkend="_classUtil_1_1MemoryIArchive_1a756e8803adb0b303ee93cd215a40c577">cursor</link> () const</para>
+
+<para>Return pointer to current position (cursor). </para>
+</listitem>
+            <listitem><para><link linkend="_namespaceUtil_1aeb6f2071b71e3433dd3cfc1bce6c2e6d">Byte</link> * <link linkend="_classUtil_1_1MemoryIArchive_1ada9af1f5d670e7cefea218a40ab6ff8e">end</link> () const</para>
+
+<para>Return pointer to end of packed block (one Byte past the last). </para>
+</listitem>
+            <listitem><para>size_t <link linkend="_classUtil_1_1MemoryIArchive_1a5003545e69669aaac2f057f04b152bc3">capacity</link> () const</para>
+
+<para>Return capacity in Bytes. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_classUtil_1_1MemoryIArchive_1afa9d8105fece672b6cf93c10dd08b090">isAllocated</link> () const</para>
+
+<para>Has memory been allocated? </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static bool <link linkend="_classUtil_1_1MemoryIArchive_1a1d4fc725be4e2292b9638b4ad89af14a">is_saving</link> ()</para>
+
+<para>Returns true;. </para>
+</listitem>
+            <listitem><para>static bool <link linkend="_classUtil_1_1MemoryIArchive_1a26d268aeb6df7fca7ed34ed64b708b7d">is_loading</link> ()</para>
+
+<para>Returns false;. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Input archive for packed heterogeneous binary data. </para>
+<para>
+Definition at line 31 of file MemoryIArchive.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1MemoryIArchive_1ad1b6b461d5523b030808b510f15e975d"/>    <section>
+    <title>MemoryIArchive()</title>
+<indexterm><primary>MemoryIArchive</primary><secondary>Util::MemoryIArchive</secondary></indexterm>
+<indexterm><primary>Util::MemoryIArchive</primary><secondary>MemoryIArchive</secondary></indexterm>
+<para><computeroutput>Util::MemoryIArchive::MemoryIArchive ( )</computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+<para>
+Definition at line 20 of file MemoryIArchive.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1MemoryIArchive_1a553ed49f9f378b3f9240fffbab064d90"/>    <section>
+    <title>~MemoryIArchive()</title>
+<indexterm><primary>~MemoryIArchive</primary><secondary>Util::MemoryIArchive</secondary></indexterm>
+<indexterm><primary>Util::MemoryIArchive</primary><secondary>~MemoryIArchive</secondary></indexterm>
+<para><computeroutput>Util::MemoryIArchive::~MemoryIArchive ( )</computeroutput></para><para>
+
+<para>Destructor. </para>
+</para>
+<para>
+Definition at line 35 of file MemoryIArchive.cpp.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1MemoryIArchive_1a1d4fc725be4e2292b9638b4ad89af14a"/>    <section>
+    <title>is_saving()</title>
+<indexterm><primary>is_saving</primary><secondary>Util::MemoryIArchive</secondary></indexterm>
+<indexterm><primary>Util::MemoryIArchive</primary><secondary>is_saving</secondary></indexterm>
+<para><computeroutput>bool Util::MemoryIArchive::is_saving ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Returns true;. </para>
+</para>
+<para>
+Definition at line 196 of file MemoryIArchive.h.</para>
+    </section><anchor xml:id="_classUtil_1_1MemoryIArchive_1a26d268aeb6df7fca7ed34ed64b708b7d"/>    <section>
+    <title>is_loading()</title>
+<indexterm><primary>is_loading</primary><secondary>Util::MemoryIArchive</secondary></indexterm>
+<indexterm><primary>Util::MemoryIArchive</primary><secondary>is_loading</secondary></indexterm>
+<para><computeroutput>bool Util::MemoryIArchive::is_loading ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Returns false;. </para>
+</para>
+<para>
+Definition at line 199 of file MemoryIArchive.h.</para>
+    </section><anchor xml:id="_classUtil_1_1MemoryIArchive_1a4365cb5b4e996c26f1f1bf784693aaac"/>    <section>
+    <title>allocate()</title>
+<indexterm><primary>allocate</primary><secondary>Util::MemoryIArchive</secondary></indexterm>
+<indexterm><primary>Util::MemoryIArchive</primary><secondary>allocate</secondary></indexterm>
+<para><computeroutput>void Util::MemoryIArchive::allocate (size_t capacity)</computeroutput></para><para>
+
+<para>Allocate memory block. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>capacity</entry>
+                                <entry>
+<para>sizeof of block, in Bytes. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 46 of file MemoryIArchive.cpp.</para>
+<para>
+References capacity(), and UTIL_THROW.</para>
+    </section><anchor xml:id="_classUtil_1_1MemoryIArchive_1a3448aacc330d1b81b1774309d980330b"/>    <section>
+    <title>operator=()</title>
+<indexterm><primary>operator=</primary><secondary>Util::MemoryIArchive</secondary></indexterm>
+<indexterm><primary>Util::MemoryIArchive</primary><secondary>operator=</secondary></indexterm>
+<para><computeroutput><link linkend="_classUtil_1_1MemoryIArchive">MemoryIArchive</link> &amp; Util::MemoryIArchive::operator= (<link linkend="_classUtil_1_1MemoryOArchive">MemoryOArchive</link> &amp; other)</computeroutput></para><para>
+
+<para>Assignment from <link linkend="_classUtil_1_1MemoryOArchive">MemoryOArchive</link>. </para>
+</para>
+<para>
+Definition at line 64 of file MemoryIArchive.cpp.</para>
+<para>
+References isAllocated(), and UTIL_THROW.</para>
+    </section><anchor xml:id="_classUtil_1_1MemoryIArchive_1a4a3a6fb013f08ddebd1d00dc960d37f5"/>    <section>
+    <title>reset()</title>
+<indexterm><primary>reset</primary><secondary>Util::MemoryIArchive</secondary></indexterm>
+<indexterm><primary>Util::MemoryIArchive</primary><secondary>reset</secondary></indexterm>
+<para><computeroutput>void Util::MemoryIArchive::reset ( )</computeroutput></para><para>
+
+<para>Reset the cursor to the beginning (for rereading). </para>
+</para>
+<para>
+Definition at line 84 of file MemoryIArchive.cpp.</para>
+<para>
+References begin(), isAllocated(), and UTIL_THROW.</para>
+    </section><anchor xml:id="_classUtil_1_1MemoryIArchive_1a52addbde62cee5bea45fc589eb3f465f"/>    <section>
+    <title>clear()</title>
+<indexterm><primary>clear</primary><secondary>Util::MemoryIArchive</secondary></indexterm>
+<indexterm><primary>Util::MemoryIArchive</primary><secondary>clear</secondary></indexterm>
+<para><computeroutput>void Util::MemoryIArchive::clear ( )</computeroutput></para><para>
+
+<para>Reset to empty state. </para>
+</para>
+
+<para>Resets cursor and end pointers to beginning of memory block. </para>
+<para>
+Definition at line 95 of file MemoryIArchive.cpp.</para>
+<para>
+References begin(), isAllocated(), and UTIL_THROW.</para>
+    </section><anchor xml:id="_classUtil_1_1MemoryIArchive_1abd9c8fcadbb564c1ef37134b928928b1"/>    <section>
+    <title>release()</title>
+<indexterm><primary>release</primary><secondary>Util::MemoryIArchive</secondary></indexterm>
+<indexterm><primary>Util::MemoryIArchive</primary><secondary>release</secondary></indexterm>
+<para><computeroutput>void Util::MemoryIArchive::release ( )</computeroutput></para><para>
+
+<para>Release memory obtained by assignment. </para>
+</para>
+<para>
+Definition at line 110 of file MemoryIArchive.cpp.</para>
+<para>
+References UTIL_THROW.</para>
+    </section><anchor xml:id="_classUtil_1_1MemoryIArchive_1a2351b8ad2ba3b0b1b2f0e1d2cb0e172d"/>    <section>
+    <title>operator&amp;()</title>
+<indexterm><primary>operator&amp;</primary><secondary>Util::MemoryIArchive</secondary></indexterm>
+<indexterm><primary>Util::MemoryIArchive</primary><secondary>operator&amp;</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1MemoryIArchive">MemoryIArchive</link> &amp; Util::MemoryIArchive::operator&amp; (T &amp; data)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Load one object. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>data</entry>
+                                <entry>
+<para>object to be loaded from this archive. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 240 of file MemoryIArchive.h.</para>
+    </section><anchor xml:id="_classUtil_1_1MemoryIArchive_1a8d1dbbb72a1aae14841c68770554a9bb"/>    <section>
+    <title>operator&gt;&gt;()</title>
+<indexterm><primary>operator&gt;&gt;</primary><secondary>Util::MemoryIArchive</secondary></indexterm>
+<indexterm><primary>Util::MemoryIArchive</primary><secondary>operator&gt;&gt;</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1MemoryIArchive">MemoryIArchive</link> &amp; Util::MemoryIArchive::operator&gt;&gt; (T &amp; data)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Load one object. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>data</entry>
+                                <entry>
+<para>object to be loaded from this archive. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 250 of file MemoryIArchive.h.</para>
+    </section><anchor xml:id="_classUtil_1_1MemoryIArchive_1a5dac6eaf477b457713449d1c4c4bf6de"/>    <section>
+    <title>unpack()<computeroutput>[1/3]</computeroutput></title>
+<indexterm><primary>unpack</primary><secondary>Util::MemoryIArchive</secondary></indexterm>
+<indexterm><primary>Util::MemoryIArchive</primary><secondary>unpack</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>void Util::MemoryIArchive::unpack (T &amp; data)</computeroutput></para><para>
+
+<para>Unpack one object of type T. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>data</entry>
+                                <entry>
+<para>object to be loaded from this archive. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 260 of file MemoryIArchive.h.</para>
+<para>
+References UTIL_THROW.</para>
+    </section><anchor xml:id="_classUtil_1_1MemoryIArchive_1a71ca8251f6566f5bce28da8c8b9b2aac"/>    <section>
+    <title>unpack()<computeroutput>[2/3]</computeroutput></title>
+<indexterm><primary>unpack</primary><secondary>Util::MemoryIArchive</secondary></indexterm>
+<indexterm><primary>Util::MemoryIArchive</primary><secondary>unpack</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>void Util::MemoryIArchive::unpack (T * array, int n)</computeroutput></para><para>
+
+<para>Read a C-array of objects of type T. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>array</entry>
+                                <entry>
+<para>array into which data should be loaded. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>n</entry>
+                                <entry>
+<para>expected number of elements in the array. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 275 of file MemoryIArchive.h.</para>
+<para>
+References UTIL_THROW.</para>
+    </section><anchor xml:id="_classUtil_1_1MemoryIArchive_1a8a3491794a89173d9072f9659270f0e2"/>    <section>
+    <title>unpack()<computeroutput>[3/3]</computeroutput></title>
+<indexterm><primary>unpack</primary><secondary>Util::MemoryIArchive</secondary></indexterm>
+<indexterm><primary>Util::MemoryIArchive</primary><secondary>unpack</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>void Util::MemoryIArchive::unpack (T * array, int m, int n, int np)</computeroutput></para><para>
+
+<para>Unpack a 2D C array. </para>
+</para>
+
+<para>Unpack m rows of n elements into array of type T array[mp][np], with m &lt;= mp and n &lt;= np.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>array</entry>
+                                <entry>
+<para>pointer to [0][0] element of 2D array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>m</entry>
+                                <entry>
+<para>logical number of rows </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>n</entry>
+                                <entry>
+<para>logical number of columns </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>np</entry>
+                                <entry>
+<para>physical number of columns </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 292 of file MemoryIArchive.h.</para>
+<para>
+References UTIL_THROW.</para>
+    </section><anchor xml:id="_classUtil_1_1MemoryIArchive_1a01542e31d8712cad4cf5e7c198656124"/>    <section>
+    <title>recv()</title>
+<indexterm><primary>recv</primary><secondary>Util::MemoryIArchive</secondary></indexterm>
+<indexterm><primary>Util::MemoryIArchive</primary><secondary>recv</secondary></indexterm>
+<para><computeroutput>void Util::MemoryIArchive::recv (MPI::Intracomm &amp; comm, int source)</computeroutput></para><para>
+
+<para>Receive packed data via MPI. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>comm</entry>
+                                <entry>
+<para>MPI communicator </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>source</entry>
+                                <entry>
+<para>rank of processor from which data is sent. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 133 of file MemoryIArchive.cpp.</para>
+<para>
+References UTIL_THROW.</para>
+    </section><anchor xml:id="_classUtil_1_1MemoryIArchive_1a0172653810f64259d6ce085f65b88d35"/>    <section>
+    <title>begin()</title>
+<indexterm><primary>begin</primary><secondary>Util::MemoryIArchive</secondary></indexterm>
+<indexterm><primary>Util::MemoryIArchive</primary><secondary>begin</secondary></indexterm>
+<para><computeroutput><link linkend="_namespaceUtil_1aeb6f2071b71e3433dd3cfc1bce6c2e6d">Byte</link> * Util::MemoryIArchive::begin ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return pointer to beginning of block. </para>
+</para>
+<para>
+Definition at line 207 of file MemoryIArchive.h.</para>
+<para>
+Referenced by clear(), and reset().</para>
+    </section><anchor xml:id="_classUtil_1_1MemoryIArchive_1a756e8803adb0b303ee93cd215a40c577"/>    <section>
+    <title>cursor()</title>
+<indexterm><primary>cursor</primary><secondary>Util::MemoryIArchive</secondary></indexterm>
+<indexterm><primary>Util::MemoryIArchive</primary><secondary>cursor</secondary></indexterm>
+<para><computeroutput><link linkend="_namespaceUtil_1aeb6f2071b71e3433dd3cfc1bce6c2e6d">Byte</link> * Util::MemoryIArchive::cursor ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return pointer to current position (cursor). </para>
+</para>
+<para>
+Definition at line 213 of file MemoryIArchive.h.</para>
+    </section><anchor xml:id="_classUtil_1_1MemoryIArchive_1ada9af1f5d670e7cefea218a40ab6ff8e"/>    <section>
+    <title>end()</title>
+<indexterm><primary>end</primary><secondary>Util::MemoryIArchive</secondary></indexterm>
+<indexterm><primary>Util::MemoryIArchive</primary><secondary>end</secondary></indexterm>
+<para><computeroutput><link linkend="_namespaceUtil_1aeb6f2071b71e3433dd3cfc1bce6c2e6d">Byte</link> * Util::MemoryIArchive::end ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return pointer to end of packed block (one Byte past the last). </para>
+</para>
+<para>
+Definition at line 219 of file MemoryIArchive.h.</para>
+    </section><anchor xml:id="_classUtil_1_1MemoryIArchive_1a5003545e69669aaac2f057f04b152bc3"/>    <section>
+    <title>capacity()</title>
+<indexterm><primary>capacity</primary><secondary>Util::MemoryIArchive</secondary></indexterm>
+<indexterm><primary>Util::MemoryIArchive</primary><secondary>capacity</secondary></indexterm>
+<para><computeroutput>size_t Util::MemoryIArchive::capacity ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return capacity in Bytes. </para>
+</para>
+<para>
+Definition at line 225 of file MemoryIArchive.h.</para>
+<para>
+Referenced by allocate().</para>
+    </section><anchor xml:id="_classUtil_1_1MemoryIArchive_1afa9d8105fece672b6cf93c10dd08b090"/>    <section>
+    <title>isAllocated()</title>
+<indexterm><primary>isAllocated</primary><secondary>Util::MemoryIArchive</secondary></indexterm>
+<indexterm><primary>Util::MemoryIArchive</primary><secondary>isAllocated</secondary></indexterm>
+<para><computeroutput>bool Util::MemoryIArchive::isAllocated ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Has memory been allocated? </para>
+</para>
+<para>
+Definition at line 231 of file MemoryIArchive.h.</para>
+<para>
+Referenced by clear(), operator=(), and reset().</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+MemoryIArchive.hMemoryIArchive.cpp</section>
+</section>

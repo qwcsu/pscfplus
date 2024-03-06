@@ -1,0 +1,172 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_install_page">
+
+<para><link linkend="_overview_page">Overview</link> (Prev) &#160; &#160; &#160; &#160; <link linkend="_user_page">User Guide</link> (Next) 
+<literallayout>&#160;&#xa;</literallayout>
+</para>
+
+<para>The following pages give instructions for obtaining, configuring and compiling PSCF+.</para>
+
+<para><formalpara><title>Contents:</title></formalpara>
+</para>
+
+<para><itemizedlist>
+<listitem>
+
+<para><link linkend="_install_require_page">2.1 System Requirements</link>  </para>
+</listitem>
+<listitem>
+
+<para><link linkend="_install_source_page">2.2 Source Code</link>  </para>
+</listitem>
+<listitem>
+
+<para><link linkend="_install_environment_page">2.3 Environment Variables</link>  </para>
+</listitem>
+<listitem>
+
+<para><link linkend="_compilation_page">2.4 Compilation</link>  </para>
+</listitem>
+</itemizedlist>
+</para>
+
+<para>
+<literallayout>&#160;&#xa;</literallayout>
+ <link linkend="_overview_page">Overview</link> (Prev) &#160; &#160; &#160; &#160; <link linkend="_index">Main Page</link> (Up) &#160; &#160; &#160; &#160; <link linkend="_user_page">User Guide</link> (Next) </para>
+    <section xml:id="_install_require_page"><title>System Requirements</title>    </section>
+<para><link linkend="_install_page">Installation</link> (Up) &#160; &#160; &#160; &#160; <link linkend="_install_source_page">Source Code</link> (Next) 
+<literallayout>&#160;&#xa;</literallayout>
+</para>
+
+<para>The PSCF+ package provides programs that are designed to run on a desktop, laptop or cluster with an NVIDIA GPU. PSCF+ is distributed only as source code, and must be compiled by the user. All source code is written in ANSI 2011 C++ language standard with CUDA. Compilation of PSCF+ is controlled by a system of Unix makefiles and a series of shell scripts. In order to compile all of the programs in the PSCF+ package, the system on which the code is compiled must have:</para>
+
+<para><itemizedlist>
+<listitem>
+<para>a &quot;git&quot; version control client</para>
+</listitem><listitem>
+<para>a C++ compiler</para>
+</listitem><listitem>
+<para>a python interpreter</para>
+</listitem><listitem>
+<para>the GNU Scientific Library (GSL)</para>
+</listitem><listitem>
+<para>a NVIDIA graphics card</para>
+</listitem><listitem>
+<para>a CUDA compiler (nvcc)</para>
+</listitem><listitem>
+<para>the cuFFT GPU-accelerated fast Fourier transform library</para>
+</listitem><listitem>
+<para>JsonCpp, the C++ library that allows manipulating JSON values.</para>
+</listitem></itemizedlist>
+</para>
+
+<para>A git client is needed to obtain (clone) the source code, which is maintained in a git repository on the github.com server. A python interpreter is needed during compilation (but not during execution) because the build system that compiles the PSCF+ source code uses a few python scripts that are provided with the package. The GNU scientific library is used by several programs within the package for linear algebra operations. The cuFFT library, which is used extensively in SCF calculations here, is provided with recent versions of the CUDA development environment.</para>
+
+<para>
+<literallayout>&#160;&#xa;</literallayout>
+ <link linkend="_install_page">Installation</link> (Up) &#160; &#160; &#160; &#160; <link linkend="_install_source_page">Source Code</link> (Next) </para>
+    <section xml:id="_install_source_page"><title>Source Code</title>    </section>
+<para><link linkend="_install_require_page">System Requirements</link> (Prev) &#160; &#160; &#160; &#160; <link linkend="_install_page">Installation</link> (Up) &#160; &#160; &#160; &#160; <link linkend="_install_environment_page">Environment Variables</link> (Next) 
+<literallayout>&#160;&#xa;</literallayout>
+</para>
+
+<para>The source code for PSCF+ is hosted on the <link xlink:href="http://github.com">github</link> server project qwcsu/pscfplus, and can be obtained by using a git version-control manager to clone the public <link xlink:href="https://github.com/qwcsu/pscfplus">git repository</link>. Instructions below assume that a &quot;git&quot; client has been installed on your computer.</para>
+
+<para>To obtain a working copy of the PSCF+ git repository, you should first change directory (<computeroutput>cd</computeroutput>) to the directory you want to contain the <computeroutput>pscfplus/</computeroutput> directory. From there, then enter the command <literallayout><computeroutput>&gt;&#32;git&#32;clone&#32;--recursive&#32;https://github.com/qwcsu/pscfplus.git
+</computeroutput></literallayout> This should create a complete working copy of the PSCF+ source code in a new subdirectory named <computeroutput>pscfplus/</computeroutput> of the directory from which you invoked the above command.</para>
+
+<para>Hereafter, we assume that the root directory of the PSCF+ working copy is named <computeroutput>pscfplus/</computeroutput>. References to paths that do not start explicitly with a prefix <computeroutput>pscfplus/</computeroutput> should be understood as relative paths, relative to this directory.</para>
+
+<para>
+<literallayout>&#160;&#xa;</literallayout>
+ <link linkend="_install_require_page">System Requirements</link> (Prev) &#160; &#160; &#160; &#160; <link linkend="_install_page">Installation</link> (Up) &#160; &#160; &#160; &#160; <link linkend="_install_environment_page">Environment Variables</link> (Next) </para>
+    <section xml:id="_install_environment_page"><title>Environment Variables</title>    </section>
+<para><link linkend="_install_source_page">Source Code</link> (Prev) &#160; &#160; &#160; &#160; <link linkend="_install_page">Installation</link> (Up) &#160; &#160; &#160; &#160; <link linkend="_compilation_page">Compilation</link> (Next) 
+<literallayout>&#160;&#xa;</literallayout>
+</para>
+
+<para>To compile PSCF+ in a Unix environment, before compiling any code, the user should modify the following Unix environment variables:</para>
+
+<para><itemizedlist>
+<listitem>
+<para>Add the <computeroutput>pscfplus/bin/</computeroutput> directory to the Unix <computeroutput>$PATH</computeroutput> shell environment variable (the shell command search path). By default, executable file created by the PSCF+ build system is installed in the <computeroutput>pscfplus/bin/</computeroutput> directory. The directory in which these files are located must be added to the user&apos;s <computeroutput>$PATH</computeroutput> variable in order to allow the Unix shell to find the executable file when it is invoked by name in a command executed from any other directory.</para>
+</listitem><listitem>
+<para>Add the <computeroutput>pscfplus/lib/python</computeroutput> directory to the <computeroutput>$PYTHONPATH</computeroutput> environment variable (the python module search path). The <computeroutput>pscfplus/scripts/python</computeroutput> directory contains a python script that is used by the build system during compilation to generate information about dependencies among C++ files. This directory must be added to the <computeroutput>$PYTHONPATH</computeroutput> variable in order to allow the python interpreter to find this file.</para>
+</listitem></itemizedlist>
+</para>
+
+<para>To make these changes using a bash shell, add some variant of the following lines to the <computeroutput>.profile</computeroutput> or <computeroutput>.bash_profile</computeroutput> file in your user home directory: <literallayout><computeroutput>PSCFPLUS_DIR=${HOME}/pscfplus
+export&#32;PATH=${PATH}:/${PSCFPLUS_DIR}/bin
+export&#32;PYTHONPATH=${PYTHONPATH}:/${PSCFPLUS_DIR}/scripts/python
+</computeroutput></literallayout> The value of PSCFPLUS_DIR should be set to the path to the PSCF+ root directory (<emphasis>i.e.</emphasis>, the root of the directory tree created by cloning the PSCF+ git repository). In the above fragment, as an example, it is assumed that this is a subdirectory named <computeroutput>pscfplus/</computeroutput> within the user&apos;s home directory.</para>
+
+<para>After adding an appropriate variant of these lines to <computeroutput>.profile</computeroutput> or <computeroutput>.bash_profile</computeroutput>, re-login, and then enter <computeroutput>echo $PATH</computeroutput> and <computeroutput>echo $PYTHONPATH</computeroutput> to make sure that these variables have been set correctly.</para>
+
+<para>
+<literallayout>&#160;&#xa;</literallayout>
+ <link linkend="_install_source_page">Source Code</link> (Prev) &#160; &#160; &#160; &#160; <link linkend="_install_page">Installation</link> (Up) &#160; &#160; &#160; &#160; <link linkend="_compilation_page">Compilation</link> (Next) </para>
+    <section xml:id="_compilation_page"><title>Compilation</title>    </section>
+<para><link linkend="_install_environment_page">Environment Variables</link> (Next) &#160; &#160; &#160; &#160; <link linkend="_install_page">Installation</link> (Up) &#160; &#160; &#160; &#160; <link linkend="_user_page">User Guide</link> (Next) 
+<literallayout>&#160;&#xa;</literallayout>
+ 
+<literallayout>&#160;&#xa;</literallayout>
+</para>
+
+<para>Below are the instructions for compiling the PSCF+ program with examples. It is assumed that you have cloned the PSCF+ repository and installed all required dependencies, and that the root directory of the repository is named <computeroutput>pscfplus/</computeroutput>.</para>
+
+<para>Instructions:</para>
+
+<para><itemizedlist>
+<listitem>
+<para><emphasis role="bold">Set environment variables:</emphasis> Modify the user&apos;s $PATH and $PYTHONPATH Unix environment variables, as discussed <link linkend="_install_environment_page">here</link>.</para>
+</listitem><listitem>
+<para><emphasis role="bold">Navigate to root directory:</emphasis> Change directory (<computeroutput>cd</computeroutput>) to the <computeroutput>pscfplus/</computeroutput> root directory.</para>
+</listitem><listitem>
+<para><emphasis role="bold">Setup:</emphasis> Invoke the &quot;setup&quot; script from the <computeroutput>pscfplus/</computeroutput> root directory. Enter the command <literallayout><computeroutput>&gt;&#32;./setup
+</computeroutput></literallayout> to setup the build system with default compiler options. Alternatively, invoke the setup with a filename argument for non-default compiler options.</para>
+</listitem><listitem>
+<para><emphasis role="bold">Change directory to the build directory:</emphasis> Change directory (<computeroutput>cd</computeroutput>) to the <computeroutput>pscfplus/bld</computeroutput> subdirectory, by entering <computeroutput>cd bld</computeroutput> from the root directory.</para>
+</listitem><listitem>
+<para><emphasis role="bold">Compile the PSCF+ program for a given model system:</emphasis> From <computeroutput>pscflus/bld</computeroutput>, enter <literallayout><computeroutput>&gt;&#32;bash&#32;compile.sh&#32;[-B&#32;CHN]&#32;[-N&#32;NBP]&#32;[-C]&#32;[-D]&#32;[-K&#32;K]&#32;&#32;
+</computeroutput></literallayout> This will generate a large number of intermediate object (<computeroutput>*.o</computeroutput>), dependency (<computeroutput>*.d</computeroutput>) and library (<computeroutput>*.a</computeroutput>) files in subdirectories of the <computeroutput>pscfplus/bld</computeroutput> directory, and install the executables in the <computeroutput>pscfplus/bin</computeroutput> directory. The options in the above command are as follows:<itemizedlist>
+<listitem>
+<para>CHN: Specifying the model of chain connectivity (by default it is the continuous Gaussian chain); see <link xlink:href="https://github.com/qwcsu/PSCFplus/blob/master/doc/notes/Models.pdf">Models.pdf</link> for details. <literallayout><computeroutput>DGC:&#32;discrete&#32;Gaussian&#32;chain
+FJC:&#32;freely&#32;jointed&#32;chain
+</computeroutput></literallayout></para>
+</listitem><listitem>
+<para>NBP: Specifying the form of non-bonded pair potential (by default it is the Dirac <emphasis>&#948;</emphasis>-function potential); see <link xlink:href="https://github.com/qwcsu/PSCFplus/blob/master/doc/notes/Models.pdf">Models.pdf</link> for details. <literallayout><computeroutput>G:&#32;Gaussian&#32;potential
+DPD:&#32;dissipative&#32;particle&#32;dynamics&#32;potential
+SS:&#32;soft-sphere&#32;potential
+</computeroutput></literallayout></para>
+</listitem><listitem>
+<para><computeroutput>-C</computeroutput>: Specifying a compressible system (by default the system is incompressible); see <link xlink:href="https://github.com/qwcsu/PSCFplus/blob/master/doc/notes/Models.pdf">Models.pdf</link> for details.</para>
+</listitem><listitem>
+<para><computeroutput>-D</computeroutput>: Specifying the use of discrete cosine transforms between the real and reciprocal space (by default the fast Fourier transforms are used.)</para>
+</listitem><listitem>
+<para><computeroutput>-K</computeroutput>: Specifying the <emphasis>K</emphasis>-value of the REPS-<emphasis>K</emphasis> method (by default the REPS-1 method is used); this is used only for the continuous-Gaussian-chain models (see <link xlink:href="https://github.com/qwcsu/PSCFplus/blob/master/doc/notes/REPS.pdf">REPS.pdf</link> for details.)</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+
+<para>Examples:</para>
+
+<para><itemizedlist>
+<listitem>
+<para><emphasis role="bold">Compilation for the &quot;standard&quot; model:</emphasis> To compile PSCF+ for calculations of the “standard” model (<emphasis>i.e.</emphasis>, incompressible melts of continuous Gaussian chains with the Dirac <emphasis>&#948;</emphasis>-function repulsion) using the REPS-1 method and fast Fourier transforms (same as used in PSCF), simply use the following command: <literallayout><computeroutput>bash&#32;compile.sh
+</computeroutput></literallayout></para>
+</listitem><listitem>
+<para><emphasis role="bold">Compilation for the DPDC model:</emphasis> To compile PSCF+ for calculations of the DPDC model (<emphasis>i.e.</emphasis>, compressible melts of discrete Gaussian chains with the dissipative particle dynamics potential) using fast Fourier transforms, users can use the following command: <literallayout><computeroutput>bash&#32;compile.sh&#32;-B&#32;DGC&#32;-C&#32;-N&#32;DPD
+</computeroutput></literallayout></para>
+</listitem><listitem>
+<para>To get a list of the aboved options, use the following command: <literallayout><computeroutput>bash&#32;compile.sh&#32;-h
+</computeroutput></literallayout></para>
+</listitem></itemizedlist>
+</para>
+
+<para>
+<literallayout>&#160;&#xa;</literallayout>
+ <link linkend="_install_source_page">Source Code</link> (Prev) &#160; &#160; &#160; &#160; <link linkend="_install_page">Installation</link> (Up) &#160; &#160; &#160; &#160; <link linkend="_user_page">User Guide</link> (Next) 
+<literallayout>&#160;&#xa;</literallayout>
+ </para>
+</section>

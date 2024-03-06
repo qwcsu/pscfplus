@@ -1,0 +1,151 @@
+\hypertarget{classUtil_1_1RArray}{}\doxysubsection{Util\+::R\+Array$<$ Data $>$ Class Template Reference}
+\label{classUtil_1_1RArray}\index{Util::RArray$<$ Data $>$@{Util::RArray$<$ Data $>$}}
+
+
+An \mbox{\hyperlink{classUtil_1_1Array}{Array}} that acts as a reference to another \mbox{\hyperlink{classUtil_1_1Array}{Array}} or C array.  
+
+
+
+
+{\ttfamily \#include $<$R\+Array.\+h$>$}
+
+Inheritance diagram for Util\+::R\+Array$<$ Data $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classUtil_1_1RArray}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1RArray_a6d8ee52dffba3b46778aea7ead3e3fc6}{R\+Array}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1RArray_a6e504f52bf81c81ea57772777da0a275}{R\+Array}} (const \mbox{\hyperlink{classUtil_1_1RArray}{R\+Array}}$<$ Data $>$ \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1RArray_a5ce7d0c2e141487a265591cc8e6d00dc}{associate}} (\mbox{\hyperlink{classUtil_1_1Array}{Array}}$<$ Data $>$ \&array)
+\begin{DoxyCompactList}\small\item\em Associate this \mbox{\hyperlink{classUtil_1_1RArray}{R\+Array}} with an existing \mbox{\hyperlink{classUtil_1_1Array}{Array}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1RArray_a5367ce59399bd1c03c09842bd5b047c6}{associate}} (Data $\ast$array, int \mbox{\hyperlink{classUtil_1_1Array_a66a4be07c83c3b49eae3536a3afd9fb0}{capacity}})
+\begin{DoxyCompactList}\small\item\em Associate this \mbox{\hyperlink{classUtil_1_1RArray}{R\+Array}} with an existing C array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$typename Data$>$\newline
+class Util\+::\+R\+Array$<$ Data $>$}
+
+An \mbox{\hyperlink{classUtil_1_1Array}{Array}} that acts as a reference to another \mbox{\hyperlink{classUtil_1_1Array}{Array}} or C array. 
+
+An \mbox{\hyperlink{classUtil_1_1RArray}{R\+Array}} is associated with a \char`\"{}target\char`\"{} \mbox{\hyperlink{classUtil_1_1DArray}{D\+Array}} or C array by the \mbox{\hyperlink{classUtil_1_1RArray_a5ce7d0c2e141487a265591cc8e6d00dc}{associate()}} method. The \mbox{\hyperlink{classUtil_1_1RArray}{R\+Array}} and its target array then wrap the same underlying C array, and so access the same data. The \mbox{\hyperlink{classUtil_1_1RArray_a5ce7d0c2e141487a265591cc8e6d00dc}{associate()}} method simply copies the address and capacity of a C array. An \mbox{\hyperlink{classUtil_1_1RArray}{R\+Array}} can be associated only once, after which it can be safely used as an alias for its target.
+
+An \mbox{\hyperlink{classUtil_1_1RArray}{R\+Array}} can only be associated with a \mbox{\hyperlink{classUtil_1_1DArray}{D\+Array}} after the target \mbox{\hyperlink{classUtil_1_1DArray}{D\+Array}} has been allocated. Because a \mbox{\hyperlink{classUtil_1_1DArray}{D\+Array}} can be allocated only once, this association cannot be corrupted by re-\/allocation or re-\/sizing of the target \mbox{\hyperlink{classUtil_1_1DArray}{D\+Array}}.
+
+An \mbox{\hyperlink{classUtil_1_1RArray}{R\+Array}} can be created from another \mbox{\hyperlink{classUtil_1_1RArray}{R\+Array}} only after the target \mbox{\hyperlink{classUtil_1_1RArray}{R\+Array}} has already been associated with some other \mbox{\hyperlink{classUtil_1_1Array}{Array}}.
+
+An \mbox{\hyperlink{classUtil_1_1RArray}{R\+Array}} differs from a C++ reference to an \mbox{\hyperlink{classUtil_1_1Array}{Array}} because a C++ reference must be initialized when it is instantiated, whereas an \mbox{\hyperlink{classUtil_1_1RArray}{R\+Array}} is associated after it is instantiated. Because association is implemented by copying the address and capacity of a shared C array, access through an \mbox{\hyperlink{classUtil_1_1RArray}{R\+Array}} should be exactly as efficient as access through a \mbox{\hyperlink{classUtil_1_1DArray}{D\+Array}}. 
+
+Definition at line 46 of file R\+Array.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1RArray_a6d8ee52dffba3b46778aea7ead3e3fc6}\label{classUtil_1_1RArray_a6d8ee52dffba3b46778aea7ead3e3fc6}} 
+\index{Util::RArray$<$ Data $>$@{Util::RArray$<$ Data $>$}!RArray@{RArray}}
+\index{RArray@{RArray}!Util::RArray$<$ Data $>$@{Util::RArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{RArray()}{RArray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+\mbox{\hyperlink{classUtil_1_1RArray}{Util\+::\+R\+Array}}$<$ Data $>$\+::\mbox{\hyperlink{classUtil_1_1RArray}{R\+Array}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+
+
+Definition at line 57 of file R\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1RArray_a6e504f52bf81c81ea57772777da0a275}\label{classUtil_1_1RArray_a6e504f52bf81c81ea57772777da0a275}} 
+\index{Util::RArray$<$ Data $>$@{Util::RArray$<$ Data $>$}!RArray@{RArray}}
+\index{RArray@{RArray}!Util::RArray$<$ Data $>$@{Util::RArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{RArray()}{RArray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+\mbox{\hyperlink{classUtil_1_1RArray}{Util\+::\+R\+Array}}$<$ Data $>$\+::\mbox{\hyperlink{classUtil_1_1RArray}{R\+Array}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1RArray}{R\+Array}}$<$ Data $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy constructor. 
+
+Shallow copy of another \mbox{\hyperlink{classUtil_1_1RArray}{R\+Array}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & another R\+Array$<$\+Data$>$ for which this is an alias. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 68 of file R\+Array.\+h.
+
+
+
+References Util\+::\+Array$<$ Data $>$\+::capacity\+\_\+, and Util\+::\+Array$<$ Data $>$\+::data\+\_\+.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1RArray_a5ce7d0c2e141487a265591cc8e6d00dc}\label{classUtil_1_1RArray_a5ce7d0c2e141487a265591cc8e6d00dc}} 
+\index{Util::RArray$<$ Data $>$@{Util::RArray$<$ Data $>$}!associate@{associate}}
+\index{associate@{associate}!Util::RArray$<$ Data $>$@{Util::RArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{associate()}{associate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+void \mbox{\hyperlink{classUtil_1_1RArray}{Util\+::\+R\+Array}}$<$ Data $>$\+::associate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1Array}{Array}}$<$ Data $>$ \&}]{array }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Associate this \mbox{\hyperlink{classUtil_1_1RArray}{R\+Array}} with an existing \mbox{\hyperlink{classUtil_1_1Array}{Array}} object. 
+
+The target (i.\+e., the parameter array) must be allocated when this method is invoked, as discussed in the \mbox{\hyperlink{classUtil_1_1RArray}{R\+Array}} class documentation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & the target \mbox{\hyperlink{classUtil_1_1Array}{Array}} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 83 of file R\+Array.\+h.
+
+
+
+References Util\+::\+Array$<$ Data $>$\+::capacity(), Util\+::\+Array$<$ Data $>$\+::capacity\+\_\+, Util\+::\+Array$<$ Data $>$\+::data\+\_\+, and U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1RArray_a5367ce59399bd1c03c09842bd5b047c6}\label{classUtil_1_1RArray_a5367ce59399bd1c03c09842bd5b047c6}} 
+\index{Util::RArray$<$ Data $>$@{Util::RArray$<$ Data $>$}!associate@{associate}}
+\index{associate@{associate}!Util::RArray$<$ Data $>$@{Util::RArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{associate()}{associate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+void \mbox{\hyperlink{classUtil_1_1RArray}{Util\+::\+R\+Array}}$<$ Data $>$\+::associate (\begin{DoxyParamCaption}\item[{Data $\ast$}]{array,  }\item[{int}]{capacity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Associate this \mbox{\hyperlink{classUtil_1_1RArray}{R\+Array}} with an existing C array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & the target C array \\
+\hline
+{\em capacity} & the number of elements in the target array \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 101 of file R\+Array.\+h.
+
+
+
+References Util\+::\+Array$<$ Data $>$\+::capacity(), Util\+::\+Array$<$ Data $>$\+::capacity\+\_\+, Util\+::\+Array$<$ Data $>$\+::data\+\_\+, and U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+R\+Array.\+h\end{DoxyCompactItemize}

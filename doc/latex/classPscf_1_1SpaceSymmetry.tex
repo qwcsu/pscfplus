@@ -1,0 +1,516 @@
+\hypertarget{classPscf_1_1SpaceSymmetry}{}\doxysubsection{Pscf\+::Space\+Symmetry$<$ D $>$ Class Template Reference}
+\label{classPscf_1_1SpaceSymmetry}\index{Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}}
+
+
+A \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}} represents a crystallographic space group symmetry.  
+
+
+
+
+{\ttfamily \#include $<$Space\+Symmetry.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{classUtil_1_1FMatrix}{F\+Matrix}}$<$ int, D, D $>$ \mbox{\hyperlink{classPscf_1_1SpaceSymmetry_a5c81fb3bbe037460580b10be3d0b157c}{Rotation}}
+\begin{DoxyCompactList}\small\item\em Typedef for matrix used to represent point group operation. \end{DoxyCompactList}\item 
+typedef \mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}}$<$ \mbox{\hyperlink{classUtil_1_1Rational}{Rational}}, D $>$ \mbox{\hyperlink{classPscf_1_1SpaceSymmetry_a8039eaaad263a0bea812822a8aab39cf}{Translation}}
+\begin{DoxyCompactList}\small\item\em Typedef for vector used to represent fractional translation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPscf_1_1SpaceSymmetry_adcd82375608edabbd06bce33e8f51b34}{Space\+Symmetry}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1SpaceSymmetry_af4dc90df030c6dfe0b6c16c33bb0dcf2}{Space\+Symmetry}} (const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \& \mbox{\hyperlink{classPscf_1_1SpaceSymmetry_a4e955d6cfd3d0026daaedd6693d38491}{operator=}} (const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1SpaceSymmetry_a0ef0ce8b6dc8d04c5bef9fbd1061799e}{normalize}} ()
+\begin{DoxyCompactList}\small\item\em Shift components of translation to \mbox{[}0,1). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \mbox{\hyperlink{classPscf_1_1SpaceSymmetry_a1e1fc0f2248fee65e13b710a1fcdd892}{inverse}} () const
+\begin{DoxyCompactList}\small\item\em Compute and return the inverse of this symmetry element. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$\+::\mbox{\hyperlink{classPscf_1_1SpaceSymmetry_a5c81fb3bbe037460580b10be3d0b157c}{Rotation}} \mbox{\hyperlink{classPscf_1_1SpaceSymmetry_ae4659c473d483641c4020c68cfee7501}{inverse\+Rotation}} () const
+\begin{DoxyCompactList}\small\item\em Compute and return the inverse of the rotation matrix. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPscf_1_1SpaceSymmetry_a080858281a04a2b7a3a5568c9435dfb3}{determinant}} () const
+\begin{DoxyCompactList}\small\item\em Compute and return the determinant of the rotation matrix. \end{DoxyCompactList}\item 
+int \& \mbox{\hyperlink{classPscf_1_1SpaceSymmetry_aef5a231c54e430b0897f0213353bf1dd}{R}} (int i, int j)
+\begin{DoxyCompactList}\small\item\em Return an element of the matrix by reference. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPscf_1_1SpaceSymmetry_a45a4bb76076b37b6a95b99a42ac50d51}{R}} (int i, int j) const
+\begin{DoxyCompactList}\small\item\em Return an element of the matrix by value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1Rational}{Rational}} \& \mbox{\hyperlink{classPscf_1_1SpaceSymmetry_a6dfdd8a4e5467c9f2e820d1e3d59bbab}{t}} (int i)
+\begin{DoxyCompactList}\small\item\em Return a component of the translation by reference. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1Rational}{Rational}} \mbox{\hyperlink{classPscf_1_1SpaceSymmetry_ab08e4a19338379a1d2bf991237a8b17d}{t}} (int i) const
+\begin{DoxyCompactList}\small\item\em Return an element of the translation by value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \& \mbox{\hyperlink{classPscf_1_1SpaceSymmetry_a938118f21b0a4082b9db9cfaa1938ab9}{identity}} ()
+\begin{DoxyCompactList}\small\item\em Return the identity element. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classPscf_1_1SpaceSymmetry_a7a07b5b30b995d487819302119246863}{operator==}} (const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&A, const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&B)
+\begin{DoxyCompactList}\small\item\em Are two \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}} objects equivalent? \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPscf_1_1SpaceSymmetry_a3d66a9bb512d3d0d9902f859fa624538}{operator!=}} (const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&A, const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&B)
+\begin{DoxyCompactList}\small\item\em Are two \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}} objects not equivalent? \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \mbox{\hyperlink{classPscf_1_1SpaceSymmetry_a7b50399eb9e1f6bce0562fbc6a15556b}{operator$\ast$}} (const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&A, const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&B)
+\begin{DoxyCompactList}\small\item\em Return the product A$\ast$B of two symmetry objects. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec}}$<$ D $>$ \mbox{\hyperlink{classPscf_1_1SpaceSymmetry_a02267499ee86be58dc6dd2711986c9b2}{operator$\ast$}} (const \mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec}}$<$ D $>$ \&V, const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&S)
+\begin{DoxyCompactList}\small\item\em Return the \mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec$<$\+D$>$}} product V$\ast$S of an \mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec$<$\+D$>$}} and a rotation matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec}}$<$ D $>$ \mbox{\hyperlink{classPscf_1_1SpaceSymmetry_adc2b544f005f3e82fd9dce45a744987e}{operator$\ast$}} (const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&S, const \mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec}}$<$ D $>$ \&V)
+\begin{DoxyCompactList}\small\item\em Return the \mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec$<$\+D$>$}} product S$\ast$V of a rotation matrix and an \mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec$<$\+D$>$}}. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{classPscf_1_1SpaceSymmetry_ac5b25eef4cee7bdbbc43d383913979ad}{operator$<$$<$}} (std\+::ostream \&out, const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&A)
+\begin{DoxyCompactList}\small\item\em Output stream inserter for a Space\+Symmetry$<$\+D$>$ \end{DoxyCompactList}\item 
+std\+::istream \& \mbox{\hyperlink{classPscf_1_1SpaceSymmetry_aa5cd49c4875c9c47eb382bfda1fcd6ff}{operator$>$$>$}} (std\+::istream \&in, \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&A)
+\begin{DoxyCompactList}\small\item\em Input stream extractor for a Space\+Symmetry$<$\+D$>$ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$int D$>$\newline
+class Pscf\+::\+Space\+Symmetry$<$ D $>$}
+
+A \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}} represents a crystallographic space group symmetry. 
+
+Crystallographic space group symmetry operation combines a point group operation (e.\+g., 2, 3, and 4 fold rotations about axes, reflections, or inversion) with possible translations by a fraction of a unit cell.
+
+Both the rotation matrix R and the translation t are represented using a basis of Bravais lattice basis vectors. Because Bravais basis vectors must map onto other lattice vectors, this implies that elements of all elements of the rotation matrix must be integers. To guarantee that the inverse of the rotation matrix is also a matrix of integers, we require that the determinant of the rotation matrix must be +1 or -\/1. The translation vector is represented by a vector of D rational numbers (i.\+e., fractions) of the form n/m with m = 2, 3, or 4 and n $<$ m.
+
+The basis used to describe a crytallographic group may be either a primitive or non-\/primitive unit cell. Thus, for example, the space group of a bcc crystal may be expressed either using a basis of 3 three orthogonal simple cubic unit vectors, with a translation t = (1/2, 1/2, 1/2), or as a point group using a set of three non-\/orthogonal basis vectors for the primitive unit cell. 
+
+Definition at line 23 of file Space\+Symmetry.\+h.
+
+
+
+\doxysubsubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classPscf_1_1SpaceSymmetry_a5c81fb3bbe037460580b10be3d0b157c}\label{classPscf_1_1SpaceSymmetry_a5c81fb3bbe037460580b10be3d0b157c}} 
+\index{Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}!Rotation@{Rotation}}
+\index{Rotation@{Rotation}!Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{Rotation}{Rotation}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+typedef \mbox{\hyperlink{classUtil_1_1FMatrix}{F\+Matrix}}$<$int, D, D$>$ \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Pscf\+::\+Space\+Symmetry}}$<$ D $>$\+::\mbox{\hyperlink{classPscf_1_1SpaceSymmetry_a5c81fb3bbe037460580b10be3d0b157c}{Rotation}}}
+
+
+
+Typedef for matrix used to represent point group operation. 
+
+
+
+Definition at line 143 of file Space\+Symmetry.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1SpaceSymmetry_a8039eaaad263a0bea812822a8aab39cf}\label{classPscf_1_1SpaceSymmetry_a8039eaaad263a0bea812822a8aab39cf}} 
+\index{Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}!Translation@{Translation}}
+\index{Translation@{Translation}!Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{Translation}{Translation}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+typedef \mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}}$<$\mbox{\hyperlink{classUtil_1_1Rational}{Rational}}, D$>$ \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Pscf\+::\+Space\+Symmetry}}$<$ D $>$\+::\mbox{\hyperlink{classPscf_1_1SpaceSymmetry_a8039eaaad263a0bea812822a8aab39cf}{Translation}}}
+
+
+
+Typedef for vector used to represent fractional translation. 
+
+
+
+Definition at line 146 of file Space\+Symmetry.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPscf_1_1SpaceSymmetry_adcd82375608edabbd06bce33e8f51b34}\label{classPscf_1_1SpaceSymmetry_adcd82375608edabbd06bce33e8f51b34}} 
+\index{Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}!SpaceSymmetry@{SpaceSymmetry}}
+\index{SpaceSymmetry@{SpaceSymmetry}!Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{SpaceSymmetry()}{SpaceSymmetry()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Pscf\+::\+Space\+Symmetry}}$<$ D $>$\+::\mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}}
+
+
+
+Default constructor. 
+
+All elements of the rotation matrix are initialized to zero. 
+
+Definition at line 22 of file Space\+Symmetry.\+tpp.
+
+\mbox{\Hypertarget{classPscf_1_1SpaceSymmetry_af4dc90df030c6dfe0b6c16c33bb0dcf2}\label{classPscf_1_1SpaceSymmetry_af4dc90df030c6dfe0b6c16c33bb0dcf2}} 
+\index{Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}!SpaceSymmetry@{SpaceSymmetry}}
+\index{SpaceSymmetry@{SpaceSymmetry}!Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{SpaceSymmetry()}{SpaceSymmetry()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Pscf\+::\+Space\+Symmetry}}$<$ D $>$\+::\mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+
+Definition at line 43 of file Space\+Symmetry.\+tpp.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPscf_1_1SpaceSymmetry_a4e955d6cfd3d0026daaedd6693d38491}\label{classPscf_1_1SpaceSymmetry_a4e955d6cfd3d0026daaedd6693d38491}} 
+\index{Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \& \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Pscf\+::\+Space\+Symmetry}}$<$ D $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Assignment operator. 
+
+
+
+Definition at line 60 of file Space\+Symmetry.\+tpp.
+
+\mbox{\Hypertarget{classPscf_1_1SpaceSymmetry_a0ef0ce8b6dc8d04c5bef9fbd1061799e}\label{classPscf_1_1SpaceSymmetry_a0ef0ce8b6dc8d04c5bef9fbd1061799e}} 
+\index{Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}!normalize@{normalize}}
+\index{normalize@{normalize}!Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{normalize()}{normalize()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+void \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Pscf\+::\+Space\+Symmetry}}$<$ D $>$\+::normalize}
+
+
+
+Shift components of translation to \mbox{[}0,1). 
+
+
+
+Definition at line 79 of file Space\+Symmetry.\+tpp.
+
+
+
+References U\+T\+I\+L\+\_\+\+A\+S\+S\+E\+RT.
+
+
+
+Referenced by Pscf\+::\+Space\+Symmetry$<$ D $>$\+::inverse(), and Pscf\+::operator$\ast$().
+
+\mbox{\Hypertarget{classPscf_1_1SpaceSymmetry_a1e1fc0f2248fee65e13b710a1fcdd892}\label{classPscf_1_1SpaceSymmetry_a1e1fc0f2248fee65e13b710a1fcdd892}} 
+\index{Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}!inverse@{inverse}}
+\index{inverse@{inverse}!Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{inverse()}{inverse()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Pscf\+::\+Space\+Symmetry}}$<$ D $>$\+::inverse}
+
+
+
+Compute and return the inverse of this symmetry element. 
+
+
+
+Definition at line 124 of file Space\+Symmetry.\+tpp.
+
+
+
+References Pscf\+::\+Space\+Symmetry$<$ D $>$\+::normalize().
+
+\mbox{\Hypertarget{classPscf_1_1SpaceSymmetry_ae4659c473d483641c4020c68cfee7501}\label{classPscf_1_1SpaceSymmetry_ae4659c473d483641c4020c68cfee7501}} 
+\index{Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}!inverseRotation@{inverseRotation}}
+\index{inverseRotation@{inverseRotation}!Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{inverseRotation()}{inverseRotation()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$D$>$\+::\mbox{\hyperlink{classPscf_1_1SpaceSymmetry_a5c81fb3bbe037460580b10be3d0b157c}{Rotation}} \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Pscf\+::\+Space\+Symmetry}}$<$ D $>$\+::inverse\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Compute and return the inverse of the rotation matrix. 
+
+\mbox{\Hypertarget{classPscf_1_1SpaceSymmetry_a080858281a04a2b7a3a5568c9435dfb3}\label{classPscf_1_1SpaceSymmetry_a080858281a04a2b7a3a5568c9435dfb3}} 
+\index{Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}!determinant@{determinant}}
+\index{determinant@{determinant}!Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{determinant()}{determinant()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+int \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Pscf\+::\+Space\+Symmetry}}$<$ D $>$\+::determinant (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Compute and return the determinant of the rotation matrix. 
+
+\mbox{\Hypertarget{classPscf_1_1SpaceSymmetry_aef5a231c54e430b0897f0213353bf1dd}\label{classPscf_1_1SpaceSymmetry_aef5a231c54e430b0897f0213353bf1dd}} 
+\index{Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}!R@{R}}
+\index{R@{R}!Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{R()}{R()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+int \& \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Pscf\+::\+Space\+Symmetry}}$<$ D $>$\+::R (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return an element of the matrix by reference. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & 1st (row) index \\
+\hline
+{\em j} & 2nd (column) index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 313 of file Space\+Symmetry.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1SpaceSymmetry_a45a4bb76076b37b6a95b99a42ac50d51}\label{classPscf_1_1SpaceSymmetry_a45a4bb76076b37b6a95b99a42ac50d51}} 
+\index{Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}!R@{R}}
+\index{R@{R}!Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{R()}{R()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+int \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Pscf\+::\+Space\+Symmetry}}$<$ D $>$\+::R (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return an element of the matrix by value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & 1st (row) index \\
+\hline
+{\em j} & 2nd (column) index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 321 of file Space\+Symmetry.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1SpaceSymmetry_a6dfdd8a4e5467c9f2e820d1e3d59bbab}\label{classPscf_1_1SpaceSymmetry_a6dfdd8a4e5467c9f2e820d1e3d59bbab}} 
+\index{Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}!t@{t}}
+\index{t@{t}!Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{t()}{t()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classUtil_1_1Rational}{Rational}} \& \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Pscf\+::\+Space\+Symmetry}}$<$ D $>$\+::t (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return a component of the translation by reference. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & component index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 329 of file Space\+Symmetry.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1SpaceSymmetry_ab08e4a19338379a1d2bf991237a8b17d}\label{classPscf_1_1SpaceSymmetry_ab08e4a19338379a1d2bf991237a8b17d}} 
+\index{Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}!t@{t}}
+\index{t@{t}!Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{t()}{t()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classUtil_1_1Rational}{Rational}} \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Pscf\+::\+Space\+Symmetry}}$<$ D $>$\+::t (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return an element of the translation by value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & component index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 337 of file Space\+Symmetry.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1SpaceSymmetry_a938118f21b0a4082b9db9cfaa1938ab9}\label{classPscf_1_1SpaceSymmetry_a938118f21b0a4082b9db9cfaa1938ab9}} 
+\index{Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}!identity@{identity}}
+\index{identity@{identity}!Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{identity()}{identity()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \& \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Pscf\+::\+Space\+Symmetry}}$<$ D $>$\+::identity\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Return the identity element. 
+
+
+
+Definition at line 345 of file Space\+Symmetry.\+h.
+
+
+
+\doxysubsubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classPscf_1_1SpaceSymmetry_a7a07b5b30b995d487819302119246863}\label{classPscf_1_1SpaceSymmetry_a7a07b5b30b995d487819302119246863}} 
+\index{Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{operator==}{operator==}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&}]{A,  }\item[{const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&}]{B }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Are two \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}} objects equivalent? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & first symmetry \\
+\hline
+{\em B} & second symmetry \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if A == B, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 357 of file Space\+Symmetry.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1SpaceSymmetry_a3d66a9bb512d3d0d9902f859fa624538}\label{classPscf_1_1SpaceSymmetry_a3d66a9bb512d3d0d9902f859fa624538}} 
+\index{Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{operator"!=}{operator!=}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&}]{A,  }\item[{const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&}]{B }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Are two \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}} objects not equivalent? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & first symmetry \\
+\hline
+{\em B} & second symmetry \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if A != B, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 305 of file Space\+Symmetry.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1SpaceSymmetry_a7b50399eb9e1f6bce0562fbc6a15556b}\label{classPscf_1_1SpaceSymmetry_a7b50399eb9e1f6bce0562fbc6a15556b}} 
+\index{Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{operator$\ast$}{operator*}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$D$>$ operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&}]{A,  }\item[{const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&}]{B }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Return the product A$\ast$B of two symmetry objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & first symmetry \\
+\hline
+{\em B} & second symmetry \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+product A$\ast$B 
+\end{DoxyReturn}
+
+
+Definition at line 378 of file Space\+Symmetry.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1SpaceSymmetry_a02267499ee86be58dc6dd2711986c9b2}\label{classPscf_1_1SpaceSymmetry_a02267499ee86be58dc6dd2711986c9b2}} 
+\index{Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{operator$\ast$}{operator*}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec}}$<$D$>$ operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec}}$<$ D $>$ \&}]{V,  }\item[{const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&}]{S }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Return the \mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec$<$\+D$>$}} product V$\ast$S of an \mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec$<$\+D$>$}} and a rotation matrix. 
+
+The product is defined to be the matrix product of the integer vector and the space group rotation matrix S.\+R $\ast$ V.
+
+
+\begin{DoxyParams}{Parameters}
+{\em V} & integer vector \\
+\hline
+{\em S} & symmetry operation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+product V$\ast$S 
+\end{DoxyReturn}
+
+
+Definition at line 428 of file Space\+Symmetry.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1SpaceSymmetry_adc2b544f005f3e82fd9dce45a744987e}\label{classPscf_1_1SpaceSymmetry_adc2b544f005f3e82fd9dce45a744987e}} 
+\index{Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{operator$\ast$}{operator*}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec}}$<$D$>$ operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&}]{S,  }\item[{const \mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec}}$<$ D $>$ \&}]{V }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Return the \mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec$<$\+D$>$}} product S$\ast$V of a rotation matrix and an \mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec$<$\+D$>$}}. 
+
+The product is defined to be the matrix product of the rotation matrix and the integer vector S.\+R $\ast$ V.
+
+
+\begin{DoxyParams}{Parameters}
+{\em S} & symmetry operation \\
+\hline
+{\em V} & integer vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+product S$\ast$V 
+\end{DoxyReturn}
+
+
+Definition at line 411 of file Space\+Symmetry.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1SpaceSymmetry_ac5b25eef4cee7bdbbc43d383913979ad}\label{classPscf_1_1SpaceSymmetry_ac5b25eef4cee7bdbbc43d383913979ad}} 
+\index{Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&}]{A }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Output stream inserter for a Space\+Symmetry$<$\+D$>$ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & output stream \\
+\hline
+{\em A} & Space\+Symmetry$<$\+D$>$ object to be output \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+modified output stream 
+\end{DoxyReturn}
+
+
+Definition at line 445 of file Space\+Symmetry.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1SpaceSymmetry_aa5cd49c4875c9c47eb382bfda1fcd6ff}\label{classPscf_1_1SpaceSymmetry_aa5cd49c4875c9c47eb382bfda1fcd6ff}} 
+\index{Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Pscf::SpaceSymmetry$<$ D $>$@{Pscf::SpaceSymmetry$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+std\+::istream\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in,  }\item[{\mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&}]{A }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Input stream extractor for a Space\+Symmetry$<$\+D$>$ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & input stream \\
+\hline
+{\em A} & Space\+Symmetry$<$\+D$>$ object to be input \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+modified input stream 
+\end{DoxyReturn}
+
+
+Definition at line 465 of file Space\+Symmetry.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Space\+Symmetry.\+h\item 
+Space\+Symmetry.\+tpp\end{DoxyCompactItemize}

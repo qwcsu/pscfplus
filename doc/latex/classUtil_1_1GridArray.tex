@@ -1,0 +1,502 @@
+\hypertarget{classUtil_1_1GridArray}{}\doxysubsection{Util\+::Grid\+Array$<$ Data $>$ Class Template Reference}
+\label{classUtil_1_1GridArray}\index{Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}}
+
+
+Multi-\/dimensional array with the dimensionality of space.  
+
+
+
+
+{\ttfamily \#include $<$Grid\+Array.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1GridArray_a11cdade45c5cd81161874bfde605c19a}{Grid\+Array}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1GridArray_addcd9f0da5877042ab110592efe01178}{Grid\+Array}} (const \mbox{\hyperlink{classUtil_1_1GridArray}{Grid\+Array}}$<$ Data $>$ \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1GridArray_a113386469eb1e206ce5134dba29dbaba}{$\sim$\+Grid\+Array}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1GridArray}{Grid\+Array}}$<$ Data $>$ \& \mbox{\hyperlink{classUtil_1_1GridArray_a0e62c1e9c93ff4af7c106325670f17f5}{operator=}} (const \mbox{\hyperlink{classUtil_1_1GridArray}{Grid\+Array}}$<$ Data $>$ \&other)
+\begin{DoxyCompactList}\small\item\em Assignment. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1GridArray_a3817c1126a90f3b79beebd9a85ac3e19}{allocate}} (const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&\mbox{\hyperlink{classUtil_1_1GridArray_ac158ae234370939173efde29d101faad}{dimensions}})
+\begin{DoxyCompactList}\small\item\em Allocate memory for a matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Archive $>$ }\\void \mbox{\hyperlink{classUtil_1_1GridArray_a960e22d85ee204b6db1b91cf85ad4403}{serialize}} (Archive \&ar, const unsigned int version)
+\begin{DoxyCompactList}\small\item\em Serialize a \mbox{\hyperlink{classUtil_1_1GridArray}{Grid\+Array}} to/from an Archive. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUtil_1_1GridArray_a4cd7035a162526210f07484e2a7ca05a}{is\+Allocated}} () const
+\begin{DoxyCompactList}\small\item\em Return true if the \mbox{\hyperlink{classUtil_1_1GridArray}{Grid\+Array}} has been allocated, false otherwise. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \& \mbox{\hyperlink{classUtil_1_1GridArray_ac158ae234370939173efde29d101faad}{dimensions}} ()
+\begin{DoxyCompactList}\small\item\em Get all dimensions of array as an \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUtil_1_1GridArray_a9fb066c66fc7205db343bf6e39dc2d52}{dimension}} (int i) const
+\begin{DoxyCompactList}\small\item\em Get number of grid points along direction i. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUtil_1_1GridArray_aeb008b6145eb688076e5d87c552f567a}{size}} () const
+\begin{DoxyCompactList}\small\item\em Get total number of grid points. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \mbox{\hyperlink{classUtil_1_1GridArray_a7c628d17e92b15cc32a6b46d63c29c20}{position}} (int \mbox{\hyperlink{classUtil_1_1GridArray_a790b88ab53607fe9027ebdec4206ca8f}{rank}}) const
+\begin{DoxyCompactList}\small\item\em Get the position \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} of a grid point with a specified rank. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUtil_1_1GridArray_a790b88ab53607fe9027ebdec4206ca8f}{rank}} (const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&\mbox{\hyperlink{classUtil_1_1GridArray_a7c628d17e92b15cc32a6b46d63c29c20}{position}}) const
+\begin{DoxyCompactList}\small\item\em Get the rank of a grid point with specified position. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUtil_1_1GridArray_a8deae316c281bdc427b15a2f465b678a}{is\+In\+Grid}} (int coordinate, int i) const
+\begin{DoxyCompactList}\small\item\em Is this 1D coordinate in range? \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUtil_1_1GridArray_af3ed40b160a4e91bfcd2e5e8fdea7969}{is\+In\+Grid}} (\mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&\mbox{\hyperlink{classUtil_1_1GridArray_a7c628d17e92b15cc32a6b46d63c29c20}{position}}) const
+\begin{DoxyCompactList}\small\item\em Is this position within the grid? \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUtil_1_1GridArray_aa1d9e468f3b4a522d139b73beba0ea37}{shift}} (int \&coordinate, int i) const
+\begin{DoxyCompactList}\small\item\em Shift a periodic 1D coordinate into primary range. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \mbox{\hyperlink{classUtil_1_1GridArray_a6d3a4c2903d1e5353a13068cd81fcb73}{shift}} (\mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&\mbox{\hyperlink{classUtil_1_1GridArray_a7c628d17e92b15cc32a6b46d63c29c20}{position}}) const
+\begin{DoxyCompactList}\small\item\em Shift a periodic position into primary grid. \end{DoxyCompactList}\item 
+const Data \& \mbox{\hyperlink{classUtil_1_1GridArray_a4191d6d12a6d2bcae1a51835520744c6}{operator\mbox{[}$\,$\mbox{]}}} (int \mbox{\hyperlink{classUtil_1_1GridArray_a790b88ab53607fe9027ebdec4206ca8f}{rank}}) const
+\begin{DoxyCompactList}\small\item\em Return element by const reference, indexed by 1D rank. \end{DoxyCompactList}\item 
+Data \& \mbox{\hyperlink{classUtil_1_1GridArray_a812441a4bb62c3ccd9a9f9f99cfafd9f}{operator\mbox{[}$\,$\mbox{]}}} (int \mbox{\hyperlink{classUtil_1_1GridArray_a790b88ab53607fe9027ebdec4206ca8f}{rank}})
+\begin{DoxyCompactList}\small\item\em Return element by reference, indexed by 1D rank. \end{DoxyCompactList}\item 
+const Data \& \mbox{\hyperlink{classUtil_1_1GridArray_adff50b0711085a9764cba57875fc39d2}{operator()}} (const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&\mbox{\hyperlink{classUtil_1_1GridArray_a7c628d17e92b15cc32a6b46d63c29c20}{position}}) const
+\begin{DoxyCompactList}\small\item\em Return element by const reference, indexed by \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} position. \end{DoxyCompactList}\item 
+Data \& \mbox{\hyperlink{classUtil_1_1GridArray_ae14d0049968b4dbabdce764771ea17be}{operator()}} (const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&\mbox{\hyperlink{classUtil_1_1GridArray_a7c628d17e92b15cc32a6b46d63c29c20}{position}})
+\begin{DoxyCompactList}\small\item\em Return element by reference, indexed by \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$typename Data$>$\newline
+class Util\+::\+Grid\+Array$<$ Data $>$}
+
+Multi-\/dimensional array with the dimensionality of space. 
+
+The memory for a \mbox{\hyperlink{classUtil_1_1GridArray}{Grid\+Array}} is stored in a single one-\/dimensional C array. The subscript \mbox{[}\mbox{]} operator is overloaded to return an element indexed by a one-\/dimensional rank, and the () operator is overloaded to return an element indexed by an \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} of grid coordinates. 
+
+Definition at line 28 of file Grid\+Array.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1GridArray_a11cdade45c5cd81161874bfde605c19a}\label{classUtil_1_1GridArray_a11cdade45c5cd81161874bfde605c19a}} 
+\index{Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}!GridArray@{GridArray}}
+\index{GridArray@{GridArray}!Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{GridArray()}{GridArray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+\mbox{\hyperlink{classUtil_1_1GridArray}{Util\+::\+Grid\+Array}}$<$ Data $>$\+::\mbox{\hyperlink{classUtil_1_1GridArray}{Grid\+Array}}\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+Constructor (protected). 
+
+Definition at line 217 of file Grid\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1GridArray_addcd9f0da5877042ab110592efe01178}\label{classUtil_1_1GridArray_addcd9f0da5877042ab110592efe01178}} 
+\index{Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}!GridArray@{GridArray}}
+\index{GridArray@{GridArray}!Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{GridArray()}{GridArray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+\mbox{\hyperlink{classUtil_1_1GridArray}{Util\+::\+Grid\+Array}}$<$ Data $>$\+::\mbox{\hyperlink{classUtil_1_1GridArray}{Grid\+Array}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1GridArray}{Grid\+Array}}$<$ Data $>$ \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+
+Definition at line 242 of file Grid\+Array.\+h.
+
+
+
+References Util\+::\+Grid\+Array$<$ Data $>$\+::allocate(), Util\+::\+Grid\+Array$<$ Data $>$\+::is\+Allocated(), and U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1GridArray_a113386469eb1e206ce5134dba29dbaba}\label{classUtil_1_1GridArray_a113386469eb1e206ce5134dba29dbaba}} 
+\index{Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}!````~GridArray@{$\sim$GridArray}}
+\index{````~GridArray@{$\sim$GridArray}!Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{$\sim$GridArray()}{~GridArray()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+\mbox{\hyperlink{classUtil_1_1GridArray}{Util\+::\+Grid\+Array}}$<$ Data $>$\+::$\sim$\mbox{\hyperlink{classUtil_1_1GridArray}{Grid\+Array}}}
+
+
+
+Destructor. 
+
+Delete dynamically allocated C array, if allocated. 
+
+Definition at line 230 of file Grid\+Array.\+h.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1GridArray_a0e62c1e9c93ff4af7c106325670f17f5}\label{classUtil_1_1GridArray_a0e62c1e9c93ff4af7c106325670f17f5}} 
+\index{Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+\mbox{\hyperlink{classUtil_1_1GridArray}{Grid\+Array}}$<$ Data $>$ \& \mbox{\hyperlink{classUtil_1_1GridArray}{Util\+::\+Grid\+Array}}$<$ Data $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1GridArray}{Grid\+Array}}$<$ Data $>$ \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Assignment. 
+
+
+
+Definition at line 272 of file Grid\+Array.\+h.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1GridArray_a3817c1126a90f3b79beebd9a85ac3e19}\label{classUtil_1_1GridArray_a3817c1126a90f3b79beebd9a85ac3e19}} 
+\index{Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}!allocate@{allocate}}
+\index{allocate@{allocate}!Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{allocate()}{allocate()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+void \mbox{\hyperlink{classUtil_1_1GridArray}{Util\+::\+Grid\+Array}}$<$ Data $>$\+::allocate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&}]{dimensions }\end{DoxyParamCaption})}
+
+
+
+Allocate memory for a matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dimensions} & \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} containing dimensions \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 312 of file Grid\+Array.\+h.
+
+
+
+References Util\+::\+Dimension, and U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+
+
+Referenced by Util\+::\+Grid\+Array$<$ Data $>$\+::\+Grid\+Array().
+
+\mbox{\Hypertarget{classUtil_1_1GridArray_a960e22d85ee204b6db1b91cf85ad4403}\label{classUtil_1_1GridArray_a960e22d85ee204b6db1b91cf85ad4403}} 
+\index{Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}!serialize@{serialize}}
+\index{serialize@{serialize}!Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$class Data $>$ \\
+template$<$class Archive $>$ \\
+void \mbox{\hyperlink{classUtil_1_1GridArray}{Util\+::\+Grid\+Array}}$<$ Data $>$\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{ar,  }\item[{const unsigned int}]{version }\end{DoxyParamCaption})}
+
+
+
+Serialize a \mbox{\hyperlink{classUtil_1_1GridArray}{Grid\+Array}} to/from an Archive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & archive \\
+\hline
+{\em version} & archive version id \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 336 of file Grid\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1GridArray_a4cd7035a162526210f07484e2a7ca05a}\label{classUtil_1_1GridArray_a4cd7035a162526210f07484e2a7ca05a}} 
+\index{Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}!isAllocated@{isAllocated}}
+\index{isAllocated@{isAllocated}!Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{isAllocated()}{isAllocated()}}
+{\footnotesize\ttfamily template$<$class Data $>$ \\
+bool \mbox{\hyperlink{classUtil_1_1GridArray}{Util\+::\+Grid\+Array}}$<$ Data $>$\+::is\+Allocated\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return true if the \mbox{\hyperlink{classUtil_1_1GridArray}{Grid\+Array}} has been allocated, false otherwise. 
+
+
+
+Definition at line 517 of file Grid\+Array.\+h.
+
+
+
+Referenced by Util\+::\+Grid\+Array$<$ Data $>$\+::\+Grid\+Array().
+
+\mbox{\Hypertarget{classUtil_1_1GridArray_ac158ae234370939173efde29d101faad}\label{classUtil_1_1GridArray_ac158ae234370939173efde29d101faad}} 
+\index{Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}!dimensions@{dimensions}}
+\index{dimensions@{dimensions}!Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{dimensions()}{dimensions()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \& \mbox{\hyperlink{classUtil_1_1GridArray}{Util\+::\+Grid\+Array}}$<$ Data $>$\+::dimensions\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get all dimensions of array as an \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}}. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} containing the number of elements in each direction. 
+\end{DoxyReturn}
+
+
+Definition at line 357 of file Grid\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1GridArray_a9fb066c66fc7205db343bf6e39dc2d52}\label{classUtil_1_1GridArray_a9fb066c66fc7205db343bf6e39dc2d52}} 
+\index{Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}!dimension@{dimension}}
+\index{dimension@{dimension}!Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{dimension()}{dimension()}}
+{\footnotesize\ttfamily template$<$class Data $>$ \\
+int \mbox{\hyperlink{classUtil_1_1GridArray}{Util\+::\+Grid\+Array}}$<$ Data $>$\+::dimension (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get number of grid points along direction i. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & index of Cartesian direction 0 $<$=i $<$ 3. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 364 of file Grid\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1GridArray_aeb008b6145eb688076e5d87c552f567a}\label{classUtil_1_1GridArray_aeb008b6145eb688076e5d87c552f567a}} 
+\index{Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}!size@{size}}
+\index{size@{size}!Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$class Data $>$ \\
+int \mbox{\hyperlink{classUtil_1_1GridArray}{Util\+::\+Grid\+Array}}$<$ Data $>$\+::size\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get total number of grid points. 
+
+
+
+Definition at line 371 of file Grid\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1GridArray_a7c628d17e92b15cc32a6b46d63c29c20}\label{classUtil_1_1GridArray_a7c628d17e92b15cc32a6b46d63c29c20}} 
+\index{Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}!position@{position}}
+\index{position@{position}!Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{position()}{position()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+\mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \mbox{\hyperlink{classUtil_1_1GridArray}{Util\+::\+Grid\+Array}}$<$ Data $>$\+::position (\begin{DoxyParamCaption}\item[{int}]{rank }\end{DoxyParamCaption}) const}
+
+
+
+Get the position \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} of a grid point with a specified rank. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rank} & integer rank of a grid point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} containing coordinates of specified point. 
+\end{DoxyReturn}
+
+
+Definition at line 404 of file Grid\+Array.\+h.
+
+
+
+References Util\+::\+Dimension.
+
+\mbox{\Hypertarget{classUtil_1_1GridArray_a790b88ab53607fe9027ebdec4206ca8f}\label{classUtil_1_1GridArray_a790b88ab53607fe9027ebdec4206ca8f}} 
+\index{Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}!rank@{rank}}
+\index{rank@{rank}!Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{rank()}{rank()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+int \mbox{\hyperlink{classUtil_1_1GridArray}{Util\+::\+Grid\+Array}}$<$ Data $>$\+::rank (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&}]{position }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the rank of a grid point with specified position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & integer position of a grid point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+integer rank of specified grid point 
+\end{DoxyReturn}
+
+
+Definition at line 394 of file Grid\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1GridArray_a8deae316c281bdc427b15a2f465b678a}\label{classUtil_1_1GridArray_a8deae316c281bdc427b15a2f465b678a}} 
+\index{Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}!isInGrid@{isInGrid}}
+\index{isInGrid@{isInGrid}!Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{isInGrid()}{isInGrid()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+bool \mbox{\hyperlink{classUtil_1_1GridArray}{Util\+::\+Grid\+Array}}$<$ Data $>$\+::is\+In\+Grid (\begin{DoxyParamCaption}\item[{int}]{coordinate,  }\item[{int}]{i }\end{DoxyParamCaption}) const}
+
+
+
+Is this 1D coordinate in range? 
+
+Returns true iff 0 $<$= coordinate $<$ dimension(i). 
+\begin{DoxyParams}{Parameters}
+{\em coordinate} & coordinate value for direction i \\
+\hline
+{\em i} & index for Cartesian direction \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 422 of file Grid\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1GridArray_af3ed40b160a4e91bfcd2e5e8fdea7969}\label{classUtil_1_1GridArray_af3ed40b160a4e91bfcd2e5e8fdea7969}} 
+\index{Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}!isInGrid@{isInGrid}}
+\index{isInGrid@{isInGrid}!Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{isInGrid()}{isInGrid()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+bool \mbox{\hyperlink{classUtil_1_1GridArray}{Util\+::\+Grid\+Array}}$<$ Data $>$\+::is\+In\+Grid (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&}]{position }\end{DoxyParamCaption}) const}
+
+
+
+Is this position within the grid? 
+
+Returns true iff 0 $<$= coordinate\mbox{[}i\mbox{]} $<$ dimension(i) for all i.
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & grid point position \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 436 of file Grid\+Array.\+h.
+
+
+
+References Util\+::\+Dimension.
+
+\mbox{\Hypertarget{classUtil_1_1GridArray_aa1d9e468f3b4a522d139b73beba0ea37}\label{classUtil_1_1GridArray_aa1d9e468f3b4a522d139b73beba0ea37}} 
+\index{Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}!shift@{shift}}
+\index{shift@{shift}!Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{shift()}{shift()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+int \mbox{\hyperlink{classUtil_1_1GridArray}{Util\+::\+Grid\+Array}}$<$ Data $>$\+::shift (\begin{DoxyParamCaption}\item[{int \&}]{coordinate,  }\item[{int}]{i }\end{DoxyParamCaption}) const}
+
+
+
+Shift a periodic 1D coordinate into primary range. 
+
+Upon return, the coordinate will be shifted to lie within the range 0 $<$= coordinate $<$ dimension(i) by subtracting an integer multiple of dimension(i), giving coordinate -\/ shift$\ast$dimension(i). The return value is the required integer `shift'.
+
+
+\begin{DoxyParams}{Parameters}
+{\em coordinate} & coordinate in Cartesian direction i. \\
+\hline
+{\em i} & index of Cartesian direction, i $>$= 0. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+multiple of dimension(i) subtracted from input value. 
+\end{DoxyReturn}
+
+
+Definition at line 452 of file Grid\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1GridArray_a6d3a4c2903d1e5353a13068cd81fcb73}\label{classUtil_1_1GridArray_a6d3a4c2903d1e5353a13068cd81fcb73}} 
+\index{Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}!shift@{shift}}
+\index{shift@{shift}!Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{shift()}{shift()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+\mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \mbox{\hyperlink{classUtil_1_1GridArray}{Util\+::\+Grid\+Array}}$<$ Data $>$\+::shift (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&}]{position }\end{DoxyParamCaption}) const}
+
+
+
+Shift a periodic position into primary grid. 
+
+Upon return, each element of the parameter position is shifted to lie within the range 0 $<$= position\mbox{[}i\mbox{]} $<$ dimension(i) by adding or subtracting an integer multiple of dimension(i). The \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} of shift values is returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} position within a grid. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} of integer shifts. 
+\end{DoxyReturn}
+
+
+Definition at line 468 of file Grid\+Array.\+h.
+
+
+
+References Util\+::\+Dimension.
+
+\mbox{\Hypertarget{classUtil_1_1GridArray_a4191d6d12a6d2bcae1a51835520744c6}\label{classUtil_1_1GridArray_a4191d6d12a6d2bcae1a51835520744c6}} 
+\index{Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+const Data \& \mbox{\hyperlink{classUtil_1_1GridArray}{Util\+::\+Grid\+Array}}$<$ Data $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{rank }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return element by const reference, indexed by 1D rank. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rank} & 1D array index of element \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 481 of file Grid\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1GridArray_a812441a4bb62c3ccd9a9f9f99cfafd9f}\label{classUtil_1_1GridArray_a812441a4bb62c3ccd9a9f9f99cfafd9f}} 
+\index{Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+Data \& \mbox{\hyperlink{classUtil_1_1GridArray}{Util\+::\+Grid\+Array}}$<$ Data $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{rank }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return element by reference, indexed by 1D rank. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rank} & 1D rank of element \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 488 of file Grid\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1GridArray_adff50b0711085a9764cba57875fc39d2}\label{classUtil_1_1GridArray_adff50b0711085a9764cba57875fc39d2}} 
+\index{Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+const Data \& \mbox{\hyperlink{classUtil_1_1GridArray}{Util\+::\+Grid\+Array}}$<$ Data $>$\+::operator() (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&}]{position }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return element by const reference, indexed by \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} of coordinates. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 496 of file Grid\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1GridArray_ae14d0049968b4dbabdce764771ea17be}\label{classUtil_1_1GridArray_ae14d0049968b4dbabdce764771ea17be}} 
+\index{Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!Util::GridArray$<$ Data $>$@{Util::GridArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+Data \& \mbox{\hyperlink{classUtil_1_1GridArray}{Util\+::\+Grid\+Array}}$<$ Data $>$\+::operator() (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return element by reference, indexed by \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} of coordinates. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 503 of file Grid\+Array.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Grid\+Array.\+h\end{DoxyCompactItemize}

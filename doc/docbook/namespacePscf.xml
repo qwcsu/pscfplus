@@ -1,0 +1,1373 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespacePscf">
+<title>Pscf Namespace Reference</title>
+<indexterm><primary>Pscf</primary></indexterm>
+<para>
+
+<para>Classes for polymer self-consistent field theory. </para>
+ 
+</para>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para> <link linkend="_namespacePscf_1_1Pspg">Pspg</link></para>
+
+<para>Classes of GPU-accelerated mathematical utilities for SCFT calculations. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classPscf_1_1Basis">Basis</link></para>
+
+<para>Symmetry-adapted basis for pseudo-spectral scft. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1BlockDescriptor">BlockDescriptor</link></para>
+
+<para>A linear homopolymer block within a block copolymer. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1BlockTmpl">BlockTmpl</link></para>
+
+<para>Class template for a block in a block copolymer. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1BondDescriptor">BondDescriptor</link></para>
+
+<para>A linear bond (including block-bond and joint-bond) within a block copolymer. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1ChiInteraction">ChiInteraction</link></para>
+
+<para>Flory-Huggins excess free energy model. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1DPolymerTmpl">DPolymerTmpl</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1Field">Field</link></para>
+
+<para>Base class template for a field defined on a spatial grid. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1Interaction">Interaction</link></para>
+
+<para>Base class for excess free energy models. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1IntVec">IntVec</link></para>
+
+<para>An IntVec&lt;D, T&gt; is a D-component vector of elements of integer type T. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1LuSolver">LuSolver</link></para>
+
+<para>Solve Ax=b by LU decomposition of A. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1Mesh">Mesh</link></para>
+
+<para>Description of a regular grid of points in a periodic domain. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1MeshIterator">MeshIterator</link></para>
+
+<para>Base class for mesh iterator class template. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1MixtureTmpl">MixtureTmpl</link></para>
+
+<para>A mixture of polymer and solvent species. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1Monomer">Monomer</link></para>
+
+<para>Descriptor for a monomer or particle type. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1PolymerTmpl">PolymerTmpl</link></para>
+
+<para>Descriptor and MDE solver for an acyclic block polymer. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1PropagatorTmpl">PropagatorTmpl</link></para>
+
+<para>Template for propagator classes. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1RealVec">RealVec</link></para>
+
+<para>A RealVec&lt;D, T&gt; is D-component vector with elements of floating type T. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1SolventTmpl">SolventTmpl</link></para>
+
+<para>Template for a class representing a solvent species. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1SpaceGroup">SpaceGroup</link></para>
+
+<para>Crystallographic space group. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link></para>
+
+<para>A <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link> represents a crystallographic space group symmetry. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1Species">Species</link></para>
+
+<para>Base class for a molecular species (polymer or solvent). </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1SymmetryGroup">SymmetryGroup</link></para>
+
+<para>Class template for a group of elements. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1TridiagonalSolver">TridiagonalSolver</link></para>
+
+<para>Solver for Ax=b with tridiagonal matrix A. </para>
+</listitem>
+            <listitem><para>struct <link linkend="_structPscf_1_1TWave">TWave</link></para>
+
+<para>Simple wave struct for use within <link linkend="_classPscf_1_1Basis">Basis</link> construction. </para>
+</listitem>
+            <listitem><para>struct <link linkend="_structPscf_1_1TWaveBzComp">TWaveBzComp</link></para>
+
+<para>Comparator for <link linkend="_structPscf_1_1TWave">TWave</link> objects, based on TWave::indicesBz. </para>
+</listitem>
+            <listitem><para>struct <link linkend="_structPscf_1_1TWaveDftComp">TWaveDftComp</link></para>
+
+<para>Comparator for <link linkend="_structPscf_1_1TWave">TWave</link> objects, based on TWave::indicesDft. </para>
+</listitem>
+            <listitem><para>struct <link linkend="_structPscf_1_1TWaveNormComp">TWaveNormComp</link></para>
+
+<para>Comparator for <link linkend="_structPscf_1_1TWave">TWave</link> objects, based on TWave::sqNorm. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1UnitCell">UnitCell</link></para>
+
+<para>Base template for UnitCell&lt;D&gt; classes, D=1, 2 or 3. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1UnitCell_3_011_01_4">UnitCell&lt; 1 &gt;</link></para>
+
+<para>1D crystal unit cell. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1UnitCell_3_012_01_4">UnitCell&lt; 2 &gt;</link></para>
+
+<para>2D crystal unit cell. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1UnitCell_3_013_01_4">UnitCell&lt; 3 &gt;</link></para>
+
+<para>3D crystal unit cell. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1UnitCellBase">UnitCellBase</link></para>
+
+<para>Base class template for a crystallographic unit cell. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1Vec">Vec</link></para>
+
+<para>A Vec&lt;D, T&gt;&lt;D,T&gt; is a D-component vector with elements of type T. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1Vertex">Vertex</link></para>
+
+<para>A junction or chain end in a block polymer. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>std::istream &amp; <link linkend="_namespacePscf_1af3acfd9252c655770b47d1ca2428fc09">operator&gt;&gt;</link> (std::istream &amp;in, <link linkend="_classPscf_1_1BlockDescriptor">BlockDescriptor</link> &amp;block)</para>
+
+<para>istream extractor for a <link linkend="_classPscf_1_1BlockDescriptor">BlockDescriptor</link>. </para>
+</listitem>
+            <listitem><para>std::ostream &amp; <link linkend="_namespacePscf_1afce117557303a64ccd6097215d9fddf6">operator&lt;&lt;</link> (std::ostream &amp;out, const <link linkend="_classPscf_1_1BlockDescriptor">BlockDescriptor</link> &amp;block)</para>
+
+<para>ostream inserter for a <link linkend="_classPscf_1_1BlockDescriptor">BlockDescriptor</link>. </para>
+</listitem>
+            <listitem><para>std::istream &amp; <link linkend="_namespacePscf_1ac7d0338d5b8d343624beb8d7881a6757">operator&gt;&gt;</link> (std::istream &amp;in, <link linkend="_classPscf_1_1BondDescriptor">BondDescriptor</link> &amp;bond)</para>
+
+<para>istream extractor for a <link linkend="_classPscf_1_1BlockDescriptor">BlockDescriptor</link>. </para>
+</listitem>
+            <listitem><para>std::istream &amp; <link linkend="_namespacePscf_1a54b927371a2693c8c3c4aa572b75da86">operator&lt;&lt;</link> (std::istream &amp;out, const <link linkend="_classPscf_1_1BondDescriptor">BondDescriptor</link> &amp;bond)</para>
+
+<para>ostream inserter for a <link linkend="_classPscf_1_1BlockDescriptor">BlockDescriptor</link>. </para>
+</listitem>
+            <listitem><para>std::istream &amp; <link linkend="_namespacePscf_1a515f7a297b210bec7f3cd4df8c1c130e">operator&gt;&gt;</link> (std::istream &amp;in, <link linkend="_classPscf_1_1Monomer">Monomer</link> &amp;monomer)</para>
+
+<para>istream extractor for a <link linkend="_classPscf_1_1Monomer">Monomer</link>. </para>
+</listitem>
+            <listitem><para>std::ostream &amp; <link linkend="_namespacePscf_1a770905c9ecdc6b706cb74420a13ec653">operator&lt;&lt;</link> (std::ostream &amp;out, const <link linkend="_classPscf_1_1Monomer">Monomer</link> &amp;monomer)</para>
+
+<para>ostream inserter for a <link linkend="_classPscf_1_1Monomer">Monomer</link>. </para>
+</listitem>
+            <listitem><para>std::istream &amp; <link linkend="_namespacePscf_1accbe51ff9333e3489d4e9f4ac36c3c39">operator&gt;&gt;</link> (std::istream &amp;in, <link linkend="_classPscf_1_1Species_1aff5905c62129641e3d6f6a719bf9ec29">Species::Ensemble</link> &amp;policy)</para>
+
+<para>istream extractor for a <link linkend="_classPscf_1_1Species_1aff5905c62129641e3d6f6a719bf9ec29">Species::Ensemble</link>. </para>
+</listitem>
+            <listitem><para>std::ostream &amp; <link linkend="_namespacePscf_1a20ea89dfa80a71e4969c6ce18c5ab5da">operator&lt;&lt;</link> (std::ostream &amp;out, <link linkend="_classPscf_1_1Species_1aff5905c62129641e3d6f6a719bf9ec29">Species::Ensemble</link> policy)</para>
+
+<para>ostream inserter for an <link linkend="_classPscf_1_1Species_1aff5905c62129641e3d6f6a719bf9ec29">Species::Ensemble</link>. </para>
+</listitem>
+            <listitem><para>template&lt;class Archive &gt; </para><para>void <link linkend="_namespacePscf_1aab632fac1a3a85b85bcaac6f1fd221a5">serialize</link> (Archive &amp;ar, <link linkend="_classPscf_1_1Species_1aff5905c62129641e3d6f6a719bf9ec29">Species::Ensemble</link> &amp;policy, const unsigned int version)</para>
+
+<para>Serialize a <link linkend="_classPscf_1_1Species_1aff5905c62129641e3d6f6a719bf9ec29">Species::Ensemble</link>. </para>
+</listitem>
+            <listitem><para>std::string <link linkend="_group__Pscf__Crystal__Module_1ga5b918f86652c69b69ced3fc7d775d2a6">makeGroupFileName</link> (int D, std::string groupName)</para>
+
+<para>Generates the file name from a group name. </para>
+</listitem>
+            <listitem><para>template&lt;int D&gt; </para><para><link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D &gt; <link linkend="_namespacePscf_1a670414f4ae5e3bb926df674bd1e9326a">shiftToMinimum</link> (<link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D &gt; &amp;v, <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D &gt; d, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; D &gt; const &amp;cell)</para>
+
+<para>Returns minimum magnitude image of DFT wavevector. </para>
+</listitem>
+            <listitem><para>template&lt;int D&gt; </para><para>std::ostream &amp; <link linkend="_group__Pscf__Crystal__Module_1ga8b2619c49933e1111118fd631cf72560">operator&lt;&lt;</link> (std::ostream &amp;out, const <link linkend="_classPscf_1_1SpaceGroup">SpaceGroup</link>&lt; D &gt; &amp;g)</para>
+
+<para>Output stream inserter operator for a SpaceGroup&lt;D&gt;. </para>
+</listitem>
+            <listitem><para>template&lt;int D&gt; </para><para>std::istream &amp; <link linkend="_group__Pscf__Crystal__Module_1ga90fb8dc1da5bf7b51f1e947f79135bf0">operator&gt;&gt;</link> (std::istream &amp;in, <link linkend="_classPscf_1_1SpaceGroup">SpaceGroup</link>&lt; D &gt; &amp;g)</para>
+
+<para>Input stream extractor operator for a SpaceGroup&lt;D&gt;. </para>
+</listitem>
+            <listitem><para>template&lt;int D&gt; </para><para>bool <link linkend="_group__Pscf__Crystal__Module_1gabcd342be1403c21b4a639e64564c194a">operator==</link> (const <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link>&lt; D &gt; &amp;A, const <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link>&lt; D &gt; &amp;B)</para>
+
+<para>Are two <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link> objects equivalent? </para>
+</listitem>
+            <listitem><para>template&lt;int D&gt; </para><para>bool <link linkend="_group__Pscf__Crystal__Module_1ga08fd7ca8322df2599d3869a7fb2231c7">operator!=</link> (const <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link>&lt; D &gt; &amp;A, const <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link>&lt; D &gt; &amp;B)</para>
+
+<para>Are two <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link> objects not equivalent? </para>
+</listitem>
+            <listitem><para>template&lt;int D&gt; </para><para><link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link>&lt; D &gt; <link linkend="_group__Pscf__Crystal__Module_1ga69926403edde9211e7c6bdc9e24f6a4b">operator*</link> (const <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link>&lt; D &gt; &amp;A, const <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link>&lt; D &gt; &amp;B)</para>
+
+<para>Return the product A*B of two symmetry objects. </para>
+</listitem>
+            <listitem><para>template&lt;int D&gt; </para><para><link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D &gt; <link linkend="_group__Pscf__Crystal__Module_1ga12bc79d00309ecdf9fb5ddc6516b496c">operator*</link> (const <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link>&lt; D &gt; &amp;S, const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D &gt; &amp;V)</para>
+
+<para>Return the <link linkend="_classPscf_1_1IntVec">IntVec&lt;D&gt;</link> product S*V of a rotation matrix and an <link linkend="_classPscf_1_1IntVec">IntVec&lt;D&gt;</link>. </para>
+</listitem>
+            <listitem><para>template&lt;int D&gt; </para><para><link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D &gt; <link linkend="_group__Pscf__Crystal__Module_1ga8f35475c6cdeb8ab404cbbb7db344bd0">operator*</link> (const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D &gt; &amp;V, const <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link>&lt; D &gt; &amp;S)</para>
+
+<para>Return the <link linkend="_classPscf_1_1IntVec">IntVec&lt;D&gt;</link> product V*S of an <link linkend="_classPscf_1_1IntVec">IntVec&lt;D&gt;</link> and a rotation matrix. </para>
+</listitem>
+            <listitem><para>template&lt;int D&gt; </para><para>std::ostream &amp; <link linkend="_group__Pscf__Crystal__Module_1ga475a04acb4a4b2db0064c8228cbceb67">operator&lt;&lt;</link> (std::ostream &amp;out, const <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link>&lt; D &gt; &amp;A)</para>
+
+<para>Output stream inserter for a SpaceSymmetry&lt;D&gt; </para>
+</listitem>
+            <listitem><para>template&lt;int D&gt; </para><para>std::istream &amp; <link linkend="_group__Pscf__Crystal__Module_1gad66a282db936d4fcf167a509ff719766">operator&gt;&gt;</link> (std::istream &amp;in, <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link>&lt; D &gt; &amp;A)</para>
+
+<para>Input stream extractor for a SpaceSymmetry&lt;D&gt; </para>
+</listitem>
+            <listitem><para>template&lt;int D&gt; </para><para>std::istream &amp; <link linkend="_group__Pscf__Crystal__Module_1gaa2e3dd3166079cb3f1189958aee1e490">operator&gt;&gt;</link> (std::istream &amp;in, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; D &gt; &amp;cell)</para>
+
+<para>istream input extractor for a UnitCell&lt;D&gt;. </para>
+</listitem>
+            <listitem><para>template&lt;int D&gt; </para><para>std::ostream &amp; <link linkend="_group__Pscf__Crystal__Module_1ga5c0068ecd9c37496d62393eadfdaa9c0">operator&lt;&lt;</link> (std::ostream &amp;out, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; D &gt; const &amp;cell)</para>
+
+<para>ostream output inserter for a UnitCell&lt;D&gt;. </para>
+</listitem>
+            <listitem><para>template&lt;class Archive , int D&gt; </para><para>void <link linkend="_group__Pscf__Crystal__Module_1gae07fa76fe1b0212122e9d74841f80f42">serialize</link> (Archive &amp;ar, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; D &gt; &amp;cell, const unsigned int version)</para>
+
+<para>Serialize to/from an archive. </para>
+</listitem>
+            <listitem><para>template&lt;int D&gt; </para><para>void <link linkend="_group__Pscf__Crystal__Module_1gac7f60dc3995e66e904e3351dc11a66ff">readUnitCellHeader</link> (std::istream &amp;in, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; D &gt; &amp;cell)</para>
+
+<para>Read UnitCell&lt;D&gt; from a field file header (fortran pscf format). </para>
+</listitem>
+            <listitem><para>template&lt;int D&gt; </para><para>void <link linkend="_group__Pscf__Crystal__Module_1ga087934de419a07908fea9bdcdcc33019">writeUnitCellHeader</link> (std::ostream &amp;out, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; D &gt; const &amp;cell)</para>
+
+<para>Write UnitCell&lt;D&gt; to a field file header (fortran pscf format). </para>
+</listitem>
+            <listitem><para>std::istream &amp; <link linkend="_group__Pscf__Crystal__Module_1ga68893ea5cb523144d7855456648dac1f">operator&gt;&gt;</link> (std::istream &amp;in, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; 1 &gt;::LatticeSystem &amp;lattice)</para>
+
+<para>istream extractor for a 1D <link linkend="_classPscf_1_1UnitCell_3_011_01_4_1ad71e2d50a03b39f720f88a2ca041c2bc">UnitCell&lt;1&gt;::LatticeSystem</link>. </para>
+</listitem>
+            <listitem><para>std::ostream &amp; <link linkend="_group__Pscf__Crystal__Module_1gab28c33f2c3f0a68262c9c56e1d51947c">operator&lt;&lt;</link> (std::ostream &amp;out, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; 1 &gt;::LatticeSystem lattice)</para>
+
+<para>ostream inserter for a 1D <link linkend="_classPscf_1_1UnitCell_3_011_01_4_1ad71e2d50a03b39f720f88a2ca041c2bc">UnitCell&lt;1&gt;::LatticeSystem</link>. </para>
+</listitem>
+            <listitem><para>std::istream &amp; <link linkend="_group__Pscf__Crystal__Module_1ga6e7889474f0a07a055ddad7b5eabbc07">operator&gt;&gt;</link> (std::istream &amp;in, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; 2 &gt;::LatticeSystem &amp;lattice)</para>
+
+<para>istream extractor for a 2D <link linkend="_classPscf_1_1UnitCell_3_012_01_4_1aef9fcf7153b54d7fa86fa47e46e67a3a">UnitCell&lt;2&gt;::LatticeSystem</link>. </para>
+</listitem>
+            <listitem><para>std::ostream &amp; <link linkend="_namespacePscf_1a95d9506344bf23b7a1d642a40e89aac1">operator&lt;&lt;</link> (std::ostream &amp;out, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; 2 &gt;::LatticeSystem lattice)</para>
+
+<para>ostream inserter for a 2D <link linkend="_classPscf_1_1UnitCell_3_012_01_4_1aef9fcf7153b54d7fa86fa47e46e67a3a">UnitCell&lt;2&gt;::LatticeSystem</link>. </para>
+</listitem>
+            <listitem><para>std::istream &amp; <link linkend="_group__Pscf__Crystal__Module_1ga0c8f60ddb4acc73eea670633b7e3221a">operator&gt;&gt;</link> (std::istream &amp;in, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; 3 &gt;::LatticeSystem &amp;lattice)</para>
+
+<para>istream extractor for a 3D <link linkend="_classPscf_1_1UnitCell_3_013_01_4_1afde1231bed1b0ae8014dc81ba18068d8">UnitCell&lt;3&gt;::LatticeSystem</link>. </para>
+</listitem>
+            <listitem><para>std::ostream &amp; <link linkend="_group__Pscf__Crystal__Module_1gaef2aa7d97bba2051cab3d1c042a4ea87">operator&lt;&lt;</link> (std::ostream &amp;out, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; 3 &gt;::LatticeSystem lattice)</para>
+
+<para>ostream inserter for an 3D <link linkend="_classPscf_1_1UnitCell_3_013_01_4_1afde1231bed1b0ae8014dc81ba18068d8">UnitCell&lt;3&gt;::LatticeSystem</link>. </para>
+</listitem>
+            <listitem><para>template&lt;int D, typename T &gt; </para><para>std::istream &amp; <link linkend="_namespacePscf_1a8f6cfce7333ba7a08f1fb877dba1fb02">operator&gt;&gt;</link> (std::istream &amp;in, <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D, T &gt; &amp;vector)</para>
+
+<para>istream extractor for a IntVec&lt;D, T&gt;. </para>
+</listitem>
+            <listitem><para>template&lt;int D, typename T &gt; </para><para>std::ostream &amp; <link linkend="_namespacePscf_1aeea3a913d4b70557421cad3894eb9e0e">operator&lt;&lt;</link> (std::ostream &amp;out, const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D, T &gt; &amp;vector)</para>
+
+<para>ostream inserter for a IntVec&lt;D, T&gt;. </para>
+</listitem>
+            <listitem><para>template&lt;int D, typename T &gt; </para><para>bool <link linkend="_namespacePscf_1a176d9d96f0ea93f1e1d6cb13191c523a">operator==</link> (const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D, T &gt; &amp;v1, const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D, T &gt; &amp;v2)</para>
+
+<para>Equality of two <link linkend="_classPscf_1_1IntVec">IntVec&lt;D&gt;</link> objects. </para>
+</listitem>
+            <listitem><para>template&lt;int D, typename T &gt; </para><para>bool <link linkend="_namespacePscf_1a2f1ef4934ec1cbd02f9e483b439875b2">operator==</link> (const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D, T &gt; &amp;v1, const <link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp;v2)</para>
+
+<para>Equality of an <link linkend="_classPscf_1_1IntVec">IntVec&lt;D&gt;</link> and a Vec&lt;D, T&gt; </para>
+</listitem>
+            <listitem><para>template&lt;int D, typename T &gt; </para><para>bool <link linkend="_namespacePscf_1aa9ae2b92c2cfdcf545db8cb910ded04d">operator==</link> (const <link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp;v1, const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D, T &gt; &amp;v2)</para>
+
+<para>Equality of an Vec&lt;D, T&gt; and an IntVec&lt;D, T&gt; </para>
+</listitem>
+            <listitem><para>template&lt;int D, typename T &gt; </para><para>bool <link linkend="_namespacePscf_1a91bb13622ac0e1d8790ae17547ef6563">operator!=</link> (const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D, T &gt; &amp;v1, const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D, T &gt; &amp;v2)</para>
+
+<para>Inequality of two IntVec&lt;D, T&gt; objects. </para>
+</listitem>
+            <listitem><para>template&lt;int D, typename T &gt; </para><para>bool <link linkend="_namespacePscf_1a7c11bc89ff89398302b4703c7c568e0c">operator!=</link> (const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D, T &gt; &amp;v1, const <link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp;v2)</para>
+
+<para>Inequality of an <link linkend="_classPscf_1_1IntVec">IntVec&lt;D&gt;</link> and a Vec&lt;D, T&gt; </para>
+</listitem>
+            <listitem><para>template&lt;int D, typename T &gt; </para><para>bool <link linkend="_namespacePscf_1ae3cff8f0d207d0a27af3655502e13895">operator!=</link> (const <link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp;v1, const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D, T &gt; &amp;v2)</para>
+
+<para>Inequality of a Vec&lt;D, T&gt; and an IntVec&lt;D, T&gt; </para>
+</listitem>
+            <listitem><para>template&lt;int D, typename T &gt; </para><para>bool <link linkend="_namespacePscf_1a7aca405819ff16b4913ba95837e23237">operator&lt;</link> (const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D, T &gt; &amp;v1, const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D, T &gt; &amp;v2)</para>
+
+<para>Less than comparison for two IntVec&lt;D, T&gt;s. </para>
+</listitem>
+            <listitem><para>template&lt;int D, typename T &gt; </para><para>bool <link linkend="_namespacePscf_1aeedb0b22c73cc3b42d3d3c28a9b91bfe">operator&lt;=</link> (const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D, T &gt; &amp;v1, const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D, T &gt; &amp;v2)</para>
+
+<para>Less than or equal to comparison for two IntVec&lt;D, T&gt;s. </para>
+</listitem>
+            <listitem><para>template&lt;int D, typename T &gt; </para><para>bool <link linkend="_namespacePscf_1a683fec854db280be92e548a7ca46657d">operator&gt;</link> (const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D, T &gt; &amp;v1, const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D, T &gt; &amp;v2)</para>
+
+<para>Greater than comparison for two IntVec&lt;D, T&gt;s. </para>
+</listitem>
+            <listitem><para>template&lt;int D, typename T &gt; </para><para>bool <link linkend="_namespacePscf_1aa2f64a3b55ff542eaccc5b7211868d55">operator&gt;=</link> (const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D, T &gt; &amp;v1, const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D, T &gt; &amp;v2)</para>
+
+<para>Greater than or equal to comparison for two IntVec&lt;D, T&gt;s. </para>
+</listitem>
+            <listitem><para>template&lt;int D, typename T &gt; </para><para>std::istream &amp; <link linkend="_namespacePscf_1abc3983771cf60493ae23444bbad91a57">operator&gt;&gt;</link> (std::istream &amp;in, <link linkend="_classPscf_1_1RealVec">RealVec</link>&lt; D, T &gt; &amp;vector)</para>
+
+<para>istream extractor for a RealVec&lt;D, T&gt;. </para>
+</listitem>
+            <listitem><para>template&lt;int D, typename T &gt; </para><para>std::ostream &amp; <link linkend="_namespacePscf_1a9a5631e32d01e85dbf09502d2bf2a107">operator&lt;&lt;</link> (std::ostream &amp;out, const <link linkend="_classPscf_1_1RealVec">RealVec</link>&lt; D, T &gt; &amp;vector)</para>
+
+<para>ostream inserter for a RealVec&lt;D, T&gt;. </para>
+</listitem>
+            <listitem><para>template&lt;int D, typename T &gt; </para><para>T <link linkend="_namespacePscf_1a2569b9ff5cd715f46a72c48412f015ea">dot</link> (<link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; const &amp;v1, <link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; const &amp;v2)</para>
+
+<para>Return dot product of two vectors. </para>
+</listitem>
+            <listitem><para>template&lt;int D, typename T &gt; </para><para><link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; <link linkend="_namespacePscf_1a9a85bc921e7a0237d25931cd19c55a9b">operator+</link> (<link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; const &amp;v1, <link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; const &amp;v2)</para>
+
+<para>Return the sum of two vectors. </para>
+</listitem>
+            <listitem><para>template&lt;int D&gt; </para><para>std::istream &amp; <link linkend="_namespacePscf_1ae799433f3d8399cad4ae5fcec1e12115">operator&gt;&gt;</link> (std::istream &amp;in, <link linkend="_classPscf_1_1Mesh">Mesh</link>&lt; D &gt; &amp;mesh)</para>
+
+<para>Input stream extractor for reading a Mesh&lt;D&gt; object. </para>
+</listitem>
+            <listitem><para>template&lt;int D&gt; </para><para>std::ostream &amp; <link linkend="_namespacePscf_1a8f61dd8f049fdfddba414a3e4d52c028">operator&lt;&lt;</link> (std::ostream &amp;out, <link linkend="_classPscf_1_1Mesh">Mesh</link>&lt; D &gt; &amp;mesh)</para>
+
+<para>Output stream inserter for writing a Mesh&lt;D&gt;::LatticeSystem. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Classes for polymer self-consistent field theory. </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_namespacePscf_1af3acfd9252c655770b47d1ca2428fc09"/>    <section>
+    <title>operator&gt;&gt;()<computeroutput>[1/7]</computeroutput></title>
+<indexterm><primary>operator&gt;&gt;</primary><secondary>Pscf</secondary></indexterm>
+<indexterm><primary>Pscf</primary><secondary>operator&gt;&gt;</secondary></indexterm>
+<para><computeroutput>std::istream &amp; Pscf::operator&gt;&gt; (std::istream &amp; in, <link linkend="_classPscf_1_1BlockDescriptor">BlockDescriptor</link> &amp; block)</computeroutput></para><para>
+
+<para>istream extractor for a <link linkend="_classPscf_1_1BlockDescriptor">BlockDescriptor</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>block</entry>
+                                <entry>
+<para><link linkend="_classPscf_1_1BlockDescriptor">BlockDescriptor</link> to be read from stream </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified input stream </para>
+</formalpara>
+</para>
+<para>
+Definition at line 53 of file BlockDescriptor.cpp.</para>
+    </section><anchor xml:id="_namespacePscf_1afce117557303a64ccd6097215d9fddf6"/>    <section>
+    <title>operator&lt;&lt;()<computeroutput>[1/8]</computeroutput></title>
+<indexterm><primary>operator&lt;&lt;</primary><secondary>Pscf</secondary></indexterm>
+<indexterm><primary>Pscf</primary><secondary>operator&lt;&lt;</secondary></indexterm>
+<para><computeroutput>std::ostream &amp; Pscf::operator&lt;&lt; (std::ostream &amp; out, const <link linkend="_classPscf_1_1BlockDescriptor">BlockDescriptor</link> &amp; block)</computeroutput></para><para>
+
+<para>ostream inserter for a <link linkend="_classPscf_1_1BlockDescriptor">BlockDescriptor</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>out</entry>
+                                <entry>
+<para>output stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>block</entry>
+                                <entry>
+<para><link linkend="_classPscf_1_1BlockDescriptor">BlockDescriptor</link> to be written to stream </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified output stream </para>
+</formalpara>
+</para>
+<para>
+Definition at line 66 of file BlockDescriptor.cpp.</para>
+    </section><anchor xml:id="_namespacePscf_1ac7d0338d5b8d343624beb8d7881a6757"/>    <section>
+    <title>operator&gt;&gt;()<computeroutput>[2/7]</computeroutput></title>
+<indexterm><primary>operator&gt;&gt;</primary><secondary>Pscf</secondary></indexterm>
+<indexterm><primary>Pscf</primary><secondary>operator&gt;&gt;</secondary></indexterm>
+<para><computeroutput>std::istream &amp; Pscf::operator&gt;&gt; (std::istream &amp; in, <link linkend="_classPscf_1_1BondDescriptor">BondDescriptor</link> &amp; bond)</computeroutput></para><para>
+
+<para>istream extractor for a <link linkend="_classPscf_1_1BlockDescriptor">BlockDescriptor</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>bond</entry>
+                                <entry>
+<para><link linkend="_classPscf_1_1BondDescriptor">BondDescriptor</link> to be read from stream </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified input stream </para>
+</formalpara>
+</para>
+<para>
+Definition at line 41 of file BondDescriptor.cpp.</para>
+    </section><anchor xml:id="_namespacePscf_1a54b927371a2693c8c3c4aa572b75da86"/>    <section>
+    <title>operator&lt;&lt;()<computeroutput>[2/8]</computeroutput></title>
+<indexterm><primary>operator&lt;&lt;</primary><secondary>Pscf</secondary></indexterm>
+<indexterm><primary>Pscf</primary><secondary>operator&lt;&lt;</secondary></indexterm>
+<para><computeroutput>std::istream&amp; Pscf::operator&lt;&lt; (std::istream &amp; out, const <link linkend="_classPscf_1_1BondDescriptor">BondDescriptor</link> &amp; bond)</computeroutput></para><para>
+
+<para>ostream inserter for a <link linkend="_classPscf_1_1BlockDescriptor">BlockDescriptor</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>out</entry>
+                                <entry>
+<para>output stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>bond</entry>
+                                <entry>
+<para><link linkend="_classPscf_1_1BondDescriptor">BondDescriptor</link> to be written to stream </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified output stream </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_namespacePscf_1a515f7a297b210bec7f3cd4df8c1c130e"/>    <section>
+    <title>operator&gt;&gt;()<computeroutput>[3/7]</computeroutput></title>
+<indexterm><primary>operator&gt;&gt;</primary><secondary>Pscf</secondary></indexterm>
+<indexterm><primary>Pscf</primary><secondary>operator&gt;&gt;</secondary></indexterm>
+<para><computeroutput>std::istream &amp; Pscf::operator&gt;&gt; (std::istream &amp; in, <link linkend="_classPscf_1_1Monomer">Monomer</link> &amp; monomer)</computeroutput></para><para>
+
+<para>istream extractor for a <link linkend="_classPscf_1_1Monomer">Monomer</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>monomer</entry>
+                                <entry>
+<para><link linkend="_classPscf_1_1Monomer">Monomer</link> to be read from stream </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified input stream </para>
+</formalpara>
+</para>
+<para>
+Definition at line 27 of file Monomer.cpp.</para>
+    </section><anchor xml:id="_namespacePscf_1a770905c9ecdc6b706cb74420a13ec653"/>    <section>
+    <title>operator&lt;&lt;()<computeroutput>[3/8]</computeroutput></title>
+<indexterm><primary>operator&lt;&lt;</primary><secondary>Pscf</secondary></indexterm>
+<indexterm><primary>Pscf</primary><secondary>operator&lt;&lt;</secondary></indexterm>
+<para><computeroutput>std::ostream &amp; Pscf::operator&lt;&lt; (std::ostream &amp; out, const <link linkend="_classPscf_1_1Monomer">Monomer</link> &amp; monomer)</computeroutput></para><para>
+
+<para>ostream inserter for a <link linkend="_classPscf_1_1Monomer">Monomer</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>out</entry>
+                                <entry>
+<para>output stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>monomer</entry>
+                                <entry>
+<para><link linkend="_classPscf_1_1Monomer">Monomer</link> to be written to stream </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified output stream </para>
+</formalpara>
+</para>
+<para>
+Definition at line 38 of file Monomer.cpp.</para>
+    </section><anchor xml:id="_namespacePscf_1accbe51ff9333e3489d4e9f4ac36c3c39"/>    <section>
+    <title>operator&gt;&gt;()<computeroutput>[4/7]</computeroutput></title>
+<indexterm><primary>operator&gt;&gt;</primary><secondary>Pscf</secondary></indexterm>
+<indexterm><primary>Pscf</primary><secondary>operator&gt;&gt;</secondary></indexterm>
+<para><computeroutput>std::istream &amp; Pscf::operator&gt;&gt; (std::istream &amp; in, <link linkend="_classPscf_1_1Species_1aff5905c62129641e3d6f6a719bf9ec29">Species::Ensemble</link> &amp; policy)</computeroutput></para><para>
+
+<para>istream extractor for a <link linkend="_classPscf_1_1Species_1aff5905c62129641e3d6f6a719bf9ec29">Species::Ensemble</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>policy</entry>
+                                <entry>
+<para><link linkend="_classPscf_1_1Species_1aff5905c62129641e3d6f6a719bf9ec29">Species::Ensemble</link> to be read </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified input stream </para>
+</formalpara>
+</para>
+<para>
+Definition at line 22 of file Species.cpp.</para>
+<para>
+References UTIL_THROW.</para>
+    </section><anchor xml:id="_namespacePscf_1a20ea89dfa80a71e4969c6ce18c5ab5da"/>    <section>
+    <title>operator&lt;&lt;()<computeroutput>[4/8]</computeroutput></title>
+<indexterm><primary>operator&lt;&lt;</primary><secondary>Pscf</secondary></indexterm>
+<indexterm><primary>Pscf</primary><secondary>operator&lt;&lt;</secondary></indexterm>
+<para><computeroutput>std::ostream &amp; Pscf::operator&lt;&lt; (std::ostream &amp; out, <link linkend="_classPscf_1_1Species_1aff5905c62129641e3d6f6a719bf9ec29">Species::Ensemble</link> policy)</computeroutput></para><para>
+
+<para>ostream inserter for an <link linkend="_classPscf_1_1Species_1aff5905c62129641e3d6f6a719bf9ec29">Species::Ensemble</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>out</entry>
+                                <entry>
+<para>output stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>policy</entry>
+                                <entry>
+<para><link linkend="_classPscf_1_1Species_1aff5905c62129641e3d6f6a719bf9ec29">Species::Ensemble</link> to be written </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified output stream </para>
+</formalpara>
+</para>
+<para>
+Definition at line 40 of file Species.cpp.</para>
+<para>
+References UTIL_THROW.</para>
+    </section><anchor xml:id="_namespacePscf_1aab632fac1a3a85b85bcaac6f1fd221a5"/>    <section>
+    <title>serialize()</title>
+<indexterm><primary>serialize</primary><secondary>Pscf</secondary></indexterm>
+<indexterm><primary>Pscf</primary><secondary>serialize</secondary></indexterm>
+<computeroutput>template&lt;class Archive &gt; </computeroutput><para><computeroutput>void Pscf::serialize (Archive &amp; ar, <link linkend="_classPscf_1_1Species_1aff5905c62129641e3d6f6a719bf9ec29">Species::Ensemble</link> &amp; policy, const unsigned int version)</computeroutput></para><para>
+
+<para>Serialize a <link linkend="_classPscf_1_1Species_1aff5905c62129641e3d6f6a719bf9ec29">Species::Ensemble</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>archive object </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>policy</entry>
+                                <entry>
+<para>object to be serialized </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>version</entry>
+                                <entry>
+<para>archive version id </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 127 of file Species.h.</para>
+<para>
+References Util::serializeEnum().</para>
+    </section><anchor xml:id="_namespacePscf_1a670414f4ae5e3bb926df674bd1e9326a"/>    <section>
+    <title>shiftToMinimum()</title>
+<indexterm><primary>shiftToMinimum</primary><secondary>Pscf</secondary></indexterm>
+<indexterm><primary>Pscf</primary><secondary>shiftToMinimum</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput><link linkend="_classPscf_1_1IntVec">IntVec</link>&lt;D&gt; Pscf::shiftToMinimum (<link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D &gt; &amp; v, <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D &gt; d, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; D &gt; const &amp; cell)</computeroutput></para><para>
+
+<para>Returns minimum magnitude image of DFT wavevector. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>v</entry>
+                                <entry>
+<para><link linkend="_classPscf_1_1IntVec">IntVec&lt;D&gt;</link> containing integer indices of wavevector. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>d</entry>
+                                <entry>
+<para>dimensions of the discrete Fourier transform grid. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>cell</entry>
+                                <entry>
+<para><link linkend="_classPscf_1_1UnitCell">UnitCell</link> </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+    </section><anchor xml:id="_namespacePscf_1a95d9506344bf23b7a1d642a40e89aac1"/>    <section>
+    <title>operator&lt;&lt;()<computeroutput>[5/8]</computeroutput></title>
+<indexterm><primary>operator&lt;&lt;</primary><secondary>Pscf</secondary></indexterm>
+<indexterm><primary>Pscf</primary><secondary>operator&lt;&lt;</secondary></indexterm>
+<para><computeroutput>std::ostream &amp; Pscf::operator&lt;&lt; (std::ostream &amp; out, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; 2 &gt;::LatticeSystem lattice)</computeroutput></para><para>
+
+<para>ostream inserter for a 2D <link linkend="_classPscf_1_1UnitCell_3_012_01_4_1aef9fcf7153b54d7fa86fa47e46e67a3a">UnitCell&lt;2&gt;::LatticeSystem</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>out</entry>
+                                <entry>
+<para>output stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>lattice</entry>
+                                <entry>
+<para><link linkend="_classPscf_1_1UnitCell_3_012_01_4_1aef9fcf7153b54d7fa86fa47e46e67a3a">UnitCell&lt;2&gt;::LatticeSystem</link> to be written </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified output stream </para>
+</formalpara>
+</para>
+<para>
+Definition at line 186 of file UnitCell2.cpp.</para>
+<para>
+References UTIL_THROW.</para>
+    </section><anchor xml:id="_namespacePscf_1a8f6cfce7333ba7a08f1fb877dba1fb02"/>    <section>
+    <title>operator&gt;&gt;()<computeroutput>[5/7]</computeroutput></title>
+<indexterm><primary>operator&gt;&gt;</primary><secondary>Pscf</secondary></indexterm>
+<indexterm><primary>Pscf</primary><secondary>operator&gt;&gt;</secondary></indexterm>
+<computeroutput>template&lt;int D, typename T &gt; </computeroutput><para><computeroutput>std::istream&amp; Pscf::operator&gt;&gt; (std::istream &amp; in, <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D, T &gt; &amp; vector)</computeroutput></para><para>
+
+<para>istream extractor for a IntVec&lt;D, T&gt;. </para>
+</para>
+
+<para>Input elements of a vector from stream, without line breaks.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>vector</entry>
+                                <entry>
+<para>IntVec&lt;D, T&gt; to be read from stream </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified input stream </para>
+</formalpara>
+</para>
+<para>
+Definition at line 85 of file IntVec.h.</para>
+    </section><anchor xml:id="_namespacePscf_1aeea3a913d4b70557421cad3894eb9e0e"/>    <section>
+    <title>operator&lt;&lt;()<computeroutput>[6/8]</computeroutput></title>
+<indexterm><primary>operator&lt;&lt;</primary><secondary>Pscf</secondary></indexterm>
+<indexterm><primary>Pscf</primary><secondary>operator&lt;&lt;</secondary></indexterm>
+<computeroutput>template&lt;int D, typename T &gt; </computeroutput><para><computeroutput>std::ostream&amp; Pscf::operator&lt;&lt; (std::ostream &amp; out, const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D, T &gt; &amp; vector)</computeroutput></para><para>
+
+<para>ostream inserter for a IntVec&lt;D, T&gt;. </para>
+</para>
+
+<para>Output a IntVec&lt;D, T&gt; to an ostream, without line breaks.</para>
+
+<para>Output elements of a vector to stream, without line breaks. 
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>out</entry>
+                                <entry>
+<para>output stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>vector</entry>
+                                <entry>
+<para>IntVec&lt;D, T&gt; to be written to stream </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified output stream </para>
+</formalpara>
+</para>
+<para>
+Definition at line 104 of file IntVec.h.</para>
+    </section><anchor xml:id="_namespacePscf_1a176d9d96f0ea93f1e1d6cb13191c523a"/>    <section>
+    <title>operator==()<computeroutput>[1/3]</computeroutput></title>
+<indexterm><primary>operator==</primary><secondary>Pscf</secondary></indexterm>
+<indexterm><primary>Pscf</primary><secondary>operator==</secondary></indexterm>
+<computeroutput>template&lt;int D, typename T &gt; </computeroutput><para><computeroutput>bool Pscf::operator== (const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D, T &gt; &amp; v1, const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D, T &gt; &amp; v2)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Equality of two <link linkend="_classPscf_1_1IntVec">IntVec&lt;D&gt;</link> objects. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>true if v1 == v2, false otherwise. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 120 of file IntVec.h.</para>
+    </section><anchor xml:id="_namespacePscf_1a2f1ef4934ec1cbd02f9e483b439875b2"/>    <section>
+    <title>operator==()<computeroutput>[2/3]</computeroutput></title>
+<indexterm><primary>operator==</primary><secondary>Pscf</secondary></indexterm>
+<indexterm><primary>Pscf</primary><secondary>operator==</secondary></indexterm>
+<computeroutput>template&lt;int D, typename T &gt; </computeroutput><para><computeroutput>bool Pscf::operator== (const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D, T &gt; &amp; v1, const <link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp; v2)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Equality of an <link linkend="_classPscf_1_1IntVec">IntVec&lt;D&gt;</link> and a Vec&lt;D, T&gt; </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>true if v1 == v2, false otherwise. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 137 of file IntVec.h.</para>
+    </section><anchor xml:id="_namespacePscf_1aa9ae2b92c2cfdcf545db8cb910ded04d"/>    <section>
+    <title>operator==()<computeroutput>[3/3]</computeroutput></title>
+<indexterm><primary>operator==</primary><secondary>Pscf</secondary></indexterm>
+<indexterm><primary>Pscf</primary><secondary>operator==</secondary></indexterm>
+<computeroutput>template&lt;int D, typename T &gt; </computeroutput><para><computeroutput>bool Pscf::operator== (const <link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp; v1, const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D, T &gt; &amp; v2)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Equality of an Vec&lt;D, T&gt; and an IntVec&lt;D, T&gt; </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>true if v1 == v2, false otherwise. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 154 of file IntVec.h.</para>
+    </section><anchor xml:id="_namespacePscf_1a91bb13622ac0e1d8790ae17547ef6563"/>    <section>
+    <title>operator!=()<computeroutput>[1/3]</computeroutput></title>
+<indexterm><primary>operator!=</primary><secondary>Pscf</secondary></indexterm>
+<indexterm><primary>Pscf</primary><secondary>operator!=</secondary></indexterm>
+<computeroutput>template&lt;int D, typename T &gt; </computeroutput><para><computeroutput>bool Pscf::operator!= (const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D, T &gt; &amp; v1, const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D, T &gt; &amp; v2)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Inequality of two IntVec&lt;D, T&gt; objects. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>true if v1 != v2, false if v1 == v2. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 164 of file IntVec.h.</para>
+    </section><anchor xml:id="_namespacePscf_1a7c11bc89ff89398302b4703c7c568e0c"/>    <section>
+    <title>operator!=()<computeroutput>[2/3]</computeroutput></title>
+<indexterm><primary>operator!=</primary><secondary>Pscf</secondary></indexterm>
+<indexterm><primary>Pscf</primary><secondary>operator!=</secondary></indexterm>
+<computeroutput>template&lt;int D, typename T &gt; </computeroutput><para><computeroutput>bool Pscf::operator!= (const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D, T &gt; &amp; v1, const <link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp; v2)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Inequality of an <link linkend="_classPscf_1_1IntVec">IntVec&lt;D&gt;</link> and a Vec&lt;D, T&gt; </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>true if v1 == v2, false otherwise. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 174 of file IntVec.h.</para>
+    </section><anchor xml:id="_namespacePscf_1ae3cff8f0d207d0a27af3655502e13895"/>    <section>
+    <title>operator!=()<computeroutput>[3/3]</computeroutput></title>
+<indexterm><primary>operator!=</primary><secondary>Pscf</secondary></indexterm>
+<indexterm><primary>Pscf</primary><secondary>operator!=</secondary></indexterm>
+<computeroutput>template&lt;int D, typename T &gt; </computeroutput><para><computeroutput>bool Pscf::operator!= (const <link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp; v1, const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D, T &gt; &amp; v2)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Inequality of a Vec&lt;D, T&gt; and an IntVec&lt;D, T&gt; </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>true if v1 == v2, false otherwise. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 184 of file IntVec.h.</para>
+    </section><anchor xml:id="_namespacePscf_1a7aca405819ff16b4913ba95837e23237"/>    <section>
+    <title>operator&lt;()</title>
+<indexterm><primary>operator&lt;</primary><secondary>Pscf</secondary></indexterm>
+<indexterm><primary>Pscf</primary><secondary>operator&lt;</secondary></indexterm>
+<computeroutput>template&lt;int D, typename T &gt; </computeroutput><para><computeroutput>bool Pscf::operator&lt; (const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D, T &gt; &amp; v1, const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D, T &gt; &amp; v2)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Less than comparison for two IntVec&lt;D, T&gt;s. </para>
+</para>
+
+<para>Elements with lower array indices are treated as more signficant.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>true if v1 &lt; v2, false otherwise. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 196 of file IntVec.h.</para>
+    </section><anchor xml:id="_namespacePscf_1aeedb0b22c73cc3b42d3d3c28a9b91bfe"/>    <section>
+    <title>operator&lt;=()</title>
+<indexterm><primary>operator&lt;=</primary><secondary>Pscf</secondary></indexterm>
+<indexterm><primary>Pscf</primary><secondary>operator&lt;=</secondary></indexterm>
+<computeroutput>template&lt;int D, typename T &gt; </computeroutput><para><computeroutput>bool Pscf::operator&lt;= (const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D, T &gt; &amp; v1, const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D, T &gt; &amp; v2)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Less than or equal to comparison for two IntVec&lt;D, T&gt;s. </para>
+</para>
+
+<para>Elements with lower array indices are more signficant digits.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>true if v1 &lt; v2, false otherwise. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 220 of file IntVec.h.</para>
+    </section><anchor xml:id="_namespacePscf_1a683fec854db280be92e548a7ca46657d"/>    <section>
+    <title>operator&gt;()</title>
+<indexterm><primary>operator&gt;</primary><secondary>Pscf</secondary></indexterm>
+<indexterm><primary>Pscf</primary><secondary>operator&gt;</secondary></indexterm>
+<computeroutput>template&lt;int D, typename T &gt; </computeroutput><para><computeroutput>bool Pscf::operator&gt; (const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D, T &gt; &amp; v1, const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D, T &gt; &amp; v2)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Greater than comparison for two IntVec&lt;D, T&gt;s. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>true if v1 &gt; v2, false otherwise. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 242 of file IntVec.h.</para>
+    </section><anchor xml:id="_namespacePscf_1aa2f64a3b55ff542eaccc5b7211868d55"/>    <section>
+    <title>operator&gt;=()</title>
+<indexterm><primary>operator&gt;=</primary><secondary>Pscf</secondary></indexterm>
+<indexterm><primary>Pscf</primary><secondary>operator&gt;=</secondary></indexterm>
+<computeroutput>template&lt;int D, typename T &gt; </computeroutput><para><computeroutput>bool Pscf::operator&gt;= (const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D, T &gt; &amp; v1, const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D, T &gt; &amp; v2)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Greater than or equal to comparison for two IntVec&lt;D, T&gt;s. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>true if v1 &gt;= v2, false otherwise. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 252 of file IntVec.h.</para>
+    </section><anchor xml:id="_namespacePscf_1abc3983771cf60493ae23444bbad91a57"/>    <section>
+    <title>operator&gt;&gt;()<computeroutput>[6/7]</computeroutput></title>
+<indexterm><primary>operator&gt;&gt;</primary><secondary>Pscf</secondary></indexterm>
+<indexterm><primary>Pscf</primary><secondary>operator&gt;&gt;</secondary></indexterm>
+<computeroutput>template&lt;int D, typename T &gt; </computeroutput><para><computeroutput>std::istream&amp; Pscf::operator&gt;&gt; (std::istream &amp; in, <link linkend="_classPscf_1_1RealVec">RealVec</link>&lt; D, T &gt; &amp; vector)</computeroutput></para><para>
+
+<para>istream extractor for a RealVec&lt;D, T&gt;. </para>
+</para>
+
+<para>Input elements of a vector from stream, without line breaks.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>vector</entry>
+                                <entry>
+<para>RealVec&lt;D, T&gt; to be read from stream </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified input stream </para>
+</formalpara>
+</para>
+<para>
+Definition at line 89 of file RealVec.h.</para>
+    </section><anchor xml:id="_namespacePscf_1a9a5631e32d01e85dbf09502d2bf2a107"/>    <section>
+    <title>operator&lt;&lt;()<computeroutput>[7/8]</computeroutput></title>
+<indexterm><primary>operator&lt;&lt;</primary><secondary>Pscf</secondary></indexterm>
+<indexterm><primary>Pscf</primary><secondary>operator&lt;&lt;</secondary></indexterm>
+<computeroutput>template&lt;int D, typename T &gt; </computeroutput><para><computeroutput>std::ostream&amp; Pscf::operator&lt;&lt; (std::ostream &amp; out, const <link linkend="_classPscf_1_1RealVec">RealVec</link>&lt; D, T &gt; &amp; vector)</computeroutput></para><para>
+
+<para>ostream inserter for a RealVec&lt;D, T&gt;. </para>
+</para>
+
+<para>Output a RealVec&lt;D, T&gt; to an ostream, without line breaks.</para>
+
+<para>Output elements of a vector to stream, without line breaks. 
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>out</entry>
+                                <entry>
+<para>output stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>vector</entry>
+                                <entry>
+<para>RealVec&lt;D, T&gt; to be written to stream </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified output stream </para>
+</formalpara>
+</para>
+<para>
+Definition at line 108 of file RealVec.h.</para>
+    </section><anchor xml:id="_namespacePscf_1a2569b9ff5cd715f46a72c48412f015ea"/>    <section>
+    <title>dot()</title>
+<indexterm><primary>dot</primary><secondary>Pscf</secondary></indexterm>
+<indexterm><primary>Pscf</primary><secondary>dot</secondary></indexterm>
+<computeroutput>template&lt;int D, typename T &gt; </computeroutput><para><computeroutput>T Pscf::dot (<link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; const &amp; v1, <link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; const &amp; v2)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return dot product of two vectors. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>v1</entry>
+                                <entry>
+<para>first input vector </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>v2</entry>
+                                <entry>
+<para>second input vector </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>dot product v1.v2 </para>
+</formalpara>
+</para>
+<para>
+Definition at line 283 of file Vec.h.</para>
+<para>
+References dot(), and Util::setToZero().</para>
+<para>
+Referenced by dot().</para>
+    </section><anchor xml:id="_namespacePscf_1a9a85bc921e7a0237d25931cd19c55a9b"/>    <section>
+    <title>operator+()</title>
+<indexterm><primary>operator+</primary><secondary>Pscf</secondary></indexterm>
+<indexterm><primary>Pscf</primary><secondary>operator+</secondary></indexterm>
+<computeroutput>template&lt;int D, typename T &gt; </computeroutput><para><computeroutput><link linkend="_classPscf_1_1Vec">Vec</link>&lt;D, T&gt; Pscf::operator+ (<link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; const &amp; v1, <link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; const &amp; v2)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return the sum of two vectors. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>v1</entry>
+                                <entry>
+<para>first input vector </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>v2</entry>
+                                <entry>
+<para>second input vector </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>sum v1 + v2 </para>
+</formalpara>
+</para>
+<para>
+Definition at line 302 of file Vec.h.</para>
+<para>
+References Pscf::Vec&lt; D, T &gt;::add().</para>
+    </section><anchor xml:id="_namespacePscf_1ae799433f3d8399cad4ae5fcec1e12115"/>    <section>
+    <title>operator&gt;&gt;()<computeroutput>[7/7]</computeroutput></title>
+<indexterm><primary>operator&gt;&gt;</primary><secondary>Pscf</secondary></indexterm>
+<indexterm><primary>Pscf</primary><secondary>operator&gt;&gt;</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>std::istream &amp; Pscf::operator&gt;&gt; (std::istream &amp; in, <link linkend="_classPscf_1_1Mesh">Mesh</link>&lt; D &gt; &amp; mesh)</computeroutput></para><para>
+
+<para>Input stream extractor for reading a Mesh&lt;D&gt; object. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>mesh</entry>
+                                <entry>
+<para>Mesh&lt;D&gt; object to be read </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified input stream </para>
+</formalpara>
+</para>
+<para>
+Definition at line 136 of file Mesh.tpp.</para>
+<para>
+References Pscf::Mesh&lt; D &gt;::setDimensions(), and UTIL_CHECK.</para>
+    </section><anchor xml:id="_namespacePscf_1a8f61dd8f049fdfddba414a3e4d52c028"/>    <section>
+    <title>operator&lt;&lt;()<computeroutput>[8/8]</computeroutput></title>
+<indexterm><primary>operator&lt;&lt;</primary><secondary>Pscf</secondary></indexterm>
+<indexterm><primary>Pscf</primary><secondary>operator&lt;&lt;</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>std::ostream &amp; Pscf::operator&lt;&lt; (std::ostream &amp; out, <link linkend="_classPscf_1_1Mesh">Mesh</link>&lt; D &gt; &amp; mesh)</computeroutput></para><para>
+
+<para>Output stream inserter for writing a Mesh&lt;D&gt;::LatticeSystem. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>out</entry>
+                                <entry>
+<para>output stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>mesh</entry>
+                                <entry>
+<para>Mesh&lt;D&gt; to be written </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified output stream </para>
+</formalpara>
+</para>
+<para>
+Definition at line 149 of file Mesh.tpp.</para>
+</section>
+</section>
+</section>

@@ -1,0 +1,246 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1AutoCorrelation">
+<title>Util::AutoCorrelation&lt; Data, Product &gt; Class Template Reference</title>
+<indexterm><primary>Util::AutoCorrelation&lt; Data, Product &gt;</primary></indexterm>
+<para>
+
+<para>Auto-correlation function, using hierarchical algorithm. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;AutoCorrelation.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Util::AutoCorrelation&lt; Data, Product &gt;:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classUtil_1_1AutoCorrelation.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1AutoCorrelation_1acefac97246a62506d9da85437888a48c">AutoCorrelation</link> ()</para>
+
+<para>Constructor. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classUtil_1_1AutoCorrelation_1a9cf931113574f743fd88b9b6ee88d565">readParameters</link> (std::istream &amp;in)</para>
+
+<para>Read parameters from file and initialize. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classUtil_1_1AutoCorrelation_1acbc41a7ab175fcd6422ab15b05886840">load</link> (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp;ar)</para>
+
+<para>Load internal state from an archive. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classUtil_1_1AutoCorrelation_1adc342d958fd2ab000573de8100c91043">save</link> (<link linkend="_classUtil_1_1Serializable_1aca43a1eea5ec5f13189a57892a7a6d04">Serializable::OArchive</link> &amp;ar)</para>
+
+<para>Save internal state to an archive. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1AutoCorrelation_1a6bdf24b1557c3ad3bbb7a8a383c17251">maxDelay</link> () const</para>
+
+<para>Return maximum delay, in primary samples. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>virtual void <link linkend="_classUtil_1_1AutoCorrelation_1a7f75dcd45ab37465e18bb97ce33c56c7">registerDescendant</link> (<link linkend="_classUtil_1_1AutoCorrStage">AutoCorrStage</link>&lt; Data, Product &gt; *ptr)</para>
+
+<para>Register a descendant stage. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;typename Data, typename Product&gt;
+class Util::AutoCorrelation&lt; Data, Product &gt;</title></simplesect>
+
+
+<para>Auto-correlation function, using hierarchical algorithm. </para>
+
+
+
+<para>This class represents the primary stage of a linked list of <link linkend="_classUtil_1_1AutoCorrStage">AutoCorrStage</link> objects that implement a hierarchical blocking algorithm for an auto-correlation function. </para>
+<para>
+Definition at line 29 of file AutoCorrelation.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1AutoCorrelation_1acefac97246a62506d9da85437888a48c"/>    <section>
+    <title>AutoCorrelation()</title>
+<indexterm><primary>AutoCorrelation</primary><secondary>Util::AutoCorrelation&lt; Data, Product &gt;</secondary></indexterm>
+<indexterm><primary>Util::AutoCorrelation&lt; Data, Product &gt;</primary><secondary>AutoCorrelation</secondary></indexterm>
+<computeroutput>template&lt;typename Data , typename Product &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1AutoCorrelation">Util::AutoCorrelation</link>&lt; Data, Product &gt;::<link linkend="_classUtil_1_1AutoCorrelation">AutoCorrelation</link></computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+<para>
+Definition at line 23 of file AutoCorrelation.tpp.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1AutoCorrelation_1a9cf931113574f743fd88b9b6ee88d565"/>    <section>
+    <title>readParameters()</title>
+<indexterm><primary>readParameters</primary><secondary>Util::AutoCorrelation&lt; Data, Product &gt;</secondary></indexterm>
+<indexterm><primary>Util::AutoCorrelation&lt; Data, Product &gt;</primary><secondary>readParameters</secondary></indexterm>
+<computeroutput>template&lt;typename Data , typename Product &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1AutoCorrelation">Util::AutoCorrelation</link>&lt; Data, Product &gt;::readParameters (std::istream &amp; in)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Read parameters from file and initialize. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input parameter file </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Reimplemented from <link linkend="_classUtil_1_1ParamComposite_1a172a3a656b5829c8d758424ad09a22a6">Util::ParamComposite</link>.</para>
+<para>
+Definition at line 33 of file AutoCorrelation.tpp.</para>
+    </section><anchor xml:id="_classUtil_1_1AutoCorrelation_1acbc41a7ab175fcd6422ab15b05886840"/>    <section>
+    <title>load()</title>
+<indexterm><primary>load</primary><secondary>Util::AutoCorrelation&lt; Data, Product &gt;</secondary></indexterm>
+<indexterm><primary>Util::AutoCorrelation&lt; Data, Product &gt;</primary><secondary>load</secondary></indexterm>
+<computeroutput>template&lt;typename Data , typename Product &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1AutoCorrelation">Util::AutoCorrelation</link>&lt; Data, Product &gt;::load (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp; ar)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Load internal state from an archive. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>input/loading archive </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Reimplemented from <link linkend="_classUtil_1_1ParamComposite_1a02a1172d7cd86d4015be8d9e65fe750f">Util::ParamComposite</link>.</para>
+<para>
+Definition at line 45 of file AutoCorrelation.tpp.</para>
+    </section><anchor xml:id="_classUtil_1_1AutoCorrelation_1adc342d958fd2ab000573de8100c91043"/>    <section>
+    <title>save()</title>
+<indexterm><primary>save</primary><secondary>Util::AutoCorrelation&lt; Data, Product &gt;</secondary></indexterm>
+<indexterm><primary>Util::AutoCorrelation&lt; Data, Product &gt;</primary><secondary>save</secondary></indexterm>
+<computeroutput>template&lt;typename Data , typename Product &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1AutoCorrelation">Util::AutoCorrelation</link>&lt; Data, Product &gt;::save (<link linkend="_classUtil_1_1Serializable_1aca43a1eea5ec5f13189a57892a7a6d04">Serializable::OArchive</link> &amp; ar)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Save internal state to an archive. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>output/saving archive </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Reimplemented from <link linkend="_classUtil_1_1ParamComposite_1a3c430a4e31a9573eadb06ab89d3bf780">Util::ParamComposite</link>.</para>
+<para>
+Definition at line 57 of file AutoCorrelation.tpp.</para>
+    </section><anchor xml:id="_classUtil_1_1AutoCorrelation_1a6bdf24b1557c3ad3bbb7a8a383c17251"/>    <section>
+    <title>maxDelay()</title>
+<indexterm><primary>maxDelay</primary><secondary>Util::AutoCorrelation&lt; Data, Product &gt;</secondary></indexterm>
+<indexterm><primary>Util::AutoCorrelation&lt; Data, Product &gt;</primary><secondary>maxDelay</secondary></indexterm>
+<computeroutput>template&lt;typename Data , typename Product &gt; </computeroutput><para><computeroutput>int <link linkend="_classUtil_1_1AutoCorrelation">Util::AutoCorrelation</link>&lt; Data, Product &gt;::maxDelay</computeroutput></para><para>
+
+<para>Return maximum delay, in primary samples. </para>
+</para>
+<para>
+Definition at line 64 of file AutoCorrelation.tpp.</para>
+<para>
+References Util::AutoCorrStage&lt; Data, Product &gt;::bufferSize(), and Util::AutoCorrStage&lt; Data, Product &gt;::stageInterval().</para>
+    </section><anchor xml:id="_classUtil_1_1AutoCorrelation_1a7f75dcd45ab37465e18bb97ce33c56c7"/>    <section>
+    <title>registerDescendant()</title>
+<indexterm><primary>registerDescendant</primary><secondary>Util::AutoCorrelation&lt; Data, Product &gt;</secondary></indexterm>
+<indexterm><primary>Util::AutoCorrelation&lt; Data, Product &gt;</primary><secondary>registerDescendant</secondary></indexterm>
+<computeroutput>template&lt;typename Data , typename Product &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1AutoCorrelation">Util::AutoCorrelation</link>&lt; Data, Product &gt;::registerDescendant (<link linkend="_classUtil_1_1AutoCorrStage">AutoCorrStage</link>&lt; Data, Product &gt; * ptr)<computeroutput>[protected]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Register a descendant stage. </para>
+</para>
+
+<para>This should be called only by a root stage.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ptr</entry>
+                                <entry>
+<para>pointer to a descendant <link linkend="_classUtil_1_1AutoCorrelation">AutoCorrelation</link>. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Reimplemented from <link linkend="_classUtil_1_1AutoCorrStage_1a8f447b552c43081da294b5745369d5e7">Util::AutoCorrStage&lt; Data, Product &gt;</link>.</para>
+<para>
+Definition at line 79 of file AutoCorrelation.tpp.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+AutoCorrelation.hAutoCorrelation.tpp</section>
+</section>

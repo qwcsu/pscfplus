@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1ScopedPtr">
+<title>Util::ScopedPtr&lt; T &gt; Class Template Reference</title>
+<indexterm><primary>Util::ScopedPtr&lt; T &gt;</primary></indexterm>
+<para>
+
+<para>A very simple RAII pointer. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;ScopedPtr.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Types    </title>
+        <itemizedlist>
+            <listitem><para>typedef T <link linkend="_classUtil_1_1ScopedPtr_1a79c8d038f8866286dbd9fb5b61695aae">element_type</link></para>
+
+<para>Type of object pointed to. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1ScopedPtr_1a22abac4cdd74330f0bb494c13bde9689">ScopedPtr</link> (T *p=0)</para>
+
+<para>Constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1ScopedPtr_1ae2ff7cd2c067c140d225126c8f933e20">~ScopedPtr</link> ()</para>
+
+<para>Destructor, destroys object pointed to, if any. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1ScopedPtr_1acb03afa4ff6d00f458453ea7a5ddade1">reset</link> (T *p=0)</para>
+
+<para>Acquire ownership of a built-in pointer. </para>
+</listitem>
+            <listitem><para>T &amp; <link linkend="_classUtil_1_1ScopedPtr_1a94ac1fa0b8546004914bb4a3670d2904">operator*</link> () const</para>
+
+<para>Dereference. </para>
+</listitem>
+            <listitem><para>T * <link linkend="_classUtil_1_1ScopedPtr_1aaee5eb1ba250b08e774656467a716f99">operator-&gt;</link> () const</para>
+
+<para>Member access. </para>
+</listitem>
+            <listitem><para>T * <link linkend="_classUtil_1_1ScopedPtr_1a360921f1c00103a00d015165c2422911">get</link> () const</para>
+
+<para>Return enclosed built-in pointer. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;typename T&gt;
+class Util::ScopedPtr&lt; T &gt;</title></simplesect>
+
+
+<para>A very simple RAII pointer. </para>
+
+
+
+<para>A <link linkend="_classUtil_1_1ScopedPtr">ScopedPtr</link> mimics a built-in pointer, except that guarantees destruction of the object to which it points when the <link linkend="_classUtil_1_1ScopedPtr">ScopedPtr</link> goes out of scope. It accepts ownership of a built-in pointer either upon construction or by the <link linkend="_classUtil_1_1ScopedPtr_1acb03afa4ff6d00f458453ea7a5ddade1">reset()</link> method, and deletes the associated object in its destructor. A <link linkend="_classUtil_1_1ScopedPtr">ScopedPtr</link> cannot be copy constructed or assigned.</para>
+
+<para>Similar to boost::scoped_ptr, with minor differences. It takes the same amount of memory as a built-in pointer, and should be equally fast. </para>
+<para>
+Definition at line 29 of file ScopedPtr.h.</para>
+</section>
+<section>
+<title>Member Typedef Documentation</title>
+<anchor xml:id="_classUtil_1_1ScopedPtr_1a79c8d038f8866286dbd9fb5b61695aae"/>    <section>
+    <title>element_type</title>
+<indexterm><primary>element_type</primary><secondary>Util::ScopedPtr&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Util::ScopedPtr&lt; T &gt;</primary><secondary>element_type</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>typedef T <link linkend="_classUtil_1_1ScopedPtr">Util::ScopedPtr</link>&lt; T &gt;::<link linkend="_classUtil_1_1ScopedPtr_1a79c8d038f8866286dbd9fb5b61695aae">element_type</link></computeroutput></para><para>
+
+<para>Type of object pointed to. </para>
+</para>
+<para>
+Definition at line 35 of file ScopedPtr.h.</para>
+</section>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1ScopedPtr_1a22abac4cdd74330f0bb494c13bde9689"/>    <section>
+    <title>ScopedPtr()</title>
+<indexterm><primary>ScopedPtr</primary><secondary>Util::ScopedPtr&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Util::ScopedPtr&lt; T &gt;</primary><secondary>ScopedPtr</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1ScopedPtr">Util::ScopedPtr</link>&lt; T &gt;::<link linkend="_classUtil_1_1ScopedPtr">ScopedPtr</link> (T * p = <computeroutput>0</computeroutput>
+)<computeroutput>[inline]</computeroutput>, <computeroutput>[explicit]</computeroutput></computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+<para>
+Definition at line 38 of file ScopedPtr.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ScopedPtr_1ae2ff7cd2c067c140d225126c8f933e20"/>    <section>
+    <title>~ScopedPtr()</title>
+<indexterm><primary>~ScopedPtr</primary><secondary>Util::ScopedPtr&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Util::ScopedPtr&lt; T &gt;</primary><secondary>~ScopedPtr</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1ScopedPtr">Util::ScopedPtr</link>&lt; T &gt;::~<link linkend="_classUtil_1_1ScopedPtr">ScopedPtr</link> ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Destructor, destroys object pointed to, if any. </para>
+</para>
+<para>
+Definition at line 42 of file ScopedPtr.h.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1ScopedPtr_1acb03afa4ff6d00f458453ea7a5ddade1"/>    <section>
+    <title>reset()</title>
+<indexterm><primary>reset</primary><secondary>Util::ScopedPtr&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Util::ScopedPtr&lt; T &gt;</primary><secondary>reset</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1ScopedPtr">Util::ScopedPtr</link>&lt; T &gt;::reset (T * p = <computeroutput>0</computeroutput>
+)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Acquire ownership of a built-in pointer. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>p</entry>
+                                <entry>
+<para>built-in pointer to acquire. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 54 of file ScopedPtr.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ScopedPtr_1a94ac1fa0b8546004914bb4a3670d2904"/>    <section>
+    <title>operator*()</title>
+<indexterm><primary>operator*</primary><secondary>Util::ScopedPtr&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Util::ScopedPtr&lt; T &gt;</primary><secondary>operator*</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>T&amp; <link linkend="_classUtil_1_1ScopedPtr">Util::ScopedPtr</link>&lt; T &gt;::operator* ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Dereference. </para>
+</para>
+<para>
+Definition at line 63 of file ScopedPtr.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ScopedPtr_1aaee5eb1ba250b08e774656467a716f99"/>    <section>
+    <title>operator-&gt;()</title>
+<indexterm><primary>operator-&gt;</primary><secondary>Util::ScopedPtr&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Util::ScopedPtr&lt; T &gt;</primary><secondary>operator-&gt;</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>T* <link linkend="_classUtil_1_1ScopedPtr">Util::ScopedPtr</link>&lt; T &gt;::operator-&gt; ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Member access. </para>
+</para>
+<para>
+Definition at line 67 of file ScopedPtr.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ScopedPtr_1a360921f1c00103a00d015165c2422911"/>    <section>
+    <title>get()</title>
+<indexterm><primary>get</primary><secondary>Util::ScopedPtr&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Util::ScopedPtr&lt; T &gt;</primary><secondary>get</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>T* <link linkend="_classUtil_1_1ScopedPtr">Util::ScopedPtr</link>&lt; T &gt;::get ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return enclosed built-in pointer. </para>
+</para>
+<para>
+Definition at line 71 of file ScopedPtr.h.</para>
+<para>
+Referenced by Util::isNull().</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+ScopedPtr.h</section>
+</section>

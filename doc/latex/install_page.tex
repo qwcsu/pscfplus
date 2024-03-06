@@ -1,0 +1,143 @@
+\mbox{\hyperlink{overview_page}{Overview}} (Prev) ~ ~ ~ ~ \mbox{\hyperlink{user_page}{User Guide}} (Next) ~\newline
+
+
+The following pages give instructions for obtaining, configuring and compiling P\+S\+C\+F+.
+
+\doxysubsubsection*{Contents\+:}
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{install_require_page}{2.1 System Requirements}}  
+\item \mbox{\hyperlink{install_source_page}{2.2 Source Code}}  
+\item \mbox{\hyperlink{install_environment_page}{2.3 Environment Variables}}  
+\item \mbox{\hyperlink{compilation_page}{2.4 Compilation}}  
+\end{DoxyItemize}
+
+~\newline
+ \mbox{\hyperlink{overview_page}{Overview}} (Prev) ~ ~ ~ ~ \mbox{\hyperlink{index}{Main Page}} (Up) ~ ~ ~ ~ \mbox{\hyperlink{user_page}{User Guide}} (Next) \hypertarget{install_require_page}{}\doxysubsection{System Requirements}\label{install_require_page}
+\mbox{\hyperlink{install_page}{Installation}} (Up) ~ ~ ~ ~ \mbox{\hyperlink{install_source_page}{Source Code}} (Next) ~\newline
+
+
+The P\+S\+C\+F+ package provides programs that are designed to run on a desktop, laptop or cluster with an N\+V\+I\+D\+IA G\+PU. P\+S\+C\+F+ is distributed only as source code, and must be compiled by the user. All source code is written in A\+N\+SI 2011 C++ language standard with C\+U\+DA. Compilation of P\+S\+C\+F+ is controlled by a system of Unix makefiles and a series of shell scripts. In order to compile all of the programs in the P\+S\+C\+F+ package, the system on which the code is compiled must have\+:
+
+
+\begin{DoxyItemize}
+\item a \char`\"{}git\char`\"{} version control client
+\item a C++ compiler
+\item a python interpreter
+\item the G\+NU Scientific Library (G\+SL)
+\item a N\+V\+I\+D\+IA graphics card
+\item a C\+U\+DA compiler (nvcc)
+\item the cu\+F\+FT G\+P\+U-\/accelerated fast Fourier transform library
+\item Json\+Cpp, the C++ library that allows manipulating J\+S\+ON values.
+\end{DoxyItemize}
+
+A git client is needed to obtain (clone) the source code, which is maintained in a git repository on the github.\+com server. A python interpreter is needed during compilation (but not during execution) because the build system that compiles the P\+S\+C\+F+ source code uses a few python scripts that are provided with the package. The G\+NU scientific library is used by several programs within the package for linear algebra operations. The cu\+F\+FT library, which is used extensively in S\+CF calculations here, is provided with recent versions of the C\+U\+DA development environment.
+
+~\newline
+ \mbox{\hyperlink{install_page}{Installation}} (Up) ~ ~ ~ ~ \mbox{\hyperlink{install_source_page}{Source Code}} (Next) \hypertarget{install_source_page}{}\doxysubsection{Source Code}\label{install_source_page}
+\mbox{\hyperlink{install_require_page}{System Requirements}} (Prev) ~ ~ ~ ~ \mbox{\hyperlink{install_page}{Installation}} (Up) ~ ~ ~ ~ \mbox{\hyperlink{install_environment_page}{Environment Variables}} (Next) ~\newline
+
+
+The source code for P\+S\+C\+F+ is hosted on the \href{http://github.com}{\texttt{ github}} server project qwcsu/pscfplus, and can be obtained by using a git version-\/control manager to clone the public \href{https://github.com/qwcsu/pscfplus}{\texttt{ git repository}}. Instructions below assume that a \char`\"{}git\char`\"{} client has been installed on your computer.
+
+To obtain a working copy of the P\+S\+C\+F+ git repository, you should first change directory ({\ttfamily cd}) to the directory you want to contain the {\ttfamily pscfplus/} directory. From there, then enter the command 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{> git clone -\/-\/recursive https:\textcolor{comment}{//github.com/qwcsu/pscfplus.git}}
+\end{DoxyCode}
+ This should create a complete working copy of the P\+S\+C\+F+ source code in a new subdirectory named {\ttfamily pscfplus/} of the directory from which you invoked the above command.
+
+Hereafter, we assume that the root directory of the P\+S\+C\+F+ working copy is named {\ttfamily pscfplus/}. References to paths that do not start explicitly with a prefix {\ttfamily pscfplus/} should be understood as relative paths, relative to this directory.
+
+~\newline
+ \mbox{\hyperlink{install_require_page}{System Requirements}} (Prev) ~ ~ ~ ~ \mbox{\hyperlink{install_page}{Installation}} (Up) ~ ~ ~ ~ \mbox{\hyperlink{install_environment_page}{Environment Variables}} (Next) \hypertarget{install_environment_page}{}\doxysubsection{Environment Variables}\label{install_environment_page}
+\mbox{\hyperlink{install_source_page}{Source Code}} (Prev) ~ ~ ~ ~ \mbox{\hyperlink{install_page}{Installation}} (Up) ~ ~ ~ ~ \mbox{\hyperlink{compilation_page}{Compilation}} (Next) ~\newline
+
+
+To compile P\+S\+C\+F+ in a Unix environment, before compiling any code, the user should modify the following Unix environment variables\+:
+
+
+\begin{DoxyItemize}
+\item Add the {\ttfamily pscfplus/bin/} directory to the Unix {\ttfamily \$\+P\+A\+TH} shell environment variable (the shell command search path). By default, executable file created by the P\+S\+C\+F+ build system is installed in the {\ttfamily pscfplus/bin/} directory. The directory in which these files are located must be added to the user\textquotesingle{}s {\ttfamily \$\+P\+A\+TH} variable in order to allow the Unix shell to find the executable file when it is invoked by name in a command executed from any other directory.
+\item Add the {\ttfamily pscfplus/lib/python} directory to the {\ttfamily \$\+P\+Y\+T\+H\+O\+N\+P\+A\+TH} environment variable (the python module search path). The {\ttfamily pscfplus/scripts/python} directory contains a python script that is used by the build system during compilation to generate information about dependencies among C++ files. This directory must be added to the {\ttfamily \$\+P\+Y\+T\+H\+O\+N\+P\+A\+TH} variable in order to allow the python interpreter to find this file.
+\end{DoxyItemize}
+
+To make these changes using a bash shell, add some variant of the following lines to the {\ttfamily .profile} or {\ttfamily .bash\+\_\+profile} file in your user home directory\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{PSCFPLUS\_DIR=\$\{HOME\}/pscfplus}
+\DoxyCodeLine{export PATH=\$\{PATH\}:/\$\{PSCFPLUS\_DIR\}/bin}
+\DoxyCodeLine{export PYTHONPATH=\$\{PYTHONPATH\}:/\$\{PSCFPLUS\_DIR\}/scripts/python}
+\end{DoxyCode}
+ The value of P\+S\+C\+F\+P\+L\+U\+S\+\_\+\+D\+IR should be set to the path to the P\+S\+C\+F+ root directory ({\itshape i.\+e.}, the root of the directory tree created by cloning the P\+S\+C\+F+ git repository). In the above fragment, as an example, it is assumed that this is a subdirectory named {\ttfamily pscfplus/} within the user\textquotesingle{}s home directory.
+
+After adding an appropriate variant of these lines to {\ttfamily .profile} or {\ttfamily .bash\+\_\+profile}, re-\/login, and then enter {\ttfamily echo \$\+P\+A\+TH} and {\ttfamily echo \$\+P\+Y\+T\+H\+O\+N\+P\+A\+TH} to make sure that these variables have been set correctly.
+
+~\newline
+ \mbox{\hyperlink{install_source_page}{Source Code}} (Prev) ~ ~ ~ ~ \mbox{\hyperlink{install_page}{Installation}} (Up) ~ ~ ~ ~ \mbox{\hyperlink{compilation_page}{Compilation}} (Next) \hypertarget{compilation_page}{}\doxysubsection{Compilation}\label{compilation_page}
+\mbox{\hyperlink{install_environment_page}{Environment Variables}} (Next) ~ ~ ~ ~ \mbox{\hyperlink{install_page}{Installation}} (Up) ~ ~ ~ ~ \mbox{\hyperlink{user_page}{User Guide}} (Next) ~\newline
+ ~\newline
+
+
+Below are the instructions for compiling the P\+S\+C\+F+ program with examples. It is assumed that you have cloned the P\+S\+C\+F+ repository and installed all required dependencies, and that the root directory of the repository is named {\ttfamily pscfplus/}.
+
+Instructions\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Set environment variables\+:}} Modify the user\textquotesingle{}s \$\+P\+A\+TH and \$\+P\+Y\+T\+H\+O\+N\+P\+A\+TH Unix environment variables, as discussed \mbox{\hyperlink{install_environment_page}{here}}.
+\item {\bfseries{Navigate to root directory\+:}} Change directory ({\ttfamily cd}) to the {\ttfamily pscfplus/} root directory.
+\item {\bfseries{Setup\+:}} Invoke the \char`\"{}setup\char`\"{} script from the {\ttfamily pscfplus/} root directory. Enter the command 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{> ./setup}
+\end{DoxyCode}
+ to setup the build system with default compiler options. Alternatively, invoke the setup with a filename argument for non-\/default compiler options.
+\item {\bfseries{Change directory to the build directory\+:}} Change directory ({\ttfamily cd}) to the {\ttfamily pscfplus/bld} subdirectory, by entering {\ttfamily cd bld} from the root directory.
+\item {\bfseries{Compile the P\+S\+C\+F+ program for a given model system\+:}} From {\ttfamily pscflus/bld}, enter 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{> bash compile.sh [-\/B CHN] [-\/N NBP] [-\/C] [-\/D] [-\/K K]  }
+\end{DoxyCode}
+ This will generate a large number of intermediate object ({\ttfamily $\ast$.o}), dependency ({\ttfamily $\ast$.d}) and library ({\ttfamily $\ast$.a}) files in subdirectories of the {\ttfamily pscfplus/bld} directory, and install the executables in the {\ttfamily pscfplus/bin} directory. The options in the above command are as follows\+:
+\begin{DoxyItemize}
+\item C\+HN\+: Specifying the model of chain connectivity (by default it is the continuous Gaussian chain); see \href{https://github.com/qwcsu/PSCFplus/blob/master/doc/notes/Models.pdf}{\texttt{ Models.\+pdf}} for details. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{DGC: discrete Gaussian chain}
+\DoxyCodeLine{FJC: freely jointed chain}
+\end{DoxyCode}
+
+\item N\+BP\+: Specifying the form of non-\/bonded pair potential (by default it is the Dirac {\itshape {$\delta$}}-\/function potential); see \href{https://github.com/qwcsu/PSCFplus/blob/master/doc/notes/Models.pdf}{\texttt{ Models.\+pdf}} for details. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{G: Gaussian potential}
+\DoxyCodeLine{DPD: dissipative particle dynamics potential}
+\DoxyCodeLine{SS: soft-\/sphere potential}
+\end{DoxyCode}
+
+\item {\ttfamily -\/C}\+: Specifying a compressible system (by default the system is incompressible); see \href{https://github.com/qwcsu/PSCFplus/blob/master/doc/notes/Models.pdf}{\texttt{ Models.\+pdf}} for details.
+\item {\ttfamily -\/D}\+: Specifying the use of discrete cosine transforms between the real and reciprocal space (by default the fast Fourier transforms are used.)
+\item {\ttfamily -\/K}\+: Specifying the {\itshape K}-\/value of the R\+E\+P\+S-\/{\itshape K} method (by default the R\+E\+P\+S-\/1 method is used); this is used only for the continuous-\/\+Gaussian-\/chain models (see \href{https://github.com/qwcsu/PSCFplus/blob/master/doc/notes/REPS.pdf}{\texttt{ R\+E\+P\+S.\+pdf}} for details.)
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Examples\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Compilation for the \char`\"{}standard\char`\"{} model\+:}} To compile P\+S\+C\+F+ for calculations of the “standard” model ({\itshape i.\+e.}, incompressible melts of continuous Gaussian chains with the Dirac {\itshape {$\delta$}}-\/function repulsion) using the R\+E\+P\+S-\/1 method and fast Fourier transforms (same as used in P\+S\+CF), simply use the following command\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{bash compile.sh}
+\end{DoxyCode}
+
+\item {\bfseries{Compilation for the D\+P\+DC model\+:}} To compile P\+S\+C\+F+ for calculations of the D\+P\+DC model ({\itshape i.\+e.}, compressible melts of discrete Gaussian chains with the dissipative particle dynamics potential) using fast Fourier transforms, users can use the following command\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{bash compile.sh -\/B DGC -\/C -\/N DPD}
+\end{DoxyCode}
+
+\item To get a list of the aboved options, use the following command\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{bash compile.sh -\/h}
+\end{DoxyCode}
+
+\end{DoxyItemize}
+
+~\newline
+ \mbox{\hyperlink{install_source_page}{Source Code}} (Prev) ~ ~ ~ ~ \mbox{\hyperlink{install_page}{Installation}} (Up) ~ ~ ~ ~ \mbox{\hyperlink{user_page}{User Guide}} (Next) ~\newline
+ 

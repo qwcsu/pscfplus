@@ -1,0 +1,93 @@
+\hypertarget{group__Math__Module}{}\doxysubsection{Mathematics}
+\label{group__Math__Module}\index{Mathematics@{Mathematics}}
+
+
+Mathematical constants and utilities.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classUtil_1_1Binomial}{Util\+::\+Binomial}}
+\begin{DoxyCompactList}\small\item\em Class for binomial coefficients (all static members) \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classUtil_1_1CardinalBSpline}{Util\+::\+Cardinal\+B\+Spline}}
+\begin{DoxyCompactList}\small\item\em A cardinal B-\/spline basis function. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classUtil_1_1Constants}{Util\+::\+Constants}}
+\begin{DoxyCompactList}\small\item\em Mathematical constants. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classUtil_1_1Polynomial}{Util\+::\+Polynomial$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em A \mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}} (i.\+e,. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classUtil_1_1Rational}{Util\+::\+Rational}}
+\begin{DoxyCompactList}\small\item\em A \mbox{\hyperlink{classUtil_1_1Rational}{Rational}} number (a ratio of integers). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{group__Math__Module_gaf9ba7221315579826dfe3f88eb717c04}{Util\+::feq}} (double x, double y, double eps=1.\+0E-\/10)
+\begin{DoxyCompactList}\small\item\em Are two floating point numbers equal to within round-\/off error? \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__Math__Module_ga9754693e721344ee74376e5bc0c8676b}{Util\+::gcd}} (int a, int b)
+\begin{DoxyCompactList}\small\item\em Compute greatest common divisor (gcd) of two integers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Mathematical constants and utilities. 
+
+
+
+\doxysubsubsection{Function Documentation}
+\mbox{\Hypertarget{group__Math__Module_gaf9ba7221315579826dfe3f88eb717c04}\label{group__Math__Module_gaf9ba7221315579826dfe3f88eb717c04}} 
+\index{Mathematics@{Mathematics}!feq@{feq}}
+\index{feq@{feq}!Mathematics@{Mathematics}}
+\doxyparagraph{\texorpdfstring{feq()}{feq()}}
+{\footnotesize\ttfamily bool Util\+::feq (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{eps = {\ttfamily 1.0E-\/10} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Are two floating point numbers equal to within round-\/off error? 
+
+Returns true if eps $>$ fabs(x-\/y)$\ast$c/(fabs(x)+fabs(y)+c), c=1.\+05E-\/5.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & first real argument \\
+\hline
+{\em y} & second real argument \\
+\hline
+{\em eps} & maximum tolerance for nominally \char`\"{}equal\char`\"{} values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if equal to within tolerance, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 27 of file feq.\+h.
+
+
+
+Referenced by Util\+::\+Radial\+Distribution\+::load\+Parameters(), Util\+::\+Distribution\+::load\+Parameters(), and Util\+::\+Distribution\+::serialize().
+
+\mbox{\Hypertarget{group__Math__Module_ga9754693e721344ee74376e5bc0c8676b}\label{group__Math__Module_ga9754693e721344ee74376e5bc0c8676b}} 
+\index{Mathematics@{Mathematics}!gcd@{gcd}}
+\index{gcd@{gcd}!Mathematics@{Mathematics}}
+\doxyparagraph{\texorpdfstring{gcd()}{gcd()}}
+{\footnotesize\ttfamily int Util\+::gcd (\begin{DoxyParamCaption}\item[{int}]{a,  }\item[{int}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compute greatest common divisor (gcd) of two integers. 
+
+Uses Euclidean algorithm to compute gcd. Always returns a non-\/negative integer. If one argument is zero, the absolute value of the other is returned. Returns zero if and only if both integers are zero.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & 1st integer \\
+\hline
+{\em b} & 2nd integer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+greatest common divisor of a and b 
+\end{DoxyReturn}
+
+
+Definition at line 30 of file gcd.\+h.
+

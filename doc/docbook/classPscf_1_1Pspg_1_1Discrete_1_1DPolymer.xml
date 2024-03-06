@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classPscf_1_1Pspg_1_1Discrete_1_1DPolymer">
+<title>Pscf::Pspg::Discrete::DPolymer&lt; D &gt; Class Template Reference</title>
+<indexterm><primary>Pscf::Pspg::Discrete::DPolymer&lt; D &gt;</primary></indexterm>
+<para>
+
+<para>Descriptor and solver for a branched polymer species (<link linkend="_namespacePscf_1_1Pspg_1_1Discrete">Discrete</link> chain model). </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;DPolymer.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Pscf::Pspg::Discrete::DPolymer&lt; D &gt;:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classPscf_1_1Pspg_1_1Discrete_1_1DPolymer.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Protected Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_classPscf_1_1Pspg_1_1Discrete_1_1DPolymer_1a30752567fd7b8b93e5c8476bbe8592c5">setClassName</link> (const char *<link linkend="_classUtil_1_1ParamComposite_1a93e3a9fd3bd01dcc3c606a7bf3112c0e">className</link>)</para>
+
+<para>Set class name string. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;int D&gt;
+class Pscf::Pspg::Discrete::DPolymer&lt; D &gt;</title></simplesect>
+
+
+<para>Descriptor and solver for a branched polymer species (<link linkend="_namespacePscf_1_1Pspg_1_1Discrete">Discrete</link> chain model). </para>
+
+
+
+<para>The block-bond concentrations stored in the constituent Bond&lt;D&gt; objects contain the block-bond concentrations (i.e., volume fractions) computed in the most recent call of the compute function.</para>
+
+<para>The <link linkend="_classPscf_1_1Species_1a1956df7c7b319005c9f8b6cc274a7dc7">phi()</link> and <link linkend="_classPscf_1_1Species_1acaa3a7b3452b1100290920467bf99a57">mu()</link> accessor functions, which are inherited from DPolymerTmp&lt; Bond&lt;D&gt; &gt;, return the value of phi (spatial average volume fraction of a species) or mu (chemical potential) computed in the last call of the compute function. If the ensemble for this species is closed, phi is read from the parameter file and mu is computed. If the ensemble is open, mu is read from the parameter file and phi is computed. </para>
+<para>
+Definition at line 37 of file DPolymer.h.</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classPscf_1_1Pspg_1_1Discrete_1_1DPolymer_1a30752567fd7b8b93e5c8476bbe8592c5"/>    <section>
+    <title>setClassName()</title>
+<indexterm><primary>setClassName</primary><secondary>Pscf::Pspg::Discrete::DPolymer&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Discrete::DPolymer&lt; D &gt;</primary><secondary>setClassName</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>void Util::ParamComposite::setClassName<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Set class name string. </para>
+</para>
+
+<para>Should be set in subclass constructor. </para>
+<para>
+Definition at line 377 of file ParamComposite.cpp.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+DPolymer.hDPolymer.tpp</section>
+</section>

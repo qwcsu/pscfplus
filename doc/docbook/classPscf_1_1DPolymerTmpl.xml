@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classPscf_1_1DPolymerTmpl">
+<title>Pscf::DPolymerTmpl&lt; Bond &gt; Class Template Reference</title>
+<indexterm><primary>Pscf::DPolymerTmpl&lt; Bond &gt;</primary></indexterm>
+<para>Inheritance diagram for Pscf::DPolymerTmpl&lt; Bond &gt;:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classPscf_1_1DPolymerTmpl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>virtual void <link linkend="_classPscf_1_1DPolymerTmpl_1a28775d7c4a63b1911592614cbcdadef4">readParameters</link> (std::istream &amp;in)</para>
+
+<para>Read the body of parameter block, without begin and end lines. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classPscf_1_1DPolymerTmpl_1aa6917aef2a2f413092fc53598c296e09">nBond</link> () const</para>
+
+<para>Accessors. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;class Bond&gt;
+class Pscf::DPolymerTmpl&lt; Bond &gt;</title></simplesect>
+
+<para>
+Definition at line 23 of file DPolymerTmpl.h.</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classPscf_1_1DPolymerTmpl_1a28775d7c4a63b1911592614cbcdadef4"/>    <section>
+    <title>readParameters()</title>
+<indexterm><primary>readParameters</primary><secondary>Pscf::DPolymerTmpl&lt; Bond &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::DPolymerTmpl&lt; Bond &gt;</primary><secondary>readParameters</secondary></indexterm>
+<computeroutput>template&lt;class Bond &gt; </computeroutput><para><computeroutput>void <link linkend="_classPscf_1_1DPolymerTmpl">Pscf::DPolymerTmpl</link>&lt; Bond &gt;::readParameters (std::istream &amp; in)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Read the body of parameter block, without begin and end lines. </para>
+</para>
+
+<para>Most subclasses of ParamComposite should re-implement this function, which has an empty default implementation. Every subclass of Paramcomposite must either: (1) Re-implement this function and rely on the default implementation of <link linkend="_classUtil_1_1ParamComposite_1a6fc094b057fd9a21641b089f6f063b39">readParam()</link>, which calls this function. (2) Re-implement <link linkend="_classUtil_1_1ParamComposite_1a6fc094b057fd9a21641b089f6f063b39">readParam()</link> itself. Option (1) is far more common. Option (2) is required only for classes that require a non-standard treatment of the beginning and ending lines (e.g., the Manager class template).</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream for reading </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Reimplemented from <link linkend="_classUtil_1_1ParamComposite_1a172a3a656b5829c8d758424ad09a22a6">Util::ParamComposite</link>.</para>
+<para>
+Definition at line 192 of file DPolymerTmpl.h.</para>
+    </section><anchor xml:id="_classPscf_1_1DPolymerTmpl_1aa6917aef2a2f413092fc53598c296e09"/>    <section>
+    <title>nBond()</title>
+<indexterm><primary>nBond</primary><secondary>Pscf::DPolymerTmpl&lt; Bond &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::DPolymerTmpl&lt; Bond &gt;</primary><secondary>nBond</secondary></indexterm>
+<computeroutput>template&lt;class Bond &gt; </computeroutput><para><computeroutput>int <link linkend="_classPscf_1_1DPolymerTmpl">Pscf::DPolymerTmpl</link>&lt; Bond &gt;::nBond<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Accessors. </para>
+</para>
+<para>
+Definition at line 91 of file DPolymerTmpl.h.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+DPolymerTmpl.h</section>
+</section>

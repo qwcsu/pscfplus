@@ -1,0 +1,1043 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_group__Pscf__Crystal__Module">
+<title>Crystallography</title>
+<indexterm><primary>Crystallography</primary></indexterm>
+<para>
+
+<para>Classes that describe crystallographic information. </para>
+ 
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classPscf_1_1Basis">Pscf::Basis&lt; D &gt;</link></para>
+
+<para>Symmetry-adapted basis for pseudo-spectral scft. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1SpaceGroup">Pscf::SpaceGroup&lt; D &gt;</link></para>
+
+<para>Crystallographic space group. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1SpaceSymmetry">Pscf::SpaceSymmetry&lt; D &gt;</link></para>
+
+<para>A <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link> represents a crystallographic space group symmetry. </para>
+</listitem>
+            <listitem><para>struct <link linkend="_structPscf_1_1TWave">Pscf::TWave&lt; D &gt;</link></para>
+
+<para>Simple wave struct for use within <link linkend="_classPscf_1_1Basis">Basis</link> construction. </para>
+</listitem>
+            <listitem><para>struct <link linkend="_structPscf_1_1TWaveNormComp">Pscf::TWaveNormComp&lt; D &gt;</link></para>
+
+<para>Comparator for <link linkend="_structPscf_1_1TWave">TWave</link> objects, based on TWave::sqNorm. </para>
+</listitem>
+            <listitem><para>struct <link linkend="_structPscf_1_1TWaveDftComp">Pscf::TWaveDftComp&lt; D &gt;</link></para>
+
+<para>Comparator for <link linkend="_structPscf_1_1TWave">TWave</link> objects, based on TWave::indicesDft. </para>
+</listitem>
+            <listitem><para>struct <link linkend="_structPscf_1_1TWaveBzComp">Pscf::TWaveBzComp&lt; D &gt;</link></para>
+
+<para>Comparator for <link linkend="_structPscf_1_1TWave">TWave</link> objects, based on TWave::indicesBz. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1UnitCell">Pscf::UnitCell&lt; D &gt;</link></para>
+
+<para>Base template for UnitCell&lt;D&gt; classes, D=1, 2 or 3. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1UnitCell_3_011_01_4">Pscf::UnitCell&lt; 1 &gt;</link></para>
+
+<para>1D crystal unit cell. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1UnitCell_3_012_01_4">Pscf::UnitCell&lt; 2 &gt;</link></para>
+
+<para>2D crystal unit cell. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1UnitCell_3_013_01_4">Pscf::UnitCell&lt; 3 &gt;</link></para>
+
+<para>3D crystal unit cell. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1UnitCellBase">Pscf::UnitCellBase&lt; D &gt;</link></para>
+
+<para>Base class template for a crystallographic unit cell. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>std::string <link linkend="_group__Pscf__Crystal__Module_1ga5b918f86652c69b69ced3fc7d775d2a6">Pscf::makeGroupFileName</link> (int D, std::string groupName)</para>
+
+<para>Generates the file name from a group name. </para>
+</listitem>
+            <listitem><para>template&lt;int D&gt; </para><para>std::ostream &amp; <link linkend="_group__Pscf__Crystal__Module_1ga8b2619c49933e1111118fd631cf72560">Pscf::operator&lt;&lt;</link> (std::ostream &amp;out, const <link linkend="_classPscf_1_1SpaceGroup">SpaceGroup</link>&lt; D &gt; &amp;g)</para>
+
+<para>Output stream inserter operator for a SpaceGroup&lt;D&gt;. </para>
+</listitem>
+            <listitem><para>template&lt;int D&gt; </para><para>std::istream &amp; <link linkend="_group__Pscf__Crystal__Module_1ga90fb8dc1da5bf7b51f1e947f79135bf0">Pscf::operator&gt;&gt;</link> (std::istream &amp;in, <link linkend="_classPscf_1_1SpaceGroup">SpaceGroup</link>&lt; D &gt; &amp;g)</para>
+
+<para>Input stream extractor operator for a SpaceGroup&lt;D&gt;. </para>
+</listitem>
+            <listitem><para>template&lt;int D&gt; </para><para>bool <link linkend="_group__Pscf__Crystal__Module_1gabcd342be1403c21b4a639e64564c194a">Pscf::operator==</link> (const <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link>&lt; D &gt; &amp;A, const <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link>&lt; D &gt; &amp;B)</para>
+
+<para>Are two <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link> objects equivalent? </para>
+</listitem>
+            <listitem><para>template&lt;int D&gt; </para><para>bool <link linkend="_group__Pscf__Crystal__Module_1ga08fd7ca8322df2599d3869a7fb2231c7">Pscf::operator!=</link> (const <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link>&lt; D &gt; &amp;A, const <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link>&lt; D &gt; &amp;B)</para>
+
+<para>Are two <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link> objects not equivalent? </para>
+</listitem>
+            <listitem><para>template&lt;int D&gt; </para><para><link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link>&lt; D &gt; <link linkend="_group__Pscf__Crystal__Module_1ga69926403edde9211e7c6bdc9e24f6a4b">Pscf::operator*</link> (const <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link>&lt; D &gt; &amp;A, const <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link>&lt; D &gt; &amp;B)</para>
+
+<para>Return the product A*B of two symmetry objects. </para>
+</listitem>
+            <listitem><para>template&lt;int D&gt; </para><para><link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D &gt; <link linkend="_group__Pscf__Crystal__Module_1ga12bc79d00309ecdf9fb5ddc6516b496c">Pscf::operator*</link> (const <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link>&lt; D &gt; &amp;S, const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D &gt; &amp;V)</para>
+
+<para>Return the <link linkend="_classPscf_1_1IntVec">IntVec&lt;D&gt;</link> product S*V of a rotation matrix and an <link linkend="_classPscf_1_1IntVec">IntVec&lt;D&gt;</link>. </para>
+</listitem>
+            <listitem><para>template&lt;int D&gt; </para><para><link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D &gt; <link linkend="_group__Pscf__Crystal__Module_1ga8f35475c6cdeb8ab404cbbb7db344bd0">Pscf::operator*</link> (const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D &gt; &amp;V, const <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link>&lt; D &gt; &amp;S)</para>
+
+<para>Return the <link linkend="_classPscf_1_1IntVec">IntVec&lt;D&gt;</link> product V*S of an <link linkend="_classPscf_1_1IntVec">IntVec&lt;D&gt;</link> and a rotation matrix. </para>
+</listitem>
+            <listitem><para>template&lt;int D&gt; </para><para>std::ostream &amp; <link linkend="_group__Pscf__Crystal__Module_1ga475a04acb4a4b2db0064c8228cbceb67">Pscf::operator&lt;&lt;</link> (std::ostream &amp;out, const <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link>&lt; D &gt; &amp;A)</para>
+
+<para>Output stream inserter for a SpaceSymmetry&lt;D&gt; </para>
+</listitem>
+            <listitem><para>template&lt;int D&gt; </para><para>std::istream &amp; <link linkend="_group__Pscf__Crystal__Module_1gad66a282db936d4fcf167a509ff719766">Pscf::operator&gt;&gt;</link> (std::istream &amp;in, <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link>&lt; D &gt; &amp;A)</para>
+
+<para>Input stream extractor for a SpaceSymmetry&lt;D&gt; </para>
+</listitem>
+            <listitem><para>template&lt;int D&gt; </para><para>std::istream &amp; <link linkend="_group__Pscf__Crystal__Module_1gaa2e3dd3166079cb3f1189958aee1e490">Pscf::operator&gt;&gt;</link> (std::istream &amp;in, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; D &gt; &amp;cell)</para>
+
+<para>istream input extractor for a UnitCell&lt;D&gt;. </para>
+</listitem>
+            <listitem><para>template&lt;int D&gt; </para><para>std::ostream &amp; <link linkend="_group__Pscf__Crystal__Module_1ga5c0068ecd9c37496d62393eadfdaa9c0">Pscf::operator&lt;&lt;</link> (std::ostream &amp;out, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; D &gt; const &amp;cell)</para>
+
+<para>ostream output inserter for a UnitCell&lt;D&gt;. </para>
+</listitem>
+            <listitem><para>template&lt;class Archive , int D&gt; </para><para>void <link linkend="_group__Pscf__Crystal__Module_1gae07fa76fe1b0212122e9d74841f80f42">Pscf::serialize</link> (Archive &amp;ar, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; D &gt; &amp;cell, const unsigned int version)</para>
+
+<para>Serialize to/from an archive. </para>
+</listitem>
+            <listitem><para>template&lt;int D&gt; </para><para>void <link linkend="_group__Pscf__Crystal__Module_1gac7f60dc3995e66e904e3351dc11a66ff">Pscf::readUnitCellHeader</link> (std::istream &amp;in, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; D &gt; &amp;cell)</para>
+
+<para>Read UnitCell&lt;D&gt; from a field file header (fortran pscf format). </para>
+</listitem>
+            <listitem><para>template&lt;int D&gt; </para><para>void <link linkend="_group__Pscf__Crystal__Module_1ga087934de419a07908fea9bdcdcc33019">Pscf::writeUnitCellHeader</link> (std::ostream &amp;out, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; D &gt; const &amp;cell)</para>
+
+<para>Write UnitCell&lt;D&gt; to a field file header (fortran pscf format). </para>
+</listitem>
+            <listitem><para>std::istream &amp; <link linkend="_group__Pscf__Crystal__Module_1ga68893ea5cb523144d7855456648dac1f">Pscf::operator&gt;&gt;</link> (std::istream &amp;in, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; 1 &gt;::LatticeSystem &amp;lattice)</para>
+
+<para>istream extractor for a 1D <link linkend="_classPscf_1_1UnitCell_3_011_01_4_1ad71e2d50a03b39f720f88a2ca041c2bc">UnitCell&lt;1&gt;::LatticeSystem</link>. </para>
+</listitem>
+            <listitem><para>std::ostream &amp; <link linkend="_group__Pscf__Crystal__Module_1gab28c33f2c3f0a68262c9c56e1d51947c">Pscf::operator&lt;&lt;</link> (std::ostream &amp;out, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; 1 &gt;::LatticeSystem lattice)</para>
+
+<para>ostream inserter for a 1D <link linkend="_classPscf_1_1UnitCell_3_011_01_4_1ad71e2d50a03b39f720f88a2ca041c2bc">UnitCell&lt;1&gt;::LatticeSystem</link>. </para>
+</listitem>
+            <listitem><para>std::istream &amp; <link linkend="_group__Pscf__Crystal__Module_1ga6e7889474f0a07a055ddad7b5eabbc07">Pscf::operator&gt;&gt;</link> (std::istream &amp;in, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; 2 &gt;::LatticeSystem &amp;lattice)</para>
+
+<para>istream extractor for a 2D <link linkend="_classPscf_1_1UnitCell_3_012_01_4_1aef9fcf7153b54d7fa86fa47e46e67a3a">UnitCell&lt;2&gt;::LatticeSystem</link>. </para>
+</listitem>
+            <listitem><para>std::istream &amp; <link linkend="_group__Pscf__Crystal__Module_1ga0c8f60ddb4acc73eea670633b7e3221a">Pscf::operator&gt;&gt;</link> (std::istream &amp;in, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; 3 &gt;::LatticeSystem &amp;lattice)</para>
+
+<para>istream extractor for a 3D <link linkend="_classPscf_1_1UnitCell_3_013_01_4_1afde1231bed1b0ae8014dc81ba18068d8">UnitCell&lt;3&gt;::LatticeSystem</link>. </para>
+</listitem>
+            <listitem><para>std::ostream &amp; <link linkend="_group__Pscf__Crystal__Module_1gaef2aa7d97bba2051cab3d1c042a4ea87">Pscf::operator&lt;&lt;</link> (std::ostream &amp;out, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; 3 &gt;::LatticeSystem lattice)</para>
+
+<para>ostream inserter for an 3D <link linkend="_classPscf_1_1UnitCell_3_013_01_4_1afde1231bed1b0ae8014dc81ba18068d8">UnitCell&lt;3&gt;::LatticeSystem</link>. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Classes that describe crystallographic information. </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_group__Pscf__Crystal__Module_1ga5b918f86652c69b69ced3fc7d775d2a6"/>    <section>
+    <title>makeGroupFileName()</title>
+<indexterm><primary>makeGroupFileName</primary><secondary>Crystallography</secondary></indexterm>
+<indexterm><primary>Crystallography</primary><secondary>makeGroupFileName</secondary></indexterm>
+<para><computeroutput>std::string Pscf::makeGroupFileName (int D, std::string groupName)</computeroutput></para><para>
+
+<para>Generates the file name from a group name. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>groupName</entry>
+                                <entry>
+<para>standard name of space group</para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>D</entry>
+                                <entry>
+<para>dimensionality of space (D=1,2 or 3) </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>groupName</entry>
+                                <entry>
+<para>standard name of space group </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 25 of file groupFile.cpp.</para>
+<para>
+References UTIL_THROW.</para>
+<para>
+Referenced by Pscf::Basis&lt; D &gt;::makeBasis().</para>
+    </section><anchor xml:id="_group__Pscf__Crystal__Module_1ga8b2619c49933e1111118fd631cf72560"/>    <section>
+    <title>operator&lt;&lt;()<computeroutput>[1/5]</computeroutput></title>
+<indexterm><primary>operator&lt;&lt;</primary><secondary>Crystallography</secondary></indexterm>
+<indexterm><primary>Crystallography</primary><secondary>operator&lt;&lt;</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>std::ostream&amp; Pscf::operator&lt;&lt; (std::ostream &amp; out, const <link linkend="_classPscf_1_1SpaceGroup">SpaceGroup</link>&lt; D &gt; &amp; g)</computeroutput></para><para>
+
+<para>Output stream inserter operator for a SpaceGroup&lt;D&gt;. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>out</entry>
+                                <entry>
+<para>output stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>g</entry>
+                                <entry>
+<para>space group </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 106 of file SpaceGroup.h.</para>
+<para>
+References Pscf::SymmetryGroup&lt; SpaceSymmetry&lt; D &gt; &gt;::size().</para>
+    </section><anchor xml:id="_group__Pscf__Crystal__Module_1ga90fb8dc1da5bf7b51f1e947f79135bf0"/>    <section>
+    <title>operator&gt;&gt;()<computeroutput>[1/6]</computeroutput></title>
+<indexterm><primary>operator&gt;&gt;</primary><secondary>Crystallography</secondary></indexterm>
+<indexterm><primary>Crystallography</primary><secondary>operator&gt;&gt;</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>std::istream&amp; Pscf::operator&gt;&gt; (std::istream &amp; in, <link linkend="_classPscf_1_1SpaceGroup">SpaceGroup</link>&lt; D &gt; &amp; g)</computeroutput></para><para>
+
+<para>Input stream extractor operator for a SpaceGroup&lt;D&gt;. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>g</entry>
+                                <entry>
+<para>space group </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 127 of file SpaceGroup.h.</para>
+<para>
+References Pscf::SymmetryGroup&lt; SpaceSymmetry&lt; D &gt; &gt;::add(), Pscf::SymmetryGroup&lt; SpaceSymmetry&lt; D &gt; &gt;::clear(), and UTIL_CHECK.</para>
+    </section><anchor xml:id="_group__Pscf__Crystal__Module_1gabcd342be1403c21b4a639e64564c194a"/>    <section>
+    <title>operator==()</title>
+<indexterm><primary>operator==</primary><secondary>Crystallography</secondary></indexterm>
+<indexterm><primary>Crystallography</primary><secondary>operator==</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>bool Pscf::operator== (const <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link>&lt; D &gt; &amp; A, const <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link>&lt; D &gt; &amp; B)</computeroutput></para><para>
+
+<para>Are two <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link> objects equivalent? </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>A</entry>
+                                <entry>
+<para>first symmetry </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>B</entry>
+                                <entry>
+<para>second symmetry </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>True if A == B, false otherwise </para>
+</formalpara>
+</para>
+<para>
+Definition at line 357 of file SpaceSymmetry.h.</para>
+    </section><anchor xml:id="_group__Pscf__Crystal__Module_1ga08fd7ca8322df2599d3869a7fb2231c7"/>    <section>
+    <title>operator!=()</title>
+<indexterm><primary>operator!=</primary><secondary>Crystallography</secondary></indexterm>
+<indexterm><primary>Crystallography</primary><secondary>operator!=</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>bool Pscf::operator!= (const <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link>&lt; D &gt; &amp; A, const <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link>&lt; D &gt; &amp; B)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Are two <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link> objects not equivalent? </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>A</entry>
+                                <entry>
+<para>first symmetry </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>B</entry>
+                                <entry>
+<para>second symmetry </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>True if A != B, false otherwise </para>
+</formalpara>
+</para>
+<para>
+Definition at line 305 of file SpaceSymmetry.h.</para>
+    </section><anchor xml:id="_group__Pscf__Crystal__Module_1ga69926403edde9211e7c6bdc9e24f6a4b"/>    <section>
+    <title>operator*()<computeroutput>[1/3]</computeroutput></title>
+<indexterm><primary>operator*</primary><secondary>Crystallography</secondary></indexterm>
+<indexterm><primary>Crystallography</primary><secondary>operator*</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput><link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link>&lt; D &gt; Pscf::operator* (const <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link>&lt; D &gt; &amp; A, const <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link>&lt; D &gt; &amp; B)</computeroutput></para><para>
+
+<para>Return the product A*B of two symmetry objects. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>A</entry>
+                                <entry>
+<para>first symmetry </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>B</entry>
+                                <entry>
+<para>second symmetry </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>product A*B </para>
+</formalpara>
+</para>
+<para>
+Definition at line 378 of file SpaceSymmetry.h.</para>
+<para>
+References Pscf::SpaceSymmetry&lt; D &gt;::normalize().</para>
+    </section><anchor xml:id="_group__Pscf__Crystal__Module_1ga12bc79d00309ecdf9fb5ddc6516b496c"/>    <section>
+    <title>operator*()<computeroutput>[2/3]</computeroutput></title>
+<indexterm><primary>operator*</primary><secondary>Crystallography</secondary></indexterm>
+<indexterm><primary>Crystallography</primary><secondary>operator*</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput><link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D &gt; Pscf::operator* (const <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link>&lt; D &gt; &amp; S, const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D &gt; &amp; V)</computeroutput></para><para>
+
+<para>Return the <link linkend="_classPscf_1_1IntVec">IntVec&lt;D&gt;</link> product S*V of a rotation matrix and an <link linkend="_classPscf_1_1IntVec">IntVec&lt;D&gt;</link>. </para>
+</para>
+
+<para>The product is defined to be the matrix product of the rotation matrix and the integer vector S.R * V.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>S</entry>
+                                <entry>
+<para>symmetry operation </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>V</entry>
+                                <entry>
+<para>integer vector </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>product S*V </para>
+</formalpara>
+</para>
+<para>
+Definition at line 411 of file SpaceSymmetry.h.</para>
+    </section><anchor xml:id="_group__Pscf__Crystal__Module_1ga8f35475c6cdeb8ab404cbbb7db344bd0"/>    <section>
+    <title>operator*()<computeroutput>[3/3]</computeroutput></title>
+<indexterm><primary>operator*</primary><secondary>Crystallography</secondary></indexterm>
+<indexterm><primary>Crystallography</primary><secondary>operator*</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput><link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D &gt; Pscf::operator* (const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D &gt; &amp; V, const <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link>&lt; D &gt; &amp; S)</computeroutput></para><para>
+
+<para>Return the <link linkend="_classPscf_1_1IntVec">IntVec&lt;D&gt;</link> product V*S of an <link linkend="_classPscf_1_1IntVec">IntVec&lt;D&gt;</link> and a rotation matrix. </para>
+</para>
+
+<para>The product is defined to be the matrix product of the integer vector and the space group rotation matrix S.R * V.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>V</entry>
+                                <entry>
+<para>integer vector </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>S</entry>
+                                <entry>
+<para>symmetry operation </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>product V*S </para>
+</formalpara>
+</para>
+<para>
+Definition at line 428 of file SpaceSymmetry.h.</para>
+    </section><anchor xml:id="_group__Pscf__Crystal__Module_1ga475a04acb4a4b2db0064c8228cbceb67"/>    <section>
+    <title>operator&lt;&lt;()<computeroutput>[2/5]</computeroutput></title>
+<indexterm><primary>operator&lt;&lt;</primary><secondary>Crystallography</secondary></indexterm>
+<indexterm><primary>Crystallography</primary><secondary>operator&lt;&lt;</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>std::ostream &amp; Pscf::operator&lt;&lt; (std::ostream &amp; out, const <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link>&lt; D &gt; &amp; A)</computeroutput></para><para>
+
+<para>Output stream inserter for a SpaceSymmetry&lt;D&gt; </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>out</entry>
+                                <entry>
+<para>output stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>A</entry>
+                                <entry>
+<para>SpaceSymmetry&lt;D&gt; object to be output </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified output stream </para>
+</formalpara>
+</para>
+<para>
+Definition at line 445 of file SpaceSymmetry.h.</para>
+    </section><anchor xml:id="_group__Pscf__Crystal__Module_1gad66a282db936d4fcf167a509ff719766"/>    <section>
+    <title>operator&gt;&gt;()<computeroutput>[2/6]</computeroutput></title>
+<indexterm><primary>operator&gt;&gt;</primary><secondary>Crystallography</secondary></indexterm>
+<indexterm><primary>Crystallography</primary><secondary>operator&gt;&gt;</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>std::istream &amp; Pscf::operator&gt;&gt; (std::istream &amp; in, <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link>&lt; D &gt; &amp; A)</computeroutput></para><para>
+
+<para>Input stream extractor for a SpaceSymmetry&lt;D&gt; </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>A</entry>
+                                <entry>
+<para>SpaceSymmetry&lt;D&gt; object to be input </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified input stream </para>
+</formalpara>
+</para>
+<para>
+Definition at line 465 of file SpaceSymmetry.h.</para>
+    </section><anchor xml:id="_group__Pscf__Crystal__Module_1gaa2e3dd3166079cb3f1189958aee1e490"/>    <section>
+    <title>operator&gt;&gt;()<computeroutput>[3/6]</computeroutput></title>
+<indexterm><primary>operator&gt;&gt;</primary><secondary>Crystallography</secondary></indexterm>
+<indexterm><primary>Crystallography</primary><secondary>operator&gt;&gt;</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>std::istream &amp; Pscf::operator&gt;&gt; (std::istream &amp; in, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; D &gt; &amp; cell)</computeroutput></para><para>
+
+<para>istream input extractor for a UnitCell&lt;D&gt;. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>cell</entry>
+                                <entry>
+<para>UnitCell&lt;D&gt; to be read </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified input stream </para>
+</formalpara>
+</para>
+<para>
+Definition at line 21 of file UnitCell.tpp.</para>
+<para>
+References Pscf::UnitCellBase&lt; D &gt;::nParameter_, Pscf::UnitCellBase&lt; D &gt;::parameters_, and Pscf::UnitCellBase&lt; D &gt;::setLattice().</para>
+    </section><anchor xml:id="_group__Pscf__Crystal__Module_1ga5c0068ecd9c37496d62393eadfdaa9c0"/>    <section>
+    <title>operator&lt;&lt;()<computeroutput>[3/5]</computeroutput></title>
+<indexterm><primary>operator&lt;&lt;</primary><secondary>Crystallography</secondary></indexterm>
+<indexterm><primary>Crystallography</primary><secondary>operator&lt;&lt;</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>std::ostream &amp; Pscf::operator&lt;&lt; (std::ostream &amp; out, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; D &gt; const &amp; cell)</computeroutput></para><para>
+
+<para>ostream output inserter for a UnitCell&lt;D&gt;. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>out</entry>
+                                <entry>
+<para>output stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>cell</entry>
+                                <entry>
+<para>UnitCell&lt;D&gt; to be written </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified output stream </para>
+</formalpara>
+</para>
+<para>
+Definition at line 34 of file UnitCell.tpp.</para>
+<para>
+References Pscf::UnitCellBase&lt; D &gt;::nParameter_, and Pscf::UnitCellBase&lt; D &gt;::parameters_.</para>
+    </section><anchor xml:id="_group__Pscf__Crystal__Module_1gae07fa76fe1b0212122e9d74841f80f42"/>    <section>
+    <title>serialize()</title>
+<indexterm><primary>serialize</primary><secondary>Crystallography</secondary></indexterm>
+<indexterm><primary>Crystallography</primary><secondary>serialize</secondary></indexterm>
+<computeroutput>template&lt;class Archive , int D&gt; </computeroutput><para><computeroutput>void Pscf::serialize (Archive &amp; ar, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; D &gt; &amp; cell, const unsigned int version)</computeroutput></para><para>
+
+<para>Serialize to/from an archive. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>input or output archive </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>cell</entry>
+                                <entry>
+<para>UnitCell&lt;D&gt; object to be serialized </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>version</entry>
+                                <entry>
+<para>archive version id </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 48 of file UnitCell.tpp.</para>
+<para>
+References Pscf::UnitCellBase&lt; D &gt;::nParameter_, Pscf::UnitCellBase&lt; D &gt;::parameters_, and Util::serializeEnum().</para>
+    </section><anchor xml:id="_group__Pscf__Crystal__Module_1gac7f60dc3995e66e904e3351dc11a66ff"/>    <section>
+    <title>readUnitCellHeader()</title>
+<indexterm><primary>readUnitCellHeader</primary><secondary>Crystallography</secondary></indexterm>
+<indexterm><primary>Crystallography</primary><secondary>readUnitCellHeader</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>void Pscf::readUnitCellHeader (std::istream &amp; in, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; D &gt; &amp; cell)</computeroutput></para><para>
+
+<para>Read UnitCell&lt;D&gt; from a field file header (fortran pscf format). </para>
+</para>
+
+<para>If the unit cell has a non-null lattice system on entry, the value read from file must match this existing value, or this function throws an exception. If the lattice system is null on entry, the lattice system value is read from file. In either case, unit cell parameters (dimensions and angles) are updated using values read from file.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>cell</entry>
+                                <entry>
+<para>UnitCell&lt;D&gt; to be read </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 59 of file UnitCell.tpp.</para>
+<para>
+References Pscf::UnitCellBase&lt; D &gt;::nParameter_, Pscf::UnitCellBase&lt; D &gt;::parameters_, Pscf::UnitCellBase&lt; D &gt;::setLattice(), and UTIL_CHECK.</para>
+    </section><anchor xml:id="_group__Pscf__Crystal__Module_1ga087934de419a07908fea9bdcdcc33019"/>    <section>
+    <title>writeUnitCellHeader()</title>
+<indexterm><primary>writeUnitCellHeader</primary><secondary>Crystallography</secondary></indexterm>
+<indexterm><primary>Crystallography</primary><secondary>writeUnitCellHeader</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>void Pscf::writeUnitCellHeader (std::ostream &amp; out, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; D &gt; const &amp; cell)</computeroutput></para><para>
+
+<para>Write UnitCell&lt;D&gt; to a field file header (fortran pscf format). </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>out</entry>
+                                <entry>
+<para>output stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>cell</entry>
+                                <entry>
+<para>UnitCell&lt;D&gt; to be written </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 88 of file UnitCell.tpp.</para>
+<para>
+References Pscf::UnitCellBase&lt; D &gt;::nParameter_, and Pscf::UnitCellBase&lt; D &gt;::parameters_.</para>
+<para>
+Referenced by Pscf::Pspg::FieldIo&lt; D &gt;::writeFieldHeader().</para>
+    </section><anchor xml:id="_group__Pscf__Crystal__Module_1ga68893ea5cb523144d7855456648dac1f"/>    <section>
+    <title>operator&gt;&gt;()<computeroutput>[4/6]</computeroutput></title>
+<indexterm><primary>operator&gt;&gt;</primary><secondary>Crystallography</secondary></indexterm>
+<indexterm><primary>Crystallography</primary><secondary>operator&gt;&gt;</secondary></indexterm>
+<para><computeroutput>std::istream &amp; Pscf::operator&gt;&gt; (std::istream &amp; in, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; 1 &gt;::LatticeSystem &amp; lattice)</computeroutput></para><para>
+
+<para>istream extractor for a 1D <link linkend="_classPscf_1_1UnitCell_3_011_01_4_1ad71e2d50a03b39f720f88a2ca041c2bc">UnitCell&lt;1&gt;::LatticeSystem</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>lattice</entry>
+                                <entry>
+<para><link linkend="_classPscf_1_1UnitCell_3_011_01_4_1ad71e2d50a03b39f720f88a2ca041c2bc">UnitCell&lt;1&gt;::LatticeSystem</link> to be read </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified input stream </para>
+</formalpara>
+</para>
+<para>
+Definition at line 52 of file UnitCell1.cpp.</para>
+<para>
+References UTIL_THROW.</para>
+    </section><anchor xml:id="_group__Pscf__Crystal__Module_1gab28c33f2c3f0a68262c9c56e1d51947c"/>    <section>
+    <title>operator&lt;&lt;()<computeroutput>[4/5]</computeroutput></title>
+<indexterm><primary>operator&lt;&lt;</primary><secondary>Crystallography</secondary></indexterm>
+<indexterm><primary>Crystallography</primary><secondary>operator&lt;&lt;</secondary></indexterm>
+<para><computeroutput>std::ostream &amp; Pscf::operator&lt;&lt; (std::ostream &amp; out, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; 1 &gt;::LatticeSystem lattice)</computeroutput></para><para>
+
+<para>ostream inserter for a 1D <link linkend="_classPscf_1_1UnitCell_3_011_01_4_1ad71e2d50a03b39f720f88a2ca041c2bc">UnitCell&lt;1&gt;::LatticeSystem</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>out</entry>
+                                <entry>
+<para>output stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>lattice</entry>
+                                <entry>
+<para><link linkend="_classPscf_1_1UnitCell_3_011_01_4_1ad71e2d50a03b39f720f88a2ca041c2bc">UnitCell&lt;1&gt;::LatticeSystem</link> to be written </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified output stream </para>
+</formalpara>
+</para>
+<para>
+Definition at line 69 of file UnitCell1.cpp.</para>
+<para>
+References UTIL_THROW.</para>
+    </section><anchor xml:id="_group__Pscf__Crystal__Module_1ga6e7889474f0a07a055ddad7b5eabbc07"/>    <section>
+    <title>operator&gt;&gt;()<computeroutput>[5/6]</computeroutput></title>
+<indexterm><primary>operator&gt;&gt;</primary><secondary>Crystallography</secondary></indexterm>
+<indexterm><primary>Crystallography</primary><secondary>operator&gt;&gt;</secondary></indexterm>
+<para><computeroutput>std::istream &amp; Pscf::operator&gt;&gt; (std::istream &amp; in, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; 2 &gt;::LatticeSystem &amp; lattice)</computeroutput></para><para>
+
+<para>istream extractor for a 2D <link linkend="_classPscf_1_1UnitCell_3_012_01_4_1aef9fcf7153b54d7fa86fa47e46e67a3a">UnitCell&lt;2&gt;::LatticeSystem</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>lattice</entry>
+                                <entry>
+<para><link linkend="_classPscf_1_1UnitCell_3_012_01_4_1aef9fcf7153b54d7fa86fa47e46e67a3a">UnitCell&lt;2&gt;::LatticeSystem</link> to be read </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified input stream </para>
+</formalpara>
+</para>
+<para>
+Definition at line 157 of file UnitCell2.cpp.</para>
+<para>
+References UTIL_THROW.</para>
+    </section><anchor xml:id="_group__Pscf__Crystal__Module_1ga0c8f60ddb4acc73eea670633b7e3221a"/>    <section>
+    <title>operator&gt;&gt;()<computeroutput>[6/6]</computeroutput></title>
+<indexterm><primary>operator&gt;&gt;</primary><secondary>Crystallography</secondary></indexterm>
+<indexterm><primary>Crystallography</primary><secondary>operator&gt;&gt;</secondary></indexterm>
+<para><computeroutput>std::istream &amp; Pscf::operator&gt;&gt; (std::istream &amp; in, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; 3 &gt;::LatticeSystem &amp; lattice)</computeroutput></para><para>
+
+<para>istream extractor for a 3D <link linkend="_classPscf_1_1UnitCell_3_013_01_4_1afde1231bed1b0ae8014dc81ba18068d8">UnitCell&lt;3&gt;::LatticeSystem</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>lattice</entry>
+                                <entry>
+<para><link linkend="_classPscf_1_1UnitCell_3_013_01_4_1afde1231bed1b0ae8014dc81ba18068d8">UnitCell&lt;3&gt;::LatticeSystem</link> to be read </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified input stream </para>
+</formalpara>
+</para>
+<para>
+Definition at line 330 of file UnitCell3.cpp.</para>
+<para>
+References UTIL_THROW.</para>
+    </section><anchor xml:id="_group__Pscf__Crystal__Module_1gaef2aa7d97bba2051cab3d1c042a4ea87"/>    <section>
+    <title>operator&lt;&lt;()<computeroutput>[5/5]</computeroutput></title>
+<indexterm><primary>operator&lt;&lt;</primary><secondary>Crystallography</secondary></indexterm>
+<indexterm><primary>Crystallography</primary><secondary>operator&lt;&lt;</secondary></indexterm>
+<para><computeroutput>std::ostream &amp; Pscf::operator&lt;&lt; (std::ostream &amp; out, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; 3 &gt;::LatticeSystem lattice)</computeroutput></para><para>
+
+<para>ostream inserter for an 3D <link linkend="_classPscf_1_1UnitCell_3_013_01_4_1afde1231bed1b0ae8014dc81ba18068d8">UnitCell&lt;3&gt;::LatticeSystem</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>out</entry>
+                                <entry>
+<para>output stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>lattice</entry>
+                                <entry>
+<para><link linkend="_classPscf_1_1UnitCell_3_013_01_4_1afde1231bed1b0ae8014dc81ba18068d8">UnitCell&lt;3&gt;::LatticeSystem</link> to be written </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified output stream </para>
+</formalpara>
+</para>
+<para>
+Definition at line 365 of file UnitCell3.cpp.</para>
+<para>
+References UTIL_THROW.</para>
+</section>
+</section>
+</section>

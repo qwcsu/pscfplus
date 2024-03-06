@@ -1,0 +1,285 @@
+\hypertarget{classPscf_1_1SymmetryGroup}{}\doxysubsection{Pscf\+::Symmetry\+Group$<$ Symmetry $>$ Class Template Reference}
+\label{classPscf_1_1SymmetryGroup}\index{Pscf::SymmetryGroup$<$ Symmetry $>$@{Pscf::SymmetryGroup$<$ Symmetry $>$}}
+
+
+Class template for a group of elements.  
+
+
+
+
+{\ttfamily \#include $<$Symmetry\+Group.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPscf_1_1SymmetryGroup_a4f98bd17cdca541c5976fd1421ffcb7d}{Symmetry\+Group}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1SymmetryGroup_ad426fbf831c09de09ffd057fc3a6497d}{Symmetry\+Group}} (const \mbox{\hyperlink{classPscf_1_1SymmetryGroup}{Symmetry\+Group}}$<$ Symmetry $>$ \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1SymmetryGroup_a42a75daf7a7ae5bff1be5fb11cc36437}{$\sim$\+Symmetry\+Group}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPscf_1_1SymmetryGroup_ad12b531cfca0694da1da3e5eafa94d4c}{add}} (Symmetry \&symmetry)
+\begin{DoxyCompactList}\small\item\em Add a new element to the group. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1SymmetryGroup_ae0eafac7afb484bcc2e2eaec3bfc96ef}{make\+Complete\+Group}} ()
+\begin{DoxyCompactList}\small\item\em Generate a complete group from the current elements. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1SymmetryGroup_a1e6a8ed725d24f5c04610388184c20ce}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Remove all elements except the identity. \end{DoxyCompactList}\item 
+const Symmetry $\ast$ \mbox{\hyperlink{classPscf_1_1SymmetryGroup_a960860eed62a8da6c3a59ca5560ba26f}{find}} (const Symmetry \&symmetry) const
+\begin{DoxyCompactList}\small\item\em Find a symmetry within a group. \end{DoxyCompactList}\item 
+const Symmetry \& \mbox{\hyperlink{classPscf_1_1SymmetryGroup_a083de4d876bc2554c0adcb2191f4e5b2}{identity}} () const
+\begin{DoxyCompactList}\small\item\em Return a reference to the identity element. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPscf_1_1SymmetryGroup_aa7872fc9d8afd0ac359cc4256d9be1ec}{size}} () const
+\begin{DoxyCompactList}\small\item\em Return number of elements in group (i.\+e., the order of the group). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1SymmetryGroup}{Symmetry\+Group}}$<$ Symmetry $>$ \& \mbox{\hyperlink{classPscf_1_1SymmetryGroup_ab5476c1f5444e94f4c05a3578c83bf15}{operator=}} (const \mbox{\hyperlink{classPscf_1_1SymmetryGroup}{Symmetry\+Group}}$<$ Symmetry $>$ \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+Symmetry \& \mbox{\hyperlink{classPscf_1_1SymmetryGroup_a653334621305a1d32bb3d396849a5985}{operator\mbox{[}$\,$\mbox{]}}} (int i)
+\begin{DoxyCompactList}\small\item\em Element access operator (by reference). \end{DoxyCompactList}\item 
+const Symmetry \& \mbox{\hyperlink{classPscf_1_1SymmetryGroup_afbf06dae55e696ad28ba4f180248376f}{operator\mbox{[}$\,$\mbox{]}}} (int i) const
+\begin{DoxyCompactList}\small\item\em Element access operator (by reference). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPscf_1_1SymmetryGroup_a6b12f691359707b6a07dd588a1588286}{is\+Valid}} () const
+\begin{DoxyCompactList}\small\item\em Return true if valid complete group, or throw an Exception. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$class Symmetry$>$\newline
+class Pscf\+::\+Symmetry\+Group$<$ Symmetry $>$}
+
+Class template for a group of elements. 
+
+This is written as a template to allow the creation of groups that use different types of objects to represent symmetry elements. The simplest distinction is between point groups and full space groups.
+
+The algorithm requires only the template parameter class Symmetry satisfy the following requirements\+:
+
+1) A Symmetry must be default constructible. 2) An operator $\ast$ is provided to represent element multiplication. 3) Operators == and != are provided to represent equality \& inequality. 4) A method Symmetry\+::inverse() must return the inverse of a Symmetry. 5) A static method Symmetry\+::identity() must return the identity. 
+
+Definition at line 36 of file Symmetry\+Group.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPscf_1_1SymmetryGroup_a4f98bd17cdca541c5976fd1421ffcb7d}\label{classPscf_1_1SymmetryGroup_a4f98bd17cdca541c5976fd1421ffcb7d}} 
+\index{Pscf::SymmetryGroup$<$ Symmetry $>$@{Pscf::SymmetryGroup$<$ Symmetry $>$}!SymmetryGroup@{SymmetryGroup}}
+\index{SymmetryGroup@{SymmetryGroup}!Pscf::SymmetryGroup$<$ Symmetry $>$@{Pscf::SymmetryGroup$<$ Symmetry $>$}}
+\doxyparagraph{\texorpdfstring{SymmetryGroup()}{SymmetryGroup()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class Symmetry $>$ \\
+\mbox{\hyperlink{classPscf_1_1SymmetryGroup}{Pscf\+::\+Symmetry\+Group}}$<$ Symmetry $>$\+::\mbox{\hyperlink{classPscf_1_1SymmetryGroup}{Symmetry\+Group}}}
+
+
+
+Default constructor. 
+
+After construction, the group contains only the identity element. 
+
+Definition at line 25 of file Symmetry\+Group.\+tpp.
+
+\mbox{\Hypertarget{classPscf_1_1SymmetryGroup_ad426fbf831c09de09ffd057fc3a6497d}\label{classPscf_1_1SymmetryGroup_ad426fbf831c09de09ffd057fc3a6497d}} 
+\index{Pscf::SymmetryGroup$<$ Symmetry $>$@{Pscf::SymmetryGroup$<$ Symmetry $>$}!SymmetryGroup@{SymmetryGroup}}
+\index{SymmetryGroup@{SymmetryGroup}!Pscf::SymmetryGroup$<$ Symmetry $>$@{Pscf::SymmetryGroup$<$ Symmetry $>$}}
+\doxyparagraph{\texorpdfstring{SymmetryGroup()}{SymmetryGroup()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class Symmetry $>$ \\
+\mbox{\hyperlink{classPscf_1_1SymmetryGroup}{Pscf\+::\+Symmetry\+Group}}$<$ Symmetry $>$\+::\mbox{\hyperlink{classPscf_1_1SymmetryGroup}{Symmetry\+Group}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPscf_1_1SymmetryGroup}{Symmetry\+Group}}$<$ Symmetry $>$ \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+
+Definition at line 35 of file Symmetry\+Group.\+tpp.
+
+\mbox{\Hypertarget{classPscf_1_1SymmetryGroup_a42a75daf7a7ae5bff1be5fb11cc36437}\label{classPscf_1_1SymmetryGroup_a42a75daf7a7ae5bff1be5fb11cc36437}} 
+\index{Pscf::SymmetryGroup$<$ Symmetry $>$@{Pscf::SymmetryGroup$<$ Symmetry $>$}!````~SymmetryGroup@{$\sim$SymmetryGroup}}
+\index{````~SymmetryGroup@{$\sim$SymmetryGroup}!Pscf::SymmetryGroup$<$ Symmetry $>$@{Pscf::SymmetryGroup$<$ Symmetry $>$}}
+\doxyparagraph{\texorpdfstring{$\sim$SymmetryGroup()}{~SymmetryGroup()}}
+{\footnotesize\ttfamily template$<$class Symmetry $>$ \\
+\mbox{\hyperlink{classPscf_1_1SymmetryGroup}{Pscf\+::\+Symmetry\+Group}}$<$ Symmetry $>$\+::$\sim$\mbox{\hyperlink{classPscf_1_1SymmetryGroup}{Symmetry\+Group}}}
+
+
+
+Destructor. 
+
+
+
+Definition at line 48 of file Symmetry\+Group.\+tpp.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPscf_1_1SymmetryGroup_ad12b531cfca0694da1da3e5eafa94d4c}\label{classPscf_1_1SymmetryGroup_ad12b531cfca0694da1da3e5eafa94d4c}} 
+\index{Pscf::SymmetryGroup$<$ Symmetry $>$@{Pscf::SymmetryGroup$<$ Symmetry $>$}!add@{add}}
+\index{add@{add}!Pscf::SymmetryGroup$<$ Symmetry $>$@{Pscf::SymmetryGroup$<$ Symmetry $>$}}
+\doxyparagraph{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily template$<$class Symmetry $>$ \\
+bool \mbox{\hyperlink{classPscf_1_1SymmetryGroup}{Pscf\+::\+Symmetry\+Group}}$<$ Symmetry $>$\+::add (\begin{DoxyParamCaption}\item[{Symmetry \&}]{symmetry }\end{DoxyParamCaption})}
+
+
+
+Add a new element to the group. 
+
+Return false if the element was already present, true otherwise.
+
+
+\begin{DoxyParams}{Parameters}
+{\em symmetry} & new symmetry element. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if this is a new element, false if already present. 
+\end{DoxyReturn}
+
+
+Definition at line 89 of file Symmetry\+Group.\+tpp.
+
+\mbox{\Hypertarget{classPscf_1_1SymmetryGroup_ae0eafac7afb484bcc2e2eaec3bfc96ef}\label{classPscf_1_1SymmetryGroup_ae0eafac7afb484bcc2e2eaec3bfc96ef}} 
+\index{Pscf::SymmetryGroup$<$ Symmetry $>$@{Pscf::SymmetryGroup$<$ Symmetry $>$}!makeCompleteGroup@{makeCompleteGroup}}
+\index{makeCompleteGroup@{makeCompleteGroup}!Pscf::SymmetryGroup$<$ Symmetry $>$@{Pscf::SymmetryGroup$<$ Symmetry $>$}}
+\doxyparagraph{\texorpdfstring{makeCompleteGroup()}{makeCompleteGroup()}}
+{\footnotesize\ttfamily template$<$class Symmetry $>$ \\
+void \mbox{\hyperlink{classPscf_1_1SymmetryGroup}{Pscf\+::\+Symmetry\+Group}}$<$ Symmetry $>$\+::make\+Complete\+Group}
+
+
+
+Generate a complete group from the current elements. 
+
+
+
+Definition at line 109 of file Symmetry\+Group.\+tpp.
+
+\mbox{\Hypertarget{classPscf_1_1SymmetryGroup_a1e6a8ed725d24f5c04610388184c20ce}\label{classPscf_1_1SymmetryGroup_a1e6a8ed725d24f5c04610388184c20ce}} 
+\index{Pscf::SymmetryGroup$<$ Symmetry $>$@{Pscf::SymmetryGroup$<$ Symmetry $>$}!clear@{clear}}
+\index{clear@{clear}!Pscf::SymmetryGroup$<$ Symmetry $>$@{Pscf::SymmetryGroup$<$ Symmetry $>$}}
+\doxyparagraph{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily template$<$class Symmetry $>$ \\
+void \mbox{\hyperlink{classPscf_1_1SymmetryGroup}{Pscf\+::\+Symmetry\+Group}}$<$ Symmetry $>$\+::clear}
+
+
+
+Remove all elements except the identity. 
+
+Return group to its state after default construction. 
+
+Definition at line 151 of file Symmetry\+Group.\+tpp.
+
+\mbox{\Hypertarget{classPscf_1_1SymmetryGroup_a960860eed62a8da6c3a59ca5560ba26f}\label{classPscf_1_1SymmetryGroup_a960860eed62a8da6c3a59ca5560ba26f}} 
+\index{Pscf::SymmetryGroup$<$ Symmetry $>$@{Pscf::SymmetryGroup$<$ Symmetry $>$}!find@{find}}
+\index{find@{find}!Pscf::SymmetryGroup$<$ Symmetry $>$@{Pscf::SymmetryGroup$<$ Symmetry $>$}}
+\doxyparagraph{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily template$<$class Symmetry $>$ \\
+const Symmetry $\ast$ \mbox{\hyperlink{classPscf_1_1SymmetryGroup}{Pscf\+::\+Symmetry\+Group}}$<$ Symmetry $>$\+::find (\begin{DoxyParamCaption}\item[{const Symmetry \&}]{symmetry }\end{DoxyParamCaption}) const}
+
+
+
+Find a symmetry within a group. 
+
+Return a pointer to a symmetry if it is in the group, or a null pointer if it is not. 
+
+Definition at line 74 of file Symmetry\+Group.\+tpp.
+
+
+
+Referenced by pscfpp.\+Make\+Maker.\+Make\+Maker\+::find().
+
+\mbox{\Hypertarget{classPscf_1_1SymmetryGroup_a083de4d876bc2554c0adcb2191f4e5b2}\label{classPscf_1_1SymmetryGroup_a083de4d876bc2554c0adcb2191f4e5b2}} 
+\index{Pscf::SymmetryGroup$<$ Symmetry $>$@{Pscf::SymmetryGroup$<$ Symmetry $>$}!identity@{identity}}
+\index{identity@{identity}!Pscf::SymmetryGroup$<$ Symmetry $>$@{Pscf::SymmetryGroup$<$ Symmetry $>$}}
+\doxyparagraph{\texorpdfstring{identity()}{identity()}}
+{\footnotesize\ttfamily template$<$class Symmetry $>$ \\
+const Symmetry \& \mbox{\hyperlink{classPscf_1_1SymmetryGroup}{Pscf\+::\+Symmetry\+Group}}$<$ Symmetry $>$\+::identity\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return a reference to the identity element. 
+
+
+
+Definition at line 143 of file Symmetry\+Group.\+h.
+
+
+
+Referenced by Pscf\+::\+Symmetry\+Group$<$ Space\+Symmetry$<$ D $>$ $>$\+::operator=(), and Pscf\+::\+Symmetry\+Group$<$ Space\+Symmetry$<$ D $>$ $>$\+::\+Symmetry\+Group().
+
+\mbox{\Hypertarget{classPscf_1_1SymmetryGroup_aa7872fc9d8afd0ac359cc4256d9be1ec}\label{classPscf_1_1SymmetryGroup_aa7872fc9d8afd0ac359cc4256d9be1ec}} 
+\index{Pscf::SymmetryGroup$<$ Symmetry $>$@{Pscf::SymmetryGroup$<$ Symmetry $>$}!size@{size}}
+\index{size@{size}!Pscf::SymmetryGroup$<$ Symmetry $>$@{Pscf::SymmetryGroup$<$ Symmetry $>$}}
+\doxyparagraph{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$class Symmetry $>$ \\
+int \mbox{\hyperlink{classPscf_1_1SymmetryGroup}{Pscf\+::\+Symmetry\+Group}}$<$ Symmetry $>$\+::size\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return number of elements in group (i.\+e., the order of the group). 
+
+
+
+Definition at line 135 of file Symmetry\+Group.\+h.
+
+
+
+Referenced by Pscf\+::\+Symmetry\+Group$<$ Space\+Symmetry$<$ D $>$ $>$\+::operator=(), and Pscf\+::\+Symmetry\+Group$<$ Space\+Symmetry$<$ D $>$ $>$\+::\+Symmetry\+Group().
+
+\mbox{\Hypertarget{classPscf_1_1SymmetryGroup_ab5476c1f5444e94f4c05a3578c83bf15}\label{classPscf_1_1SymmetryGroup_ab5476c1f5444e94f4c05a3578c83bf15}} 
+\index{Pscf::SymmetryGroup$<$ Symmetry $>$@{Pscf::SymmetryGroup$<$ Symmetry $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Pscf::SymmetryGroup$<$ Symmetry $>$@{Pscf::SymmetryGroup$<$ Symmetry $>$}}
+\doxyparagraph{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$class Symmetry $>$ \\
+\mbox{\hyperlink{classPscf_1_1SymmetryGroup}{Symmetry\+Group}}$<$ Symmetry $>$ \& \mbox{\hyperlink{classPscf_1_1SymmetryGroup}{Pscf\+::\+Symmetry\+Group}}$<$ Symmetry $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPscf_1_1SymmetryGroup}{Symmetry\+Group}}$<$ Symmetry $>$ \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Assignment operator. 
+
+
+
+Definition at line 56 of file Symmetry\+Group.\+tpp.
+
+\mbox{\Hypertarget{classPscf_1_1SymmetryGroup_a653334621305a1d32bb3d396849a5985}\label{classPscf_1_1SymmetryGroup_a653334621305a1d32bb3d396849a5985}} 
+\index{Pscf::SymmetryGroup$<$ Symmetry $>$@{Pscf::SymmetryGroup$<$ Symmetry $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Pscf::SymmetryGroup$<$ Symmetry $>$@{Pscf::SymmetryGroup$<$ Symmetry $>$}}
+\doxyparagraph{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class Symmetry $>$ \\
+Symmetry \& \mbox{\hyperlink{classPscf_1_1SymmetryGroup}{Pscf\+::\+Symmetry\+Group}}$<$ Symmetry $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Element access operator (by reference). 
+
+
+
+Definition at line 151 of file Symmetry\+Group.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1SymmetryGroup_afbf06dae55e696ad28ba4f180248376f}\label{classPscf_1_1SymmetryGroup_afbf06dae55e696ad28ba4f180248376f}} 
+\index{Pscf::SymmetryGroup$<$ Symmetry $>$@{Pscf::SymmetryGroup$<$ Symmetry $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Pscf::SymmetryGroup$<$ Symmetry $>$@{Pscf::SymmetryGroup$<$ Symmetry $>$}}
+\doxyparagraph{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class Symmetry $>$ \\
+const Symmetry \& \mbox{\hyperlink{classPscf_1_1SymmetryGroup}{Pscf\+::\+Symmetry\+Group}}$<$ Symmetry $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Element access operator (by reference). 
+
+
+
+Definition at line 159 of file Symmetry\+Group.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1SymmetryGroup_a6b12f691359707b6a07dd588a1588286}\label{classPscf_1_1SymmetryGroup_a6b12f691359707b6a07dd588a1588286}} 
+\index{Pscf::SymmetryGroup$<$ Symmetry $>$@{Pscf::SymmetryGroup$<$ Symmetry $>$}!isValid@{isValid}}
+\index{isValid@{isValid}!Pscf::SymmetryGroup$<$ Symmetry $>$@{Pscf::SymmetryGroup$<$ Symmetry $>$}}
+\doxyparagraph{\texorpdfstring{isValid()}{isValid()}}
+{\footnotesize\ttfamily template$<$class Symmetry $>$ \\
+bool \mbox{\hyperlink{classPscf_1_1SymmetryGroup}{Pscf\+::\+Symmetry\+Group}}$<$ Symmetry $>$\+::is\+Valid}
+
+
+
+Return true if valid complete group, or throw an Exception. 
+
+
+
+Definition at line 162 of file Symmetry\+Group.\+tpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Symmetry\+Group.\+h\item 
+Symmetry\+Group.\+tpp\end{DoxyCompactItemize}

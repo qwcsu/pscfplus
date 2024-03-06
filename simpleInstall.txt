@@ -1,0 +1,6 @@
+1. unzip pscfplus.zip
+2. cd pscfplus/
+3. run ./setup 
+4. cd pscfplus/bld/pgc
+5. make all
+

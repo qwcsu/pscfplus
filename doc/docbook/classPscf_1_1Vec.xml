@@ -1,0 +1,848 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classPscf_1_1Vec">
+<title>Pscf::Vec&lt; D, T &gt; Class Template Reference</title>
+<indexterm><primary>Pscf::Vec&lt; D, T &gt;</primary></indexterm>
+<para>
+
+<para>A Vec&lt;D, T&gt;&lt;D,T&gt; is a D-component vector with elements of type T. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;Vec.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+<simplesect><title>Constructors</title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classPscf_1_1Vec_1a6f526bc8ca077028e1e10639e274c17e">Vec</link> ()</para>
+
+<para>Default constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classPscf_1_1Vec_1a96470c13fe82975e714436771ea9059b">Vec</link> (const <link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp;v)</para>
+
+<para>Copy constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classPscf_1_1Vec_1aca71a49b8eaaeea0052721374ffe8436">Vec</link> (T const *v)</para>
+
+<para>Constructor from a C-array. </para>
+</listitem>
+            <listitem><para><link linkend="_classPscf_1_1Vec_1a4266ddb0745bd9c4240f39bbae0ef01e">Vec</link> (T s)</para>
+
+<para>Constructor, initialize all elements to a common scalar value. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</simplesect>
+<simplesect><title>Assignment and Initialization</title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp; <link linkend="_classPscf_1_1Vec_1aace7dc11bc50e08c35aa4c2e714ee6b2">operator=</link> (const <link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp;v)</para>
+
+<para>Copy assignment. </para>
+</listitem>
+            <listitem><para><link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp; <link linkend="_classPscf_1_1Vec_1a123d28e6139cf6292cb78d362fecd0d7">operator=</link> (T s)</para>
+
+<para>Assignment all elements to the same scalar T value. </para>
+</listitem>
+            <listitem><para><link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp; <link linkend="_classPscf_1_1Vec_1ac0d476dacd52cfb616704411cc21d347">setToZero</link> ()</para>
+
+<para>Set all elements to zero. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect><title>Arithmetic Assignment</title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_classPscf_1_1Vec_1aa17ff5218adb721fecb7245181f0de82">operator+=</link> (const <link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp;dv)</para>
+
+<para>Add vector dv to this vector. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classPscf_1_1Vec_1af747a9fd913b744868dfbba45e4bc197">operator-=</link> (const <link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp;dv)</para>
+
+<para>Subtract vector dv from this vector. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classPscf_1_1Vec_1ae63339b964ee1db71a698b9c5cc60c87">operator+=</link> (T s)</para>
+
+<para>Add a common scalar to all components. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classPscf_1_1Vec_1aad44e2a3d9f5f5a71826ef8b3dba14fc">operator-=</link> (T s)</para>
+
+<para>Subtract a common scalar from all components. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classPscf_1_1Vec_1a9cde8d3305775df2f9334e5bca835902">operator*=</link> (T s)</para>
+
+<para>Multiply this vector by scalar s. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect><title>Array Subscript</title>
+        <itemizedlist>
+            <listitem><para>const T &amp; <link linkend="_classPscf_1_1Vec_1a5cc843c09b047d64db87cdfbb52aa3f4">operator[]</link> (int i) const</para>
+
+<para>Return one Cartesian element by value. </para>
+</listitem>
+            <listitem><para>T &amp; <link linkend="_classPscf_1_1Vec_1a294b005764c565a5368ae953b44178d9">operator[]</link> (int i)</para>
+
+<para>Return one element of the vector by references. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Vec&lt;D, T&gt; valued functions (assigned to invoking object)    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp; <link linkend="_classPscf_1_1Vec_1aa7be234b887c5600b927a15377be0036">add</link> (const <link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp;v1, const <link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp;v2)</para>
+
+<para>Add vectors v1 and v2. </para>
+</listitem>
+            <listitem><para><link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp; <link linkend="_classPscf_1_1Vec_1a5afd39fa2257395e22b8e09a483fb2ba">subtract</link> (const <link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp;v1, const <link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp;v2)</para>
+
+<para>Subtract vector v2 from v1. </para>
+</listitem>
+            <listitem><para><link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp; <link linkend="_classPscf_1_1Vec_1aa6f0128a6b13538a25f4c7c9950d1a21">multiply</link> (const <link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp;v, T s)</para>
+
+<para>Multiply a vector v by a scalar s. </para>
+</listitem>
+            <listitem><para><link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp; <link linkend="_classPscf_1_1Vec_1aefa0c09b531d84005009bdfdb6de95ff">negate</link> (const <link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp;v)</para>
+
+<para>Return negative of vector v. </para>
+</listitem>
+            <listitem><para><link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp; <link linkend="_classPscf_1_1Vec_1a803fc0bca008e9b807f0fd8d92234501">negate</link> ()</para>
+
+<para>Negate all elements of this vector. </para>
+</listitem>
+            <listitem><para>template&lt;class Archive &gt; </para><para>void <link linkend="_classPscf_1_1Vec_1ac7232c86f7303fc548db819506f920a5">serialize</link> (Archive &amp;ar, const unsigned int version)</para>
+
+<para>Serialize to/from an archive. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;int D, typename T&gt;
+class Pscf::Vec&lt; D, T &gt;</title></simplesect>
+
+
+<para>A Vec&lt;D, T&gt;&lt;D,T&gt; is a D-component vector with elements of type T. </para>
+
+
+
+<para>The elements of a Vec&lt;D, T&gt; can be accessed using subscript operator, as for a built in array.</para>
+
+<para>The arithmetic assignment operators +=, -=, and *= are overloaded to allow vector-vector addition and subtraction and vector-scalar multiplication.</para>
+
+<para>All other unary and binary mathematical operations are implemented as methods or free functions. Operations that yield a Vec&lt;D, T&gt;, such as addition, are implemented by methods that assign the result to the invoking <link linkend="_classPscf_1_1Vec">Vec</link> object, and return this object by reference. For example, <literallayout><computeroutput>Vec&lt;3,&#32;double&gt;&#32;a,&#32;b,&#32;c;
+
+a[0]&#32;=&#32;0.0
+a[1]&#32;=&#32;1.0
+a[2]&#32;=&#32;2.0
+
+b[0]&#32;=&#32;&#32;0.5
+b[1]&#32;=&#32;-0.5
+b[2]&#32;=&#32;-1.5
+
+//&#32;Set&#32;a&#32;=&#32;a&#32;+&#32;b
+a&#32;+=&#32;b
+
+//&#32;Set&#32;b&#32;=&#32;b*2
+b&#32;*=&#32;2.0;
+
+//&#32;Set&#32;c&#32;=&#32;a&#32;+&#32;b
+c.add(a,&#32;b);
+</computeroutput></literallayout> This syntax for functions that yield a vector makes the allocation of a temporary Vec&lt;D, T&gt; object explicit, by requiring that the invoking function be a member of an object that will hold the result.</para>
+
+<para>For efficiency, all member functions are declared inline. </para>
+<para>
+Definition at line 63 of file Vec.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classPscf_1_1Vec_1a6f526bc8ca077028e1e10639e274c17e"/>    <section>
+    <title>Vec()<computeroutput>[1/4]</computeroutput></title>
+<indexterm><primary>Vec</primary><secondary>Pscf::Vec&lt; D, T &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Vec&lt; D, T &gt;</primary><secondary>Vec</secondary></indexterm>
+<computeroutput>template&lt;int D, typename T &gt; </computeroutput><para><computeroutput><link linkend="_classPscf_1_1Vec">Pscf::Vec</link>&lt; D, T &gt;::<link linkend="_classPscf_1_1Vec">Vec</link><computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Default constructor. </para>
+</para>
+<para>
+Definition at line 315 of file Vec.h.</para>
+    </section><anchor xml:id="_classPscf_1_1Vec_1a96470c13fe82975e714436771ea9059b"/>    <section>
+    <title>Vec()<computeroutput>[2/4]</computeroutput></title>
+<indexterm><primary>Vec</primary><secondary>Pscf::Vec&lt; D, T &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Vec&lt; D, T &gt;</primary><secondary>Vec</secondary></indexterm>
+<computeroutput>template&lt;int D, typename T &gt; </computeroutput><para><computeroutput><link linkend="_classPscf_1_1Vec">Pscf::Vec</link>&lt; D, T &gt;::<link linkend="_classPscf_1_1Vec">Vec</link> (const <link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp; v)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Copy constructor. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>v</entry>
+                                <entry>
+<para>Vec&lt;D, T&gt; to be copied </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 322 of file Vec.h.</para>
+    </section><anchor xml:id="_classPscf_1_1Vec_1aca71a49b8eaaeea0052721374ffe8436"/>    <section>
+    <title>Vec()<computeroutput>[3/4]</computeroutput></title>
+<indexterm><primary>Vec</primary><secondary>Pscf::Vec&lt; D, T &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Vec&lt; D, T &gt;</primary><secondary>Vec</secondary></indexterm>
+<computeroutput>template&lt;int D, typename T &gt; </computeroutput><para><computeroutput><link linkend="_classPscf_1_1Vec">Pscf::Vec</link>&lt; D, T &gt;::<link linkend="_classPscf_1_1Vec">Vec</link> (T const * v)<computeroutput>[inline]</computeroutput>, <computeroutput>[explicit]</computeroutput></computeroutput></para><para>
+
+<para>Constructor from a C-array. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>v</entry>
+                                <entry>
+<para>array to be copied </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 333 of file Vec.h.</para>
+    </section><anchor xml:id="_classPscf_1_1Vec_1a4266ddb0745bd9c4240f39bbae0ef01e"/>    <section>
+    <title>Vec()<computeroutput>[4/4]</computeroutput></title>
+<indexterm><primary>Vec</primary><secondary>Pscf::Vec&lt; D, T &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Vec&lt; D, T &gt;</primary><secondary>Vec</secondary></indexterm>
+<computeroutput>template&lt;int D, typename T &gt; </computeroutput><para><computeroutput><link linkend="_classPscf_1_1Vec">Pscf::Vec</link>&lt; D, T &gt;::<link linkend="_classPscf_1_1Vec">Vec</link> (T s)<computeroutput>[inline]</computeroutput>, <computeroutput>[explicit]</computeroutput></computeroutput></para><para>
+
+<para>Constructor, initialize all elements to a common scalar value. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>s</entry>
+                                <entry>
+<para>initial value for all elements. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 344 of file Vec.h.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classPscf_1_1Vec_1aace7dc11bc50e08c35aa4c2e714ee6b2"/>    <section>
+    <title>operator=()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator=</primary><secondary>Pscf::Vec&lt; D, T &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Vec&lt; D, T &gt;</primary><secondary>operator=</secondary></indexterm>
+<computeroutput>template&lt;int D, typename T &gt; </computeroutput><para><computeroutput><link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp; <link linkend="_classPscf_1_1Vec">Pscf::Vec</link>&lt; D, T &gt;::operator= (const <link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp; v)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Copy assignment. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>v</entry>
+                                <entry>
+<para>Vec&lt;D, T&gt; to assign. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>this object, after modification </para>
+</formalpara>
+</para>
+<para>
+Definition at line 355 of file Vec.h.</para>
+    </section><anchor xml:id="_classPscf_1_1Vec_1a123d28e6139cf6292cb78d362fecd0d7"/>    <section>
+    <title>operator=()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator=</primary><secondary>Pscf::Vec&lt; D, T &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Vec&lt; D, T &gt;</primary><secondary>operator=</secondary></indexterm>
+<computeroutput>template&lt;int D, typename T &gt; </computeroutput><para><computeroutput><link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp; <link linkend="_classPscf_1_1Vec">Pscf::Vec</link>&lt; D, T &gt;::operator= (T s)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Assignment all elements to the same scalar T value. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>s</entry>
+                                <entry>
+<para>scalar value </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>this object, after modification </para>
+</formalpara>
+</para>
+<para>
+Definition at line 367 of file Vec.h.</para>
+    </section><anchor xml:id="_classPscf_1_1Vec_1ac0d476dacd52cfb616704411cc21d347"/>    <section>
+    <title>setToZero()</title>
+<indexterm><primary>setToZero</primary><secondary>Pscf::Vec&lt; D, T &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Vec&lt; D, T &gt;</primary><secondary>setToZero</secondary></indexterm>
+<computeroutput>template&lt;int D, typename T &gt; </computeroutput><para><computeroutput><link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp; <link linkend="_classPscf_1_1Vec">Pscf::Vec</link>&lt; D, T &gt;::setToZero<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Set all elements to zero. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>this object, after modification </para>
+</formalpara>
+</para>
+<para>
+Definition at line 379 of file Vec.h.</para>
+    </section><anchor xml:id="_classPscf_1_1Vec_1aa17ff5218adb721fecb7245181f0de82"/>    <section>
+    <title>operator+=()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator+=</primary><secondary>Pscf::Vec&lt; D, T &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Vec&lt; D, T &gt;</primary><secondary>operator+=</secondary></indexterm>
+<computeroutput>template&lt;int D, typename T &gt; </computeroutput><para><computeroutput>void <link linkend="_classPscf_1_1Vec">Pscf::Vec</link>&lt; D, T &gt;::operator+= (const <link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp; dv)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Add vector dv to this vector. </para>
+</para>
+
+<para>Upon return, *this = this + dv.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>dv</entry>
+                                <entry>
+<para>vector increment (input) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 391 of file Vec.h.</para>
+    </section><anchor xml:id="_classPscf_1_1Vec_1af747a9fd913b744868dfbba45e4bc197"/>    <section>
+    <title>operator-=()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator-=</primary><secondary>Pscf::Vec&lt; D, T &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Vec&lt; D, T &gt;</primary><secondary>operator-=</secondary></indexterm>
+<computeroutput>template&lt;int D, typename T &gt; </computeroutput><para><computeroutput>void <link linkend="_classPscf_1_1Vec">Pscf::Vec</link>&lt; D, T &gt;::operator-= (const <link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp; dv)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Subtract vector dv from this vector. </para>
+</para>
+
+<para>Upon return, *this = this + dv.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>dv</entry>
+                                <entry>
+<para>vector increment (input) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 402 of file Vec.h.</para>
+    </section><anchor xml:id="_classPscf_1_1Vec_1ae63339b964ee1db71a698b9c5cc60c87"/>    <section>
+    <title>operator+=()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator+=</primary><secondary>Pscf::Vec&lt; D, T &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Vec&lt; D, T &gt;</primary><secondary>operator+=</secondary></indexterm>
+<computeroutput>template&lt;int D, typename T &gt; </computeroutput><para><computeroutput>void <link linkend="_classPscf_1_1Vec">Pscf::Vec</link>&lt; D, T &gt;::operator+= (T s)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Add a common scalar to all components. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>s</entry>
+                                <entry>
+<para>scalar additive constant (input) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 413 of file Vec.h.</para>
+    </section><anchor xml:id="_classPscf_1_1Vec_1aad44e2a3d9f5f5a71826ef8b3dba14fc"/>    <section>
+    <title>operator-=()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator-=</primary><secondary>Pscf::Vec&lt; D, T &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Vec&lt; D, T &gt;</primary><secondary>operator-=</secondary></indexterm>
+<computeroutput>template&lt;int D, typename T &gt; </computeroutput><para><computeroutput>void <link linkend="_classPscf_1_1Vec">Pscf::Vec</link>&lt; D, T &gt;::operator-= (T s)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Subtract a common scalar from all components. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>s</entry>
+                                <entry>
+<para>scalar subtractive constant (input) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 424 of file Vec.h.</para>
+    </section><anchor xml:id="_classPscf_1_1Vec_1a9cde8d3305775df2f9334e5bca835902"/>    <section>
+    <title>operator*=()</title>
+<indexterm><primary>operator*=</primary><secondary>Pscf::Vec&lt; D, T &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Vec&lt; D, T &gt;</primary><secondary>operator*=</secondary></indexterm>
+<computeroutput>template&lt;int D, typename T &gt; </computeroutput><para><computeroutput>void <link linkend="_classPscf_1_1Vec">Pscf::Vec</link>&lt; D, T &gt;::operator*= (T s)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Multiply this vector by scalar s. </para>
+</para>
+
+<para>Upon return, *this = (*this)*s.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>s</entry>
+                                <entry>
+<para>scalar multiplier </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 435 of file Vec.h.</para>
+    </section><anchor xml:id="_classPscf_1_1Vec_1a5cc843c09b047d64db87cdfbb52aa3f4"/>    <section>
+    <title>operator[]()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator[]</primary><secondary>Pscf::Vec&lt; D, T &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Vec&lt; D, T &gt;</primary><secondary>operator[]</secondary></indexterm>
+<computeroutput>template&lt;int D, typename T &gt; </computeroutput><para><computeroutput>const T &amp; <link linkend="_classPscf_1_1Vec">Pscf::Vec</link>&lt; D, T &gt;::operator[] (int i) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return one Cartesian element by value. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>i</entry>
+                                <entry>
+<para>element index </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>element i of the vector </para>
+</formalpara>
+</para>
+<para>
+Definition at line 446 of file Vec.h.</para>
+    </section><anchor xml:id="_classPscf_1_1Vec_1a294b005764c565a5368ae953b44178d9"/>    <section>
+    <title>operator[]()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator[]</primary><secondary>Pscf::Vec&lt; D, T &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Vec&lt; D, T &gt;</primary><secondary>operator[]</secondary></indexterm>
+<computeroutput>template&lt;int D, typename T &gt; </computeroutput><para><computeroutput>T &amp; <link linkend="_classPscf_1_1Vec">Pscf::Vec</link>&lt; D, T &gt;::operator[] (int i)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return one element of the vector by references. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>i</entry>
+                                <entry>
+<para>element index </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>element i of this vector </para>
+</formalpara>
+</para>
+<para>
+Definition at line 457 of file Vec.h.</para>
+    </section><anchor xml:id="_classPscf_1_1Vec_1aa7be234b887c5600b927a15377be0036"/>    <section>
+    <title>add()</title>
+<indexterm><primary>add</primary><secondary>Pscf::Vec&lt; D, T &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Vec&lt; D, T &gt;</primary><secondary>add</secondary></indexterm>
+<computeroutput>template&lt;int D, typename T &gt; </computeroutput><para><computeroutput><link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp; <link linkend="_classPscf_1_1Vec">Pscf::Vec</link>&lt; D, T &gt;::add (const <link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp; v1, const <link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp; v2)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Add vectors v1 and v2. </para>
+</para>
+
+<para>Upon return, *this = v1 + v2.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>v1</entry>
+                                <entry>
+<para>vector (input) </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>v2</entry>
+                                <entry>
+<para>vector (input) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified invoking vector </para>
+</formalpara>
+</para>
+<para>
+Definition at line 471 of file Vec.h.</para>
+<para>
+Referenced by Pscf::operator+().</para>
+    </section><anchor xml:id="_classPscf_1_1Vec_1a5afd39fa2257395e22b8e09a483fb2ba"/>    <section>
+    <title>subtract()</title>
+<indexterm><primary>subtract</primary><secondary>Pscf::Vec&lt; D, T &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Vec&lt; D, T &gt;</primary><secondary>subtract</secondary></indexterm>
+<computeroutput>template&lt;int D, typename T &gt; </computeroutput><para><computeroutput><link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp; <link linkend="_classPscf_1_1Vec">Pscf::Vec</link>&lt; D, T &gt;::subtract (const <link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp; v1, const <link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp; v2)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Subtract vector v2 from v1. </para>
+</para>
+
+<para>Upon return, *this = v1 - v2.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>v1</entry>
+                                <entry>
+<para>vector (input) </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>v2</entry>
+                                <entry>
+<para>vector (input) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified invoking vector </para>
+</formalpara>
+</para>
+<para>
+Definition at line 488 of file Vec.h.</para>
+    </section><anchor xml:id="_classPscf_1_1Vec_1aa6f0128a6b13538a25f4c7c9950d1a21"/>    <section>
+    <title>multiply()</title>
+<indexterm><primary>multiply</primary><secondary>Pscf::Vec&lt; D, T &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Vec&lt; D, T &gt;</primary><secondary>multiply</secondary></indexterm>
+<computeroutput>template&lt;int D, typename T &gt; </computeroutput><para><computeroutput><link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp; <link linkend="_classPscf_1_1Vec">Pscf::Vec</link>&lt; D, T &gt;::multiply (const <link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp; v, T s)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Multiply a vector v by a scalar s. </para>
+</para>
+
+<para>Upon return, *this = v*s.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>v</entry>
+                                <entry>
+<para>vector input </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>s</entry>
+                                <entry>
+<para>scalar input </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified invoking vector </para>
+</formalpara>
+</para>
+<para>
+Definition at line 503 of file Vec.h.</para>
+<para>
+Referenced by Pscf::UnitCellBase&lt; 3 &gt;::ksq().</para>
+    </section><anchor xml:id="_classPscf_1_1Vec_1aefa0c09b531d84005009bdfdb6de95ff"/>    <section>
+    <title>negate()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>negate</primary><secondary>Pscf::Vec&lt; D, T &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Vec&lt; D, T &gt;</primary><secondary>negate</secondary></indexterm>
+<computeroutput>template&lt;int D, typename T &gt; </computeroutput><para><computeroutput><link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp; <link linkend="_classPscf_1_1Vec">Pscf::Vec</link>&lt; D, T &gt;::negate (const <link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp; v)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return negative of vector v. </para>
+</para>
+
+<para>Upon return, *this = -v;</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>v</entry>
+                                <entry>
+<para>vector input </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified invoking vector </para>
+</formalpara>
+</para>
+<para>
+Definition at line 518 of file Vec.h.</para>
+<para>
+Referenced by Pscf::Basis&lt; D &gt;::isValid().</para>
+    </section><anchor xml:id="_classPscf_1_1Vec_1a803fc0bca008e9b807f0fd8d92234501"/>    <section>
+    <title>negate()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>negate</primary><secondary>Pscf::Vec&lt; D, T &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Vec&lt; D, T &gt;</primary><secondary>negate</secondary></indexterm>
+<computeroutput>template&lt;int D, typename T &gt; </computeroutput><para><computeroutput><link linkend="_classPscf_1_1Vec">Vec</link>&lt; D, T &gt; &amp; <link linkend="_classPscf_1_1Vec">Pscf::Vec</link>&lt; D, T &gt;::negate<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Negate all elements of this vector. </para>
+</para>
+
+<para>Upon return, all elements of this have been negated (reversed)</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>this object, after modification </para>
+</formalpara>
+</para>
+<para>
+Definition at line 533 of file Vec.h.</para>
+    </section><anchor xml:id="_classPscf_1_1Vec_1ac7232c86f7303fc548db819506f920a5"/>    <section>
+    <title>serialize()</title>
+<indexterm><primary>serialize</primary><secondary>Pscf::Vec&lt; D, T &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Vec&lt; D, T &gt;</primary><secondary>serialize</secondary></indexterm>
+<computeroutput>template&lt;int D, typename T &gt; </computeroutput><computeroutput>template&lt;class Archive &gt; </computeroutput><para><computeroutput>void <link linkend="_classPscf_1_1Vec">Pscf::Vec</link>&lt; D, T &gt;::serialize (Archive &amp; ar, const unsigned int version)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Serialize to/from an archive. </para>
+</para>
+
+<para>Implementation uses syntax of Boost::serialize.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>archive </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>version</entry>
+                                <entry>
+<para>archive version id </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 547 of file Vec.h.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Vec.h</section>
+</section>

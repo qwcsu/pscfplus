@@ -1,0 +1,269 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1DSymmMatrixParam">
+<title>Util::DSymmMatrixParam&lt; Type &gt; Class Template Reference</title>
+<indexterm><primary>Util::DSymmMatrixParam&lt; Type &gt;</primary></indexterm>
+<para>
+
+<para>A <link linkend="_classUtil_1_1Parameter">Parameter</link> associated with a symmetric <link linkend="_classUtil_1_1DMatrix">DMatrix</link>. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;DSymmMatrixParam.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Util::DSymmMatrixParam&lt; Type &gt;:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classUtil_1_1DSymmMatrixParam.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1DSymmMatrixParam_1a4d071e1aec22fe5212810b785a1da250">DSymmMatrixParam</link> (const char *<link linkend="_classUtil_1_1Parameter_1a2e6a63d5a0827ee3de51d481aee38174">label</link>, <link linkend="_classUtil_1_1DMatrix">DMatrix</link>&lt; Type &gt; &amp;matrix, int n, bool <link linkend="_classUtil_1_1Parameter_1accdc4c9c774b9394b387277543c1ba74">isRequired</link>=true)</para>
+
+<para>Constructor. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1DSymmMatrixParam_1a2b79cac29d99726a7acc6aee366544c3">writeParam</link> (std::ostream &amp;out)</para>
+
+<para>Write <link linkend="_classUtil_1_1DMatrix">DMatrix</link> to file. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>virtual void <link linkend="_classUtil_1_1DSymmMatrixParam_1a0273f653b47f5a47a57605e94fcbdcb9">readValue</link> (std::istream &amp;in)</para>
+
+<para>Read parameter value from an input stream. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classUtil_1_1DSymmMatrixParam_1a3c962514154258d7fe8da1772bb98013">loadValue</link> (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp;ar)</para>
+
+<para>Load bare parameter value from an archive. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classUtil_1_1DSymmMatrixParam_1aafb1e7d98687bd74f53eeae8d83d9095">saveValue</link> (<link linkend="_classUtil_1_1Serializable_1aca43a1eea5ec5f13189a57892a7a6d04">Serializable::OArchive</link> &amp;ar)</para>
+
+<para>Save parameter value to an archive. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classUtil_1_1DSymmMatrixParam_1afadea2af59b27500f31138805773ab4f">bcastValue</link> ()</para>
+
+<para>Broadcast parameter value within the ioCommunicator. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;class Type&gt;
+class Util::DSymmMatrixParam&lt; Type &gt;</title></simplesect>
+
+
+<para>A <link linkend="_classUtil_1_1Parameter">Parameter</link> associated with a symmetric <link linkend="_classUtil_1_1DMatrix">DMatrix</link>. </para>
+<para>
+Definition at line 30 of file DSymmMatrixParam.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1DSymmMatrixParam_1a4d071e1aec22fe5212810b785a1da250"/>    <section>
+    <title>DSymmMatrixParam()</title>
+<indexterm><primary>DSymmMatrixParam</primary><secondary>Util::DSymmMatrixParam&lt; Type &gt;</secondary></indexterm>
+<indexterm><primary>Util::DSymmMatrixParam&lt; Type &gt;</primary><secondary>DSymmMatrixParam</secondary></indexterm>
+<computeroutput>template&lt;class Type &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1DSymmMatrixParam">Util::DSymmMatrixParam</link>&lt; Type &gt;::<link linkend="_classUtil_1_1DSymmMatrixParam">DSymmMatrixParam</link> (const char * label, <link linkend="_classUtil_1_1DMatrix">DMatrix</link>&lt; Type &gt; &amp; matrix, int n, bool isRequired = <computeroutput>true</computeroutput>
+)</computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>label</entry>
+                                <entry>
+<para>parameter label (a literal C-string) </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>matrix</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1DMatrix">DMatrix&lt;Type&gt;</link> object </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>n</entry>
+                                <entry>
+<para>number of rows or columns </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>isRequired</entry>
+                                <entry>
+<para>Is this a required parameter? </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 94 of file DSymmMatrixParam.h.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1DSymmMatrixParam_1a2b79cac29d99726a7acc6aee366544c3"/>    <section>
+    <title>writeParam()</title>
+<indexterm><primary>writeParam</primary><secondary>Util::DSymmMatrixParam&lt; Type &gt;</secondary></indexterm>
+<indexterm><primary>Util::DSymmMatrixParam&lt; Type &gt;</primary><secondary>writeParam</secondary></indexterm>
+<computeroutput>template&lt;class Type &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1DSymmMatrixParam">Util::DSymmMatrixParam</link>&lt; Type &gt;::writeParam (std::ostream &amp; out)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Write <link linkend="_classUtil_1_1DMatrix">DMatrix</link> to file. </para>
+</para>
+<para>
+Implements <link linkend="_classUtil_1_1ParamComponent_1ac17d6ab63f9b0e5f966d6a3cfbc26d86">Util::ParamComponent</link>.</para>
+<para>
+Definition at line 208 of file DSymmMatrixParam.h.</para>
+<para>
+References Util::Parameter::Precision, UTIL_THROW, and Util::Parameter::Width.</para>
+    </section><anchor xml:id="_classUtil_1_1DSymmMatrixParam_1a0273f653b47f5a47a57605e94fcbdcb9"/>    <section>
+    <title>readValue()</title>
+<indexterm><primary>readValue</primary><secondary>Util::DSymmMatrixParam&lt; Type &gt;</secondary></indexterm>
+<indexterm><primary>Util::DSymmMatrixParam&lt; Type &gt;</primary><secondary>readValue</secondary></indexterm>
+<computeroutput>template&lt;class Type &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1DSymmMatrixParam">Util::DSymmMatrixParam</link>&lt; Type &gt;::readValue (std::istream &amp; in)<computeroutput>[protected]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Read parameter value from an input stream. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream from which to read </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Reimplemented from <link linkend="_classUtil_1_1Parameter_1a5817fa95bf2e32808d384a66e272dc37">Util::Parameter</link>.</para>
+<para>
+Definition at line 104 of file DSymmMatrixParam.h.</para>
+<para>
+References UTIL_THROW.</para>
+    </section><anchor xml:id="_classUtil_1_1DSymmMatrixParam_1a3c962514154258d7fe8da1772bb98013"/>    <section>
+    <title>loadValue()</title>
+<indexterm><primary>loadValue</primary><secondary>Util::DSymmMatrixParam&lt; Type &gt;</secondary></indexterm>
+<indexterm><primary>Util::DSymmMatrixParam&lt; Type &gt;</primary><secondary>loadValue</secondary></indexterm>
+<computeroutput>template&lt;class Type &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1DSymmMatrixParam">Util::DSymmMatrixParam</link>&lt; Type &gt;::loadValue (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp; ar)<computeroutput>[protected]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Load bare parameter value from an archive. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>input archive from which to load </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Reimplemented from <link linkend="_classUtil_1_1Parameter_1a9e3d8dbd2198974017cd8711ae9c990d">Util::Parameter</link>.</para>
+<para>
+Definition at line 153 of file DSymmMatrixParam.h.</para>
+<para>
+References UTIL_THROW.</para>
+    </section><anchor xml:id="_classUtil_1_1DSymmMatrixParam_1aafb1e7d98687bd74f53eeae8d83d9095"/>    <section>
+    <title>saveValue()</title>
+<indexterm><primary>saveValue</primary><secondary>Util::DSymmMatrixParam&lt; Type &gt;</secondary></indexterm>
+<indexterm><primary>Util::DSymmMatrixParam&lt; Type &gt;</primary><secondary>saveValue</secondary></indexterm>
+<computeroutput>template&lt;class Type &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1DSymmMatrixParam">Util::DSymmMatrixParam</link>&lt; Type &gt;::saveValue (<link linkend="_classUtil_1_1Serializable_1aca43a1eea5ec5f13189a57892a7a6d04">Serializable::OArchive</link> &amp; ar)<computeroutput>[protected]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Save parameter value to an archive. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>output archive to which to save </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Reimplemented from <link linkend="_classUtil_1_1Parameter_1a61858c5163b492f2618689a35ff05044">Util::Parameter</link>.</para>
+<para>
+Definition at line 172 of file DSymmMatrixParam.h.</para>
+<para>
+References UTIL_THROW.</para>
+    </section><anchor xml:id="_classUtil_1_1DSymmMatrixParam_1afadea2af59b27500f31138805773ab4f"/>    <section>
+    <title>bcastValue()</title>
+<indexterm><primary>bcastValue</primary><secondary>Util::DSymmMatrixParam&lt; Type &gt;</secondary></indexterm>
+<indexterm><primary>Util::DSymmMatrixParam&lt; Type &gt;</primary><secondary>bcastValue</secondary></indexterm>
+<computeroutput>template&lt;class Type &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1DSymmMatrixParam">Util::DSymmMatrixParam</link>&lt; Type &gt;::bcastValue<computeroutput>[protected]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Broadcast parameter value within the ioCommunicator. </para>
+</para>
+<para>
+Reimplemented from <link linkend="_classUtil_1_1Parameter_1ad93ad2700686a5a32755fdb67b2a0792">Util::Parameter</link>.</para>
+<para>
+Definition at line 188 of file DSymmMatrixParam.h.</para>
+<para>
+References UTIL_THROW.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+DSymmMatrixParam.h</section>
+</section>

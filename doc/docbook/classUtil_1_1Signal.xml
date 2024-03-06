@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1Signal">
+<title>Util::Signal&lt; T &gt; Class Template Reference</title>
+<indexterm><primary>Util::Signal&lt; T &gt;</primary></indexterm>
+<para>
+
+<para><link linkend="_classUtil_1_1Notifier">Notifier</link> (or subject) in the <link linkend="_classUtil_1_1Observer">Observer</link> design pattern. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;Signal.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1Signal_1abe13ce83b40040c6fb4b6899dd02dd61">Signal</link> ()</para>
+
+<para>Default constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Signal_1a64c2fc78dc8faaf94912ff8722aa2b12">~Signal</link> ()</para>
+
+<para>Destructor. </para>
+</listitem>
+            <listitem><para>template&lt;class Observer &gt; </para><para>void <link linkend="_classUtil_1_1Signal_1a78124b00fed766dea183e1366b74c264">addObserver</link> (<link linkend="_classUtil_1_1Observer">Observer</link> &amp;observer, void(Observer::*methodPtr)(const T &amp;))</para>
+
+<para>Register an observer. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1Signal_1acd6e98ab3f9a2c68aa19cfabc2947d00">clear</link> ()</para>
+
+<para>Clear all observerse from list. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1Signal_1ad660e7a8ffc6c4b270078a13ef4450f4">nObserver</link> () const</para>
+
+<para>Get number of registered observers. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1Signal_1ae4c8adf7cb5ed88454aa2a2ca19d330b">notify</link> (const T &amp;t)</para>
+
+<para>Notify all observers. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;typename T = void&gt;
+class Util::Signal&lt; T &gt;</title></simplesect>
+
+
+<para><link linkend="_classUtil_1_1Notifier">Notifier</link> (or subject) in the <link linkend="_classUtil_1_1Observer">Observer</link> design pattern. </para>
+
+
+
+<para>A <link linkend="_classUtil_1_1Signal">Signal</link> manages a list of registered functor objects, and provides a void <link linkend="_classUtil_1_1Signal_1ae4c8adf7cb5ed88454aa2a2ca19d330b">Signal&lt;T&gt;::notify(const T&amp;)</link> method that calls them all with the same argument.</para>
+
+<para>The explicit specialization <link linkend="_classUtil_1_1Signal_3_01void_01_4">Signal&lt;void&gt;</link>, or Signal&lt;&gt;, has a notify method void <link linkend="_classUtil_1_1Signal_1ae4c8adf7cb5ed88454aa2a2ca19d330b">Signal&lt;&gt;::notify()</link> that takes no parameters, which calls a method of each observer that takes no parameters. </para>
+<para>
+Definition at line 38 of file Signal.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1Signal_1abe13ce83b40040c6fb4b6899dd02dd61"/>    <section>
+    <title>Signal()</title>
+<indexterm><primary>Signal</primary><secondary>Util::Signal&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Util::Signal&lt; T &gt;</primary><secondary>Signal</secondary></indexterm>
+<computeroutput>template&lt;typename T  = void&gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1Signal">Util::Signal</link>&lt; T &gt;::<link linkend="_classUtil_1_1Signal">Signal</link> ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Default constructor. </para>
+</para>
+<para>
+Definition at line 48 of file Signal.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Signal_1a64c2fc78dc8faaf94912ff8722aa2b12"/>    <section>
+    <title>~Signal()</title>
+<indexterm><primary>~Signal</primary><secondary>Util::Signal&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Util::Signal&lt; T &gt;</primary><secondary>~Signal</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1Signal">Util::Signal</link>&lt; T &gt;::~<link linkend="_classUtil_1_1Signal">Signal</link></computeroutput></para><para>
+
+<para>Destructor. </para>
+</para>
+<para>
+Definition at line 16 of file Signal.cpp.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1Signal_1a78124b00fed766dea183e1366b74c264"/>    <section>
+    <title>addObserver()</title>
+<indexterm><primary>addObserver</primary><secondary>Util::Signal&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Util::Signal&lt; T &gt;</primary><secondary>addObserver</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><computeroutput>template&lt;class Observer &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1Signal">Util::Signal</link>&lt; T &gt;::addObserver (<link linkend="_classUtil_1_1Observer">Observer</link> &amp; observer, void(Observer::*)(const T &amp;) methodPtr)</computeroutput></para><para>
+
+<para>Register an observer. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>observer</entry>
+                                <entry>
+<para>observer object (invokes method) </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>methodPtr</entry>
+                                <entry>
+<para>pointer to relevant method </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 111 of file Signal.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Signal_1acd6e98ab3f9a2c68aa19cfabc2947d00"/>    <section>
+    <title>clear()</title>
+<indexterm><primary>clear</primary><secondary>Util::Signal&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Util::Signal&lt; T &gt;</primary><secondary>clear</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1Signal">Util::Signal</link>&lt; T &gt;::clear</computeroutput></para><para>
+
+<para>Clear all observerse from list. </para>
+</para>
+<para>
+Definition at line 36 of file Signal.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1Signal_1ad660e7a8ffc6c4b270078a13ef4450f4"/>    <section>
+    <title>nObserver()</title>
+<indexterm><primary>nObserver</primary><secondary>Util::Signal&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Util::Signal&lt; T &gt;</primary><secondary>nObserver</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>int <link linkend="_classUtil_1_1Signal">Util::Signal</link>&lt; T &gt;::nObserver</computeroutput></para><para>
+
+<para>Get number of registered observers. </para>
+</para>
+<para>
+Definition at line 51 of file Signal.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1Signal_1ae4c8adf7cb5ed88454aa2a2ca19d330b"/>    <section>
+    <title>notify()</title>
+<indexterm><primary>notify</primary><secondary>Util::Signal&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Util::Signal&lt; T &gt;</primary><secondary>notify</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1Signal">Util::Signal</link>&lt; T &gt;::notify (const T &amp; t)</computeroutput></para><para>
+
+<para>Notify all observers. </para>
+</para>
+
+<para>This method notifies all registered observers by calling the appropriate method of each observer, passing each the parameter t as argument. The explicit specialization Signal&lt;&gt;, with T=void, is used for notification methods that take</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>t</entry>
+                                <entry>
+<para>Argument passed to notification methods of all observers. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 22 of file Signal.cpp.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+Signal.hSignal.cpp</section>
+</section>

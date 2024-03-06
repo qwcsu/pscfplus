@@ -1,0 +1,8 @@
+cd pgc
+make clean
+cd ../
+sed -i '/NVXXFLAGS+=/'d config.mk
+sed -i "127a NVXXFLAGS+= -O3 -arch=sm_75 -DREPS=1 -DCHN=0 -DDFT=2 -DNBP=0 -DCMP=0" config.mk
+make pscf -j16
+cd pgc
+make all -j16

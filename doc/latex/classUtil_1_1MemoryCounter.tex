@@ -1,0 +1,208 @@
+\hypertarget{classUtil_1_1MemoryCounter}{}\doxysubsection{Util\+::Memory\+Counter Class Reference}
+\label{classUtil_1_1MemoryCounter}\index{Util::MemoryCounter@{Util::MemoryCounter}}
+
+
+Archive to computed packed size of a sequence of objects, in bytes.  
+
+
+
+
+{\ttfamily \#include $<$Memory\+Counter.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1MemoryCounter_a13821417e8a3bfb7ba2bca537d2b7791}{Memory\+Counter}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1MemoryCounter_a6ffe7eb5edc22b50e57f94f958e37a5e}{$\sim$\+Memory\+Counter}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1MemoryCounter_ae03ec27b0779743557d1e8c124c6d3d9}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Resets the size counter to zero. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{classUtil_1_1MemoryCounter}{Memory\+Counter}} \& \mbox{\hyperlink{classUtil_1_1MemoryCounter_aef2db38ea42c1cbea283773e485aeea3}{operator\&}} (T \&data)
+\begin{DoxyCompactList}\small\item\em Add packed size of one object. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{classUtil_1_1MemoryCounter}{Memory\+Counter}} \& \mbox{\hyperlink{classUtil_1_1MemoryCounter_a44a7775f6f978bc14a8ff8de17fb4feb}{operator$<$$<$}} (T \&data)
+\begin{DoxyCompactList}\small\item\em Add packed size of one object. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classUtil_1_1MemoryCounter_ab17b341f45b5c7158c10004812664df8}{count}} (const T \&data)
+\begin{DoxyCompactList}\small\item\em Add size of one object in memory. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classUtil_1_1MemoryCounter_aef5e6e47953989419ae15c77f49373cf}{count}} (T $\ast$array, int n)
+\begin{DoxyCompactList}\small\item\em Compute the size in memory of a C array. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classUtil_1_1MemoryCounter_aaab06011b954c2be2b9fdff6be3ef0b1}{size}} () const
+\begin{DoxyCompactList}\small\item\em Return size required for archive, in Bytes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classUtil_1_1MemoryCounter_a9e18a988993cbbee5ea6b66b7019f979}{is\+\_\+saving}} ()
+\begin{DoxyCompactList}\small\item\em Returns true. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classUtil_1_1MemoryCounter_a924d8362da343f48b5a2c0fc305bb2c0}{is\+\_\+loading}} ()
+\begin{DoxyCompactList}\small\item\em Returns false. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Archive to computed packed size of a sequence of objects, in bytes. 
+
+This class computes the number of bytes required to pack a sequence of objects within a \mbox{\hyperlink{classUtil_1_1MemoryOArchive}{Memory\+O\+Archive}}. The interface is that of a loading Archive, but the $<$$<$ and \& operators are overloaded to compute the size required for an object and to increment a size counter, rather than to actually save data.
+
+The \mbox{\hyperlink{classUtil_1_1MemoryCounter_aaab06011b954c2be2b9fdff6be3ef0b1}{size()}} method returns the number of bytes required to pack all of the objects serialized thus far. The size counter is set to zero upon construction. The \mbox{\hyperlink{classUtil_1_1MemoryCounter_ae03ec27b0779743557d1e8c124c6d3d9}{clear()}} method resets the size counter to zero. 
+
+Definition at line 35 of file Memory\+Counter.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1MemoryCounter_a13821417e8a3bfb7ba2bca537d2b7791}\label{classUtil_1_1MemoryCounter_a13821417e8a3bfb7ba2bca537d2b7791}} 
+\index{Util::MemoryCounter@{Util::MemoryCounter}!MemoryCounter@{MemoryCounter}}
+\index{MemoryCounter@{MemoryCounter}!Util::MemoryCounter@{Util::MemoryCounter}}
+\doxyparagraph{\texorpdfstring{MemoryCounter()}{MemoryCounter()}}
+{\footnotesize\ttfamily Util\+::\+Memory\+Counter\+::\+Memory\+Counter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+
+Definition at line 16 of file Memory\+Counter.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1MemoryCounter_a6ffe7eb5edc22b50e57f94f958e37a5e}\label{classUtil_1_1MemoryCounter_a6ffe7eb5edc22b50e57f94f958e37a5e}} 
+\index{Util::MemoryCounter@{Util::MemoryCounter}!````~MemoryCounter@{$\sim$MemoryCounter}}
+\index{````~MemoryCounter@{$\sim$MemoryCounter}!Util::MemoryCounter@{Util::MemoryCounter}}
+\doxyparagraph{\texorpdfstring{$\sim$MemoryCounter()}{~MemoryCounter()}}
+{\footnotesize\ttfamily Util\+::\+Memory\+Counter\+::$\sim$\+Memory\+Counter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+Definition at line 24 of file Memory\+Counter.\+cpp.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1MemoryCounter_a9e18a988993cbbee5ea6b66b7019f979}\label{classUtil_1_1MemoryCounter_a9e18a988993cbbee5ea6b66b7019f979}} 
+\index{Util::MemoryCounter@{Util::MemoryCounter}!is\_saving@{is\_saving}}
+\index{is\_saving@{is\_saving}!Util::MemoryCounter@{Util::MemoryCounter}}
+\doxyparagraph{\texorpdfstring{is\_saving()}{is\_saving()}}
+{\footnotesize\ttfamily bool Util\+::\+Memory\+Counter\+::is\+\_\+saving (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns true. 
+
+
+
+Definition at line 139 of file Memory\+Counter.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1MemoryCounter_a924d8362da343f48b5a2c0fc305bb2c0}\label{classUtil_1_1MemoryCounter_a924d8362da343f48b5a2c0fc305bb2c0}} 
+\index{Util::MemoryCounter@{Util::MemoryCounter}!is\_loading@{is\_loading}}
+\index{is\_loading@{is\_loading}!Util::MemoryCounter@{Util::MemoryCounter}}
+\doxyparagraph{\texorpdfstring{is\_loading()}{is\_loading()}}
+{\footnotesize\ttfamily bool Util\+::\+Memory\+Counter\+::is\+\_\+loading (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns false. 
+
+
+
+Definition at line 142 of file Memory\+Counter.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1MemoryCounter_ae03ec27b0779743557d1e8c124c6d3d9}\label{classUtil_1_1MemoryCounter_ae03ec27b0779743557d1e8c124c6d3d9}} 
+\index{Util::MemoryCounter@{Util::MemoryCounter}!clear@{clear}}
+\index{clear@{clear}!Util::MemoryCounter@{Util::MemoryCounter}}
+\doxyparagraph{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void Util\+::\+Memory\+Counter\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resets the size counter to zero. 
+
+
+
+Definition at line 30 of file Memory\+Counter.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1MemoryCounter_aef2db38ea42c1cbea283773e485aeea3}\label{classUtil_1_1MemoryCounter_aef2db38ea42c1cbea283773e485aeea3}} 
+\index{Util::MemoryCounter@{Util::MemoryCounter}!operator\&@{operator\&}}
+\index{operator\&@{operator\&}!Util::MemoryCounter@{Util::MemoryCounter}}
+\doxyparagraph{\texorpdfstring{operator\&()}{operator\&()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classUtil_1_1MemoryCounter}{Memory\+Counter}} \& Util\+::\+Memory\+Counter\+::operator\& (\begin{DoxyParamCaption}\item[{T \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add packed size of one object. 
+
+
+
+Definition at line 155 of file Memory\+Counter.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1MemoryCounter_a44a7775f6f978bc14a8ff8de17fb4feb}\label{classUtil_1_1MemoryCounter_a44a7775f6f978bc14a8ff8de17fb4feb}} 
+\index{Util::MemoryCounter@{Util::MemoryCounter}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Util::MemoryCounter@{Util::MemoryCounter}}
+\doxyparagraph{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classUtil_1_1MemoryCounter}{Memory\+Counter}} \& Util\+::\+Memory\+Counter\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{T \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add packed size of one object. 
+
+
+
+Definition at line 165 of file Memory\+Counter.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1MemoryCounter_ab17b341f45b5c7158c10004812664df8}\label{classUtil_1_1MemoryCounter_ab17b341f45b5c7158c10004812664df8}} 
+\index{Util::MemoryCounter@{Util::MemoryCounter}!count@{count}}
+\index{count@{count}!Util::MemoryCounter@{Util::MemoryCounter}}
+\doxyparagraph{\texorpdfstring{count()}{count()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Util\+::\+Memory\+Counter\+::count (\begin{DoxyParamCaption}\item[{const T \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add size of one object in memory. 
+
+This method just increments the size by sizeof(\+T). It is appropriate only for primitive C++ variables and P\+OD types for which a bitwise copy is appropriate. 
+
+Definition at line 177 of file Memory\+Counter.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1MemoryCounter_aef5e6e47953989419ae15c77f49373cf}\label{classUtil_1_1MemoryCounter_aef5e6e47953989419ae15c77f49373cf}} 
+\index{Util::MemoryCounter@{Util::MemoryCounter}!count@{count}}
+\index{count@{count}!Util::MemoryCounter@{Util::MemoryCounter}}
+\doxyparagraph{\texorpdfstring{count()}{count()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Util\+::\+Memory\+Counter\+::count (\begin{DoxyParamCaption}\item[{T $\ast$}]{array,  }\item[{int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compute the size in memory of a C array. 
+
+This method increments the size by n$\ast$sizeof(T). It is appropriate for C arrays of primitive variables and of P\+OD types for which a bitwise copy is appropriate. 
+
+Definition at line 184 of file Memory\+Counter.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1MemoryCounter_aaab06011b954c2be2b9fdff6be3ef0b1}\label{classUtil_1_1MemoryCounter_aaab06011b954c2be2b9fdff6be3ef0b1}} 
+\index{Util::MemoryCounter@{Util::MemoryCounter}!size@{size}}
+\index{size@{size}!Util::MemoryCounter@{Util::MemoryCounter}}
+\doxyparagraph{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily size\+\_\+t Util\+::\+Memory\+Counter\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return size required for archive, in Bytes. 
+
+
+
+Definition at line 148 of file Memory\+Counter.\+h.
+
+
+
+Referenced by Util\+::memory\+Size().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Memory\+Counter.\+h\item 
+Memory\+Counter.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,138 @@
+\hypertarget{classUtil_1_1Serializable}{}\doxysubsection{Util\+::Serializable Class Reference}
+\label{classUtil_1_1Serializable}\index{Util::Serializable@{Util::Serializable}}
+
+
+Abstract class for serializable objects.  
+
+
+
+
+{\ttfamily \#include $<$Serializable.\+h$>$}
+
+Inheritance diagram for Util\+::Serializable\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.839416cm]{classUtil_1_1Serializable}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{classUtil_1_1BinaryFileOArchive}{Binary\+File\+O\+Archive}} \mbox{\hyperlink{classUtil_1_1Serializable_aca43a1eea5ec5f13189a57892a7a6d04}{O\+Archive}}
+\begin{DoxyCompactList}\small\item\em Type of output archive used by save method. \end{DoxyCompactList}\item 
+typedef \mbox{\hyperlink{classUtil_1_1BinaryFileIArchive}{Binary\+File\+I\+Archive}} \mbox{\hyperlink{classUtil_1_1Serializable_ac6bcbf9bac926cada5a398804410e891}{I\+Archive}}
+\begin{DoxyCompactList}\small\item\em Type of input archive used by load method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classUtil_1_1Serializable_a1399558d74e8318dea431157ab952908}{$\sim$\+Serializable}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUtil_1_1Serializable_a9c0a18b68dcf064f6293ddebff894850}{save}} (\mbox{\hyperlink{classUtil_1_1Serializable_aca43a1eea5ec5f13189a57892a7a6d04}{O\+Archive}} \&ar)=0
+\begin{DoxyCompactList}\small\item\em Save to an archive. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUtil_1_1Serializable_a1b54bcc9cb4fbb5a416533142f2c683d}{load}} (\mbox{\hyperlink{classUtil_1_1Serializable_ac6bcbf9bac926cada5a398804410e891}{I\+Archive}} \&ar)=0
+\begin{DoxyCompactList}\small\item\em Load from an archive. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Abstract class for serializable objects. 
+
+This class defines an interface for serialization of objects. The \mbox{\hyperlink{classUtil_1_1Serializable_a9c0a18b68dcf064f6293ddebff894850}{save()}} method saves the internal state of an object to an archive, and the \mbox{\hyperlink{classUtil_1_1Serializable_a1b54bcc9cb4fbb5a416533142f2c683d}{load()}} method loads the state from an archive.
+
+The type of archive to be used is specified by the O\+Archive and I\+Archive typedefs. The two concrete classes that are referred to by these typedefs should be forward declared in this file, and the header files for these two classes must be included in the file \mbox{\hyperlink{Serializable__includes_8h_source}{Serializable\+\_\+includes.\+h}}. The file \mbox{\hyperlink{Serializable__includes_8h_source}{Serializable\+\_\+includes.\+h}} should be included in source files that implement that load and save methods for subclasses. 
+
+Definition at line 34 of file Serializable.\+h.
+
+
+
+\doxysubsubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classUtil_1_1Serializable_aca43a1eea5ec5f13189a57892a7a6d04}\label{classUtil_1_1Serializable_aca43a1eea5ec5f13189a57892a7a6d04}} 
+\index{Util::Serializable@{Util::Serializable}!OArchive@{OArchive}}
+\index{OArchive@{OArchive}!Util::Serializable@{Util::Serializable}}
+\doxyparagraph{\texorpdfstring{OArchive}{OArchive}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classUtil_1_1BinaryFileOArchive}{Binary\+File\+O\+Archive}} \mbox{\hyperlink{classUtil_1_1Serializable_aca43a1eea5ec5f13189a57892a7a6d04}{Util\+::\+Serializable\+::\+O\+Archive}}}
+
+
+
+Type of output archive used by save method. 
+
+
+
+Definition at line 42 of file Serializable.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Serializable_ac6bcbf9bac926cada5a398804410e891}\label{classUtil_1_1Serializable_ac6bcbf9bac926cada5a398804410e891}} 
+\index{Util::Serializable@{Util::Serializable}!IArchive@{IArchive}}
+\index{IArchive@{IArchive}!Util::Serializable@{Util::Serializable}}
+\doxyparagraph{\texorpdfstring{IArchive}{IArchive}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classUtil_1_1BinaryFileIArchive}{Binary\+File\+I\+Archive}} \mbox{\hyperlink{classUtil_1_1Serializable_ac6bcbf9bac926cada5a398804410e891}{Util\+::\+Serializable\+::\+I\+Archive}}}
+
+
+
+Type of input archive used by load method. 
+
+
+
+Definition at line 47 of file Serializable.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1Serializable_a1399558d74e8318dea431157ab952908}\label{classUtil_1_1Serializable_a1399558d74e8318dea431157ab952908}} 
+\index{Util::Serializable@{Util::Serializable}!````~Serializable@{$\sim$Serializable}}
+\index{````~Serializable@{$\sim$Serializable}!Util::Serializable@{Util::Serializable}}
+\doxyparagraph{\texorpdfstring{$\sim$Serializable()}{~Serializable()}}
+{\footnotesize\ttfamily virtual Util\+::\+Serializable\+::$\sim$\+Serializable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+Definition at line 52 of file Serializable.\+h.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1Serializable_a9c0a18b68dcf064f6293ddebff894850}\label{classUtil_1_1Serializable_a9c0a18b68dcf064f6293ddebff894850}} 
+\index{Util::Serializable@{Util::Serializable}!save@{save}}
+\index{save@{save}!Util::Serializable@{Util::Serializable}}
+\doxyparagraph{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily virtual void Util\+::\+Serializable\+::save (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1Serializable_aca43a1eea5ec5f13189a57892a7a6d04}{O\+Archive}} \&}]{ar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Save to an archive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & binary saving (output) archive. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classUtil_1_1ParamComposite_a3c430a4e31a9573eadb06ab89d3bf780}{Util\+::\+Param\+Composite}}, \mbox{\hyperlink{classUtil_1_1FileMaster_a242dce8b12bc4a5d8539308f2a702500}{Util\+::\+File\+Master}}, \mbox{\hyperlink{classUtil_1_1Parameter_a43ae1276ea1ef6562035bec15ea6fdc9}{Util\+::\+Parameter}}, \mbox{\hyperlink{classUtil_1_1Manager_a676a1b986d066d8cd6a303f369d7403f}{Util\+::\+Manager$<$ Data $>$}}, \mbox{\hyperlink{classUtil_1_1AutoCorrArray_aecc9a9d807bf780d2b5f0405f0f2f642}{Util\+::\+Auto\+Corr\+Array$<$ Data, Product $>$}}, \mbox{\hyperlink{classUtil_1_1AutoCorr_add693694d3f06a007ff10fa46d804bfb}{Util\+::\+Auto\+Corr$<$ Data, Product $>$}}, \mbox{\hyperlink{classUtil_1_1Average_a6bb1a12d32f87d40483ae7bb0d8c4708}{Util\+::\+Average}}, \mbox{\hyperlink{classUtil_1_1MeanSqDispArray_ad0a01b9aeba80e0421fd0416db7fbb51}{Util\+::\+Mean\+Sq\+Disp\+Array$<$ Data $>$}}, \mbox{\hyperlink{classUtil_1_1Distribution_a7ca406d44ab9c1c6ab2594882196d807}{Util\+::\+Distribution}}, \mbox{\hyperlink{classUtil_1_1TensorAverage_a88d6b99a9fbac6185490c5508f8805e4}{Util\+::\+Tensor\+Average}}, \mbox{\hyperlink{classUtil_1_1SymmTensorAverage_adbf1f3a1efc1eac27d43516d8490e7a9}{Util\+::\+Symm\+Tensor\+Average}}, \mbox{\hyperlink{classUtil_1_1Random_aff18b17a0f4d6383d8ed881a8910b3b8}{Util\+::\+Random}}, \mbox{\hyperlink{classUtil_1_1IntDistribution_a7fe2cf76d34574e8cdfa52735438b484}{Util\+::\+Int\+Distribution}}, \mbox{\hyperlink{classUtil_1_1RadialDistribution_a51fa4e62a87856912ec2d6d9b9cf8cb3}{Util\+::\+Radial\+Distribution}}, \mbox{\hyperlink{classUtil_1_1ParamComponent_a433717dd5bb0a1ac3e4dec06459b7bde}{Util\+::\+Param\+Component}}, and \mbox{\hyperlink{classUtil_1_1AutoCorrelation_adc342d958fd2ab000573de8100c91043}{Util\+::\+Auto\+Correlation$<$ Data, Product $>$}}.
+
+\mbox{\Hypertarget{classUtil_1_1Serializable_a1b54bcc9cb4fbb5a416533142f2c683d}\label{classUtil_1_1Serializable_a1b54bcc9cb4fbb5a416533142f2c683d}} 
+\index{Util::Serializable@{Util::Serializable}!load@{load}}
+\index{load@{load}!Util::Serializable@{Util::Serializable}}
+\doxyparagraph{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily virtual void Util\+::\+Serializable\+::load (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1Serializable_ac6bcbf9bac926cada5a398804410e891}{I\+Archive}} \&}]{ar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Load from an archive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & binary loading (input) archive. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classUtil_1_1ParamComposite_a02a1172d7cd86d4015be8d9e65fe750f}{Util\+::\+Param\+Composite}}, \mbox{\hyperlink{classUtil_1_1Parameter_afee158d4448a9db32b8469c1e447e75c}{Util\+::\+Parameter}}, \mbox{\hyperlink{classUtil_1_1ParamComponent_a7925e60ccaf7ecf2ea866e689983124d}{Util\+::\+Param\+Component}}, and \mbox{\hyperlink{classUtil_1_1AutoCorrelation_acbc41a7ab175fcd6422ab15b05886840}{Util\+::\+Auto\+Correlation$<$ Data, Product $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Serializable.\+h\end{DoxyCompactItemize}

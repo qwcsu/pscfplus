@@ -1,0 +1,257 @@
+\hypertarget{classUtil_1_1PArrayIterator}{}\doxysubsection{Util\+::P\+Array\+Iterator$<$ Data $>$ Class Template Reference}
+\label{classUtil_1_1PArrayIterator}\index{Util::PArrayIterator$<$ Data $>$@{Util::PArrayIterator$<$ Data $>$}}
+
+
+Forward iterator for a \mbox{\hyperlink{classUtil_1_1PArray}{P\+Array}}.  
+
+
+
+
+{\ttfamily \#include $<$P\+Array\+Iterator.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1PArrayIterator_a2341566a1442093b6efe58dadae89416}{P\+Array\+Iterator}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1PArrayIterator_afca88258b51ab50fb694a3e910666534}{set\+Current}} (Data $\ast$$\ast$ptr)
+\begin{DoxyCompactList}\small\item\em Set the current pointer value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1PArrayIterator_acfc2e9cb1f932424fe773df52a5acb15}{set\+End}} (Data $\ast$$\ast$ptr)
+\begin{DoxyCompactList}\small\item\em Set the value of the end pointer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1PArrayIterator_acb0990da53e2c44c63481c64f776a163}{set\+Null}} ()
+\begin{DoxyCompactList}\small\item\em Nullify the iterator. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUtil_1_1PArrayIterator_a5de40a7110246939fdfb2beac7e27f10}{is\+End}} () const
+\begin{DoxyCompactList}\small\item\em Is the current pointer at the end of the \mbox{\hyperlink{classUtil_1_1PArray}{P\+Array}}? \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUtil_1_1PArrayIterator_ad4c0f1d2dea7b08907c0487c9768db08}{not\+End}} () const
+\begin{DoxyCompactList}\small\item\em Is the current pointer not at the end of the \mbox{\hyperlink{classUtil_1_1PArray}{P\+Array}}? \end{DoxyCompactList}\item 
+Data $\ast$ \mbox{\hyperlink{classUtil_1_1PArrayIterator_ad61cfea949ce50f7bb29d5ae2e969fa1}{get}} () const
+\begin{DoxyCompactList}\small\item\em Return a pointer to the current data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Operators}
+\begin{DoxyCompactItemize}
+\item 
+Data \& \mbox{\hyperlink{classUtil_1_1PArrayIterator_ac833774b257c8ecddad5d9d9a4946d2b}{operator$\ast$}} () const
+\begin{DoxyCompactList}\small\item\em Return a reference to the current Data. \end{DoxyCompactList}\item 
+Data $\ast$ \mbox{\hyperlink{classUtil_1_1PArrayIterator_a142da8d31758c7111259b02c6c98b9dc}{operator-\/$>$}} () const
+\begin{DoxyCompactList}\small\item\em Provide a pointer to the current Data object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1PArrayIterator}{P\+Array\+Iterator}}$<$ Data $>$ \& \mbox{\hyperlink{classUtil_1_1PArrayIterator_af16f796d24eead717ccdc0e95065b584}{operator++}} ()
+\begin{DoxyCompactList}\small\item\em Increment the current pointer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$typename Data$>$\newline
+class Util\+::\+P\+Array\+Iterator$<$ Data $>$}
+
+Forward iterator for a \mbox{\hyperlink{classUtil_1_1PArray}{P\+Array}}. 
+
+An \mbox{\hyperlink{classUtil_1_1PArrayIterator}{P\+Array\+Iterator}} is an abstraction of a pointer, similar to an S\+TL forward iterator. The $\ast$ operator returns a reference to an associated Data object, the -\/$>$ operator returns a pointer to that object. The ++ operator increments the current pointer by one array element.
+
+Unlike an S\+TL forward iterator, an \mbox{\hyperlink{classUtil_1_1PArrayIterator}{P\+Array\+Iterator}} contains the address of the end of the array. The \mbox{\hyperlink{classUtil_1_1PArrayIterator_a5de40a7110246939fdfb2beac7e27f10}{is\+End()}} method can be used to test for termination of a for or while loop. When \mbox{\hyperlink{classUtil_1_1PArrayIterator_a5de40a7110246939fdfb2beac7e27f10}{is\+End()}} is true, the iterator has no current value, and cannot be incremented further. The \mbox{\hyperlink{classUtil_1_1PArrayIterator_a5de40a7110246939fdfb2beac7e27f10}{is\+End()}} method returns true either if the iterator\+: i) has already been incremented one past the end of an associated \mbox{\hyperlink{classUtil_1_1PArray}{P\+Array}}, or ii) is in a null state that is produced by the constructor and the clear() method. 
+
+Definition at line 19 of file Array\+Set.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1PArrayIterator_a2341566a1442093b6efe58dadae89416}\label{classUtil_1_1PArrayIterator_a2341566a1442093b6efe58dadae89416}} 
+\index{Util::PArrayIterator$<$ Data $>$@{Util::PArrayIterator$<$ Data $>$}!PArrayIterator@{PArrayIterator}}
+\index{PArrayIterator@{PArrayIterator}!Util::PArrayIterator$<$ Data $>$@{Util::PArrayIterator$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{PArrayIterator()}{PArrayIterator()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+\mbox{\hyperlink{classUtil_1_1PArrayIterator}{Util\+::\+P\+Array\+Iterator}}$<$ Data $>$\+::\mbox{\hyperlink{classUtil_1_1PArrayIterator}{P\+Array\+Iterator}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor. 
+
+~\newline
+
+
+Constructs a null iterator. ~\newline
+ 
+
+Definition at line 44 of file P\+Array\+Iterator.\+h.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1PArrayIterator_afca88258b51ab50fb694a3e910666534}\label{classUtil_1_1PArrayIterator_afca88258b51ab50fb694a3e910666534}} 
+\index{Util::PArrayIterator$<$ Data $>$@{Util::PArrayIterator$<$ Data $>$}!setCurrent@{setCurrent}}
+\index{setCurrent@{setCurrent}!Util::PArrayIterator$<$ Data $>$@{Util::PArrayIterator$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{setCurrent()}{setCurrent()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+void \mbox{\hyperlink{classUtil_1_1PArrayIterator}{Util\+::\+P\+Array\+Iterator}}$<$ Data $>$\+::set\+Current (\begin{DoxyParamCaption}\item[{Data $\ast$$\ast$}]{ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the current pointer value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & Pointer to current element of array of Data$\ast$ pointers. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 55 of file P\+Array\+Iterator.\+h.
+
+
+
+Referenced by Util\+::\+P\+Array$<$ Data $>$\+::begin(), Util\+::\+F\+P\+Array$<$ Data, Capacity $>$\+::begin(), and Util\+::\+S\+Set$<$ Data, Capacity $>$\+::begin().
+
+\mbox{\Hypertarget{classUtil_1_1PArrayIterator_acfc2e9cb1f932424fe773df52a5acb15}\label{classUtil_1_1PArrayIterator_acfc2e9cb1f932424fe773df52a5acb15}} 
+\index{Util::PArrayIterator$<$ Data $>$@{Util::PArrayIterator$<$ Data $>$}!setEnd@{setEnd}}
+\index{setEnd@{setEnd}!Util::PArrayIterator$<$ Data $>$@{Util::PArrayIterator$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{setEnd()}{setEnd()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+void \mbox{\hyperlink{classUtil_1_1PArrayIterator}{Util\+::\+P\+Array\+Iterator}}$<$ Data $>$\+::set\+End (\begin{DoxyParamCaption}\item[{Data $\ast$$\ast$}]{ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the value of the end pointer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & Pointer to one element past end of array of Data$\ast$ pointers. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 66 of file P\+Array\+Iterator.\+h.
+
+
+
+Referenced by Util\+::\+P\+Array$<$ Data $>$\+::begin(), Util\+::\+F\+P\+Array$<$ Data, Capacity $>$\+::begin(), and Util\+::\+S\+Set$<$ Data, Capacity $>$\+::begin().
+
+\mbox{\Hypertarget{classUtil_1_1PArrayIterator_acb0990da53e2c44c63481c64f776a163}\label{classUtil_1_1PArrayIterator_acb0990da53e2c44c63481c64f776a163}} 
+\index{Util::PArrayIterator$<$ Data $>$@{Util::PArrayIterator$<$ Data $>$}!setNull@{setNull}}
+\index{setNull@{setNull}!Util::PArrayIterator$<$ Data $>$@{Util::PArrayIterator$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{setNull()}{setNull()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+void \mbox{\hyperlink{classUtil_1_1PArrayIterator}{Util\+::\+P\+Array\+Iterator}}$<$ Data $>$\+::set\+Null (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Nullify the iterator. 
+
+
+
+Definition at line 72 of file P\+Array\+Iterator.\+h.
+
+
+
+Referenced by Util\+::\+P\+Array$<$ Data $>$\+::begin().
+
+\mbox{\Hypertarget{classUtil_1_1PArrayIterator_a5de40a7110246939fdfb2beac7e27f10}\label{classUtil_1_1PArrayIterator_a5de40a7110246939fdfb2beac7e27f10}} 
+\index{Util::PArrayIterator$<$ Data $>$@{Util::PArrayIterator$<$ Data $>$}!isEnd@{isEnd}}
+\index{isEnd@{isEnd}!Util::PArrayIterator$<$ Data $>$@{Util::PArrayIterator$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{isEnd()}{isEnd()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+bool \mbox{\hyperlink{classUtil_1_1PArrayIterator}{Util\+::\+P\+Array\+Iterator}}$<$ Data $>$\+::is\+End (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Is the current pointer at the end of the \mbox{\hyperlink{classUtil_1_1PArray}{P\+Array}}? 
+
+\begin{DoxyReturn}{Returns}
+true if at end, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 84 of file P\+Array\+Iterator.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1PArrayIterator_ad4c0f1d2dea7b08907c0487c9768db08}\label{classUtil_1_1PArrayIterator_ad4c0f1d2dea7b08907c0487c9768db08}} 
+\index{Util::PArrayIterator$<$ Data $>$@{Util::PArrayIterator$<$ Data $>$}!notEnd@{notEnd}}
+\index{notEnd@{notEnd}!Util::PArrayIterator$<$ Data $>$@{Util::PArrayIterator$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{notEnd()}{notEnd()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+bool \mbox{\hyperlink{classUtil_1_1PArrayIterator}{Util\+::\+P\+Array\+Iterator}}$<$ Data $>$\+::not\+End (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Is the current pointer not at the end of the \mbox{\hyperlink{classUtil_1_1PArray}{P\+Array}}? 
+
+\begin{DoxyReturn}{Returns}
+true if not at end, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 92 of file P\+Array\+Iterator.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1PArrayIterator_ad61cfea949ce50f7bb29d5ae2e969fa1}\label{classUtil_1_1PArrayIterator_ad61cfea949ce50f7bb29d5ae2e969fa1}} 
+\index{Util::PArrayIterator$<$ Data $>$@{Util::PArrayIterator$<$ Data $>$}!get@{get}}
+\index{get@{get}!Util::PArrayIterator$<$ Data $>$@{Util::PArrayIterator$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+Data$\ast$ \mbox{\hyperlink{classUtil_1_1PArrayIterator}{Util\+::\+P\+Array\+Iterator}}$<$ Data $>$\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return a pointer to the current data. 
+
+\begin{DoxyReturn}{Returns}
+true if at end, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 100 of file P\+Array\+Iterator.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1PArrayIterator_ac833774b257c8ecddad5d9d9a4946d2b}\label{classUtil_1_1PArrayIterator_ac833774b257c8ecddad5d9d9a4946d2b}} 
+\index{Util::PArrayIterator$<$ Data $>$@{Util::PArrayIterator$<$ Data $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Util::PArrayIterator$<$ Data $>$@{Util::PArrayIterator$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+Data\& \mbox{\hyperlink{classUtil_1_1PArrayIterator}{Util\+::\+P\+Array\+Iterator}}$<$ Data $>$\+::operator$\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return a reference to the current Data. 
+
+\begin{DoxyReturn}{Returns}
+reference to associated Data object 
+\end{DoxyReturn}
+
+
+Definition at line 111 of file P\+Array\+Iterator.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1PArrayIterator_a142da8d31758c7111259b02c6c98b9dc}\label{classUtil_1_1PArrayIterator_a142da8d31758c7111259b02c6c98b9dc}} 
+\index{Util::PArrayIterator$<$ Data $>$@{Util::PArrayIterator$<$ Data $>$}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!Util::PArrayIterator$<$ Data $>$@{Util::PArrayIterator$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{operator-\/$>$()}{operator->()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+Data$\ast$ \mbox{\hyperlink{classUtil_1_1PArrayIterator}{Util\+::\+P\+Array\+Iterator}}$<$ Data $>$\+::operator-\/$>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Provide a pointer to the current Data object. 
+
+\begin{DoxyReturn}{Returns}
+pointer to the Data object 
+\end{DoxyReturn}
+
+
+Definition at line 122 of file P\+Array\+Iterator.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1PArrayIterator_af16f796d24eead717ccdc0e95065b584}\label{classUtil_1_1PArrayIterator_af16f796d24eead717ccdc0e95065b584}} 
+\index{Util::PArrayIterator$<$ Data $>$@{Util::PArrayIterator$<$ Data $>$}!operator++@{operator++}}
+\index{operator++@{operator++}!Util::PArrayIterator$<$ Data $>$@{Util::PArrayIterator$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{operator++()}{operator++()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+\mbox{\hyperlink{classUtil_1_1PArrayIterator}{P\+Array\+Iterator}}$<$Data$>$\& \mbox{\hyperlink{classUtil_1_1PArrayIterator}{Util\+::\+P\+Array\+Iterator}}$<$ Data $>$\+::operator++ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Increment the current pointer. 
+
+\begin{DoxyReturn}{Returns}
+this \mbox{\hyperlink{classUtil_1_1PArrayIterator}{P\+Array\+Iterator}}, after modification. 
+\end{DoxyReturn}
+
+
+Definition at line 133 of file P\+Array\+Iterator.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Array\+Set.\+h\item 
+P\+Array\+Iterator.\+h\end{DoxyCompactItemize}

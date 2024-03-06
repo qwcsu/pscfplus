@@ -1,0 +1,699 @@
+\hypertarget{classUtil_1_1IntVector}{}\doxysubsection{Util\+::Int\+Vector Class Reference}
+\label{classUtil_1_1IntVector}\index{Util::IntVector@{Util::IntVector}}
+
+
+An \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} is an integer Cartesian vector.  
+
+
+
+
+{\ttfamily \#include $<$Int\+Vector.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{Indent}\textbf{ Constructors}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1IntVector_ae8969e460a5003af8ce24ef139f5feb2}{Int\+Vector}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1IntVector_ae646f87afc3bb68f523b521e15294e1d}{Int\+Vector}} (const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&v)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1IntVector_a74d5e27be93e4b521b02f3acb18d3502}{Int\+Vector}} (int scalar)
+\begin{DoxyCompactList}\small\item\em Constructor, initialize all elements to the same scalar. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1IntVector_a811e69bd47cd8198b9d3d06c73836526}{Int\+Vector}} (const int $\ast$v)
+\begin{DoxyCompactList}\small\item\em Construct \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} from C int\mbox{[}3\mbox{]} array. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1IntVector_a9ebd65276663e18eeb950f9bc8777a17}{Int\+Vector}} (int x, int y, int z=0)
+\begin{DoxyCompactList}\small\item\em Construct \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} from its coordinates. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \& \mbox{\hyperlink{classUtil_1_1IntVector_a8d5b91b905e4cbfabfd297826c034adc}{zero}} ()
+\begin{DoxyCompactList}\small\item\em Set all elements of a 3D vector to zero. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Archive $>$ }\\void \mbox{\hyperlink{classUtil_1_1IntVector_a41a9ac8996a14d6b212dd1c362a829c0}{serialize}} (Archive \&ar, const unsigned int version)
+\begin{DoxyCompactList}\small\item\em Serialize to/from an archive. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Assignment}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \& \mbox{\hyperlink{classUtil_1_1IntVector_a0f84bdddfada1e6b35ad83c6e2faaa18}{operator=}} (const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&v)
+\begin{DoxyCompactList}\small\item\em Copy assignment. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \& \mbox{\hyperlink{classUtil_1_1IntVector_aef38ee5215753bcc3d834a16aae1cccd}{operator=}} (const int $\ast$v)
+\begin{DoxyCompactList}\small\item\em Assignment from C int\mbox{[}\mbox{]} array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Arithmetic Assignment}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classUtil_1_1IntVector_adc26e995342ebedf92f446756f7e409d}{operator+=}} (const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&dv)
+\begin{DoxyCompactList}\small\item\em Add vector dv to this vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1IntVector_aa02ab6d8b0cb5d7e10ed7f27b9916e85}{operator-\/=}} (const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&dv)
+\begin{DoxyCompactList}\small\item\em Subtract vector dv from this vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1IntVector_a668f54ac23ce7089de7641d3b736fd85}{operator$\ast$=}} (int s)
+\begin{DoxyCompactList}\small\item\em Multiply this vector by scalar s. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Array Subscript}\par
+\begin{DoxyCompactItemize}
+\item 
+const int \& \mbox{\hyperlink{classUtil_1_1IntVector_af123e31439fd3bf3e7427a3b02c1aa5d}{operator\mbox{[}$\,$\mbox{]}}} (int i) const
+\begin{DoxyCompactList}\small\item\em Return one Cartesian element by value. \end{DoxyCompactList}\item 
+int \& \mbox{\hyperlink{classUtil_1_1IntVector_aa8cf9d93746723181bcc1138db6d7a2e}{operator\mbox{[}$\,$\mbox{]}}} (int i)
+\begin{DoxyCompactList}\small\item\em Return a reference to one element of the vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Scalar valued functions}\par
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classUtil_1_1IntVector_a00363bd1ed0eee3cd0e786cfb54c9fa5}{square}} () const
+\begin{DoxyCompactList}\small\item\em Return square magnitude of this vector. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUtil_1_1IntVector_a9ae754549ef0ad7ff56c213b8626f083}{dot}} (const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&v) const
+\begin{DoxyCompactList}\small\item\em Return dot product of this vector and vector v. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Int\+Vector valued functions (result assigned to invoking object)}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \& \mbox{\hyperlink{classUtil_1_1IntVector_ab0ea43519fdf94d2801a161d0380af5a}{add}} (const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&v1, const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&v2)
+\begin{DoxyCompactList}\small\item\em Add vectors v1 and v2. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \& \mbox{\hyperlink{classUtil_1_1IntVector_a29a7b0c81eb900441e7d07c3414f406d}{subtract}} (const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&v1, const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&v2)
+\begin{DoxyCompactList}\small\item\em Subtract vector v2 from v1. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \& \mbox{\hyperlink{classUtil_1_1IntVector_aeb5ce5cc9bb5e53c087ec0cd1b1c6987}{multiply}} (const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&v, int s)
+\begin{DoxyCompactList}\small\item\em Multiply a vector v by a scalar s. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \& \mbox{\hyperlink{classUtil_1_1IntVector_a39aaf21b14d1cabb6a384a79930c49fa}{cross}} (const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&v1, const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&v2)
+\begin{DoxyCompactList}\small\item\em Calculate cross product of vectors v1 and v2. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Static Members}
+\begin{DoxyCompactItemize}
+\item 
+static const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \mbox{\hyperlink{classUtil_1_1IntVector_a05e6c59fde97c69f713b6dab540e8a7b}{Zero}} = \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}}(0)
+\begin{DoxyCompactList}\small\item\em Zero \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}}. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classUtil_1_1IntVector_a5e1cd025099a001b162c2a65303c9cac}{init\+Static}} ()
+\begin{DoxyCompactList}\small\item\em Initialize static \mbox{\hyperlink{classUtil_1_1IntVector_a05e6c59fde97c69f713b6dab540e8a7b}{Int\+Vector\+::\+Zero}}. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classUtil_1_1IntVector_ad54c107285d35edd9dc957b1f77324a1}{commit\+Mpi\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Commit M\+PI datatype \mbox{\hyperlink{classUtil_1_1MpiTraits_3_01IntVector_01_4_ae0b652561be6625b03d360928dfe4839}{Mpi\+Traits$<$\+Int\+Vector$>$\+::type}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUtil_1_1IntVector_a2f3bb66716c7c09cb361c9d2722767b8}{operator==}} (const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&v1, const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&v2)
+\begin{DoxyCompactList}\small\item\em Equality for Int\+Vectors. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUtil_1_1IntVector_ac29715ccc370d41aef0dab8f421cb7ad}{operator==}} (const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&v1, const int $\ast$v2)
+\begin{DoxyCompactList}\small\item\em Equality of \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} and C array. \end{DoxyCompactList}\item 
+std\+::istream \& \mbox{\hyperlink{classUtil_1_1IntVector_a2fb35ab473614459af4089178ef2abf1}{operator$>$$>$}} (std\+::istream \&in, \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&vector)
+\begin{DoxyCompactList}\small\item\em istream extractor for a \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}}. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{classUtil_1_1IntVector_a3c5052a9b643b06c98fba8ab86ff07ae}{operator$<$$<$}} (std\+::ostream \&out, const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&vector)
+\begin{DoxyCompactList}\small\item\em ostream inserter for a \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+An \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} is an integer Cartesian vector. 
+
+The Cartesian elements of a \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} can be accessed using array notation\+: The elements of a three dimensional \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} v are v\mbox{[}0\mbox{]}, v\mbox{[}1\mbox{]}, and v\mbox{[}2\mbox{]}. The subscript operator \mbox{[}\mbox{]} returns elements as references, which can be used on either the left or right side of an assignment operator.
+
+The arithmetic assignment operators +=, -\/=, $\ast$=, and /= are overloaded. The operators += and -\/= represent increment or decrement by a vector, while $\ast$= and /= represent multiplication or division by an integer.
+
+All other unary and binary mathematical operations are implemented as methods. Operations that yield a scalar result, such as a dot product, are implemented as methods that return the resulting value. Operations that yield a \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}}, such as vector addition, are implemented by methods that assign the result to the invoking vector, and return a reference to the invoking vector. For example, 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classUtil_1_1IntVector_ae8969e460a5003af8ce24ef139f5feb2}{IntVector}} a, b, c;}
+\DoxyCodeLine{\textcolor{keywordtype}{int} s;}
+\DoxyCodeLine{}
+\DoxyCodeLine{a[0] = 0.0}
+\DoxyCodeLine{a[1] = 1.0}
+\DoxyCodeLine{a[2] = 2.0}
+\DoxyCodeLine{}
+\DoxyCodeLine{b[0] =  0.5}
+\DoxyCodeLine{b[1] = -\/0.5}
+\DoxyCodeLine{b[2] = -\/1.5}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Set s = a.b}}
+\DoxyCodeLine{s = \mbox{\hyperlink{classUtil_1_1IntVector_a9ae754549ef0ad7ff56c213b8626f083}{dot}}(a, b) }
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Set c = a + b}}
+\DoxyCodeLine{c.add(a, b)}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Set a = a + b}}
+\DoxyCodeLine{a += b}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Set b = b*2}}
+\DoxyCodeLine{b *= 2}
+\end{DoxyCode}
+ This syntax for \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} valued operations avoids dynamic allocation of temporary \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} objects, by requiring that the invoking function provide an object to hold the result.
+
+For efficiency, all methods in this class are inlined. 
+
+Definition at line 73 of file Int\+Vector.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1IntVector_ae8969e460a5003af8ce24ef139f5feb2}\label{classUtil_1_1IntVector_ae8969e460a5003af8ce24ef139f5feb2}} 
+\index{Util::IntVector@{Util::IntVector}!IntVector@{IntVector}}
+\index{IntVector@{IntVector}!Util::IntVector@{Util::IntVector}}
+\doxyparagraph{\texorpdfstring{IntVector()}{IntVector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily Util\+::\+Int\+Vector\+::\+Int\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor. 
+
+
+
+Definition at line 84 of file Int\+Vector.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1IntVector_ae646f87afc3bb68f523b521e15294e1d}\label{classUtil_1_1IntVector_ae646f87afc3bb68f523b521e15294e1d}} 
+\index{Util::IntVector@{Util::IntVector}!IntVector@{IntVector}}
+\index{IntVector@{IntVector}!Util::IntVector@{Util::IntVector}}
+\doxyparagraph{\texorpdfstring{IntVector()}{IntVector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily Util\+::\+Int\+Vector\+::\+Int\+Vector (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy constructor. 
+
+
+
+Definition at line 90 of file Int\+Vector.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1IntVector_a74d5e27be93e4b521b02f3acb18d3502}\label{classUtil_1_1IntVector_a74d5e27be93e4b521b02f3acb18d3502}} 
+\index{Util::IntVector@{Util::IntVector}!IntVector@{IntVector}}
+\index{IntVector@{IntVector}!Util::IntVector@{Util::IntVector}}
+\doxyparagraph{\texorpdfstring{IntVector()}{IntVector()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily Util\+::\+Int\+Vector\+::\+Int\+Vector (\begin{DoxyParamCaption}\item[{int}]{scalar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructor, initialize all elements to the same scalar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & initial value for all elements. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 102 of file Int\+Vector.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1IntVector_a811e69bd47cd8198b9d3d06c73836526}\label{classUtil_1_1IntVector_a811e69bd47cd8198b9d3d06c73836526}} 
+\index{Util::IntVector@{Util::IntVector}!IntVector@{IntVector}}
+\index{IntVector@{IntVector}!Util::IntVector@{Util::IntVector}}
+\doxyparagraph{\texorpdfstring{IntVector()}{IntVector()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily Util\+::\+Int\+Vector\+::\+Int\+Vector (\begin{DoxyParamCaption}\item[{const int $\ast$}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Construct \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} from C int\mbox{[}3\mbox{]} array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & array of 3 coordinates \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 114 of file Int\+Vector.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1IntVector_a9ebd65276663e18eeb950f9bc8777a17}\label{classUtil_1_1IntVector_a9ebd65276663e18eeb950f9bc8777a17}} 
+\index{Util::IntVector@{Util::IntVector}!IntVector@{IntVector}}
+\index{IntVector@{IntVector}!Util::IntVector@{Util::IntVector}}
+\doxyparagraph{\texorpdfstring{IntVector()}{IntVector()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily Util\+::\+Int\+Vector\+::\+Int\+Vector (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{z = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} from its coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & x-\/axis coordinate \\
+\hline
+{\em y} & y-\/axis coordinate \\
+\hline
+{\em z} & z-\/axis coordinate \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 128 of file Int\+Vector.\+h.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1IntVector_a8d5b91b905e4cbfabfd297826c034adc}\label{classUtil_1_1IntVector_a8d5b91b905e4cbfabfd297826c034adc}} 
+\index{Util::IntVector@{Util::IntVector}!zero@{zero}}
+\index{zero@{zero}!Util::IntVector@{Util::IntVector}}
+\doxyparagraph{\texorpdfstring{zero()}{zero()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}}\& Util\+::\+Int\+Vector\+::zero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set all elements of a 3D vector to zero. 
+
+
+
+Definition at line 140 of file Int\+Vector.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1IntVector_a41a9ac8996a14d6b212dd1c362a829c0}\label{classUtil_1_1IntVector_a41a9ac8996a14d6b212dd1c362a829c0}} 
+\index{Util::IntVector@{Util::IntVector}!serialize@{serialize}}
+\index{serialize@{serialize}!Util::IntVector@{Util::IntVector}}
+\doxyparagraph{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$class Archive $>$ \\
+void Util\+::\+Int\+Vector\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{ar,  }\item[{const unsigned int}]{version }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Serialize to/from an archive. 
+
+Implementation uses syntax of Boost\+::serialize.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & archive \\
+\hline
+{\em version} & archive version id \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 456 of file Int\+Vector.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1IntVector_a0f84bdddfada1e6b35ad83c6e2faaa18}\label{classUtil_1_1IntVector_a0f84bdddfada1e6b35ad83c6e2faaa18}} 
+\index{Util::IntVector@{Util::IntVector}!operator=@{operator=}}
+\index{operator=@{operator=}!Util::IntVector@{Util::IntVector}}
+\doxyparagraph{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}}\& Util\+::\+Int\+Vector\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy assignment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} to assign. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 167 of file Int\+Vector.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1IntVector_aef38ee5215753bcc3d834a16aae1cccd}\label{classUtil_1_1IntVector_aef38ee5215753bcc3d834a16aae1cccd}} 
+\index{Util::IntVector@{Util::IntVector}!operator=@{operator=}}
+\index{operator=@{operator=}!Util::IntVector@{Util::IntVector}}
+\doxyparagraph{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}}\& Util\+::\+Int\+Vector\+::operator= (\begin{DoxyParamCaption}\item[{const int $\ast$}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Assignment from C int\mbox{[}\mbox{]} array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & array of coordinates \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 180 of file Int\+Vector.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1IntVector_adc26e995342ebedf92f446756f7e409d}\label{classUtil_1_1IntVector_adc26e995342ebedf92f446756f7e409d}} 
+\index{Util::IntVector@{Util::IntVector}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Util::IntVector@{Util::IntVector}}
+\doxyparagraph{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily void Util\+::\+Int\+Vector\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&}]{dv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add vector dv to this vector. 
+
+Upon return, $\ast$this = this + dv.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dv} & vector increment (input) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 199 of file Int\+Vector.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1IntVector_aa02ab6d8b0cb5d7e10ed7f27b9916e85}\label{classUtil_1_1IntVector_aa02ab6d8b0cb5d7e10ed7f27b9916e85}} 
+\index{Util::IntVector@{Util::IntVector}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!Util::IntVector@{Util::IntVector}}
+\doxyparagraph{\texorpdfstring{operator-\/=()}{operator-=()}}
+{\footnotesize\ttfamily void Util\+::\+Int\+Vector\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&}]{dv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Subtract vector dv from this vector. 
+
+Upon return, $\ast$this = this + dv.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dv} & vector increment (input) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 213 of file Int\+Vector.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1IntVector_a668f54ac23ce7089de7641d3b736fd85}\label{classUtil_1_1IntVector_a668f54ac23ce7089de7641d3b736fd85}} 
+\index{Util::IntVector@{Util::IntVector}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!Util::IntVector@{Util::IntVector}}
+\doxyparagraph{\texorpdfstring{operator$\ast$=()}{operator*=()}}
+{\footnotesize\ttfamily void Util\+::\+Int\+Vector\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{int}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Multiply this vector by scalar s. 
+
+Upon return, $\ast$this = this$\ast$s.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & scalar multiplier \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 227 of file Int\+Vector.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1IntVector_af123e31439fd3bf3e7427a3b02c1aa5d}\label{classUtil_1_1IntVector_af123e31439fd3bf3e7427a3b02c1aa5d}} 
+\index{Util::IntVector@{Util::IntVector}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Util::IntVector@{Util::IntVector}}
+\doxyparagraph{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const int\& Util\+::\+Int\+Vector\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return one Cartesian element by value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & element index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+element i of the vector 
+\end{DoxyReturn}
+
+
+Definition at line 244 of file Int\+Vector.\+h.
+
+
+
+References Util\+::\+Dimension.
+
+\mbox{\Hypertarget{classUtil_1_1IntVector_aa8cf9d93746723181bcc1138db6d7a2e}\label{classUtil_1_1IntVector_aa8cf9d93746723181bcc1138db6d7a2e}} 
+\index{Util::IntVector@{Util::IntVector}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Util::IntVector@{Util::IntVector}}
+\doxyparagraph{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int\& Util\+::\+Int\+Vector\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return a reference to one element of the vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & element index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+element i of the vector 
+\end{DoxyReturn}
+
+
+Definition at line 257 of file Int\+Vector.\+h.
+
+
+
+References Util\+::\+Dimension.
+
+\mbox{\Hypertarget{classUtil_1_1IntVector_a00363bd1ed0eee3cd0e786cfb54c9fa5}\label{classUtil_1_1IntVector_a00363bd1ed0eee3cd0e786cfb54c9fa5}} 
+\index{Util::IntVector@{Util::IntVector}!square@{square}}
+\index{square@{square}!Util::IntVector@{Util::IntVector}}
+\doxyparagraph{\texorpdfstring{square()}{square()}}
+{\footnotesize\ttfamily int Util\+::\+Int\+Vector\+::square (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return square magnitude of this vector. 
+
+\begin{DoxyReturn}{Returns}
+square magnitude of this vector 
+\end{DoxyReturn}
+
+
+Definition at line 273 of file Int\+Vector.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1IntVector_a9ae754549ef0ad7ff56c213b8626f083}\label{classUtil_1_1IntVector_a9ae754549ef0ad7ff56c213b8626f083}} 
+\index{Util::IntVector@{Util::IntVector}!dot@{dot}}
+\index{dot@{dot}!Util::IntVector@{Util::IntVector}}
+\doxyparagraph{\texorpdfstring{dot()}{dot()}}
+{\footnotesize\ttfamily int Util\+::\+Int\+Vector\+::dot (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return dot product of this vector and vector v. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & input vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+dot product of this vector and vector v 
+\end{DoxyReturn}
+
+
+Definition at line 282 of file Int\+Vector.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1IntVector_ab0ea43519fdf94d2801a161d0380af5a}\label{classUtil_1_1IntVector_ab0ea43519fdf94d2801a161d0380af5a}} 
+\index{Util::IntVector@{Util::IntVector}!add@{add}}
+\index{add@{add}!Util::IntVector@{Util::IntVector}}
+\doxyparagraph{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}}\& Util\+::\+Int\+Vector\+::add (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&}]{v1,  }\item[{const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&}]{v2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add vectors v1 and v2. 
+
+Upon return, $\ast$this = v1 + v2.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v1} & vector (input) \\
+\hline
+{\em v2} & vector (input) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 299 of file Int\+Vector.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1IntVector_a29a7b0c81eb900441e7d07c3414f406d}\label{classUtil_1_1IntVector_a29a7b0c81eb900441e7d07c3414f406d}} 
+\index{Util::IntVector@{Util::IntVector}!subtract@{subtract}}
+\index{subtract@{subtract}!Util::IntVector@{Util::IntVector}}
+\doxyparagraph{\texorpdfstring{subtract()}{subtract()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}}\& Util\+::\+Int\+Vector\+::subtract (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&}]{v1,  }\item[{const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&}]{v2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Subtract vector v2 from v1. 
+
+Upon return, $\ast$this = v1 -\/ v2.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v1} & vector (input) \\
+\hline
+{\em v2} & vector (input) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+modified invoking vector 
+\end{DoxyReturn}
+
+
+Definition at line 316 of file Int\+Vector.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1IntVector_aeb5ce5cc9bb5e53c087ec0cd1b1c6987}\label{classUtil_1_1IntVector_aeb5ce5cc9bb5e53c087ec0cd1b1c6987}} 
+\index{Util::IntVector@{Util::IntVector}!multiply@{multiply}}
+\index{multiply@{multiply}!Util::IntVector@{Util::IntVector}}
+\doxyparagraph{\texorpdfstring{multiply()}{multiply()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}}\& Util\+::\+Int\+Vector\+::multiply (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&}]{v,  }\item[{int}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Multiply a vector v by a scalar s. 
+
+Upon return, $\ast$this = v$\ast$s.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & vector input \\
+\hline
+{\em s} & scalar input \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+modified invoking vector 
+\end{DoxyReturn}
+
+
+Definition at line 333 of file Int\+Vector.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1IntVector_a39aaf21b14d1cabb6a384a79930c49fa}\label{classUtil_1_1IntVector_a39aaf21b14d1cabb6a384a79930c49fa}} 
+\index{Util::IntVector@{Util::IntVector}!cross@{cross}}
+\index{cross@{cross}!Util::IntVector@{Util::IntVector}}
+\doxyparagraph{\texorpdfstring{cross()}{cross()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}}\& Util\+::\+Int\+Vector\+::cross (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&}]{v1,  }\item[{const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&}]{v2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calculate cross product of vectors v1 and v2. 
+
+Upon return, $\ast$this = v1 x v2.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v1} & input vector \\
+\hline
+{\em v2} & input vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+modified invoking vector 
+\end{DoxyReturn}
+
+
+Definition at line 350 of file Int\+Vector.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1IntVector_a5e1cd025099a001b162c2a65303c9cac}\label{classUtil_1_1IntVector_a5e1cd025099a001b162c2a65303c9cac}} 
+\index{Util::IntVector@{Util::IntVector}!initStatic@{initStatic}}
+\index{initStatic@{initStatic}!Util::IntVector@{Util::IntVector}}
+\doxyparagraph{\texorpdfstring{initStatic()}{initStatic()}}
+{\footnotesize\ttfamily void Util\+::\+Int\+Vector\+::init\+Static (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Initialize static \mbox{\hyperlink{classUtil_1_1IntVector_a05e6c59fde97c69f713b6dab540e8a7b}{Int\+Vector\+::\+Zero}}. 
+
+
+
+Definition at line 113 of file Int\+Vector.\+cpp.
+
+
+
+Referenced by Util\+::init\+Static().
+
+\mbox{\Hypertarget{classUtil_1_1IntVector_ad54c107285d35edd9dc957b1f77324a1}\label{classUtil_1_1IntVector_ad54c107285d35edd9dc957b1f77324a1}} 
+\index{Util::IntVector@{Util::IntVector}!commitMpiType@{commitMpiType}}
+\index{commitMpiType@{commitMpiType}!Util::IntVector@{Util::IntVector}}
+\doxyparagraph{\texorpdfstring{commitMpiType()}{commitMpiType()}}
+{\footnotesize\ttfamily void Util\+::\+Int\+Vector\+::commit\+Mpi\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Commit M\+PI datatype \mbox{\hyperlink{classUtil_1_1MpiTraits_3_01IntVector_01_4_ae0b652561be6625b03d360928dfe4839}{Mpi\+Traits$<$\+Int\+Vector$>$\+::type}}. 
+
+
+
+Definition at line 92 of file Int\+Vector.\+cpp.
+
+
+
+References Util\+::\+Mpi\+Struct\+Builder\+::add\+Member(), Util\+::\+Mpi\+Struct\+Builder\+::commit(), and Util\+::\+Mpi\+Struct\+Builder\+::set\+Base().
+
+
+
+\doxysubsubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1IntVector_a2f3bb66716c7c09cb361c9d2722767b8}\label{classUtil_1_1IntVector_a2f3bb66716c7c09cb361c9d2722767b8}} 
+\index{Util::IntVector@{Util::IntVector}!operator==@{operator==}}
+\index{operator==@{operator==}!Util::IntVector@{Util::IntVector}}
+\doxyparagraph{\texorpdfstring{operator==}{operator==}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&}]{v1,  }\item[{const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&}]{v2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Equality for Int\+Vectors. 
+
+
+
+Definition at line 24 of file Int\+Vector.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1IntVector_ac29715ccc370d41aef0dab8f421cb7ad}\label{classUtil_1_1IntVector_ac29715ccc370d41aef0dab8f421cb7ad}} 
+\index{Util::IntVector@{Util::IntVector}!operator==@{operator==}}
+\index{operator==@{operator==}!Util::IntVector@{Util::IntVector}}
+\doxyparagraph{\texorpdfstring{operator==}{operator==}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&}]{v1,  }\item[{const int $\ast$}]{v2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Equality of \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} and C array. 
+
+
+
+Definition at line 35 of file Int\+Vector.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1IntVector_a2fb35ab473614459af4089178ef2abf1}\label{classUtil_1_1IntVector_a2fb35ab473614459af4089178ef2abf1}} 
+\index{Util::IntVector@{Util::IntVector}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Util::IntVector@{Util::IntVector}}
+\doxyparagraph{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily std\+::istream\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in,  }\item[{\mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&}]{vector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+istream extractor for a \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}}. 
+
+Input elements of a vector from stream, without line breaks.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & input stream \\
+\hline
+{\em vector} & \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} to be read from stream \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+modified input stream 
+\end{DoxyReturn}
+
+
+Definition at line 64 of file Int\+Vector.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1IntVector_a3c5052a9b643b06c98fba8ab86ff07ae}\label{classUtil_1_1IntVector_a3c5052a9b643b06c98fba8ab86ff07ae}} 
+\index{Util::IntVector@{Util::IntVector}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Util::IntVector@{Util::IntVector}}
+\doxyparagraph{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} \&}]{vector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+ostream inserter for a \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}}. 
+
+Output elements of a vector to stream, without line breaks. 
+\begin{DoxyParams}{Parameters}
+{\em out} & output stream \\
+\hline
+{\em vector} & \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} to be written to stream \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+modified output stream 
+\end{DoxyReturn}
+
+
+Definition at line 75 of file Int\+Vector.\+cpp.
+
+
+
+\doxysubsubsection{Member Data Documentation}
+\mbox{\Hypertarget{classUtil_1_1IntVector_a05e6c59fde97c69f713b6dab540e8a7b}\label{classUtil_1_1IntVector_a05e6c59fde97c69f713b6dab540e8a7b}} 
+\index{Util::IntVector@{Util::IntVector}!Zero@{Zero}}
+\index{Zero@{Zero}!Util::IntVector@{Util::IntVector}}
+\doxyparagraph{\texorpdfstring{Zero}{Zero}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}} Util\+::\+Int\+Vector\+::\+Zero = \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}}(0)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Zero \mbox{\hyperlink{classUtil_1_1IntVector}{Int\+Vector}}. 
+
+
+
+Definition at line 364 of file Int\+Vector.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Int\+Vector.\+h\item 
+Int\+Vector.\+cpp\end{DoxyCompactItemize}

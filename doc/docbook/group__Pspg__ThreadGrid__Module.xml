@@ -1,0 +1,326 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_group__Pspg__ThreadGrid__Module">
+<title>ThreadGrid</title>
+<indexterm><primary>ThreadGrid</primary></indexterm>
+<para>
+
+<para>Management of GPU resources and setting of execution configurations. </para>
+ 
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_group__Pspg__ThreadGrid__Module_1gaf4f6c930f2bf4eeee3a58db08b8f5c62">Pscf::Pspg::ThreadGrid::init</link> ()</para>
+
+<para>Initialize static variables in <link linkend="_namespacePscf_1_1Pspg_1_1ThreadGrid">Pspg::ThreadGrid</link> namespace. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__Pspg__ThreadGrid__Module_1ga88540549636a9bad54488e5bda8994a8">Pscf::Pspg::ThreadGrid::setThreadsPerBlock</link> ()</para>
+
+<para>Set the number of threads per block to a default value. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__Pspg__ThreadGrid__Module_1ga4d708f93e2d5f8383add643ebbb74748">Pscf::Pspg::ThreadGrid::setThreadsPerBlock</link> (int nThreadsPerBlock)</para>
+
+<para>Set the number of threads per block to a specified value. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__Pspg__ThreadGrid__Module_1gad6911caa321f3e76bc02c85d64bef180">Pscf::Pspg::ThreadGrid::setThreadsLogical</link> (int <link linkend="_group__Pspg__ThreadGrid__Module_1ga1b636b677c22ec4892bf849a12ba80fe">nThreadsLogical</link>)</para>
+
+<para>Set the total number of threads required for execution. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__Pspg__ThreadGrid__Module_1gab9bc479acd855a968f0d9677f8a7f6aa">Pscf::Pspg::ThreadGrid::setThreadsLogical</link> (int <link linkend="_group__Pspg__ThreadGrid__Module_1ga1b636b677c22ec4892bf849a12ba80fe">nThreadsLogical</link>, int &amp;<link linkend="_group__Pspg__ThreadGrid__Module_1ga473773a88ab0efdfd748e26c0b45ece0">nBlocks</link>)</para>
+
+<para>Set the total number of threads required for execution. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__Pspg__ThreadGrid__Module_1ga42d9985c119919cb2ee88159c25ded56">Pscf::Pspg::ThreadGrid::setThreadsLogical</link> (int <link linkend="_group__Pspg__ThreadGrid__Module_1ga1b636b677c22ec4892bf849a12ba80fe">nThreadsLogical</link>, int &amp;<link linkend="_group__Pspg__ThreadGrid__Module_1ga473773a88ab0efdfd748e26c0b45ece0">nBlocks</link>, int &amp;<link linkend="_group__Pspg__ThreadGrid__Module_1ga2dbe33b275f99c1acfac425b4c9bf948">nThreads</link>)</para>
+
+<para>Set the total number of threads required for execution. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__Pspg__ThreadGrid__Module_1gac1910a1e9be5d7c66b32c024e3a3a8b6">Pscf::Pspg::ThreadGrid::checkExecutionConfig</link> ()</para>
+
+<para>Check the execution configuration (threads and block counts). </para>
+</listitem>
+            <listitem><para>int <link linkend="_group__Pspg__ThreadGrid__Module_1ga473773a88ab0efdfd748e26c0b45ece0">Pscf::Pspg::ThreadGrid::nBlocks</link> ()</para>
+
+<para>Get the current number of blocks for execution. </para>
+</listitem>
+            <listitem><para>int <link linkend="_group__Pspg__ThreadGrid__Module_1ga2dbe33b275f99c1acfac425b4c9bf948">Pscf::Pspg::ThreadGrid::nThreads</link> ()</para>
+
+<para>Get the number of threads per block for execution. </para>
+</listitem>
+            <listitem><para>int <link linkend="_group__Pspg__ThreadGrid__Module_1ga1b636b677c22ec4892bf849a12ba80fe">Pscf::Pspg::ThreadGrid::nThreadsLogical</link> ()</para>
+
+<para>Return previously requested total number of threads. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_group__Pspg__ThreadGrid__Module_1ga19b4bcac92a5a590bbc1166599cb4e4b">Pscf::Pspg::ThreadGrid::hasUnusedThreads</link> ()</para>
+
+<para>Indicates whether there will be unused threads. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Management of GPU resources and setting of execution configurations. </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_group__Pspg__ThreadGrid__Module_1gaf4f6c930f2bf4eeee3a58db08b8f5c62"/>    <section>
+    <title>init()</title>
+<indexterm><primary>init</primary><secondary>ThreadGrid</secondary></indexterm>
+<indexterm><primary>ThreadGrid</primary><secondary>init</secondary></indexterm>
+<para><computeroutput>void Pscf::Pspg::ThreadGrid::init ( )</computeroutput></para><para>
+
+<para>Initialize static variables in <link linkend="_namespacePscf_1_1Pspg_1_1ThreadGrid">Pspg::ThreadGrid</link> namespace. </para>
+</para>
+<para>
+Definition at line 35 of file ThreadGrid.cu.</para>
+<para>
+References Pscf::Pspg::ThreadGrid::setThreadsPerBlock(), and UTIL_THROW.</para>
+<para>
+Referenced by Pscf::Pspg::ThreadGrid::setThreadsLogical(), and Pscf::Pspg::Continuous::System&lt; D &gt;::System().</para>
+    </section><anchor xml:id="_group__Pspg__ThreadGrid__Module_1ga88540549636a9bad54488e5bda8994a8"/>    <section>
+    <title>setThreadsPerBlock()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>setThreadsPerBlock</primary><secondary>ThreadGrid</secondary></indexterm>
+<indexterm><primary>ThreadGrid</primary><secondary>setThreadsPerBlock</secondary></indexterm>
+<para><computeroutput>void Pscf::Pspg::ThreadGrid::setThreadsPerBlock ( )</computeroutput></para><para>
+
+<para>Set the number of threads per block to a default value. </para>
+</para>
+
+<para>Query the hardware to determine a reasonable number. </para>
+<para>
+Definition at line 48 of file ThreadGrid.cu.</para>
+<para>
+Referenced by Pscf::Pspg::ThreadGrid::init(), and Pscf::Pspg::Continuous::System&lt; D &gt;::setOptions().</para>
+    </section><anchor xml:id="_group__Pspg__ThreadGrid__Module_1ga4d708f93e2d5f8383add643ebbb74748"/>    <section>
+    <title>setThreadsPerBlock()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>setThreadsPerBlock</primary><secondary>ThreadGrid</secondary></indexterm>
+<indexterm><primary>ThreadGrid</primary><secondary>setThreadsPerBlock</secondary></indexterm>
+<para><computeroutput>void Pscf::Pspg::ThreadGrid::setThreadsPerBlock (int nThreadsPerBlock)</computeroutput></para><para>
+
+<para>Set the number of threads per block to a specified value. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>nThreadsPerBlock</entry>
+                                <entry>
+<para>the number of threads per block (input) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 72 of file ThreadGrid.cu.</para>
+<para>
+References Pscf::Pspg::ThreadGrid::checkExecutionConfig().</para>
+    </section><anchor xml:id="_group__Pspg__ThreadGrid__Module_1gad6911caa321f3e76bc02c85d64bef180"/>    <section>
+    <title>setThreadsLogical()<computeroutput>[1/3]</computeroutput></title>
+<indexterm><primary>setThreadsLogical</primary><secondary>ThreadGrid</secondary></indexterm>
+<indexterm><primary>ThreadGrid</primary><secondary>setThreadsLogical</secondary></indexterm>
+<para><computeroutput>void Pscf::Pspg::ThreadGrid::setThreadsLogical (int nThreadsLogical)</computeroutput></para><para>
+
+<para>Set the total number of threads required for execution. </para>
+</para>
+
+<para>Calculate the number of blocks, and calculate threads per block if necessary. Updates static variables.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>nThreadsLogical</entry>
+                                <entry>
+<para>total number of required threads (input) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 80 of file ThreadGrid.cu.</para>
+<para>
+References Pscf::Pspg::ThreadGrid::init(), Pscf::Pspg::ThreadGrid::nThreadsLogical(), and UTIL_ASSERT.</para>
+<para>
+Referenced by Pscf::Pspg::Continuous::AmIterator&lt; D &gt;::allocate(), Pscf::Pspg::Continuous::Propagator&lt; D &gt;::allocate(), Pscf::Pspg::Continuous::AmIterator&lt; D &gt;::buildOmega(), Pscf::Pspg::Continuous::Mixture&lt; D &gt;::compute(), Pscf::Pspg::Continuous::AmIterator&lt; D &gt;::computeDeviation(), Pscf::Pspg::Continuous::System&lt; D &gt;::computeFreeEnergy(), Pscf::Pspg::Continuous::Propagator&lt; D &gt;::computeHead(), Pscf::Pspg::Continuous::Block&lt; D &gt;::computeInt(), Pscf::Pspg::Continuous::Mixture&lt; D &gt;::computeStress(), Pscf::Pspg::Continuous::Polymer&lt; D &gt;::computeVertex(), Pscf::Pspg::FFT&lt; D &gt;::forwardTransform(), Pscf::Pspg::FFTBatched&lt; D &gt;::forwardTransform(), Pscf::Pspg::Continuous::Propagator&lt; D &gt;::intQ(), Pscf::Pspg::Continuous::AmIterator&lt; D &gt;::minimizeCoeff(), Pscf::Pspg::Continuous::Block&lt; D &gt;::setDiscretization(), Pscf::Pspg::Continuous::Mixture&lt; D &gt;::setMesh(), Pscf::Pspg::ThreadGrid::setThreadsLogical(), Pscf::Pspg::Continuous::Block&lt; D &gt;::setupSolver(), Pscf::PolymerTmpl&lt; Block&lt; D &gt; &gt;::solve(), Pscf::Pspg::Continuous::Propagator&lt; D &gt;::solveBackward(), and Pscf::Pspg::Continuous::Block&lt; D &gt;::step().</para>
+    </section><anchor xml:id="_group__Pspg__ThreadGrid__Module_1gab9bc479acd855a968f0d9677f8a7f6aa"/>    <section>
+    <title>setThreadsLogical()<computeroutput>[2/3]</computeroutput></title>
+<indexterm><primary>setThreadsLogical</primary><secondary>ThreadGrid</secondary></indexterm>
+<indexterm><primary>ThreadGrid</primary><secondary>setThreadsLogical</secondary></indexterm>
+<para><computeroutput>void Pscf::Pspg::ThreadGrid::setThreadsLogical (int nThreadsLogical, int &amp; nBlocks)</computeroutput></para><para>
+
+<para>Set the total number of threads required for execution. </para>
+</para>
+
+<para>Recalculate the number of blocks, and calculate threads per block if necessary. Also updates the nBlocks output parameter.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>nThreadsLogical</entry>
+                                <entry>
+<para>total number of required threads (input) </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>nBlocks</entry>
+                                <entry>
+<para>updated number of blocks (output) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 108 of file ThreadGrid.cu.</para>
+<para>
+References Pscf::Pspg::ThreadGrid::nBlocks(), Pscf::Pspg::ThreadGrid::nThreadsLogical(), and Pscf::Pspg::ThreadGrid::setThreadsLogical().</para>
+    </section><anchor xml:id="_group__Pspg__ThreadGrid__Module_1ga42d9985c119919cb2ee88159c25ded56"/>    <section>
+    <title>setThreadsLogical()<computeroutput>[3/3]</computeroutput></title>
+<indexterm><primary>setThreadsLogical</primary><secondary>ThreadGrid</secondary></indexterm>
+<indexterm><primary>ThreadGrid</primary><secondary>setThreadsLogical</secondary></indexterm>
+<para><computeroutput>void Pscf::Pspg::ThreadGrid::setThreadsLogical (int nThreadsLogical, int &amp; nBlocks, int &amp; nThreads)</computeroutput></para><para>
+
+<para>Set the total number of threads required for execution. </para>
+</para>
+
+<para>Computes and sets the number of blocks, and sets threads per block if necessary. Updates values of nBlocks and nThreads parameters in output parameters that are passed by value.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>nThreadsLogical</entry>
+                                <entry>
+<para>total number of required threads (input) </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>nBlocks</entry>
+                                <entry>
+<para>updated number of blocks (output) </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>nThreads</entry>
+                                <entry>
+<para>updated number threads per block (output) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 116 of file ThreadGrid.cu.</para>
+<para>
+References Pscf::Pspg::ThreadGrid::nBlocks(), Pscf::Pspg::ThreadGrid::nThreads(), Pscf::Pspg::ThreadGrid::nThreadsLogical(), and Pscf::Pspg::ThreadGrid::setThreadsLogical().</para>
+    </section><anchor xml:id="_group__Pspg__ThreadGrid__Module_1gac1910a1e9be5d7c66b32c024e3a3a8b6"/>    <section>
+    <title>checkExecutionConfig()</title>
+<indexterm><primary>checkExecutionConfig</primary><secondary>ThreadGrid</secondary></indexterm>
+<indexterm><primary>ThreadGrid</primary><secondary>checkExecutionConfig</secondary></indexterm>
+<para><computeroutput>void Pscf::Pspg::ThreadGrid::checkExecutionConfig ( )</computeroutput></para><para>
+
+<para>Check the execution configuration (threads and block counts). </para>
+</para>
+
+<para>Check for validity and optimality, based on hardware warp size and streaming multiprocessor constraints. </para>
+<para>
+Definition at line 124 of file ThreadGrid.cu.</para>
+<para>
+References UTIL_THROW.</para>
+<para>
+Referenced by Pscf::Pspg::ThreadGrid::setThreadsPerBlock().</para>
+    </section><anchor xml:id="_group__Pspg__ThreadGrid__Module_1ga473773a88ab0efdfd748e26c0b45ece0"/>    <section>
+    <title>nBlocks()</title>
+<indexterm><primary>nBlocks</primary><secondary>ThreadGrid</secondary></indexterm>
+<indexterm><primary>ThreadGrid</primary><secondary>nBlocks</secondary></indexterm>
+<para><computeroutput>int Pscf::Pspg::ThreadGrid::nBlocks ( )</computeroutput></para><para>
+
+<para>Get the current number of blocks for execution. </para>
+</para>
+<para>
+Definition at line 170 of file ThreadGrid.cu.</para>
+<para>
+Referenced by Pscf::Pspg::Continuous::Propagator&lt; D &gt;::allocate(), Pscf::Pspg::Continuous::System&lt; D &gt;::computeFreeEnergy(), and Pscf::Pspg::ThreadGrid::setThreadsLogical().</para>
+    </section><anchor xml:id="_group__Pspg__ThreadGrid__Module_1ga2dbe33b275f99c1acfac425b4c9bf948"/>    <section>
+    <title>nThreads()</title>
+<indexterm><primary>nThreads</primary><secondary>ThreadGrid</secondary></indexterm>
+<indexterm><primary>ThreadGrid</primary><secondary>nThreads</secondary></indexterm>
+<para><computeroutput>int Pscf::Pspg::ThreadGrid::nThreads ( )</computeroutput></para><para>
+
+<para>Get the number of threads per block for execution. </para>
+</para>
+<para>
+Definition at line 173 of file ThreadGrid.cu.</para>
+<para>
+Referenced by Pscf::Pspg::Continuous::System&lt; D &gt;::computeFreeEnergy(), and Pscf::Pspg::ThreadGrid::setThreadsLogical().</para>
+    </section><anchor xml:id="_group__Pspg__ThreadGrid__Module_1ga1b636b677c22ec4892bf849a12ba80fe"/>    <section>
+    <title>nThreadsLogical()</title>
+<indexterm><primary>nThreadsLogical</primary><secondary>ThreadGrid</secondary></indexterm>
+<indexterm><primary>ThreadGrid</primary><secondary>nThreadsLogical</secondary></indexterm>
+<para><computeroutput>int Pscf::Pspg::ThreadGrid::nThreadsLogical ( )</computeroutput></para><para>
+
+<para>Return previously requested total number of threads. </para>
+</para>
+<para>
+Definition at line 176 of file ThreadGrid.cu.</para>
+<para>
+Referenced by Pscf::Pspg::ThreadGrid::setThreadsLogical().</para>
+    </section><anchor xml:id="_group__Pspg__ThreadGrid__Module_1ga19b4bcac92a5a590bbc1166599cb4e4b"/>    <section>
+    <title>hasUnusedThreads()</title>
+<indexterm><primary>hasUnusedThreads</primary><secondary>ThreadGrid</secondary></indexterm>
+<indexterm><primary>ThreadGrid</primary><secondary>hasUnusedThreads</secondary></indexterm>
+<para><computeroutput>bool Pscf::Pspg::ThreadGrid::hasUnusedThreads ( )</computeroutput></para><para>
+
+<para>Indicates whether there will be unused threads. </para>
+</para>
+
+<para>Returns true iff nThreads*nBlocks != nThreadsLogical. </para>
+<para>
+Definition at line 179 of file ThreadGrid.cu.</para>
+</section>
+</section>
+</section>

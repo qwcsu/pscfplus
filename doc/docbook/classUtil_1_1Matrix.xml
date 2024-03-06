@@ -1,0 +1,294 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1Matrix">
+<title>Util::Matrix&lt; Data &gt; Class Template Reference</title>
+<indexterm><primary>Util::Matrix&lt; Data &gt;</primary></indexterm>
+<para>
+
+<para>Two-dimensional array container template (abstract). </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;Matrix.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Util::Matrix&lt; Data &gt;:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classUtil_1_1Matrix.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>virtual <link linkend="_classUtil_1_1Matrix_1a7d92f340e4123a6a45ae8d77c74244a3">~Matrix</link> ()</para>
+
+<para>Destructor. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1Matrix_1ac9dae1ea955cf776d7915e8126ffdf04">capacity1</link> () const</para>
+
+<para>Get number of rows (range of the first array index). </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1Matrix_1a479ba9941d5e43042e8382baa433c07f">capacity2</link> () const</para>
+
+<para>Get number of columns (range of the second array index). </para>
+</listitem>
+            <listitem><para>const Data &amp; <link linkend="_classUtil_1_1Matrix_1a2b0d5688f3c4d72fb6470ff305842579">operator()</link> (int i, int j) const</para>
+
+<para>Return element (i,j) of matrix by const reference. </para>
+</listitem>
+            <listitem><para>Data &amp; <link linkend="_classUtil_1_1Matrix_1a07e47001d8275fb7ad593bd195ba3906">operator()</link> (int i, int j)</para>
+
+<para>Return element (i,j) of matrix by reference. </para>
+</listitem>
+            <listitem><para>Data * <link linkend="_classUtil_1_1Matrix_1a80af4092dd146c5c16bb3f09cd763ce5">cArray</link> ()</para>
+
+<para>Return pointer to underlying one-dimensional C array. </para>
+</listitem>
+            <listitem><para>const Data * <link linkend="_classUtil_1_1Matrix_1adf0fa8bfcff6c3a5fd92b51a965f8665">cArray</link> () const</para>
+
+<para>Return pointer to const to underlying one-dimensional C array. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1Matrix_1ab405e09dfdf9c17a7ca3ba09dc80d9a0">Matrix</link> ()</para>
+
+<para>Default constructor. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para>Data * <link linkend="_classUtil_1_1Matrix_1a58613069a43b06ca55b00760e9f2a025">data_</link></para>
+
+<para>Pointer to 1D C array of all elements. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1Matrix_1ab2aa000328441c9173452ebed40a52b9">capacity1_</link></para>
+
+<para>Number of rows (range of first index). </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1Matrix_1a6c524474706b1819f6f20f245c5bbf85">capacity2_</link></para>
+
+<para>Number of columns (range of first index). </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;typename Data&gt;
+class Util::Matrix&lt; Data &gt;</title></simplesect>
+
+
+<para>Two-dimensional array container template (abstract). </para>
+
+
+
+<para>An <link linkend="_classUtil_1_1Matrix">Matrix</link> object A is a two-dimensional array in which the operator A(i, j) returns a reference to element in column j of row i.</para>
+
+<para>The memory for a <link linkend="_classUtil_1_1Matrix">Matrix</link> is stored in a single one-dimensional C array, in which each row is stored as a consecutive block.</para>
+
+<para>Class <link linkend="_classUtil_1_1Matrix">Matrix</link> is an abstract class because it cannot allocate memory. Concrete subclasses include <link linkend="_classUtil_1_1DMatrix">DMatrix</link> and <link linkend="_classUtil_1_1FMatrix">FMatrix</link>. </para>
+<para>
+Definition at line 31 of file Matrix.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1Matrix_1a7d92f340e4123a6a45ae8d77c74244a3"/>    <section>
+    <title>~Matrix()</title>
+<indexterm><primary>~Matrix</primary><secondary>Util::Matrix&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::Matrix&lt; Data &gt;</primary><secondary>~Matrix</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1Matrix">Util::Matrix</link>&lt; Data &gt;::~<link linkend="_classUtil_1_1Matrix">Matrix</link><computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Destructor. </para>
+</para>
+<para>
+Definition at line 129 of file Matrix.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Matrix_1ab405e09dfdf9c17a7ca3ba09dc80d9a0"/>    <section>
+    <title>Matrix()</title>
+<indexterm><primary>Matrix</primary><secondary>Util::Matrix&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::Matrix&lt; Data &gt;</primary><secondary>Matrix</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1Matrix">Util::Matrix</link>&lt; Data &gt;::<link linkend="_classUtil_1_1Matrix">Matrix</link><computeroutput>[inline]</computeroutput>, <computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Default constructor. </para>
+</para>
+
+<para>Constructor (protected).</para>
+
+<para>Protected to prevent direct instantiation. </para>
+<para>
+Definition at line 119 of file Matrix.h.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1Matrix_1ac9dae1ea955cf776d7915e8126ffdf04"/>    <section>
+    <title>capacity1()</title>
+<indexterm><primary>capacity1</primary><secondary>Util::Matrix&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::Matrix&lt; Data &gt;</primary><secondary>capacity1</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>int <link linkend="_classUtil_1_1Matrix">Util::Matrix</link>&lt; Data &gt;::capacity1<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get number of rows (range of the first array index). </para>
+</para>
+<para>
+Definition at line 136 of file Matrix.h.</para>
+<para>
+Referenced by Util::bcast(), Pscf::LuSolver::computeLU(), Util::recv(), and Util::send().</para>
+    </section><anchor xml:id="_classUtil_1_1Matrix_1a479ba9941d5e43042e8382baa433c07f"/>    <section>
+    <title>capacity2()</title>
+<indexterm><primary>capacity2</primary><secondary>Util::Matrix&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::Matrix&lt; Data &gt;</primary><secondary>capacity2</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>int <link linkend="_classUtil_1_1Matrix">Util::Matrix</link>&lt; Data &gt;::capacity2<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get number of columns (range of the second array index). </para>
+</para>
+<para>
+Definition at line 143 of file Matrix.h.</para>
+<para>
+Referenced by Util::bcast(), Pscf::LuSolver::computeLU(), Util::recv(), and Util::send().</para>
+    </section><anchor xml:id="_classUtil_1_1Matrix_1a2b0d5688f3c4d72fb6470ff305842579"/>    <section>
+    <title>operator()()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator()</primary><secondary>Util::Matrix&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::Matrix&lt; Data &gt;</primary><secondary>operator()</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>const Data &amp; <link linkend="_classUtil_1_1Matrix">Util::Matrix</link>&lt; Data &gt;::operator() (int i, int j) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return element (i,j) of matrix by const reference. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>i</entry>
+                                <entry>
+<para>row index. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>j</entry>
+                                <entry>
+<para>column index. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 150 of file Matrix.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Matrix_1a07e47001d8275fb7ad593bd195ba3906"/>    <section>
+    <title>operator()()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator()</primary><secondary>Util::Matrix&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::Matrix&lt; Data &gt;</primary><secondary>operator()</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>Data &amp; <link linkend="_classUtil_1_1Matrix">Util::Matrix</link>&lt; Data &gt;::operator() (int i, int j)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return element (i,j) of matrix by reference. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>i</entry>
+                                <entry>
+<para>row index. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>j</entry>
+                                <entry>
+<para>column index. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 164 of file Matrix.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Matrix_1a80af4092dd146c5c16bb3f09cd763ce5"/>    <section>
+    <title>cArray()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>cArray</primary><secondary>Util::Matrix&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::Matrix&lt; Data &gt;</primary><secondary>cArray</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>const Data * <link linkend="_classUtil_1_1Matrix">Util::Matrix</link>&lt; Data &gt;::cArray<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return pointer to underlying one-dimensional C array. </para>
+</para>
+<para>
+Definition at line 178 of file Matrix.h.</para>
+<para>
+Referenced by Pscf::LuSolver::inverse().</para>
+    </section><anchor xml:id="_classUtil_1_1Matrix_1adf0fa8bfcff6c3a5fd92b51a965f8665"/>    <section>
+    <title>cArray()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>cArray</primary><secondary>Util::Matrix&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::Matrix&lt; Data &gt;</primary><secondary>cArray</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>const Data* <link linkend="_classUtil_1_1Matrix">Util::Matrix</link>&lt; Data &gt;::cArray ( ) const</computeroutput></para><para>
+
+<para>Return pointer to const to underlying one-dimensional C array. </para>
+</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classUtil_1_1Matrix_1a58613069a43b06ca55b00760e9f2a025"/>    <section>
+    <title>data_</title>
+<indexterm><primary>data_</primary><secondary>Util::Matrix&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::Matrix&lt; Data &gt;</primary><secondary>data_</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>Data* <link linkend="_classUtil_1_1Matrix">Util::Matrix</link>&lt; Data &gt;::data_<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Pointer to 1D C array of all elements. </para>
+</para>
+<para>
+Definition at line 84 of file Matrix.h.</para>
+<para>
+Referenced by Util::DMatrix&lt; Type &gt;::DMatrix(), and Util::DMatrix&lt; Type &gt;::operator=().</para>
+    </section><anchor xml:id="_classUtil_1_1Matrix_1ab2aa000328441c9173452ebed40a52b9"/>    <section>
+    <title>capacity1_</title>
+<indexterm><primary>capacity1_</primary><secondary>Util::Matrix&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::Matrix&lt; Data &gt;</primary><secondary>capacity1_</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>int <link linkend="_classUtil_1_1Matrix">Util::Matrix</link>&lt; Data &gt;::capacity1_<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Number of rows (range of first index). </para>
+</para>
+<para>
+Definition at line 87 of file Matrix.h.</para>
+<para>
+Referenced by Util::DMatrix&lt; Type &gt;::DMatrix(), and Util::DMatrix&lt; Type &gt;::operator=().</para>
+    </section><anchor xml:id="_classUtil_1_1Matrix_1a6c524474706b1819f6f20f245c5bbf85"/>    <section>
+    <title>capacity2_</title>
+<indexterm><primary>capacity2_</primary><secondary>Util::Matrix&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::Matrix&lt; Data &gt;</primary><secondary>capacity2_</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>int <link linkend="_classUtil_1_1Matrix">Util::Matrix</link>&lt; Data &gt;::capacity2_<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Number of columns (range of first index). </para>
+</para>
+<para>
+Definition at line 90 of file Matrix.h.</para>
+<para>
+Referenced by Util::DMatrix&lt; Type &gt;::DMatrix(), and Util::DMatrix&lt; Type &gt;::operator=().</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Matrix.h</section>
+</section>

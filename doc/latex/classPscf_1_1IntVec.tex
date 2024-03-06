@@ -1,0 +1,144 @@
+\hypertarget{classPscf_1_1IntVec}{}\doxysubsection{Pscf\+::Int\+Vec$<$ D, T $>$ Class Template Reference}
+\label{classPscf_1_1IntVec}\index{Pscf::IntVec$<$ D, T $>$@{Pscf::IntVec$<$ D, T $>$}}
+
+
+An Int\+Vec$<$\+D, T$>$ is a D-\/component vector of elements of integer type T.  
+
+
+
+
+{\ttfamily \#include $<$Int\+Vec.\+h$>$}
+
+Inheritance diagram for Pscf\+::Int\+Vec$<$ D, T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPscf_1_1IntVec}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Constructors}
+\begin{DoxyCompactItemize}
+\item 
+static const int \mbox{\hyperlink{classPscf_1_1IntVec_accaec80ad7581aeeabb492e3516ab556}{Width}} = 10
+\begin{DoxyCompactList}\small\item\em Width of field per Cartesian coordinate in stream IO. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1IntVec_a9cc8d4021704b81a2b30c26c904856de}{Int\+Vec}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1IntVec_aef9c0e2f977316d6ed1d158b72b2fe16}{Int\+Vec}} (const \mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec}}$<$ D, T $>$ \&v)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1IntVec_ab66e1de776426fb8284daab5b31e5b68}{Int\+Vec}} (T const $\ast$v)
+\begin{DoxyCompactList}\small\item\em Construct from C array. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1IntVec_aa60f8fb1278199cd6475096462a36497}{Int\+Vec}} (T s)
+\begin{DoxyCompactList}\small\item\em Constructor, initialize all elements to a scalar value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$int D, typename T = int$>$\newline
+class Pscf\+::\+Int\+Vec$<$ D, T $>$}
+
+An Int\+Vec$<$\+D, T$>$ is a D-\/component vector of elements of integer type T. 
+
+Default of type T is T = int. 
+
+Definition at line 26 of file Int\+Vec.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPscf_1_1IntVec_a9cc8d4021704b81a2b30c26c904856de}\label{classPscf_1_1IntVec_a9cc8d4021704b81a2b30c26c904856de}} 
+\index{Pscf::IntVec$<$ D, T $>$@{Pscf::IntVec$<$ D, T $>$}!IntVec@{IntVec}}
+\index{IntVec@{IntVec}!Pscf::IntVec$<$ D, T $>$@{Pscf::IntVec$<$ D, T $>$}}
+\doxyparagraph{\texorpdfstring{IntVec()}{IntVec()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$int D, typename T  = int$>$ \\
+\mbox{\hyperlink{classPscf_1_1IntVec}{Pscf\+::\+Int\+Vec}}$<$ D, T $>$\+::\mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor. 
+
+
+
+Definition at line 37 of file Int\+Vec.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1IntVec_aef9c0e2f977316d6ed1d158b72b2fe16}\label{classPscf_1_1IntVec_aef9c0e2f977316d6ed1d158b72b2fe16}} 
+\index{Pscf::IntVec$<$ D, T $>$@{Pscf::IntVec$<$ D, T $>$}!IntVec@{IntVec}}
+\index{IntVec@{IntVec}!Pscf::IntVec$<$ D, T $>$@{Pscf::IntVec$<$ D, T $>$}}
+\doxyparagraph{\texorpdfstring{IntVec()}{IntVec()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$int D, typename T  = int$>$ \\
+\mbox{\hyperlink{classPscf_1_1IntVec}{Pscf\+::\+Int\+Vec}}$<$ D, T $>$\+::\mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec}}$<$ D, T $>$ \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & Int\+Vec$<$\+D, T$>$ to be copied \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 46 of file Int\+Vec.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1IntVec_ab66e1de776426fb8284daab5b31e5b68}\label{classPscf_1_1IntVec_ab66e1de776426fb8284daab5b31e5b68}} 
+\index{Pscf::IntVec$<$ D, T $>$@{Pscf::IntVec$<$ D, T $>$}!IntVec@{IntVec}}
+\index{IntVec@{IntVec}!Pscf::IntVec$<$ D, T $>$@{Pscf::IntVec$<$ D, T $>$}}
+\doxyparagraph{\texorpdfstring{IntVec()}{IntVec()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$int D, typename T  = int$>$ \\
+\mbox{\hyperlink{classPscf_1_1IntVec}{Pscf\+::\+Int\+Vec}}$<$ D, T $>$\+::\mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec}} (\begin{DoxyParamCaption}\item[{T const $\ast$}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct from C array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & C array to be copied \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 55 of file Int\+Vec.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1IntVec_aa60f8fb1278199cd6475096462a36497}\label{classPscf_1_1IntVec_aa60f8fb1278199cd6475096462a36497}} 
+\index{Pscf::IntVec$<$ D, T $>$@{Pscf::IntVec$<$ D, T $>$}!IntVec@{IntVec}}
+\index{IntVec@{IntVec}!Pscf::IntVec$<$ D, T $>$@{Pscf::IntVec$<$ D, T $>$}}
+\doxyparagraph{\texorpdfstring{IntVec()}{IntVec()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$int D, typename T  = int$>$ \\
+\mbox{\hyperlink{classPscf_1_1IntVec}{Pscf\+::\+Int\+Vec}}$<$ D, T $>$\+::\mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec}} (\begin{DoxyParamCaption}\item[{T}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructor, initialize all elements to a scalar value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & scalar initial value for all elements. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 64 of file Int\+Vec.\+h.
+
+
+
+\doxysubsubsection{Member Data Documentation}
+\mbox{\Hypertarget{classPscf_1_1IntVec_accaec80ad7581aeeabb492e3516ab556}\label{classPscf_1_1IntVec_accaec80ad7581aeeabb492e3516ab556}} 
+\index{Pscf::IntVec$<$ D, T $>$@{Pscf::IntVec$<$ D, T $>$}!Width@{Width}}
+\index{Width@{Width}!Pscf::IntVec$<$ D, T $>$@{Pscf::IntVec$<$ D, T $>$}}
+\doxyparagraph{\texorpdfstring{Width}{Width}}
+{\footnotesize\ttfamily template$<$int D, typename T  = int$>$ \\
+const int \mbox{\hyperlink{classPscf_1_1IntVec}{Pscf\+::\+Int\+Vec}}$<$ D, T $>$\+::Width = 10\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Width of field per Cartesian coordinate in stream IO. 
+
+
+
+Definition at line 69 of file Int\+Vec.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Int\+Vec.\+h\end{DoxyCompactItemize}

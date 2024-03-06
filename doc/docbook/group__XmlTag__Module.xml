@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_group__XmlTag__Module">
+<title>Xml Tag Parsers</title>
+<indexterm><primary>Xml Tag Parsers</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classUtil_1_1XmlAttribute">Util::XmlAttribute</link></para>
+
+<para>Parser for an XML attribute. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classUtil_1_1XmlBase">Util::XmlBase</link></para>
+
+<para>Base class for classes that parse XML markup tags. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classUtil_1_1XmlEndTag">Util::XmlEndTag</link></para>
+
+<para>Parser for an XML end tag. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classUtil_1_1XmlStartTag">Util::XmlStartTag</link></para>
+
+<para>Parser for an XML start tag. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classUtil_1_1XmlXmlTag">Util::XmlXmlTag</link></para>
+
+<para>Parser for an XML file declaration tag (first line in file). </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Classes to verify and parse XML markup tags. </para>
+</section>
+</section>

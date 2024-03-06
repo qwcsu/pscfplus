@@ -1,0 +1,411 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1RingBuffer">
+<title>Util::RingBuffer&lt; Data &gt; Class Template Reference</title>
+<indexterm><primary>Util::RingBuffer&lt; Data &gt;</primary></indexterm>
+<para>
+
+<para>Class for storing history of previous values in an array. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;RingBuffer.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1RingBuffer_1ae431b5509a9d1d9192d4ad3eab460dba">RingBuffer</link> ()</para>
+
+<para>Contructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1RingBuffer_1a8fe6bff556df81b1b7d11d9155ec616a">RingBuffer</link> (const <link linkend="_classUtil_1_1RingBuffer">RingBuffer</link>&lt; Data &gt; &amp;other)</para>
+
+<para>Copy contructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1RingBuffer">RingBuffer</link> &amp; <link linkend="_classUtil_1_1RingBuffer_1a1d6784220f3fce3762119780fc8ed509">operator=</link> (<link linkend="_classUtil_1_1RingBuffer">RingBuffer</link>&lt; Data &gt; const &amp;other)</para>
+
+<para>Assignment. </para>
+</listitem>
+            <listitem><para>virtual <link linkend="_classUtil_1_1RingBuffer_1adccc3b30adfe5c635ce0aa69523aa5b5">~RingBuffer</link> ()</para>
+
+<para>Destructor. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1RingBuffer_1a5d2154b83c345552bfb88af818728cb7">allocate</link> (int <link linkend="_classUtil_1_1RingBuffer_1a7ff114a95d5227296719714cfb541190">capacity</link>)</para>
+
+<para>Allocate a new empty buffer. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1RingBuffer_1a66780b4c571f0cc9e714a9c3985d38f1">clear</link> ()</para>
+
+<para>Set previously allocated buffer to empty state. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1RingBuffer_1af2d2146097539045591adc8e66c903b9">append</link> (Data const &amp;value)</para>
+
+<para>Add a new value to the buffer. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1RingBuffer_1ae70512696de0f84b9101aff8d0f0e6ff">size</link> () const</para>
+
+<para>Return number of values currently in the buffer. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1RingBuffer_1a7ff114a95d5227296719714cfb541190">capacity</link> () const</para>
+
+<para>Return the capacity of the buffer. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_classUtil_1_1RingBuffer_1a1b63f23558186125615dee43ebeaedfd">isAllocated</link> () const</para>
+
+<para>Return true if the <link linkend="_classUtil_1_1RingBuffer">RingBuffer</link> has been allocated, false otherwise. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_classUtil_1_1RingBuffer_1a1c9dc1a05df24faba44743d253a89fcd">isFull</link> () const</para>
+
+<para>Return true if full (if size == capacity), false otherwise. </para>
+</listitem>
+            <listitem><para>const Data &amp; <link linkend="_classUtil_1_1RingBuffer_1a10c51b1861154076b0c6b691c56b4d0e">operator[]</link> (int offset) const</para>
+
+<para>Retrieve a const value, a specified number of time steps ago. </para>
+</listitem>
+            <listitem><para>Data &amp; <link linkend="_classUtil_1_1RingBuffer_1a34a79de6346c239d1288aba3bb9ad71c">operator[]</link> (int offset)</para>
+
+<para>Retrieve a value, a specified number of time steps ago. </para>
+</listitem>
+            <listitem><para>template&lt;class Archive &gt; </para><para>void <link linkend="_classUtil_1_1RingBuffer_1a29198899f39be24981f39930a1282b27">serialize</link> (Archive &amp;ar, const unsigned int version)</para>
+
+<para>Serialize a <link linkend="_classUtil_1_1RingBuffer">RingBuffer</link> to/from an Archive. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;class Data&gt;
+class Util::RingBuffer&lt; Data &gt;</title></simplesect>
+
+
+<para>Class for storing history of previous values in an array. </para>
+
+
+
+<para>Data is stored in a circular buffer, in which, once the array is full, the newest data value overwrites the oldest. </para>
+<para>
+Definition at line 26 of file RingBuffer.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1RingBuffer_1ae431b5509a9d1d9192d4ad3eab460dba"/>    <section>
+    <title>RingBuffer()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>RingBuffer</primary><secondary>Util::RingBuffer&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::RingBuffer&lt; Data &gt;</primary><secondary>RingBuffer</secondary></indexterm>
+<computeroutput>template&lt;class Data &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1RingBuffer">Util::RingBuffer</link>&lt; Data &gt;::<link linkend="_classUtil_1_1RingBuffer">RingBuffer</link></computeroutput></para><para>
+
+<para>Contructor. </para>
+</para>
+<para>
+Definition at line 140 of file RingBuffer.h.</para>
+    </section><anchor xml:id="_classUtil_1_1RingBuffer_1a8fe6bff556df81b1b7d11d9155ec616a"/>    <section>
+    <title>RingBuffer()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>RingBuffer</primary><secondary>Util::RingBuffer&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::RingBuffer&lt; Data &gt;</primary><secondary>RingBuffer</secondary></indexterm>
+<computeroutput>template&lt;class Data &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1RingBuffer">Util::RingBuffer</link>&lt; Data &gt;::<link linkend="_classUtil_1_1RingBuffer">RingBuffer</link> (const <link linkend="_classUtil_1_1RingBuffer">RingBuffer</link>&lt; Data &gt; &amp; other)</computeroutput></para><para>
+
+<para>Copy contructor. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>other</entry>
+                                <entry>
+<para>object to be copied. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 155 of file RingBuffer.h.</para>
+    </section><anchor xml:id="_classUtil_1_1RingBuffer_1adccc3b30adfe5c635ce0aa69523aa5b5"/>    <section>
+    <title>~RingBuffer()</title>
+<indexterm><primary>~RingBuffer</primary><secondary>Util::RingBuffer&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::RingBuffer&lt; Data &gt;</primary><secondary>~RingBuffer</secondary></indexterm>
+<computeroutput>template&lt;class Data &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1RingBuffer">Util::RingBuffer</link>&lt; Data &gt;::~<link linkend="_classUtil_1_1RingBuffer">RingBuffer</link><computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Destructor. </para>
+</para>
+<para>
+Definition at line 219 of file RingBuffer.h.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1RingBuffer_1a1d6784220f3fce3762119780fc8ed509"/>    <section>
+    <title>operator=()</title>
+<indexterm><primary>operator=</primary><secondary>Util::RingBuffer&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::RingBuffer&lt; Data &gt;</primary><secondary>operator=</secondary></indexterm>
+<computeroutput>template&lt;class Data &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1RingBuffer">RingBuffer</link>&lt; Data &gt; &amp; <link linkend="_classUtil_1_1RingBuffer">Util::RingBuffer</link>&lt; Data &gt;::operator= (<link linkend="_classUtil_1_1RingBuffer">RingBuffer</link>&lt; Data &gt; const &amp; other)</computeroutput></para><para>
+
+<para>Assignment. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>other</entry>
+                                <entry>
+<para>object to be assigned. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 182 of file RingBuffer.h.</para>
+    </section><anchor xml:id="_classUtil_1_1RingBuffer_1a5d2154b83c345552bfb88af818728cb7"/>    <section>
+    <title>allocate()</title>
+<indexterm><primary>allocate</primary><secondary>Util::RingBuffer&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::RingBuffer&lt; Data &gt;</primary><secondary>allocate</secondary></indexterm>
+<computeroutput>template&lt;class Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1RingBuffer">Util::RingBuffer</link>&lt; Data &gt;::allocate (int capacity)</computeroutput></para><para>
+
+<para>Allocate a new empty buffer. </para>
+</para>
+
+<para>Allocate a new array containing capacity elements.</para>
+
+<para>Throw an <link linkend="_classUtil_1_1Exception">Exception</link> if this <link linkend="_classUtil_1_1RingBuffer">RingBuffer</link> has already been allocated - a <link linkend="_classUtil_1_1RingBuffer">RingBuffer</link> can only be allocated once.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>capacity</entry>
+                                <entry>
+<para>number of elements to allocate. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 228 of file RingBuffer.h.</para>
+    </section><anchor xml:id="_classUtil_1_1RingBuffer_1a66780b4c571f0cc9e714a9c3985d38f1"/>    <section>
+    <title>clear()</title>
+<indexterm><primary>clear</primary><secondary>Util::RingBuffer&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::RingBuffer&lt; Data &gt;</primary><secondary>clear</secondary></indexterm>
+<computeroutput>template&lt;class Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1RingBuffer">Util::RingBuffer</link>&lt; Data &gt;::clear<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Set previously allocated buffer to empty state. </para>
+</para>
+<para>
+Definition at line 245 of file RingBuffer.h.</para>
+    </section><anchor xml:id="_classUtil_1_1RingBuffer_1af2d2146097539045591adc8e66c903b9"/>    <section>
+    <title>append()</title>
+<indexterm><primary>append</primary><secondary>Util::RingBuffer&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::RingBuffer&lt; Data &gt;</primary><secondary>append</secondary></indexterm>
+<computeroutput>template&lt;class Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1RingBuffer">Util::RingBuffer</link>&lt; Data &gt;::append (Data const &amp; value)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Add a new value to the buffer. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>value</entry>
+                                <entry>
+<para>new value to be added. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 256 of file RingBuffer.h.</para>
+    </section><anchor xml:id="_classUtil_1_1RingBuffer_1ae70512696de0f84b9101aff8d0f0e6ff"/>    <section>
+    <title>size()</title>
+<indexterm><primary>size</primary><secondary>Util::RingBuffer&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::RingBuffer&lt; Data &gt;</primary><secondary>size</secondary></indexterm>
+<computeroutput>template&lt;class Data &gt; </computeroutput><para><computeroutput>int <link linkend="_classUtil_1_1RingBuffer">Util::RingBuffer</link>&lt; Data &gt;::size<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return number of values currently in the buffer. </para>
+</para>
+<para>
+Definition at line 277 of file RingBuffer.h.</para>
+    </section><anchor xml:id="_classUtil_1_1RingBuffer_1a7ff114a95d5227296719714cfb541190"/>    <section>
+    <title>capacity()</title>
+<indexterm><primary>capacity</primary><secondary>Util::RingBuffer&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::RingBuffer&lt; Data &gt;</primary><secondary>capacity</secondary></indexterm>
+<computeroutput>template&lt;class Data &gt; </computeroutput><para><computeroutput>int <link linkend="_classUtil_1_1RingBuffer">Util::RingBuffer</link>&lt; Data &gt;::capacity<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return the capacity of the buffer. </para>
+</para>
+<para>
+Definition at line 285 of file RingBuffer.h.</para>
+    </section><anchor xml:id="_classUtil_1_1RingBuffer_1a1b63f23558186125615dee43ebeaedfd"/>    <section>
+    <title>isAllocated()</title>
+<indexterm><primary>isAllocated</primary><secondary>Util::RingBuffer&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::RingBuffer&lt; Data &gt;</primary><secondary>isAllocated</secondary></indexterm>
+<computeroutput>template&lt;class Data &gt; </computeroutput><para><computeroutput>bool <link linkend="_classUtil_1_1RingBuffer">Util::RingBuffer</link>&lt; Data &gt;::isAllocated<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return true if the <link linkend="_classUtil_1_1RingBuffer">RingBuffer</link> has been allocated, false otherwise. </para>
+</para>
+<para>
+Definition at line 293 of file RingBuffer.h.</para>
+<para>
+Referenced by Util::RingBuffer&lt; Util::FArray&lt; double, 6 &gt; &gt;::operator=().</para>
+    </section><anchor xml:id="_classUtil_1_1RingBuffer_1a1c9dc1a05df24faba44743d253a89fcd"/>    <section>
+    <title>isFull()</title>
+<indexterm><primary>isFull</primary><secondary>Util::RingBuffer&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::RingBuffer&lt; Data &gt;</primary><secondary>isFull</secondary></indexterm>
+<computeroutput>template&lt;class Data &gt; </computeroutput><para><computeroutput>bool <link linkend="_classUtil_1_1RingBuffer">Util::RingBuffer</link>&lt; Data &gt;::isFull<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return true if full (if size == capacity), false otherwise. </para>
+</para>
+<para>
+Definition at line 301 of file RingBuffer.h.</para>
+    </section><anchor xml:id="_classUtil_1_1RingBuffer_1a10c51b1861154076b0c6b691c56b4d0e"/>    <section>
+    <title>operator[]()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator[]</primary><secondary>Util::RingBuffer&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::RingBuffer&lt; Data &gt;</primary><secondary>operator[]</secondary></indexterm>
+<computeroutput>template&lt;class Data &gt; </computeroutput><para><computeroutput>const Data &amp; <link linkend="_classUtil_1_1RingBuffer">Util::RingBuffer</link>&lt; Data &gt;::operator[] (int offset) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Retrieve a const value, a specified number of time steps ago. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>offset</entry>
+                                <entry>
+<para>number of steps back in time (offset=0 is current value). </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 309 of file RingBuffer.h.</para>
+    </section><anchor xml:id="_classUtil_1_1RingBuffer_1a34a79de6346c239d1288aba3bb9ad71c"/>    <section>
+    <title>operator[]()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator[]</primary><secondary>Util::RingBuffer&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::RingBuffer&lt; Data &gt;</primary><secondary>operator[]</secondary></indexterm>
+<computeroutput>template&lt;class Data &gt; </computeroutput><para><computeroutput>Data &amp; <link linkend="_classUtil_1_1RingBuffer">Util::RingBuffer</link>&lt; Data &gt;::operator[] (int offset)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Retrieve a value, a specified number of time steps ago. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>offset</entry>
+                                <entry>
+<para>number of steps back in time (offset=0 is current value). </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 327 of file RingBuffer.h.</para>
+    </section><anchor xml:id="_classUtil_1_1RingBuffer_1a29198899f39be24981f39930a1282b27"/>    <section>
+    <title>serialize()</title>
+<indexterm><primary>serialize</primary><secondary>Util::RingBuffer&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::RingBuffer&lt; Data &gt;</primary><secondary>serialize</secondary></indexterm>
+<computeroutput>template&lt;class Data &gt; </computeroutput><computeroutput>template&lt;class Archive &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1RingBuffer">Util::RingBuffer</link>&lt; Data &gt;::serialize (Archive &amp; ar, const unsigned int version)</computeroutput></para><para>
+
+<para>Serialize a <link linkend="_classUtil_1_1RingBuffer">RingBuffer</link> to/from an Archive. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>archive </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>version</entry>
+                                <entry>
+<para>archive version id </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 345 of file RingBuffer.h.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+RingBuffer.h</section>
+</section>

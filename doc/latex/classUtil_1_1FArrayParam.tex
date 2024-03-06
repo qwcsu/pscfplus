@@ -1,0 +1,200 @@
+\hypertarget{classUtil_1_1FArrayParam}{}\doxysubsection{Util\+::F\+Array\+Param$<$ Type, N $>$ Class Template Reference}
+\label{classUtil_1_1FArrayParam}\index{Util::FArrayParam$<$ Type, N $>$@{Util::FArrayParam$<$ Type, N $>$}}
+
+
+A \mbox{\hyperlink{classUtil_1_1Parameter}{Parameter}} associated with a \mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}} container.  
+
+
+
+
+{\ttfamily \#include $<$F\+Array\+Param.\+h$>$}
+
+Inheritance diagram for Util\+::F\+Array\+Param$<$ Type, N $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classUtil_1_1FArrayParam}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1FArrayParam_af59fb0017ecc2955cabf5634940129f8}{F\+Array\+Param}} (const char $\ast$\mbox{\hyperlink{classUtil_1_1Parameter_a2e6a63d5a0827ee3de51d481aee38174}{label}}, \mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}}$<$ Type, N $>$ \&array, bool \mbox{\hyperlink{classUtil_1_1Parameter_accdc4c9c774b9394b387277543c1ba74}{is\+Required}}=true)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1FArrayParam_a63c5e0963f1053555d310bd7e2838801}{write\+Param}} (std\+::ostream \&out)
+\begin{DoxyCompactList}\small\item\em Write \mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}} parameter to stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classUtil_1_1FArrayParam_aa9fb6e5e22c28f5b787996c226125369}{read\+Value}} (std\+::istream \&in)
+\begin{DoxyCompactList}\small\item\em Read parameter value from an input stream. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUtil_1_1FArrayParam_a4212b1eef135a3a7b9ab4169f8b7e7cb}{load\+Value}} (\mbox{\hyperlink{classUtil_1_1Serializable_ac6bcbf9bac926cada5a398804410e891}{Serializable\+::\+I\+Archive}} \&ar)
+\begin{DoxyCompactList}\small\item\em Load bare parameter value from an archive. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUtil_1_1FArrayParam_ad1737f859cff068584f812fd9e279342}{save\+Value}} (\mbox{\hyperlink{classUtil_1_1Serializable_aca43a1eea5ec5f13189a57892a7a6d04}{Serializable\+::\+O\+Archive}} \&ar)
+\begin{DoxyCompactList}\small\item\em Save parameter value to an archive. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUtil_1_1FArrayParam_a3aee8175a45ea44b57fb5a2135f8957d}{bcast\+Value}} ()
+\begin{DoxyCompactList}\small\item\em Broadcast parameter value within the io\+Communicator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$class Type, int N$>$\newline
+class Util\+::\+F\+Array\+Param$<$ Type, N $>$}
+
+A \mbox{\hyperlink{classUtil_1_1Parameter}{Parameter}} associated with a \mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}} container. 
+
+Definition at line 26 of file F\+Array\+Param.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1FArrayParam_af59fb0017ecc2955cabf5634940129f8}\label{classUtil_1_1FArrayParam_af59fb0017ecc2955cabf5634940129f8}} 
+\index{Util::FArrayParam$<$ Type, N $>$@{Util::FArrayParam$<$ Type, N $>$}!FArrayParam@{FArrayParam}}
+\index{FArrayParam@{FArrayParam}!Util::FArrayParam$<$ Type, N $>$@{Util::FArrayParam$<$ Type, N $>$}}
+\doxyparagraph{\texorpdfstring{FArrayParam()}{FArrayParam()}}
+{\footnotesize\ttfamily template$<$class Type , int N$>$ \\
+\mbox{\hyperlink{classUtil_1_1FArrayParam}{Util\+::\+F\+Array\+Param}}$<$ Type, N $>$\+::\mbox{\hyperlink{classUtil_1_1FArrayParam}{F\+Array\+Param}} (\begin{DoxyParamCaption}\item[{const char $\ast$}]{label,  }\item[{\mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}}$<$ Type, N $>$ \&}]{array,  }\item[{bool}]{is\+Required = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & label string for parameter file \\
+\hline
+{\em array} & associated \mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}} variable \\
+\hline
+{\em is\+Required} & Is this a required parameter? \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 88 of file F\+Array\+Param.\+h.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1FArrayParam_a63c5e0963f1053555d310bd7e2838801}\label{classUtil_1_1FArrayParam_a63c5e0963f1053555d310bd7e2838801}} 
+\index{Util::FArrayParam$<$ Type, N $>$@{Util::FArrayParam$<$ Type, N $>$}!writeParam@{writeParam}}
+\index{writeParam@{writeParam}!Util::FArrayParam$<$ Type, N $>$@{Util::FArrayParam$<$ Type, N $>$}}
+\doxyparagraph{\texorpdfstring{writeParam()}{writeParam()}}
+{\footnotesize\ttfamily template$<$class Type , int N$>$ \\
+void \mbox{\hyperlink{classUtil_1_1FArrayParam}{Util\+::\+F\+Array\+Param}}$<$ Type, N $>$\+::write\+Param (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Write \mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}} parameter to stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & output stream \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classUtil_1_1ParamComponent_ac17d6ab63f9b0e5f966d6a3cfbc26d86}{Util\+::\+Param\+Component}}.
+
+
+
+Definition at line 131 of file F\+Array\+Param.\+h.
+
+
+
+References Util\+::\+Parameter\+::\+Precision, and Util\+::\+Parameter\+::\+Width.
+
+\mbox{\Hypertarget{classUtil_1_1FArrayParam_aa9fb6e5e22c28f5b787996c226125369}\label{classUtil_1_1FArrayParam_aa9fb6e5e22c28f5b787996c226125369}} 
+\index{Util::FArrayParam$<$ Type, N $>$@{Util::FArrayParam$<$ Type, N $>$}!readValue@{readValue}}
+\index{readValue@{readValue}!Util::FArrayParam$<$ Type, N $>$@{Util::FArrayParam$<$ Type, N $>$}}
+\doxyparagraph{\texorpdfstring{readValue()}{readValue()}}
+{\footnotesize\ttfamily template$<$class Type , int N$>$ \\
+void \mbox{\hyperlink{classUtil_1_1FArrayParam}{Util\+::\+F\+Array\+Param}}$<$ Type, N $>$\+::read\+Value (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Read parameter value from an input stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & input stream from which to read \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classUtil_1_1Parameter_a5817fa95bf2e32808d384a66e272dc37}{Util\+::\+Parameter}}.
+
+
+
+Definition at line 97 of file F\+Array\+Param.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1FArrayParam_a4212b1eef135a3a7b9ab4169f8b7e7cb}\label{classUtil_1_1FArrayParam_a4212b1eef135a3a7b9ab4169f8b7e7cb}} 
+\index{Util::FArrayParam$<$ Type, N $>$@{Util::FArrayParam$<$ Type, N $>$}!loadValue@{loadValue}}
+\index{loadValue@{loadValue}!Util::FArrayParam$<$ Type, N $>$@{Util::FArrayParam$<$ Type, N $>$}}
+\doxyparagraph{\texorpdfstring{loadValue()}{loadValue()}}
+{\footnotesize\ttfamily template$<$class Type , int N$>$ \\
+void \mbox{\hyperlink{classUtil_1_1FArrayParam}{Util\+::\+F\+Array\+Param}}$<$ Type, N $>$\+::load\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1Serializable_ac6bcbf9bac926cada5a398804410e891}{Serializable\+::\+I\+Archive}} \&}]{ar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Load bare parameter value from an archive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & input archive from which to load \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classUtil_1_1Parameter_a9e3d8dbd2198974017cd8711ae9c990d}{Util\+::\+Parameter}}.
+
+
+
+Definition at line 108 of file F\+Array\+Param.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1FArrayParam_ad1737f859cff068584f812fd9e279342}\label{classUtil_1_1FArrayParam_ad1737f859cff068584f812fd9e279342}} 
+\index{Util::FArrayParam$<$ Type, N $>$@{Util::FArrayParam$<$ Type, N $>$}!saveValue@{saveValue}}
+\index{saveValue@{saveValue}!Util::FArrayParam$<$ Type, N $>$@{Util::FArrayParam$<$ Type, N $>$}}
+\doxyparagraph{\texorpdfstring{saveValue()}{saveValue()}}
+{\footnotesize\ttfamily template$<$class Type , int N$>$ \\
+void \mbox{\hyperlink{classUtil_1_1FArrayParam}{Util\+::\+F\+Array\+Param}}$<$ Type, N $>$\+::save\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1Serializable_aca43a1eea5ec5f13189a57892a7a6d04}{Serializable\+::\+O\+Archive}} \&}]{ar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Save parameter value to an archive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & output archive to which to save \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classUtil_1_1Parameter_a61858c5163b492f2618689a35ff05044}{Util\+::\+Parameter}}.
+
+
+
+Definition at line 115 of file F\+Array\+Param.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1FArrayParam_a3aee8175a45ea44b57fb5a2135f8957d}\label{classUtil_1_1FArrayParam_a3aee8175a45ea44b57fb5a2135f8957d}} 
+\index{Util::FArrayParam$<$ Type, N $>$@{Util::FArrayParam$<$ Type, N $>$}!bcastValue@{bcastValue}}
+\index{bcastValue@{bcastValue}!Util::FArrayParam$<$ Type, N $>$@{Util::FArrayParam$<$ Type, N $>$}}
+\doxyparagraph{\texorpdfstring{bcastValue()}{bcastValue()}}
+{\footnotesize\ttfamily template$<$class Type , int N$>$ \\
+void \mbox{\hyperlink{classUtil_1_1FArrayParam}{Util\+::\+F\+Array\+Param}}$<$ Type, N $>$\+::bcast\+Value\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Broadcast parameter value within the io\+Communicator. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classUtil_1_1Parameter_ad93ad2700686a5a32755fdb67b2a0792}{Util\+::\+Parameter}}.
+
+
+
+Definition at line 123 of file F\+Array\+Param.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+F\+Array\+Param.\+h\end{DoxyCompactItemize}

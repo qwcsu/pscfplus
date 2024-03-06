@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1DRaggedMatrix">
+<title>Util::DRaggedMatrix&lt; Data &gt; Class Template Reference</title>
+<indexterm><primary>Util::DRaggedMatrix&lt; Data &gt;</primary></indexterm>
+<para>
+
+<para>Dynamically allocated <link linkend="_classUtil_1_1RaggedMatrix">RaggedMatrix</link>. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;DRaggedMatrix.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Util::DRaggedMatrix&lt; Data &gt;:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classUtil_1_1DRaggedMatrix.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1DRaggedMatrix_1ab0e9f6139a3802c7481e4bec44cef18f">DRaggedMatrix</link> ()</para>
+
+<para>Constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1DRaggedMatrix_1a51e41e141e95e5cf8fb67db5822866c3">~DRaggedMatrix</link> ()</para>
+
+<para>Destructor. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1DRaggedMatrix_1a10d05ef86041cc5121e7b91ee776a260">allocate</link> (const <link linkend="_classUtil_1_1DArray">DArray</link>&lt; int &gt; &amp;rowSizes)</para>
+
+<para>Allocate memory for a ragged matrix. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_classUtil_1_1DRaggedMatrix_1a0d8e4d2002dbdca4cb62c7df29391c7e">isAllocated</link> () const</para>
+
+<para>Return true iff this <link linkend="_classUtil_1_1DRaggedMatrix">DRaggedMatrix</link> has been allocated. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;typename Data&gt;
+class Util::DRaggedMatrix&lt; Data &gt;</title></simplesect>
+
+
+<para>Dynamically allocated <link linkend="_classUtil_1_1RaggedMatrix">RaggedMatrix</link>. </para>
+<para>
+Definition at line 24 of file DRaggedMatrix.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1DRaggedMatrix_1ab0e9f6139a3802c7481e4bec44cef18f"/>    <section>
+    <title>DRaggedMatrix()</title>
+<indexterm><primary>DRaggedMatrix</primary><secondary>Util::DRaggedMatrix&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::DRaggedMatrix&lt; Data &gt;</primary><secondary>DRaggedMatrix</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1DRaggedMatrix">Util::DRaggedMatrix</link>&lt; Data &gt;::<link linkend="_classUtil_1_1DRaggedMatrix">DRaggedMatrix</link></computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+<para>
+Definition at line 65 of file DRaggedMatrix.h.</para>
+    </section><anchor xml:id="_classUtil_1_1DRaggedMatrix_1a51e41e141e95e5cf8fb67db5822866c3"/>    <section>
+    <title>~DRaggedMatrix()</title>
+<indexterm><primary>~DRaggedMatrix</primary><secondary>Util::DRaggedMatrix&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::DRaggedMatrix&lt; Data &gt;</primary><secondary>~DRaggedMatrix</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1DRaggedMatrix">Util::DRaggedMatrix</link>&lt; Data &gt;::~<link linkend="_classUtil_1_1DRaggedMatrix">DRaggedMatrix</link></computeroutput></para><para>
+
+<para>Destructor. </para>
+</para>
+
+<para>Delete dynamically allocated C array. </para>
+<para>
+Definition at line 73 of file DRaggedMatrix.h.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1DRaggedMatrix_1a10d05ef86041cc5121e7b91ee776a260"/>    <section>
+    <title>allocate()</title>
+<indexterm><primary>allocate</primary><secondary>Util::DRaggedMatrix&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::DRaggedMatrix&lt; Data &gt;</primary><secondary>allocate</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1DRaggedMatrix">Util::DRaggedMatrix</link>&lt; Data &gt;::allocate (const <link linkend="_classUtil_1_1DArray">DArray</link>&lt; int &gt; &amp; rowSizes)</computeroutput></para><para>
+
+<para>Allocate memory for a ragged matrix. </para>
+</para>
+<para>
+Definition at line 90 of file DRaggedMatrix.h.</para>
+<para>
+References Util::Array&lt; Data &gt;::capacity(), and UTIL_THROW.</para>
+    </section><anchor xml:id="_classUtil_1_1DRaggedMatrix_1a0d8e4d2002dbdca4cb62c7df29391c7e"/>    <section>
+    <title>isAllocated()</title>
+<indexterm><primary>isAllocated</primary><secondary>Util::DRaggedMatrix&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::DRaggedMatrix&lt; Data &gt;</primary><secondary>isAllocated</secondary></indexterm>
+<computeroutput>template&lt;class Data &gt; </computeroutput><para><computeroutput>bool <link linkend="_classUtil_1_1DRaggedMatrix">Util::DRaggedMatrix</link>&lt; Data &gt;::isAllocated<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return true iff this <link linkend="_classUtil_1_1DRaggedMatrix">DRaggedMatrix</link> has been allocated. </para>
+</para>
+<para>
+Definition at line 129 of file DRaggedMatrix.h.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+DRaggedMatrix.h</section>
+</section>

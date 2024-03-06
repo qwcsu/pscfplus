@@ -1,0 +1,367 @@
+\hypertarget{classUtil_1_1TensorAverage}{}\doxysubsection{Util\+::Tensor\+Average Class Reference}
+\label{classUtil_1_1TensorAverage}\index{Util::TensorAverage@{Util::TensorAverage}}
+
+
+Calculates averages of all components of a Tensor-\/valued variable.  
+
+
+
+
+{\ttfamily \#include $<$Tensor\+Average.\+h$>$}
+
+Inheritance diagram for Util\+::Tensor\+Average\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classUtil_1_1TensorAverage}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1TensorAverage_a6895e560502fb8a92f8caa43966a9302}{Tensor\+Average}} (int block\+Factor=2)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classUtil_1_1TensorAverage_ae6ea8da068c0598c9acd266115f76195}{$\sim$\+Tensor\+Average}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1TensorAverage_a9b78125d5c49ab4b5a2e9c7e031e6a36}{set\+N\+Sample\+Per\+Block}} (int \mbox{\hyperlink{classUtil_1_1TensorAverage_a12b0e5bb210e78ac199eade38aaadcc4}{n\+Sample\+Per\+Block}})
+\begin{DoxyCompactList}\small\item\em Set n\+Sample\+Per\+Block. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1TensorAverage_aa80ddc967d68329ab18e3f3c3ad9709a}{read\+Parameters}} (std\+::istream \&in)
+\begin{DoxyCompactList}\small\item\em Read parameter n\+Sample\+Per\+Block from file and initialize. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUtil_1_1TensorAverage_a829cd46caa6f5cff6369b758a0feba26}{load\+Parameters}} (\mbox{\hyperlink{classUtil_1_1Serializable_ac6bcbf9bac926cada5a398804410e891}{Serializable\+::\+I\+Archive}} \&ar)
+\begin{DoxyCompactList}\small\item\em Load internal state from an archive. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUtil_1_1TensorAverage_a88d6b99a9fbac6185490c5508f8805e4}{save}} (\mbox{\hyperlink{classUtil_1_1Serializable_aca43a1eea5ec5f13189a57892a7a6d04}{Serializable\+::\+O\+Archive}} \&ar)
+\begin{DoxyCompactList}\small\item\em Save internal state to an archive. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Archive $>$ }\\void \mbox{\hyperlink{classUtil_1_1TensorAverage_a74b359142d7126f07ef6c6615a5bd6f4}{serialize}} (Archive \&ar, const unsigned int version)
+\begin{DoxyCompactList}\small\item\em Serialize this to or from an archive. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1TensorAverage_aa3c9c75a34fc5e1ef8ca002a493c9ea2}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Clear all accumulators, set to empty initial state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1TensorAverage_af356f4a311b8ea7e8aa3a4e4b7e31efb}{sample}} (const \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \&value)
+\begin{DoxyCompactList}\small\item\em Add a sampled value to the ensemble. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classUtil_1_1Average}{Average}} \& \mbox{\hyperlink{classUtil_1_1TensorAverage_a33d98fcb28f575591279b1c870c0a36d}{operator()}} (int i, int j)
+\begin{DoxyCompactList}\small\item\em Access the \mbox{\hyperlink{classUtil_1_1Average}{Average}} object for one tensor component. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUtil_1_1TensorAverage_a12b0e5bb210e78ac199eade38aaadcc4}{n\+Sample\+Per\+Block}} () const
+\begin{DoxyCompactList}\small\item\em Get number of samples per block average. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUtil_1_1TensorAverage_a88e74e9a3a116e43ba294bd2628097ac}{i\+Block}} () const
+\begin{DoxyCompactList}\small\item\em Get number of samples in current block average. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUtil_1_1TensorAverage_a8c9c3cbc46b2289e9a85a673659404ad}{is\+Block\+Complete}} () const
+\begin{DoxyCompactList}\small\item\em Is the current block average complete? \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+
+
+\doxysubsubsection{Detailed Description}
+Calculates averages of all components of a Tensor-\/valued variable. 
+
+\mbox{\hyperlink{classUtil_1_1TensorAverage}{Tensor\+Average}} is a simple container for an array of \mbox{\hyperlink{classUtil_1_1Average}{Average}} objects, each of which calculates averages and error estimates for one component of a \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}}. 
+
+Definition at line 32 of file Tensor\+Average.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1TensorAverage_a6895e560502fb8a92f8caa43966a9302}\label{classUtil_1_1TensorAverage_a6895e560502fb8a92f8caa43966a9302}} 
+\index{Util::TensorAverage@{Util::TensorAverage}!TensorAverage@{TensorAverage}}
+\index{TensorAverage@{TensorAverage}!Util::TensorAverage@{Util::TensorAverage}}
+\doxyparagraph{\texorpdfstring{TensorAverage()}{TensorAverage()}}
+{\footnotesize\ttfamily Util\+::\+Tensor\+Average\+::\+Tensor\+Average (\begin{DoxyParamCaption}\item[{int}]{block\+Factor = {\ttfamily 2} }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em block\+Factor} & ratio of block sizes for subsequent stages. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 21 of file Tensor\+Average.\+cpp.
+
+
+
+References Util\+::\+Dimension, and Util\+::\+Param\+Composite\+::set\+Class\+Name().
+
+\mbox{\Hypertarget{classUtil_1_1TensorAverage_ae6ea8da068c0598c9acd266115f76195}\label{classUtil_1_1TensorAverage_ae6ea8da068c0598c9acd266115f76195}} 
+\index{Util::TensorAverage@{Util::TensorAverage}!````~TensorAverage@{$\sim$TensorAverage}}
+\index{````~TensorAverage@{$\sim$TensorAverage}!Util::TensorAverage@{Util::TensorAverage}}
+\doxyparagraph{\texorpdfstring{$\sim$TensorAverage()}{~TensorAverage()}}
+{\footnotesize\ttfamily Util\+::\+Tensor\+Average\+::$\sim$\+Tensor\+Average (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+Definition at line 40 of file Tensor\+Average.\+cpp.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1TensorAverage_a9b78125d5c49ab4b5a2e9c7e031e6a36}\label{classUtil_1_1TensorAverage_a9b78125d5c49ab4b5a2e9c7e031e6a36}} 
+\index{Util::TensorAverage@{Util::TensorAverage}!setNSamplePerBlock@{setNSamplePerBlock}}
+\index{setNSamplePerBlock@{setNSamplePerBlock}!Util::TensorAverage@{Util::TensorAverage}}
+\doxyparagraph{\texorpdfstring{setNSamplePerBlock()}{setNSamplePerBlock()}}
+{\footnotesize\ttfamily void Util\+::\+Tensor\+Average\+::set\+N\+Sample\+Per\+Block (\begin{DoxyParamCaption}\item[{int}]{n\+Sample\+Per\+Block }\end{DoxyParamCaption})}
+
+
+
+Set n\+Sample\+Per\+Block. 
+
+If n\+Sample\+Per\+Block $>$ 0, the sample function will increment block averages, and reset the average every n\+Sample\+Per\+Block samples.
+
+If n\+Sample\+Per\+Block == 0, block averaging is disabled. This is the default (i.\+e., the initial value set in the constructor).
+
+
+\begin{DoxyParams}{Parameters}
+{\em n\+Sample\+Per\+Block} & number of samples per block average output \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 46 of file Tensor\+Average.\+cpp.
+
+
+
+References Util\+::\+Dimension, n\+Sample\+Per\+Block(), and U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1TensorAverage_aa80ddc967d68329ab18e3f3c3ad9709a}\label{classUtil_1_1TensorAverage_aa80ddc967d68329ab18e3f3c3ad9709a}} 
+\index{Util::TensorAverage@{Util::TensorAverage}!readParameters@{readParameters}}
+\index{readParameters@{readParameters}!Util::TensorAverage@{Util::TensorAverage}}
+\doxyparagraph{\texorpdfstring{readParameters()}{readParameters()}}
+{\footnotesize\ttfamily void Util\+::\+Tensor\+Average\+::read\+Parameters (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Read parameter n\+Sample\+Per\+Block from file and initialize. 
+
+See \mbox{\hyperlink{classUtil_1_1TensorAverage_a9b78125d5c49ab4b5a2e9c7e031e6a36}{set\+N\+Sample\+Per\+Block()}} for discussion of value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & input stream \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classUtil_1_1ParamComposite_a172a3a656b5829c8d758424ad09a22a6}{Util\+::\+Param\+Composite}}.
+
+
+
+Definition at line 65 of file Tensor\+Average.\+cpp.
+
+
+
+References Util\+::\+Dimension, and U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1TensorAverage_a829cd46caa6f5cff6369b758a0feba26}\label{classUtil_1_1TensorAverage_a829cd46caa6f5cff6369b758a0feba26}} 
+\index{Util::TensorAverage@{Util::TensorAverage}!loadParameters@{loadParameters}}
+\index{loadParameters@{loadParameters}!Util::TensorAverage@{Util::TensorAverage}}
+\doxyparagraph{\texorpdfstring{loadParameters()}{loadParameters()}}
+{\footnotesize\ttfamily void Util\+::\+Tensor\+Average\+::load\+Parameters (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1Serializable_ac6bcbf9bac926cada5a398804410e891}{Serializable\+::\+I\+Archive}} \&}]{ar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Load internal state from an archive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & input/loading archive \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classUtil_1_1ParamComposite_adec07dcba0895ba69463147314cde7ce}{Util\+::\+Param\+Composite}}.
+
+
+
+Definition at line 84 of file Tensor\+Average.\+cpp.
+
+
+
+References Util\+::\+Dimension, and U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1TensorAverage_a88d6b99a9fbac6185490c5508f8805e4}\label{classUtil_1_1TensorAverage_a88d6b99a9fbac6185490c5508f8805e4}} 
+\index{Util::TensorAverage@{Util::TensorAverage}!save@{save}}
+\index{save@{save}!Util::TensorAverage@{Util::TensorAverage}}
+\doxyparagraph{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily void Util\+::\+Tensor\+Average\+::save (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1Serializable_aca43a1eea5ec5f13189a57892a7a6d04}{Serializable\+::\+O\+Archive}} \&}]{ar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Save internal state to an archive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & output/saving archive \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classUtil_1_1ParamComposite_a3c430a4e31a9573eadb06ab89d3bf780}{Util\+::\+Param\+Composite}}.
+
+
+
+Definition at line 104 of file Tensor\+Average.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1TensorAverage_a74b359142d7126f07ef6c6615a5bd6f4}\label{classUtil_1_1TensorAverage_a74b359142d7126f07ef6c6615a5bd6f4}} 
+\index{Util::TensorAverage@{Util::TensorAverage}!serialize@{serialize}}
+\index{serialize@{serialize}!Util::TensorAverage@{Util::TensorAverage}}
+\doxyparagraph{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$class Archive $>$ \\
+void Util\+::\+Tensor\+Average\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{ar,  }\item[{const unsigned int}]{version }\end{DoxyParamCaption})}
+
+
+
+Serialize this to or from an archive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & input or output archive \\
+\hline
+{\em version} & file version id \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 185 of file Tensor\+Average.\+h.
+
+
+
+References Util\+::\+Dimension.
+
+\mbox{\Hypertarget{classUtil_1_1TensorAverage_aa3c9c75a34fc5e1ef8ca002a493c9ea2}\label{classUtil_1_1TensorAverage_aa3c9c75a34fc5e1ef8ca002a493c9ea2}} 
+\index{Util::TensorAverage@{Util::TensorAverage}!clear@{clear}}
+\index{clear@{clear}!Util::TensorAverage@{Util::TensorAverage}}
+\doxyparagraph{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void Util\+::\+Tensor\+Average\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clear all accumulators, set to empty initial state. 
+
+
+
+Definition at line 110 of file Tensor\+Average.\+cpp.
+
+
+
+References Util\+::\+Dimension.
+
+\mbox{\Hypertarget{classUtil_1_1TensorAverage_af356f4a311b8ea7e8aa3a4e4b7e31efb}\label{classUtil_1_1TensorAverage_af356f4a311b8ea7e8aa3a4e4b7e31efb}} 
+\index{Util::TensorAverage@{Util::TensorAverage}!sample@{sample}}
+\index{sample@{sample}!Util::TensorAverage@{Util::TensorAverage}}
+\doxyparagraph{\texorpdfstring{sample()}{sample()}}
+{\footnotesize\ttfamily void Util\+::\+Tensor\+Average\+::sample (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Add a sampled value to the ensemble. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & sampled value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 126 of file Tensor\+Average.\+cpp.
+
+
+
+References Util\+::\+Dimension.
+
+\mbox{\Hypertarget{classUtil_1_1TensorAverage_a33d98fcb28f575591279b1c870c0a36d}\label{classUtil_1_1TensorAverage_a33d98fcb28f575591279b1c870c0a36d}} 
+\index{Util::TensorAverage@{Util::TensorAverage}!operator()@{operator()}}
+\index{operator()@{operator()}!Util::TensorAverage@{Util::TensorAverage}}
+\doxyparagraph{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classUtil_1_1Average}{Average}} \& Util\+::\+Tensor\+Average\+::operator() (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption})}
+
+
+
+Access the \mbox{\hyperlink{classUtil_1_1Average}{Average}} object for one tensor component. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & first index of associated tensor component \\
+\hline
+{\em j} & second index of associated tensor component \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classUtil_1_1Average}{Average}} object associated with element (i, j) 
+\end{DoxyReturn}
+
+
+Definition at line 147 of file Tensor\+Average.\+cpp.
+
+
+
+References Util\+::\+Dimension.
+
+\mbox{\Hypertarget{classUtil_1_1TensorAverage_a12b0e5bb210e78ac199eade38aaadcc4}\label{classUtil_1_1TensorAverage_a12b0e5bb210e78ac199eade38aaadcc4}} 
+\index{Util::TensorAverage@{Util::TensorAverage}!nSamplePerBlock@{nSamplePerBlock}}
+\index{nSamplePerBlock@{nSamplePerBlock}!Util::TensorAverage@{Util::TensorAverage}}
+\doxyparagraph{\texorpdfstring{nSamplePerBlock()}{nSamplePerBlock()}}
+{\footnotesize\ttfamily int Util\+::\+Tensor\+Average\+::n\+Sample\+Per\+Block (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get number of samples per block average. 
+
+Returns zero if block averaging is disabled.
+
+\begin{DoxyReturn}{Returns}
+number of samples per block (or 0 if disabled). 
+\end{DoxyReturn}
+
+
+Definition at line 166 of file Tensor\+Average.\+h.
+
+
+
+Referenced by set\+N\+Sample\+Per\+Block().
+
+\mbox{\Hypertarget{classUtil_1_1TensorAverage_a88e74e9a3a116e43ba294bd2628097ac}\label{classUtil_1_1TensorAverage_a88e74e9a3a116e43ba294bd2628097ac}} 
+\index{Util::TensorAverage@{Util::TensorAverage}!iBlock@{iBlock}}
+\index{iBlock@{iBlock}!Util::TensorAverage@{Util::TensorAverage}}
+\doxyparagraph{\texorpdfstring{iBlock()}{iBlock()}}
+{\footnotesize\ttfamily int Util\+::\+Tensor\+Average\+::i\+Block (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get number of samples in current block average. 
+
+Returns 0 if block averaging is disabled (i.\+e., n\+Sample\+Per\+Block == 0).
+
+\begin{DoxyReturn}{Returns}
+number of samples in current block (or 0 if disabled) 
+\end{DoxyReturn}
+
+
+Definition at line 172 of file Tensor\+Average.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1TensorAverage_a8c9c3cbc46b2289e9a85a673659404ad}\label{classUtil_1_1TensorAverage_a8c9c3cbc46b2289e9a85a673659404ad}} 
+\index{Util::TensorAverage@{Util::TensorAverage}!isBlockComplete@{isBlockComplete}}
+\index{isBlockComplete@{isBlockComplete}!Util::TensorAverage@{Util::TensorAverage}}
+\doxyparagraph{\texorpdfstring{isBlockComplete()}{isBlockComplete()}}
+{\footnotesize\ttfamily bool Util\+::\+Tensor\+Average\+::is\+Block\+Complete (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Is the current block average complete? 
+
+Returns true iff blocking is enabled and i\+Block == n\+Sample\+Per\+Block
+
+\begin{DoxyReturn}{Returns}
+(i\+Block $>$ 0) \&\& (i\+Block == n\+Sample\+Per\+Block) 
+\end{DoxyReturn}
+
+
+Definition at line 178 of file Tensor\+Average.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Tensor\+Average.\+h\item 
+Tensor\+Average.\+cpp\end{DoxyCompactItemize}

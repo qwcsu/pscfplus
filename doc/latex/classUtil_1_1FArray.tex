@@ -1,0 +1,324 @@
+\hypertarget{classUtil_1_1FArray}{}\doxysubsection{Util\+::F\+Array$<$ Data, Capacity $>$ Class Template Reference}
+\label{classUtil_1_1FArray}\index{Util::FArray$<$ Data, Capacity $>$@{Util::FArray$<$ Data, Capacity $>$}}
+
+
+A fixed size (static) contiguous array template.  
+
+
+
+
+{\ttfamily \#include $<$F\+Array.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1FArray_ac06ca7838b2f0c837ee02f152192d073}{F\+Array}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1FArray_a1b1d06bbb55851da5e84e9e2ff8ca958}{F\+Array}} (const \mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}}$<$ Data, Capacity $>$ \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}}$<$ Data, Capacity $>$ \& \mbox{\hyperlink{classUtil_1_1FArray_aa577b8dd046ca7c23793740a00291922}{operator=}} (const \mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}}$<$ Data, Capacity $>$ \&other)
+\begin{DoxyCompactList}\small\item\em Assignment, element by element. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUtil_1_1FArray_aaadc8ac720085dbb25e97cdc0f97dae5}{size}} () const
+\begin{DoxyCompactList}\small\item\em Return number of elements in this \mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUtil_1_1FArray_a7a9fd7382038c603d7ee60cac8b667a8}{capacity}} () const
+\begin{DoxyCompactList}\small\item\em Return number of elements in this \mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1FArray_ae8e6d0df7a53d38644d52086cdb65125}{begin}} (\mbox{\hyperlink{classUtil_1_1ArrayIterator}{Array\+Iterator}}$<$ Data $>$ \&iterator)
+\begin{DoxyCompactList}\small\item\em Set an \mbox{\hyperlink{classUtil_1_1ArrayIterator}{Array\+Iterator}} to the beginning of this \mbox{\hyperlink{classUtil_1_1Array}{Array}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1FArray_a2b20dc10958d0be3c93da4abc5258a01}{begin}} (\mbox{\hyperlink{classUtil_1_1ConstArrayIterator}{Const\+Array\+Iterator}}$<$ Data $>$ \&iterator) const
+\begin{DoxyCompactList}\small\item\em Set a \mbox{\hyperlink{classUtil_1_1ConstArrayIterator}{Const\+Array\+Iterator}} to the beginning of this \mbox{\hyperlink{classUtil_1_1Array}{Array}}. \end{DoxyCompactList}\item 
+Data \& \mbox{\hyperlink{classUtil_1_1FArray_a9463deaba1551f9a4b9cc87925bd2dc8}{operator\mbox{[}$\,$\mbox{]}}} (int i)
+\begin{DoxyCompactList}\small\item\em Mimic C array subscripting. \end{DoxyCompactList}\item 
+const Data \& \mbox{\hyperlink{classUtil_1_1FArray_a05f1dc7cd6c5c623e42469294b8eeb83}{operator\mbox{[}$\,$\mbox{]}}} (int i) const
+\begin{DoxyCompactList}\small\item\em Mimic C array subscripting. \end{DoxyCompactList}\item 
+Data $\ast$ \mbox{\hyperlink{classUtil_1_1FArray_a38b3a0a53719b66bb3d793fee7530229}{c\+Array}} ()
+\begin{DoxyCompactList}\small\item\em Return pointer to underlying C array. \end{DoxyCompactList}\item 
+const Data $\ast$ \mbox{\hyperlink{classUtil_1_1FArray_a1c6edc99a6c317e4a28cd9c95ab3cb3f}{c\+Array}} () const
+\begin{DoxyCompactList}\small\item\em Return pointer to const to underlying C array. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Archive $>$ }\\void \mbox{\hyperlink{classUtil_1_1FArray_a91cb6495c91344abeb9bf2c03a604f65}{serialize}} (Archive \&ar, const unsigned int version)
+\begin{DoxyCompactList}\small\item\em Serialize a \mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}} to/from an Archive. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUtil_1_1FArray_a3f7e30d67eeae5358ae4a7f4c94322e8}{packed\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Return packed size in a Memory\+Archive, in bytes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classUtil_1_1FArray_ae529424c6c27799916edd7c441cb3280}{commit\+Mpi\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Commit associated M\+PI Data\+Type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$typename Data, int Capacity$>$\newline
+class Util\+::\+F\+Array$<$ Data, Capacity $>$}
+
+A fixed size (static) contiguous array template. 
+
+An \mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}} is a simple wraper for a fixed size C \mbox{\hyperlink{classUtil_1_1Array}{Array}}, with a capacity that is fixed at compile time. As in a C \mbox{\hyperlink{classUtil_1_1Array}{Array}}, or a \mbox{\hyperlink{classUtil_1_1DArray}{D\+Array}} container, all of the elements are accessible. Unlike an \mbox{\hyperlink{classUtil_1_1FSArray}{F\+S\+Array}}, an \mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}} does not have logical size that is distinct from its physical capacity.
+
+When bounds checking is on (i.\+e., when N\+D\+E\+B\+UG is not defined), the operator \mbox{[}\mbox{]} checks that the index is non-\/negative and less than the Capacity.
+
+Advice\+: Use an \mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}} if you know exactly how many elements will be needed at compile time. Use an \mbox{\hyperlink{classUtil_1_1FSArray}{F\+S\+Array}} when you need a small statically allocated array for which the maximum capacity needed is known at compile time, but the logical size may be less than the capacity. Use a \mbox{\hyperlink{classUtil_1_1DArray}{D\+Array}} if you need a large, dynamically allocated array that must be allocated after instantiation. 
+
+Definition at line 46 of file F\+Array.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1FArray_ac06ca7838b2f0c837ee02f152192d073}\label{classUtil_1_1FArray_ac06ca7838b2f0c837ee02f152192d073}} 
+\index{Util::FArray$<$ Data, Capacity $>$@{Util::FArray$<$ Data, Capacity $>$}!FArray@{FArray}}
+\index{FArray@{FArray}!Util::FArray$<$ Data, Capacity $>$@{Util::FArray$<$ Data, Capacity $>$}}
+\doxyparagraph{\texorpdfstring{FArray()}{FArray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Data , int Capacity$>$ \\
+\mbox{\hyperlink{classUtil_1_1FArray}{Util\+::\+F\+Array}}$<$ Data, Capacity $>$\+::\mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}}}
+
+
+
+Constructor. 
+
+
+
+Definition at line 156 of file F\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1FArray_a1b1d06bbb55851da5e84e9e2ff8ca958}\label{classUtil_1_1FArray_a1b1d06bbb55851da5e84e9e2ff8ca958}} 
+\index{Util::FArray$<$ Data, Capacity $>$@{Util::FArray$<$ Data, Capacity $>$}!FArray@{FArray}}
+\index{FArray@{FArray}!Util::FArray$<$ Data, Capacity $>$@{Util::FArray$<$ Data, Capacity $>$}}
+\doxyparagraph{\texorpdfstring{FArray()}{FArray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Data , int Capacity$>$ \\
+\mbox{\hyperlink{classUtil_1_1FArray}{Util\+::\+F\+Array}}$<$ Data, Capacity $>$\+::\mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}}$<$ Data, Capacity $>$ \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the \mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}} to be copied. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 165 of file F\+Array.\+h.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1FArray_aa577b8dd046ca7c23793740a00291922}\label{classUtil_1_1FArray_aa577b8dd046ca7c23793740a00291922}} 
+\index{Util::FArray$<$ Data, Capacity $>$@{Util::FArray$<$ Data, Capacity $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Util::FArray$<$ Data, Capacity $>$@{Util::FArray$<$ Data, Capacity $>$}}
+\doxyparagraph{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename Data , int Capacity$>$ \\
+\mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}}$<$ Data, Capacity $>$ \& \mbox{\hyperlink{classUtil_1_1FArray}{Util\+::\+F\+Array}}$<$ Data, Capacity $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}}$<$ Data, Capacity $>$ \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Assignment, element by element. 
+
+Capacity of L\+HS \mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}} must be $>$= size of R\+HS \mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the R\+HS \mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 181 of file F\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1FArray_aaadc8ac720085dbb25e97cdc0f97dae5}\label{classUtil_1_1FArray_aaadc8ac720085dbb25e97cdc0f97dae5}} 
+\index{Util::FArray$<$ Data, Capacity $>$@{Util::FArray$<$ Data, Capacity $>$}!size@{size}}
+\index{size@{size}!Util::FArray$<$ Data, Capacity $>$@{Util::FArray$<$ Data, Capacity $>$}}
+\doxyparagraph{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename Data , int Capacity$>$ \\
+int \mbox{\hyperlink{classUtil_1_1FArray}{Util\+::\+F\+Array}}$<$ Data, Capacity $>$\+::size\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return number of elements in this \mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}}. 
+
+
+
+Definition at line 200 of file F\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1FArray_a7a9fd7382038c603d7ee60cac8b667a8}\label{classUtil_1_1FArray_a7a9fd7382038c603d7ee60cac8b667a8}} 
+\index{Util::FArray$<$ Data, Capacity $>$@{Util::FArray$<$ Data, Capacity $>$}!capacity@{capacity}}
+\index{capacity@{capacity}!Util::FArray$<$ Data, Capacity $>$@{Util::FArray$<$ Data, Capacity $>$}}
+\doxyparagraph{\texorpdfstring{capacity()}{capacity()}}
+{\footnotesize\ttfamily template$<$typename Data , int Capacity$>$ \\
+int \mbox{\hyperlink{classUtil_1_1FArray}{Util\+::\+F\+Array}}$<$ Data, Capacity $>$\+::capacity\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return number of elements in this \mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}}. 
+
+
+
+Definition at line 207 of file F\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1FArray_ae8e6d0df7a53d38644d52086cdb65125}\label{classUtil_1_1FArray_ae8e6d0df7a53d38644d52086cdb65125}} 
+\index{Util::FArray$<$ Data, Capacity $>$@{Util::FArray$<$ Data, Capacity $>$}!begin@{begin}}
+\index{begin@{begin}!Util::FArray$<$ Data, Capacity $>$@{Util::FArray$<$ Data, Capacity $>$}}
+\doxyparagraph{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Data , int Capacity$>$ \\
+void \mbox{\hyperlink{classUtil_1_1FArray}{Util\+::\+F\+Array}}$<$ Data, Capacity $>$\+::begin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1ArrayIterator}{Array\+Iterator}}$<$ Data $>$ \&}]{iterator }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set an \mbox{\hyperlink{classUtil_1_1ArrayIterator}{Array\+Iterator}} to the beginning of this \mbox{\hyperlink{classUtil_1_1Array}{Array}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em iterator} & \mbox{\hyperlink{classUtil_1_1ArrayIterator}{Array\+Iterator}}, initialized on output. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 214 of file F\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1FArray_a2b20dc10958d0be3c93da4abc5258a01}\label{classUtil_1_1FArray_a2b20dc10958d0be3c93da4abc5258a01}} 
+\index{Util::FArray$<$ Data, Capacity $>$@{Util::FArray$<$ Data, Capacity $>$}!begin@{begin}}
+\index{begin@{begin}!Util::FArray$<$ Data, Capacity $>$@{Util::FArray$<$ Data, Capacity $>$}}
+\doxyparagraph{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Data , int Capacity$>$ \\
+void \mbox{\hyperlink{classUtil_1_1FArray}{Util\+::\+F\+Array}}$<$ Data, Capacity $>$\+::begin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1ConstArrayIterator}{Const\+Array\+Iterator}}$<$ Data $>$ \&}]{iterator }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set a \mbox{\hyperlink{classUtil_1_1ConstArrayIterator}{Const\+Array\+Iterator}} to the beginning of this \mbox{\hyperlink{classUtil_1_1Array}{Array}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em iterator} & \mbox{\hyperlink{classUtil_1_1ConstArrayIterator}{Const\+Array\+Iterator}}, initialized on output. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 225 of file F\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1FArray_a9463deaba1551f9a4b9cc87925bd2dc8}\label{classUtil_1_1FArray_a9463deaba1551f9a4b9cc87925bd2dc8}} 
+\index{Util::FArray$<$ Data, Capacity $>$@{Util::FArray$<$ Data, Capacity $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Util::FArray$<$ Data, Capacity $>$@{Util::FArray$<$ Data, Capacity $>$}}
+\doxyparagraph{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Data , int Capacity$>$ \\
+Data \& \mbox{\hyperlink{classUtil_1_1FArray}{Util\+::\+F\+Array}}$<$ Data, Capacity $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Mimic C array subscripting. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & array index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to element i 
+\end{DoxyReturn}
+
+
+Definition at line 235 of file F\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1FArray_a05f1dc7cd6c5c623e42469294b8eeb83}\label{classUtil_1_1FArray_a05f1dc7cd6c5c623e42469294b8eeb83}} 
+\index{Util::FArray$<$ Data, Capacity $>$@{Util::FArray$<$ Data, Capacity $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Util::FArray$<$ Data, Capacity $>$@{Util::FArray$<$ Data, Capacity $>$}}
+\doxyparagraph{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Data , int Capacity$>$ \\
+const Data \& \mbox{\hyperlink{classUtil_1_1FArray}{Util\+::\+F\+Array}}$<$ Data, Capacity $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Mimic C array subscripting. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & array index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const reference to element i 
+\end{DoxyReturn}
+
+
+Definition at line 246 of file F\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1FArray_a38b3a0a53719b66bb3d793fee7530229}\label{classUtil_1_1FArray_a38b3a0a53719b66bb3d793fee7530229}} 
+\index{Util::FArray$<$ Data, Capacity $>$@{Util::FArray$<$ Data, Capacity $>$}!cArray@{cArray}}
+\index{cArray@{cArray}!Util::FArray$<$ Data, Capacity $>$@{Util::FArray$<$ Data, Capacity $>$}}
+\doxyparagraph{\texorpdfstring{cArray()}{cArray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Data , int Capacity$>$ \\
+const Data $\ast$ \mbox{\hyperlink{classUtil_1_1FArray}{Util\+::\+F\+Array}}$<$ Data, Capacity $>$\+::c\+Array\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return pointer to underlying C array. 
+
+
+
+Definition at line 257 of file F\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1FArray_a1c6edc99a6c317e4a28cd9c95ab3cb3f}\label{classUtil_1_1FArray_a1c6edc99a6c317e4a28cd9c95ab3cb3f}} 
+\index{Util::FArray$<$ Data, Capacity $>$@{Util::FArray$<$ Data, Capacity $>$}!cArray@{cArray}}
+\index{cArray@{cArray}!Util::FArray$<$ Data, Capacity $>$@{Util::FArray$<$ Data, Capacity $>$}}
+\doxyparagraph{\texorpdfstring{cArray()}{cArray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Data , int Capacity$>$ \\
+const Data$\ast$ \mbox{\hyperlink{classUtil_1_1FArray}{Util\+::\+F\+Array}}$<$ Data, Capacity $>$\+::c\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return pointer to const to underlying C array. 
+
+\mbox{\Hypertarget{classUtil_1_1FArray_a91cb6495c91344abeb9bf2c03a604f65}\label{classUtil_1_1FArray_a91cb6495c91344abeb9bf2c03a604f65}} 
+\index{Util::FArray$<$ Data, Capacity $>$@{Util::FArray$<$ Data, Capacity $>$}!serialize@{serialize}}
+\index{serialize@{serialize}!Util::FArray$<$ Data, Capacity $>$@{Util::FArray$<$ Data, Capacity $>$}}
+\doxyparagraph{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$class Data , int Capacity$>$ \\
+template$<$class Archive $>$ \\
+void \mbox{\hyperlink{classUtil_1_1FArray}{Util\+::\+F\+Array}}$<$ Data, Capacity $>$\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{ar,  }\item[{const unsigned int}]{version }\end{DoxyParamCaption})}
+
+
+
+Serialize a \mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}} to/from an Archive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & archive \\
+\hline
+{\em version} & archive version id \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 272 of file F\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1FArray_a3f7e30d67eeae5358ae4a7f4c94322e8}\label{classUtil_1_1FArray_a3f7e30d67eeae5358ae4a7f4c94322e8}} 
+\index{Util::FArray$<$ Data, Capacity $>$@{Util::FArray$<$ Data, Capacity $>$}!packedSize@{packedSize}}
+\index{packedSize@{packedSize}!Util::FArray$<$ Data, Capacity $>$@{Util::FArray$<$ Data, Capacity $>$}}
+\doxyparagraph{\texorpdfstring{packedSize()}{packedSize()}}
+{\footnotesize\ttfamily template$<$typename Data , int Capacity$>$ \\
+int \mbox{\hyperlink{classUtil_1_1FArray}{Util\+::\+F\+Array}}$<$ Data, Capacity $>$\+::packed\+Size}
+
+
+
+Return packed size in a Memory\+Archive, in bytes. 
+
+Packed size of \mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}} in a Memory\+Archive, in bytes. 
+
+Definition at line 284 of file F\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1FArray_ae529424c6c27799916edd7c441cb3280}\label{classUtil_1_1FArray_ae529424c6c27799916edd7c441cb3280}} 
+\index{Util::FArray$<$ Data, Capacity $>$@{Util::FArray$<$ Data, Capacity $>$}!commitMpiType@{commitMpiType}}
+\index{commitMpiType@{commitMpiType}!Util::FArray$<$ Data, Capacity $>$@{Util::FArray$<$ Data, Capacity $>$}}
+\doxyparagraph{\texorpdfstring{commitMpiType()}{commitMpiType()}}
+{\footnotesize\ttfamily template$<$typename Data , int Capacity$>$ \\
+void \mbox{\hyperlink{classUtil_1_1FArray}{Util\+::\+F\+Array}}$<$ Data, Capacity $>$\+::commit\+Mpi\+Type\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Commit associated M\+PI Data\+Type. 
+
+
+
+Definition at line 292 of file F\+Array.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+F\+Array.\+h\end{DoxyCompactItemize}

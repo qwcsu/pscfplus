@@ -1,0 +1,371 @@
+\hypertarget{classUtil_1_1RadialDistribution}{}\doxysubsection{Util\+::Radial\+Distribution Class Reference}
+\label{classUtil_1_1RadialDistribution}\index{Util::RadialDistribution@{Util::RadialDistribution}}
+
+
+\mbox{\hyperlink{classUtil_1_1Distribution}{Distribution}} (or histogram) of values for particle separations.  
+
+
+
+
+{\ttfamily \#include $<$Radial\+Distribution.\+h$>$}
+
+Inheritance diagram for Util\+::Radial\+Distribution\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{classUtil_1_1RadialDistribution}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1RadialDistribution_a3f1f0972c4c821178cf2c77f074b2042}{Radial\+Distribution}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1RadialDistribution_ab340fe5b497856dac9078971f396e691}{Radial\+Distribution}} (const \mbox{\hyperlink{classUtil_1_1RadialDistribution}{Radial\+Distribution}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1RadialDistribution}{Radial\+Distribution}} \& \mbox{\hyperlink{classUtil_1_1RadialDistribution_a71e8a479731936cffa3193ab29a3102b}{operator=}} (const \mbox{\hyperlink{classUtil_1_1RadialDistribution}{Radial\+Distribution}} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUtil_1_1RadialDistribution_a175f764d799d9aaad70fe554ec767514}{read\+Parameters}} (std\+::istream \&in)
+\begin{DoxyCompactList}\small\item\em Read values of min, max, and n\+Bin from file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1RadialDistribution_a031728ff725fcaad03325cbdbfb12040}{set\+Param}} (double \mbox{\hyperlink{classUtil_1_1Distribution_af2a8429e8de294dfae3bba969ed90c87}{max}}, int \mbox{\hyperlink{classUtil_1_1Distribution_a0002fc72f0667b7be9f7465c3149853a}{n\+Bin}})
+\begin{DoxyCompactList}\small\item\em Set parameters and initialize. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUtil_1_1RadialDistribution_a3463af5c9aa4e3742db1ddb04b3e0ee1}{load\+Parameters}} (\mbox{\hyperlink{classUtil_1_1Serializable_ac6bcbf9bac926cada5a398804410e891}{Serializable\+::\+I\+Archive}} \&ar)
+\begin{DoxyCompactList}\small\item\em Load internal state from an archive. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUtil_1_1RadialDistribution_a51fa4e62a87856912ec2d6d9b9cf8cb3}{save}} (\mbox{\hyperlink{classUtil_1_1Serializable_aca43a1eea5ec5f13189a57892a7a6d04}{Serializable\+::\+O\+Archive}} \&ar)
+\begin{DoxyCompactList}\small\item\em Save internal state to an archive. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Archive $>$ }\\void \mbox{\hyperlink{classUtil_1_1RadialDistribution_ac551c814d1c4e8b4ecf0e3c439c0df32}{serialize}} (Archive \&ar, const unsigned int version)
+\begin{DoxyCompactList}\small\item\em Serialize this \mbox{\hyperlink{classUtil_1_1RadialDistribution}{Radial\+Distribution}} to/from an archive. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUtil_1_1RadialDistribution_afbdd6a2ec8f2601cd5e864eaabbf6ee8}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Clear all accumulators. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1RadialDistribution_ad97bddb0ec782e2acb0d64c3c02fbcc8}{begin\+Snapshot}} ()
+\begin{DoxyCompactList}\small\item\em Mark the beginning of a \char`\"{}snapshot\char`\"{} (i.\+e., a sampled time step). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1RadialDistribution_a37ebdab74eb0ce3f45d5c7db4edb1126}{set\+Norm}} (double norm)
+\begin{DoxyCompactList}\small\item\em Set the factor used to normalize the R\+DF before output. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1RadialDistribution_a70a74b1fc598c08a2731c02d9c8b74c1}{set\+Output\+Integral}} (bool output\+Integral)
+\begin{DoxyCompactList}\small\item\em Set true to enable output of spatial integral of g(r). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1RadialDistribution_aabcebb3e892951e5a10f46a7572f9763}{output}} (std\+::ostream \&out)
+\begin{DoxyCompactList}\small\item\em Output the distribution to file. \end{DoxyCompactList}\item 
+long \mbox{\hyperlink{classUtil_1_1RadialDistribution_a5e07d559197804b3d67d64df35f81680}{n\+Snapshot}} ()
+\begin{DoxyCompactList}\small\item\em Get number of snapshots. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+
+
+\doxysubsubsection{Detailed Description}
+\mbox{\hyperlink{classUtil_1_1Distribution}{Distribution}} (or histogram) of values for particle separations. 
+
+Definition at line 21 of file Radial\+Distribution.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1RadialDistribution_a3f1f0972c4c821178cf2c77f074b2042}\label{classUtil_1_1RadialDistribution_a3f1f0972c4c821178cf2c77f074b2042}} 
+\index{Util::RadialDistribution@{Util::RadialDistribution}!RadialDistribution@{RadialDistribution}}
+\index{RadialDistribution@{RadialDistribution}!Util::RadialDistribution@{Util::RadialDistribution}}
+\doxyparagraph{\texorpdfstring{RadialDistribution()}{RadialDistribution()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Util\+::\+Radial\+Distribution\+::\+Radial\+Distribution (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+
+
+Definition at line 19 of file Radial\+Distribution.\+cpp.
+
+
+
+References Util\+::\+Param\+Composite\+::set\+Class\+Name().
+
+\mbox{\Hypertarget{classUtil_1_1RadialDistribution_ab340fe5b497856dac9078971f396e691}\label{classUtil_1_1RadialDistribution_ab340fe5b497856dac9078971f396e691}} 
+\index{Util::RadialDistribution@{Util::RadialDistribution}!RadialDistribution@{RadialDistribution}}
+\index{RadialDistribution@{RadialDistribution}!Util::RadialDistribution@{Util::RadialDistribution}}
+\doxyparagraph{\texorpdfstring{RadialDistribution()}{RadialDistribution()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Util\+::\+Radial\+Distribution\+::\+Radial\+Distribution (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1RadialDistribution}{Radial\+Distribution}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & object to be copied. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 29 of file Radial\+Distribution.\+cpp.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1RadialDistribution_a71e8a479731936cffa3193ab29a3102b}\label{classUtil_1_1RadialDistribution_a71e8a479731936cffa3193ab29a3102b}} 
+\index{Util::RadialDistribution@{Util::RadialDistribution}!operator=@{operator=}}
+\index{operator=@{operator=}!Util::RadialDistribution@{Util::RadialDistribution}}
+\doxyparagraph{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUtil_1_1RadialDistribution}{Radial\+Distribution}} \& Util\+::\+Radial\+Distribution\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1RadialDistribution}{Radial\+Distribution}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Assignment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & object to be assigned. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 40 of file Radial\+Distribution.\+cpp.
+
+
+
+References Util\+::\+Distribution\+::operator=().
+
+\mbox{\Hypertarget{classUtil_1_1RadialDistribution_a175f764d799d9aaad70fe554ec767514}\label{classUtil_1_1RadialDistribution_a175f764d799d9aaad70fe554ec767514}} 
+\index{Util::RadialDistribution@{Util::RadialDistribution}!readParameters@{readParameters}}
+\index{readParameters@{readParameters}!Util::RadialDistribution@{Util::RadialDistribution}}
+\doxyparagraph{\texorpdfstring{readParameters()}{readParameters()}}
+{\footnotesize\ttfamily void Util\+::\+Radial\+Distribution\+::read\+Parameters (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Read values of min, max, and n\+Bin from file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & input parameter file stream. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classUtil_1_1Distribution_aa17b76198720c790eb82e679c7a3beb1}{Util\+::\+Distribution}}.
+
+
+
+Definition at line 55 of file Radial\+Distribution.\+cpp.
+
+
+
+References Util\+::\+D\+Array$<$ Data $>$\+::allocate(), Util\+::\+Distribution\+::bin\+Width\+\_\+, clear(), Util\+::\+Distribution\+::histogram\+\_\+, Util\+::\+Distribution\+::max\+\_\+, Util\+::\+Distribution\+::min\+\_\+, and Util\+::\+Distribution\+::n\+Bin\+\_\+.
+
+\mbox{\Hypertarget{classUtil_1_1RadialDistribution_a031728ff725fcaad03325cbdbfb12040}\label{classUtil_1_1RadialDistribution_a031728ff725fcaad03325cbdbfb12040}} 
+\index{Util::RadialDistribution@{Util::RadialDistribution}!setParam@{setParam}}
+\index{setParam@{setParam}!Util::RadialDistribution@{Util::RadialDistribution}}
+\doxyparagraph{\texorpdfstring{setParam()}{setParam()}}
+{\footnotesize\ttfamily void Util\+::\+Radial\+Distribution\+::set\+Param (\begin{DoxyParamCaption}\item[{double}]{max,  }\item[{int}]{n\+Bin }\end{DoxyParamCaption})}
+
+
+
+Set parameters and initialize. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em max} & upper bound of range \\
+\hline
+{\em n\+Bin} & number of bins in range \mbox{[}min, max\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 68 of file Radial\+Distribution.\+cpp.
+
+
+
+References Util\+::\+D\+Array$<$ Data $>$\+::allocate(), Util\+::\+Distribution\+::bin\+Width\+\_\+, clear(), Util\+::\+Distribution\+::histogram\+\_\+, Util\+::\+Distribution\+::max(), Util\+::\+Distribution\+::max\+\_\+, Util\+::\+Distribution\+::min\+\_\+, Util\+::\+Distribution\+::n\+Bin(), and Util\+::\+Distribution\+::n\+Bin\+\_\+.
+
+\mbox{\Hypertarget{classUtil_1_1RadialDistribution_a3463af5c9aa4e3742db1ddb04b3e0ee1}\label{classUtil_1_1RadialDistribution_a3463af5c9aa4e3742db1ddb04b3e0ee1}} 
+\index{Util::RadialDistribution@{Util::RadialDistribution}!loadParameters@{loadParameters}}
+\index{loadParameters@{loadParameters}!Util::RadialDistribution@{Util::RadialDistribution}}
+\doxyparagraph{\texorpdfstring{loadParameters()}{loadParameters()}}
+{\footnotesize\ttfamily void Util\+::\+Radial\+Distribution\+::load\+Parameters (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1Serializable_ac6bcbf9bac926cada5a398804410e891}{Serializable\+::\+I\+Archive}} \&}]{ar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Load internal state from an archive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & input/loading archive \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classUtil_1_1Distribution_add46e8d406f9bf6703f4a95bb120d776}{Util\+::\+Distribution}}.
+
+
+
+Definition at line 81 of file Radial\+Distribution.\+cpp.
+
+
+
+References Util\+::\+Distribution\+::bin\+Width\+\_\+, Util\+::\+Array$<$ Data $>$\+::capacity(), Util\+::feq(), Util\+::\+Distribution\+::histogram\+\_\+, Util\+::\+Distribution\+::max\+\_\+, Util\+::\+Distribution\+::min\+\_\+, Util\+::\+Distribution\+::n\+Bin\+\_\+, Util\+::\+Distribution\+::n\+Reject\+\_\+, Util\+::\+Distribution\+::n\+Sample\+\_\+, and U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1RadialDistribution_a51fa4e62a87856912ec2d6d9b9cf8cb3}\label{classUtil_1_1RadialDistribution_a51fa4e62a87856912ec2d6d9b9cf8cb3}} 
+\index{Util::RadialDistribution@{Util::RadialDistribution}!save@{save}}
+\index{save@{save}!Util::RadialDistribution@{Util::RadialDistribution}}
+\doxyparagraph{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily void Util\+::\+Radial\+Distribution\+::save (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1Serializable_aca43a1eea5ec5f13189a57892a7a6d04}{Serializable\+::\+O\+Archive}} \&}]{ar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Save internal state to an archive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & output/saving archive \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classUtil_1_1Distribution_a7ca406d44ab9c1c6ab2594882196d807}{Util\+::\+Distribution}}.
+
+
+
+Definition at line 104 of file Radial\+Distribution.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1RadialDistribution_ac551c814d1c4e8b4ecf0e3c439c0df32}\label{classUtil_1_1RadialDistribution_ac551c814d1c4e8b4ecf0e3c439c0df32}} 
+\index{Util::RadialDistribution@{Util::RadialDistribution}!serialize@{serialize}}
+\index{serialize@{serialize}!Util::RadialDistribution@{Util::RadialDistribution}}
+\doxyparagraph{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$class Archive $>$ \\
+void Util\+::\+Radial\+Distribution\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{ar,  }\item[{const unsigned int}]{version }\end{DoxyParamCaption})}
+
+
+
+Serialize this \mbox{\hyperlink{classUtil_1_1RadialDistribution}{Radial\+Distribution}} to/from an archive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & input or output archive \\
+\hline
+{\em version} & file version id \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 160 of file Radial\+Distribution.\+h.
+
+
+
+References Util\+::\+Distribution\+::serialize().
+
+\mbox{\Hypertarget{classUtil_1_1RadialDistribution_afbdd6a2ec8f2601cd5e864eaabbf6ee8}\label{classUtil_1_1RadialDistribution_afbdd6a2ec8f2601cd5e864eaabbf6ee8}} 
+\index{Util::RadialDistribution@{Util::RadialDistribution}!clear@{clear}}
+\index{clear@{clear}!Util::RadialDistribution@{Util::RadialDistribution}}
+\doxyparagraph{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void Util\+::\+Radial\+Distribution\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Clear all accumulators. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classUtil_1_1Distribution_af001c322b9d0bd565595d8f10800c781}{Util\+::\+Distribution}}.
+
+
+
+Definition at line 110 of file Radial\+Distribution.\+cpp.
+
+
+
+References Util\+::\+Distribution\+::clear().
+
+
+
+Referenced by read\+Parameters(), and set\+Param().
+
+\mbox{\Hypertarget{classUtil_1_1RadialDistribution_ad97bddb0ec782e2acb0d64c3c02fbcc8}\label{classUtil_1_1RadialDistribution_ad97bddb0ec782e2acb0d64c3c02fbcc8}} 
+\index{Util::RadialDistribution@{Util::RadialDistribution}!beginSnapshot@{beginSnapshot}}
+\index{beginSnapshot@{beginSnapshot}!Util::RadialDistribution@{Util::RadialDistribution}}
+\doxyparagraph{\texorpdfstring{beginSnapshot()}{beginSnapshot()}}
+{\footnotesize\ttfamily void Util\+::\+Radial\+Distribution\+::begin\+Snapshot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Mark the beginning of a \char`\"{}snapshot\char`\"{} (i.\+e., a sampled time step). 
+
+
+
+Definition at line 125 of file Radial\+Distribution.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1RadialDistribution_a37ebdab74eb0ce3f45d5c7db4edb1126}\label{classUtil_1_1RadialDistribution_a37ebdab74eb0ce3f45d5c7db4edb1126}} 
+\index{Util::RadialDistribution@{Util::RadialDistribution}!setNorm@{setNorm}}
+\index{setNorm@{setNorm}!Util::RadialDistribution@{Util::RadialDistribution}}
+\doxyparagraph{\texorpdfstring{setNorm()}{setNorm()}}
+{\footnotesize\ttfamily void Util\+::\+Radial\+Distribution\+::set\+Norm (\begin{DoxyParamCaption}\item[{double}]{norm }\end{DoxyParamCaption})}
+
+
+
+Set the factor used to normalize the R\+DF before output. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em norm} & normalizing factor \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 119 of file Radial\+Distribution.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1RadialDistribution_a70a74b1fc598c08a2731c02d9c8b74c1}\label{classUtil_1_1RadialDistribution_a70a74b1fc598c08a2731c02d9c8b74c1}} 
+\index{Util::RadialDistribution@{Util::RadialDistribution}!setOutputIntegral@{setOutputIntegral}}
+\index{setOutputIntegral@{setOutputIntegral}!Util::RadialDistribution@{Util::RadialDistribution}}
+\doxyparagraph{\texorpdfstring{setOutputIntegral()}{setOutputIntegral()}}
+{\footnotesize\ttfamily void Util\+::\+Radial\+Distribution\+::set\+Output\+Integral (\begin{DoxyParamCaption}\item[{bool}]{output\+Integral }\end{DoxyParamCaption})}
+
+
+
+Set true to enable output of spatial integral of g(r). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em output\+Integral} & true to enable output of integral. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 131 of file Radial\+Distribution.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1RadialDistribution_aabcebb3e892951e5a10f46a7572f9763}\label{classUtil_1_1RadialDistribution_aabcebb3e892951e5a10f46a7572f9763}} 
+\index{Util::RadialDistribution@{Util::RadialDistribution}!output@{output}}
+\index{output@{output}!Util::RadialDistribution@{Util::RadialDistribution}}
+\doxyparagraph{\texorpdfstring{output()}{output()}}
+{\footnotesize\ttfamily void Util\+::\+Radial\+Distribution\+::output (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out }\end{DoxyParamCaption})}
+
+
+
+Output the distribution to file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & pointer to output file \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 137 of file Radial\+Distribution.\+cpp.
+
+
+
+References Util\+::\+Distribution\+::bin\+Width\+\_\+, Util\+::\+Distribution\+::histogram\+\_\+, and Util\+::\+Distribution\+::n\+Bin\+\_\+.
+
+\mbox{\Hypertarget{classUtil_1_1RadialDistribution_a5e07d559197804b3d67d64df35f81680}\label{classUtil_1_1RadialDistribution_a5e07d559197804b3d67d64df35f81680}} 
+\index{Util::RadialDistribution@{Util::RadialDistribution}!nSnapshot@{nSnapshot}}
+\index{nSnapshot@{nSnapshot}!Util::RadialDistribution@{Util::RadialDistribution}}
+\doxyparagraph{\texorpdfstring{nSnapshot()}{nSnapshot()}}
+{\footnotesize\ttfamily long Util\+::\+Radial\+Distribution\+::n\+Snapshot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get number of snapshots. 
+
+
+
+Definition at line 153 of file Radial\+Distribution.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Radial\+Distribution.\+h\item 
+Radial\+Distribution.\+cpp\end{DoxyCompactItemize}

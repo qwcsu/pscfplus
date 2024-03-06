@@ -1,0 +1,280 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1XmlStartTag">
+<title>Util::XmlStartTag Class Reference</title>
+<indexterm><primary>Util::XmlStartTag</primary></indexterm>
+<para>
+
+<para>Parser for an XML start tag. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;XmlStartTag.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Util::XmlStartTag:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classUtil_1_1XmlStartTag.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1XmlStartTag_1a8ccaf812e03823724ff8eead8d44176f">XmlStartTag</link> ()</para>
+
+<para>Constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1XmlStartTag_1a52d41c578db665a7b0066ffae3a83b4f">~XmlStartTag</link> ()</para>
+
+<para>Destructor. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_classUtil_1_1XmlStartTag_1aa50edd5a24da954642e1c52469f256fd">matchLabel</link> (const std::string &amp;<link linkend="_classUtil_1_1XmlBase_1a8378a6c87659891e9f1e5458dbfc1413">string</link>, int begin)</para>
+
+<para>Match opening bracket and any label. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1XmlStartTag_1a660350fae4ee421b9379bef7d9f6b9bc">matchLabel</link> (const std::string expected, const std::string &amp;<link linkend="_classUtil_1_1XmlBase_1a8378a6c87659891e9f1e5458dbfc1413">string</link>, int begin)</para>
+
+<para>Match opening bracket and a specific required label. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_classUtil_1_1XmlStartTag_1a17d9f4ff33c352b0bd47dad58b259985">matchAttribute</link> (<link linkend="_classUtil_1_1XmlAttribute">XmlAttribute</link> &amp;attribute)</para>
+
+<para>Attempt to match an attribute. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1XmlStartTag_1ae3aa0e68e3db32ba85c224dab3565690">finish</link> ()</para>
+
+<para>Check if end bracket was found. </para>
+</listitem>
+            <listitem><para>const std::string <link linkend="_classUtil_1_1XmlStartTag_1a6c572530affe221679652f215ae1fd22">label</link> ()</para>
+
+<para><link linkend="_classUtil_1_1Label">Label</link> string. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_classUtil_1_1XmlStartTag_1a64c901edd703aa779b506d99b8fead48">endBracket</link> ()</para>
+
+<para>True if a closing bracket was found. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Parser for an XML start tag. </para>
+
+
+
+<para>Usage: <literallayout><computeroutput>XmlStartTag&#32;tag;
+XmlAttribute&#32;attribute;
+std::string&#32;line;
+tag.matchLabel(line,&#32;0);
+while&#32;(matchAttribute(attribute))&#32;{
+&#32;&#32;&#32;//&#32;process&#32;attribute;
+}&#32;
+tag.finish();
+</computeroutput></literallayout> </para>
+<para>
+Definition at line 36 of file XmlStartTag.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1XmlStartTag_1a8ccaf812e03823724ff8eead8d44176f"/>    <section>
+    <title>XmlStartTag()</title>
+<indexterm><primary>XmlStartTag</primary><secondary>Util::XmlStartTag</secondary></indexterm>
+<indexterm><primary>Util::XmlStartTag</primary><secondary>XmlStartTag</secondary></indexterm>
+<para><computeroutput>Util::XmlStartTag::XmlStartTag ( )</computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+<para>
+Definition at line 14 of file XmlStartTag.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1XmlStartTag_1a52d41c578db665a7b0066ffae3a83b4f"/>    <section>
+    <title>~XmlStartTag()</title>
+<indexterm><primary>~XmlStartTag</primary><secondary>Util::XmlStartTag</secondary></indexterm>
+<indexterm><primary>Util::XmlStartTag</primary><secondary>~XmlStartTag</secondary></indexterm>
+<para><computeroutput>Util::XmlStartTag::~XmlStartTag ( )</computeroutput></para><para>
+
+<para>Destructor. </para>
+</para>
+<para>
+Definition at line 18 of file XmlStartTag.cpp.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1XmlStartTag_1aa50edd5a24da954642e1c52469f256fd"/>    <section>
+    <title>matchLabel()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>matchLabel</primary><secondary>Util::XmlStartTag</secondary></indexterm>
+<indexterm><primary>Util::XmlStartTag</primary><secondary>matchLabel</secondary></indexterm>
+<para><computeroutput>bool Util::XmlStartTag::matchLabel (const std::string &amp; string, int begin)</computeroutput></para><para>
+
+<para>Match opening bracket and any label. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>string</entry>
+                                <entry>
+<para>containing text of XML tag </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>begin</entry>
+                                <entry>
+<para>index of first character </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>true if match, false otherwise </para>
+</formalpara>
+</para>
+<para>
+Definition at line 21 of file XmlStartTag.cpp.</para>
+<para>
+References Util::XmlBase::c(), Util::XmlBase::cursor(), Util::XmlBase::isEnd(), Util::XmlBase::next(), Util::XmlBase::setString(), Util::XmlBase::skip(), and Util::XmlBase::string().</para>
+<para>
+Referenced by matchLabel().</para>
+    </section><anchor xml:id="_classUtil_1_1XmlStartTag_1a660350fae4ee421b9379bef7d9f6b9bc"/>    <section>
+    <title>matchLabel()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>matchLabel</primary><secondary>Util::XmlStartTag</secondary></indexterm>
+<indexterm><primary>Util::XmlStartTag</primary><secondary>matchLabel</secondary></indexterm>
+<para><computeroutput>void Util::XmlStartTag::matchLabel (const std::string expected, const std::string &amp; string, int begin)</computeroutput></para><para>
+
+<para>Match opening bracket and a specific required label. </para>
+</para>
+
+<para>Throws exception if no match.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>expected</entry>
+                                <entry>
+<para>expected label string </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>string</entry>
+                                <entry>
+<para>containing text of XML tag </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>begin</entry>
+                                <entry>
+<para>index of first character </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 58 of file XmlStartTag.cpp.</para>
+<para>
+References Util::Log::file(), label(), matchLabel(), and UTIL_THROW.</para>
+    </section><anchor xml:id="_classUtil_1_1XmlStartTag_1a17d9f4ff33c352b0bd47dad58b259985"/>    <section>
+    <title>matchAttribute()</title>
+<indexterm><primary>matchAttribute</primary><secondary>Util::XmlStartTag</secondary></indexterm>
+<indexterm><primary>Util::XmlStartTag</primary><secondary>matchAttribute</secondary></indexterm>
+<para><computeroutput>bool Util::XmlStartTag::matchAttribute (<link linkend="_classUtil_1_1XmlAttribute">XmlAttribute</link> &amp; attribute)</computeroutput></para><para>
+
+<para>Attempt to match an attribute. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>attribute</entry>
+                                <entry>
+<para>on return, matched attribute, if any </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>true if an attribute is found, false otherwise </para>
+</formalpara>
+</para>
+<para>
+Definition at line 71 of file XmlStartTag.cpp.</para>
+<para>
+References Util::XmlBase::c(), Util::XmlBase::isEnd(), Util::XmlAttribute::match(), Util::XmlBase::next(), and Util::XmlBase::skip().</para>
+    </section><anchor xml:id="_classUtil_1_1XmlStartTag_1ae3aa0e68e3db32ba85c224dab3565690"/>    <section>
+    <title>finish()</title>
+<indexterm><primary>finish</primary><secondary>Util::XmlStartTag</secondary></indexterm>
+<indexterm><primary>Util::XmlStartTag</primary><secondary>finish</secondary></indexterm>
+<para><computeroutput>void Util::XmlStartTag::finish ( )</computeroutput></para><para>
+
+<para>Check if end bracket was found. </para>
+</para>
+
+<para>Throws exception if no end bracket was found. </para>
+<para>
+Definition at line 93 of file XmlStartTag.cpp.</para>
+<para>
+References endBracket(), Util::Log::file(), Util::XmlBase::string(), and UTIL_THROW.</para>
+    </section><anchor xml:id="_classUtil_1_1XmlStartTag_1a6c572530affe221679652f215ae1fd22"/>    <section>
+    <title>label()</title>
+<indexterm><primary>label</primary><secondary>Util::XmlStartTag</secondary></indexterm>
+<indexterm><primary>Util::XmlStartTag</primary><secondary>label</secondary></indexterm>
+<para><computeroutput>const std::string Util::XmlStartTag::label ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para><link linkend="_classUtil_1_1Label">Label</link> string. </para>
+</para>
+<para>
+Definition at line 90 of file XmlStartTag.h.</para>
+<para>
+Referenced by matchLabel().</para>
+    </section><anchor xml:id="_classUtil_1_1XmlStartTag_1a64c901edd703aa779b506d99b8fead48"/>    <section>
+    <title>endBracket()</title>
+<indexterm><primary>endBracket</primary><secondary>Util::XmlStartTag</secondary></indexterm>
+<indexterm><primary>Util::XmlStartTag</primary><secondary>endBracket</secondary></indexterm>
+<para><computeroutput>bool Util::XmlStartTag::endBracket ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>True if a closing bracket was found. </para>
+</para>
+<para>
+Definition at line 96 of file XmlStartTag.h.</para>
+<para>
+Referenced by finish().</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+XmlStartTag.hXmlStartTag.cpp</section>
+</section>

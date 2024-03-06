@@ -1,0 +1,435 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1ParamComponent">
+<title>Util::ParamComponent Class Reference</title>
+<indexterm><primary>Util::ParamComponent</primary></indexterm>
+<para>
+
+<para>Abstract base class for classes that input and output parameters to file. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;ParamComponent.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Util::ParamComponent:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classUtil_1_1ParamComponent.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>virtual <link linkend="_classUtil_1_1ParamComponent_1a4714eb00e44cdca1f1efc019bea99492">~ParamComponent</link> ()</para>
+
+<para>Destructor. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classUtil_1_1ParamComponent_1a5234b604f9e852f53eedd7de7c354a1e">readParam</link> (std::istream &amp;in)=0</para>
+
+<para>Read parameter(s) from file. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classUtil_1_1ParamComponent_1ac17d6ab63f9b0e5f966d6a3cfbc26d86">writeParam</link> (std::ostream &amp;out)=0</para>
+
+<para>Read parameter(s) to file. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classUtil_1_1ParamComponent_1a7925e60ccaf7ecf2ea866e689983124d">load</link> (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp;ar)</para>
+
+<para>Load internal state from an archive. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classUtil_1_1ParamComponent_1a433717dd5bb0a1ac3e4dec06459b7bde">save</link> (<link linkend="_classUtil_1_1Serializable_1aca43a1eea5ec5f13189a57892a7a6d04">Serializable::OArchive</link> &amp;ar)</para>
+
+<para>Save internal state to an archive. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classUtil_1_1ParamComponent_1a57e24c95c5bcbf1f473628b6b2d51eb8">resetParam</link> ()</para>
+
+<para>Nontrivial implementation provided by <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link> subclass. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1ParamComponent_1a71952c63913050d18e8ec5d1b146d191">setIndent</link> (const <link linkend="_classUtil_1_1ParamComponent">ParamComponent</link> &amp;parent, bool next=true)</para>
+
+<para>Set indent level. </para>
+</listitem>
+            <listitem><para>std::string <link linkend="_classUtil_1_1ParamComponent_1a0912a10c960c7e21ff77ff963c10a43a">indent</link> () const</para>
+
+<para>Return indent string for this object (string of spaces). </para>
+</listitem>
+            <listitem><para>template&lt;class Archive &gt; </para><para>void <link linkend="_classUtil_1_1ParamComponent_1adede3e45dbd8497c7ed87db1fe00343c">serialize</link> (Archive &amp;ar, const unsigned int version)</para>
+
+<para>Serialize this <link linkend="_classUtil_1_1ParamComponent">ParamComponent</link> as a string. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static void <link linkend="_classUtil_1_1ParamComponent_1a5350c0432130f7feba8392f5b3a75cb4">initStatic</link> ()</para>
+
+<para>Initialize static echo member to false. </para>
+</listitem>
+            <listitem><para>static void <link linkend="_classUtil_1_1ParamComponent_1add72ad7add98e0b90979ee2638c7468d">setEcho</link> (bool <link linkend="_classUtil_1_1ParamComponent_1ac5808de278115409092e94f9c72362c2">echo</link>=true)</para>
+
+<para>Enable or disable echoing for all subclasses of <link linkend="_classUtil_1_1ParamComponent">ParamComponent</link>. </para>
+</listitem>
+            <listitem><para>static bool <link linkend="_classUtil_1_1ParamComponent_1ac5808de278115409092e94f9c72362c2">echo</link> ()</para>
+
+<para>Get echo parameter. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1ParamComponent_1a6f859f325ca7d36747d28c9677fe0bfc">ParamComponent</link> ()</para>
+
+<para>Constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1ParamComponent_1ae979e22ecef3a94c0e826224b3761df9">ParamComponent</link> (const <link linkend="_classUtil_1_1ParamComponent">ParamComponent</link> &amp;other)</para>
+
+<para>Copy constructor. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Abstract base class for classes that input and output parameters to file. </para>
+
+
+
+<para>The readParam method reads a parameter or parameter list from iostream. The writeParam method writes a parameter or parameter list to an ostream. The same io format should be used by write and read methods. </para>
+<para>
+Definition at line 31 of file ParamComponent.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1ParamComponent_1a4714eb00e44cdca1f1efc019bea99492"/>    <section>
+    <title>~ParamComponent()</title>
+<indexterm><primary>~ParamComponent</primary><secondary>Util::ParamComponent</secondary></indexterm>
+<indexterm><primary>Util::ParamComponent</primary><secondary>~ParamComponent</secondary></indexterm>
+<para><computeroutput>Util::ParamComponent::~ParamComponent ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Destructor. </para>
+</para>
+<para>
+Definition at line 36 of file ParamComponent.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComponent_1a6f859f325ca7d36747d28c9677fe0bfc"/>    <section>
+    <title>ParamComponent()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>ParamComponent</primary><secondary>Util::ParamComponent</secondary></indexterm>
+<indexterm><primary>Util::ParamComponent</primary><secondary>ParamComponent</secondary></indexterm>
+<para><computeroutput>Util::ParamComponent::ParamComponent ( )<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+
+<para>Protected to prevent instantiation of a conceptually abstract class.</para>
+
+<para>On return the indent string is empty. If UTIL_MPI is defined, no communicator is set upon construction. </para>
+<para>
+Definition at line 20 of file ParamComponent.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComponent_1ae979e22ecef3a94c0e826224b3761df9"/>    <section>
+    <title>ParamComponent()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>ParamComponent</primary><secondary>Util::ParamComponent</secondary></indexterm>
+<indexterm><primary>Util::ParamComponent</primary><secondary>ParamComponent</secondary></indexterm>
+<para><computeroutput>Util::ParamComponent::ParamComponent (const <link linkend="_classUtil_1_1ParamComponent">ParamComponent</link> &amp; other)<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Copy constructor. </para>
+</para>
+<para>
+Definition at line 28 of file ParamComponent.cpp.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1ParamComponent_1a5234b604f9e852f53eedd7de7c354a1e"/>    <section>
+    <title>readParam()</title>
+<indexterm><primary>readParam</primary><secondary>Util::ParamComponent</secondary></indexterm>
+<indexterm><primary>Util::ParamComponent</primary><secondary>readParam</secondary></indexterm>
+<para><computeroutput>virtual void Util::ParamComponent::readParam (std::istream &amp; in)<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para>Read parameter(s) from file. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Implemented in <link linkend="_classUtil_1_1ParamComposite_1a6fc094b057fd9a21641b089f6f063b39">Util::ParamComposite</link>, <link linkend="_classUtil_1_1Parameter_1a814c4defbb8111a23a97eac7908332a3">Util::Parameter</link>, <link linkend="_classUtil_1_1Manager_1a115f9d62a9e538f20660683eb0eb3a10">Util::Manager&lt; Data &gt;</link>, <link linkend="_classUtil_1_1Begin_1a346ec866e4f12597c51f153ca203fc31">Util::Begin</link>, <link linkend="_classUtil_1_1Blank_1a3c9364578b5cef16e47254d25c75c9fe">Util::Blank</link>, and <link linkend="_classUtil_1_1End_1aee1e9af21f8bb3e71af5c26fa3d6d081">Util::End</link>.</para>
+<para>
+Referenced by serialize().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComponent_1ac17d6ab63f9b0e5f966d6a3cfbc26d86"/>    <section>
+    <title>writeParam()</title>
+<indexterm><primary>writeParam</primary><secondary>Util::ParamComponent</secondary></indexterm>
+<indexterm><primary>Util::ParamComponent</primary><secondary>writeParam</secondary></indexterm>
+<para><computeroutput>virtual void Util::ParamComponent::writeParam (std::ostream &amp; out)<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para>Read parameter(s) to file. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>out</entry>
+                                <entry>
+<para>output stream </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Implemented in <link linkend="_classUtil_1_1ParamComposite_1addf0c36c3560471bfe47f0be008575b9">Util::ParamComposite</link>, <link linkend="_classUtil_1_1CArray2DParam_1a10869aa76660f24fd722182efde9fabe">Util::CArray2DParam&lt; Type &gt;</link>, <link linkend="_classUtil_1_1ScalarParam_1ad3c118b4337e4e4f945eb44f741d1855">Util::ScalarParam&lt; Type &gt;</link>, <link linkend="_classUtil_1_1Begin_1a3e6bf2e4c32cd9665de186a2499f9fb4">Util::Begin</link>, <link linkend="_classUtil_1_1DMatrixParam_1a488b27f2ba7aff5cbafb7892bc1d3acd">Util::DMatrixParam&lt; Type &gt;</link>, <link linkend="_classUtil_1_1DSymmMatrixParam_1a2b79cac29d99726a7acc6aee366544c3">Util::DSymmMatrixParam&lt; Type &gt;</link>, <link linkend="_classUtil_1_1Blank_1a4d27c1308396b16fe880ac37d777a45e">Util::Blank</link>, <link linkend="_classUtil_1_1End_1acd48f61a7319190675987c84a658143b">Util::End</link>, <link linkend="_classUtil_1_1FArrayParam_1a63c5e0963f1053555d310bd7e2838801">Util::FArrayParam&lt; Type, N &gt;</link>, <link linkend="_classUtil_1_1DArrayParam_1aab8066ee6857f293866b4753de196473">Util::DArrayParam&lt; Type &gt;</link>, and <link linkend="_classUtil_1_1CArrayParam_1ae632242e2fd3dd5ab357e80c71e58296">Util::CArrayParam&lt; Type &gt;</link>.</para>
+<para>
+Referenced by Util::Parameter::load(), Util::Parameter::readParam(), and serialize().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComponent_1a7925e60ccaf7ecf2ea866e689983124d"/>    <section>
+    <title>load()</title>
+<indexterm><primary>load</primary><secondary>Util::ParamComponent</secondary></indexterm>
+<indexterm><primary>Util::ParamComponent</primary><secondary>load</secondary></indexterm>
+<para><computeroutput>virtual void Util::ParamComponent::load (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp; ar)<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Load internal state from an archive. </para>
+</para>
+
+<para>The default implementation is empty. This default is used by the <link linkend="_classUtil_1_1Begin">Begin</link>, <link linkend="_classUtil_1_1End">End</link>, and <link linkend="_classUtil_1_1Blank">Blank</link> subclasses. </para>
+<para>
+Implements <link linkend="_classUtil_1_1Serializable_1a1b54bcc9cb4fbb5a416533142f2c683d">Util::Serializable</link>.</para>
+<para>
+Reimplemented in <link linkend="_classUtil_1_1ParamComposite_1a02a1172d7cd86d4015be8d9e65fe750f">Util::ParamComposite</link>, <link linkend="_classUtil_1_1Parameter_1afee158d4448a9db32b8469c1e447e75c">Util::Parameter</link>, and <link linkend="_classUtil_1_1AutoCorrelation_1acbc41a7ab175fcd6422ab15b05886840">Util::AutoCorrelation&lt; Data, Product &gt;</link>.</para>
+<para>
+Definition at line 61 of file ParamComponent.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComponent_1a433717dd5bb0a1ac3e4dec06459b7bde"/>    <section>
+    <title>save()</title>
+<indexterm><primary>save</primary><secondary>Util::ParamComponent</secondary></indexterm>
+<indexterm><primary>Util::ParamComponent</primary><secondary>save</secondary></indexterm>
+<para><computeroutput>virtual void Util::ParamComponent::save (<link linkend="_classUtil_1_1Serializable_1aca43a1eea5ec5f13189a57892a7a6d04">Serializable::OArchive</link> &amp; ar)<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Save internal state to an archive. </para>
+</para>
+
+<para>The default implementation is empty. This default is used by the <link linkend="_classUtil_1_1Begin">Begin</link>, <link linkend="_classUtil_1_1End">End</link>, and <link linkend="_classUtil_1_1Blank">Blank</link> subclasses. </para>
+<para>
+Implements <link linkend="_classUtil_1_1Serializable_1a9c0a18b68dcf064f6293ddebff894850">Util::Serializable</link>.</para>
+<para>
+Reimplemented in <link linkend="_classUtil_1_1ParamComposite_1a3c430a4e31a9573eadb06ab89d3bf780">Util::ParamComposite</link>, <link linkend="_classUtil_1_1FileMaster_1a242dce8b12bc4a5d8539308f2a702500">Util::FileMaster</link>, <link linkend="_classUtil_1_1Parameter_1a43ae1276ea1ef6562035bec15ea6fdc9">Util::Parameter</link>, <link linkend="_classUtil_1_1Manager_1a676a1b986d066d8cd6a303f369d7403f">Util::Manager&lt; Data &gt;</link>, <link linkend="_classUtil_1_1AutoCorrArray_1aecc9a9d807bf780d2b5f0405f0f2f642">Util::AutoCorrArray&lt; Data, Product &gt;</link>, <link linkend="_classUtil_1_1AutoCorr_1add693694d3f06a007ff10fa46d804bfb">Util::AutoCorr&lt; Data, Product &gt;</link>, <link linkend="_classUtil_1_1Average_1a6bb1a12d32f87d40483ae7bb0d8c4708">Util::Average</link>, <link linkend="_classUtil_1_1MeanSqDispArray_1ad0a01b9aeba80e0421fd0416db7fbb51">Util::MeanSqDispArray&lt; Data &gt;</link>, <link linkend="_classUtil_1_1Distribution_1a7ca406d44ab9c1c6ab2594882196d807">Util::Distribution</link>, <link linkend="_classUtil_1_1TensorAverage_1a88d6b99a9fbac6185490c5508f8805e4">Util::TensorAverage</link>, <link linkend="_classUtil_1_1SymmTensorAverage_1adbf1f3a1efc1eac27d43516d8490e7a9">Util::SymmTensorAverage</link>, <link linkend="_classUtil_1_1Random_1aff18b17a0f4d6383d8ed881a8910b3b8">Util::Random</link>, <link linkend="_classUtil_1_1IntDistribution_1a7fe2cf76d34574e8cdfa52735438b484">Util::IntDistribution</link>, <link linkend="_classUtil_1_1RadialDistribution_1a51fa4e62a87856912ec2d6d9b9cf8cb3">Util::RadialDistribution</link>, and <link linkend="_classUtil_1_1AutoCorrelation_1adc342d958fd2ab000573de8100c91043">Util::AutoCorrelation&lt; Data, Product &gt;</link>.</para>
+<para>
+Definition at line 70 of file ParamComponent.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComponent_1a57e24c95c5bcbf1f473628b6b2d51eb8"/>    <section>
+    <title>resetParam()</title>
+<indexterm><primary>resetParam</primary><secondary>Util::ParamComponent</secondary></indexterm>
+<indexterm><primary>Util::ParamComponent</primary><secondary>resetParam</secondary></indexterm>
+<para><computeroutput>virtual void Util::ParamComponent::resetParam ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Nontrivial implementation provided by <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link> subclass. </para>
+</para>
+
+<para>The default implementation is empty. This default is used by all leaf nodes (all other than <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link> and subclasses). </para>
+<para>
+Reimplemented in <link linkend="_classUtil_1_1ParamComposite_1a38068a7ef2846b9301df02b32f6f5bfd">Util::ParamComposite</link>, <link linkend="_classUtil_1_1Begin_1aeea1722fc898943ef1f0fed3b9351284">Util::Begin</link>, and <link linkend="_classUtil_1_1End_1a0fbe4e4b94e2032cf9e6b6b2a432861d">Util::End</link>.</para>
+<para>
+Definition at line 79 of file ParamComponent.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComponent_1a71952c63913050d18e8ec5d1b146d191"/>    <section>
+    <title>setIndent()</title>
+<indexterm><primary>setIndent</primary><secondary>Util::ParamComponent</secondary></indexterm>
+<indexterm><primary>Util::ParamComponent</primary><secondary>setIndent</secondary></indexterm>
+<para><computeroutput>void Util::ParamComponent::setIndent (const <link linkend="_classUtil_1_1ParamComponent">ParamComponent</link> &amp; parent, bool next = <computeroutput>true</computeroutput>
+)</computeroutput></para><para>
+
+<para>Set indent level. </para>
+</para>
+
+<para>If next=true (default) set indent level one higher than that of parent. If next=false, set indent level the same as parent.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>parent</entry>
+                                <entry>
+<para>parent <link linkend="_classUtil_1_1ParamComponent">ParamComponent</link> object </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>next</entry>
+                                <entry>
+<para>If true, set level one higher than for parent. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 48 of file ParamComponent.cpp.</para>
+<para>
+References indent().</para>
+<para>
+Referenced by Util::Factory&lt; Data &gt;::readObject(), and Util::ParamComposite::setParent().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComponent_1a0912a10c960c7e21ff77ff963c10a43a"/>    <section>
+    <title>indent()</title>
+<indexterm><primary>indent</primary><secondary>Util::ParamComponent</secondary></indexterm>
+<indexterm><primary>Util::ParamComponent</primary><secondary>indent</secondary></indexterm>
+<para><computeroutput>std::string Util::ParamComponent::indent ( ) const</computeroutput></para><para>
+
+<para>Return indent string for this object (string of spaces). </para>
+</para>
+<para>
+Definition at line 42 of file ParamComponent.cpp.</para>
+<para>
+Referenced by Util::Parameter::load(), Util::ParamComposite::loadOptional(), Util::Begin::readParam(), Util::Parameter::readParam(), setIndent(), Util::End::writeParam(), and Util::Begin::writeParam().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComponent_1adede3e45dbd8497c7ed87db1fe00343c"/>    <section>
+    <title>serialize()</title>
+<indexterm><primary>serialize</primary><secondary>Util::ParamComponent</secondary></indexterm>
+<indexterm><primary>Util::ParamComponent</primary><secondary>serialize</secondary></indexterm>
+<computeroutput>template&lt;class Archive &gt; </computeroutput><para><computeroutput>void Util::ParamComponent::serialize (Archive &amp; ar, const unsigned int version)</computeroutput></para><para>
+
+<para>Serialize this <link linkend="_classUtil_1_1ParamComponent">ParamComponent</link> as a string. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>saving or loading archive </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>version</entry>
+                                <entry>
+<para>version id for archive </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 177 of file ParamComponent.h.</para>
+<para>
+References readParam(), and writeParam().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComponent_1a5350c0432130f7feba8392f5b3a75cb4"/>    <section>
+    <title>initStatic()</title>
+<indexterm><primary>initStatic</primary><secondary>Util::ParamComponent</secondary></indexterm>
+<indexterm><primary>Util::ParamComponent</primary><secondary>initStatic</secondary></indexterm>
+<para><computeroutput>void Util::ParamComponent::initStatic ( )<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Initialize static echo member to false. </para>
+</para>
+<para>
+Definition at line 77 of file ParamComponent.cpp.</para>
+<para>
+Referenced by Util::initStatic().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComponent_1add72ad7add98e0b90979ee2638c7468d"/>    <section>
+    <title>setEcho()</title>
+<indexterm><primary>setEcho</primary><secondary>Util::ParamComponent</secondary></indexterm>
+<indexterm><primary>Util::ParamComponent</primary><secondary>setEcho</secondary></indexterm>
+<para><computeroutput>void Util::ParamComponent::setEcho (bool echo = <computeroutput>true</computeroutput>
+)<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Enable or disable echoing for all subclasses of <link linkend="_classUtil_1_1ParamComponent">ParamComponent</link>. </para>
+</para>
+
+<para>When echoing is enabled, all parameters are echoed to a log file immediately after being read. This is useful as an aid to debugging the parameter file, by showing where the error occurred.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>echo</entry>
+                                <entry>
+<para>set true to enable echoing, false to disable. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 62 of file ParamComponent.cpp.</para>
+<para>
+References echo().</para>
+<para>
+Referenced by Pscf::Pspg::Continuous::System&lt; D &gt;::setOptions().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComponent_1ac5808de278115409092e94f9c72362c2"/>    <section>
+    <title>echo()</title>
+<indexterm><primary>echo</primary><secondary>Util::ParamComponent</secondary></indexterm>
+<indexterm><primary>Util::ParamComponent</primary><secondary>echo</secondary></indexterm>
+<para><computeroutput>bool Util::ParamComponent::echo ( )<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Get echo parameter. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>true if echoing is enabled, false if disabled. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 68 of file ParamComponent.cpp.</para>
+<para>
+Referenced by Util::Manager&lt; Data &gt;::endReadManager(), Util::Parameter::load(), Util::ParamComposite::load(), Util::ParamComposite::loadOptional(), Util::Factory&lt; Data &gt;::readObject(), Util::Blank::readParam(), Util::End::readParam(), Util::Begin::readParam(), Util::Parameter::readParam(), and setEcho().</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+ParamComponent.hParamComponent.cpp</section>
+</section>

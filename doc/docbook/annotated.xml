@@ -1,0 +1,414 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_annotated">
+<title>Class List</title>
+Here are the classes, structs, unions and interfaces with brief descriptions:<link linkend="_classCommandLine">CommandLine</link>
+<para>Abstraction of a C array of command line arguments </para>
+<link linkend="_classCompositeTestRunner">CompositeTestRunner</link>
+<para>A <link linkend="_classTestRunner">TestRunner</link> comprised of one or more child TestRunners </para>
+<link linkend="_classFCT">FCT&lt; D &gt;</link><link linkend="_classParamFileTest">ParamFileTest</link>
+<para>A <link linkend="_classUnitTest">UnitTest</link> with a built-in input file </para>
+<link linkend="_classPscf_1_1Basis">Pscf::Basis&lt; D &gt;</link>
+<para>Symmetry-adapted basis for pseudo-spectral scft </para>
+<link linkend="_classPscf_1_1Basis_1_1Star">Pscf::Basis&lt; D &gt;::Star</link>
+<para>List of wavevectors that are related by space-group symmetries </para>
+<link linkend="_classPscf_1_1Basis_1_1Wave">Pscf::Basis&lt; D &gt;::Wave</link>
+<para>Wavevector used to construct a basis function </para>
+<link linkend="_classPscf_1_1BlockDescriptor">Pscf::BlockDescriptor</link>
+<para>A linear homopolymer block within a block copolymer </para>
+<link linkend="_classPscf_1_1BlockTmpl">Pscf::BlockTmpl&lt; TP &gt;</link>
+<para>Class template for a block in a block copolymer </para>
+<link linkend="_classPscf_1_1BondDescriptor">Pscf::BondDescriptor</link>
+<para>A linear bond (including block-bond and joint-bond) within a block copolymer </para>
+<link linkend="_classPscf_1_1ChiInteraction">Pscf::ChiInteraction</link>
+<para>Flory-Huggins excess free energy model </para>
+<link linkend="_classPscf_1_1DPolymerTmpl">Pscf::DPolymerTmpl&lt; Bond &gt;</link><link linkend="_classPscf_1_1Field">Pscf::Field&lt; T &gt;</link>
+<para>Base class template for a field defined on a spatial grid </para>
+<link linkend="_classPscf_1_1Homogeneous_1_1Clump">Pscf::Homogeneous::Clump</link>
+<para>Collection of all monomers of a single type in a molecule </para>
+<link linkend="_classPscf_1_1Homogeneous_1_1Mixture">Pscf::Homogeneous::Mixture</link>
+<para>A spatially homogeneous mixture </para>
+<link linkend="_classPscf_1_1Homogeneous_1_1Molecule">Pscf::Homogeneous::Molecule</link>
+<para>Descriptor of a molecular species in a homogeneous mixture </para>
+<link linkend="_classPscf_1_1Interaction">Pscf::Interaction</link>
+<para>Base class for excess free energy models </para>
+<link linkend="_classPscf_1_1IntVec">Pscf::IntVec&lt; D, T &gt;</link>
+<para>An IntVec&lt;D, T&gt; is a D-component vector of elements of integer type T </para>
+<link linkend="_classPscf_1_1LuSolver">Pscf::LuSolver</link>
+<para>Solve Ax=b by LU decomposition of A </para>
+<link linkend="_classPscf_1_1Mesh">Pscf::Mesh&lt; D &gt;</link>
+<para>Description of a regular grid of points in a periodic domain </para>
+<link linkend="_classPscf_1_1MeshIterator">Pscf::MeshIterator&lt; D &gt;</link>
+<para>Base class for mesh iterator class template </para>
+<link linkend="_classPscf_1_1MixtureTmpl">Pscf::MixtureTmpl&lt; TP, TS &gt;</link>
+<para>A mixture of polymer and solvent species </para>
+<link linkend="_classPscf_1_1Monomer">Pscf::Monomer</link>
+<para>Descriptor for a monomer or particle type </para>
+<link linkend="_classPscf_1_1PolymerTmpl">Pscf::PolymerTmpl&lt; Block &gt;</link>
+<para>Descriptor and MDE solver for an acyclic block polymer </para>
+<link linkend="_classPscf_1_1PropagatorTmpl">Pscf::PropagatorTmpl&lt; TP &gt;</link>
+<para>Template for propagator classes </para>
+<link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1AmIterator">Pscf::Pspg::Continuous::AmIterator&lt; D &gt;</link>
+<para>Anderson mixing iterator for the pseudo spectral method </para>
+<link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block">Pscf::Pspg::Continuous::Block&lt; D &gt;</link>
+<para><link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block">Block</link> within a branched polymer </para>
+<link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Iterator">Pscf::Pspg::Continuous::Iterator&lt; D &gt;</link>
+<para>Base class for iterative solvers for SCF equations </para>
+<link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Joint">Pscf::Pspg::Continuous::Joint&lt; D &gt;</link><link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture">Pscf::Pspg::Continuous::Mixture&lt; D &gt;</link>
+<para>Solver for a mixture of polymers and solvents </para>
+<link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Polymer">Pscf::Pspg::Continuous::Polymer&lt; D &gt;</link>
+<para>Descriptor and solver for a branched polymer species </para>
+<link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Propagator">Pscf::Pspg::Continuous::Propagator&lt; D &gt;</link>
+<para>MDE solver for one-direction of one block </para>
+<link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1System">Pscf::Pspg::Continuous::System&lt; D &gt;</link>
+<para>Main class in SCFT simulation of one system </para>
+<link linkend="_classPscf_1_1Pspg_1_1DField">Pscf::Pspg::DField&lt; Data &gt;</link>
+<para>Dynamic array with aligned data, for use with cufftw library/device code </para>
+<link linkend="_classPscf_1_1Pspg_1_1Discrete_1_1AmIterator">Pscf::Pspg::Discrete::AmIterator&lt; D &gt;</link>
+<para>Anderson mixing iterator for the pseudo spectral method </para>
+<link linkend="_classPscf_1_1Pspg_1_1Discrete_1_1Bond">Pscf::Pspg::Discrete::Bond&lt; D &gt;</link>
+<para><link linkend="_classPscf_1_1Pspg_1_1Discrete_1_1Bond">Bond</link> within a branched polymer </para>
+<link linkend="_classPscf_1_1Pspg_1_1Discrete_1_1BondTmpl">Pscf::Pspg::Discrete::BondTmpl&lt; TP &gt;</link><link linkend="_classPscf_1_1Pspg_1_1Discrete_1_1DMixture">Pscf::Pspg::Discrete::DMixture&lt; D &gt;</link>
+<para>Solver for a mixture of polymers (<link linkend="_namespacePscf_1_1Pspg_1_1Discrete">Discrete</link> chain model) </para>
+<link linkend="_classPscf_1_1Pspg_1_1Discrete_1_1DMixtureTmpl">Pscf::Pspg::Discrete::DMixtureTmpl&lt; TP, TS &gt;</link>
+<para>A mixture of polymer and solvent species </para>
+<link linkend="_classPscf_1_1Pspg_1_1Discrete_1_1DPolymer">Pscf::Pspg::Discrete::DPolymer&lt; D &gt;</link>
+<para>Descriptor and solver for a branched polymer species (<link linkend="_namespacePscf_1_1Pspg_1_1Discrete">Discrete</link> chain model) </para>
+<link linkend="_classPscf_1_1Pspg_1_1Discrete_1_1DPropagator">Pscf::Pspg::Discrete::DPropagator&lt; D &gt;</link>
+<para>CKE solver for one-direction of one bond </para>
+<link linkend="_classPscf_1_1Pspg_1_1Discrete_1_1Iterator">Pscf::Pspg::Discrete::Iterator&lt; D &gt;</link>
+<para>Base class for iterative solvers for SCF equations </para>
+<link linkend="_classPscf_1_1Pspg_1_1Discrete_1_1System">Pscf::Pspg::Discrete::System&lt; D &gt;</link><link linkend="_classPscf_1_1Pspg_1_1FFT">Pscf::Pspg::FFT&lt; D &gt;</link>
+<para>Fourier transform wrapper for real data </para>
+<link linkend="_classPscf_1_1Pspg_1_1FFTBatched">Pscf::Pspg::FFTBatched&lt; D &gt;</link>
+<para>Fourier transform wrapper for real data </para>
+<link linkend="_classPscf_1_1Pspg_1_1FieldIo">Pscf::Pspg::FieldIo&lt; D &gt;</link>
+<para>File input/output operations for fields in several file formats </para>
+<link linkend="_classPscf_1_1Pspg_1_1HistMat">Pscf::Pspg::HistMat&lt; Data &gt;</link><link linkend="_classPscf_1_1Pspg_1_1RDField">Pscf::Pspg::RDField&lt; D &gt;</link>
+<para><link linkend="_classPscf_1_1Field">Field</link> of real single precision values on an <link linkend="_classPscf_1_1Pspg_1_1FFT">FFT</link> mesh on a device </para>
+<link linkend="_classPscf_1_1Pspg_1_1RDFieldDft">Pscf::Pspg::RDFieldDft&lt; D &gt;</link>
+<para>Fourier transform of a real field on an <link linkend="_classPscf_1_1Pspg_1_1FFT">FFT</link> mesh </para>
+<link linkend="_classPscf_1_1Pspg_1_1Solvent">Pscf::Pspg::Solvent&lt; D &gt;</link>
+<para>Class representing a solvent species </para>
+<link linkend="_classPscf_1_1Pspg_1_1WaveList">Pscf::Pspg::WaveList&lt; D &gt;</link><link linkend="_classPscf_1_1RealVec">Pscf::RealVec&lt; D, T &gt;</link>
+<para>A RealVec&lt;D, T&gt; is D-component vector with elements of floating type T </para>
+<link linkend="_classPscf_1_1SolventTmpl">Pscf::SolventTmpl&lt; TP &gt;</link>
+<para>Template for a class representing a solvent species </para>
+<link linkend="_classPscf_1_1SpaceGroup">Pscf::SpaceGroup&lt; D &gt;</link>
+<para>Crystallographic space group </para>
+<link linkend="_classPscf_1_1SpaceSymmetry">Pscf::SpaceSymmetry&lt; D &gt;</link>
+<para>A <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link> represents a crystallographic space group symmetry </para>
+<link linkend="_classPscf_1_1Species">Pscf::Species</link>
+<para>Base class for a molecular species (polymer or solvent) </para>
+<link linkend="_classPscf_1_1SymmetryGroup">Pscf::SymmetryGroup&lt; Symmetry &gt;</link>
+<para>Class template for a group of elements </para>
+<link linkend="_classPscf_1_1TridiagonalSolver">Pscf::TridiagonalSolver</link>
+<para>Solver for Ax=b with tridiagonal matrix A </para>
+<link linkend="_structPscf_1_1TWave">Pscf::TWave&lt; D &gt;</link>
+<para>Simple wave struct for use within <link linkend="_classPscf_1_1Basis">Basis</link> construction </para>
+<link linkend="_structPscf_1_1TWaveBzComp">Pscf::TWaveBzComp&lt; D &gt;</link>
+<para>Comparator for <link linkend="_structPscf_1_1TWave">TWave</link> objects, based on TWave::indicesBz </para>
+<link linkend="_structPscf_1_1TWaveDftComp">Pscf::TWaveDftComp&lt; D &gt;</link>
+<para>Comparator for <link linkend="_structPscf_1_1TWave">TWave</link> objects, based on TWave::indicesDft </para>
+<link linkend="_structPscf_1_1TWaveNormComp">Pscf::TWaveNormComp&lt; D &gt;</link>
+<para>Comparator for <link linkend="_structPscf_1_1TWave">TWave</link> objects, based on TWave::sqNorm </para>
+<link linkend="_classPscf_1_1UnitCell">Pscf::UnitCell&lt; D &gt;</link>
+<para>Base template for UnitCell&lt;D&gt; classes, D=1, 2 or 3 </para>
+<link linkend="_classPscf_1_1UnitCell_3_011_01_4">Pscf::UnitCell&lt; 1 &gt;</link>
+<para>1D crystal unit cell </para>
+<link linkend="_classPscf_1_1UnitCell_3_012_01_4">Pscf::UnitCell&lt; 2 &gt;</link>
+<para>2D crystal unit cell </para>
+<link linkend="_classPscf_1_1UnitCell_3_013_01_4">Pscf::UnitCell&lt; 3 &gt;</link>
+<para>3D crystal unit cell </para>
+<link linkend="_classPscf_1_1UnitCellBase">Pscf::UnitCellBase&lt; D &gt;</link>
+<para>Base class template for a crystallographic unit cell </para>
+<link linkend="_classPscf_1_1Vec">Pscf::Vec&lt; D, T &gt;</link>
+<para>A Vec&lt;D, T&gt;&lt;D,T&gt; is a D-component vector with elements of type T </para>
+<link linkend="_classPscf_1_1Vertex">Pscf::Vertex</link>
+<para>A junction or chain end in a block polymer </para>
+<link linkend="_classpscfpp_1_1CommandScript_1_1Command">pscfpp.CommandScript.Command</link><link linkend="_classpscfpp_1_1CommandScript_1_1CommandScript">pscfpp.CommandScript.CommandScript</link><link linkend="_classpscfpp_1_1Directory_1_1Directory">pscfpp.Directory.Directory</link><link linkend="_classpscfpp_1_1File_1_1File">pscfpp.File.File</link><link linkend="_classpscfpp_1_1FileEditor_1_1FileEditor">pscfpp.FileEditor.FileEditor</link><link linkend="_classpscfpp_1_1Grep_1_1Grep">pscfpp.Grep.Grep</link><link linkend="_classpscfpp_1_1MakeMaker_1_1MakeMaker">pscfpp.MakeMaker.MakeMaker</link><link linkend="_classpscfpp_1_1ParamComposite_1_1Blank">pscfpp.ParamComposite.Blank</link><link linkend="_classpscfpp_1_1ParamComposite_1_1ParamComposite">pscfpp.ParamComposite.ParamComposite</link><link linkend="_classpscfpp_1_1ParamComposite_1_1Parameter">pscfpp.ParamComposite.Parameter</link><link linkend="_classpscfpp_1_1ParamComposite_1_1ParamRecord">pscfpp.ParamComposite.ParamRecord</link><link linkend="_classpscfpp_1_1Record_1_1Record">pscfpp.Record.Record</link><link linkend="_classpscfpp_1_1RecordEditor_1_1RecordEditor">pscfpp.RecordEditor.RecordEditor</link><link linkend="_classpscfpp_1_1TextWrapper_1_1TextWrapper">pscfpp.TextWrapper.TextWrapper</link><link linkend="_classTestA">TestA</link>
+<para>This example shows how to construct and run a single <link linkend="_classUnitTest">UnitTest</link> class </para>
+<link linkend="_classTestB">TestB</link>
+<para>Trivial <link linkend="_classUnitTest">UnitTest</link> B </para>
+<link linkend="_classTestException">TestException</link>
+<para>An exception thrown by a failed unit test </para>
+<link linkend="_classTestRunner">TestRunner</link>
+<para>Abstract base class for classes that run tests </para>
+<link linkend="_classUnitTest">UnitTest</link>
+<para><link linkend="_classUnitTest">UnitTest</link> is a base class for classes that define unit tests </para>
+<link linkend="_classUnitTestRunner">UnitTestRunner&lt; UnitTestClass &gt;</link>
+<para>Template for a <link linkend="_classTestRunner">TestRunner</link> that runs test methods of an associated <link linkend="_classUnitTest">UnitTest</link> </para>
+<link linkend="_classUtil_1_1Ar1Process">Util::Ar1Process</link>
+<para>Generator for a discrete AR(1) Markov process </para>
+<link linkend="_classUtil_1_1Array">Util::Array&lt; Data &gt;</link>
+<para><link linkend="_classUtil_1_1Array">Array</link> container class template </para>
+<link linkend="_classUtil_1_1ArrayIterator">Util::ArrayIterator&lt; Data &gt;</link>
+<para>Forward iterator for an <link linkend="_classUtil_1_1Array">Array</link> or a C array </para>
+<link linkend="_classUtil_1_1ArraySet">Util::ArraySet&lt; Data &gt;</link>
+<para>A container for pointers to a subset of elements of an associated array </para>
+<link linkend="_classUtil_1_1ArrayStack">Util::ArrayStack&lt; Data &gt;</link>
+<para>A stack of fixed capacity </para>
+<link linkend="_classUtil_1_1AutoCorr">Util::AutoCorr&lt; Data, Product &gt;</link>
+<para>Auto-correlation function for one sequence of Data values </para>
+<link linkend="_classUtil_1_1AutoCorrArray">Util::AutoCorrArray&lt; Data, Product &gt;</link>
+<para>Auto-correlation function for an ensemble of sequences </para>
+<link linkend="_classUtil_1_1AutoCorrelation">Util::AutoCorrelation&lt; Data, Product &gt;</link>
+<para>Auto-correlation function, using hierarchical algorithm </para>
+<link linkend="_classUtil_1_1AutoCorrStage">Util::AutoCorrStage&lt; Data, Product &gt;</link>
+<para>Hierarchical auto-correlation function algorithm </para>
+<link linkend="_classUtil_1_1Average">Util::Average</link>
+<para>Calculates the average and variance of a sampled property </para>
+<link linkend="_classUtil_1_1AverageStage">Util::AverageStage</link>
+<para>Evaluate average with hierarchical blocking error analysis </para>
+<link linkend="_classUtil_1_1Begin">Util::Begin</link>
+<para>Beginning line of a composite parameter block </para>
+<link linkend="_classUtil_1_1BinaryFileIArchive">Util::BinaryFileIArchive</link>
+<para>Saving archive for binary istream </para>
+<link linkend="_classUtil_1_1BinaryFileOArchive">Util::BinaryFileOArchive</link>
+<para>Saving / output archive for binary ostream </para>
+<link linkend="_classUtil_1_1Binomial">Util::Binomial</link>
+<para>Class for binomial coefficients (all static members) </para>
+<link linkend="_classUtil_1_1Bit">Util::Bit</link>
+<para>Represents a specific bit location within an unsigned int </para>
+<link linkend="_classUtil_1_1Blank">Util::Blank</link>
+<para>An empty line within a parameter file </para>
+<link linkend="_classUtil_1_1Bool">Util::Bool</link>
+<para>Wrapper for an bool value, for formatted ostream output </para>
+<link linkend="_classUtil_1_1CardinalBSpline">Util::CardinalBSpline</link>
+<para>A cardinal B-spline basis function </para>
+<link linkend="_classUtil_1_1CArray2DParam">Util::CArray2DParam&lt; Type &gt;</link>
+<para>A <link linkend="_classUtil_1_1Parameter">Parameter</link> associated with a 2D built-in C array </para>
+<link linkend="_classUtil_1_1CArrayParam">Util::CArrayParam&lt; Type &gt;</link>
+<para>A <link linkend="_classUtil_1_1Parameter">Parameter</link> associated with a 1D C array </para>
+<link linkend="_classUtil_1_1Constants">Util::Constants</link>
+<para>Mathematical constants </para>
+<link linkend="_classUtil_1_1ConstArrayIterator">Util::ConstArrayIterator&lt; Data &gt;</link>
+<para>Forward const iterator for an <link linkend="_classUtil_1_1Array">Array</link> or a C array </para>
+<link linkend="_classUtil_1_1ConstPArrayIterator">Util::ConstPArrayIterator&lt; Data &gt;</link>
+<para>Forward iterator for a <link linkend="_classUtil_1_1PArray">PArray</link> </para>
+<link linkend="_classUtil_1_1DArray">Util::DArray&lt; Data &gt;</link>
+<para>Dynamically allocatable contiguous array template </para>
+<link linkend="_classUtil_1_1DArrayParam">Util::DArrayParam&lt; Type &gt;</link>
+<para>A <link linkend="_classUtil_1_1Parameter">Parameter</link> associated with a <link linkend="_classUtil_1_1DArray">DArray</link> container </para>
+<link linkend="_classUtil_1_1Dbl">Util::Dbl</link>
+<para>Wrapper for a double precision number, for formatted ostream output </para>
+<link linkend="_classUtil_1_1Distribution">Util::Distribution</link>
+<para>A distribution (or histogram) of values for a real variable </para>
+<link linkend="_classUtil_1_1DMatrix">Util::DMatrix&lt; Data &gt;</link>
+<para>Dynamically allocated <link linkend="_classUtil_1_1Matrix">Matrix</link> </para>
+<link linkend="_classUtil_1_1DMatrixParam">Util::DMatrixParam&lt; Type &gt;</link>
+<para>A <link linkend="_classUtil_1_1Parameter">Parameter</link> associated with a 2D built-in C array </para>
+<link linkend="_classUtil_1_1DPArray">Util::DPArray&lt; Data &gt;</link>
+<para>A dynamic array that only holds pointers to its elements </para>
+<link linkend="_classUtil_1_1DRaggedMatrix">Util::DRaggedMatrix&lt; Data &gt;</link>
+<para>Dynamically allocated <link linkend="_classUtil_1_1RaggedMatrix">RaggedMatrix</link> </para>
+<link linkend="_classUtil_1_1DSArray">Util::DSArray&lt; Data &gt;</link>
+<para>Dynamically allocated array with variable logical size </para>
+<link linkend="_classUtil_1_1DSymmMatrixParam">Util::DSymmMatrixParam&lt; Type &gt;</link>
+<para>A <link linkend="_classUtil_1_1Parameter">Parameter</link> associated with a symmetric <link linkend="_classUtil_1_1DMatrix">DMatrix</link> </para>
+<link linkend="_classUtil_1_1End">Util::End</link>
+<para><link linkend="_classUtil_1_1End">End</link> bracket of a <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link> parameter block </para>
+<link linkend="_classUtil_1_1Exception">Util::Exception</link>
+<para>A user-defined exception </para>
+<link linkend="_classUtil_1_1Factory">Util::Factory&lt; Data &gt;</link>
+<para><link linkend="_classUtil_1_1Factory">Factory</link> template </para>
+<link linkend="_classUtil_1_1FArray">Util::FArray&lt; Data, Capacity &gt;</link>
+<para>A fixed size (static) contiguous array template </para>
+<link linkend="_classUtil_1_1FArrayParam">Util::FArrayParam&lt; Type, N &gt;</link>
+<para>A <link linkend="_classUtil_1_1Parameter">Parameter</link> associated with a <link linkend="_classUtil_1_1FArray">FArray</link> container </para>
+<link linkend="_classUtil_1_1FileMaster">Util::FileMaster</link>
+<para>A <link linkend="_classUtil_1_1FileMaster">FileMaster</link> manages input and output files for a simulation </para>
+<link linkend="_classUtil_1_1FlagSet">Util::FlagSet</link>
+<para>A set of boolean variables represented by characters </para>
+<link linkend="_classUtil_1_1FlexPtr">Util::FlexPtr&lt; T &gt;</link>
+<para>A pointer that may or may not own the object to which it points </para>
+<link linkend="_classUtil_1_1FMatrix">Util::FMatrix&lt; Data, M, N &gt;</link>
+<para>Fixed Size <link linkend="_classUtil_1_1Matrix">Matrix</link> </para>
+<link linkend="_classUtil_1_1Format">Util::Format</link>
+<para>Base class for output wrappers for formatted C++ ostream output </para>
+<link linkend="_classUtil_1_1FPArray">Util::FPArray&lt; Data, Capacity &gt;</link>
+<para>Statically allocated pointer array </para>
+<link linkend="_classUtil_1_1FSArray">Util::FSArray&lt; Data, Capacity &gt;</link>
+<para>A fixed capacity (static) contiguous array with a variable logical size </para>
+<link linkend="_classUtil_1_1GArray">Util::GArray&lt; Data &gt;</link>
+<para>An automatically growable array, analogous to a std::vector </para>
+<link linkend="_classUtil_1_1GPArray">Util::GPArray&lt; Data &gt;</link>
+<para>An automatically growable <link linkend="_classUtil_1_1PArray">PArray</link> </para>
+<link linkend="_classUtil_1_1Grid">Util::Grid</link>
+<para>A grid of points indexed by integer coordinates </para>
+<link linkend="_classUtil_1_1GridArray">Util::GridArray&lt; Data &gt;</link>
+<para>Multi-dimensional array with the dimensionality of space </para>
+<link linkend="_classUtil_1_1GStack">Util::GStack&lt; Data &gt;</link>
+<para>An automatically growable Stack </para>
+<link linkend="_classUtil_1_1IFunctor">Util::IFunctor&lt; T &gt;</link>
+<para>Interface for functor that wraps a void function with one argument (abstract) </para>
+<link linkend="_classUtil_1_1IFunctor_3_01void_01_4">Util::IFunctor&lt; void &gt;</link>
+<para>Interface for functor that wraps a void function with no arguments (abstract) </para>
+<link linkend="_classUtil_1_1Int">Util::Int</link>
+<para>Wrapper for an int, for formatted ostream output </para>
+<link linkend="_classUtil_1_1IntDistribution">Util::IntDistribution</link>
+<para>A distribution (or histogram) of values for an int variable </para>
+<link linkend="_classUtil_1_1IntVector">Util::IntVector</link>
+<para>An <link linkend="_classUtil_1_1IntVector">IntVector</link> is an integer Cartesian vector </para>
+<link linkend="_classUtil_1_1Label">Util::Label</link>
+<para>A label string in a file format </para>
+<link linkend="_classUtil_1_1List">Util::List&lt; Data &gt;</link>
+<para>Linked list class template </para>
+<link linkend="_classUtil_1_1ListArray">Util::ListArray&lt; Data &gt;</link>
+<para>An array of objects that are accessible by one or more linked <link linkend="_classUtil_1_1List">List</link> objects </para>
+<link linkend="_classUtil_1_1ListIterator">Util::ListIterator&lt; Data &gt;</link>
+<para>Bidirectional iterator for a <link linkend="_classUtil_1_1List">List</link> </para>
+<link linkend="_classUtil_1_1Lng">Util::Lng</link>
+<para>Wrapper for a long int, for formatted ostream output </para>
+<link linkend="_classUtil_1_1Log">Util::Log</link>
+<para>A static class that holds a log output stream </para>
+<link linkend="_classUtil_1_1Manager">Util::Manager&lt; Data &gt;</link>
+<para>Template container for pointers to objects with a common base class </para>
+<link linkend="_classUtil_1_1Matrix">Util::Matrix&lt; Data &gt;</link>
+<para>Two-dimensional array container template (abstract) </para>
+<link linkend="_classUtil_1_1MeanSqDispArray">Util::MeanSqDispArray&lt; Data &gt;</link>
+<para>Mean-squared displacement (MSD) vs </para>
+<link linkend="_classUtil_1_1Memory">Util::Memory</link>
+<para>Provides method to allocate array </para>
+<link linkend="_classUtil_1_1MemoryCounter">Util::MemoryCounter</link>
+<para>Archive to computed packed size of a sequence of objects, in bytes </para>
+<link linkend="_classUtil_1_1MemoryIArchive">Util::MemoryIArchive</link>
+<para>Input archive for packed heterogeneous binary data </para>
+<link linkend="_classUtil_1_1MemoryOArchive">Util::MemoryOArchive</link>
+<para>Save archive for packed heterogeneous binary data </para>
+<link linkend="_classUtil_1_1MethodFunctor">Util::MethodFunctor&lt; Object, T &gt;</link>
+<para>Functor that wraps a one-argument class member function </para>
+<link linkend="_classUtil_1_1MethodFunctor_3_01Object_00_01void_01_4">Util::MethodFunctor&lt; Object, void &gt;</link>
+<para>Functor that wraps a class member function with no arguments </para>
+<link linkend="_classUtil_1_1MpiFileIo">Util::MpiFileIo</link>
+<para>Identifies whether this processor may do file I/O </para>
+<link linkend="_classUtil_1_1MpiLoader">Util::MpiLoader&lt; IArchive &gt;</link>
+<para>Provides methods for MPI-aware loading of data from input archive </para>
+<link linkend="_classUtil_1_1MpiLogger">Util::MpiLogger</link>
+<para>Allows information from every processor in a communicator, to be output in rank sequence </para>
+<link linkend="_classUtil_1_1MpiStructBuilder">Util::MpiStructBuilder</link>
+<para>A <link linkend="_classUtil_1_1MpiStructBuilder">MpiStructBuilder</link> objects is used to create an MPI Struct datatype </para>
+<link linkend="_classUtil_1_1MpiTraits">Util::MpiTraits&lt; T &gt;</link>
+<para>Default <link linkend="_classUtil_1_1MpiTraits">MpiTraits</link> class </para>
+<link linkend="_classUtil_1_1MpiTraits_3_01bool_01_4">Util::MpiTraits&lt; bool &gt;</link>
+<para><link linkend="_classUtil_1_1MpiTraits_3_01bool_01_4">MpiTraits&lt;bool&gt;</link> explicit specialization </para>
+<link linkend="_classUtil_1_1MpiTraits_3_01char_01_4">Util::MpiTraits&lt; char &gt;</link>
+<para><link linkend="_classUtil_1_1MpiTraits_3_01char_01_4">MpiTraits&lt;char&gt;</link> explicit specialization </para>
+<link linkend="_classUtil_1_1MpiTraits_3_01double_01_4">Util::MpiTraits&lt; double &gt;</link>
+<para><link linkend="_classUtil_1_1MpiTraits_3_01double_01_4">MpiTraits&lt;double&gt;</link> explicit specialization </para>
+<link linkend="_classUtil_1_1MpiTraits_3_01float_01_4">Util::MpiTraits&lt; float &gt;</link>
+<para><link linkend="_classUtil_1_1MpiTraits_3_01float_01_4">MpiTraits&lt;float&gt;</link> explicit specialization </para>
+<link linkend="_classUtil_1_1MpiTraits_3_01int_01_4">Util::MpiTraits&lt; int &gt;</link>
+<para><link linkend="_classUtil_1_1MpiTraits_3_01int_01_4">MpiTraits&lt;int&gt;</link> explicit specialization </para>
+<link linkend="_classUtil_1_1MpiTraits_3_01IntVector_01_4">Util::MpiTraits&lt; IntVector &gt;</link>
+<para>Explicit specialization <link linkend="_classUtil_1_1MpiTraits_3_01IntVector_01_4">MpiTraits&lt;IntVector&gt;</link> </para>
+<link linkend="_classUtil_1_1MpiTraits_3_01long_01_4">Util::MpiTraits&lt; long &gt;</link>
+<para><link linkend="_classUtil_1_1MpiTraits_3_01long_01_4">MpiTraits&lt;long&gt;</link> explicit specialization </para>
+<link linkend="_classUtil_1_1MpiTraits_3_01long_01double_01_4">Util::MpiTraits&lt; long double &gt;</link>
+<para><link linkend="_classUtil_1_1MpiTraits_3_01long_01double_01_4">MpiTraits&lt;long double&gt;</link> explicit specialization </para>
+<link linkend="_classUtil_1_1MpiTraits_3_01Rational_01_4">Util::MpiTraits&lt; Rational &gt;</link>
+<para>Explicit specialization <link linkend="_classUtil_1_1MpiTraits_3_01Rational_01_4">MpiTraits&lt;Rational&gt;</link> </para>
+<link linkend="_classUtil_1_1MpiTraits_3_01short_01_4">Util::MpiTraits&lt; short &gt;</link>
+<para><link linkend="_classUtil_1_1MpiTraits_3_01short_01_4">MpiTraits&lt;short&gt;</link> explicit specialization </para>
+<link linkend="_classUtil_1_1MpiTraits_3_01Tensor_01_4">Util::MpiTraits&lt; Tensor &gt;</link>
+<para>Explicit specialization <link linkend="_classUtil_1_1MpiTraits_3_01Tensor_01_4">MpiTraits&lt;Tensor&gt;</link> </para>
+<link linkend="_classUtil_1_1MpiTraits_3_01unsigned_01char_01_4">Util::MpiTraits&lt; unsigned char &gt;</link>
+<para><link linkend="_classUtil_1_1MpiTraits_3_01unsigned_01char_01_4">MpiTraits&lt;unsigned char&gt;</link> explicit specialization </para>
+<link linkend="_classUtil_1_1MpiTraits_3_01unsigned_01int_01_4">Util::MpiTraits&lt; unsigned int &gt;</link>
+<para><link linkend="_classUtil_1_1MpiTraits_3_01unsigned_01int_01_4">MpiTraits&lt;unsigned int&gt;</link> explicit specialization </para>
+<link linkend="_classUtil_1_1MpiTraits_3_01unsigned_01long_01_4">Util::MpiTraits&lt; unsigned long &gt;</link>
+<para><link linkend="_classUtil_1_1MpiTraits_3_01unsigned_01long_01_4">MpiTraits&lt;unsigned long&gt;</link> explicit specialization </para>
+<link linkend="_classUtil_1_1MpiTraits_3_01unsigned_01short_01_4">Util::MpiTraits&lt; unsigned short &gt;</link>
+<para><link linkend="_classUtil_1_1MpiTraits_3_01unsigned_01short_01_4">MpiTraits&lt;unsigned short&gt;</link> explicit specialization </para>
+<link linkend="_classUtil_1_1MpiTraits_3_01Vector_01_4">Util::MpiTraits&lt; Vector &gt;</link>
+<para>Explicit specialization <link linkend="_classUtil_1_1MpiTraits_3_01Vector_01_4">MpiTraits&lt;Vector&gt;</link> </para>
+<link linkend="_classUtil_1_1MpiTraitsNoType">Util::MpiTraitsNoType</link>
+<para>Base class for <link linkend="_classUtil_1_1MpiTraits">MpiTraits</link> with no type </para>
+<link linkend="_classUtil_1_1MTRand">Util::MTRand</link>
+<para>Generates double floating point numbers in the half-open interval [0, 1) </para>
+<link linkend="_classUtil_1_1MTRand53">Util::MTRand53</link>
+<para>Generates 53 bit resolution doubles in the half-open interval [0, 1) </para>
+<link linkend="_classUtil_1_1MTRand__closed">Util::MTRand_closed</link>
+<para>Generates double floating point numbers in the closed interval [0, 1] </para>
+<link linkend="_classUtil_1_1MTRand__int32">Util::MTRand_int32</link>
+<para>Mersenne Twister random number generator engine </para>
+<link linkend="_classUtil_1_1MTRand__open">Util::MTRand_open</link>
+<para>Generates double floating point numbers in the open interval (0, 1) </para>
+<link linkend="_classUtil_1_1Node">Util::Node&lt; Data &gt;</link>
+<para>Linked <link linkend="_classUtil_1_1List">List</link> <link linkend="_classUtil_1_1Node">Node</link>, class template </para>
+<link linkend="_classUtil_1_1Notifier">Util::Notifier&lt; Event &gt;</link>
+<para>Abstract template for a notifier (or subject) in the <link linkend="_classUtil_1_1Observer">Observer</link> design pattern </para>
+<link linkend="_classUtil_1_1Observer">Util::Observer&lt; Event &gt;</link>
+<para>Abstract class template for observer in the observer design pattern </para>
+<link linkend="_classUtil_1_1OptionalLabel">Util::OptionalLabel</link>
+<para>An optional <link linkend="_classUtil_1_1Label">Label</link> string in a file format </para>
+<link linkend="_classUtil_1_1Pair">Util::Pair&lt; Data &gt;</link>
+<para>An array of exactly 2 objects </para>
+<link linkend="_classUtil_1_1ParamComponent">Util::ParamComponent</link>
+<para>Abstract base class for classes that input and output parameters to file </para>
+<link linkend="_classUtil_1_1ParamComposite">Util::ParamComposite</link>
+<para>An object that can read multiple parameters from file </para>
+<link linkend="_classUtil_1_1Parameter">Util::Parameter</link>
+<para>A single variable in a parameter file </para>
+<link linkend="_classUtil_1_1PArray">Util::PArray&lt; Data &gt;</link>
+<para>An array that only holds pointers to its elements </para>
+<link linkend="_classUtil_1_1PArrayIterator">Util::PArrayIterator&lt; Data &gt;</link>
+<para>Forward iterator for a <link linkend="_classUtil_1_1PArray">PArray</link> </para>
+<link linkend="_classUtil_1_1Polynomial">Util::Polynomial&lt; T &gt;</link>
+<para>A <link linkend="_classUtil_1_1Polynomial">Polynomial</link> (i.e, </para>
+<link linkend="_classUtil_1_1RadialDistribution">Util::RadialDistribution</link>
+<para><link linkend="_classUtil_1_1Distribution">Distribution</link> (or histogram) of values for particle separations </para>
+<link linkend="_classUtil_1_1RaggedMatrix">Util::RaggedMatrix&lt; Data &gt;</link>
+<para>A 2D array in which different rows can have different lengths </para>
+<link linkend="_classUtil_1_1Random">Util::Random</link>
+<para><link linkend="_classUtil_1_1Random">Random</link> number generator </para>
+<link linkend="_classUtil_1_1RArray">Util::RArray&lt; Data &gt;</link>
+<para>An <link linkend="_classUtil_1_1Array">Array</link> that acts as a reference to another <link linkend="_classUtil_1_1Array">Array</link> or C array </para>
+<link linkend="_classUtil_1_1Rational">Util::Rational</link>
+<para>A <link linkend="_classUtil_1_1Rational">Rational</link> number (a ratio of integers) </para>
+<link linkend="_classUtil_1_1RingBuffer">Util::RingBuffer&lt; Data &gt;</link>
+<para>Class for storing history of previous values in an array </para>
+<link linkend="_classUtil_1_1ScalarParam">Util::ScalarParam&lt; Type &gt;</link>
+<para>Template for a <link linkend="_classUtil_1_1Parameter">Parameter</link> object associated with a scalar variable </para>
+<link linkend="_classUtil_1_1ScopedPtr">Util::ScopedPtr&lt; T &gt;</link>
+<para>A very simple RAII pointer </para>
+<link linkend="_classUtil_1_1Serializable">Util::Serializable</link>
+<para>Abstract class for serializable objects </para>
+<link linkend="_classUtil_1_1Setable">Util::Setable&lt; T &gt;</link>
+<para>Template for a value that can be set or declared null (i.e., unknown) </para>
+<link linkend="_classUtil_1_1Signal">Util::Signal&lt; T &gt;</link>
+<para><link linkend="_classUtil_1_1Notifier">Notifier</link> (or subject) in the <link linkend="_classUtil_1_1Observer">Observer</link> design pattern </para>
+<link linkend="_classUtil_1_1Signal_3_01void_01_4">Util::Signal&lt; void &gt;</link>
+<para><link linkend="_classUtil_1_1Notifier">Notifier</link> (or subject) in the <link linkend="_classUtil_1_1Observer">Observer</link> design pattern (zero parameters) </para>
+<link linkend="_classUtil_1_1SSet">Util::SSet&lt; Data, Capacity &gt;</link>
+<para>Statically allocated array of pointers to an unordered set </para>
+<link linkend="_classUtil_1_1Str">Util::Str</link>
+<para>Wrapper for a std::string, for formatted ostream output </para>
+<link linkend="_classUtil_1_1SymmTensorAverage">Util::SymmTensorAverage</link>
+<para>Calculates averages of all components of a Tensor-valued variable </para>
+<link linkend="_classUtil_1_1Tensor">Util::Tensor</link>
+<para>A <link linkend="_classUtil_1_1Tensor">Tensor</link> represents a Cartesian tensor </para>
+<link linkend="_classUtil_1_1TensorAverage">Util::TensorAverage</link>
+<para>Calculates averages of all components of a Tensor-valued variable </para>
+<link linkend="_classUtil_1_1TextFileIArchive">Util::TextFileIArchive</link>
+<para>Loading archive for text istream </para>
+<link linkend="_classUtil_1_1TextFileOArchive">Util::TextFileOArchive</link>
+<para>Saving archive for character based ostream </para>
+<link linkend="_classUtil_1_1Timer">Util::Timer</link>
+<para>Wall clock timer </para>
+<link linkend="_classUtil_1_1Vector">Util::Vector</link>
+<para>A <link linkend="_classUtil_1_1Vector">Vector</link> is a Cartesian vector </para>
+<link linkend="_classUtil_1_1XdrFileIArchive">Util::XdrFileIArchive</link>
+<para>Loading / input archive for binary XDR file </para>
+<link linkend="_classUtil_1_1XdrFileOArchive">Util::XdrFileOArchive</link>
+<para>Saving / output archive for binary XDR file </para>
+<link linkend="_classUtil_1_1XmlAttribute">Util::XmlAttribute</link>
+<para>Parser for an XML attribute </para>
+<link linkend="_classUtil_1_1XmlBase">Util::XmlBase</link>
+<para>Base class for classes that parse XML markup tags </para>
+<link linkend="_classUtil_1_1XmlEndTag">Util::XmlEndTag</link>
+<para>Parser for an XML end tag </para>
+<link linkend="_classUtil_1_1XmlStartTag">Util::XmlStartTag</link>
+<para>Parser for an XML start tag </para>
+<link linkend="_classUtil_1_1XmlXmlTag">Util::XmlXmlTag</link>
+<para>Parser for an XML file declaration tag (first line in file) </para>
+</section>

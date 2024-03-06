@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1MethodFunctor_3_01Object_00_01void_01_4">
+<title>Util::MethodFunctor&lt; Object, void &gt; Class Template Reference</title>
+<indexterm><primary>Util::MethodFunctor&lt; Object, void &gt;</primary></indexterm>
+<para>
+
+<para>Functor that wraps a class member function with no arguments. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;MethodFunctor.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Util::MethodFunctor&lt; Object, void &gt;:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classUtil_1_1MethodFunctor_3_01Object_00_01void_01_4.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1MethodFunctor_3_01Object_00_01void_01_4_1a130a5798988cae5cf34419a405c1b8c9">MethodFunctor</link> (Object &amp;object, Method0Ptr methodPtr)</para>
+
+<para>Constructor. </para>
+</listitem>
+            <listitem><para>virtual <link linkend="_classUtil_1_1MethodFunctor_3_01Object_00_01void_01_4_1a443ed16449448140a60460b54e2baf59">~MethodFunctor</link> ()</para>
+
+<para>Destructor. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classUtil_1_1MethodFunctor_3_01Object_00_01void_01_4_1ad28c86956e73ab036e5f8adf6b8fafc3">operator()</link> ()</para>
+
+<para>Call a specific member function with one parameter. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;class Object&gt;
+class Util::MethodFunctor&lt; Object, void &gt;</title></simplesect>
+
+
+<para>Functor that wraps a class member function with no arguments. </para>
+<para>
+Definition at line 67 of file MethodFunctor.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1MethodFunctor_3_01Object_00_01void_01_4_1a130a5798988cae5cf34419a405c1b8c9"/>    <section>
+    <title>MethodFunctor()</title>
+<indexterm><primary>MethodFunctor</primary><secondary>Util::MethodFunctor&lt; Object, void &gt;</secondary></indexterm>
+<indexterm><primary>Util::MethodFunctor&lt; Object, void &gt;</primary><secondary>MethodFunctor</secondary></indexterm>
+<computeroutput>template&lt;class Object &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1MethodFunctor">Util::MethodFunctor</link>&lt; Object, void &gt;::<link linkend="_classUtil_1_1MethodFunctor">MethodFunctor</link> (Object &amp; object, Method0Ptr methodPtr)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>object</entry>
+                                <entry>
+<para>invoking object </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>methodPtr</entry>
+                                <entry>
+<para>pointer to member function </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 79 of file MethodFunctor.h.</para>
+    </section><anchor xml:id="_classUtil_1_1MethodFunctor_3_01Object_00_01void_01_4_1a443ed16449448140a60460b54e2baf59"/>    <section>
+    <title>~MethodFunctor()</title>
+<indexterm><primary>~MethodFunctor</primary><secondary>Util::MethodFunctor&lt; Object, void &gt;</secondary></indexterm>
+<indexterm><primary>Util::MethodFunctor&lt; Object, void &gt;</primary><secondary>~MethodFunctor</secondary></indexterm>
+<computeroutput>template&lt;class Object &gt; </computeroutput><para><computeroutput>virtual <link linkend="_classUtil_1_1MethodFunctor">Util::MethodFunctor</link>&lt; Object, void &gt;::~<link linkend="_classUtil_1_1MethodFunctor">MethodFunctor</link> ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Destructor. </para>
+</para>
+<para>
+Definition at line 87 of file MethodFunctor.h.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1MethodFunctor_3_01Object_00_01void_01_4_1ad28c86956e73ab036e5f8adf6b8fafc3"/>    <section>
+    <title>operator()()</title>
+<indexterm><primary>operator()</primary><secondary>Util::MethodFunctor&lt; Object, void &gt;</secondary></indexterm>
+<indexterm><primary>Util::MethodFunctor&lt; Object, void &gt;</primary><secondary>operator()</secondary></indexterm>
+<computeroutput>template&lt;class Object &gt; </computeroutput><para><computeroutput>virtual void <link linkend="_classUtil_1_1MethodFunctor">Util::MethodFunctor</link>&lt; Object, void &gt;::operator() ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Call a specific member function with one parameter. </para>
+</para>
+<para>
+Implements <link linkend="_classUtil_1_1IFunctor_3_01void_01_4_1a2bd0712a7c7e02b61efba67a9aa936d9">Util::IFunctor&lt; void &gt;</link>.</para>
+<para>
+Definition at line 89 of file MethodFunctor.h.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+MethodFunctor.h</section>
+</section>

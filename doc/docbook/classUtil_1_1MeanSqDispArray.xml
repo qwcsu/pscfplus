@@ -1,0 +1,412 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1MeanSqDispArray">
+<title>Util::MeanSqDispArray&lt; Data &gt; Class Template Reference</title>
+<indexterm><primary>Util::MeanSqDispArray&lt; Data &gt;</primary></indexterm>
+<para>
+
+<para>Mean-squared displacement (MSD) vs. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;MeanSqDispArray.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Util::MeanSqDispArray&lt; Data &gt;:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classUtil_1_1MeanSqDispArray.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_classUtil_1_1MeanSqDispArray_1afae35393613b540dd3b75a56e2534bac">readParameters</link> (std::istream &amp;in)</para>
+
+<para>Read parameters, allocate memory and clear history. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1MeanSqDispArray_1a4a8cb730e024205da4d773152e1447b6">setParam</link> (int ensembleCapacity, int <link linkend="_classUtil_1_1MeanSqDispArray_1aa1743fc8e14b96e182b8bd98e106889c">bufferCapacity</link>)</para>
+
+<para>Set parameters, allocate memory, and clear history. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classUtil_1_1MeanSqDispArray_1ab773e0f5872f42a03c6b86890d932702">loadParameters</link> (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp;ar)</para>
+
+<para>Load internal state from an archive. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classUtil_1_1MeanSqDispArray_1ad0a01b9aeba80e0421fd0416db7fbb51">save</link> (<link linkend="_classUtil_1_1Serializable_1aca43a1eea5ec5f13189a57892a7a6d04">Serializable::OArchive</link> &amp;ar)</para>
+
+<para>Save internal state to an archive. </para>
+</listitem>
+            <listitem><para>template&lt;class Archive &gt; </para><para>void <link linkend="_classUtil_1_1MeanSqDispArray_1aaa2506eb7410e4a465d16ad26173d011">serialize</link> (Archive &amp;ar, const unsigned int version)</para>
+
+<para>Serialize this <link linkend="_classUtil_1_1MeanSqDispArray">MeanSqDispArray</link> to/from an archive. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1MeanSqDispArray_1acdcf571e8ef9bdcf1943eaaa02a6b405">setNEnsemble</link> (int <link linkend="_classUtil_1_1MeanSqDispArray_1a2d760a96c2584135bd196ce3b4cc3a4d">nEnsemble</link>)</para>
+
+<para>Set actual number of sequences in ensemble. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1MeanSqDispArray_1a37d7bb9ee79d7c9292b2353d456d7b31">clear</link> ()</para>
+
+<para>Reset to empty state. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1MeanSqDispArray_1a6b21d191c565df0aa0eb8c619ea10aa2">sample</link> (const <link linkend="_classUtil_1_1Array">Array</link>&lt; Data &gt; &amp;values)</para>
+
+<para>Sample an array of current values. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1MeanSqDispArray_1a0368caf235590e57b3f185a0e8d15acd">output</link> (std::ostream &amp;out)</para>
+
+<para>Output the autocorrelation function. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1MeanSqDispArray_1aa1743fc8e14b96e182b8bd98e106889c">bufferCapacity</link> ()</para>
+
+<para>Return capacity of the history buffer for each sequence. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1MeanSqDispArray_1a2d760a96c2584135bd196ce3b4cc3a4d">nEnsemble</link> ()</para>
+
+<para>Return number of sequences in the ensemble. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1MeanSqDispArray_1abfa5be64ec9434a3ab1f3360664d7af4">nSample</link> ()</para>
+
+<para>Return number of values sampled from each sequence thus far. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;typename Data&gt;
+class Util::MeanSqDispArray&lt; Data &gt;</title></simplesect>
+
+
+<para>Mean-squared displacement (MSD) vs. </para>
+
+
+
+<para>time for an ensembles of sequences.</para>
+
+<para>This class calculates the mean-squared difference &lt;|x(i) - x(i-j)|^2&gt; for an ensemble of statistically equivalent sequences x(i) of values of a variable of type Data. The meaning of |a - b|^2 is defined for int, double, and <link linkend="_classUtil_1_1Vector">Vector</link> data by explicit specializations of the private method double sqDiff(Data&amp;, Data). </para>
+<para>
+Definition at line 41 of file MeanSqDispArray.h.</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1MeanSqDispArray_1afae35393613b540dd3b75a56e2534bac"/>    <section>
+    <title>readParameters()</title>
+<indexterm><primary>readParameters</primary><secondary>Util::MeanSqDispArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::MeanSqDispArray&lt; Data &gt;</primary><secondary>readParameters</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1MeanSqDispArray">Util::MeanSqDispArray</link>&lt; Data &gt;::readParameters (std::istream &amp; in)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Read parameters, allocate memory and clear history. </para>
+</para>
+
+<para>Reads parameters nEnsemble and capacity, allocates memory, and then calls <link linkend="_classUtil_1_1MeanSqDispArray_1a37d7bb9ee79d7c9292b2353d456d7b31">clear()</link>.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input parameter stream </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Reimplemented from <link linkend="_classUtil_1_1ParamComposite_1a172a3a656b5829c8d758424ad09a22a6">Util::ParamComposite</link>.</para>
+<para>
+Definition at line 217 of file MeanSqDispArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1MeanSqDispArray_1a4a8cb730e024205da4d773152e1447b6"/>    <section>
+    <title>setParam()</title>
+<indexterm><primary>setParam</primary><secondary>Util::MeanSqDispArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::MeanSqDispArray&lt; Data &gt;</primary><secondary>setParam</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1MeanSqDispArray">Util::MeanSqDispArray</link>&lt; Data &gt;::setParam (int ensembleCapacity, int bufferCapacity)</computeroutput></para><para>
+
+<para>Set parameters, allocate memory, and clear history. </para>
+</para>
+
+<para>Sets parameters nEnsemble and capacity, allocates memory and then calls <link linkend="_classUtil_1_1MeanSqDispArray_1a37d7bb9ee79d7c9292b2353d456d7b31">clear()</link>.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ensembleCapacity</entry>
+                                <entry>
+<para>number of sequence in ensemble </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>bufferCapacity</entry>
+                                <entry>
+<para>number of variable values per sequence </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 230 of file MeanSqDispArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1MeanSqDispArray_1ab773e0f5872f42a03c6b86890d932702"/>    <section>
+    <title>loadParameters()</title>
+<indexterm><primary>loadParameters</primary><secondary>Util::MeanSqDispArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::MeanSqDispArray&lt; Data &gt;</primary><secondary>loadParameters</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1MeanSqDispArray">Util::MeanSqDispArray</link>&lt; Data &gt;::loadParameters (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp; ar)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Load internal state from an archive. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>input/loading archive </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Reimplemented from <link linkend="_classUtil_1_1ParamComposite_1adec07dcba0895ba69463147314cde7ce">Util::ParamComposite</link>.</para>
+<para>
+Definition at line 256 of file MeanSqDispArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1MeanSqDispArray_1ad0a01b9aeba80e0421fd0416db7fbb51"/>    <section>
+    <title>save()</title>
+<indexterm><primary>save</primary><secondary>Util::MeanSqDispArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::MeanSqDispArray&lt; Data &gt;</primary><secondary>save</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1MeanSqDispArray">Util::MeanSqDispArray</link>&lt; Data &gt;::save (<link linkend="_classUtil_1_1Serializable_1aca43a1eea5ec5f13189a57892a7a6d04">Serializable::OArchive</link> &amp; ar)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Save internal state to an archive. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>output/saving archive </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Reimplemented from <link linkend="_classUtil_1_1ParamComposite_1a3c430a4e31a9573eadb06ab89d3bf780">Util::ParamComposite</link>.</para>
+<para>
+Definition at line 287 of file MeanSqDispArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1MeanSqDispArray_1aaa2506eb7410e4a465d16ad26173d011"/>    <section>
+    <title>serialize()</title>
+<indexterm><primary>serialize</primary><secondary>Util::MeanSqDispArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::MeanSqDispArray&lt; Data &gt;</primary><secondary>serialize</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><computeroutput>template&lt;class Archive &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1MeanSqDispArray">Util::MeanSqDispArray</link>&lt; Data &gt;::serialize (Archive &amp; ar, const unsigned int version)</computeroutput></para><para>
+
+<para>Serialize this <link linkend="_classUtil_1_1MeanSqDispArray">MeanSqDispArray</link> to/from an archive. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>input or output archive </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>version</entry>
+                                <entry>
+<para>file version id </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 272 of file MeanSqDispArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1MeanSqDispArray_1acdcf571e8ef9bdcf1943eaaa02a6b405"/>    <section>
+    <title>setNEnsemble()</title>
+<indexterm><primary>setNEnsemble</primary><secondary>Util::MeanSqDispArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::MeanSqDispArray&lt; Data &gt;</primary><secondary>setNEnsemble</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1MeanSqDispArray">Util::MeanSqDispArray</link>&lt; Data &gt;::setNEnsemble (int nEnsemble)</computeroutput></para><para>
+
+<para>Set actual number of sequences in ensemble. </para>
+</para>
+
+<para><formalpara><title>Precondition</title>
+
+<para><link linkend="_classUtil_1_1MeanSqDispArray_1afae35393613b540dd3b75a56e2534bac">readParameters()</link> or <link linkend="_classUtil_1_1MeanSqDispArray_1a4a8cb730e024205da4d773152e1447b6">setParam()</link> must have been called previously </para>
+
+<para>nEnsemble &lt;= ensembleCapacity</para>
+</formalpara>
+
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>nEnsemble</entry>
+                                <entry>
+<para>actual number of sequences in ensemble </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 243 of file MeanSqDispArray.h.</para>
+<para>
+References UTIL_THROW.</para>
+    </section><anchor xml:id="_classUtil_1_1MeanSqDispArray_1a37d7bb9ee79d7c9292b2353d456d7b31"/>    <section>
+    <title>clear()</title>
+<indexterm><primary>clear</primary><secondary>Util::MeanSqDispArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::MeanSqDispArray&lt; Data &gt;</primary><secondary>clear</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1MeanSqDispArray">Util::MeanSqDispArray</link>&lt; Data &gt;::clear</computeroutput></para><para>
+
+<para>Reset to empty state. </para>
+</para>
+<para>
+Definition at line 294 of file MeanSqDispArray.h.</para>
+<para>
+References Util::setToZero().</para>
+    </section><anchor xml:id="_classUtil_1_1MeanSqDispArray_1a6b21d191c565df0aa0eb8c619ea10aa2"/>    <section>
+    <title>sample()</title>
+<indexterm><primary>sample</primary><secondary>Util::MeanSqDispArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::MeanSqDispArray&lt; Data &gt;</primary><secondary>sample</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1MeanSqDispArray">Util::MeanSqDispArray</link>&lt; Data &gt;::sample (const <link linkend="_classUtil_1_1Array">Array</link>&lt; Data &gt; &amp; values)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Sample an array of current values. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>values</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Array">Array</link> of current values </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 340 of file MeanSqDispArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1MeanSqDispArray_1a0368caf235590e57b3f185a0e8d15acd"/>    <section>
+    <title>output()</title>
+<indexterm><primary>output</primary><secondary>Util::MeanSqDispArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::MeanSqDispArray&lt; Data &gt;</primary><secondary>output</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1MeanSqDispArray">Util::MeanSqDispArray</link>&lt; Data &gt;::output (std::ostream &amp; out)</computeroutput></para><para>
+
+<para>Output the autocorrelation function. </para>
+</para>
+<para>
+Definition at line 408 of file MeanSqDispArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1MeanSqDispArray_1aa1743fc8e14b96e182b8bd98e106889c"/>    <section>
+    <title>bufferCapacity()</title>
+<indexterm><primary>bufferCapacity</primary><secondary>Util::MeanSqDispArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::MeanSqDispArray&lt; Data &gt;</primary><secondary>bufferCapacity</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>int <link linkend="_classUtil_1_1MeanSqDispArray">Util::MeanSqDispArray</link>&lt; Data &gt;::bufferCapacity ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return capacity of the history buffer for each sequence. </para>
+</para>
+<para>
+Definition at line 130 of file MeanSqDispArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1MeanSqDispArray_1a2d760a96c2584135bd196ce3b4cc3a4d"/>    <section>
+    <title>nEnsemble()</title>
+<indexterm><primary>nEnsemble</primary><secondary>Util::MeanSqDispArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::MeanSqDispArray&lt; Data &gt;</primary><secondary>nEnsemble</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>int <link linkend="_classUtil_1_1MeanSqDispArray">Util::MeanSqDispArray</link>&lt; Data &gt;::nEnsemble ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return number of sequences in the ensemble. </para>
+</para>
+<para>
+Definition at line 136 of file MeanSqDispArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1MeanSqDispArray_1abfa5be64ec9434a3ab1f3360664d7af4"/>    <section>
+    <title>nSample()</title>
+<indexterm><primary>nSample</primary><secondary>Util::MeanSqDispArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::MeanSqDispArray&lt; Data &gt;</primary><secondary>nSample</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>int <link linkend="_classUtil_1_1MeanSqDispArray">Util::MeanSqDispArray</link>&lt; Data &gt;::nSample ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return number of values sampled from each sequence thus far. </para>
+</para>
+<para>
+Definition at line 142 of file MeanSqDispArray.h.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+MeanSqDispArray.h</section>
+</section>

@@ -1,0 +1,575 @@
+\hypertarget{classPscf_1_1Vec}{}\doxysubsection{Pscf\+::Vec$<$ D, T $>$ Class Template Reference}
+\label{classPscf_1_1Vec}\index{Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}}
+
+
+A Vec$<$\+D, T$>$$<$D,T$>$ is a D-\/component vector with elements of type T.  
+
+
+
+
+{\ttfamily \#include $<$Vec.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{Indent}\textbf{ Constructors}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPscf_1_1Vec_a6f526bc8ca077028e1e10639e274c17e}{Vec}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1Vec_a96470c13fe82975e714436771ea9059b}{Vec}} (const \mbox{\hyperlink{classPscf_1_1Vec}{Vec}}$<$ D, T $>$ \&v)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1Vec_aca71a49b8eaaeea0052721374ffe8436}{Vec}} (T const $\ast$v)
+\begin{DoxyCompactList}\small\item\em Constructor from a C-\/array. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1Vec_a4266ddb0745bd9c4240f39bbae0ef01e}{Vec}} (T s)
+\begin{DoxyCompactList}\small\item\em Constructor, initialize all elements to a common scalar value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Assignment and Initialization}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPscf_1_1Vec}{Vec}}$<$ D, T $>$ \& \mbox{\hyperlink{classPscf_1_1Vec_aace7dc11bc50e08c35aa4c2e714ee6b2}{operator=}} (const \mbox{\hyperlink{classPscf_1_1Vec}{Vec}}$<$ D, T $>$ \&v)
+\begin{DoxyCompactList}\small\item\em Copy assignment. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1Vec}{Vec}}$<$ D, T $>$ \& \mbox{\hyperlink{classPscf_1_1Vec_a123d28e6139cf6292cb78d362fecd0d7}{operator=}} (T s)
+\begin{DoxyCompactList}\small\item\em Assignment all elements to the same scalar T value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1Vec}{Vec}}$<$ D, T $>$ \& \mbox{\hyperlink{classPscf_1_1Vec_ac0d476dacd52cfb616704411cc21d347}{set\+To\+Zero}} ()
+\begin{DoxyCompactList}\small\item\em Set all elements to zero. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Arithmetic Assignment}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classPscf_1_1Vec_aa17ff5218adb721fecb7245181f0de82}{operator+=}} (const \mbox{\hyperlink{classPscf_1_1Vec}{Vec}}$<$ D, T $>$ \&dv)
+\begin{DoxyCompactList}\small\item\em Add vector dv to this vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1Vec_af747a9fd913b744868dfbba45e4bc197}{operator-\/=}} (const \mbox{\hyperlink{classPscf_1_1Vec}{Vec}}$<$ D, T $>$ \&dv)
+\begin{DoxyCompactList}\small\item\em Subtract vector dv from this vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1Vec_ae63339b964ee1db71a698b9c5cc60c87}{operator+=}} (T s)
+\begin{DoxyCompactList}\small\item\em Add a common scalar to all components. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1Vec_aad44e2a3d9f5f5a71826ef8b3dba14fc}{operator-\/=}} (T s)
+\begin{DoxyCompactList}\small\item\em Subtract a common scalar from all components. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1Vec_a9cde8d3305775df2f9334e5bca835902}{operator$\ast$=}} (T s)
+\begin{DoxyCompactList}\small\item\em Multiply this vector by scalar s. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Array Subscript}\par
+\begin{DoxyCompactItemize}
+\item 
+const T \& \mbox{\hyperlink{classPscf_1_1Vec_a5cc843c09b047d64db87cdfbb52aa3f4}{operator\mbox{[}$\,$\mbox{]}}} (int i) const
+\begin{DoxyCompactList}\small\item\em Return one Cartesian element by value. \end{DoxyCompactList}\item 
+T \& \mbox{\hyperlink{classPscf_1_1Vec_a294b005764c565a5368ae953b44178d9}{operator\mbox{[}$\,$\mbox{]}}} (int i)
+\begin{DoxyCompactList}\small\item\em Return one element of the vector by references. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Vec$<$D, T$>$ valued functions (assigned to invoking object)}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPscf_1_1Vec}{Vec}}$<$ D, T $>$ \& \mbox{\hyperlink{classPscf_1_1Vec_aa7be234b887c5600b927a15377be0036}{add}} (const \mbox{\hyperlink{classPscf_1_1Vec}{Vec}}$<$ D, T $>$ \&v1, const \mbox{\hyperlink{classPscf_1_1Vec}{Vec}}$<$ D, T $>$ \&v2)
+\begin{DoxyCompactList}\small\item\em Add vectors v1 and v2. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1Vec}{Vec}}$<$ D, T $>$ \& \mbox{\hyperlink{classPscf_1_1Vec_a5afd39fa2257395e22b8e09a483fb2ba}{subtract}} (const \mbox{\hyperlink{classPscf_1_1Vec}{Vec}}$<$ D, T $>$ \&v1, const \mbox{\hyperlink{classPscf_1_1Vec}{Vec}}$<$ D, T $>$ \&v2)
+\begin{DoxyCompactList}\small\item\em Subtract vector v2 from v1. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1Vec}{Vec}}$<$ D, T $>$ \& \mbox{\hyperlink{classPscf_1_1Vec_aa6f0128a6b13538a25f4c7c9950d1a21}{multiply}} (const \mbox{\hyperlink{classPscf_1_1Vec}{Vec}}$<$ D, T $>$ \&v, T s)
+\begin{DoxyCompactList}\small\item\em Multiply a vector v by a scalar s. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1Vec}{Vec}}$<$ D, T $>$ \& \mbox{\hyperlink{classPscf_1_1Vec_aefa0c09b531d84005009bdfdb6de95ff}{negate}} (const \mbox{\hyperlink{classPscf_1_1Vec}{Vec}}$<$ D, T $>$ \&v)
+\begin{DoxyCompactList}\small\item\em Return negative of vector v. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1Vec}{Vec}}$<$ D, T $>$ \& \mbox{\hyperlink{classPscf_1_1Vec_a803fc0bca008e9b807f0fd8d92234501}{negate}} ()
+\begin{DoxyCompactList}\small\item\em Negate all elements of this vector. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Archive $>$ }\\void \mbox{\hyperlink{classPscf_1_1Vec_ac7232c86f7303fc548db819506f920a5}{serialize}} (Archive \&ar, const unsigned int version)
+\begin{DoxyCompactList}\small\item\em Serialize to/from an archive. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$int D, typename T$>$\newline
+class Pscf\+::\+Vec$<$ D, T $>$}
+
+A Vec$<$\+D, T$>$$<$D,T$>$ is a D-\/component vector with elements of type T. 
+
+The elements of a Vec$<$\+D, T$>$ can be accessed using subscript operator, as for a built in array.
+
+The arithmetic assignment operators +=, -\/=, and $\ast$= are overloaded to allow vector-\/vector addition and subtraction and vector-\/scalar multiplication.
+
+All other unary and binary mathematical operations are implemented as methods or free functions. Operations that yield a Vec$<$\+D, T$>$, such as addition, are implemented by methods that assign the result to the invoking \mbox{\hyperlink{classPscf_1_1Vec}{Vec}} object, and return this object by reference. For example, 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Vec<3, double> a, b, c;}
+\DoxyCodeLine{}
+\DoxyCodeLine{a[0] = 0.0}
+\DoxyCodeLine{a[1] = 1.0}
+\DoxyCodeLine{a[2] = 2.0}
+\DoxyCodeLine{}
+\DoxyCodeLine{b[0] =  0.5}
+\DoxyCodeLine{b[1] = -\/0.5}
+\DoxyCodeLine{b[2] = -\/1.5}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Set a = a + b}}
+\DoxyCodeLine{a += b}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Set b = b*2}}
+\DoxyCodeLine{b *= 2.0;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Set c = a + b}}
+\DoxyCodeLine{c.add(a, b);}
+\end{DoxyCode}
+ This syntax for functions that yield a vector makes the allocation of a temporary Vec$<$\+D, T$>$ object explicit, by requiring that the invoking function be a member of an object that will hold the result.
+
+For efficiency, all member functions are declared inline. 
+
+Definition at line 63 of file Vec.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPscf_1_1Vec_a6f526bc8ca077028e1e10639e274c17e}\label{classPscf_1_1Vec_a6f526bc8ca077028e1e10639e274c17e}} 
+\index{Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}!Vec@{Vec}}
+\index{Vec@{Vec}!Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}}
+\doxyparagraph{\texorpdfstring{Vec()}{Vec()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$int D, typename T $>$ \\
+\mbox{\hyperlink{classPscf_1_1Vec}{Pscf\+::\+Vec}}$<$ D, T $>$\+::\mbox{\hyperlink{classPscf_1_1Vec}{Vec}}\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor. 
+
+
+
+Definition at line 315 of file Vec.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Vec_a96470c13fe82975e714436771ea9059b}\label{classPscf_1_1Vec_a96470c13fe82975e714436771ea9059b}} 
+\index{Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}!Vec@{Vec}}
+\index{Vec@{Vec}!Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}}
+\doxyparagraph{\texorpdfstring{Vec()}{Vec()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$int D, typename T $>$ \\
+\mbox{\hyperlink{classPscf_1_1Vec}{Pscf\+::\+Vec}}$<$ D, T $>$\+::\mbox{\hyperlink{classPscf_1_1Vec}{Vec}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPscf_1_1Vec}{Vec}}$<$ D, T $>$ \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & Vec$<$\+D, T$>$ to be copied \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 322 of file Vec.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Vec_aca71a49b8eaaeea0052721374ffe8436}\label{classPscf_1_1Vec_aca71a49b8eaaeea0052721374ffe8436}} 
+\index{Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}!Vec@{Vec}}
+\index{Vec@{Vec}!Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}}
+\doxyparagraph{\texorpdfstring{Vec()}{Vec()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$int D, typename T $>$ \\
+\mbox{\hyperlink{classPscf_1_1Vec}{Pscf\+::\+Vec}}$<$ D, T $>$\+::\mbox{\hyperlink{classPscf_1_1Vec}{Vec}} (\begin{DoxyParamCaption}\item[{T const $\ast$}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructor from a C-\/array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & array to be copied \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 333 of file Vec.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Vec_a4266ddb0745bd9c4240f39bbae0ef01e}\label{classPscf_1_1Vec_a4266ddb0745bd9c4240f39bbae0ef01e}} 
+\index{Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}!Vec@{Vec}}
+\index{Vec@{Vec}!Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}}
+\doxyparagraph{\texorpdfstring{Vec()}{Vec()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$int D, typename T $>$ \\
+\mbox{\hyperlink{classPscf_1_1Vec}{Pscf\+::\+Vec}}$<$ D, T $>$\+::\mbox{\hyperlink{classPscf_1_1Vec}{Vec}} (\begin{DoxyParamCaption}\item[{T}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructor, initialize all elements to a common scalar value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & initial value for all elements. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 344 of file Vec.\+h.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPscf_1_1Vec_aace7dc11bc50e08c35aa4c2e714ee6b2}\label{classPscf_1_1Vec_aace7dc11bc50e08c35aa4c2e714ee6b2}} 
+\index{Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}}
+\doxyparagraph{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$int D, typename T $>$ \\
+\mbox{\hyperlink{classPscf_1_1Vec}{Vec}}$<$ D, T $>$ \& \mbox{\hyperlink{classPscf_1_1Vec}{Pscf\+::\+Vec}}$<$ D, T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPscf_1_1Vec}{Vec}}$<$ D, T $>$ \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy assignment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & Vec$<$\+D, T$>$ to assign. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+this object, after modification 
+\end{DoxyReturn}
+
+
+Definition at line 355 of file Vec.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Vec_a123d28e6139cf6292cb78d362fecd0d7}\label{classPscf_1_1Vec_a123d28e6139cf6292cb78d362fecd0d7}} 
+\index{Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}}
+\doxyparagraph{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$int D, typename T $>$ \\
+\mbox{\hyperlink{classPscf_1_1Vec}{Vec}}$<$ D, T $>$ \& \mbox{\hyperlink{classPscf_1_1Vec}{Pscf\+::\+Vec}}$<$ D, T $>$\+::operator= (\begin{DoxyParamCaption}\item[{T}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Assignment all elements to the same scalar T value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & scalar value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+this object, after modification 
+\end{DoxyReturn}
+
+
+Definition at line 367 of file Vec.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Vec_ac0d476dacd52cfb616704411cc21d347}\label{classPscf_1_1Vec_ac0d476dacd52cfb616704411cc21d347}} 
+\index{Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}!setToZero@{setToZero}}
+\index{setToZero@{setToZero}!Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}}
+\doxyparagraph{\texorpdfstring{setToZero()}{setToZero()}}
+{\footnotesize\ttfamily template$<$int D, typename T $>$ \\
+\mbox{\hyperlink{classPscf_1_1Vec}{Vec}}$<$ D, T $>$ \& \mbox{\hyperlink{classPscf_1_1Vec}{Pscf\+::\+Vec}}$<$ D, T $>$\+::set\+To\+Zero\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set all elements to zero. 
+
+\begin{DoxyReturn}{Returns}
+this object, after modification 
+\end{DoxyReturn}
+
+
+Definition at line 379 of file Vec.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Vec_aa17ff5218adb721fecb7245181f0de82}\label{classPscf_1_1Vec_aa17ff5218adb721fecb7245181f0de82}} 
+\index{Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}}
+\doxyparagraph{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$int D, typename T $>$ \\
+void \mbox{\hyperlink{classPscf_1_1Vec}{Pscf\+::\+Vec}}$<$ D, T $>$\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPscf_1_1Vec}{Vec}}$<$ D, T $>$ \&}]{dv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add vector dv to this vector. 
+
+Upon return, $\ast$this = this + dv.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dv} & vector increment (input) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 391 of file Vec.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Vec_af747a9fd913b744868dfbba45e4bc197}\label{classPscf_1_1Vec_af747a9fd913b744868dfbba45e4bc197}} 
+\index{Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}}
+\doxyparagraph{\texorpdfstring{operator-\/=()}{operator-=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$int D, typename T $>$ \\
+void \mbox{\hyperlink{classPscf_1_1Vec}{Pscf\+::\+Vec}}$<$ D, T $>$\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPscf_1_1Vec}{Vec}}$<$ D, T $>$ \&}]{dv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Subtract vector dv from this vector. 
+
+Upon return, $\ast$this = this + dv.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dv} & vector increment (input) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 402 of file Vec.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Vec_ae63339b964ee1db71a698b9c5cc60c87}\label{classPscf_1_1Vec_ae63339b964ee1db71a698b9c5cc60c87}} 
+\index{Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}}
+\doxyparagraph{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$int D, typename T $>$ \\
+void \mbox{\hyperlink{classPscf_1_1Vec}{Pscf\+::\+Vec}}$<$ D, T $>$\+::operator+= (\begin{DoxyParamCaption}\item[{T}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a common scalar to all components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & scalar additive constant (input) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 413 of file Vec.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Vec_aad44e2a3d9f5f5a71826ef8b3dba14fc}\label{classPscf_1_1Vec_aad44e2a3d9f5f5a71826ef8b3dba14fc}} 
+\index{Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}}
+\doxyparagraph{\texorpdfstring{operator-\/=()}{operator-=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$int D, typename T $>$ \\
+void \mbox{\hyperlink{classPscf_1_1Vec}{Pscf\+::\+Vec}}$<$ D, T $>$\+::operator-\/= (\begin{DoxyParamCaption}\item[{T}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Subtract a common scalar from all components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & scalar subtractive constant (input) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 424 of file Vec.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Vec_a9cde8d3305775df2f9334e5bca835902}\label{classPscf_1_1Vec_a9cde8d3305775df2f9334e5bca835902}} 
+\index{Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}}
+\doxyparagraph{\texorpdfstring{operator$\ast$=()}{operator*=()}}
+{\footnotesize\ttfamily template$<$int D, typename T $>$ \\
+void \mbox{\hyperlink{classPscf_1_1Vec}{Pscf\+::\+Vec}}$<$ D, T $>$\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{T}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Multiply this vector by scalar s. 
+
+Upon return, $\ast$this = ($\ast$this)$\ast$s.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & scalar multiplier \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 435 of file Vec.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Vec_a5cc843c09b047d64db87cdfbb52aa3f4}\label{classPscf_1_1Vec_a5cc843c09b047d64db87cdfbb52aa3f4}} 
+\index{Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}}
+\doxyparagraph{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$int D, typename T $>$ \\
+const T \& \mbox{\hyperlink{classPscf_1_1Vec}{Pscf\+::\+Vec}}$<$ D, T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return one Cartesian element by value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & element index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+element i of the vector 
+\end{DoxyReturn}
+
+
+Definition at line 446 of file Vec.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Vec_a294b005764c565a5368ae953b44178d9}\label{classPscf_1_1Vec_a294b005764c565a5368ae953b44178d9}} 
+\index{Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}}
+\doxyparagraph{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$int D, typename T $>$ \\
+T \& \mbox{\hyperlink{classPscf_1_1Vec}{Pscf\+::\+Vec}}$<$ D, T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return one element of the vector by references. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & element index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+element i of this vector 
+\end{DoxyReturn}
+
+
+Definition at line 457 of file Vec.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Vec_aa7be234b887c5600b927a15377be0036}\label{classPscf_1_1Vec_aa7be234b887c5600b927a15377be0036}} 
+\index{Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}!add@{add}}
+\index{add@{add}!Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}}
+\doxyparagraph{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily template$<$int D, typename T $>$ \\
+\mbox{\hyperlink{classPscf_1_1Vec}{Vec}}$<$ D, T $>$ \& \mbox{\hyperlink{classPscf_1_1Vec}{Pscf\+::\+Vec}}$<$ D, T $>$\+::add (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPscf_1_1Vec}{Vec}}$<$ D, T $>$ \&}]{v1,  }\item[{const \mbox{\hyperlink{classPscf_1_1Vec}{Vec}}$<$ D, T $>$ \&}]{v2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add vectors v1 and v2. 
+
+Upon return, $\ast$this = v1 + v2.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v1} & vector (input) \\
+\hline
+{\em v2} & vector (input) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+modified invoking vector 
+\end{DoxyReturn}
+
+
+Definition at line 471 of file Vec.\+h.
+
+
+
+Referenced by Pscf\+::operator+().
+
+\mbox{\Hypertarget{classPscf_1_1Vec_a5afd39fa2257395e22b8e09a483fb2ba}\label{classPscf_1_1Vec_a5afd39fa2257395e22b8e09a483fb2ba}} 
+\index{Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}!subtract@{subtract}}
+\index{subtract@{subtract}!Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}}
+\doxyparagraph{\texorpdfstring{subtract()}{subtract()}}
+{\footnotesize\ttfamily template$<$int D, typename T $>$ \\
+\mbox{\hyperlink{classPscf_1_1Vec}{Vec}}$<$ D, T $>$ \& \mbox{\hyperlink{classPscf_1_1Vec}{Pscf\+::\+Vec}}$<$ D, T $>$\+::subtract (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPscf_1_1Vec}{Vec}}$<$ D, T $>$ \&}]{v1,  }\item[{const \mbox{\hyperlink{classPscf_1_1Vec}{Vec}}$<$ D, T $>$ \&}]{v2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Subtract vector v2 from v1. 
+
+Upon return, $\ast$this = v1 -\/ v2.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v1} & vector (input) \\
+\hline
+{\em v2} & vector (input) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+modified invoking vector 
+\end{DoxyReturn}
+
+
+Definition at line 488 of file Vec.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Vec_aa6f0128a6b13538a25f4c7c9950d1a21}\label{classPscf_1_1Vec_aa6f0128a6b13538a25f4c7c9950d1a21}} 
+\index{Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}!multiply@{multiply}}
+\index{multiply@{multiply}!Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}}
+\doxyparagraph{\texorpdfstring{multiply()}{multiply()}}
+{\footnotesize\ttfamily template$<$int D, typename T $>$ \\
+\mbox{\hyperlink{classPscf_1_1Vec}{Vec}}$<$ D, T $>$ \& \mbox{\hyperlink{classPscf_1_1Vec}{Pscf\+::\+Vec}}$<$ D, T $>$\+::multiply (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPscf_1_1Vec}{Vec}}$<$ D, T $>$ \&}]{v,  }\item[{T}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Multiply a vector v by a scalar s. 
+
+Upon return, $\ast$this = v$\ast$s.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & vector input \\
+\hline
+{\em s} & scalar input \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+modified invoking vector 
+\end{DoxyReturn}
+
+
+Definition at line 503 of file Vec.\+h.
+
+
+
+Referenced by Pscf\+::\+Unit\+Cell\+Base$<$ 3 $>$\+::ksq().
+
+\mbox{\Hypertarget{classPscf_1_1Vec_aefa0c09b531d84005009bdfdb6de95ff}\label{classPscf_1_1Vec_aefa0c09b531d84005009bdfdb6de95ff}} 
+\index{Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}!negate@{negate}}
+\index{negate@{negate}!Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}}
+\doxyparagraph{\texorpdfstring{negate()}{negate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$int D, typename T $>$ \\
+\mbox{\hyperlink{classPscf_1_1Vec}{Vec}}$<$ D, T $>$ \& \mbox{\hyperlink{classPscf_1_1Vec}{Pscf\+::\+Vec}}$<$ D, T $>$\+::negate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPscf_1_1Vec}{Vec}}$<$ D, T $>$ \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return negative of vector v. 
+
+Upon return, $\ast$this = -\/v;
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & vector input \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+modified invoking vector 
+\end{DoxyReturn}
+
+
+Definition at line 518 of file Vec.\+h.
+
+
+
+Referenced by Pscf\+::\+Basis$<$ D $>$\+::is\+Valid().
+
+\mbox{\Hypertarget{classPscf_1_1Vec_a803fc0bca008e9b807f0fd8d92234501}\label{classPscf_1_1Vec_a803fc0bca008e9b807f0fd8d92234501}} 
+\index{Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}!negate@{negate}}
+\index{negate@{negate}!Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}}
+\doxyparagraph{\texorpdfstring{negate()}{negate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$int D, typename T $>$ \\
+\mbox{\hyperlink{classPscf_1_1Vec}{Vec}}$<$ D, T $>$ \& \mbox{\hyperlink{classPscf_1_1Vec}{Pscf\+::\+Vec}}$<$ D, T $>$\+::negate\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Negate all elements of this vector. 
+
+Upon return, all elements of this have been negated (reversed)
+
+\begin{DoxyReturn}{Returns}
+this object, after modification 
+\end{DoxyReturn}
+
+
+Definition at line 533 of file Vec.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Vec_ac7232c86f7303fc548db819506f920a5}\label{classPscf_1_1Vec_ac7232c86f7303fc548db819506f920a5}} 
+\index{Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}!serialize@{serialize}}
+\index{serialize@{serialize}!Pscf::Vec$<$ D, T $>$@{Pscf::Vec$<$ D, T $>$}}
+\doxyparagraph{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$int D, typename T $>$ \\
+template$<$class Archive $>$ \\
+void \mbox{\hyperlink{classPscf_1_1Vec}{Pscf\+::\+Vec}}$<$ D, T $>$\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{ar,  }\item[{const unsigned int}]{version }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Serialize to/from an archive. 
+
+Implementation uses syntax of Boost\+::serialize.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & archive \\
+\hline
+{\em version} & archive version id \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 547 of file Vec.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Vec.\+h\end{DoxyCompactItemize}

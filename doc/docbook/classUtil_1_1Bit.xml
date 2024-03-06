@@ -1,0 +1,258 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1Bit">
+<title>Util::Bit Class Reference</title>
+<indexterm><primary>Util::Bit</primary></indexterm>
+<para>
+
+<para>Represents a specific bit location within an unsigned int. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;Bit.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1Bit_1a76697e285fcd715ec31605976620a0cc">Bit</link> ()</para>
+
+<para>Default constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Bit_1a1bbf6179c564cf257d358aeee5480687">Bit</link> (unsigned int shift)</para>
+
+<para>Constructor. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1Bit_1a2a8df7ff3ab1251960b8b0175e512fc4">setMask</link> (unsigned int shift)</para>
+
+<para>Set or reset the bit mask. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1Bit_1adcf13854931cef8b6b4d544984f58800">set</link> (unsigned int &amp;flags) const</para>
+
+<para>Set this bit in the flags parameter. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1Bit_1a04e6fe8d3afeadb5600e15fa0780bcc8">clear</link> (unsigned int &amp;flags) const</para>
+
+<para>Clear this bit in the flags parameter. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_classUtil_1_1Bit_1afe4862dedf91aa9a6f175912c72ee228">isSet</link> (unsigned int flags) const</para>
+
+<para>Is this bit set in the flags integer? </para>
+</listitem>
+            <listitem><para>unsigned int <link linkend="_classUtil_1_1Bit_1a0b890d6c3b82ff3f28b02fe0b80abbc7">mask</link> () const</para>
+
+<para>Return integer with only this bit set. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Represents a specific bit location within an unsigned int. </para>
+
+
+
+<para>Provides methods to query, set or clear a particular bit. </para>
+<para>
+Definition at line 21 of file Bit.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1Bit_1a76697e285fcd715ec31605976620a0cc"/>    <section>
+    <title>Bit()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>Bit</primary><secondary>Util::Bit</secondary></indexterm>
+<indexterm><primary>Util::Bit</primary><secondary>Bit</secondary></indexterm>
+<para><computeroutput>Util::Bit::Bit ( )</computeroutput></para><para>
+
+<para>Default constructor. </para>
+</para>
+<para>
+Definition at line 18 of file Bit.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1Bit_1a1bbf6179c564cf257d358aeee5480687"/>    <section>
+    <title>Bit()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>Bit</primary><secondary>Util::Bit</secondary></indexterm>
+<indexterm><primary>Util::Bit</primary><secondary>Bit</secondary></indexterm>
+<para><computeroutput>Util::Bit::Bit (unsigned int shift)</computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>shift</entry>
+                                <entry>
+<para>location of the bit, 0 &lt; shift &lt;= 32. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 25 of file Bit.cpp.</para>
+<para>
+References setMask().</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1Bit_1a2a8df7ff3ab1251960b8b0175e512fc4"/>    <section>
+    <title>setMask()</title>
+<indexterm><primary>setMask</primary><secondary>Util::Bit</secondary></indexterm>
+<indexterm><primary>Util::Bit</primary><secondary>setMask</secondary></indexterm>
+<para><computeroutput>void Util::Bit::setMask (unsigned int shift)</computeroutput></para><para>
+
+<para>Set or reset the bit mask. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>shift</entry>
+                                <entry>
+<para>location of the bit, 0 &lt; shift &lt;= 32. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 31 of file Bit.cpp.</para>
+<para>
+References UTIL_THROW.</para>
+<para>
+Referenced by Bit().</para>
+    </section><anchor xml:id="_classUtil_1_1Bit_1adcf13854931cef8b6b4d544984f58800"/>    <section>
+    <title>set()</title>
+<indexterm><primary>set</primary><secondary>Util::Bit</secondary></indexterm>
+<indexterm><primary>Util::Bit</primary><secondary>set</secondary></indexterm>
+<para><computeroutput>void Util::Bit::set (unsigned int &amp; flags) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Set this bit in the flags parameter. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>flags</entry>
+                                <entry>
+<para>unsigned int to be modified </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 80 of file Bit.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Bit_1a04e6fe8d3afeadb5600e15fa0780bcc8"/>    <section>
+    <title>clear()</title>
+<indexterm><primary>clear</primary><secondary>Util::Bit</secondary></indexterm>
+<indexterm><primary>Util::Bit</primary><secondary>clear</secondary></indexterm>
+<para><computeroutput>void Util::Bit::clear (unsigned int &amp; flags) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Clear this bit in the flags parameter. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>flags</entry>
+                                <entry>
+<para>unsigned int to be modified </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 86 of file Bit.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Bit_1afe4862dedf91aa9a6f175912c72ee228"/>    <section>
+    <title>isSet()</title>
+<indexterm><primary>isSet</primary><secondary>Util::Bit</secondary></indexterm>
+<indexterm><primary>Util::Bit</primary><secondary>isSet</secondary></indexterm>
+<para><computeroutput>bool Util::Bit::isSet (unsigned int flags) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Is this bit set in the flags integer? </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>flags</entry>
+                                <entry>
+<para>unsigned int to be queried </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 92 of file Bit.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Bit_1a0b890d6c3b82ff3f28b02fe0b80abbc7"/>    <section>
+    <title>mask()</title>
+<indexterm><primary>mask</primary><secondary>Util::Bit</secondary></indexterm>
+<indexterm><primary>Util::Bit</primary><secondary>mask</secondary></indexterm>
+<para><computeroutput>unsigned int Util::Bit::mask ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return integer with only this bit set. </para>
+</para>
+<para>
+Definition at line 98 of file Bit.h.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+Bit.hBit.cpp</section>
+</section>

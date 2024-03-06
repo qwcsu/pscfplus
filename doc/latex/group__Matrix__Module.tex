@@ -1,0 +1,30 @@
+\hypertarget{group__Matrix__Module}{}\doxysubsection{Matrix Containers}
+\label{group__Matrix__Module}\index{Matrix Containers@{Matrix Containers}}
+
+
+Two-\/dimensional array containers that store by objects value.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classUtil_1_1DMatrix}{Util\+::\+D\+Matrix$<$ Data $>$}}
+\begin{DoxyCompactList}\small\item\em Dynamically allocated \mbox{\hyperlink{classUtil_1_1Matrix}{Matrix}}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classUtil_1_1DRaggedMatrix}{Util\+::\+D\+Ragged\+Matrix$<$ Data $>$}}
+\begin{DoxyCompactList}\small\item\em Dynamically allocated \mbox{\hyperlink{classUtil_1_1RaggedMatrix}{Ragged\+Matrix}}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classUtil_1_1FMatrix}{Util\+::\+F\+Matrix$<$ Data, M, N $>$}}
+\begin{DoxyCompactList}\small\item\em Fixed Size \mbox{\hyperlink{classUtil_1_1Matrix}{Matrix}}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classUtil_1_1Matrix}{Util\+::\+Matrix$<$ Data $>$}}
+\begin{DoxyCompactList}\small\item\em Two-\/dimensional array container template (abstract). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classUtil_1_1RaggedMatrix}{Util\+::\+Ragged\+Matrix$<$ Data $>$}}
+\begin{DoxyCompactList}\small\item\em A 2D array in which different rows can have different lengths. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Two-\/dimensional array containers that store by objects value. 
+
+\mbox{\hyperlink{classUtil_1_1Matrix}{Matrix}} containers overload the () operator to return elements by refernce. If A is a matrix object A(i, j) returns element i, j of the matrix.
+
+The \mbox{\hyperlink{classUtil_1_1Matrix}{Matrix}} base class defines a conventional matrix, in which all rows are the same length. The \mbox{\hyperlink{classUtil_1_1DMatrix}{D\+Matrix}} and \mbox{\hyperlink{classUtil_1_1FMatrix}{F\+Matrix}} subclasses use dynamically allocated and fixed-\/size arrays, respectively.
+
+The \mbox{\hyperlink{classUtil_1_1RaggedMatrix}{Ragged\+Matrix}} base class and \mbox{\hyperlink{classUtil_1_1DRaggedMatrix}{D\+Ragged\+Matrix}} subclass define two-\/dimensional containers in which different rows can have different lengths, though the list of row dimensions can be specified only once. 

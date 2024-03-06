@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1XmlEndTag">
+<title>Util::XmlEndTag Class Reference</title>
+<indexterm><primary>Util::XmlEndTag</primary></indexterm>
+<para>
+
+<para>Parser for an XML end tag. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;XmlEndTag.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Util::XmlEndTag:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classUtil_1_1XmlEndTag.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1XmlEndTag_1a9ed797fa6fbeb93b1bddac3a6aba613d">XmlEndTag</link> ()</para>
+
+<para>Constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1XmlEndTag_1a0bfc32f9d037ca548549302555216058">~XmlEndTag</link> ()</para>
+
+<para>Destructor. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_classUtil_1_1XmlEndTag_1ab38c5da5a60fa69c7f28341de7df5405">match</link> (const std::string &amp;<link linkend="_classUtil_1_1XmlBase_1a8378a6c87659891e9f1e5458dbfc1413">string</link>, int begin)</para>
+
+<para>Attempt to match any end tag. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1XmlEndTag_1a4c8d42e6a7e6f2e55258ce5f8be12a03">match</link> (const std::string expected, const std::string &amp;<link linkend="_classUtil_1_1XmlBase_1a8378a6c87659891e9f1e5458dbfc1413">string</link>, int begin)</para>
+
+<para>Match a required end tag. </para>
+</listitem>
+            <listitem><para>const std::string <link linkend="_classUtil_1_1XmlEndTag_1a28acd29de8f95c3fed73c993aa4a09b7">label</link> ()</para>
+
+<para><link linkend="_classUtil_1_1Label">Label</link> string. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Parser for an XML end tag. </para>
+<para>
+Definition at line 24 of file XmlEndTag.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1XmlEndTag_1a9ed797fa6fbeb93b1bddac3a6aba613d"/>    <section>
+    <title>XmlEndTag()</title>
+<indexterm><primary>XmlEndTag</primary><secondary>Util::XmlEndTag</secondary></indexterm>
+<indexterm><primary>Util::XmlEndTag</primary><secondary>XmlEndTag</secondary></indexterm>
+<para><computeroutput>Util::XmlEndTag::XmlEndTag ( )</computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+<para>
+Definition at line 14 of file XmlEndTag.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1XmlEndTag_1a0bfc32f9d037ca548549302555216058"/>    <section>
+    <title>~XmlEndTag()</title>
+<indexterm><primary>~XmlEndTag</primary><secondary>Util::XmlEndTag</secondary></indexterm>
+<indexterm><primary>Util::XmlEndTag</primary><secondary>~XmlEndTag</secondary></indexterm>
+<para><computeroutput>Util::XmlEndTag::~XmlEndTag ( )</computeroutput></para><para>
+
+<para>Destructor. </para>
+</para>
+<para>
+Definition at line 17 of file XmlEndTag.cpp.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1XmlEndTag_1ab38c5da5a60fa69c7f28341de7df5405"/>    <section>
+    <title>match()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>match</primary><secondary>Util::XmlEndTag</secondary></indexterm>
+<indexterm><primary>Util::XmlEndTag</primary><secondary>match</secondary></indexterm>
+<para><computeroutput>bool Util::XmlEndTag::match (const std::string &amp; string, int begin)</computeroutput></para><para>
+
+<para>Attempt to match any end tag. </para>
+</para>
+
+<para>Return true if end tag found, false otherwise.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>string</entry>
+                                <entry>
+<para>containing text of XML tag </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>begin</entry>
+                                <entry>
+<para>index of first character </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 20 of file XmlEndTag.cpp.</para>
+<para>
+References Util::XmlBase::c(), Util::XmlBase::cursor(), Util::XmlBase::isEnd(), Util::XmlBase::next(), Util::XmlBase::setString(), Util::XmlBase::skip(), and Util::XmlBase::string().</para>
+<para>
+Referenced by match().</para>
+    </section><anchor xml:id="_classUtil_1_1XmlEndTag_1a4c8d42e6a7e6f2e55258ce5f8be12a03"/>    <section>
+    <title>match()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>match</primary><secondary>Util::XmlEndTag</secondary></indexterm>
+<indexterm><primary>Util::XmlEndTag</primary><secondary>match</secondary></indexterm>
+<para><computeroutput>void Util::XmlEndTag::match (const std::string expected, const std::string &amp; string, int begin)</computeroutput></para><para>
+
+<para>Match a required end tag. </para>
+</para>
+
+<para>Throw exception is specified end tag does not match.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>expected</entry>
+                                <entry>
+<para>expected label string </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>string</entry>
+                                <entry>
+<para>containing text of XML tag </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>begin</entry>
+                                <entry>
+<para>index of first character </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 65 of file XmlEndTag.cpp.</para>
+<para>
+References Util::Log::file(), label(), match(), and UTIL_THROW.</para>
+    </section><anchor xml:id="_classUtil_1_1XmlEndTag_1a28acd29de8f95c3fed73c993aa4a09b7"/>    <section>
+    <title>label()</title>
+<indexterm><primary>label</primary><secondary>Util::XmlEndTag</secondary></indexterm>
+<indexterm><primary>Util::XmlEndTag</primary><secondary>label</secondary></indexterm>
+<para><computeroutput>const std::string Util::XmlEndTag::label ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para><link linkend="_classUtil_1_1Label">Label</link> string. </para>
+</para>
+<para>
+Definition at line 64 of file XmlEndTag.h.</para>
+<para>
+Referenced by match().</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+XmlEndTag.hXmlEndTag.cpp</section>
+</section>

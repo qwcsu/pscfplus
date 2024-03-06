@@ -1,0 +1,3523 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1ParamComposite">
+<title>Util::ParamComposite Class Reference</title>
+<indexterm><primary>Util::ParamComposite</primary></indexterm>
+<para>
+
+<para>An object that can read multiple parameters from file. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;ParamComposite.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Util::ParamComposite:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classUtil_1_1ParamComposite.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1ParamComposite_1a873eea7d2dbc19cde816d1bef602496c">ParamComposite</link> ()</para>
+
+<para>Constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1ParamComposite_1a5ff732ff5b4b3ae81811b42bc0c98792">ParamComposite</link> (const <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link> &amp;other)</para>
+
+<para>Copy constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1ParamComposite_1a89cd883f704f8dba7d5d5d787bd055a0">ParamComposite</link> (int capacity)</para>
+
+<para>Constructor. </para>
+</listitem>
+            <listitem><para>virtual <link linkend="_classUtil_1_1ParamComposite_1a3aca9fd9a600e308a42573d243910fc0">~ParamComposite</link> ()</para>
+
+<para>Virtual destructor. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1ParamComposite_1a38068a7ef2846b9301df02b32f6f5bfd">resetParam</link> ()</para>
+
+<para>Resets <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link> to its empty state. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect><title>Read and write functions for the composite</title>
+        <itemizedlist>
+            <listitem><para>virtual void <link linkend="_classUtil_1_1ParamComposite_1a6fc094b057fd9a21641b089f6f063b39">readParam</link> (std::istream &amp;in)</para>
+
+<para>Read the parameter file block. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classUtil_1_1ParamComposite_1aba5de04c5db452000b044e0331ad5182">readParamOptional</link> (std::istream &amp;in)</para>
+
+<para>Read optional parameter file block. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classUtil_1_1ParamComposite_1a172a3a656b5829c8d758424ad09a22a6">readParameters</link> (std::istream &amp;in)</para>
+
+<para>Read the body of parameter block, without begin and end lines. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classUtil_1_1ParamComposite_1addf0c36c3560471bfe47f0be008575b9">writeParam</link> (std::ostream &amp;out)</para>
+
+<para>Write all parameters to an output stream. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect><title>Serialization: Load and save functions for this composite</title>
+        <itemizedlist>
+            <listitem><para>virtual void <link linkend="_classUtil_1_1ParamComposite_1a02a1172d7cd86d4015be8d9e65fe750f">load</link> (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp;ar)</para>
+
+<para>Load all parameters from an input archive. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classUtil_1_1ParamComposite_1a067f4d25096ebf9541117e938c60535c">loadOptional</link> (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp;ar)</para>
+
+<para>Load an optional <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link>. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classUtil_1_1ParamComposite_1adec07dcba0895ba69463147314cde7ce">loadParameters</link> (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp;ar)</para>
+
+<para>Load state from archive, without adding <link linkend="_classUtil_1_1Begin">Begin</link> and <link linkend="_classUtil_1_1End">End</link> lines. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classUtil_1_1ParamComposite_1a3c430a4e31a9573eadb06ab89d3bf780">save</link> (<link linkend="_classUtil_1_1Serializable_1aca43a1eea5ec5f13189a57892a7a6d04">Serializable::OArchive</link> &amp;ar)</para>
+
+<para>Saves all parameters to an archive. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1ParamComposite_1a2c9251eab18931fd6f357ff811e3fa0e">saveOptional</link> (<link linkend="_classUtil_1_1Serializable_1aca43a1eea5ec5f13189a57892a7a6d04">Serializable::OArchive</link> &amp;ar)</para>
+
+<para>Saves isActive flag, and then calls <link linkend="_classUtil_1_1ParamComposite_1a3c430a4e31a9573eadb06ab89d3bf780">save()</link> iff isActive is true. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect><title>read* functions for child components</title>
+
+<para>Each of these functions creates a new instance of a particular subclass of <link linkend="_classUtil_1_1ParamComponent">ParamComponent</link>, invokes the <link linkend="_classUtil_1_1ParamComposite_1a6fc094b057fd9a21641b089f6f063b39">readParam()</link> function of the new object to read the associated line or block of a parameter file, and adds the object to the format. </para>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_classUtil_1_1ParamComposite_1ab2372dcc5d7d8db632b2b9844caf206e">readParamComposite</link> (std::istream &amp;in, <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link> &amp;child, bool next=true)</para>
+
+<para>Add and read a required child <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link>. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1ParamComposite_1ac7f91287ff57b0cd8180b9ac18c4368d">readParamCompositeOptional</link> (std::istream &amp;in, <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link> &amp;child, bool next=true)</para>
+
+<para>Add and attempt to read an optional child <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link>. </para>
+</listitem>
+            <listitem><para>template&lt;typename Type &gt; </para><para><link linkend="_classUtil_1_1ScalarParam">ScalarParam</link>&lt; Type &gt; &amp; <link linkend="_classUtil_1_1ParamComposite_1a21c4ae1412ec944d4189cb7c7b6a3171">read</link> (std::istream &amp;in, const char *label, Type &amp;value)</para>
+
+<para>Add and read a new required <link linkend="_classUtil_1_1ScalarParam">ScalarParam</link> &lt; Type &gt; object. </para>
+</listitem>
+            <listitem><para>template&lt;typename Type &gt; </para><para><link linkend="_classUtil_1_1ScalarParam">ScalarParam</link>&lt; Type &gt; &amp; <link linkend="_classUtil_1_1ParamComposite_1a5d9f133993e0aa0b18cd59938ccf8700">readOptional</link> (std::istream &amp;in, const char *label, Type &amp;value)</para>
+
+<para>Add and read a new optional <link linkend="_classUtil_1_1ScalarParam">ScalarParam</link> &lt; Type &gt; object. </para>
+</listitem>
+            <listitem><para>template&lt;typename Type &gt; </para><para><link linkend="_classUtil_1_1CArrayParam">CArrayParam</link>&lt; Type &gt; &amp; <link linkend="_classUtil_1_1ParamComposite_1a6dced9ce4f0877f1f783b8df65dc99e8">readCArray</link> (std::istream &amp;in, const char *label, Type *value, int n)</para>
+
+<para>Add and read a required C array parameter. </para>
+</listitem>
+            <listitem><para>template&lt;typename Type &gt; </para><para><link linkend="_classUtil_1_1CArrayParam">CArrayParam</link>&lt; Type &gt; &amp; <link linkend="_classUtil_1_1ParamComposite_1ab87b838fe901442cb5df608cc007bb74">readOptionalCArray</link> (std::istream &amp;in, const char *label, Type *value, int n)</para>
+
+<para>Add and read an optional C array parameter. </para>
+</listitem>
+            <listitem><para>template&lt;typename Type &gt; </para><para><link linkend="_classUtil_1_1DArrayParam">DArrayParam</link>&lt; Type &gt; &amp; <link linkend="_classUtil_1_1ParamComposite_1a1592472a30ff22139667f019b3e2026f">readDArray</link> (std::istream &amp;in, const char *label, <link linkend="_classUtil_1_1DArray">DArray</link>&lt; Type &gt; &amp;array, int n)</para>
+
+<para>Add and read a required <link linkend="_classUtil_1_1DArray">DArray</link> &lt; Type &gt; parameter. </para>
+</listitem>
+            <listitem><para>template&lt;typename Type &gt; </para><para><link linkend="_classUtil_1_1DArrayParam">DArrayParam</link>&lt; Type &gt; &amp; <link linkend="_classUtil_1_1ParamComposite_1a16d3c358ee160a8fbbbf415993f7beb5">readOptionalDArray</link> (std::istream &amp;in, const char *label, <link linkend="_classUtil_1_1DArray">DArray</link>&lt; Type &gt; &amp;array, int n)</para>
+
+<para>Add and read an optional <link linkend="_classUtil_1_1DArray">DArray</link> &lt; Type &gt; parameter. </para>
+</listitem>
+            <listitem><para>template&lt;typename Type , int N&gt; </para><para><link linkend="_classUtil_1_1FArrayParam">FArrayParam</link>&lt; Type, N &gt; &amp; <link linkend="_classUtil_1_1ParamComposite_1a27d47127c750fc10bdc57bf4eb379822">readFArray</link> (std::istream &amp;in, const char *label, <link linkend="_classUtil_1_1FArray">FArray</link>&lt; Type, N &gt; &amp;array)</para>
+
+<para>Add and read a required <link linkend="_classUtil_1_1FArray">FArray</link> &lt; Type, N &gt; array parameter. </para>
+</listitem>
+            <listitem><para>template&lt;typename Type , int N&gt; </para><para><link linkend="_classUtil_1_1FArrayParam">FArrayParam</link>&lt; Type, N &gt; &amp; <link linkend="_classUtil_1_1ParamComposite_1a1890a33d6049597e65bebfdeedcf0249">readOptionalFArray</link> (std::istream &amp;in, const char *label, <link linkend="_classUtil_1_1FArray">FArray</link>&lt; Type, N &gt; &amp;array)</para>
+
+<para>Add and read an optional <link linkend="_classUtil_1_1FArray">FArray</link> &lt; Type, N &gt; array parameter. </para>
+</listitem>
+            <listitem><para>template&lt;typename Type &gt; </para><para><link linkend="_classUtil_1_1CArray2DParam">CArray2DParam</link>&lt; Type &gt; &amp; <link linkend="_classUtil_1_1ParamComposite_1a56014258b358c1199253b35da6ebe788">readCArray2D</link> (std::istream &amp;in, const char *label, Type *value, int m, int n, int np)</para>
+
+<para>Add and read a required <link linkend="_classUtil_1_1CArray2DParam">CArray2DParam</link> &lt; Type &gt; 2D C-array. </para>
+</listitem>
+            <listitem><para>template&lt;typename Type &gt; </para><para><link linkend="_classUtil_1_1CArray2DParam">CArray2DParam</link>&lt; Type &gt; &amp; <link linkend="_classUtil_1_1ParamComposite_1af935dd640065219665505094ef0ace20">readOptionalCArray2D</link> (std::istream &amp;in, const char *label, Type *value, int m, int n, int np)</para>
+
+<para>Add and read an optional <link linkend="_classUtil_1_1CArray2DParam">CArray2DParam</link> &lt; Type &gt; 2D C-array parameter. </para>
+</listitem>
+            <listitem><para>template&lt;typename Type &gt; </para><para><link linkend="_classUtil_1_1DMatrixParam">DMatrixParam</link>&lt; Type &gt; &amp; <link linkend="_classUtil_1_1ParamComposite_1a33a1a1a323f812538e59639e1f01d0b3">readDMatrix</link> (std::istream &amp;in, const char *label, <link linkend="_classUtil_1_1DMatrix">DMatrix</link>&lt; Type &gt; &amp;matrix, int m, int n)</para>
+
+<para>Add and read a required <link linkend="_classUtil_1_1DMatrix">DMatrix</link> &lt; Type &gt; matrix parameter. </para>
+</listitem>
+            <listitem><para>template&lt;typename Type &gt; </para><para><link linkend="_classUtil_1_1DMatrixParam">DMatrixParam</link>&lt; Type &gt; &amp; <link linkend="_classUtil_1_1ParamComposite_1ae1c1d685198f71875ba8a31371582c3d">readOptionalDMatrix</link> (std::istream &amp;in, const char *label, <link linkend="_classUtil_1_1DMatrix">DMatrix</link>&lt; Type &gt; &amp;matrix, int m, int n)</para>
+
+<para>Add and read an optional <link linkend="_classUtil_1_1DMatrix">DMatrix</link> &lt; Type &gt; matrix parameter. </para>
+</listitem>
+            <listitem><para>template&lt;typename Type &gt; </para><para><link linkend="_classUtil_1_1DSymmMatrixParam">DSymmMatrixParam</link>&lt; Type &gt; &amp; <link linkend="_classUtil_1_1ParamComposite_1a0f9f731e59f4e06ebcccfde67fa3cf5c">readDSymmMatrix</link> (std::istream &amp;in, const char *label, <link linkend="_classUtil_1_1DMatrix">DMatrix</link>&lt; Type &gt; &amp;matrix, int n)</para>
+
+<para>Add and read a required symmetrix <link linkend="_classUtil_1_1DMatrix">DMatrix</link>. </para>
+</listitem>
+            <listitem><para>template&lt;typename Type &gt; </para><para><link linkend="_classUtil_1_1DSymmMatrixParam">DSymmMatrixParam</link>&lt; Type &gt; &amp; <link linkend="_classUtil_1_1ParamComposite_1ab569a175355c9497a307fa4b8579db9c">readOptionalDSymmMatrix</link> (std::istream &amp;in, const char *label, <link linkend="_classUtil_1_1DMatrix">DMatrix</link>&lt; Type &gt; &amp;matrix, int n)</para>
+
+<para>Add and read an optional <link linkend="_classUtil_1_1DMatrix">DMatrix</link> matrix parameter. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Begin">Begin</link> &amp; <link linkend="_classUtil_1_1ParamComposite_1a2a1e9996c7818c10ae75f42ed8576f7c">readBegin</link> (std::istream &amp;in, const char *label, bool <link linkend="_classUtil_1_1ParamComposite_1aff9ce840ca72f2c6cf3e24335a7a580c">isRequired</link>=true)</para>
+
+<para>Add and read a class label and opening bracket. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1End">End</link> &amp; <link linkend="_classUtil_1_1ParamComposite_1ad688a41bbbd4d5c88d72c0edc7b1f55c">readEnd</link> (std::istream &amp;in)</para>
+
+<para>Add and read the closing bracket. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Blank">Blank</link> &amp; <link linkend="_classUtil_1_1ParamComposite_1aa4e99b175d55ee6e1cbdfe99c3cbf8e5">readBlank</link> (std::istream &amp;in)</para>
+
+<para>Add and read a new <link linkend="_classUtil_1_1Blank">Blank</link> object, representing a blank line. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect><title>load* functions for child components</title>
+
+<para>Load parameters from an Archive, for restarting.</para>
+
+<para>Each of these functions creates a new instance of a subclass of <link linkend="_classUtil_1_1ParamComponent">ParamComponent</link>, and invokes the <link linkend="_classUtil_1_1ParamComposite_1a02a1172d7cd86d4015be8d9e65fe750f">load()</link> function of that new object to load the associated parameter value, and adds the <link linkend="_classUtil_1_1ParamComponent">ParamComponent</link> to the format list. These functions are used to load parameters when a program is restarted from a checkpoint file. 
+<literallayout>&#160;&#xa;</literallayout>
+ </para>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_classUtil_1_1ParamComposite_1a5f0b72c058b5a9913cfc289a3d4586ed">loadParamComposite</link> (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp;ar, <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link> &amp;child, bool next=true)</para>
+
+<para>Add and load a required child <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link>. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1ParamComposite_1a97b9e724ba046ecb03434a914bb0b18c">loadParamCompositeOptional</link> (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp;ar, <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link> &amp;child, bool next=true)</para>
+
+<para>Add and load an optional child <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link> if isActive. </para>
+</listitem>
+            <listitem><para>template&lt;typename Type &gt; </para><para><link linkend="_classUtil_1_1ScalarParam">ScalarParam</link>&lt; Type &gt; &amp; <link linkend="_classUtil_1_1ParamComposite_1a805ce06f94ee840c17586d2d1b58c994">loadParameter</link> (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp;ar, const char *label, Type &amp;value, bool <link linkend="_classUtil_1_1ParamComposite_1aff9ce840ca72f2c6cf3e24335a7a580c">isRequired</link>)</para>
+
+<para>Add and load a new <link linkend="_classUtil_1_1ScalarParam">ScalarParam</link> &lt; Type &gt; object. </para>
+</listitem>
+            <listitem><para>template&lt;typename Type &gt; </para><para><link linkend="_classUtil_1_1ScalarParam">ScalarParam</link>&lt; Type &gt; &amp; <link linkend="_classUtil_1_1ParamComposite_1a96e7cfe2cf1d0bd0ac9b75ff880278c4">loadParameter</link> (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp;ar, const char *label, Type &amp;value)</para>
+
+<para>Add and load new required <link linkend="_classUtil_1_1ScalarParam">ScalarParam</link> &lt; Type &gt; object. </para>
+</listitem>
+            <listitem><para>template&lt;typename Type &gt; </para><para><link linkend="_classUtil_1_1CArrayParam">CArrayParam</link>&lt; Type &gt; &amp; <link linkend="_classUtil_1_1ParamComposite_1a6b44624ddf27be9c959faca294f8300a">loadCArray</link> (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp;ar, const char *label, Type *value, int n, bool <link linkend="_classUtil_1_1ParamComposite_1aff9ce840ca72f2c6cf3e24335a7a580c">isRequired</link>)</para>
+
+<para>Add a C array parameter and load its elements. </para>
+</listitem>
+            <listitem><para>template&lt;typename Type &gt; </para><para><link linkend="_classUtil_1_1CArrayParam">CArrayParam</link>&lt; Type &gt; &amp; <link linkend="_classUtil_1_1ParamComposite_1aeb7eb7a04c97f418627bd7a7eb81a8ee">loadCArray</link> (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp;ar, const char *label, Type *value, int n)</para>
+
+<para>Add and load a required CArrayParam&lt; Type &gt; array parameter. </para>
+</listitem>
+            <listitem><para>template&lt;typename Type &gt; </para><para><link linkend="_classUtil_1_1DArrayParam">DArrayParam</link>&lt; Type &gt; &amp; <link linkend="_classUtil_1_1ParamComposite_1ade60c20a7079a41bf8787bceaa142d8b">loadDArray</link> (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp;ar, const char *label, <link linkend="_classUtil_1_1DArray">DArray</link>&lt; Type &gt; &amp;array, int n, bool <link linkend="_classUtil_1_1ParamComposite_1aff9ce840ca72f2c6cf3e24335a7a580c">isRequired</link>)</para>
+
+<para>Add an load a <link linkend="_classUtil_1_1DArray">DArray</link> &lt; Type &gt; array parameter. </para>
+</listitem>
+            <listitem><para>template&lt;typename Type &gt; </para><para><link linkend="_classUtil_1_1DArrayParam">DArrayParam</link>&lt; Type &gt; &amp; <link linkend="_classUtil_1_1ParamComposite_1a76195ead4df4e7f1e4aed116e4f99d6e">loadDArray</link> (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp;ar, const char *label, <link linkend="_classUtil_1_1DArray">DArray</link>&lt; Type &gt; &amp;array, int n)</para>
+
+<para>Add and load a required <link linkend="_classUtil_1_1DArray">DArray&lt; Type &gt;</link> array parameter. </para>
+</listitem>
+            <listitem><para>template&lt;typename Type , int N&gt; </para><para><link linkend="_classUtil_1_1FArrayParam">FArrayParam</link>&lt; Type, N &gt; &amp; <link linkend="_classUtil_1_1ParamComposite_1a22c80ffb666181ce42aa919433ec827c">loadFArray</link> (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp;ar, const char *label, <link linkend="_classUtil_1_1FArray">FArray</link>&lt; Type, N &gt; &amp;array, bool <link linkend="_classUtil_1_1ParamComposite_1aff9ce840ca72f2c6cf3e24335a7a580c">isRequired</link>)</para>
+
+<para>Add and load an <link linkend="_classUtil_1_1FArray">FArray</link> &lt; Type, N &gt; fixed-size array parameter. </para>
+</listitem>
+            <listitem><para>template&lt;typename Type , int N&gt; </para><para><link linkend="_classUtil_1_1FArrayParam">FArrayParam</link>&lt; Type, N &gt; &amp; <link linkend="_classUtil_1_1ParamComposite_1aa9df11c19ee50a992dd4e0fdbd2958cf">loadFArray</link> (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp;ar, const char *label, <link linkend="_classUtil_1_1FArray">FArray</link>&lt; Type, N &gt; &amp;array)</para>
+
+<para>Add and load a required <link linkend="_classUtil_1_1FArray">FArray</link> &lt; Type &gt; array parameter. </para>
+</listitem>
+            <listitem><para>template&lt;typename Type &gt; </para><para><link linkend="_classUtil_1_1CArray2DParam">CArray2DParam</link>&lt; Type &gt; &amp; <link linkend="_classUtil_1_1ParamComposite_1aaaadf6113f61fe91130238366b7bb8e2">loadCArray2D</link> (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp;ar, const char *label, Type *value, int m, int n, int np, bool <link linkend="_classUtil_1_1ParamComposite_1aff9ce840ca72f2c6cf3e24335a7a580c">isRequired</link>)</para>
+
+<para>Add and load a <link linkend="_classUtil_1_1CArray2DParam">CArray2DParam</link> &lt; Type &gt; C 2D array parameter. </para>
+</listitem>
+            <listitem><para>template&lt;typename Type &gt; </para><para><link linkend="_classUtil_1_1CArray2DParam">CArray2DParam</link>&lt; Type &gt; &amp; <link linkend="_classUtil_1_1ParamComposite_1a84bc440938b0a1f8b33e1ee0fd9f0bb6">loadCArray2D</link> (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp;ar, const char *label, Type *value, int m, int n, int np)</para>
+
+<para>Add and load a required &lt; Type &gt; matrix parameter. </para>
+</listitem>
+            <listitem><para>template&lt;typename Type &gt; </para><para><link linkend="_classUtil_1_1DMatrixParam">DMatrixParam</link>&lt; Type &gt; &amp; <link linkend="_classUtil_1_1ParamComposite_1a9b63d120895060081ad4937987ac167e">loadDMatrix</link> (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp;ar, const char *label, <link linkend="_classUtil_1_1DMatrix">DMatrix</link>&lt; Type &gt; &amp;matrix, int m, int n, bool <link linkend="_classUtil_1_1ParamComposite_1aff9ce840ca72f2c6cf3e24335a7a580c">isRequired</link>)</para>
+
+<para>Add and load a <link linkend="_classUtil_1_1DMatrixParam">DMatrixParam</link> &lt; Type &gt; matrix parameter. </para>
+</listitem>
+            <listitem><para>template&lt;typename Type &gt; </para><para><link linkend="_classUtil_1_1DMatrixParam">DMatrixParam</link>&lt; Type &gt; &amp; <link linkend="_classUtil_1_1ParamComposite_1a527835f3ab83836e5f11409d18523ec1">loadDMatrix</link> (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp;ar, const char *label, <link linkend="_classUtil_1_1DMatrix">DMatrix</link>&lt; Type &gt; &amp;matrix, int m, int n)</para>
+
+<para>Add and load a required <link linkend="_classUtil_1_1DMatrixParam">DMatrixParam</link> &lt; Type &gt; matrix parameter. </para>
+</listitem>
+            <listitem><para>template&lt;typename Type &gt; </para><para><link linkend="_classUtil_1_1DSymmMatrixParam">DSymmMatrixParam</link>&lt; Type &gt; &amp; <link linkend="_classUtil_1_1ParamComposite_1ac8ae3e12ab14c6328110dd03c36e34ad">loadDSymmMatrix</link> (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp;ar, const char *label, <link linkend="_classUtil_1_1DMatrix">DMatrix</link>&lt; Type &gt; &amp;matrix, int n, bool <link linkend="_classUtil_1_1ParamComposite_1aff9ce840ca72f2c6cf3e24335a7a580c">isRequired</link>)</para>
+
+<para>Add and load a symmetric <link linkend="_classUtil_1_1DSymmMatrixParam">DSymmMatrixParam</link> &lt; Type &gt; matrix parameter. </para>
+</listitem>
+            <listitem><para>template&lt;typename Type &gt; </para><para><link linkend="_classUtil_1_1DSymmMatrixParam">DSymmMatrixParam</link>&lt; Type &gt; &amp; <link linkend="_classUtil_1_1ParamComposite_1aa106d26dc3938cacdbd985ac32629954">loadDSymmMatrix</link> (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp;ar, const char *label, <link linkend="_classUtil_1_1DMatrix">DMatrix</link>&lt; Type &gt; &amp;matrix, int n)</para>
+
+<para>Add and load a required <link linkend="_classUtil_1_1DSymmMatrixParam">DSymmMatrixParam</link> &lt; Type &gt; matrix parameter. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect><title>add* functions for child components</title>
+
+<para>These functions add a <link linkend="_classUtil_1_1ParamComponent">ParamComponent</link> to the format array, but do not read data. </para>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_classUtil_1_1ParamComposite_1a2aed32d4ef18bc05a4bc6f02f0ce7010">addParamComposite</link> (<link linkend="_classUtil_1_1ParamComposite">ParamComposite</link> &amp;child, bool next=true)</para>
+
+<para>Add a child <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link> object to the format array. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Begin">Begin</link> &amp; <link linkend="_classUtil_1_1ParamComposite_1a416792811b4e1c8348203934a95167f8">addBegin</link> (const char *label)</para>
+
+<para>Add a <link linkend="_classUtil_1_1Begin">Begin</link> object representing a class name and bracket. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1End">End</link> &amp; <link linkend="_classUtil_1_1ParamComposite_1a8678701878ef3dfc27ce3bedf403aff8">addEnd</link> ()</para>
+
+<para>Add a closing bracket. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Blank">Blank</link> &amp; <link linkend="_classUtil_1_1ParamComposite_1a72bfd2aef18ed296a2959a2d2020d3d2">addBlank</link> ()</para>
+
+<para>Create and add a new <link linkend="_classUtil_1_1Blank">Blank</link> object, representing a blank line. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Accessors    </title>
+        <itemizedlist>
+            <listitem><para>std::string <link linkend="_classUtil_1_1ParamComposite_1a93e3a9fd3bd01dcc3c606a7bf3112c0e">className</link> () const</para>
+
+<para>Get class name string. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_classUtil_1_1ParamComposite_1aff9ce840ca72f2c6cf3e24335a7a580c">isRequired</link> () const</para>
+
+<para>Is this <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link> required in the input file? </para>
+</listitem>
+            <listitem><para>bool <link linkend="_classUtil_1_1ParamComposite_1a74dd1599661aad626c52e69840a28d23">isActive</link> () const</para>
+
+<para>Is this parameter active? </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1ParamComposite_1a30752567fd7b8b93e5c8476bbe8592c5">setClassName</link> (const char *<link linkend="_classUtil_1_1ParamComposite_1a93e3a9fd3bd01dcc3c606a7bf3112c0e">className</link>)</para>
+
+<para>Set class name string. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1ParamComposite_1a30bf69df610c5d1bfa2d2b852425b206">setIsRequired</link> (bool <link linkend="_classUtil_1_1ParamComposite_1aff9ce840ca72f2c6cf3e24335a7a580c">isRequired</link>)</para>
+
+<para>Set or unset the isActive flag. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1ParamComposite_1a5b0514952eb25f3216a400f468c4efdd">setIsActive</link> (bool <link linkend="_classUtil_1_1ParamComposite_1a74dd1599661aad626c52e69840a28d23">isActive</link>)</para>
+
+<para>Set or unset the isActive flag. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1ParamComposite_1ad99740d4a40314f7d87a381339caf502">setParent</link> (<link linkend="_classUtil_1_1ParamComponent">ParamComponent</link> &amp;param, bool next=true)</para>
+
+<para>Set this to the parent of a child component. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1ParamComposite_1ae01a90ae0958b05574e258ce730b1fe9">addComponent</link> (<link linkend="_classUtil_1_1ParamComponent">ParamComponent</link> &amp;param, bool isLeaf=true)</para>
+
+<para>Add a new <link linkend="_classUtil_1_1ParamComponent">ParamComponent</link> object to the format array. </para>
+</listitem>
+            <listitem><para>template&lt;typename Type &gt; </para><para><link linkend="_classUtil_1_1ScalarParam">ScalarParam</link>&lt; Type &gt; &amp; <link linkend="_classUtil_1_1ParamComposite_1a05738b050c32951151bcac1c62f908ff">add</link> (std::istream &amp;in, const char *label, Type &amp;value, bool <link linkend="_classUtil_1_1ParamComposite_1aff9ce840ca72f2c6cf3e24335a7a580c">isRequired</link>=true)</para>
+
+<para>Add a new required <link linkend="_classUtil_1_1ScalarParam">ScalarParam</link> &lt; Type &gt; object. </para>
+</listitem>
+            <listitem><para>template&lt;typename Type &gt; </para><para><link linkend="_classUtil_1_1CArrayParam">CArrayParam</link>&lt; Type &gt; &amp; <link linkend="_classUtil_1_1ParamComposite_1a654d7f0ca5dc877e09070901d33c3365">addCArray</link> (std::istream &amp;in, const char *label, Type *value, int n, bool <link linkend="_classUtil_1_1ParamComposite_1aff9ce840ca72f2c6cf3e24335a7a580c">isRequired</link>=true)</para>
+
+<para>Add (but do not read) a required C array parameter. </para>
+</listitem>
+            <listitem><para>template&lt;typename Type &gt; </para><para><link linkend="_classUtil_1_1DArrayParam">DArrayParam</link>&lt; Type &gt; &amp; <link linkend="_classUtil_1_1ParamComposite_1a5678fa4c9664e87979c758184d46d727">addDArray</link> (std::istream &amp;in, const char *label, <link linkend="_classUtil_1_1DArray">DArray</link>&lt; Type &gt; &amp;array, int n, bool <link linkend="_classUtil_1_1ParamComposite_1aff9ce840ca72f2c6cf3e24335a7a580c">isRequired</link>=true)</para>
+
+<para>Add (but do not read) a <link linkend="_classUtil_1_1DArray">DArray</link> &lt; Type &gt; parameter. </para>
+</listitem>
+            <listitem><para>template&lt;typename Type , int N&gt; </para><para><link linkend="_classUtil_1_1FArrayParam">FArrayParam</link>&lt; Type, N &gt; &amp; <link linkend="_classUtil_1_1ParamComposite_1a7aabaa7835e994678d3c3225df0d7d7a">addFArray</link> (std::istream &amp;in, const char *label, <link linkend="_classUtil_1_1FArray">FArray</link>&lt; Type, N &gt; &amp;array, bool <link linkend="_classUtil_1_1ParamComposite_1aff9ce840ca72f2c6cf3e24335a7a580c">isRequired</link>=true)</para>
+
+<para>Add (but do not read) a <link linkend="_classUtil_1_1FArray">FArray</link> &lt; Type, N &gt; array parameter. </para>
+</listitem>
+            <listitem><para>template&lt;typename Type &gt; </para><para><link linkend="_classUtil_1_1CArray2DParam">CArray2DParam</link>&lt; Type &gt; &amp; <link linkend="_classUtil_1_1ParamComposite_1a9d3774e149a843917646064159a75831">addCArray2D</link> (std::istream &amp;in, const char *label, Type *value, int m, int n, int np, bool <link linkend="_classUtil_1_1ParamComposite_1aff9ce840ca72f2c6cf3e24335a7a580c">isRequired</link>=true)</para>
+
+<para>Add (but do not read) a <link linkend="_classUtil_1_1CArray2DParam">CArray2DParam</link> &lt; Type &gt; 2D C-array. </para>
+</listitem>
+            <listitem><para>template&lt;typename Type &gt; </para><para><link linkend="_classUtil_1_1DMatrixParam">DMatrixParam</link>&lt; Type &gt; &amp; <link linkend="_classUtil_1_1ParamComposite_1ab3fb7b30311e09e54ff86682a8102372">addDMatrix</link> (std::istream &amp;in, const char *label, <link linkend="_classUtil_1_1DMatrix">DMatrix</link>&lt; Type &gt; &amp;matrix, int m, int n, bool <link linkend="_classUtil_1_1ParamComposite_1aff9ce840ca72f2c6cf3e24335a7a580c">isRequired</link>=true)</para>
+
+<para>Add and read a required <link linkend="_classUtil_1_1DMatrix">DMatrix</link> &lt; Type &gt; matrix parameter. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>An object that can read multiple parameters from file. </para>
+
+
+
+<para>Any class that reads a block of parameters from a parameter file must be derived from <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link>. Each such class must implement either the <link linkend="_classUtil_1_1ParamComposite_1a172a3a656b5829c8d758424ad09a22a6">readParameters()</link> function or the <link linkend="_classUtil_1_1ParamComposite_1a6fc094b057fd9a21641b089f6f063b39">readParam()</link> function, but not both. The <link linkend="_classUtil_1_1ParamComposite_1a172a3a656b5829c8d758424ad09a22a6">readParameters()</link>, if reimplemented, should read the body of the associated parameter file block, without opening or closing lines. The <link linkend="_classUtil_1_1ParamComposite_1a6fc094b057fd9a21641b089f6f063b39">readParam()</link> function reads the the entire block, including opening line and closing lines. The default implementation of <link linkend="_classUtil_1_1ParamComposite_1a6fc094b057fd9a21641b089f6f063b39">readParam()</link> reads the opening line of the block, calls <link linkend="_classUtil_1_1ParamComposite_1a172a3a656b5829c8d758424ad09a22a6">readParameters()</link> to read the body of the block, and then reads the closing line. Most subclasses of <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link> re-implement the <link linkend="_classUtil_1_1ParamComposite_1a172a3a656b5829c8d758424ad09a22a6">readParameters()</link> function, and rely on the default implementation of <link linkend="_classUtil_1_1ParamComposite_1a6fc094b057fd9a21641b089f6f063b39">readParam()</link> to add the <link linkend="_classUtil_1_1Begin">Begin</link> and <link linkend="_classUtil_1_1End">End</link> lines.</para>
+
+<para>The <link linkend="_classUtil_1_1ParamComposite_1addf0c36c3560471bfe47f0be008575b9">writeParam()</link> function, if called after <link linkend="_classUtil_1_1ParamComposite_1a6fc094b057fd9a21641b089f6f063b39">readParam()</link>, writes the associated parameter block using the same file format as that used to read the data in the earlier call to <link linkend="_classUtil_1_1ParamComposite_1a6fc094b057fd9a21641b089f6f063b39">readParam()</link>.</para>
+<section xml:id="_classUtil_1_1ParamComposite_1autotoc_md0">
+<title>Implementation details:</title>
+
+<para>After parameter file block is read from file, the file format is stored as a private array of ParaComponent* pointers. We will refer to this in what follows as the format_ array. Each pointer in this array may point to a <link linkend="_classUtil_1_1Parameter">Parameter</link>, <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link>, <link linkend="_classUtil_1_1Begin">Begin</link>, <link linkend="_classUtil_1_1End">End</link>, or <link linkend="_classUtil_1_1Blank">Blank</link> object. Pointers to these objects are added to the format array as the associated objects are read from file, and are stored in the same order as they appear in the parameter file. The default implementation of the <link linkend="_classUtil_1_1ParamComposite_1addf0c36c3560471bfe47f0be008575b9">writeParam()</link> function simply calls the <link linkend="_classUtil_1_1ParamComposite_1addf0c36c3560471bfe47f0be008575b9">writeParam()</link> function of each child <link linkend="_classUtil_1_1ParamComponent">ParamComponent</link>.</para>
+</section>
+<section xml:id="_classUtil_1_1ParamComposite_1autotoc_md1">
+<title>Subclass implementation details:</title>
+
+<para>The <link linkend="_classUtil_1_1ParamComposite_1a172a3a656b5829c8d758424ad09a22a6">readParameters()</link> function of each subclass of <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link> should be implemented using protected member functions of <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link> with names that begin with &quot;read&quot;. The <link linkend="_classUtil_1_1ParamComposite_1a21c4ae1412ec944d4189cb7c7b6a3171">read&lt;T&gt;()</link> function template can be used to read an individual parameter, while readParamComposite reads the nested subblock associated with a child <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link>. There are also more specialized methods (e.g., readDArray&lt;T&gt;to read different types of arrays and matrices of parameters, and to read optional parameters. See the users manual for further details.</para>
+
+<para>The <link linkend="_classUtil_1_1ParamComposite_1a30752567fd7b8b93e5c8476bbe8592c5">setClassName()</link> and <link linkend="_classUtil_1_1ParamComposite_1a93e3a9fd3bd01dcc3c606a7bf3112c0e">className()</link> functions may be used to set and get a std::string containing the subclass name. The <link linkend="_classUtil_1_1ParamComposite_1a30752567fd7b8b93e5c8476bbe8592c5">setClassName()</link> function should be called in the constructor of each subclass of <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link>. The class name set in the constructor of a subclass will replace any name set by a base class, because of the order in which constructors are called. The default implementation of <link linkend="_classUtil_1_1ParamComposite_1a6fc094b057fd9a21641b089f6f063b39">ParamComposite::readParam()</link> checks if the class name that appears in the opening line of a parameter block agrees with the class name returned by the <link linkend="_classUtil_1_1ParamComposite_1a93e3a9fd3bd01dcc3c606a7bf3112c0e">className()</link> function, and throws an exception if it does not. </para>
+</section>
+<para>
+Definition at line 89 of file ParamComposite.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1ParamComposite_1a873eea7d2dbc19cde816d1bef602496c"/>    <section>
+    <title>ParamComposite()<computeroutput>[1/3]</computeroutput></title>
+<indexterm><primary>ParamComposite</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>ParamComposite</secondary></indexterm>
+<para><computeroutput>Util::ParamComposite::ParamComposite ( )</computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+<para>
+Definition at line 23 of file ParamComposite.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a5ff732ff5b4b3ae81811b42bc0c98792"/>    <section>
+    <title>ParamComposite()<computeroutput>[2/3]</computeroutput></title>
+<indexterm><primary>ParamComposite</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>ParamComposite</secondary></indexterm>
+<para><computeroutput>Util::ParamComposite::ParamComposite (const <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link> &amp; other)</computeroutput></para><para>
+
+<para>Copy constructor. </para>
+</para>
+<para>
+Definition at line 55 of file ParamComposite.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a89cd883f704f8dba7d5d5d787bd055a0"/>    <section>
+    <title>ParamComposite()<computeroutput>[3/3]</computeroutput></title>
+<indexterm><primary>ParamComposite</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>ParamComposite</secondary></indexterm>
+<para><computeroutput>Util::ParamComposite::ParamComposite (int capacity)</computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+
+<para>Reserve space for capacity elements in the format array.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>capacity</entry>
+                                <entry>
+<para>maximum length of parameter list </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 36 of file ParamComposite.cpp.</para>
+<para>
+References UTIL_THROW.</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a3aca9fd9a600e308a42573d243910fc0"/>    <section>
+    <title>~ParamComposite()</title>
+<indexterm><primary>~ParamComposite</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>~ParamComposite</secondary></indexterm>
+<para><computeroutput>Util::ParamComposite::~ParamComposite ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Virtual destructor. </para>
+</para>
+<para>
+Definition at line 68 of file ParamComposite.cpp.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1ParamComposite_1a38068a7ef2846b9301df02b32f6f5bfd"/>    <section>
+    <title>resetParam()</title>
+<indexterm><primary>resetParam</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>resetParam</secondary></indexterm>
+<para><computeroutput>void Util::ParamComposite::resetParam ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Resets <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link> to its empty state. </para>
+</para>
+
+<para>This function deletes <link linkend="_classUtil_1_1Parameter">Parameter</link>, <link linkend="_classUtil_1_1Begin">Begin</link>, <link linkend="_classUtil_1_1End">End</link>, and <link linkend="_classUtil_1_1Blank">Blank</link> objects in the format array (i.e., all &quot;leaf&quot; objects in the format tree), invokes the <link linkend="_classUtil_1_1ParamComposite_1a38068a7ef2846b9301df02b32f6f5bfd">resetParam()</link> function of any child <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link> in the format array, and clears the format array. </para>
+<para>
+Reimplemented from <link linkend="_classUtil_1_1ParamComponent_1a57e24c95c5bcbf1f473628b6b2d51eb8">Util::ParamComponent</link>.</para>
+<para>
+Definition at line 209 of file ParamComposite.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a6fc094b057fd9a21641b089f6f063b39"/>    <section>
+    <title>readParam()</title>
+<indexterm><primary>readParam</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>readParam</secondary></indexterm>
+<para><computeroutput>void Util::ParamComposite::readParam (std::istream &amp; in)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Read the parameter file block. </para>
+</para>
+
+<para>Inherited from <link linkend="_classUtil_1_1ParamComponent">ParamComponent</link>. This function reads the entire parameter block for this <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link>, including an opening line, which is of the form &quot;ClassName{&quot;, and the closing line, which contains only a closing bracket, &quot;}&quot;. The default implementation reads the opening line (a <link linkend="_classUtil_1_1Begin">Begin</link> object), calls the virtual readParameters function to read the body of the block, and reads the closing line (an <link linkend="_classUtil_1_1End">End</link> object).</para>
+
+<para>
+                <formalpara>
+                    <title>
+Exceptions                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>Throws</entry>
+                                <entry>
+<para>if the string in the opening line does not match the string returned by the classname() function.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream for reading </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Implements <link linkend="_classUtil_1_1ParamComponent_1a5234b604f9e852f53eedd7de7c354a1e">Util::ParamComponent</link>.</para>
+<para>
+Reimplemented in <link linkend="_classUtil_1_1Manager_1a115f9d62a9e538f20660683eb0eb3a10">Util::Manager&lt; Data &gt;</link>.</para>
+<para>
+Definition at line 88 of file ParamComposite.cpp.</para>
+<para>
+References readBegin(), readEnd(), and readParameters().</para>
+<para>
+Referenced by readParamComposite().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1aba5de04c5db452000b044e0331ad5182"/>    <section>
+    <title>readParamOptional()</title>
+<indexterm><primary>readParamOptional</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>readParamOptional</secondary></indexterm>
+<para><computeroutput>void Util::ParamComposite::readParamOptional (std::istream &amp; in)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Read optional parameter file block. </para>
+</para>
+
+<para>Read an optional <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link>. This function must use a Label() object to read the opening &quot;ClassName{&quot; line, and then continues to read the rest of the block if and only if the class name in the opening line matches the string returned by the classname() function.</para>
+
+<para>If the first line matches, the default implementation calls the <link linkend="_classUtil_1_1ParamComposite_1a172a3a656b5829c8d758424ad09a22a6">readParameters()</link> member function to read the body of the block, and then reads the ending line.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream for reading </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Reimplemented in <link linkend="_classUtil_1_1Manager_1a901abf6562a55d743ee848a959e32b43">Util::Manager&lt; Data &gt;</link>.</para>
+<para>
+Definition at line 101 of file ParamComposite.cpp.</para>
+<para>
+References Util::Begin::isActive(), readBegin(), readEnd(), and readParameters().</para>
+<para>
+Referenced by readParamCompositeOptional().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a172a3a656b5829c8d758424ad09a22a6"/>    <section>
+    <title>readParameters()</title>
+<indexterm><primary>readParameters</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>readParameters</secondary></indexterm>
+<para><computeroutput>virtual void Util::ParamComposite::readParameters (std::istream &amp; in)<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Read the body of parameter block, without begin and end lines. </para>
+</para>
+
+<para>Most subclasses of <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link> should re-implement this function, which has an empty default implementation. Every subclass of Paramcomposite must either: (1) Re-implement this function and rely on the default implementation of <link linkend="_classUtil_1_1ParamComposite_1a6fc094b057fd9a21641b089f6f063b39">readParam()</link>, which calls this function. (2) Re-implement <link linkend="_classUtil_1_1ParamComposite_1a6fc094b057fd9a21641b089f6f063b39">readParam()</link> itself. Option (1) is far more common. Option (2) is required only for classes that require a non-standard treatment of the beginning and ending lines (e.g., the <link linkend="_classUtil_1_1Manager">Manager</link> class template).</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream for reading </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Reimplemented in <link linkend="_classUtil_1_1FileMaster_1a7feb4503d8a177959fb2e9625d74de7e">Util::FileMaster</link>, <link linkend="_classUtil_1_1Manager_1a5b2ac54cc08ef23b910cef70be60d6d3">Util::Manager&lt; Data &gt;</link>, <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture_1ade33c91c8055983824e6068d8a81b7e3">Pscf::Pspg::Continuous::Mixture&lt; D &gt;</link>, <link linkend="_classUtil_1_1AutoCorrArray_1ad8a9f63ad088f3ed81f0775c264ff4ee">Util::AutoCorrArray&lt; Data, Product &gt;</link>, <link linkend="_classUtil_1_1AutoCorr_1a7dcfa34d57be15afe284b145fb0567cf">Util::AutoCorr&lt; Data, Product &gt;</link>, <link linkend="_classPscf_1_1PolymerTmpl_1a073d3ff2294ca1fa5dc34274cc6cb3e2">Pscf::PolymerTmpl&lt; Block &gt;</link>, <link linkend="_classPscf_1_1PolymerTmpl_1a073d3ff2294ca1fa5dc34274cc6cb3e2">Pscf::PolymerTmpl&lt; Block&lt; D &gt; &gt;</link>, <link linkend="_classUtil_1_1TensorAverage_1aa80ddc967d68329ab18e3f3c3ad9709a">Util::TensorAverage</link>, <link linkend="_classUtil_1_1SymmTensorAverage_1a52499c115d2758ac4c29d1a831fbb362">Util::SymmTensorAverage</link>, <link linkend="_classUtil_1_1Random_1a0a5f4eb6295c6ca1845678f7bfa9e978">Util::Random</link>, <link linkend="_classUtil_1_1Average_1aa6d118dd419b70295caa1aa099d76d65">Util::Average</link>, <link linkend="_classUtil_1_1MeanSqDispArray_1afae35393613b540dd3b75a56e2534bac">Util::MeanSqDispArray&lt; Data &gt;</link>, <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1AmIterator_1adc04d2fd46fcee0916ceea66c0e16c90">Pscf::Pspg::Continuous::AmIterator&lt; D &gt;</link>, <link linkend="_classPscf_1_1Pspg_1_1Discrete_1_1DMixtureTmpl_1acb6135610d322101f86d96b19ac33d94">Pscf::Pspg::Discrete::DMixtureTmpl&lt; TP, TS &gt;</link>, <link linkend="_classPscf_1_1Pspg_1_1Discrete_1_1DMixtureTmpl_1acb6135610d322101f86d96b19ac33d94">Pscf::Pspg::Discrete::DMixtureTmpl&lt; DPolymer&lt; D &gt;, Solvent&lt; D &gt; &gt;</link>, <link linkend="_classUtil_1_1Distribution_1aa17b76198720c790eb82e679c7a3beb1">Util::Distribution</link>, <link linkend="_classPscf_1_1Homogeneous_1_1Molecule_1a8b2106c7c5cce72b5e96b89b1fceb105">Pscf::Homogeneous::Molecule</link>, <link linkend="_classUtil_1_1IntDistribution_1ab695bed90eeb459958e0159262c766b8">Util::IntDistribution</link>, <link linkend="_classPscf_1_1MixtureTmpl_1add538e69f3ef64693601a88d9db7d766">Pscf::MixtureTmpl&lt; TP, TS &gt;</link>, <link linkend="_classPscf_1_1MixtureTmpl_1add538e69f3ef64693601a88d9db7d766">Pscf::MixtureTmpl&lt; Polymer&lt; D &gt;, Solvent&lt; D &gt; &gt;</link>, <link linkend="_classPscf_1_1Homogeneous_1_1Mixture_1a257d53740114379b461bc321547c0259">Pscf::Homogeneous::Mixture</link>, <link linkend="_classPscf_1_1Pspg_1_1Discrete_1_1DMixture_1ac69de1bf34c84a1c652c5cec80d52dd7">Pscf::Pspg::Discrete::DMixture&lt; D &gt;</link>, <link linkend="_classUtil_1_1RadialDistribution_1a175f764d799d9aaad70fe554ec767514">Util::RadialDistribution</link>, <link linkend="_classPscf_1_1Pspg_1_1Discrete_1_1AmIterator_1ac0518d7d3f1907a4b3bfc92e1547e037">Pscf::Pspg::Discrete::AmIterator&lt; D &gt;</link>, <link linkend="_classUtil_1_1AutoCorrelation_1a9cf931113574f743fd88b9b6ee88d565">Util::AutoCorrelation&lt; Data, Product &gt;</link>, <link linkend="_classPscf_1_1ChiInteraction_1acd4c544476b17be55d890ebcf1a2f66f">Pscf::ChiInteraction</link>, <link linkend="_classPscf_1_1DPolymerTmpl_1a28775d7c4a63b1911592614cbcdadef4">Pscf::DPolymerTmpl&lt; Bond &gt;</link>, and <link linkend="_classPscf_1_1DPolymerTmpl_1a28775d7c4a63b1911592614cbcdadef4">Pscf::DPolymerTmpl&lt; Bond&lt; D &gt; &gt;</link>.</para>
+<para>
+Definition at line 180 of file ParamComposite.h.</para>
+<para>
+Referenced by readParam(), and readParamOptional().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1addf0c36c3560471bfe47f0be008575b9"/>    <section>
+    <title>writeParam()</title>
+<indexterm><primary>writeParam</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>writeParam</secondary></indexterm>
+<para><computeroutput>void Util::ParamComposite::writeParam (std::ostream &amp; out)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Write all parameters to an output stream. </para>
+</para>
+
+<para>The default implementation iterates through the format array, and calls the <link linkend="_classUtil_1_1ParamComposite_1a6fc094b057fd9a21641b089f6f063b39">readParam()</link> member function of each <link linkend="_classUtil_1_1ParamComponent">ParamComponent</link> in the array. This is sufficient for most subclasses.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>out</entry>
+                                <entry>
+<para>output stream for reading </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Implements <link linkend="_classUtil_1_1ParamComponent_1ac17d6ab63f9b0e5f966d6a3cfbc26d86">Util::ParamComponent</link>.</para>
+<para>
+Definition at line 119 of file ParamComposite.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a02a1172d7cd86d4015be8d9e65fe750f"/>    <section>
+    <title>load()</title>
+<indexterm><primary>load</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>load</secondary></indexterm>
+<para><computeroutput>void Util::ParamComposite::load (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp; ar)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Load all parameters from an input archive. </para>
+</para>
+
+<para>This function is inherited from <link linkend="_classUtil_1_1Serializable">Serializable</link>. The default implementation of <link linkend="_classUtil_1_1ParamComposite_1a02a1172d7cd86d4015be8d9e65fe750f">ParamComposite::load()</link> calls loadParameters, and adds <link linkend="_classUtil_1_1Begin">Begin</link> and <link linkend="_classUtil_1_1End">End</link> lines to the format array.. All subclasses of <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link> should overload the virtual loadParameters member function.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>input/loading archive. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Reimplemented from <link linkend="_classUtil_1_1ParamComponent_1a7925e60ccaf7ecf2ea866e689983124d">Util::ParamComponent</link>.</para>
+<para>
+Reimplemented in <link linkend="_classUtil_1_1AutoCorrelation_1acbc41a7ab175fcd6422ab15b05886840">Util::AutoCorrelation&lt; Data, Product &gt;</link>.</para>
+<para>
+Definition at line 131 of file ParamComposite.cpp.</para>
+<para>
+References addBegin(), addEnd(), Util::ParamComponent::echo(), Util::Log::file(), Util::MpiFileIo::isIoProcessor(), loadParameters(), Util::End::writeParam(), and Util::Begin::writeParam().</para>
+<para>
+Referenced by loadOptional(), and loadParamComposite().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a067f4d25096ebf9541117e938c60535c"/>    <section>
+    <title>loadOptional()</title>
+<indexterm><primary>loadOptional</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>loadOptional</secondary></indexterm>
+<para><computeroutput>void Util::ParamComposite::loadOptional (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp; ar)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Load an optional <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link>. </para>
+</para>
+
+<para>Loads isActive, and calls load(ar) if active.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>input/loading archive. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 152 of file ParamComposite.cpp.</para>
+<para>
+References Util::bcast&lt; bool &gt;(), className(), Util::ParamComponent::echo(), Util::Log::file(), Util::MpiFileIo::hasIoCommunicator(), Util::ParamComponent::indent(), Util::MpiFileIo::ioCommunicator(), Util::MpiFileIo::isIoProcessor(), load(), and UTIL_THROW.</para>
+<para>
+Referenced by loadParamCompositeOptional().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1adec07dcba0895ba69463147314cde7ce"/>    <section>
+    <title>loadParameters()</title>
+<indexterm><primary>loadParameters</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>loadParameters</secondary></indexterm>
+<para><computeroutput>virtual void Util::ParamComposite::loadParameters (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp; ar)<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Load state from archive, without adding <link linkend="_classUtil_1_1Begin">Begin</link> and <link linkend="_classUtil_1_1End">End</link> lines. </para>
+</para>
+
+<para>This function should be re-implemented by all subclasses that have an internal state that should be saved in a restart file. The default implementation is empty. Subclass implementations should load the entire internal state from the archive, including parameters that appear in the parameter file and any persistent private member variables that do not appear in the parameter file.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>input/loading archive. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Reimplemented in <link linkend="_classUtil_1_1FileMaster_1adbbb16a44ffcad1347d963d2539fea49">Util::FileMaster</link>, <link linkend="_classUtil_1_1Manager_1a5c6bbf9162def94ca3cbffb11d29596c">Util::Manager&lt; Data &gt;</link>, <link linkend="_classUtil_1_1AutoCorrArray_1afbfcce2492f5dcb5cf0212c8eeb7bc92">Util::AutoCorrArray&lt; Data, Product &gt;</link>, <link linkend="_classUtil_1_1AutoCorr_1ad788e03b33b19cc65fd2620be64a5a15">Util::AutoCorr&lt; Data, Product &gt;</link>, <link linkend="_classUtil_1_1Average_1a786731986dc750f59cdbc8f57dbc3783">Util::Average</link>, <link linkend="_classUtil_1_1MeanSqDispArray_1ab773e0f5872f42a03c6b86890d932702">Util::MeanSqDispArray&lt; Data &gt;</link>, <link linkend="_classUtil_1_1Distribution_1add46e8d406f9bf6703f4a95bb120d776">Util::Distribution</link>, <link linkend="_classUtil_1_1TensorAverage_1a829cd46caa6f5cff6369b758a0feba26">Util::TensorAverage</link>, <link linkend="_classUtil_1_1SymmTensorAverage_1a25445a4678141cd1de7c616f1f6f6186">Util::SymmTensorAverage</link>, <link linkend="_classUtil_1_1Random_1a3aa452ad91349afc2c3c08b00db64510">Util::Random</link>, <link linkend="_classUtil_1_1IntDistribution_1a7781731f84a20e4f10990cc1baffdc80">Util::IntDistribution</link>, and <link linkend="_classUtil_1_1RadialDistribution_1a3463af5c9aa4e3742db1ddb04b3e0ee1">Util::RadialDistribution</link>.</para>
+<para>
+Definition at line 233 of file ParamComposite.h.</para>
+<para>
+Referenced by load().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a3c430a4e31a9573eadb06ab89d3bf780"/>    <section>
+    <title>save()</title>
+<indexterm><primary>save</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>save</secondary></indexterm>
+<para><computeroutput>void Util::ParamComposite::save (<link linkend="_classUtil_1_1Serializable_1aca43a1eea5ec5f13189a57892a7a6d04">Serializable::OArchive</link> &amp; ar)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Saves all parameters to an archive. </para>
+</para>
+
+<para>The default implementation simply calls the save function for all items in the parameter file format array. This is often not sufficient. Specifically, it is not sufficient for classes that contain any persistent member variables that do not appear in the parameter file format.</para>
+
+<para>If a class also defines a serialize function template, which allows instances to be serialized to any type of archive, then the save function can often be implemented as follows: <literallayout><computeroutput>void&#32;save(Serializable::OArchive&amp;&#32;ar)
+{&#32;ar&#32;&amp;&#32;*this;&#32;}
+</computeroutput></literallayout></para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>output/saving archive. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Reimplemented from <link linkend="_classUtil_1_1ParamComponent_1a433717dd5bb0a1ac3e4dec06459b7bde">Util::ParamComponent</link>.</para>
+<para>
+Reimplemented in <link linkend="_classUtil_1_1FileMaster_1a242dce8b12bc4a5d8539308f2a702500">Util::FileMaster</link>, <link linkend="_classUtil_1_1Manager_1a676a1b986d066d8cd6a303f369d7403f">Util::Manager&lt; Data &gt;</link>, <link linkend="_classUtil_1_1AutoCorrArray_1aecc9a9d807bf780d2b5f0405f0f2f642">Util::AutoCorrArray&lt; Data, Product &gt;</link>, <link linkend="_classUtil_1_1AutoCorr_1add693694d3f06a007ff10fa46d804bfb">Util::AutoCorr&lt; Data, Product &gt;</link>, <link linkend="_classUtil_1_1Average_1a6bb1a12d32f87d40483ae7bb0d8c4708">Util::Average</link>, <link linkend="_classUtil_1_1MeanSqDispArray_1ad0a01b9aeba80e0421fd0416db7fbb51">Util::MeanSqDispArray&lt; Data &gt;</link>, <link linkend="_classUtil_1_1Distribution_1a7ca406d44ab9c1c6ab2594882196d807">Util::Distribution</link>, <link linkend="_classUtil_1_1TensorAverage_1a88d6b99a9fbac6185490c5508f8805e4">Util::TensorAverage</link>, <link linkend="_classUtil_1_1SymmTensorAverage_1adbf1f3a1efc1eac27d43516d8490e7a9">Util::SymmTensorAverage</link>, <link linkend="_classUtil_1_1Random_1aff18b17a0f4d6383d8ed881a8910b3b8">Util::Random</link>, <link linkend="_classUtil_1_1IntDistribution_1a7fe2cf76d34574e8cdfa52735438b484">Util::IntDistribution</link>, <link linkend="_classUtil_1_1RadialDistribution_1a51fa4e62a87856912ec2d6d9b9cf8cb3">Util::RadialDistribution</link>, and <link linkend="_classUtil_1_1AutoCorrelation_1adc342d958fd2ab000573de8100c91043">Util::AutoCorrelation&lt; Data, Product &gt;</link>.</para>
+<para>
+Definition at line 188 of file ParamComposite.cpp.</para>
+<para>
+Referenced by saveOptional().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a2c9251eab18931fd6f357ff811e3fa0e"/>    <section>
+    <title>saveOptional()</title>
+<indexterm><primary>saveOptional</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>saveOptional</secondary></indexterm>
+<para><computeroutput>void Util::ParamComposite::saveOptional (<link linkend="_classUtil_1_1Serializable_1aca43a1eea5ec5f13189a57892a7a6d04">Serializable::OArchive</link> &amp; ar)</computeroutput></para><para>
+
+<para>Saves isActive flag, and then calls <link linkend="_classUtil_1_1ParamComposite_1a3c430a4e31a9573eadb06ab89d3bf780">save()</link> iff isActive is true. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>output/saving archive. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 198 of file ParamComposite.cpp.</para>
+<para>
+References save().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1ab2372dcc5d7d8db632b2b9844caf206e"/>    <section>
+    <title>readParamComposite()</title>
+<indexterm><primary>readParamComposite</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>readParamComposite</secondary></indexterm>
+<para><computeroutput>void Util::ParamComposite::readParamComposite (std::istream &amp; in, <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link> &amp; child, bool next = <computeroutput>true</computeroutput>
+)</computeroutput></para><para>
+
+<para>Add and read a required child <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream for reading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>child</entry>
+                                <entry>
+<para>child <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link> object </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>next</entry>
+                                <entry>
+<para>true if the indent level is one higher than parent. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 260 of file ParamComposite.cpp.</para>
+<para>
+References addParamComposite(), and readParam().</para>
+<para>
+Referenced by Pscf::Homogeneous::Mixture::readParameters().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1ac7f91287ff57b0cd8180b9ac18c4368d"/>    <section>
+    <title>readParamCompositeOptional()</title>
+<indexterm><primary>readParamCompositeOptional</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>readParamCompositeOptional</secondary></indexterm>
+<para><computeroutput>void Util::ParamComposite::readParamCompositeOptional (std::istream &amp; in, <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link> &amp; child, bool next = <computeroutput>true</computeroutput>
+)</computeroutput></para><para>
+
+<para>Add and attempt to read an optional child <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream for reading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>child</entry>
+                                <entry>
+<para>child <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link> object </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>next</entry>
+                                <entry>
+<para>true if the indent level is one higher than parent. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 271 of file ParamComposite.cpp.</para>
+<para>
+References addParamComposite(), and readParamOptional().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a21c4ae1412ec944d4189cb7c7b6a3171"/>    <section>
+    <title>read()</title>
+<indexterm><primary>read</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>read</secondary></indexterm>
+<computeroutput>template&lt;typename Type &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1ScalarParam">ScalarParam</link>&lt; Type &gt; &amp; Util::ParamComposite::read (std::istream &amp; in, const char * label, Type &amp; value)</computeroutput></para><para>
+
+<para>Add and read a new required <link linkend="_classUtil_1_1ScalarParam">ScalarParam</link> &lt; Type &gt; object. </para>
+</para>
+
+<para>This is equivalent to ScalarParam&lt;Type&gt;(in, label, value, true).</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream for reading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>label</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Label">Label</link> string </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>value</entry>
+                                <entry>
+<para>reference to new ScalarParam&lt; Type &gt; </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 1156 of file ParamComposite.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a5d9f133993e0aa0b18cd59938ccf8700"/>    <section>
+    <title>readOptional()</title>
+<indexterm><primary>readOptional</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>readOptional</secondary></indexterm>
+<computeroutput>template&lt;typename Type &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1ScalarParam">ScalarParam</link>&lt; Type &gt; &amp; Util::ParamComposite::readOptional (std::istream &amp; in, const char * label, Type &amp; value)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Add and read a new optional <link linkend="_classUtil_1_1ScalarParam">ScalarParam</link> &lt; Type &gt; object. </para>
+</para>
+
+<para>This is equivalent to ScalarParam&lt;Type&gt;(in, label, value, false).</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream for reading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>label</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Label">Label</link> string </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>value</entry>
+                                <entry>
+<para>reference to new ScalarParam&lt; Type &gt; </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 1164 of file ParamComposite.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a6dced9ce4f0877f1f783b8df65dc99e8"/>    <section>
+    <title>readCArray()</title>
+<indexterm><primary>readCArray</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>readCArray</secondary></indexterm>
+<computeroutput>template&lt;typename Type &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1CArrayParam">CArrayParam</link>&lt; Type &gt; &amp; Util::ParamComposite::readCArray (std::istream &amp; in, const char * label, Type * value, int n)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Add and read a required C array parameter. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream for reading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>label</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Label">Label</link> string for new array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>value</entry>
+                                <entry>
+<para>pointer to array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>n</entry>
+                                <entry>
+<para>number of elements </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to the new CArrayParam&lt;Type&gt; object </para>
+</formalpara>
+</para>
+<para>
+Definition at line 1231 of file ParamComposite.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1ab87b838fe901442cb5df608cc007bb74"/>    <section>
+    <title>readOptionalCArray()</title>
+<indexterm><primary>readOptionalCArray</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>readOptionalCArray</secondary></indexterm>
+<computeroutput>template&lt;typename Type &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1CArrayParam">CArrayParam</link>&lt; Type &gt; &amp; Util::ParamComposite::readOptionalCArray (std::istream &amp; in, const char * label, Type * value, int n)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Add and read an optional C array parameter. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream for reading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>label</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Label">Label</link> string for new array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>value</entry>
+                                <entry>
+<para>pointer to array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>n</entry>
+                                <entry>
+<para>number of elements </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to the new CArrayParam&lt;Type&gt; object </para>
+</formalpara>
+</para>
+<para>
+Definition at line 1240 of file ParamComposite.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a1592472a30ff22139667f019b3e2026f"/>    <section>
+    <title>readDArray()</title>
+<indexterm><primary>readDArray</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>readDArray</secondary></indexterm>
+<computeroutput>template&lt;typename Type &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1DArrayParam">DArrayParam</link>&lt; Type &gt; &amp; Util::ParamComposite::readDArray (std::istream &amp; in, const char * label, <link linkend="_classUtil_1_1DArray">DArray</link>&lt; Type &gt; &amp; array, int n)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Add and read a required <link linkend="_classUtil_1_1DArray">DArray</link> &lt; Type &gt; parameter. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream for reading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>label</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Label">Label</link> string for new array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>array</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1DArray">DArray</link> object </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>n</entry>
+                                <entry>
+<para>number of elements </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to the new DArrayParam&lt;Type&gt; object </para>
+</formalpara>
+</para>
+<para>
+Definition at line 1308 of file ParamComposite.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a16d3c358ee160a8fbbbf415993f7beb5"/>    <section>
+    <title>readOptionalDArray()</title>
+<indexterm><primary>readOptionalDArray</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>readOptionalDArray</secondary></indexterm>
+<computeroutput>template&lt;typename Type &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1DArrayParam">DArrayParam</link>&lt; Type &gt; &amp; Util::ParamComposite::readOptionalDArray (std::istream &amp; in, const char * label, <link linkend="_classUtil_1_1DArray">DArray</link>&lt; Type &gt; &amp; array, int n)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Add and read an optional <link linkend="_classUtil_1_1DArray">DArray</link> &lt; Type &gt; parameter. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream for reading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>label</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Label">Label</link> string for new array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>array</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1DArray">DArray</link> object </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>n</entry>
+                                <entry>
+<para>number of elements </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to the new DArrayParam&lt;Type&gt; object </para>
+</formalpara>
+</para>
+<para>
+Definition at line 1318 of file ParamComposite.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a27d47127c750fc10bdc57bf4eb379822"/>    <section>
+    <title>readFArray()</title>
+<indexterm><primary>readFArray</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>readFArray</secondary></indexterm>
+<computeroutput>template&lt;typename Type , int N&gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1FArrayParam">FArrayParam</link>&lt; Type, N &gt; &amp; Util::ParamComposite::readFArray (std::istream &amp; in, const char * label, <link linkend="_classUtil_1_1FArray">FArray</link>&lt; Type, N &gt; &amp; array)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Add and read a required <link linkend="_classUtil_1_1FArray">FArray</link> &lt; Type, N &gt; array parameter. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream for reading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>label</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Label">Label</link> string for new array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>array</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1FArray">FArray</link> object </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to the new FArrayParam&lt;Type, N&gt; object </para>
+</formalpara>
+</para>
+<para>
+Definition at line 1386 of file ParamComposite.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a1890a33d6049597e65bebfdeedcf0249"/>    <section>
+    <title>readOptionalFArray()</title>
+<indexterm><primary>readOptionalFArray</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>readOptionalFArray</secondary></indexterm>
+<computeroutput>template&lt;typename Type , int N&gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1FArrayParam">FArrayParam</link>&lt; Type, N &gt; &amp; Util::ParamComposite::readOptionalFArray (std::istream &amp; in, const char * label, <link linkend="_classUtil_1_1FArray">FArray</link>&lt; Type, N &gt; &amp; array)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Add and read an optional <link linkend="_classUtil_1_1FArray">FArray</link> &lt; Type, N &gt; array parameter. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream for reading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>label</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Label">Label</link> string for new array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>array</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1FArray">FArray</link> object </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to the new FArrayParam&lt;Type, N&gt; object </para>
+</formalpara>
+</para>
+<para>
+Definition at line 1396 of file ParamComposite.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a56014258b358c1199253b35da6ebe788"/>    <section>
+    <title>readCArray2D()</title>
+<indexterm><primary>readCArray2D</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>readCArray2D</secondary></indexterm>
+<computeroutput>template&lt;typename Type &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1CArray2DParam">CArray2DParam</link>&lt; Type &gt; &amp; Util::ParamComposite::readCArray2D (std::istream &amp; in, const char * label, Type * value, int m, int n, int np)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Add and read a required <link linkend="_classUtil_1_1CArray2DParam">CArray2DParam</link> &lt; Type &gt; 2D C-array. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream for reading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>label</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Label">Label</link> string for new array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>value</entry>
+                                <entry>
+<para>pointer to array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>m</entry>
+                                <entry>
+<para>number of rows (1st dimension) </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>n</entry>
+                                <entry>
+<para>logical number of columns (2nd dimension) </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>np</entry>
+                                <entry>
+<para>physical number of columns (elements allocated per row) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to the CArray2DParam&lt;Type&gt; object </para>
+</formalpara>
+</para>
+<para>
+Definition at line 1456 of file ParamComposite.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1af935dd640065219665505094ef0ace20"/>    <section>
+    <title>readOptionalCArray2D()</title>
+<indexterm><primary>readOptionalCArray2D</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>readOptionalCArray2D</secondary></indexterm>
+<computeroutput>template&lt;typename Type &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1CArray2DParam">CArray2DParam</link>&lt; Type &gt; &amp; Util::ParamComposite::readOptionalCArray2D (std::istream &amp; in, const char * label, Type * value, int m, int n, int np)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Add and read an optional <link linkend="_classUtil_1_1CArray2DParam">CArray2DParam</link> &lt; Type &gt; 2D C-array parameter. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream for reading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>label</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Label">Label</link> string for new array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>value</entry>
+                                <entry>
+<para>pointer to array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>m</entry>
+                                <entry>
+<para>number of rows (1st dimension) </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>n</entry>
+                                <entry>
+<para>logical number of columns (2nd dimension) </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>np</entry>
+                                <entry>
+<para>physical number of columns (elements allocated per row) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to the CArray2DParam&lt;Type&gt; object </para>
+</formalpara>
+</para>
+<para>
+Definition at line 1465 of file ParamComposite.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a33a1a1a323f812538e59639e1f01d0b3"/>    <section>
+    <title>readDMatrix()</title>
+<indexterm><primary>readDMatrix</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>readDMatrix</secondary></indexterm>
+<computeroutput>template&lt;typename Type &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1DMatrixParam">DMatrixParam</link>&lt; Type &gt; &amp; Util::ParamComposite::readDMatrix (std::istream &amp; in, const char * label, <link linkend="_classUtil_1_1DMatrix">DMatrix</link>&lt; Type &gt; &amp; matrix, int m, int n)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Add and read a required <link linkend="_classUtil_1_1DMatrix">DMatrix</link> &lt; Type &gt; matrix parameter. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream for reading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>label</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Label">Label</link> string for new array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>matrix</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1DMatrix">DMatrix</link> object </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>m</entry>
+                                <entry>
+<para>number of rows (1st dimension) </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>n</entry>
+                                <entry>
+<para>number of columns (2nd dimension) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to the DMatrixParam&lt;Type&gt; object </para>
+</formalpara>
+</para>
+<para>
+Definition at line 1538 of file ParamComposite.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1ae1c1d685198f71875ba8a31371582c3d"/>    <section>
+    <title>readOptionalDMatrix()</title>
+<indexterm><primary>readOptionalDMatrix</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>readOptionalDMatrix</secondary></indexterm>
+<computeroutput>template&lt;typename Type &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1DMatrixParam">DMatrixParam</link>&lt; Type &gt; &amp; Util::ParamComposite::readOptionalDMatrix (std::istream &amp; in, const char * label, <link linkend="_classUtil_1_1DMatrix">DMatrix</link>&lt; Type &gt; &amp; matrix, int m, int n)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Add and read an optional <link linkend="_classUtil_1_1DMatrix">DMatrix</link> &lt; Type &gt; matrix parameter. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream for reading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>label</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Label">Label</link> string for new array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>matrix</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1DMatrix">DMatrix</link> object </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>m</entry>
+                                <entry>
+<para>number of rows (1st dimension) </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>n</entry>
+                                <entry>
+<para>number of columns (2nd dimension) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to the DMatrixParam&lt;Type&gt; object </para>
+</formalpara>
+</para>
+<para>
+Definition at line 1547 of file ParamComposite.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a0f9f731e59f4e06ebcccfde67fa3cf5c"/>    <section>
+    <title>readDSymmMatrix()</title>
+<indexterm><primary>readDSymmMatrix</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>readDSymmMatrix</secondary></indexterm>
+<computeroutput>template&lt;typename Type &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1DSymmMatrixParam">DSymmMatrixParam</link>&lt; Type &gt; &amp; Util::ParamComposite::readDSymmMatrix (std::istream &amp; in, const char * label, <link linkend="_classUtil_1_1DMatrix">DMatrix</link>&lt; Type &gt; &amp; matrix, int n)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Add and read a required symmetrix <link linkend="_classUtil_1_1DMatrix">DMatrix</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream for reading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>label</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Label">Label</link> string for new array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>matrix</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1DMatrix">DMatrix</link> object </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>n</entry>
+                                <entry>
+<para>number of rows or columns </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to the DMatrixParam&lt;Type&gt; object </para>
+</formalpara>
+</para>
+<para>
+Definition at line 1603 of file ParamComposite.h.</para>
+<para>
+Referenced by Pscf::ChiInteraction::readParameters().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1ab569a175355c9497a307fa4b8579db9c"/>    <section>
+    <title>readOptionalDSymmMatrix()</title>
+<indexterm><primary>readOptionalDSymmMatrix</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>readOptionalDSymmMatrix</secondary></indexterm>
+<computeroutput>template&lt;typename Type &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1DSymmMatrixParam">DSymmMatrixParam</link>&lt; Type &gt; &amp; Util::ParamComposite::readOptionalDSymmMatrix (std::istream &amp; in, const char * label, <link linkend="_classUtil_1_1DMatrix">DMatrix</link>&lt; Type &gt; &amp; matrix, int n)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Add and read an optional <link linkend="_classUtil_1_1DMatrix">DMatrix</link> matrix parameter. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream for reading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>label</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Label">Label</link> string for new array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>matrix</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1DMatrix">DMatrix</link> object </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>n</entry>
+                                <entry>
+<para>number of rows or columns </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to the DMatrixParam&lt;Type&gt; object </para>
+</formalpara>
+</para>
+<para>
+Definition at line 1614 of file ParamComposite.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a2a1e9996c7818c10ae75f42ed8576f7c"/>    <section>
+    <title>readBegin()</title>
+<indexterm><primary>readBegin</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>readBegin</secondary></indexterm>
+<para><computeroutput><link linkend="_classUtil_1_1Begin">Begin</link> &amp; Util::ParamComposite::readBegin (std::istream &amp; in, const char * label, bool isRequired = <computeroutput>true</computeroutput>
+)</computeroutput></para><para>
+
+<para>Add and read a class label and opening bracket. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream for reading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>label</entry>
+                                <entry>
+<para>class name string, without trailing bracket </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>isRequired</entry>
+                                <entry>
+<para>Is this the beginning of a required element? </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to the new <link linkend="_classUtil_1_1Begin">Begin</link> object </para>
+</formalpara>
+</para>
+<para>
+Definition at line 316 of file ParamComposite.cpp.</para>
+<para>
+References addComponent(), Util::Begin::isActive(), isRequired(), Util::Begin::readParam(), and setParent().</para>
+<para>
+Referenced by readParam(), and readParamOptional().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1ad688a41bbbd4d5c88d72c0edc7b1f55c"/>    <section>
+    <title>readEnd()</title>
+<indexterm><primary>readEnd</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>readEnd</secondary></indexterm>
+<para><computeroutput><link linkend="_classUtil_1_1End">End</link> &amp; Util::ParamComposite::readEnd (std::istream &amp; in)</computeroutput></para><para>
+
+<para>Add and read the closing bracket. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream for reading </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to the new <link linkend="_classUtil_1_1End">End</link> object </para>
+</formalpara>
+</para>
+<para>
+Definition at line 344 of file ParamComposite.cpp.</para>
+<para>
+References addEnd(), and Util::End::readParam().</para>
+<para>
+Referenced by readParam(), and readParamOptional().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1aa4e99b175d55ee6e1cbdfe99c3cbf8e5"/>    <section>
+    <title>readBlank()</title>
+<indexterm><primary>readBlank</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>readBlank</secondary></indexterm>
+<para><computeroutput><link linkend="_classUtil_1_1Blank">Blank</link> &amp; Util::ParamComposite::readBlank (std::istream &amp; in)</computeroutput></para><para>
+
+<para>Add and read a new <link linkend="_classUtil_1_1Blank">Blank</link> object, representing a blank line. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream for reading </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to the new <link linkend="_classUtil_1_1Blank">Blank</link> object </para>
+</formalpara>
+</para>
+<para>
+Definition at line 367 of file ParamComposite.cpp.</para>
+<para>
+References addBlank(), and Util::Blank::readParam().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a5f0b72c058b5a9913cfc289a3d4586ed"/>    <section>
+    <title>loadParamComposite()</title>
+<indexterm><primary>loadParamComposite</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>loadParamComposite</secondary></indexterm>
+<para><computeroutput>void Util::ParamComposite::loadParamComposite (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp; ar, <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link> &amp; child, bool next = <computeroutput>true</computeroutput>
+)</computeroutput></para><para>
+
+<para>Add and load a required child <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>input archive for loading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>child</entry>
+                                <entry>
+<para>child <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link> object </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>next</entry>
+                                <entry>
+<para>true if the indent level is one higher than parent. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 282 of file ParamComposite.cpp.</para>
+<para>
+References addParamComposite(), and load().</para>
+<para>
+Referenced by Util::Factory&lt; Data &gt;::loadObject().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a97b9e724ba046ecb03434a914bb0b18c"/>    <section>
+    <title>loadParamCompositeOptional()</title>
+<indexterm><primary>loadParamCompositeOptional</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>loadParamCompositeOptional</secondary></indexterm>
+<para><computeroutput>void Util::ParamComposite::loadParamCompositeOptional (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp; ar, <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link> &amp; child, bool next = <computeroutput>true</computeroutput>
+)</computeroutput></para><para>
+
+<para>Add and load an optional child <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link> if isActive. </para>
+</para>
+
+<para>This functional loads the isActive flag, and then calls the load function of the child iff isActive is true.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>input archive for loading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>child</entry>
+                                <entry>
+<para>child <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link> object </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>next</entry>
+                                <entry>
+<para>true if the indent level is one higher than parent. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 293 of file ParamComposite.cpp.</para>
+<para>
+References addParamComposite(), and loadOptional().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a805ce06f94ee840c17586d2d1b58c994"/>    <section>
+    <title>loadParameter()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>loadParameter</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>loadParameter</secondary></indexterm>
+<computeroutput>template&lt;typename Type &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1ScalarParam">ScalarParam</link>&lt; Type &gt; &amp; Util::ParamComposite::loadParameter (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp; ar, const char * label, Type &amp; value, bool isRequired)</computeroutput></para><para>
+
+<para>Add and load a new <link linkend="_classUtil_1_1ScalarParam">ScalarParam</link> &lt; Type &gt; object. </para>
+</para>
+
+<para>An optional parameter is indicated by setting isRequired = false. Optional parameters must be saved using the <link linkend="_classUtil_1_1Parameter_1ae33aacac251a07bbc7cc98cce9dbed80">Parameter::saveOptional()</link> static member function.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>archive for loading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>label</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Label">Label</link> string </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>value</entry>
+                                <entry>
+<para>reference to the Type variable </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>isRequired</entry>
+                                <entry>
+<para>Is this a required parameter? </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to the new <link linkend="_classUtil_1_1ScalarParam">ScalarParam</link> &lt; Type &gt; object </para>
+</formalpara>
+</para>
+<para>
+Definition at line 1173 of file ParamComposite.h.</para>
+<para>
+References addComponent(), isRequired(), Util::Parameter::load(), and setParent().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a96e7cfe2cf1d0bd0ac9b75ff880278c4"/>    <section>
+    <title>loadParameter()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>loadParameter</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>loadParameter</secondary></indexterm>
+<computeroutput>template&lt;typename Type &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1ScalarParam">ScalarParam</link>&lt; Type &gt; &amp; Util::ParamComposite::loadParameter (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp; ar, const char * label, Type &amp; value)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Add and load new required <link linkend="_classUtil_1_1ScalarParam">ScalarParam</link> &lt; Type &gt; object. </para>
+</para>
+
+<para>Equivalent to loadParameter &lt; Type &gt; (ar, label, value, true).</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>archive for loading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>label</entry>
+                                <entry>
+<para>label string </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>value</entry>
+                                <entry>
+<para>reference to the Type variable </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to the new <link linkend="_classUtil_1_1ScalarParam">ScalarParam</link> &lt; Type &gt; object </para>
+</formalpara>
+</para>
+<para>
+Definition at line 1189 of file ParamComposite.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a6b44624ddf27be9c959faca294f8300a"/>    <section>
+    <title>loadCArray()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>loadCArray</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>loadCArray</secondary></indexterm>
+<computeroutput>template&lt;typename Type &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1CArrayParam">CArrayParam</link>&lt; Type &gt; &amp; Util::ParamComposite::loadCArray (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp; ar, const char * label, Type * value, int n, bool isRequired)</computeroutput></para><para>
+
+<para>Add a C array parameter and load its elements. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>archive for loading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>label</entry>
+                                <entry>
+<para>label string for new array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>value</entry>
+                                <entry>
+<para>pointer to array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>n</entry>
+                                <entry>
+<para>number of elements </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>isRequired</entry>
+                                <entry>
+<para>Is this a required parameter? </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to the new CArrayParam&lt;Type&gt; object </para>
+</formalpara>
+</para>
+<para>
+Definition at line 1249 of file ParamComposite.h.</para>
+<para>
+References addComponent(), isRequired(), Util::Parameter::load(), and setParent().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1aeb7eb7a04c97f418627bd7a7eb81a8ee"/>    <section>
+    <title>loadCArray()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>loadCArray</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>loadCArray</secondary></indexterm>
+<computeroutput>template&lt;typename Type &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1CArrayParam">CArrayParam</link>&lt; Type &gt; &amp; Util::ParamComposite::loadCArray (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp; ar, const char * label, Type * value, int n)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Add and load a required CArrayParam&lt; Type &gt; array parameter. </para>
+</para>
+
+<para>Equivalent to loadCArray &lt; Type &gt; (ar, label, value, n, true).</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>archive for loading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>label</entry>
+                                <entry>
+<para>label string for new array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>value</entry>
+                                <entry>
+<para>pointer to array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>n</entry>
+                                <entry>
+<para>number of elements </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to the new CArrayParam&lt;Type&gt; object </para>
+</formalpara>
+</para>
+<para>
+Definition at line 1265 of file ParamComposite.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1ade60c20a7079a41bf8787bceaa142d8b"/>    <section>
+    <title>loadDArray()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>loadDArray</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>loadDArray</secondary></indexterm>
+<computeroutput>template&lt;typename Type &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1DArrayParam">DArrayParam</link>&lt; Type &gt; &amp; Util::ParamComposite::loadDArray (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp; ar, const char * label, <link linkend="_classUtil_1_1DArray">DArray</link>&lt; Type &gt; &amp; array, int n, bool isRequired)</computeroutput></para><para>
+
+<para>Add an load a <link linkend="_classUtil_1_1DArray">DArray</link> &lt; Type &gt; array parameter. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>archive for loading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>label</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Label">Label</link> string for new array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>array</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1DArray">DArray</link> object </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>n</entry>
+                                <entry>
+<para>number of elements (logical size) </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>isRequired</entry>
+                                <entry>
+<para>Is this a required parameter? </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to the new DArrayParam&lt;Type&gt; object </para>
+</formalpara>
+</para>
+<para>
+Definition at line 1327 of file ParamComposite.h.</para>
+<para>
+References addComponent(), isRequired(), Util::Parameter::load(), and setParent().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a76195ead4df4e7f1e4aed116e4f99d6e"/>    <section>
+    <title>loadDArray()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>loadDArray</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>loadDArray</secondary></indexterm>
+<computeroutput>template&lt;typename Type &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1DArrayParam">DArrayParam</link>&lt; Type &gt; &amp; Util::ParamComposite::loadDArray (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp; ar, const char * label, <link linkend="_classUtil_1_1DArray">DArray</link>&lt; Type &gt; &amp; array, int n)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Add and load a required <link linkend="_classUtil_1_1DArray">DArray&lt; Type &gt;</link> array parameter. </para>
+</para>
+
+<para>Equivalent to loadDArrayParam &lt; Type &gt; (ar, label, array, n, true).</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>archive for loading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>label</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Label">Label</link> string for new array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>array</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1DArray">DArray</link> object </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>n</entry>
+                                <entry>
+<para>number of elements (logical size) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to the new DArrayParam&lt;Type&gt; object </para>
+</formalpara>
+</para>
+<para>
+Definition at line 1343 of file ParamComposite.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a22c80ffb666181ce42aa919433ec827c"/>    <section>
+    <title>loadFArray()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>loadFArray</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>loadFArray</secondary></indexterm>
+<computeroutput>template&lt;typename Type , int N&gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1FArrayParam">FArrayParam</link>&lt; Type, N &gt; &amp; Util::ParamComposite::loadFArray (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp; ar, const char * label, <link linkend="_classUtil_1_1FArray">FArray</link>&lt; Type, N &gt; &amp; array, bool isRequired)</computeroutput></para><para>
+
+<para>Add and load an <link linkend="_classUtil_1_1FArray">FArray</link> &lt; Type, N &gt; fixed-size array parameter. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>archive for loading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>label</entry>
+                                <entry>
+<para>label string for new array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>array</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1FArray">FArray</link> object </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>isRequired</entry>
+                                <entry>
+<para>Is this a required parameter? </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to the new FArrayParam&lt;Type, N&gt; object </para>
+</formalpara>
+</para>
+<para>
+Definition at line 1405 of file ParamComposite.h.</para>
+<para>
+References addComponent(), isRequired(), Util::Parameter::load(), and setParent().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1aa9df11c19ee50a992dd4e0fdbd2958cf"/>    <section>
+    <title>loadFArray()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>loadFArray</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>loadFArray</secondary></indexterm>
+<computeroutput>template&lt;typename Type , int N&gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1FArrayParam">FArrayParam</link>&lt;Type, N&gt;&amp; Util::ParamComposite::loadFArray (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp; ar, const char * label, <link linkend="_classUtil_1_1FArray">FArray</link>&lt; Type, N &gt; &amp; array)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Add and load a required <link linkend="_classUtil_1_1FArray">FArray</link> &lt; Type &gt; array parameter. </para>
+</para>
+
+<para>Equivalent to loadFArrayParam &lt; Type &gt; (ar, label, array, true).</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>archive for loading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>label</entry>
+                                <entry>
+<para>label string for new array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>array</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1FArray">FArray</link> object </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to the new FArrayParam&lt;Type, N&gt; object </para>
+</formalpara>
+</para>
+<para>
+Definition at line 675 of file ParamComposite.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1aaaadf6113f61fe91130238366b7bb8e2"/>    <section>
+    <title>loadCArray2D()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>loadCArray2D</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>loadCArray2D</secondary></indexterm>
+<computeroutput>template&lt;typename Type &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1CArray2DParam">CArray2DParam</link>&lt; Type &gt; &amp; Util::ParamComposite::loadCArray2D (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp; ar, const char * label, Type * value, int m, int n, int np, bool isRequired)</computeroutput></para><para>
+
+<para>Add and load a <link linkend="_classUtil_1_1CArray2DParam">CArray2DParam</link> &lt; Type &gt; C 2D array parameter. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>archive for loading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>label</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Label">Label</link> string for new array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>value</entry>
+                                <entry>
+<para>pointer to array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>m</entry>
+                                <entry>
+<para>number of rows (1st dimension) </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>n</entry>
+                                <entry>
+<para>logical number of columns (2nd dimension) </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>np</entry>
+                                <entry>
+<para>physical number of columns (elements allocated per row) </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>isRequired</entry>
+                                <entry>
+<para>Is this a required parameter? </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to the CArray2DParam&lt;Type&gt; object </para>
+</formalpara>
+</para>
+<para>
+Definition at line 1475 of file ParamComposite.h.</para>
+<para>
+References addComponent(), isRequired(), Util::Parameter::load(), and setParent().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a84bc440938b0a1f8b33e1ee0fd9f0bb6"/>    <section>
+    <title>loadCArray2D()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>loadCArray2D</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>loadCArray2D</secondary></indexterm>
+<computeroutput>template&lt;typename Type &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1CArray2DParam">CArray2DParam</link>&lt; Type &gt; &amp; Util::ParamComposite::loadCArray2D (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp; ar, const char * label, Type * value, int m, int n, int np)</computeroutput></para><para>
+
+<para>Add and load a required &lt; Type &gt; matrix parameter. </para>
+</para>
+
+<para>Equivalent to loadCArray2DParam &lt; Type &gt; (ar, label, value, m, n, np, true).</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>archive for loading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>label</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Label">Label</link> string for new array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>value</entry>
+                                <entry>
+<para>pointer to array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>m</entry>
+                                <entry>
+<para>number of rows (1st dimension) </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>n</entry>
+                                <entry>
+<para>logical number of columns (2nd dimension) </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>np</entry>
+                                <entry>
+<para>physical number of columns (elements allocated per row) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to the CArray2DParam&lt;Type&gt; object </para>
+</formalpara>
+</para>
+<para>
+Definition at line 1493 of file ParamComposite.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a9b63d120895060081ad4937987ac167e"/>    <section>
+    <title>loadDMatrix()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>loadDMatrix</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>loadDMatrix</secondary></indexterm>
+<computeroutput>template&lt;typename Type &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1DMatrixParam">DMatrixParam</link>&lt; Type &gt; &amp; Util::ParamComposite::loadDMatrix (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp; ar, const char * label, <link linkend="_classUtil_1_1DMatrix">DMatrix</link>&lt; Type &gt; &amp; matrix, int m, int n, bool isRequired)</computeroutput></para><para>
+
+<para>Add and load a <link linkend="_classUtil_1_1DMatrixParam">DMatrixParam</link> &lt; Type &gt; matrix parameter. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>archive for loading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>label</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Label">Label</link> string for new array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>matrix</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1DMatrix">DMatrix</link> object </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>m</entry>
+                                <entry>
+<para>number of rows (1st dimension) </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>n</entry>
+                                <entry>
+<para>number of columns (2nd dimension) </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>isRequired</entry>
+                                <entry>
+<para>Is this a required parameter? </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to the DMatrixParam&lt;Type&gt; object </para>
+</formalpara>
+</para>
+<para>
+Definition at line 1556 of file ParamComposite.h.</para>
+<para>
+References addComponent(), isRequired(), Util::Parameter::load(), and setParent().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a527835f3ab83836e5f11409d18523ec1"/>    <section>
+    <title>loadDMatrix()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>loadDMatrix</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>loadDMatrix</secondary></indexterm>
+<computeroutput>template&lt;typename Type &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1DMatrixParam">DMatrixParam</link>&lt; Type &gt; &amp; Util::ParamComposite::loadDMatrix (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp; ar, const char * label, <link linkend="_classUtil_1_1DMatrix">DMatrix</link>&lt; Type &gt; &amp; matrix, int m, int n)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Add and load a required <link linkend="_classUtil_1_1DMatrixParam">DMatrixParam</link> &lt; Type &gt; matrix parameter. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>archive for loading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>label</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Label">Label</link> string for new array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>matrix</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1DMatrix">DMatrix</link> object </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>m</entry>
+                                <entry>
+<para>number of rows (1st dimension) </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>n</entry>
+                                <entry>
+<para>number of columns (2nd dimension) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to the DMatrixParam&lt;Type&gt; object </para>
+</formalpara>
+</para>
+<para>
+Definition at line 1573 of file ParamComposite.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1ac8ae3e12ab14c6328110dd03c36e34ad"/>    <section>
+    <title>loadDSymmMatrix()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>loadDSymmMatrix</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>loadDSymmMatrix</secondary></indexterm>
+<computeroutput>template&lt;typename Type &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1DSymmMatrixParam">DSymmMatrixParam</link>&lt; Type &gt; &amp; Util::ParamComposite::loadDSymmMatrix (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp; ar, const char * label, <link linkend="_classUtil_1_1DMatrix">DMatrix</link>&lt; Type &gt; &amp; matrix, int n, bool isRequired)</computeroutput></para><para>
+
+<para>Add and load a symmetric <link linkend="_classUtil_1_1DSymmMatrixParam">DSymmMatrixParam</link> &lt; Type &gt; matrix parameter. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>archive for loading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>label</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Label">Label</link> string for new array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>matrix</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1DMatrix">DMatrix</link> object </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>n</entry>
+                                <entry>
+<para>number of rows or columns </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>isRequired</entry>
+                                <entry>
+<para>Is this a required parameter? </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to the DMatrixParam&lt;Type&gt; object </para>
+</formalpara>
+</para>
+<para>
+Definition at line 1625 of file ParamComposite.h.</para>
+<para>
+References addComponent(), isRequired(), Util::Parameter::load(), and setParent().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1aa106d26dc3938cacdbd985ac32629954"/>    <section>
+    <title>loadDSymmMatrix()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>loadDSymmMatrix</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>loadDSymmMatrix</secondary></indexterm>
+<computeroutput>template&lt;typename Type &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1DSymmMatrixParam">DSymmMatrixParam</link>&lt; Type &gt; &amp; Util::ParamComposite::loadDSymmMatrix (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp; ar, const char * label, <link linkend="_classUtil_1_1DMatrix">DMatrix</link>&lt; Type &gt; &amp; matrix, int n)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Add and load a required <link linkend="_classUtil_1_1DSymmMatrixParam">DSymmMatrixParam</link> &lt; Type &gt; matrix parameter. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>archive for loading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>label</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Label">Label</link> string for new array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>matrix</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1DMatrix">DMatrix</link> object </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>n</entry>
+                                <entry>
+<para>number of rows or columns </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to the DMatrixParam&lt;Type&gt; object </para>
+</formalpara>
+</para>
+<para>
+Definition at line 1644 of file ParamComposite.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a2aed32d4ef18bc05a4bc6f02f0ce7010"/>    <section>
+    <title>addParamComposite()</title>
+<indexterm><primary>addParamComposite</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>addParamComposite</secondary></indexterm>
+<para><computeroutput>void Util::ParamComposite::addParamComposite (<link linkend="_classUtil_1_1ParamComposite">ParamComposite</link> &amp; child, bool next = <computeroutput>true</computeroutput>
+)</computeroutput></para><para>
+
+<para>Add a child <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link> object to the format array. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>child</entry>
+                                <entry>
+<para>child <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link> object </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>next</entry>
+                                <entry>
+<para>true if the indent level is one higher than parent. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 249 of file ParamComposite.cpp.</para>
+<para>
+References addComponent(), and setParent().</para>
+<para>
+Referenced by loadParamComposite(), loadParamCompositeOptional(), Util::Factory&lt; Data &gt;::readObject(), readParamComposite(), and readParamCompositeOptional().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a416792811b4e1c8348203934a95167f8"/>    <section>
+    <title>addBegin()</title>
+<indexterm><primary>addBegin</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>addBegin</secondary></indexterm>
+<para><computeroutput><link linkend="_classUtil_1_1Begin">Begin</link> &amp; Util::ParamComposite::addBegin (const char * label)</computeroutput></para><para>
+
+<para>Add a <link linkend="_classUtil_1_1Begin">Begin</link> object representing a class name and bracket. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>label</entry>
+                                <entry>
+<para>class name string, without trailing bracket </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to the new begin object. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 305 of file ParamComposite.cpp.</para>
+<para>
+References addComponent(), and setParent().</para>
+<para>
+Referenced by load().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a8678701878ef3dfc27ce3bedf403aff8"/>    <section>
+    <title>addEnd()</title>
+<indexterm><primary>addEnd</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>addEnd</secondary></indexterm>
+<para><computeroutput><link linkend="_classUtil_1_1End">End</link> &amp; Util::ParamComposite::addEnd ( )</computeroutput></para><para>
+
+<para>Add a closing bracket. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>reference to the new <link linkend="_classUtil_1_1End">End</link> object. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 333 of file ParamComposite.cpp.</para>
+<para>
+References addComponent(), and setParent().</para>
+<para>
+Referenced by load(), and readEnd().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a72bfd2aef18ed296a2959a2d2020d3d2"/>    <section>
+    <title>addBlank()</title>
+<indexterm><primary>addBlank</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>addBlank</secondary></indexterm>
+<para><computeroutput><link linkend="_classUtil_1_1Blank">Blank</link> &amp; Util::ParamComposite::addBlank ( )</computeroutput></para><para>
+
+<para>Create and add a new <link linkend="_classUtil_1_1Blank">Blank</link> object, representing a blank line. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>reference to the new <link linkend="_classUtil_1_1Blank">Blank</link> object </para>
+</formalpara>
+</para>
+<para>
+Definition at line 356 of file ParamComposite.cpp.</para>
+<para>
+References addComponent(), and setParent().</para>
+<para>
+Referenced by readBlank().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a93e3a9fd3bd01dcc3c606a7bf3112c0e"/>    <section>
+    <title>className()</title>
+<indexterm><primary>className</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>className</secondary></indexterm>
+<para><computeroutput>std::string Util::ParamComposite::className ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get class name string. </para>
+</para>
+<para>
+Definition at line 1103 of file ParamComposite.h.</para>
+<para>
+Referenced by Util::Manager&lt; Data &gt;::beginReadManager(), loadOptional(), and setClassName().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1aff9ce840ca72f2c6cf3e24335a7a580c"/>    <section>
+    <title>isRequired()</title>
+<indexterm><primary>isRequired</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>isRequired</secondary></indexterm>
+<para><computeroutput>bool Util::ParamComposite::isRequired ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Is this <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link> required in the input file? </para>
+</para>
+<para>
+Definition at line 1109 of file ParamComposite.h.</para>
+<para>
+Referenced by add(), addCArray(), addCArray2D(), addDArray(), addDMatrix(), addFArray(), loadCArray(), loadCArray2D(), loadDArray(), loadDMatrix(), loadDSymmMatrix(), loadFArray(), loadParameter(), readBegin(), and setIsRequired().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a74dd1599661aad626c52e69840a28d23"/>    <section>
+    <title>isActive()</title>
+<indexterm><primary>isActive</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>isActive</secondary></indexterm>
+<para><computeroutput>bool Util::ParamComposite::isActive ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Is this parameter active? </para>
+</para>
+<para>
+Definition at line 1115 of file ParamComposite.h.</para>
+<para>
+Referenced by setIsActive().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a30752567fd7b8b93e5c8476bbe8592c5"/>    <section>
+    <title>setClassName()</title>
+<indexterm><primary>setClassName</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>setClassName</secondary></indexterm>
+<para><computeroutput>void Util::ParamComposite::setClassName (const char * className)<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Set class name string. </para>
+</para>
+
+<para>Should be set in subclass constructor. </para>
+<para>
+Definition at line 377 of file ParamComposite.cpp.</para>
+<para>
+References className().</para>
+<para>
+Referenced by Pscf::Pspg::Discrete::AmIterator&lt; D &gt;::AmIterator(), Pscf::Pspg::Continuous::AmIterator&lt; D &gt;::AmIterator(), Util::AutoCorr&lt; Data, Product &gt;::AutoCorr(), Util::AutoCorrArray&lt; Data, Product &gt;::AutoCorrArray(), Util::Average::Average(), Pscf::ChiInteraction::ChiInteraction(), Util::Distribution::Distribution(), Util::FileMaster::FileMaster(), Util::IntDistribution::IntDistribution(), Pscf::Interaction::Interaction(), Pscf::Pspg::Continuous::Iterator&lt; D &gt;::Iterator(), Pscf::Homogeneous::Mixture::Mixture(), Pscf::Pspg::Continuous::Mixture&lt; D &gt;::Mixture(), Pscf::Homogeneous::Molecule::Molecule(), Util::RadialDistribution::RadialDistribution(), Util::Random::Random(), Util::SymmTensorAverage::SymmTensorAverage(), and Util::TensorAverage::TensorAverage().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a30bf69df610c5d1bfa2d2b852425b206"/>    <section>
+    <title>setIsRequired()</title>
+<indexterm><primary>setIsRequired</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>setIsRequired</secondary></indexterm>
+<para><computeroutput>void Util::ParamComposite::setIsRequired (bool isRequired)<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Set or unset the isActive flag. </para>
+</para>
+
+<para>Required to re-implement readParam[Optional].</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>isRequired</entry>
+                                <entry>
+<para>flag to set true or false. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 383 of file ParamComposite.cpp.</para>
+<para>
+References isRequired().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a5b0514952eb25f3216a400f468c4efdd"/>    <section>
+    <title>setIsActive()</title>
+<indexterm><primary>setIsActive</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>setIsActive</secondary></indexterm>
+<para><computeroutput>void Util::ParamComposite::setIsActive (bool isActive)<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Set or unset the isActive flag. </para>
+</para>
+
+<para>Required to re-implement readParam[Optional].</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>isActive</entry>
+                                <entry>
+<para>flag to set true or false. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 394 of file ParamComposite.cpp.</para>
+<para>
+References isActive(), and UTIL_THROW.</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1ad99740d4a40314f7d87a381339caf502"/>    <section>
+    <title>setParent()</title>
+<indexterm><primary>setParent</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>setParent</secondary></indexterm>
+<para><computeroutput>void Util::ParamComposite::setParent (<link linkend="_classUtil_1_1ParamComponent">ParamComponent</link> &amp; param, bool next = <computeroutput>true</computeroutput>
+)<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Set this to the parent of a child component. </para>
+</para>
+
+<para>This function sets the indent and (ifdef UTIL_MPI) the ioCommunicator of the child component.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>param</entry>
+                                <entry>
+<para>child <link linkend="_classUtil_1_1ParamComponent">ParamComponent</link> </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>next</entry>
+                                <entry>
+<para>if true, set indent level one higher than for parent. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 224 of file ParamComposite.cpp.</para>
+<para>
+References Util::MpiFileIo::hasIoCommunicator(), Util::MpiFileIo::ioCommunicator(), Util::ParamComponent::setIndent(), and Util::MpiFileIo::setIoCommunicator().</para>
+<para>
+Referenced by add(), addBegin(), addBlank(), addCArray(), addCArray2D(), addDArray(), addDMatrix(), addEnd(), addFArray(), addParamComposite(), loadCArray(), loadCArray2D(), loadDArray(), loadDMatrix(), loadDSymmMatrix(), loadFArray(), loadParameter(), and readBegin().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1ae01a90ae0958b05574e258ce730b1fe9"/>    <section>
+    <title>addComponent()</title>
+<indexterm><primary>addComponent</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>addComponent</secondary></indexterm>
+<para><computeroutput>void Util::ParamComposite::addComponent (<link linkend="_classUtil_1_1ParamComponent">ParamComponent</link> &amp; param, bool isLeaf = <computeroutput>true</computeroutput>
+)<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Add a new <link linkend="_classUtil_1_1ParamComponent">ParamComponent</link> object to the format array. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>param</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Parameter">Parameter</link> object </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>isLeaf</entry>
+                                <entry>
+<para>Is this a leaf or a <link linkend="_classUtil_1_1ParamComposite">ParamComposite</link> node? </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 237 of file ParamComposite.cpp.</para>
+<para>
+Referenced by add(), addBegin(), addBlank(), addCArray(), addCArray2D(), addDArray(), addDMatrix(), addEnd(), addFArray(), addParamComposite(), loadCArray(), loadCArray2D(), loadDArray(), loadDMatrix(), loadDSymmMatrix(), loadFArray(), loadParameter(), and readBegin().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a05738b050c32951151bcac1c62f908ff"/>    <section>
+    <title>add()</title>
+<indexterm><primary>add</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>add</secondary></indexterm>
+<computeroutput>template&lt;typename Type &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1ScalarParam">ScalarParam</link>&lt; Type &gt; &amp; Util::ParamComposite::add (std::istream &amp; in, const char * label, Type &amp; value, bool isRequired = <computeroutput>true</computeroutput>
+)<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Add a new required <link linkend="_classUtil_1_1ScalarParam">ScalarParam</link> &lt; Type &gt; object. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream for reading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>label</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Label">Label</link> string </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>value</entry>
+                                <entry>
+<para>reference to new ScalarParam&lt; Type &gt; </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>isRequired</entry>
+                                <entry>
+<para>Is this a required parameter? </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to the new ScalarParam&lt;Type&gt; object </para>
+</formalpara>
+</para>
+<para>
+Definition at line 1141 of file ParamComposite.h.</para>
+<para>
+References addComponent(), isRequired(), and setParent().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a654d7f0ca5dc877e09070901d33c3365"/>    <section>
+    <title>addCArray()</title>
+<indexterm><primary>addCArray</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>addCArray</secondary></indexterm>
+<computeroutput>template&lt;typename Type &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1CArrayParam">CArrayParam</link>&lt; Type &gt; &amp; Util::ParamComposite::addCArray (std::istream &amp; in, const char * label, Type * value, int n, bool isRequired = <computeroutput>true</computeroutput>
+)<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Add (but do not read) a required C array parameter. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream for reading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>label</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Label">Label</link> string for new array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>value</entry>
+                                <entry>
+<para>pointer to array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>n</entry>
+                                <entry>
+<para>number of elements </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>isRequired</entry>
+                                <entry>
+<para>Is this a required parameter? </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to the new CArrayParam&lt;Type&gt; object </para>
+</formalpara>
+</para>
+<para>
+Definition at line 1216 of file ParamComposite.h.</para>
+<para>
+References addComponent(), isRequired(), and setParent().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a5678fa4c9664e87979c758184d46d727"/>    <section>
+    <title>addDArray()</title>
+<indexterm><primary>addDArray</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>addDArray</secondary></indexterm>
+<computeroutput>template&lt;typename Type &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1DArrayParam">DArrayParam</link>&lt; Type &gt; &amp; Util::ParamComposite::addDArray (std::istream &amp; in, const char * label, <link linkend="_classUtil_1_1DArray">DArray</link>&lt; Type &gt; &amp; array, int n, bool isRequired = <computeroutput>true</computeroutput>
+)<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Add (but do not read) a <link linkend="_classUtil_1_1DArray">DArray</link> &lt; Type &gt; parameter. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream for reading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>label</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Label">Label</link> string for new array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>array</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1DArray">DArray</link> object </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>n</entry>
+                                <entry>
+<para>number of elements </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>isRequired</entry>
+                                <entry>
+<para>Is this a required parameter? </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to the new DArrayParam&lt;Type&gt; object </para>
+</formalpara>
+</para>
+<para>
+Definition at line 1292 of file ParamComposite.h.</para>
+<para>
+References addComponent(), isRequired(), and setParent().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a7aabaa7835e994678d3c3225df0d7d7a"/>    <section>
+    <title>addFArray()</title>
+<indexterm><primary>addFArray</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>addFArray</secondary></indexterm>
+<computeroutput>template&lt;typename Type , int N&gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1FArrayParam">FArrayParam</link>&lt; Type, N &gt; &amp; Util::ParamComposite::addFArray (std::istream &amp; in, const char * label, <link linkend="_classUtil_1_1FArray">FArray</link>&lt; Type, N &gt; &amp; array, bool isRequired = <computeroutput>true</computeroutput>
+)<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Add (but do not read) a <link linkend="_classUtil_1_1FArray">FArray</link> &lt; Type, N &gt; array parameter. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream for reading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>label</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Label">Label</link> string for new array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>array</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1FArray">FArray</link> object </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>isRequired</entry>
+                                <entry>
+<para>Is this a required parameter? </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to the new FArrayParam&lt;Type, N&gt; object </para>
+</formalpara>
+</para>
+<para>
+Definition at line 1370 of file ParamComposite.h.</para>
+<para>
+References addComponent(), isRequired(), and setParent().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1a9d3774e149a843917646064159a75831"/>    <section>
+    <title>addCArray2D()</title>
+<indexterm><primary>addCArray2D</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>addCArray2D</secondary></indexterm>
+<computeroutput>template&lt;typename Type &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1CArray2DParam">CArray2DParam</link>&lt; Type &gt; &amp; Util::ParamComposite::addCArray2D (std::istream &amp; in, const char * label, Type * value, int m, int n, int np, bool isRequired = <computeroutput>true</computeroutput>
+)<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Add (but do not read) a <link linkend="_classUtil_1_1CArray2DParam">CArray2DParam</link> &lt; Type &gt; 2D C-array. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream for reading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>label</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Label">Label</link> string for new array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>value</entry>
+                                <entry>
+<para>pointer to array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>m</entry>
+                                <entry>
+<para>number of rows (1st dimension) </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>n</entry>
+                                <entry>
+<para>logical number of columns (2nd dimension) </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>np</entry>
+                                <entry>
+<para>physical number of columns (elements allocated per row) </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>isRequired</entry>
+                                <entry>
+<para>Is this a required parameter? </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to the CArray2DParam&lt;Type&gt; object </para>
+</formalpara>
+</para>
+<para>
+Definition at line 1440 of file ParamComposite.h.</para>
+<para>
+References addComponent(), isRequired(), and setParent().</para>
+    </section><anchor xml:id="_classUtil_1_1ParamComposite_1ab3fb7b30311e09e54ff86682a8102372"/>    <section>
+    <title>addDMatrix()</title>
+<indexterm><primary>addDMatrix</primary><secondary>Util::ParamComposite</secondary></indexterm>
+<indexterm><primary>Util::ParamComposite</primary><secondary>addDMatrix</secondary></indexterm>
+<computeroutput>template&lt;typename Type &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1DMatrixParam">DMatrixParam</link>&lt; Type &gt; &amp; Util::ParamComposite::addDMatrix (std::istream &amp; in, const char * label, <link linkend="_classUtil_1_1DMatrix">DMatrix</link>&lt; Type &gt; &amp; matrix, int m, int n, bool isRequired = <computeroutput>true</computeroutput>
+)<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Add and read a required <link linkend="_classUtil_1_1DMatrix">DMatrix</link> &lt; Type &gt; matrix parameter. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream for reading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>label</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Label">Label</link> string for new array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>matrix</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1DMatrix">DMatrix</link> object </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>m</entry>
+                                <entry>
+<para>number of rows (1st dimension) </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>n</entry>
+                                <entry>
+<para>number of columns (2nd dimension) </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>isRequired</entry>
+                                <entry>
+<para>Is this a required parameter? </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to the DMatrixParam&lt;Type&gt; object </para>
+</formalpara>
+</para>
+<para>
+Definition at line 1522 of file ParamComposite.h.</para>
+<para>
+References addComponent(), isRequired(), and setParent().</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+ParamComposite.hParamComposite.cpp</section>
+</section>

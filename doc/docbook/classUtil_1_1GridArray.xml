@@ -1,0 +1,687 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1GridArray">
+<title>Util::GridArray&lt; Data &gt; Class Template Reference</title>
+<indexterm><primary>Util::GridArray&lt; Data &gt;</primary></indexterm>
+<para>
+
+<para>Multi-dimensional array with the dimensionality of space. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;GridArray.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1GridArray_1a11cdade45c5cd81161874bfde605c19a">GridArray</link> ()</para>
+
+<para>Constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1GridArray_1addcd9f0da5877042ab110592efe01178">GridArray</link> (const <link linkend="_classUtil_1_1GridArray">GridArray</link>&lt; Data &gt; &amp;other)</para>
+
+<para>Copy constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1GridArray_1a113386469eb1e206ce5134dba29dbaba">~GridArray</link> ()</para>
+
+<para>Destructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1GridArray">GridArray</link>&lt; Data &gt; &amp; <link linkend="_classUtil_1_1GridArray_1a0e62c1e9c93ff4af7c106325670f17f5">operator=</link> (const <link linkend="_classUtil_1_1GridArray">GridArray</link>&lt; Data &gt; &amp;other)</para>
+
+<para>Assignment. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1GridArray_1a3817c1126a90f3b79beebd9a85ac3e19">allocate</link> (const <link linkend="_classUtil_1_1IntVector">IntVector</link> &amp;<link linkend="_classUtil_1_1GridArray_1ac158ae234370939173efde29d101faad">dimensions</link>)</para>
+
+<para>Allocate memory for a matrix. </para>
+</listitem>
+            <listitem><para>template&lt;class Archive &gt; </para><para>void <link linkend="_classUtil_1_1GridArray_1a960e22d85ee204b6db1b91cf85ad4403">serialize</link> (Archive &amp;ar, const unsigned int version)</para>
+
+<para>Serialize a <link linkend="_classUtil_1_1GridArray">GridArray</link> to/from an Archive. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_classUtil_1_1GridArray_1a4cd7035a162526210f07484e2a7ca05a">isAllocated</link> () const</para>
+
+<para>Return true if the <link linkend="_classUtil_1_1GridArray">GridArray</link> has been allocated, false otherwise. </para>
+</listitem>
+            <listitem><para>const <link linkend="_classUtil_1_1IntVector">IntVector</link> &amp; <link linkend="_classUtil_1_1GridArray_1ac158ae234370939173efde29d101faad">dimensions</link> ()</para>
+
+<para>Get all dimensions of array as an <link linkend="_classUtil_1_1IntVector">IntVector</link>. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1GridArray_1a9fb066c66fc7205db343bf6e39dc2d52">dimension</link> (int i) const</para>
+
+<para>Get number of grid points along direction i. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1GridArray_1aeb008b6145eb688076e5d87c552f567a">size</link> () const</para>
+
+<para>Get total number of grid points. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1IntVector">IntVector</link> <link linkend="_classUtil_1_1GridArray_1a7c628d17e92b15cc32a6b46d63c29c20">position</link> (int <link linkend="_classUtil_1_1GridArray_1a790b88ab53607fe9027ebdec4206ca8f">rank</link>) const</para>
+
+<para>Get the position <link linkend="_classUtil_1_1IntVector">IntVector</link> of a grid point with a specified rank. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1GridArray_1a790b88ab53607fe9027ebdec4206ca8f">rank</link> (const <link linkend="_classUtil_1_1IntVector">IntVector</link> &amp;<link linkend="_classUtil_1_1GridArray_1a7c628d17e92b15cc32a6b46d63c29c20">position</link>) const</para>
+
+<para>Get the rank of a grid point with specified position. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_classUtil_1_1GridArray_1a8deae316c281bdc427b15a2f465b678a">isInGrid</link> (int coordinate, int i) const</para>
+
+<para>Is this 1D coordinate in range? </para>
+</listitem>
+            <listitem><para>bool <link linkend="_classUtil_1_1GridArray_1af3ed40b160a4e91bfcd2e5e8fdea7969">isInGrid</link> (<link linkend="_classUtil_1_1IntVector">IntVector</link> &amp;<link linkend="_classUtil_1_1GridArray_1a7c628d17e92b15cc32a6b46d63c29c20">position</link>) const</para>
+
+<para>Is this position within the grid? </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1GridArray_1aa1d9e468f3b4a522d139b73beba0ea37">shift</link> (int &amp;coordinate, int i) const</para>
+
+<para>Shift a periodic 1D coordinate into primary range. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1IntVector">IntVector</link> <link linkend="_classUtil_1_1GridArray_1a6d3a4c2903d1e5353a13068cd81fcb73">shift</link> (<link linkend="_classUtil_1_1IntVector">IntVector</link> &amp;<link linkend="_classUtil_1_1GridArray_1a7c628d17e92b15cc32a6b46d63c29c20">position</link>) const</para>
+
+<para>Shift a periodic position into primary grid. </para>
+</listitem>
+            <listitem><para>const Data &amp; <link linkend="_classUtil_1_1GridArray_1a4191d6d12a6d2bcae1a51835520744c6">operator[]</link> (int <link linkend="_classUtil_1_1GridArray_1a790b88ab53607fe9027ebdec4206ca8f">rank</link>) const</para>
+
+<para>Return element by const reference, indexed by 1D rank. </para>
+</listitem>
+            <listitem><para>Data &amp; <link linkend="_classUtil_1_1GridArray_1a812441a4bb62c3ccd9a9f9f99cfafd9f">operator[]</link> (int <link linkend="_classUtil_1_1GridArray_1a790b88ab53607fe9027ebdec4206ca8f">rank</link>)</para>
+
+<para>Return element by reference, indexed by 1D rank. </para>
+</listitem>
+            <listitem><para>const Data &amp; <link linkend="_classUtil_1_1GridArray_1adff50b0711085a9764cba57875fc39d2">operator()</link> (const <link linkend="_classUtil_1_1IntVector">IntVector</link> &amp;<link linkend="_classUtil_1_1GridArray_1a7c628d17e92b15cc32a6b46d63c29c20">position</link>) const</para>
+
+<para>Return element by const reference, indexed by <link linkend="_classUtil_1_1IntVector">IntVector</link> position. </para>
+</listitem>
+            <listitem><para>Data &amp; <link linkend="_classUtil_1_1GridArray_1ae14d0049968b4dbabdce764771ea17be">operator()</link> (const <link linkend="_classUtil_1_1IntVector">IntVector</link> &amp;<link linkend="_classUtil_1_1GridArray_1a7c628d17e92b15cc32a6b46d63c29c20">position</link>)</para>
+
+<para>Return element by reference, indexed by <link linkend="_classUtil_1_1IntVector">IntVector</link> position. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;typename Data&gt;
+class Util::GridArray&lt; Data &gt;</title></simplesect>
+
+
+<para>Multi-dimensional array with the dimensionality of space. </para>
+
+
+
+<para>The memory for a <link linkend="_classUtil_1_1GridArray">GridArray</link> is stored in a single one-dimensional C array. The subscript [] operator is overloaded to return an element indexed by a one-dimensional rank, and the () operator is overloaded to return an element indexed by an <link linkend="_classUtil_1_1IntVector">IntVector</link> of grid coordinates. </para>
+<para>
+Definition at line 28 of file GridArray.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1GridArray_1a11cdade45c5cd81161874bfde605c19a"/>    <section>
+    <title>GridArray()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>GridArray</primary><secondary>Util::GridArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::GridArray&lt; Data &gt;</primary><secondary>GridArray</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1GridArray">Util::GridArray</link>&lt; Data &gt;::<link linkend="_classUtil_1_1GridArray">GridArray</link><computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+
+<para>Constructor (protected). </para>
+<para>
+Definition at line 217 of file GridArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1GridArray_1addcd9f0da5877042ab110592efe01178"/>    <section>
+    <title>GridArray()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>GridArray</primary><secondary>Util::GridArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::GridArray&lt; Data &gt;</primary><secondary>GridArray</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1GridArray">Util::GridArray</link>&lt; Data &gt;::<link linkend="_classUtil_1_1GridArray">GridArray</link> (const <link linkend="_classUtil_1_1GridArray">GridArray</link>&lt; Data &gt; &amp; other)</computeroutput></para><para>
+
+<para>Copy constructor. </para>
+</para>
+<para>
+Definition at line 242 of file GridArray.h.</para>
+<para>
+References Util::GridArray&lt; Data &gt;::allocate(), Util::GridArray&lt; Data &gt;::isAllocated(), and UTIL_THROW.</para>
+    </section><anchor xml:id="_classUtil_1_1GridArray_1a113386469eb1e206ce5134dba29dbaba"/>    <section>
+    <title>~GridArray()</title>
+<indexterm><primary>~GridArray</primary><secondary>Util::GridArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::GridArray&lt; Data &gt;</primary><secondary>~GridArray</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1GridArray">Util::GridArray</link>&lt; Data &gt;::~<link linkend="_classUtil_1_1GridArray">GridArray</link></computeroutput></para><para>
+
+<para>Destructor. </para>
+</para>
+
+<para>Delete dynamically allocated C array, if allocated. </para>
+<para>
+Definition at line 230 of file GridArray.h.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1GridArray_1a0e62c1e9c93ff4af7c106325670f17f5"/>    <section>
+    <title>operator=()</title>
+<indexterm><primary>operator=</primary><secondary>Util::GridArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::GridArray&lt; Data &gt;</primary><secondary>operator=</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1GridArray">GridArray</link>&lt; Data &gt; &amp; <link linkend="_classUtil_1_1GridArray">Util::GridArray</link>&lt; Data &gt;::operator= (const <link linkend="_classUtil_1_1GridArray">GridArray</link>&lt; Data &gt; &amp; other)</computeroutput></para><para>
+
+<para>Assignment. </para>
+</para>
+<para>
+Definition at line 272 of file GridArray.h.</para>
+<para>
+References UTIL_THROW.</para>
+    </section><anchor xml:id="_classUtil_1_1GridArray_1a3817c1126a90f3b79beebd9a85ac3e19"/>    <section>
+    <title>allocate()</title>
+<indexterm><primary>allocate</primary><secondary>Util::GridArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::GridArray&lt; Data &gt;</primary><secondary>allocate</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1GridArray">Util::GridArray</link>&lt; Data &gt;::allocate (const <link linkend="_classUtil_1_1IntVector">IntVector</link> &amp; dimensions)</computeroutput></para><para>
+
+<para>Allocate memory for a matrix. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>dimensions</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1IntVector">IntVector</link> containing dimensions </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 312 of file GridArray.h.</para>
+<para>
+References Util::Dimension, and UTIL_THROW.</para>
+<para>
+Referenced by Util::GridArray&lt; Data &gt;::GridArray().</para>
+    </section><anchor xml:id="_classUtil_1_1GridArray_1a960e22d85ee204b6db1b91cf85ad4403"/>    <section>
+    <title>serialize()</title>
+<indexterm><primary>serialize</primary><secondary>Util::GridArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::GridArray&lt; Data &gt;</primary><secondary>serialize</secondary></indexterm>
+<computeroutput>template&lt;class Data &gt; </computeroutput><computeroutput>template&lt;class Archive &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1GridArray">Util::GridArray</link>&lt; Data &gt;::serialize (Archive &amp; ar, const unsigned int version)</computeroutput></para><para>
+
+<para>Serialize a <link linkend="_classUtil_1_1GridArray">GridArray</link> to/from an Archive. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>archive </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>version</entry>
+                                <entry>
+<para>archive version id </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 336 of file GridArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1GridArray_1a4cd7035a162526210f07484e2a7ca05a"/>    <section>
+    <title>isAllocated()</title>
+<indexterm><primary>isAllocated</primary><secondary>Util::GridArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::GridArray&lt; Data &gt;</primary><secondary>isAllocated</secondary></indexterm>
+<computeroutput>template&lt;class Data &gt; </computeroutput><para><computeroutput>bool <link linkend="_classUtil_1_1GridArray">Util::GridArray</link>&lt; Data &gt;::isAllocated<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return true if the <link linkend="_classUtil_1_1GridArray">GridArray</link> has been allocated, false otherwise. </para>
+</para>
+<para>
+Definition at line 517 of file GridArray.h.</para>
+<para>
+Referenced by Util::GridArray&lt; Data &gt;::GridArray().</para>
+    </section><anchor xml:id="_classUtil_1_1GridArray_1ac158ae234370939173efde29d101faad"/>    <section>
+    <title>dimensions()</title>
+<indexterm><primary>dimensions</primary><secondary>Util::GridArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::GridArray&lt; Data &gt;</primary><secondary>dimensions</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>const <link linkend="_classUtil_1_1IntVector">IntVector</link> &amp; <link linkend="_classUtil_1_1GridArray">Util::GridArray</link>&lt; Data &gt;::dimensions<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get all dimensions of array as an <link linkend="_classUtil_1_1IntVector">IntVector</link>. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para><link linkend="_classUtil_1_1IntVector">IntVector</link> containing the number of elements in each direction. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 357 of file GridArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1GridArray_1a9fb066c66fc7205db343bf6e39dc2d52"/>    <section>
+    <title>dimension()</title>
+<indexterm><primary>dimension</primary><secondary>Util::GridArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::GridArray&lt; Data &gt;</primary><secondary>dimension</secondary></indexterm>
+<computeroutput>template&lt;class Data &gt; </computeroutput><para><computeroutput>int <link linkend="_classUtil_1_1GridArray">Util::GridArray</link>&lt; Data &gt;::dimension (int i) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get number of grid points along direction i. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>i</entry>
+                                <entry>
+<para>index of Cartesian direction 0 &lt;=i &lt; 3. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 364 of file GridArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1GridArray_1aeb008b6145eb688076e5d87c552f567a"/>    <section>
+    <title>size()</title>
+<indexterm><primary>size</primary><secondary>Util::GridArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::GridArray&lt; Data &gt;</primary><secondary>size</secondary></indexterm>
+<computeroutput>template&lt;class Data &gt; </computeroutput><para><computeroutput>int <link linkend="_classUtil_1_1GridArray">Util::GridArray</link>&lt; Data &gt;::size<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get total number of grid points. </para>
+</para>
+<para>
+Definition at line 371 of file GridArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1GridArray_1a7c628d17e92b15cc32a6b46d63c29c20"/>    <section>
+    <title>position()</title>
+<indexterm><primary>position</primary><secondary>Util::GridArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::GridArray&lt; Data &gt;</primary><secondary>position</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1IntVector">IntVector</link> <link linkend="_classUtil_1_1GridArray">Util::GridArray</link>&lt; Data &gt;::position (int rank) const</computeroutput></para><para>
+
+<para>Get the position <link linkend="_classUtil_1_1IntVector">IntVector</link> of a grid point with a specified rank. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>rank</entry>
+                                <entry>
+<para>integer rank of a grid point. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para><link linkend="_classUtil_1_1IntVector">IntVector</link> containing coordinates of specified point. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 404 of file GridArray.h.</para>
+<para>
+References Util::Dimension.</para>
+    </section><anchor xml:id="_classUtil_1_1GridArray_1a790b88ab53607fe9027ebdec4206ca8f"/>    <section>
+    <title>rank()</title>
+<indexterm><primary>rank</primary><secondary>Util::GridArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::GridArray&lt; Data &gt;</primary><secondary>rank</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>int <link linkend="_classUtil_1_1GridArray">Util::GridArray</link>&lt; Data &gt;::rank (const <link linkend="_classUtil_1_1IntVector">IntVector</link> &amp; position) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get the rank of a grid point with specified position. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>position</entry>
+                                <entry>
+<para>integer position of a grid point </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>integer rank of specified grid point </para>
+</formalpara>
+</para>
+<para>
+Definition at line 394 of file GridArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1GridArray_1a8deae316c281bdc427b15a2f465b678a"/>    <section>
+    <title>isInGrid()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>isInGrid</primary><secondary>Util::GridArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::GridArray&lt; Data &gt;</primary><secondary>isInGrid</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>bool <link linkend="_classUtil_1_1GridArray">Util::GridArray</link>&lt; Data &gt;::isInGrid (int coordinate, int i) const</computeroutput></para><para>
+
+<para>Is this 1D coordinate in range? </para>
+</para>
+
+<para>Returns true iff 0 &lt;= coordinate &lt; dimension(i). 
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>coordinate</entry>
+                                <entry>
+<para>coordinate value for direction i </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>i</entry>
+                                <entry>
+<para>index for Cartesian direction </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 422 of file GridArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1GridArray_1af3ed40b160a4e91bfcd2e5e8fdea7969"/>    <section>
+    <title>isInGrid()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>isInGrid</primary><secondary>Util::GridArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::GridArray&lt; Data &gt;</primary><secondary>isInGrid</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>bool <link linkend="_classUtil_1_1GridArray">Util::GridArray</link>&lt; Data &gt;::isInGrid (<link linkend="_classUtil_1_1IntVector">IntVector</link> &amp; position) const</computeroutput></para><para>
+
+<para>Is this position within the grid? </para>
+</para>
+
+<para>Returns true iff 0 &lt;= coordinate[i] &lt; dimension(i) for all i.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>position</entry>
+                                <entry>
+<para>grid point position </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 436 of file GridArray.h.</para>
+<para>
+References Util::Dimension.</para>
+    </section><anchor xml:id="_classUtil_1_1GridArray_1aa1d9e468f3b4a522d139b73beba0ea37"/>    <section>
+    <title>shift()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>shift</primary><secondary>Util::GridArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::GridArray&lt; Data &gt;</primary><secondary>shift</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>int <link linkend="_classUtil_1_1GridArray">Util::GridArray</link>&lt; Data &gt;::shift (int &amp; coordinate, int i) const</computeroutput></para><para>
+
+<para>Shift a periodic 1D coordinate into primary range. </para>
+</para>
+
+<para>Upon return, the coordinate will be shifted to lie within the range 0 &lt;= coordinate &lt; dimension(i) by subtracting an integer multiple of dimension(i), giving coordinate - shift*dimension(i). The return value is the required integer &#8216;shift&#8217;.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>coordinate</entry>
+                                <entry>
+<para>coordinate in Cartesian direction i. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>i</entry>
+                                <entry>
+<para>index of Cartesian direction, i &gt;= 0. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>multiple of dimension(i) subtracted from input value. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 452 of file GridArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1GridArray_1a6d3a4c2903d1e5353a13068cd81fcb73"/>    <section>
+    <title>shift()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>shift</primary><secondary>Util::GridArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::GridArray&lt; Data &gt;</primary><secondary>shift</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1IntVector">IntVector</link> <link linkend="_classUtil_1_1GridArray">Util::GridArray</link>&lt; Data &gt;::shift (<link linkend="_classUtil_1_1IntVector">IntVector</link> &amp; position) const</computeroutput></para><para>
+
+<para>Shift a periodic position into primary grid. </para>
+</para>
+
+<para>Upon return, each element of the parameter position is shifted to lie within the range 0 &lt;= position[i] &lt; dimension(i) by adding or subtracting an integer multiple of dimension(i). The <link linkend="_classUtil_1_1IntVector">IntVector</link> of shift values is returned.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>position</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1IntVector">IntVector</link> position within a grid. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para><link linkend="_classUtil_1_1IntVector">IntVector</link> of integer shifts. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 468 of file GridArray.h.</para>
+<para>
+References Util::Dimension.</para>
+    </section><anchor xml:id="_classUtil_1_1GridArray_1a4191d6d12a6d2bcae1a51835520744c6"/>    <section>
+    <title>operator[]()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator[]</primary><secondary>Util::GridArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::GridArray&lt; Data &gt;</primary><secondary>operator[]</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>const Data &amp; <link linkend="_classUtil_1_1GridArray">Util::GridArray</link>&lt; Data &gt;::operator[] (int rank) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return element by const reference, indexed by 1D rank. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>rank</entry>
+                                <entry>
+<para>1D array index of element </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 481 of file GridArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1GridArray_1a812441a4bb62c3ccd9a9f9f99cfafd9f"/>    <section>
+    <title>operator[]()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator[]</primary><secondary>Util::GridArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::GridArray&lt; Data &gt;</primary><secondary>operator[]</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>Data &amp; <link linkend="_classUtil_1_1GridArray">Util::GridArray</link>&lt; Data &gt;::operator[] (int rank)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return element by reference, indexed by 1D rank. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>rank</entry>
+                                <entry>
+<para>1D rank of element </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 488 of file GridArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1GridArray_1adff50b0711085a9764cba57875fc39d2"/>    <section>
+    <title>operator()()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator()</primary><secondary>Util::GridArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::GridArray&lt; Data &gt;</primary><secondary>operator()</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>const Data &amp; <link linkend="_classUtil_1_1GridArray">Util::GridArray</link>&lt; Data &gt;::operator() (const <link linkend="_classUtil_1_1IntVector">IntVector</link> &amp; position) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return element by const reference, indexed by <link linkend="_classUtil_1_1IntVector">IntVector</link> position. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>position</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1IntVector">IntVector</link> of coordinates. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 496 of file GridArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1GridArray_1ae14d0049968b4dbabdce764771ea17be"/>    <section>
+    <title>operator()()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator()</primary><secondary>Util::GridArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::GridArray&lt; Data &gt;</primary><secondary>operator()</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>Data &amp; <link linkend="_classUtil_1_1GridArray">Util::GridArray</link>&lt; Data &gt;::operator() (const <link linkend="_classUtil_1_1IntVector">IntVector</link> &amp; position)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return element by reference, indexed by <link linkend="_classUtil_1_1IntVector">IntVector</link> position. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>position</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1IntVector">IntVector</link> of coordinates. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 503 of file GridArray.h.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+GridArray.h</section>
+</section>

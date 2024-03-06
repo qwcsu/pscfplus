@@ -1,0 +1,45 @@
+/*! \page structure_page 4.1 Directory Structure
+\ref developer_page (Prev) &nbsp; &nbsp; &nbsp; &nbsp; 
+\ref code_format_page (Next)
+<BR>
+
+All source files of PSCF+ are in the pscfplus/src/ directory tree. 
+The header and source file for each class are in the same directory. 
+The name of each C++ file is the same as the class name, followed by 
+an extension to indicate file type. We use extension .h to indicate 
+a header file, .tpp to indicate the implementation of a class template, 
+.cpp to indicate a C++ source file, and .cu to indicate a CUDA source file. 
+All class names and corresponding file names are upper space camel 
+(like Util::Vector or Pscf::Basis).
+
+The source code in pscfpp/src is divided among two top-level namespaces, named Util and Pscf.
+
+The Util namespace contains a collection of utilities for scientific 
+computation that is also used by other projects. All code in the Util 
+namespace is contained in the src/util directory. This directory contains 
+the contents of a separate github git repository (repository dmorse/util) 
+that is imported into the pscfpp as a submodule.
+
+The Pscf namespace contains all C++ and CUDA code that is specific to the 
+PSCF+ project. The Pscf namespace contains several enclosed namespaces 
+that each contain code that is used only by one program or set of closely 
+related programs.
+   
+The main subdirectories of src/ are:
+
+- src/util/ contains code of utilities for scientific 
+computation that is also used by other projects.
+- src/pscf/ contains basic classes in the Pscf namespace for polymer self-consistent field calculations, 
+which is accessible to all PSCF+ programs.
+- src/pspg/ contains CUDA code of utilities in the Pscf::Pspg namespace for scientific 
+computation, including encapsulation of fast fourier transform, fast cosine transform,
+and input/output of omega/phi fields storing in GPU RAM.
+- src/pgc/ contains implementation of model system using continuous Gaussian chain model in the Pscf::Pspg::Continuous namespace
+- src/pgd/ contains implementation of model system using discrete chain model, including
+discrete Gaussian and freely-jointed chain, in the Pscf::Pspg::Discrete.
+
+<BR>
+\ref developer_page (Prev) &nbsp; &nbsp; &nbsp; &nbsp; 
+\ref index "Main Page" (Up) &nbsp; &nbsp; &nbsp; &nbsp;
+\ref code_format_page (Next)
+*/

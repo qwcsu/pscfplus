@@ -1,0 +1,321 @@
+\hypertarget{classUtil_1_1RingBuffer}{}\doxysubsection{Util\+::Ring\+Buffer$<$ Data $>$ Class Template Reference}
+\label{classUtil_1_1RingBuffer}\index{Util::RingBuffer$<$ Data $>$@{Util::RingBuffer$<$ Data $>$}}
+
+
+Class for storing history of previous values in an array.  
+
+
+
+
+{\ttfamily \#include $<$Ring\+Buffer.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1RingBuffer_ae431b5509a9d1d9192d4ad3eab460dba}{Ring\+Buffer}} ()
+\begin{DoxyCompactList}\small\item\em Contructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1RingBuffer_a8fe6bff556df81b1b7d11d9155ec616a}{Ring\+Buffer}} (const \mbox{\hyperlink{classUtil_1_1RingBuffer}{Ring\+Buffer}}$<$ Data $>$ \&other)
+\begin{DoxyCompactList}\small\item\em Copy contructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1RingBuffer}{Ring\+Buffer}} \& \mbox{\hyperlink{classUtil_1_1RingBuffer_a1d6784220f3fce3762119780fc8ed509}{operator=}} (\mbox{\hyperlink{classUtil_1_1RingBuffer}{Ring\+Buffer}}$<$ Data $>$ const \&other)
+\begin{DoxyCompactList}\small\item\em Assignment. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classUtil_1_1RingBuffer_adccc3b30adfe5c635ce0aa69523aa5b5}{$\sim$\+Ring\+Buffer}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1RingBuffer_a5d2154b83c345552bfb88af818728cb7}{allocate}} (int \mbox{\hyperlink{classUtil_1_1RingBuffer_a7ff114a95d5227296719714cfb541190}{capacity}})
+\begin{DoxyCompactList}\small\item\em Allocate a new empty buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1RingBuffer_a66780b4c571f0cc9e714a9c3985d38f1}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Set previously allocated buffer to empty state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1RingBuffer_af2d2146097539045591adc8e66c903b9}{append}} (Data const \&value)
+\begin{DoxyCompactList}\small\item\em Add a new value to the buffer. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUtil_1_1RingBuffer_ae70512696de0f84b9101aff8d0f0e6ff}{size}} () const
+\begin{DoxyCompactList}\small\item\em Return number of values currently in the buffer. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUtil_1_1RingBuffer_a7ff114a95d5227296719714cfb541190}{capacity}} () const
+\begin{DoxyCompactList}\small\item\em Return the capacity of the buffer. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUtil_1_1RingBuffer_a1b63f23558186125615dee43ebeaedfd}{is\+Allocated}} () const
+\begin{DoxyCompactList}\small\item\em Return true if the \mbox{\hyperlink{classUtil_1_1RingBuffer}{Ring\+Buffer}} has been allocated, false otherwise. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUtil_1_1RingBuffer_a1c9dc1a05df24faba44743d253a89fcd}{is\+Full}} () const
+\begin{DoxyCompactList}\small\item\em Return true if full (if size == capacity), false otherwise. \end{DoxyCompactList}\item 
+const Data \& \mbox{\hyperlink{classUtil_1_1RingBuffer_a10c51b1861154076b0c6b691c56b4d0e}{operator\mbox{[}$\,$\mbox{]}}} (int offset) const
+\begin{DoxyCompactList}\small\item\em Retrieve a const value, a specified number of time steps ago. \end{DoxyCompactList}\item 
+Data \& \mbox{\hyperlink{classUtil_1_1RingBuffer_a34a79de6346c239d1288aba3bb9ad71c}{operator\mbox{[}$\,$\mbox{]}}} (int offset)
+\begin{DoxyCompactList}\small\item\em Retrieve a value, a specified number of time steps ago. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Archive $>$ }\\void \mbox{\hyperlink{classUtil_1_1RingBuffer_a29198899f39be24981f39930a1282b27}{serialize}} (Archive \&ar, const unsigned int version)
+\begin{DoxyCompactList}\small\item\em Serialize a \mbox{\hyperlink{classUtil_1_1RingBuffer}{Ring\+Buffer}} to/from an Archive. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$class Data$>$\newline
+class Util\+::\+Ring\+Buffer$<$ Data $>$}
+
+Class for storing history of previous values in an array. 
+
+Data is stored in a circular buffer, in which, once the array is full, the newest data value overwrites the oldest. 
+
+Definition at line 26 of file Ring\+Buffer.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1RingBuffer_ae431b5509a9d1d9192d4ad3eab460dba}\label{classUtil_1_1RingBuffer_ae431b5509a9d1d9192d4ad3eab460dba}} 
+\index{Util::RingBuffer$<$ Data $>$@{Util::RingBuffer$<$ Data $>$}!RingBuffer@{RingBuffer}}
+\index{RingBuffer@{RingBuffer}!Util::RingBuffer$<$ Data $>$@{Util::RingBuffer$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{RingBuffer()}{RingBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class Data $>$ \\
+\mbox{\hyperlink{classUtil_1_1RingBuffer}{Util\+::\+Ring\+Buffer}}$<$ Data $>$\+::\mbox{\hyperlink{classUtil_1_1RingBuffer}{Ring\+Buffer}}}
+
+
+
+Contructor. 
+
+
+
+Definition at line 140 of file Ring\+Buffer.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1RingBuffer_a8fe6bff556df81b1b7d11d9155ec616a}\label{classUtil_1_1RingBuffer_a8fe6bff556df81b1b7d11d9155ec616a}} 
+\index{Util::RingBuffer$<$ Data $>$@{Util::RingBuffer$<$ Data $>$}!RingBuffer@{RingBuffer}}
+\index{RingBuffer@{RingBuffer}!Util::RingBuffer$<$ Data $>$@{Util::RingBuffer$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{RingBuffer()}{RingBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class Data $>$ \\
+\mbox{\hyperlink{classUtil_1_1RingBuffer}{Util\+::\+Ring\+Buffer}}$<$ Data $>$\+::\mbox{\hyperlink{classUtil_1_1RingBuffer}{Ring\+Buffer}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1RingBuffer}{Ring\+Buffer}}$<$ Data $>$ \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Copy contructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & object to be copied. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 155 of file Ring\+Buffer.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1RingBuffer_adccc3b30adfe5c635ce0aa69523aa5b5}\label{classUtil_1_1RingBuffer_adccc3b30adfe5c635ce0aa69523aa5b5}} 
+\index{Util::RingBuffer$<$ Data $>$@{Util::RingBuffer$<$ Data $>$}!````~RingBuffer@{$\sim$RingBuffer}}
+\index{````~RingBuffer@{$\sim$RingBuffer}!Util::RingBuffer$<$ Data $>$@{Util::RingBuffer$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{$\sim$RingBuffer()}{~RingBuffer()}}
+{\footnotesize\ttfamily template$<$class Data $>$ \\
+\mbox{\hyperlink{classUtil_1_1RingBuffer}{Util\+::\+Ring\+Buffer}}$<$ Data $>$\+::$\sim$\mbox{\hyperlink{classUtil_1_1RingBuffer}{Ring\+Buffer}}\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+Definition at line 219 of file Ring\+Buffer.\+h.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1RingBuffer_a1d6784220f3fce3762119780fc8ed509}\label{classUtil_1_1RingBuffer_a1d6784220f3fce3762119780fc8ed509}} 
+\index{Util::RingBuffer$<$ Data $>$@{Util::RingBuffer$<$ Data $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Util::RingBuffer$<$ Data $>$@{Util::RingBuffer$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$class Data $>$ \\
+\mbox{\hyperlink{classUtil_1_1RingBuffer}{Ring\+Buffer}}$<$ Data $>$ \& \mbox{\hyperlink{classUtil_1_1RingBuffer}{Util\+::\+Ring\+Buffer}}$<$ Data $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1RingBuffer}{Ring\+Buffer}}$<$ Data $>$ const \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Assignment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & object to be assigned. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 182 of file Ring\+Buffer.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1RingBuffer_a5d2154b83c345552bfb88af818728cb7}\label{classUtil_1_1RingBuffer_a5d2154b83c345552bfb88af818728cb7}} 
+\index{Util::RingBuffer$<$ Data $>$@{Util::RingBuffer$<$ Data $>$}!allocate@{allocate}}
+\index{allocate@{allocate}!Util::RingBuffer$<$ Data $>$@{Util::RingBuffer$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{allocate()}{allocate()}}
+{\footnotesize\ttfamily template$<$class Data $>$ \\
+void \mbox{\hyperlink{classUtil_1_1RingBuffer}{Util\+::\+Ring\+Buffer}}$<$ Data $>$\+::allocate (\begin{DoxyParamCaption}\item[{int}]{capacity }\end{DoxyParamCaption})}
+
+
+
+Allocate a new empty buffer. 
+
+Allocate a new array containing capacity elements.
+
+Throw an \mbox{\hyperlink{classUtil_1_1Exception}{Exception}} if this \mbox{\hyperlink{classUtil_1_1RingBuffer}{Ring\+Buffer}} has already been allocated -\/ a \mbox{\hyperlink{classUtil_1_1RingBuffer}{Ring\+Buffer}} can only be allocated once.
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & number of elements to allocate. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 228 of file Ring\+Buffer.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1RingBuffer_a66780b4c571f0cc9e714a9c3985d38f1}\label{classUtil_1_1RingBuffer_a66780b4c571f0cc9e714a9c3985d38f1}} 
+\index{Util::RingBuffer$<$ Data $>$@{Util::RingBuffer$<$ Data $>$}!clear@{clear}}
+\index{clear@{clear}!Util::RingBuffer$<$ Data $>$@{Util::RingBuffer$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily template$<$class Data $>$ \\
+void \mbox{\hyperlink{classUtil_1_1RingBuffer}{Util\+::\+Ring\+Buffer}}$<$ Data $>$\+::clear\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set previously allocated buffer to empty state. 
+
+
+
+Definition at line 245 of file Ring\+Buffer.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1RingBuffer_af2d2146097539045591adc8e66c903b9}\label{classUtil_1_1RingBuffer_af2d2146097539045591adc8e66c903b9}} 
+\index{Util::RingBuffer$<$ Data $>$@{Util::RingBuffer$<$ Data $>$}!append@{append}}
+\index{append@{append}!Util::RingBuffer$<$ Data $>$@{Util::RingBuffer$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{append()}{append()}}
+{\footnotesize\ttfamily template$<$class Data $>$ \\
+void \mbox{\hyperlink{classUtil_1_1RingBuffer}{Util\+::\+Ring\+Buffer}}$<$ Data $>$\+::append (\begin{DoxyParamCaption}\item[{Data const \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a new value to the buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & new value to be added. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 256 of file Ring\+Buffer.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1RingBuffer_ae70512696de0f84b9101aff8d0f0e6ff}\label{classUtil_1_1RingBuffer_ae70512696de0f84b9101aff8d0f0e6ff}} 
+\index{Util::RingBuffer$<$ Data $>$@{Util::RingBuffer$<$ Data $>$}!size@{size}}
+\index{size@{size}!Util::RingBuffer$<$ Data $>$@{Util::RingBuffer$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$class Data $>$ \\
+int \mbox{\hyperlink{classUtil_1_1RingBuffer}{Util\+::\+Ring\+Buffer}}$<$ Data $>$\+::size\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return number of values currently in the buffer. 
+
+
+
+Definition at line 277 of file Ring\+Buffer.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1RingBuffer_a7ff114a95d5227296719714cfb541190}\label{classUtil_1_1RingBuffer_a7ff114a95d5227296719714cfb541190}} 
+\index{Util::RingBuffer$<$ Data $>$@{Util::RingBuffer$<$ Data $>$}!capacity@{capacity}}
+\index{capacity@{capacity}!Util::RingBuffer$<$ Data $>$@{Util::RingBuffer$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{capacity()}{capacity()}}
+{\footnotesize\ttfamily template$<$class Data $>$ \\
+int \mbox{\hyperlink{classUtil_1_1RingBuffer}{Util\+::\+Ring\+Buffer}}$<$ Data $>$\+::capacity\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the capacity of the buffer. 
+
+
+
+Definition at line 285 of file Ring\+Buffer.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1RingBuffer_a1b63f23558186125615dee43ebeaedfd}\label{classUtil_1_1RingBuffer_a1b63f23558186125615dee43ebeaedfd}} 
+\index{Util::RingBuffer$<$ Data $>$@{Util::RingBuffer$<$ Data $>$}!isAllocated@{isAllocated}}
+\index{isAllocated@{isAllocated}!Util::RingBuffer$<$ Data $>$@{Util::RingBuffer$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{isAllocated()}{isAllocated()}}
+{\footnotesize\ttfamily template$<$class Data $>$ \\
+bool \mbox{\hyperlink{classUtil_1_1RingBuffer}{Util\+::\+Ring\+Buffer}}$<$ Data $>$\+::is\+Allocated\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return true if the \mbox{\hyperlink{classUtil_1_1RingBuffer}{Ring\+Buffer}} has been allocated, false otherwise. 
+
+
+
+Definition at line 293 of file Ring\+Buffer.\+h.
+
+
+
+Referenced by Util\+::\+Ring\+Buffer$<$ Util\+::\+F\+Array$<$ double, 6 $>$ $>$\+::operator=().
+
+\mbox{\Hypertarget{classUtil_1_1RingBuffer_a1c9dc1a05df24faba44743d253a89fcd}\label{classUtil_1_1RingBuffer_a1c9dc1a05df24faba44743d253a89fcd}} 
+\index{Util::RingBuffer$<$ Data $>$@{Util::RingBuffer$<$ Data $>$}!isFull@{isFull}}
+\index{isFull@{isFull}!Util::RingBuffer$<$ Data $>$@{Util::RingBuffer$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{isFull()}{isFull()}}
+{\footnotesize\ttfamily template$<$class Data $>$ \\
+bool \mbox{\hyperlink{classUtil_1_1RingBuffer}{Util\+::\+Ring\+Buffer}}$<$ Data $>$\+::is\+Full\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return true if full (if size == capacity), false otherwise. 
+
+
+
+Definition at line 301 of file Ring\+Buffer.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1RingBuffer_a10c51b1861154076b0c6b691c56b4d0e}\label{classUtil_1_1RingBuffer_a10c51b1861154076b0c6b691c56b4d0e}} 
+\index{Util::RingBuffer$<$ Data $>$@{Util::RingBuffer$<$ Data $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Util::RingBuffer$<$ Data $>$@{Util::RingBuffer$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class Data $>$ \\
+const Data \& \mbox{\hyperlink{classUtil_1_1RingBuffer}{Util\+::\+Ring\+Buffer}}$<$ Data $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{offset }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve a const value, a specified number of time steps ago. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em offset} & number of steps back in time (offset=0 is current value). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 309 of file Ring\+Buffer.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1RingBuffer_a34a79de6346c239d1288aba3bb9ad71c}\label{classUtil_1_1RingBuffer_a34a79de6346c239d1288aba3bb9ad71c}} 
+\index{Util::RingBuffer$<$ Data $>$@{Util::RingBuffer$<$ Data $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Util::RingBuffer$<$ Data $>$@{Util::RingBuffer$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class Data $>$ \\
+Data \& \mbox{\hyperlink{classUtil_1_1RingBuffer}{Util\+::\+Ring\+Buffer}}$<$ Data $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve a value, a specified number of time steps ago. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em offset} & number of steps back in time (offset=0 is current value). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 327 of file Ring\+Buffer.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1RingBuffer_a29198899f39be24981f39930a1282b27}\label{classUtil_1_1RingBuffer_a29198899f39be24981f39930a1282b27}} 
+\index{Util::RingBuffer$<$ Data $>$@{Util::RingBuffer$<$ Data $>$}!serialize@{serialize}}
+\index{serialize@{serialize}!Util::RingBuffer$<$ Data $>$@{Util::RingBuffer$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$class Data $>$ \\
+template$<$class Archive $>$ \\
+void \mbox{\hyperlink{classUtil_1_1RingBuffer}{Util\+::\+Ring\+Buffer}}$<$ Data $>$\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{ar,  }\item[{const unsigned int}]{version }\end{DoxyParamCaption})}
+
+
+
+Serialize a \mbox{\hyperlink{classUtil_1_1RingBuffer}{Ring\+Buffer}} to/from an Archive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & archive \\
+\hline
+{\em version} & archive version id \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 345 of file Ring\+Buffer.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Ring\+Buffer.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,326 @@
+\hypertarget{classPscf_1_1ChiInteraction}{}\doxysubsection{Pscf\+::Chi\+Interaction Class Reference}
+\label{classPscf_1_1ChiInteraction}\index{Pscf::ChiInteraction@{Pscf::ChiInteraction}}
+
+
+Flory-\/\+Huggins excess free energy model.  
+
+
+
+
+{\ttfamily \#include $<$Chi\+Interaction.\+h$>$}
+
+Inheritance diagram for Pscf\+::Chi\+Interaction\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{classPscf_1_1ChiInteraction}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPscf_1_1ChiInteraction_a14235658efb036ad54c43cdb46e41468}{Chi\+Interaction}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classPscf_1_1ChiInteraction_a0ff30de20ad66998a05b008dac4a9ef0}{$\sim$\+Chi\+Interaction}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPscf_1_1ChiInteraction_acd4c544476b17be55d890ebcf1a2f66f}{read\+Parameters}} (std\+::istream \&in)
+\begin{DoxyCompactList}\small\item\em Read chi parameters. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{classPscf_1_1ChiInteraction_a9ebc634b8b5b8834c61d29ac75896bfa}{f\+Helmholtz}} (\mbox{\hyperlink{classUtil_1_1Array}{Array}}$<$ double $>$ const \&c) const
+\begin{DoxyCompactList}\small\item\em Compute excess Helmholtz free energy per monomer. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPscf_1_1ChiInteraction_a1609f12544f165c29f3542cf6ec544ac}{computeW}} (\mbox{\hyperlink{classUtil_1_1Array}{Array}}$<$ double $>$ const \&c, \mbox{\hyperlink{classUtil_1_1Array}{Array}}$<$ double $>$ \&w) const
+\begin{DoxyCompactList}\small\item\em Compute chemical potential from concentration. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPscf_1_1ChiInteraction_a8c7f57c8ca96a643fe1914d994df5ccc}{computeC}} (\mbox{\hyperlink{classUtil_1_1Array}{Array}}$<$ double $>$ const \&w, \mbox{\hyperlink{classUtil_1_1Array}{Array}}$<$ double $>$ \&c, double \&xi) const
+\begin{DoxyCompactList}\small\item\em Compute concentration from chemical potential fields. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPscf_1_1ChiInteraction_a5a4fbcd72ead10de48b0eddf59bd2eef}{compute\+Xi}} (\mbox{\hyperlink{classUtil_1_1Array}{Array}}$<$ double $>$ const \&w, double \&xi) const
+\begin{DoxyCompactList}\small\item\em Compute Langrange multiplier xi from chemical potential fields. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPscf_1_1ChiInteraction_a62ebea2ebb240a0ec101555b37eba3bc}{compute\+Dw\+Dc}} (\mbox{\hyperlink{classUtil_1_1Array}{Array}}$<$ double $>$ const \&c, \mbox{\hyperlink{classUtil_1_1Matrix}{Matrix}}$<$ double $>$ \&d\+WdC) const
+\begin{DoxyCompactList}\small\item\em Compute second derivatives of free energy. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classPscf_1_1ChiInteraction_a03f37c9da0f544ada15bcd22ed79b8a4}{chi}} (int i, int j)
+\begin{DoxyCompactList}\small\item\em Return one element of the chi matrix. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classPscf_1_1ChiInteraction_a1d331c470ec864913e79f8c044ca5ad5}{chi\+Inverse}} (int i, int j)
+\begin{DoxyCompactList}\small\item\em Return one element of the inverse chi matrix. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classPscf_1_1ChiInteraction_a572e7f5c7ed55083b849146d772eac37}{idemp}} (int i, int j)
+\begin{DoxyCompactList}\small\item\em Return one element of the idempotent matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+
+
+\doxysubsubsection{Detailed Description}
+Flory-\/\+Huggins excess free energy model. 
+
+Definition at line 23 of file Chi\+Interaction.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPscf_1_1ChiInteraction_a14235658efb036ad54c43cdb46e41468}\label{classPscf_1_1ChiInteraction_a14235658efb036ad54c43cdb46e41468}} 
+\index{Pscf::ChiInteraction@{Pscf::ChiInteraction}!ChiInteraction@{ChiInteraction}}
+\index{ChiInteraction@{ChiInteraction}!Pscf::ChiInteraction@{Pscf::ChiInteraction}}
+\doxyparagraph{\texorpdfstring{ChiInteraction()}{ChiInteraction()}}
+{\footnotesize\ttfamily Pscf\+::\+Chi\+Interaction\+::\+Chi\+Interaction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+
+Definition at line 18 of file Chi\+Interaction.\+cpp.
+
+
+
+References Util\+::\+Param\+Composite\+::set\+Class\+Name().
+
+\mbox{\Hypertarget{classPscf_1_1ChiInteraction_a0ff30de20ad66998a05b008dac4a9ef0}\label{classPscf_1_1ChiInteraction_a0ff30de20ad66998a05b008dac4a9ef0}} 
+\index{Pscf::ChiInteraction@{Pscf::ChiInteraction}!````~ChiInteraction@{$\sim$ChiInteraction}}
+\index{````~ChiInteraction@{$\sim$ChiInteraction}!Pscf::ChiInteraction@{Pscf::ChiInteraction}}
+\doxyparagraph{\texorpdfstring{$\sim$ChiInteraction()}{~ChiInteraction()}}
+{\footnotesize\ttfamily Pscf\+::\+Chi\+Interaction\+::$\sim$\+Chi\+Interaction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+Definition at line 25 of file Chi\+Interaction.\+cpp.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPscf_1_1ChiInteraction_acd4c544476b17be55d890ebcf1a2f66f}\label{classPscf_1_1ChiInteraction_acd4c544476b17be55d890ebcf1a2f66f}} 
+\index{Pscf::ChiInteraction@{Pscf::ChiInteraction}!readParameters@{readParameters}}
+\index{readParameters@{readParameters}!Pscf::ChiInteraction@{Pscf::ChiInteraction}}
+\doxyparagraph{\texorpdfstring{readParameters()}{readParameters()}}
+{\footnotesize\ttfamily void Pscf\+::\+Chi\+Interaction\+::read\+Parameters (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Read chi parameters. 
+
+Must be called after set\+N\+Monomer. 
+
+Reimplemented from \mbox{\hyperlink{classUtil_1_1ParamComposite_a172a3a656b5829c8d758424ad09a22a6}{Util\+::\+Param\+Composite}}.
+
+
+
+Definition at line 31 of file Chi\+Interaction.\+cpp.
+
+
+
+References Pscf\+::\+Lu\+Solver\+::allocate(), Util\+::\+D\+Matrix$<$ Data $>$\+::allocate(), Pscf\+::\+Lu\+Solver\+::compute\+L\+U(), Pscf\+::\+Lu\+Solver\+::inverse(), Pscf\+::\+Interaction\+::n\+Monomer(), Util\+::\+Param\+Composite\+::read\+D\+Symm\+Matrix(), U\+T\+I\+L\+\_\+\+C\+H\+E\+CK, and U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classPscf_1_1ChiInteraction_a9ebc634b8b5b8834c61d29ac75896bfa}\label{classPscf_1_1ChiInteraction_a9ebc634b8b5b8834c61d29ac75896bfa}} 
+\index{Pscf::ChiInteraction@{Pscf::ChiInteraction}!fHelmholtz@{fHelmholtz}}
+\index{fHelmholtz@{fHelmholtz}!Pscf::ChiInteraction@{Pscf::ChiInteraction}}
+\doxyparagraph{\texorpdfstring{fHelmholtz()}{fHelmholtz()}}
+{\footnotesize\ttfamily double Pscf\+::\+Chi\+Interaction\+::f\+Helmholtz (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1Array}{Array}}$<$ double $>$ const \&}]{c }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Compute excess Helmholtz free energy per monomer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & array of concentrations, for each type (input) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classPscf_1_1Interaction_a3ec2bef30f4763bf5b64e4d12fc65acd}{Pscf\+::\+Interaction}}.
+
+
+
+Definition at line 93 of file Chi\+Interaction.\+cpp.
+
+
+
+References Pscf\+::\+Interaction\+::n\+Monomer().
+
+\mbox{\Hypertarget{classPscf_1_1ChiInteraction_a1609f12544f165c29f3542cf6ec544ac}\label{classPscf_1_1ChiInteraction_a1609f12544f165c29f3542cf6ec544ac}} 
+\index{Pscf::ChiInteraction@{Pscf::ChiInteraction}!computeW@{computeW}}
+\index{computeW@{computeW}!Pscf::ChiInteraction@{Pscf::ChiInteraction}}
+\doxyparagraph{\texorpdfstring{computeW()}{computeW()}}
+{\footnotesize\ttfamily void Pscf\+::\+Chi\+Interaction\+::computeW (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1Array}{Array}}$<$ double $>$ const \&}]{c,  }\item[{\mbox{\hyperlink{classUtil_1_1Array}{Array}}$<$ double $>$ \&}]{w }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Compute chemical potential from concentration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & array of concentrations, for each type (input) \\
+\hline
+{\em w} & array of chemical potentials for types (ouptut) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classPscf_1_1Interaction_aa04ae1ec8eecdcece17b04137c73b9a7}{Pscf\+::\+Interaction}}.
+
+
+
+Definition at line 109 of file Chi\+Interaction.\+cpp.
+
+
+
+References Pscf\+::\+Interaction\+::n\+Monomer().
+
+\mbox{\Hypertarget{classPscf_1_1ChiInteraction_a8c7f57c8ca96a643fe1914d994df5ccc}\label{classPscf_1_1ChiInteraction_a8c7f57c8ca96a643fe1914d994df5ccc}} 
+\index{Pscf::ChiInteraction@{Pscf::ChiInteraction}!computeC@{computeC}}
+\index{computeC@{computeC}!Pscf::ChiInteraction@{Pscf::ChiInteraction}}
+\doxyparagraph{\texorpdfstring{computeC()}{computeC()}}
+{\footnotesize\ttfamily void Pscf\+::\+Chi\+Interaction\+::computeC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1Array}{Array}}$<$ double $>$ const \&}]{w,  }\item[{\mbox{\hyperlink{classUtil_1_1Array}{Array}}$<$ double $>$ \&}]{c,  }\item[{double \&}]{xi }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Compute concentration from chemical potential fields. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & array of chemical potentials for types (inut) \\
+\hline
+{\em c} & array of vol. fractions, for each type (output) \\
+\hline
+{\em xi} & Langrange multiplier pressure (output) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classPscf_1_1Interaction_af89cdbdd9a054d5bfe33bbbfcabffa77}{Pscf\+::\+Interaction}}.
+
+
+
+Definition at line 125 of file Chi\+Interaction.\+cpp.
+
+
+
+References Pscf\+::\+Interaction\+::n\+Monomer().
+
+\mbox{\Hypertarget{classPscf_1_1ChiInteraction_a5a4fbcd72ead10de48b0eddf59bd2eef}\label{classPscf_1_1ChiInteraction_a5a4fbcd72ead10de48b0eddf59bd2eef}} 
+\index{Pscf::ChiInteraction@{Pscf::ChiInteraction}!computeXi@{computeXi}}
+\index{computeXi@{computeXi}!Pscf::ChiInteraction@{Pscf::ChiInteraction}}
+\doxyparagraph{\texorpdfstring{computeXi()}{computeXi()}}
+{\footnotesize\ttfamily void Pscf\+::\+Chi\+Interaction\+::compute\+Xi (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1Array}{Array}}$<$ double $>$ const \&}]{w,  }\item[{double \&}]{xi }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Compute Langrange multiplier xi from chemical potential fields. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & array of chemical potentials for types (inut) \\
+\hline
+{\em xi} & Langrange multiplier pressure (output) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classPscf_1_1Interaction_ab77996b50808f636b0bdb7b6ed7c8d0f}{Pscf\+::\+Interaction}}.
+
+
+
+Definition at line 151 of file Chi\+Interaction.\+cpp.
+
+
+
+References Pscf\+::\+Interaction\+::n\+Monomer().
+
+\mbox{\Hypertarget{classPscf_1_1ChiInteraction_a62ebea2ebb240a0ec101555b37eba3bc}\label{classPscf_1_1ChiInteraction_a62ebea2ebb240a0ec101555b37eba3bc}} 
+\index{Pscf::ChiInteraction@{Pscf::ChiInteraction}!computeDwDc@{computeDwDc}}
+\index{computeDwDc@{computeDwDc}!Pscf::ChiInteraction@{Pscf::ChiInteraction}}
+\doxyparagraph{\texorpdfstring{computeDwDc()}{computeDwDc()}}
+{\footnotesize\ttfamily void Pscf\+::\+Chi\+Interaction\+::compute\+Dw\+Dc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1Array}{Array}}$<$ double $>$ const \&}]{c,  }\item[{\mbox{\hyperlink{classUtil_1_1Matrix}{Matrix}}$<$ double $>$ \&}]{d\+WdC }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Compute second derivatives of free energy. 
+
+Upon return, the elements of the square matrix d\+WdC, are given by derivatives d\+Wd\+C(i,j) = d\+W(i)/dC(j), which are also second derivatives of the interaction free energy. For this Flory-\/\+Huggins chi parameter model, this is simply given by the chi matrix d\+Wd\+C(i,j) = chi(i, j).
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & array of concentrations, for each type (input) \\
+\hline
+{\em d\+WdC} & matrix of derivatives (output) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classPscf_1_1Interaction_a979231dcf58ef659e167ddbb397b0514}{Pscf\+::\+Interaction}}.
+
+
+
+Definition at line 170 of file Chi\+Interaction.\+cpp.
+
+
+
+References Pscf\+::\+Interaction\+::n\+Monomer().
+
+\mbox{\Hypertarget{classPscf_1_1ChiInteraction_a03f37c9da0f544ada15bcd22ed79b8a4}\label{classPscf_1_1ChiInteraction_a03f37c9da0f544ada15bcd22ed79b8a4}} 
+\index{Pscf::ChiInteraction@{Pscf::ChiInteraction}!chi@{chi}}
+\index{chi@{chi}!Pscf::ChiInteraction@{Pscf::ChiInteraction}}
+\doxyparagraph{\texorpdfstring{chi()}{chi()}}
+{\footnotesize\ttfamily double Pscf\+::\+Chi\+Interaction\+::chi (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return one element of the chi matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & row index \\
+\hline
+{\em j} & column index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 142 of file Chi\+Interaction.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1ChiInteraction_a1d331c470ec864913e79f8c044ca5ad5}\label{classPscf_1_1ChiInteraction_a1d331c470ec864913e79f8c044ca5ad5}} 
+\index{Pscf::ChiInteraction@{Pscf::ChiInteraction}!chiInverse@{chiInverse}}
+\index{chiInverse@{chiInverse}!Pscf::ChiInteraction@{Pscf::ChiInteraction}}
+\doxyparagraph{\texorpdfstring{chiInverse()}{chiInverse()}}
+{\footnotesize\ttfamily double Pscf\+::\+Chi\+Interaction\+::chi\+Inverse (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return one element of the inverse chi matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & row index \\
+\hline
+{\em j} & column index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 145 of file Chi\+Interaction.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1ChiInteraction_a572e7f5c7ed55083b849146d772eac37}\label{classPscf_1_1ChiInteraction_a572e7f5c7ed55083b849146d772eac37}} 
+\index{Pscf::ChiInteraction@{Pscf::ChiInteraction}!idemp@{idemp}}
+\index{idemp@{idemp}!Pscf::ChiInteraction@{Pscf::ChiInteraction}}
+\doxyparagraph{\texorpdfstring{idemp()}{idemp()}}
+{\footnotesize\ttfamily double Pscf\+::\+Chi\+Interaction\+::idemp (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return one element of the idempotent matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & row index \\
+\hline
+{\em j} & column index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 148 of file Chi\+Interaction.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Chi\+Interaction.\+h\item 
+Chi\+Interaction.\+cpp\end{DoxyCompactItemize}

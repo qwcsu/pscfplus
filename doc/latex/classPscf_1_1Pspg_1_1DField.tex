@@ -1,0 +1,243 @@
+\hypertarget{classPscf_1_1Pspg_1_1DField}{}\doxysubsection{Pscf\+::Pspg\+::D\+Field$<$ Data $>$ Class Template Reference}
+\label{classPscf_1_1Pspg_1_1DField}\index{Pscf::Pspg::DField$<$ Data $>$@{Pscf::Pspg::DField$<$ Data $>$}}
+
+
+Dynamic array with aligned data, for use with cufftw library/device code.  
+
+
+
+
+{\ttfamily \#include $<$D\+Field.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPscf_1_1Pspg_1_1DField_aaaee5aac26c12db38ec21a16bc2214fb}{D\+Field}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classPscf_1_1Pspg_1_1DField_a9eb98f576144678f813ea3b3d3bf9274}{$\sim$\+D\+Field}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1Pspg_1_1DField_a475908bd3dba4c04dae2765f052c8317}{allocate}} (int \mbox{\hyperlink{classPscf_1_1Pspg_1_1DField_ad2f3b27aaa1fd4036e98682e7a9bf9ee}{capacity}})
+\begin{DoxyCompactList}\small\item\em Allocate the underlying C array. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1Pspg_1_1DField_a8b0201ff34469e72a846425c2fc2fcea}{deallocate}} ()
+\begin{DoxyCompactList}\small\item\em Dellocate the underlying C array. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPscf_1_1Pspg_1_1DField_ad5f43a7acca82072c2c129b1e66bc60e}{is\+Allocated}} () const
+\begin{DoxyCompactList}\small\item\em Return true if the \mbox{\hyperlink{classPscf_1_1Field}{Field}} has been allocated, false otherwise. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPscf_1_1Pspg_1_1DField_ad2f3b27aaa1fd4036e98682e7a9bf9ee}{capacity}} () const
+\begin{DoxyCompactList}\small\item\em Return allocated size. \end{DoxyCompactList}\item 
+Data $\ast$ \mbox{\hyperlink{classPscf_1_1Pspg_1_1DField_a0fdcc5df3209790f0b5777c927fa996b}{c\+D\+Field}} ()
+\begin{DoxyCompactList}\small\item\em Return pointer to underlying C array. \end{DoxyCompactList}\item 
+const Data $\ast$ \mbox{\hyperlink{classPscf_1_1Pspg_1_1DField_a33852417c6feab0546b5d24d875155d6}{c\+D\+Field}} () const
+\begin{DoxyCompactList}\small\item\em Return pointer to const to underlying C array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Data $\ast$ \mbox{\hyperlink{classPscf_1_1Pspg_1_1DField_a93f604a563809edd9f760ee891495b33}{data\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Serialize a \mbox{\hyperlink{classPscf_1_1Field}{Field}} to/from an Archive. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPscf_1_1Pspg_1_1DField_a7b3f28ac98c0973710e0d32ac70dc9bf}{capacity\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Allocated size of the data\+\_\+ array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$typename Data$>$\newline
+class Pscf\+::\+Pspg\+::\+D\+Field$<$ Data $>$}
+
+Dynamic array with aligned data, for use with cufftw library/device code. 
+
+This class does not offer memory access via operator\mbox{[}\mbox{]} 
+
+Definition at line 25 of file D\+Field.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1DField_aaaee5aac26c12db38ec21a16bc2214fb}\label{classPscf_1_1Pspg_1_1DField_aaaee5aac26c12db38ec21a16bc2214fb}} 
+\index{Pscf::Pspg::DField$<$ Data $>$@{Pscf::Pspg::DField$<$ Data $>$}!DField@{DField}}
+\index{DField@{DField}!Pscf::Pspg::DField$<$ Data $>$@{Pscf::Pspg::DField$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{DField()}{DField()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+\mbox{\hyperlink{classPscf_1_1Pspg_1_1DField}{Pscf\+::\+Pspg\+::\+D\+Field}}$<$ Data $>$\+::\mbox{\hyperlink{classPscf_1_1Pspg_1_1DField}{D\+Field}}}
+
+
+
+Default constructor. 
+
+
+
+Definition at line 25 of file D\+Field.\+tpp.
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1DField_a9eb98f576144678f813ea3b3d3bf9274}\label{classPscf_1_1Pspg_1_1DField_a9eb98f576144678f813ea3b3d3bf9274}} 
+\index{Pscf::Pspg::DField$<$ Data $>$@{Pscf::Pspg::DField$<$ Data $>$}!````~DField@{$\sim$DField}}
+\index{````~DField@{$\sim$DField}!Pscf::Pspg::DField$<$ Data $>$@{Pscf::Pspg::DField$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{$\sim$DField()}{~DField()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+\mbox{\hyperlink{classPscf_1_1Pspg_1_1DField}{Pscf\+::\+Pspg\+::\+D\+Field}}$<$ Data $>$\+::$\sim$\mbox{\hyperlink{classPscf_1_1Pspg_1_1DField}{D\+Field}}\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+Deletes underlying C array, if allocated previously. 
+
+Definition at line 34 of file D\+Field.\+tpp.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1DField_a475908bd3dba4c04dae2765f052c8317}\label{classPscf_1_1Pspg_1_1DField_a475908bd3dba4c04dae2765f052c8317}} 
+\index{Pscf::Pspg::DField$<$ Data $>$@{Pscf::Pspg::DField$<$ Data $>$}!allocate@{allocate}}
+\index{allocate@{allocate}!Pscf::Pspg::DField$<$ Data $>$@{Pscf::Pspg::DField$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{allocate()}{allocate()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+void \mbox{\hyperlink{classPscf_1_1Pspg_1_1DField}{Pscf\+::\+Pspg\+::\+D\+Field}}$<$ Data $>$\+::allocate (\begin{DoxyParamCaption}\item[{int}]{capacity }\end{DoxyParamCaption})}
+
+
+
+Allocate the underlying C array. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & if the \mbox{\hyperlink{classPscf_1_1Field}{Field}} is already allocated.\\
+\hline
+\end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & number of elements to allocate. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 50 of file D\+Field.\+tpp.
+
+
+
+Referenced by Pscf\+::\+Pspg\+::\+R\+D\+Field\+Dft$<$ D $>$\+::allocate(), and Pscf\+::\+Pspg\+::\+R\+D\+Field$<$ D $>$\+::allocate().
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1DField_a8b0201ff34469e72a846425c2fc2fcea}\label{classPscf_1_1Pspg_1_1DField_a8b0201ff34469e72a846425c2fc2fcea}} 
+\index{Pscf::Pspg::DField$<$ Data $>$@{Pscf::Pspg::DField$<$ Data $>$}!deallocate@{deallocate}}
+\index{deallocate@{deallocate}!Pscf::Pspg::DField$<$ Data $>$@{Pscf::Pspg::DField$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{deallocate()}{deallocate()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+void \mbox{\hyperlink{classPscf_1_1Pspg_1_1DField}{Pscf\+::\+Pspg\+::\+D\+Field}}$<$ Data $>$\+::deallocate}
+
+
+
+Dellocate the underlying C array. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & if the \mbox{\hyperlink{classPscf_1_1Field}{Field}} is not allocated. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 68 of file D\+Field.\+tpp.
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1DField_ad5f43a7acca82072c2c129b1e66bc60e}\label{classPscf_1_1Pspg_1_1DField_ad5f43a7acca82072c2c129b1e66bc60e}} 
+\index{Pscf::Pspg::DField$<$ Data $>$@{Pscf::Pspg::DField$<$ Data $>$}!isAllocated@{isAllocated}}
+\index{isAllocated@{isAllocated}!Pscf::Pspg::DField$<$ Data $>$@{Pscf::Pspg::DField$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{isAllocated()}{isAllocated()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+bool \mbox{\hyperlink{classPscf_1_1Pspg_1_1DField}{Pscf\+::\+Pspg\+::\+D\+Field}}$<$ Data $>$\+::is\+Allocated\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return true if the \mbox{\hyperlink{classPscf_1_1Field}{Field}} has been allocated, false otherwise. 
+
+
+
+Definition at line 133 of file D\+Field.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1DField_ad2f3b27aaa1fd4036e98682e7a9bf9ee}\label{classPscf_1_1Pspg_1_1DField_ad2f3b27aaa1fd4036e98682e7a9bf9ee}} 
+\index{Pscf::Pspg::DField$<$ Data $>$@{Pscf::Pspg::DField$<$ Data $>$}!capacity@{capacity}}
+\index{capacity@{capacity}!Pscf::Pspg::DField$<$ Data $>$@{Pscf::Pspg::DField$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{capacity()}{capacity()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+int \mbox{\hyperlink{classPscf_1_1Pspg_1_1DField}{Pscf\+::\+Pspg\+::\+D\+Field}}$<$ Data $>$\+::capacity\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return allocated size. 
+
+\begin{DoxyReturn}{Returns}
+Number of elements allocated in array. 
+\end{DoxyReturn}
+
+
+Definition at line 112 of file D\+Field.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1DField_a0fdcc5df3209790f0b5777c927fa996b}\label{classPscf_1_1Pspg_1_1DField_a0fdcc5df3209790f0b5777c927fa996b}} 
+\index{Pscf::Pspg::DField$<$ Data $>$@{Pscf::Pspg::DField$<$ Data $>$}!cDField@{cDField}}
+\index{cDField@{cDField}!Pscf::Pspg::DField$<$ Data $>$@{Pscf::Pspg::DField$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{cDField()}{cDField()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+const Data $\ast$ \mbox{\hyperlink{classPscf_1_1Pspg_1_1DField}{Pscf\+::\+Pspg\+::\+D\+Field}}$<$ Data $>$\+::c\+D\+Field\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return pointer to underlying C array. 
+
+
+
+Definition at line 119 of file D\+Field.\+h.
+
+
+
+Referenced by Pscf\+::\+Pspg\+::\+Continuous\+::\+Mixture$<$ D $>$\+::compute(), and Pscf\+::\+Pspg\+::\+Continuous\+::\+Block$<$ D $>$\+::setup\+Solver().
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1DField_a33852417c6feab0546b5d24d875155d6}\label{classPscf_1_1Pspg_1_1DField_a33852417c6feab0546b5d24d875155d6}} 
+\index{Pscf::Pspg::DField$<$ Data $>$@{Pscf::Pspg::DField$<$ Data $>$}!cDField@{cDField}}
+\index{cDField@{cDField}!Pscf::Pspg::DField$<$ Data $>$@{Pscf::Pspg::DField$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{cDField()}{cDField()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+const Data$\ast$ \mbox{\hyperlink{classPscf_1_1Pspg_1_1DField}{Pscf\+::\+Pspg\+::\+D\+Field}}$<$ Data $>$\+::c\+D\+Field (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return pointer to const to underlying C array. 
+
+
+
+\doxysubsubsection{Member Data Documentation}
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1DField_a93f604a563809edd9f760ee891495b33}\label{classPscf_1_1Pspg_1_1DField_a93f604a563809edd9f760ee891495b33}} 
+\index{Pscf::Pspg::DField$<$ Data $>$@{Pscf::Pspg::DField$<$ Data $>$}!data\_@{data\_}}
+\index{data\_@{data\_}!Pscf::Pspg::DField$<$ Data $>$@{Pscf::Pspg::DField$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{data\_}{data\_}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+Data$\ast$ \mbox{\hyperlink{classPscf_1_1Pspg_1_1DField}{Pscf\+::\+Pspg\+::\+D\+Field}}$<$ Data $>$\+::data\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Serialize a \mbox{\hyperlink{classPscf_1_1Field}{Field}} to/from an Archive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & archive \\
+\hline
+{\em version} & archive version id Pointer to an array of Data elements. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 100 of file D\+Field.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1DField_a7b3f28ac98c0973710e0d32ac70dc9bf}\label{classPscf_1_1Pspg_1_1DField_a7b3f28ac98c0973710e0d32ac70dc9bf}} 
+\index{Pscf::Pspg::DField$<$ Data $>$@{Pscf::Pspg::DField$<$ Data $>$}!capacity\_@{capacity\_}}
+\index{capacity\_@{capacity\_}!Pscf::Pspg::DField$<$ Data $>$@{Pscf::Pspg::DField$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{capacity\_}{capacity\_}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+int \mbox{\hyperlink{classPscf_1_1Pspg_1_1DField}{Pscf\+::\+Pspg\+::\+D\+Field}}$<$ Data $>$\+::capacity\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Allocated size of the data\+\_\+ array. 
+
+
+
+Definition at line 103 of file D\+Field.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+Field.\+h\item 
+D\+Field.\+tpp\end{DoxyCompactItemize}

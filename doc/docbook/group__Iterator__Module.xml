@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_group__Iterator__Module">
+<title>Iterators</title>
+<indexterm><primary>Iterators</primary></indexterm>
+<para>
+
+<para>Iterators for use with particular containers. </para>
+ 
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classUtil_1_1ArrayIterator">Util::ArrayIterator&lt; Data &gt;</link></para>
+
+<para>Forward iterator for an <link linkend="_classUtil_1_1Array">Array</link> or a C array. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classUtil_1_1ConstArrayIterator">Util::ConstArrayIterator&lt; Data &gt;</link></para>
+
+<para>Forward const iterator for an <link linkend="_classUtil_1_1Array">Array</link> or a C array. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classUtil_1_1ConstPArrayIterator">Util::ConstPArrayIterator&lt; Data &gt;</link></para>
+
+<para>Forward iterator for a <link linkend="_classUtil_1_1PArray">PArray</link>. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classUtil_1_1ListIterator">Util::ListIterator&lt; Data &gt;</link></para>
+
+<para>Bidirectional iterator for a <link linkend="_classUtil_1_1List">List</link>. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classUtil_1_1PArrayIterator">Util::PArrayIterator&lt; Data &gt;</link></para>
+
+<para>Forward iterator for a <link linkend="_classUtil_1_1PArray">PArray</link>. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Iterators for use with particular containers. </para>
+</section>
+</section>

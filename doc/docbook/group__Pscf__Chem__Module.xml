@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_group__Pscf__Chem__Module">
+<title>Chemical Structure</title>
+<indexterm><primary>Chemical Structure</primary></indexterm>
+<para>
+
+<para>Classes that describe chemical structure of polymers and solvents. </para>
+ 
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classPscf_1_1BlockDescriptor">Pscf::BlockDescriptor</link></para>
+
+<para>A linear homopolymer block within a block copolymer. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1BondDescriptor">Pscf::BondDescriptor</link></para>
+
+<para>A linear bond (including block-bond and joint-bond) within a block copolymer. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1Monomer">Pscf::Monomer</link></para>
+
+<para>Descriptor for a monomer or particle type. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1Species">Pscf::Species</link></para>
+
+<para>Base class for a molecular species (polymer or solvent). </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1Vertex">Pscf::Vertex</link></para>
+
+<para>A junction or chain end in a block polymer. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Classes that describe chemical structure of polymers and solvents. </para>
+</section>
+</section>

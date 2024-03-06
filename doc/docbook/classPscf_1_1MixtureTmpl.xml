@@ -1,0 +1,317 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classPscf_1_1MixtureTmpl">
+<title>Pscf::MixtureTmpl&lt; TP, TS &gt; Class Template Reference</title>
+<indexterm><primary>Pscf::MixtureTmpl&lt; TP, TS &gt;</primary></indexterm>
+<para>
+
+<para>A mixture of polymer and solvent species. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;MixtureTmpl.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Pscf::MixtureTmpl&lt; TP, TS &gt;:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classPscf_1_1MixtureTmpl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Types    </title>
+        <itemizedlist>
+            <listitem><para>typedef TP <link linkend="_classPscf_1_1MixtureTmpl_1aa042c20da20a931d050efc5c257bedcd">Polymer</link></para>
+
+<para>Polymer species solver type. </para>
+</listitem>
+            <listitem><para>typedef TS <link linkend="_classPscf_1_1MixtureTmpl_1adea24de0d7826eb3455153922453540b">Solvent</link></para>
+
+<para>Solvent species solver type. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classPscf_1_1MixtureTmpl_1a2d88c72f59bf55d2207096434c0265c2">MixtureTmpl</link> ()</para>
+
+<para>Constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classPscf_1_1MixtureTmpl_1aca959588e049a8dcbbd4901cb5658fd6">~MixtureTmpl</link> ()</para>
+
+<para>Destructor. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classPscf_1_1MixtureTmpl_1add538e69f3ef64693601a88d9db7d766">readParameters</link> (std::istream &amp;in)</para>
+
+<para>Read parameters from file and initialize. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect><title>Accessors (by non-const reference)</title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classPscf_1_1Monomer">Monomer</link> &amp; <link linkend="_classPscf_1_1MixtureTmpl_1a6ef5b19284e85e5405f67f7ea939c61b">monomer</link> (int id)</para>
+
+<para>Get a <link linkend="_classPscf_1_1Monomer">Monomer</link> type descriptor. </para>
+</listitem>
+            <listitem><para><link linkend="_classPscf_1_1MixtureTmpl_1aa042c20da20a931d050efc5c257bedcd">Polymer</link> &amp; <link linkend="_classPscf_1_1MixtureTmpl_1a2eb8c0525f3a6e04ceea240e04c8fdfc">polymer</link> (int id)</para>
+
+<para>Get a polymer object. </para>
+</listitem>
+            <listitem><para><link linkend="_classPscf_1_1MixtureTmpl_1adea24de0d7826eb3455153922453540b">Solvent</link> &amp; <link linkend="_classPscf_1_1MixtureTmpl_1ad3a3cbf271946997e7226d2e37109a27">solvent</link> (int id)</para>
+
+<para>Set a solvent solver object. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Accessors (by value)    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_classPscf_1_1MixtureTmpl_1aa5801f478b598a8d1d5ef312be281b19">nMonomer</link> () const</para>
+
+<para>Get number of monomer types. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classPscf_1_1MixtureTmpl_1ae03e54c9c71458aedd91904b0ab98389">nPolymer</link> () const</para>
+
+<para>Get number of polymer species. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classPscf_1_1MixtureTmpl_1a471d61d4390bbbf12870816a99e9ffcb">nSolvent</link> () const</para>
+
+<para>Get number of solvent (point particle) species. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;class TP, class TS&gt;
+class Pscf::MixtureTmpl&lt; TP, TS &gt;</title></simplesect>
+
+
+<para>A mixture of polymer and solvent species. </para>
+<para>
+Definition at line 26 of file MixtureTmpl.h.</para>
+</section>
+<section>
+<title>Member Typedef Documentation</title>
+<anchor xml:id="_classPscf_1_1MixtureTmpl_1aa042c20da20a931d050efc5c257bedcd"/>    <section>
+    <title>Polymer</title>
+<indexterm><primary>Polymer</primary><secondary>Pscf::MixtureTmpl&lt; TP, TS &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::MixtureTmpl&lt; TP, TS &gt;</primary><secondary>Polymer</secondary></indexterm>
+<computeroutput>template&lt;class TP , class TS &gt; </computeroutput><para><computeroutput>typedef TP <link linkend="_classPscf_1_1MixtureTmpl">Pscf::MixtureTmpl</link>&lt; TP, TS &gt;::<link linkend="_classPscf_1_1MixtureTmpl_1aa042c20da20a931d050efc5c257bedcd">Polymer</link></computeroutput></para><para>
+
+<para>Polymer species solver type. </para>
+</para>
+<para>
+Definition at line 35 of file MixtureTmpl.h.</para>
+    </section><anchor xml:id="_classPscf_1_1MixtureTmpl_1adea24de0d7826eb3455153922453540b"/>    <section>
+    <title>Solvent</title>
+<indexterm><primary>Solvent</primary><secondary>Pscf::MixtureTmpl&lt; TP, TS &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::MixtureTmpl&lt; TP, TS &gt;</primary><secondary>Solvent</secondary></indexterm>
+<computeroutput>template&lt;class TP , class TS &gt; </computeroutput><para><computeroutput>typedef TS <link linkend="_classPscf_1_1MixtureTmpl">Pscf::MixtureTmpl</link>&lt; TP, TS &gt;::<link linkend="_classPscf_1_1MixtureTmpl_1adea24de0d7826eb3455153922453540b">Solvent</link></computeroutput></para><para>
+
+<para>Solvent species solver type. </para>
+</para>
+<para>
+Definition at line 40 of file MixtureTmpl.h.</para>
+</section>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classPscf_1_1MixtureTmpl_1a2d88c72f59bf55d2207096434c0265c2"/>    <section>
+    <title>MixtureTmpl()</title>
+<indexterm><primary>MixtureTmpl</primary><secondary>Pscf::MixtureTmpl&lt; TP, TS &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::MixtureTmpl&lt; TP, TS &gt;</primary><secondary>MixtureTmpl</secondary></indexterm>
+<computeroutput>template&lt;class TP , class TS &gt; </computeroutput><para><computeroutput><link linkend="_classPscf_1_1MixtureTmpl">Pscf::MixtureTmpl</link>&lt; TP, TS &gt;::<link linkend="_classPscf_1_1MixtureTmpl">MixtureTmpl</link></computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+<para>
+Definition at line 176 of file MixtureTmpl.h.</para>
+    </section><anchor xml:id="_classPscf_1_1MixtureTmpl_1aca959588e049a8dcbbd4901cb5658fd6"/>    <section>
+    <title>~MixtureTmpl()</title>
+<indexterm><primary>~MixtureTmpl</primary><secondary>Pscf::MixtureTmpl&lt; TP, TS &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::MixtureTmpl&lt; TP, TS &gt;</primary><secondary>~MixtureTmpl</secondary></indexterm>
+<computeroutput>template&lt;class TP , class TS &gt; </computeroutput><para><computeroutput><link linkend="_classPscf_1_1MixtureTmpl">Pscf::MixtureTmpl</link>&lt; TP, TS &gt;::~<link linkend="_classPscf_1_1MixtureTmpl">MixtureTmpl</link></computeroutput></para><para>
+
+<para>Destructor. </para>
+</para>
+<para>
+Definition at line 190 of file MixtureTmpl.h.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classPscf_1_1MixtureTmpl_1add538e69f3ef64693601a88d9db7d766"/>    <section>
+    <title>readParameters()</title>
+<indexterm><primary>readParameters</primary><secondary>Pscf::MixtureTmpl&lt; TP, TS &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::MixtureTmpl&lt; TP, TS &gt;</primary><secondary>readParameters</secondary></indexterm>
+<computeroutput>template&lt;class TP , class TS &gt; </computeroutput><para><computeroutput>void <link linkend="_classPscf_1_1MixtureTmpl">Pscf::MixtureTmpl</link>&lt; TP, TS &gt;::readParameters (std::istream &amp; in)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Read parameters from file and initialize. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input parameter file </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Reimplemented from <link linkend="_classUtil_1_1ParamComposite_1a172a3a656b5829c8d758424ad09a22a6">Util::ParamComposite</link>.</para>
+<para>
+Reimplemented in <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture_1ade33c91c8055983824e6068d8a81b7e3">Pscf::Pspg::Continuous::Mixture&lt; D &gt;</link>.</para>
+<para>
+Definition at line 197 of file MixtureTmpl.h.</para>
+    </section><anchor xml:id="_classPscf_1_1MixtureTmpl_1a6ef5b19284e85e5405f67f7ea939c61b"/>    <section>
+    <title>monomer()</title>
+<indexterm><primary>monomer</primary><secondary>Pscf::MixtureTmpl&lt; TP, TS &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::MixtureTmpl&lt; TP, TS &gt;</primary><secondary>monomer</secondary></indexterm>
+<computeroutput>template&lt;class TP , class TS &gt; </computeroutput><para><computeroutput><link linkend="_classPscf_1_1Monomer">Monomer</link> &amp; <link linkend="_classPscf_1_1MixtureTmpl">Pscf::MixtureTmpl</link>&lt; TP, TS &gt;::monomer (int id)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get a <link linkend="_classPscf_1_1Monomer">Monomer</link> type descriptor. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>id</entry>
+                                <entry>
+<para>integer monomer type index (0 &lt;= id &lt; nMonomer) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 159 of file MixtureTmpl.h.</para>
+    </section><anchor xml:id="_classPscf_1_1MixtureTmpl_1a2eb8c0525f3a6e04ceea240e04c8fdfc"/>    <section>
+    <title>polymer()</title>
+<indexterm><primary>polymer</primary><secondary>Pscf::MixtureTmpl&lt; TP, TS &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::MixtureTmpl&lt; TP, TS &gt;</primary><secondary>polymer</secondary></indexterm>
+<computeroutput>template&lt;class TP , class TS &gt; </computeroutput><para><computeroutput>TP &amp; <link linkend="_classPscf_1_1MixtureTmpl">Pscf::MixtureTmpl</link>&lt; TP, TS &gt;::polymer (int id)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get a polymer object. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>id</entry>
+                                <entry>
+<para>integer polymer species index (0 &lt;= id &lt; nPolymer) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 163 of file MixtureTmpl.h.</para>
+    </section><anchor xml:id="_classPscf_1_1MixtureTmpl_1ad3a3cbf271946997e7226d2e37109a27"/>    <section>
+    <title>solvent()</title>
+<indexterm><primary>solvent</primary><secondary>Pscf::MixtureTmpl&lt; TP, TS &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::MixtureTmpl&lt; TP, TS &gt;</primary><secondary>solvent</secondary></indexterm>
+<computeroutput>template&lt;class TP , class TS &gt; </computeroutput><para><computeroutput>TS &amp; <link linkend="_classPscf_1_1MixtureTmpl">Pscf::MixtureTmpl</link>&lt; TP, TS &gt;::solvent (int id)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Set a solvent solver object. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>id</entry>
+                                <entry>
+<para>integer solvent species index (0 &lt;= id &lt; nSolvent) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 167 of file MixtureTmpl.h.</para>
+    </section><anchor xml:id="_classPscf_1_1MixtureTmpl_1aa5801f478b598a8d1d5ef312be281b19"/>    <section>
+    <title>nMonomer()</title>
+<indexterm><primary>nMonomer</primary><secondary>Pscf::MixtureTmpl&lt; TP, TS &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::MixtureTmpl&lt; TP, TS &gt;</primary><secondary>nMonomer</secondary></indexterm>
+<computeroutput>template&lt;class TP , class TS &gt; </computeroutput><para><computeroutput>int <link linkend="_classPscf_1_1MixtureTmpl">Pscf::MixtureTmpl</link>&lt; TP, TS &gt;::nMonomer<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get number of monomer types. </para>
+</para>
+<para>
+Definition at line 147 of file MixtureTmpl.h.</para>
+    </section><anchor xml:id="_classPscf_1_1MixtureTmpl_1ae03e54c9c71458aedd91904b0ab98389"/>    <section>
+    <title>nPolymer()</title>
+<indexterm><primary>nPolymer</primary><secondary>Pscf::MixtureTmpl&lt; TP, TS &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::MixtureTmpl&lt; TP, TS &gt;</primary><secondary>nPolymer</secondary></indexterm>
+<computeroutput>template&lt;class TP , class TS &gt; </computeroutput><para><computeroutput>int <link linkend="_classPscf_1_1MixtureTmpl">Pscf::MixtureTmpl</link>&lt; TP, TS &gt;::nPolymer<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get number of polymer species. </para>
+</para>
+<para>
+Definition at line 151 of file MixtureTmpl.h.</para>
+    </section><anchor xml:id="_classPscf_1_1MixtureTmpl_1a471d61d4390bbbf12870816a99e9ffcb"/>    <section>
+    <title>nSolvent()</title>
+<indexterm><primary>nSolvent</primary><secondary>Pscf::MixtureTmpl&lt; TP, TS &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::MixtureTmpl&lt; TP, TS &gt;</primary><secondary>nSolvent</secondary></indexterm>
+<computeroutput>template&lt;class TP , class TS &gt; </computeroutput><para><computeroutput>int <link linkend="_classPscf_1_1MixtureTmpl">Pscf::MixtureTmpl</link>&lt; TP, TS &gt;::nSolvent<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get number of solvent (point particle) species. </para>
+</para>
+<para>
+Definition at line 155 of file MixtureTmpl.h.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+MixtureTmpl.h</section>
+</section>

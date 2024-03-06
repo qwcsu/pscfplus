@@ -1,0 +1,192 @@
+\hypertarget{classUtil_1_1AutoCorrelation}{}\doxysubsection{Util\+::Auto\+Correlation$<$ Data, Product $>$ Class Template Reference}
+\label{classUtil_1_1AutoCorrelation}\index{Util::AutoCorrelation$<$ Data, Product $>$@{Util::AutoCorrelation$<$ Data, Product $>$}}
+
+
+Auto-\/correlation function, using hierarchical algorithm.  
+
+
+
+
+{\ttfamily \#include $<$Auto\+Correlation.\+h$>$}
+
+Inheritance diagram for Util\+::Auto\+Correlation$<$ Data, Product $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.177305cm]{classUtil_1_1AutoCorrelation}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1AutoCorrelation_acefac97246a62506d9da85437888a48c}{Auto\+Correlation}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUtil_1_1AutoCorrelation_a9cf931113574f743fd88b9b6ee88d565}{read\+Parameters}} (std\+::istream \&in)
+\begin{DoxyCompactList}\small\item\em Read parameters from file and initialize. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUtil_1_1AutoCorrelation_acbc41a7ab175fcd6422ab15b05886840}{load}} (\mbox{\hyperlink{classUtil_1_1Serializable_ac6bcbf9bac926cada5a398804410e891}{Serializable\+::\+I\+Archive}} \&ar)
+\begin{DoxyCompactList}\small\item\em Load internal state from an archive. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUtil_1_1AutoCorrelation_adc342d958fd2ab000573de8100c91043}{save}} (\mbox{\hyperlink{classUtil_1_1Serializable_aca43a1eea5ec5f13189a57892a7a6d04}{Serializable\+::\+O\+Archive}} \&ar)
+\begin{DoxyCompactList}\small\item\em Save internal state to an archive. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUtil_1_1AutoCorrelation_a6bdf24b1557c3ad3bbb7a8a383c17251}{max\+Delay}} () const
+\begin{DoxyCompactList}\small\item\em Return maximum delay, in primary samples. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classUtil_1_1AutoCorrelation_a7f75dcd45ab37465e18bb97ce33c56c7}{register\+Descendant}} (\mbox{\hyperlink{classUtil_1_1AutoCorrStage}{Auto\+Corr\+Stage}}$<$ Data, Product $>$ $\ast$ptr)
+\begin{DoxyCompactList}\small\item\em Register a descendant stage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$typename Data, typename Product$>$\newline
+class Util\+::\+Auto\+Correlation$<$ Data, Product $>$}
+
+Auto-\/correlation function, using hierarchical algorithm. 
+
+This class represents the primary stage of a linked list of \mbox{\hyperlink{classUtil_1_1AutoCorrStage}{Auto\+Corr\+Stage}} objects that implement a hierarchical blocking algorithm for an auto-\/correlation function. 
+
+Definition at line 29 of file Auto\+Correlation.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1AutoCorrelation_acefac97246a62506d9da85437888a48c}\label{classUtil_1_1AutoCorrelation_acefac97246a62506d9da85437888a48c}} 
+\index{Util::AutoCorrelation$<$ Data, Product $>$@{Util::AutoCorrelation$<$ Data, Product $>$}!AutoCorrelation@{AutoCorrelation}}
+\index{AutoCorrelation@{AutoCorrelation}!Util::AutoCorrelation$<$ Data, Product $>$@{Util::AutoCorrelation$<$ Data, Product $>$}}
+\doxyparagraph{\texorpdfstring{AutoCorrelation()}{AutoCorrelation()}}
+{\footnotesize\ttfamily template$<$typename Data , typename Product $>$ \\
+\mbox{\hyperlink{classUtil_1_1AutoCorrelation}{Util\+::\+Auto\+Correlation}}$<$ Data, Product $>$\+::\mbox{\hyperlink{classUtil_1_1AutoCorrelation}{Auto\+Correlation}}}
+
+
+
+Constructor. 
+
+
+
+Definition at line 23 of file Auto\+Correlation.\+tpp.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1AutoCorrelation_a9cf931113574f743fd88b9b6ee88d565}\label{classUtil_1_1AutoCorrelation_a9cf931113574f743fd88b9b6ee88d565}} 
+\index{Util::AutoCorrelation$<$ Data, Product $>$@{Util::AutoCorrelation$<$ Data, Product $>$}!readParameters@{readParameters}}
+\index{readParameters@{readParameters}!Util::AutoCorrelation$<$ Data, Product $>$@{Util::AutoCorrelation$<$ Data, Product $>$}}
+\doxyparagraph{\texorpdfstring{readParameters()}{readParameters()}}
+{\footnotesize\ttfamily template$<$typename Data , typename Product $>$ \\
+void \mbox{\hyperlink{classUtil_1_1AutoCorrelation}{Util\+::\+Auto\+Correlation}}$<$ Data, Product $>$\+::read\+Parameters (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Read parameters from file and initialize. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & input parameter file \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classUtil_1_1ParamComposite_a172a3a656b5829c8d758424ad09a22a6}{Util\+::\+Param\+Composite}}.
+
+
+
+Definition at line 33 of file Auto\+Correlation.\+tpp.
+
+\mbox{\Hypertarget{classUtil_1_1AutoCorrelation_acbc41a7ab175fcd6422ab15b05886840}\label{classUtil_1_1AutoCorrelation_acbc41a7ab175fcd6422ab15b05886840}} 
+\index{Util::AutoCorrelation$<$ Data, Product $>$@{Util::AutoCorrelation$<$ Data, Product $>$}!load@{load}}
+\index{load@{load}!Util::AutoCorrelation$<$ Data, Product $>$@{Util::AutoCorrelation$<$ Data, Product $>$}}
+\doxyparagraph{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily template$<$typename Data , typename Product $>$ \\
+void \mbox{\hyperlink{classUtil_1_1AutoCorrelation}{Util\+::\+Auto\+Correlation}}$<$ Data, Product $>$\+::load (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1Serializable_ac6bcbf9bac926cada5a398804410e891}{Serializable\+::\+I\+Archive}} \&}]{ar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Load internal state from an archive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & input/loading archive \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classUtil_1_1ParamComposite_a02a1172d7cd86d4015be8d9e65fe750f}{Util\+::\+Param\+Composite}}.
+
+
+
+Definition at line 45 of file Auto\+Correlation.\+tpp.
+
+\mbox{\Hypertarget{classUtil_1_1AutoCorrelation_adc342d958fd2ab000573de8100c91043}\label{classUtil_1_1AutoCorrelation_adc342d958fd2ab000573de8100c91043}} 
+\index{Util::AutoCorrelation$<$ Data, Product $>$@{Util::AutoCorrelation$<$ Data, Product $>$}!save@{save}}
+\index{save@{save}!Util::AutoCorrelation$<$ Data, Product $>$@{Util::AutoCorrelation$<$ Data, Product $>$}}
+\doxyparagraph{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily template$<$typename Data , typename Product $>$ \\
+void \mbox{\hyperlink{classUtil_1_1AutoCorrelation}{Util\+::\+Auto\+Correlation}}$<$ Data, Product $>$\+::save (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1Serializable_aca43a1eea5ec5f13189a57892a7a6d04}{Serializable\+::\+O\+Archive}} \&}]{ar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Save internal state to an archive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & output/saving archive \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classUtil_1_1ParamComposite_a3c430a4e31a9573eadb06ab89d3bf780}{Util\+::\+Param\+Composite}}.
+
+
+
+Definition at line 57 of file Auto\+Correlation.\+tpp.
+
+\mbox{\Hypertarget{classUtil_1_1AutoCorrelation_a6bdf24b1557c3ad3bbb7a8a383c17251}\label{classUtil_1_1AutoCorrelation_a6bdf24b1557c3ad3bbb7a8a383c17251}} 
+\index{Util::AutoCorrelation$<$ Data, Product $>$@{Util::AutoCorrelation$<$ Data, Product $>$}!maxDelay@{maxDelay}}
+\index{maxDelay@{maxDelay}!Util::AutoCorrelation$<$ Data, Product $>$@{Util::AutoCorrelation$<$ Data, Product $>$}}
+\doxyparagraph{\texorpdfstring{maxDelay()}{maxDelay()}}
+{\footnotesize\ttfamily template$<$typename Data , typename Product $>$ \\
+int \mbox{\hyperlink{classUtil_1_1AutoCorrelation}{Util\+::\+Auto\+Correlation}}$<$ Data, Product $>$\+::max\+Delay}
+
+
+
+Return maximum delay, in primary samples. 
+
+
+
+Definition at line 64 of file Auto\+Correlation.\+tpp.
+
+
+
+References Util\+::\+Auto\+Corr\+Stage$<$ Data, Product $>$\+::buffer\+Size(), and Util\+::\+Auto\+Corr\+Stage$<$ Data, Product $>$\+::stage\+Interval().
+
+\mbox{\Hypertarget{classUtil_1_1AutoCorrelation_a7f75dcd45ab37465e18bb97ce33c56c7}\label{classUtil_1_1AutoCorrelation_a7f75dcd45ab37465e18bb97ce33c56c7}} 
+\index{Util::AutoCorrelation$<$ Data, Product $>$@{Util::AutoCorrelation$<$ Data, Product $>$}!registerDescendant@{registerDescendant}}
+\index{registerDescendant@{registerDescendant}!Util::AutoCorrelation$<$ Data, Product $>$@{Util::AutoCorrelation$<$ Data, Product $>$}}
+\doxyparagraph{\texorpdfstring{registerDescendant()}{registerDescendant()}}
+{\footnotesize\ttfamily template$<$typename Data , typename Product $>$ \\
+void \mbox{\hyperlink{classUtil_1_1AutoCorrelation}{Util\+::\+Auto\+Correlation}}$<$ Data, Product $>$\+::register\+Descendant (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1AutoCorrStage}{Auto\+Corr\+Stage}}$<$ Data, Product $>$ $\ast$}]{ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Register a descendant stage. 
+
+This should be called only by a root stage.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & pointer to a descendant \mbox{\hyperlink{classUtil_1_1AutoCorrelation}{Auto\+Correlation}}. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classUtil_1_1AutoCorrStage_a8f447b552c43081da294b5745369d5e7}{Util\+::\+Auto\+Corr\+Stage$<$ Data, Product $>$}}.
+
+
+
+Definition at line 79 of file Auto\+Correlation.\+tpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Auto\+Correlation.\+h\item 
+Auto\+Correlation.\+tpp\end{DoxyCompactItemize}

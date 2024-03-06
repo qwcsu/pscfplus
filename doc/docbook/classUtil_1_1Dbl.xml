@@ -1,0 +1,304 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1Dbl">
+<title>Util::Dbl Class Reference</title>
+<indexterm><primary>Util::Dbl</primary></indexterm>
+<para>
+
+<para>Wrapper for a double precision number, for formatted ostream output. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;Dbl.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+<simplesect><title>Constructors</title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1Dbl_1a09c82f9694d56d9720e61d863d87ee60">Dbl</link> ()</para>
+
+<para>Default constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Dbl_1ab6b72f658ca2d35fa6319347f1f27790">Dbl</link> (double <link linkend="_classUtil_1_1Dbl_1a47cfd8b50881789c28772600894fa3d5">value</link>)</para>
+
+<para>Constructor, value only. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Dbl_1a84cd3ef07667f67427ece530bcb930bb">Dbl</link> (double <link linkend="_classUtil_1_1Dbl_1a47cfd8b50881789c28772600894fa3d5">value</link>, int <link linkend="_classUtil_1_1Dbl_1a78b9cce6e7874fcae255bb93720f80f0">width</link>)</para>
+
+<para>Constructor, value and width. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Dbl_1a7114779824c05860a76b1e240e639861">Dbl</link> (double <link linkend="_classUtil_1_1Dbl_1a47cfd8b50881789c28772600894fa3d5">value</link>, int <link linkend="_classUtil_1_1Dbl_1a78b9cce6e7874fcae255bb93720f80f0">width</link>, int <link linkend="_classUtil_1_1Dbl_1ad4cb4f724c4d8303f24832c4c3e583e6">precision</link>, bool isFixed=false)</para>
+
+<para>Constructor: value, width, precision, and format. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</simplesect>
+<simplesect><title>Mutators</title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_classUtil_1_1Dbl_1ab0899e3a72900e18d0d05ee776bbb10c">setValue</link> (double <link linkend="_classUtil_1_1Dbl_1a47cfd8b50881789c28772600894fa3d5">value</link>)</para>
+
+<para>Set value of associated double. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1Dbl_1ae9d75a02c5585a705fc16a0023531b67">setWidth</link> (int <link linkend="_classUtil_1_1Dbl_1a78b9cce6e7874fcae255bb93720f80f0">width</link>)</para>
+
+<para>Set output field width. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1Dbl_1ad0a0e459e20ee18c2986a88d7126aa9b">setPrecision</link> (int <link linkend="_classUtil_1_1Dbl_1ad4cb4f724c4d8303f24832c4c3e583e6">precision</link>)</para>
+
+<para>Set output floating point precision. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Accessors    </title>
+        <itemizedlist>
+            <listitem><para>double <link linkend="_classUtil_1_1Dbl_1a47cfd8b50881789c28772600894fa3d5">value</link> ()</para>
+
+<para>Get value of associated double. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1Dbl_1a78b9cce6e7874fcae255bb93720f80f0">width</link> ()</para>
+
+<para>Get field width. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1Dbl_1ad4cb4f724c4d8303f24832c4c3e583e6">precision</link> ()</para>
+
+<para>Get floating point precision. </para>
+</listitem>
+            <listitem><para>std::istream &amp; <link linkend="_classUtil_1_1Dbl_1ae1073f1c8b531d987107ec54b9c9401b">operator&gt;&gt;</link> (std::istream &amp;in, <link linkend="_classUtil_1_1Dbl">Dbl</link> &amp;object)</para>
+
+<para>Input stream extractor for an <link linkend="_classUtil_1_1Dbl">Dbl</link> object. </para>
+</listitem>
+            <listitem><para>std::ostream &amp; <link linkend="_classUtil_1_1Dbl_1a52a634ad842d6a842b5a79ced346de10">operator&lt;&lt;</link> (std::ostream &amp;out, const <link linkend="_classUtil_1_1Dbl">Dbl</link> &amp;object)</para>
+
+<para>Output stream inserter for an <link linkend="_classUtil_1_1Dbl">Dbl</link> object. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Wrapper for a double precision number, for formatted ostream output. </para>
+
+
+
+<para>An <link linkend="_classUtil_1_1Dbl">Dbl</link> object has a double precision numerical value, as well as members (width and precision) that control its output format. The &lt;&lt; operator for an <link linkend="_classUtil_1_1Dbl">Dbl</link> object uses the specified width and precision. The double precision number, the width and the precision may all be specified as parameters to one of several constructors. Values of width and precision that are not specified as parameters of a constructor are set within the constructor to default values given by <link linkend="_classUtil_1_1Format_1ac6cf6620e160c66757429bec0fb4dd23">Format::defaultWidth()</link> and <link linkend="_classUtil_1_1Format_1ad09d93166bbb678297938e83a88bab9a">Format::defaultPrecision()</link>, respectively.</para>
+
+<para>A <link linkend="_classUtil_1_1Dbl">Dbl</link> object may be passed to an ostream as a temporary object. For example, the expression: <literallayout><computeroutput>std::cout&#32;&lt;&lt;&#32;Dbl(2.0)&#32;&lt;&lt;&#32;Dbl(3.0,&#32;15,&#32;8)&#32;&lt;&lt;&#32;std::endl;
+</computeroutput></literallayout> outputs the number 2.0 using the default width and precision, followed by the number 3.0 in a field of minimum width 15 and precision 8. </para>
+<para>
+Definition at line 39 of file Dbl.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1Dbl_1a09c82f9694d56d9720e61d863d87ee60"/>    <section>
+    <title>Dbl()<computeroutput>[1/4]</computeroutput></title>
+<indexterm><primary>Dbl</primary><secondary>Util::Dbl</secondary></indexterm>
+<indexterm><primary>Util::Dbl</primary><secondary>Dbl</secondary></indexterm>
+<para><computeroutput>Util::Dbl::Dbl ( )</computeroutput></para><para>
+
+<para>Default constructor. </para>
+</para>
+<para>
+Definition at line 17 of file Dbl.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1Dbl_1ab6b72f658ca2d35fa6319347f1f27790"/>    <section>
+    <title>Dbl()<computeroutput>[2/4]</computeroutput></title>
+<indexterm><primary>Dbl</primary><secondary>Util::Dbl</secondary></indexterm>
+<indexterm><primary>Util::Dbl</primary><secondary>Dbl</secondary></indexterm>
+<para><computeroutput>Util::Dbl::Dbl (double value)<computeroutput>[explicit]</computeroutput></computeroutput></para><para>
+
+<para>Constructor, value only. </para>
+</para>
+<para>
+Definition at line 25 of file Dbl.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1Dbl_1a84cd3ef07667f67427ece530bcb930bb"/>    <section>
+    <title>Dbl()<computeroutput>[3/4]</computeroutput></title>
+<indexterm><primary>Dbl</primary><secondary>Util::Dbl</secondary></indexterm>
+<indexterm><primary>Util::Dbl</primary><secondary>Dbl</secondary></indexterm>
+<para><computeroutput>Util::Dbl::Dbl (double value, int width)</computeroutput></para><para>
+
+<para>Constructor, value and width. </para>
+</para>
+<para>
+Definition at line 33 of file Dbl.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1Dbl_1a7114779824c05860a76b1e240e639861"/>    <section>
+    <title>Dbl()<computeroutput>[4/4]</computeroutput></title>
+<indexterm><primary>Dbl</primary><secondary>Util::Dbl</secondary></indexterm>
+<indexterm><primary>Util::Dbl</primary><secondary>Dbl</secondary></indexterm>
+<para><computeroutput>Util::Dbl::Dbl (double value, int width, int precision, bool isFixed = <computeroutput>false</computeroutput>
+)</computeroutput></para><para>
+
+<para>Constructor: value, width, precision, and format. </para>
+</para>
+<para>
+Definition at line 41 of file Dbl.cpp.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1Dbl_1ab0899e3a72900e18d0d05ee776bbb10c"/>    <section>
+    <title>setValue()</title>
+<indexterm><primary>setValue</primary><secondary>Util::Dbl</secondary></indexterm>
+<indexterm><primary>Util::Dbl</primary><secondary>setValue</secondary></indexterm>
+<para><computeroutput>void Util::Dbl::setValue (double value)</computeroutput></para><para>
+
+<para>Set value of associated double. </para>
+</para>
+<para>
+Definition at line 48 of file Dbl.cpp.</para>
+<para>
+References value().</para>
+    </section><anchor xml:id="_classUtil_1_1Dbl_1ae9d75a02c5585a705fc16a0023531b67"/>    <section>
+    <title>setWidth()</title>
+<indexterm><primary>setWidth</primary><secondary>Util::Dbl</secondary></indexterm>
+<indexterm><primary>Util::Dbl</primary><secondary>setWidth</secondary></indexterm>
+<para><computeroutput>void Util::Dbl::setWidth (int width)</computeroutput></para><para>
+
+<para>Set output field width. </para>
+</para>
+<para>
+Definition at line 51 of file Dbl.cpp.</para>
+<para>
+References width().</para>
+    </section><anchor xml:id="_classUtil_1_1Dbl_1ad0a0e459e20ee18c2986a88d7126aa9b"/>    <section>
+    <title>setPrecision()</title>
+<indexterm><primary>setPrecision</primary><secondary>Util::Dbl</secondary></indexterm>
+<indexterm><primary>Util::Dbl</primary><secondary>setPrecision</secondary></indexterm>
+<para><computeroutput>void Util::Dbl::setPrecision (int precision)</computeroutput></para><para>
+
+<para>Set output floating point precision. </para>
+</para>
+<para>
+Definition at line 54 of file Dbl.cpp.</para>
+<para>
+References precision().</para>
+    </section><anchor xml:id="_classUtil_1_1Dbl_1a47cfd8b50881789c28772600894fa3d5"/>    <section>
+    <title>value()</title>
+<indexterm><primary>value</primary><secondary>Util::Dbl</secondary></indexterm>
+<indexterm><primary>Util::Dbl</primary><secondary>value</secondary></indexterm>
+<para><computeroutput>double Util::Dbl::value ( )</computeroutput></para><para>
+
+<para>Get value of associated double. </para>
+</para>
+<para>
+Definition at line 57 of file Dbl.cpp.</para>
+<para>
+Referenced by setValue().</para>
+    </section><anchor xml:id="_classUtil_1_1Dbl_1a78b9cce6e7874fcae255bb93720f80f0"/>    <section>
+    <title>width()</title>
+<indexterm><primary>width</primary><secondary>Util::Dbl</secondary></indexterm>
+<indexterm><primary>Util::Dbl</primary><secondary>width</secondary></indexterm>
+<para><computeroutput>int Util::Dbl::width ( )</computeroutput></para><para>
+
+<para>Get field width. </para>
+</para>
+<para>
+Definition at line 60 of file Dbl.cpp.</para>
+<para>
+Referenced by setWidth().</para>
+    </section><anchor xml:id="_classUtil_1_1Dbl_1ad4cb4f724c4d8303f24832c4c3e583e6"/>    <section>
+    <title>precision()</title>
+<indexterm><primary>precision</primary><secondary>Util::Dbl</secondary></indexterm>
+<indexterm><primary>Util::Dbl</primary><secondary>precision</secondary></indexterm>
+<para><computeroutput>int Util::Dbl::precision ( )</computeroutput></para><para>
+
+<para>Get floating point precision. </para>
+</para>
+<para>
+Definition at line 63 of file Dbl.cpp.</para>
+<para>
+Referenced by setPrecision().</para>
+</section>
+</section>
+<section>
+<title>Friends And Related Function Documentation</title>
+<anchor xml:id="_classUtil_1_1Dbl_1ae1073f1c8b531d987107ec54b9c9401b"/>    <section>
+    <title>operator&gt;&gt;</title>
+<indexterm><primary>operator&gt;&gt;</primary><secondary>Util::Dbl</secondary></indexterm>
+<indexterm><primary>Util::Dbl</primary><secondary>operator&gt;&gt;</secondary></indexterm>
+<para><computeroutput>std::istream&amp; operator&gt;&gt; (std::istream &amp; in, <link linkend="_classUtil_1_1Dbl">Dbl</link> &amp; object)<computeroutput>[friend]</computeroutput></computeroutput></para><para>
+
+<para>Input stream extractor for an <link linkend="_classUtil_1_1Dbl">Dbl</link> object. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>object</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Dbl">Dbl</link> object to be read from stream </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified input stream </para>
+</formalpara>
+</para>
+<para>
+Definition at line 73 of file Dbl.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1Dbl_1a52a634ad842d6a842b5a79ced346de10"/>    <section>
+    <title>operator&lt;&lt;</title>
+<indexterm><primary>operator&lt;&lt;</primary><secondary>Util::Dbl</secondary></indexterm>
+<indexterm><primary>Util::Dbl</primary><secondary>operator&lt;&lt;</secondary></indexterm>
+<para><computeroutput>std::ostream&amp; operator&lt;&lt; (std::ostream &amp; out, const <link linkend="_classUtil_1_1Dbl">Dbl</link> &amp; object)<computeroutput>[friend]</computeroutput></computeroutput></para><para>
+
+<para>Output stream inserter for an <link linkend="_classUtil_1_1Dbl">Dbl</link> object. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>out</entry>
+                                <entry>
+<para>output stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>object</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Dbl">Dbl</link> to be written to stream </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified output stream </para>
+</formalpara>
+</para>
+<para>
+Definition at line 86 of file Dbl.cpp.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+Dbl.hDbl.cpp</section>
+</section>

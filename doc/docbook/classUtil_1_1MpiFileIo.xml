@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1MpiFileIo">
+<title>Util::MpiFileIo Class Reference</title>
+<indexterm><primary>Util::MpiFileIo</primary></indexterm>
+<para>
+
+<para>Identifies whether this processor may do file I/O. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;MpiFileIo.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Util::MpiFileIo:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classUtil_1_1MpiFileIo.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1MpiFileIo_1acade0b046a375d4407aa98dca46bfcdc">MpiFileIo</link> ()</para>
+
+<para>Constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1MpiFileIo_1a01b0ce2abff83abd2bff03d7ef757bdb">MpiFileIo</link> (const <link linkend="_classUtil_1_1MpiFileIo">MpiFileIo</link> &amp;other)</para>
+
+<para>Copy constructor. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_classUtil_1_1MpiFileIo_1af2787f522a78daada06b2241ce368128">isIoProcessor</link> () const</para>
+
+<para>Can this processor do file I/O ? </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1MpiFileIo_1af3c4366b33caeb960150da926090d68f">setIoCommunicator</link> (MPI::Intracomm &amp;communicator)</para>
+
+<para>Set the communicator. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1MpiFileIo_1afa004979e5f91e9cf07252b5a26e2d3f">clearCommunicator</link> ()</para>
+
+<para>Clear (nullify) the communicator. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_classUtil_1_1MpiFileIo_1af4cad36ab425c813b2592c94ea51799b">hasIoCommunicator</link> () const</para>
+
+<para>Does this object have an associated MPI communicator? </para>
+</listitem>
+            <listitem><para>MPI::Intracomm &amp; <link linkend="_classUtil_1_1MpiFileIo_1a578f0ca38b85f2a97eee6b760d87246c">ioCommunicator</link> () const</para>
+
+<para>Get the MPI communicator by reference. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Identifies whether this processor may do file I/O. </para>
+
+
+
+<para>The return value of <link linkend="_classUtil_1_1MpiFileIo_1af2787f522a78daada06b2241ce368128">isIoProcessor()</link> indicates whether this processor can read and write to file. If the the class is compiled with UTIL_MPI not defined, then <link linkend="_classUtil_1_1MpiFileIo_1af2787f522a78daada06b2241ce368128">isIoProcessor()</link> always returns true. If the class is compiled with UTIL_MPI defined, then this method returns true if either: (1) A communicator has been set and this processor has rank 0 within that communicator, or (2) No communicator has been set.</para>
+
+<para>When compiled with UTIL_MPI defined, an <link linkend="_classUtil_1_1MpiFileIo">MpiFileIo</link> object has a pointer to an MPI communiciator, and provides methods to set and unset (nullify) the associated communicator. </para>
+<para>
+Definition at line 33 of file MpiFileIo.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1MpiFileIo_1acade0b046a375d4407aa98dca46bfcdc"/>    <section>
+    <title>MpiFileIo()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>MpiFileIo</primary><secondary>Util::MpiFileIo</secondary></indexterm>
+<indexterm><primary>Util::MpiFileIo</primary><secondary>MpiFileIo</secondary></indexterm>
+<para><computeroutput>Util::MpiFileIo::MpiFileIo ( )</computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+<para>
+Definition at line 18 of file MpiFileIo.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1MpiFileIo_1a01b0ce2abff83abd2bff03d7ef757bdb"/>    <section>
+    <title>MpiFileIo()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>MpiFileIo</primary><secondary>Util::MpiFileIo</secondary></indexterm>
+<indexterm><primary>Util::MpiFileIo</primary><secondary>MpiFileIo</secondary></indexterm>
+<para><computeroutput>Util::MpiFileIo::MpiFileIo (const <link linkend="_classUtil_1_1MpiFileIo">MpiFileIo</link> &amp; other)</computeroutput></para><para>
+
+<para>Copy constructor. </para>
+</para>
+<para>
+Definition at line 28 of file MpiFileIo.cpp.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1MpiFileIo_1af2787f522a78daada06b2241ce368128"/>    <section>
+    <title>isIoProcessor()</title>
+<indexterm><primary>isIoProcessor</primary><secondary>Util::MpiFileIo</secondary></indexterm>
+<indexterm><primary>Util::MpiFileIo</primary><secondary>isIoProcessor</secondary></indexterm>
+<para><computeroutput>bool Util::MpiFileIo::isIoProcessor ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Can this processor do file I/O ? </para>
+</para>
+<para>
+Definition at line 92 of file MpiFileIo.h.</para>
+<para>
+Referenced by Util::Parameter::load(), Util::ParamComposite::load(), Util::ParamComposite::loadOptional(), Util::Blank::readParam(), Util::End::readParam(), Util::Begin::readParam(), and Util::Parameter::readParam().</para>
+    </section><anchor xml:id="_classUtil_1_1MpiFileIo_1af3c4366b33caeb960150da926090d68f"/>    <section>
+    <title>setIoCommunicator()</title>
+<indexterm><primary>setIoCommunicator</primary><secondary>Util::MpiFileIo</secondary></indexterm>
+<indexterm><primary>Util::MpiFileIo</primary><secondary>setIoCommunicator</secondary></indexterm>
+<para><computeroutput>void Util::MpiFileIo::setIoCommunicator (MPI::Intracomm &amp; communicator)</computeroutput></para><para>
+
+<para>Set the communicator. </para>
+</para>
+<para>
+Definition at line 36 of file MpiFileIo.cpp.</para>
+<para>
+Referenced by Util::ParamComposite::setParent().</para>
+    </section><anchor xml:id="_classUtil_1_1MpiFileIo_1afa004979e5f91e9cf07252b5a26e2d3f"/>    <section>
+    <title>clearCommunicator()</title>
+<indexterm><primary>clearCommunicator</primary><secondary>Util::MpiFileIo</secondary></indexterm>
+<indexterm><primary>Util::MpiFileIo</primary><secondary>clearCommunicator</secondary></indexterm>
+<para><computeroutput>void Util::MpiFileIo::clearCommunicator ( )</computeroutput></para><para>
+
+<para>Clear (nullify) the communicator. </para>
+</para>
+<para>
+Definition at line 46 of file MpiFileIo.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1MpiFileIo_1af4cad36ab425c813b2592c94ea51799b"/>    <section>
+    <title>hasIoCommunicator()</title>
+<indexterm><primary>hasIoCommunicator</primary><secondary>Util::MpiFileIo</secondary></indexterm>
+<indexterm><primary>Util::MpiFileIo</primary><secondary>hasIoCommunicator</secondary></indexterm>
+<para><computeroutput>bool Util::MpiFileIo::hasIoCommunicator ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Does this object have an associated MPI communicator? </para>
+</para>
+<para>
+Definition at line 99 of file MpiFileIo.h.</para>
+<para>
+Referenced by Util::Parameter::load(), Util::Factory&lt; Data &gt;::loadObject(), Util::ParamComposite::loadOptional(), Util::Factory&lt; Data &gt;::readObject(), Util::Begin::readParam(), Util::Parameter::readParam(), and Util::ParamComposite::setParent().</para>
+    </section><anchor xml:id="_classUtil_1_1MpiFileIo_1a578f0ca38b85f2a97eee6b760d87246c"/>    <section>
+    <title>ioCommunicator()</title>
+<indexterm><primary>ioCommunicator</primary><secondary>Util::MpiFileIo</secondary></indexterm>
+<indexterm><primary>Util::MpiFileIo</primary><secondary>ioCommunicator</secondary></indexterm>
+<para><computeroutput>MPI::Intracomm &amp; Util::MpiFileIo::ioCommunicator ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get the MPI communicator by reference. </para>
+</para>
+<para>
+Definition at line 105 of file MpiFileIo.h.</para>
+<para>
+Referenced by Util::Parameter::load(), Util::Factory&lt; Data &gt;::loadObject(), Util::ParamComposite::loadOptional(), Util::Factory&lt; Data &gt;::readObject(), Util::Begin::readParam(), Util::Parameter::readParam(), and Util::ParamComposite::setParent().</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+MpiFileIo.hMpiFileIo.cpp</section>
+</section>

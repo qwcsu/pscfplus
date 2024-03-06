@@ -1,0 +1,103 @@
+\hypertarget{classUtil_1_1XmlXmlTag}{}\doxysubsection{Util\+::Xml\+Xml\+Tag Class Reference}
+\label{classUtil_1_1XmlXmlTag}\index{Util::XmlXmlTag@{Util::XmlXmlTag}}
+
+
+Parser for an X\+ML file declaration tag (first line in file).  
+
+
+
+
+{\ttfamily \#include $<$Xml\+Xml\+Tag.\+h$>$}
+
+Inheritance diagram for Util\+::Xml\+Xml\+Tag\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classUtil_1_1XmlXmlTag}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1XmlXmlTag_a4e927d15fc5c4acd2bfe8eb6050175d8}{Xml\+Xml\+Tag}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1XmlXmlTag_acbbf1d14530c8d25b054f6412a29ec52}{$\sim$\+Xml\+Xml\+Tag}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUtil_1_1XmlXmlTag_a115f3a2068ddebce4b9849fb594936e8}{match}} (const std\+::string \&\mbox{\hyperlink{classUtil_1_1XmlBase_a8378a6c87659891e9f1e5458dbfc1413}{string}}, int begin)
+\begin{DoxyCompactList}\small\item\em Attempt to match entire xml tag. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Parser for an X\+ML file declaration tag (first line in file). 
+
+The match function attempts to match an xml file declaration tag, such as\+: $<$?xml version=\char`\"{}1.\+0\char`\"{} encoding=\char`\"{}\+U\+T\+F-\/8\char`\"{}?$>$. 
+
+Definition at line 27 of file Xml\+Xml\+Tag.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1XmlXmlTag_a4e927d15fc5c4acd2bfe8eb6050175d8}\label{classUtil_1_1XmlXmlTag_a4e927d15fc5c4acd2bfe8eb6050175d8}} 
+\index{Util::XmlXmlTag@{Util::XmlXmlTag}!XmlXmlTag@{XmlXmlTag}}
+\index{XmlXmlTag@{XmlXmlTag}!Util::XmlXmlTag@{Util::XmlXmlTag}}
+\doxyparagraph{\texorpdfstring{XmlXmlTag()}{XmlXmlTag()}}
+{\footnotesize\ttfamily Util\+::\+Xml\+Xml\+Tag\+::\+Xml\+Xml\+Tag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+
+Definition at line 14 of file Xml\+Xml\+Tag.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1XmlXmlTag_acbbf1d14530c8d25b054f6412a29ec52}\label{classUtil_1_1XmlXmlTag_acbbf1d14530c8d25b054f6412a29ec52}} 
+\index{Util::XmlXmlTag@{Util::XmlXmlTag}!````~XmlXmlTag@{$\sim$XmlXmlTag}}
+\index{````~XmlXmlTag@{$\sim$XmlXmlTag}!Util::XmlXmlTag@{Util::XmlXmlTag}}
+\doxyparagraph{\texorpdfstring{$\sim$XmlXmlTag()}{~XmlXmlTag()}}
+{\footnotesize\ttfamily Util\+::\+Xml\+Xml\+Tag\+::$\sim$\+Xml\+Xml\+Tag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+Definition at line 18 of file Xml\+Xml\+Tag.\+cpp.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1XmlXmlTag_a115f3a2068ddebce4b9849fb594936e8}\label{classUtil_1_1XmlXmlTag_a115f3a2068ddebce4b9849fb594936e8}} 
+\index{Util::XmlXmlTag@{Util::XmlXmlTag}!match@{match}}
+\index{match@{match}!Util::XmlXmlTag@{Util::XmlXmlTag}}
+\doxyparagraph{\texorpdfstring{match()}{match()}}
+{\footnotesize\ttfamily bool Util\+::\+Xml\+Xml\+Tag\+::match (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{string,  }\item[{int}]{begin }\end{DoxyParamCaption})}
+
+
+
+Attempt to match entire xml tag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & containing text of X\+ML tag \\
+\hline
+{\em begin} & index of first character \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on match, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 21 of file Xml\+Xml\+Tag.\+cpp.
+
+
+
+References Util\+::\+Xml\+Attribute\+::label().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Xml\+Xml\+Tag.\+h\item 
+Xml\+Xml\+Tag.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,331 @@
+\hypertarget{classUtil_1_1ArraySet}{}\doxysubsection{Util\+::Array\+Set$<$ Data $>$ Class Template Reference}
+\label{classUtil_1_1ArraySet}\index{Util::ArraySet$<$ Data $>$@{Util::ArraySet$<$ Data $>$}}
+
+
+A container for pointers to a subset of elements of an associated array.  
+
+
+
+
+{\ttfamily \#include $<$Array\+Set.\+h$>$}
+
+Inheritance diagram for Util\+::Array\+Set$<$ Data $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classUtil_1_1ArraySet}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1ArraySet_ab518733b8c00197c369ebc1bbb900a09}{Array\+Set}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classUtil_1_1ArraySet_a2bd362d1e0877b43c42dfbadf7195180}{$\sim$\+Array\+Set}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1ArraySet_a5c12e86ed6a4c2051b32c348991779cc}{allocate}} (const Data $\ast$array, int \mbox{\hyperlink{classUtil_1_1PArray_a44168c67b49d4fa54f298097065f7796}{capacity}})
+\begin{DoxyCompactList}\small\item\em Associate with a C array and allocate required memory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1ArraySet_a97280670f56e2d7d7b623d7b6879bd7f}{allocate}} (const \mbox{\hyperlink{classUtil_1_1Array}{Array}}$<$ Data $>$ \&array)
+\begin{DoxyCompactList}\small\item\em Associate with an \mbox{\hyperlink{classUtil_1_1Array}{Array}} container and allocate required memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Mutators}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classUtil_1_1ArraySet_a369d0413775cfab246ed105a6a103735}{append}} (Data \&data)
+\begin{DoxyCompactList}\small\item\em Append an element to the set. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1ArraySet_a7c21a57396aa00fb4e2e755415d20a72}{remove}} (const Data \&data)
+\begin{DoxyCompactList}\small\item\em Remove an element from the set. \end{DoxyCompactList}\item 
+Data \& \mbox{\hyperlink{classUtil_1_1ArraySet_af43a53675807b89feaaa9c2f0baa116d}{pop}} ()
+\begin{DoxyCompactList}\small\item\em Pop the topmost from the set. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1ArraySet_ad3af3cbc5fbdfa5fad49c042f2fadc37}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Reset to empty state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Accessors}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classUtil_1_1ArraySet_ab963109e370cf57ab4a7375a969b9280}{index}} (const Data \&data) const
+\begin{DoxyCompactList}\small\item\em Return the current index of an element within the set, if any. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUtil_1_1ArraySet_aca2ab9734b30f16fa4a7cf54cc351a37}{is\+Allocated}} () const
+\begin{DoxyCompactList}\small\item\em Return true if the \mbox{\hyperlink{classUtil_1_1ArraySet}{Array\+Set}} is initialized, false otherwise. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUtil_1_1ArraySet_a395b8ffea666edc964cb9697809182be}{is\+Valid}} () const
+\begin{DoxyCompactList}\small\item\em Return true if the \mbox{\hyperlink{classUtil_1_1ArraySet}{Array\+Set}} is valid, or throw an exception. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1ArraySet_a3f2005fa5143b930f5f1a809ce04f98f}{dump}} () const
+\begin{DoxyCompactList}\small\item\em Write the internal state of the \mbox{\hyperlink{classUtil_1_1ArraySet}{Array\+Set}} to std\+::cout. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$typename Data$>$\newline
+class Util\+::\+Array\+Set$<$ Data $>$}
+
+A container for pointers to a subset of elements of an associated array. 
+
+An \mbox{\hyperlink{classUtil_1_1ArraySet}{Array\+Set}} is a \mbox{\hyperlink{classUtil_1_1PArray}{P\+Array}} that stores pointers to a subset of the elements of an associated \mbox{\hyperlink{classUtil_1_1Array}{Array}} container or bare C array. Pointers to the elements of this set are stored in a contiguous sequence, with indices in the range 0, ..., \mbox{\hyperlink{classUtil_1_1PArray_a2b0709ba78b786a7eb4412e817c486b1}{size()}} -\/ 1. The order in which these pointers are stored is mutable, and generally changes whenever an element is removed.
+
+The \mbox{\hyperlink{classUtil_1_1ArraySet_a369d0413775cfab246ed105a6a103735}{append()}} method appends a pointer to a new element to the end of the sequence and increments the size. The \mbox{\hyperlink{classUtil_1_1ArraySet_a7c21a57396aa00fb4e2e755415d20a72}{remove()}} method removes a specified element, then moves the pointer of the last element to the space vacated by the removed element (unless the removed element was the last in the sequence), and decrements the size. The order in which the remaining elements of an \mbox{\hyperlink{classUtil_1_1ArraySet}{Array\+Set}} are stored thus can change whenever an element is removed.
+
+An \mbox{\hyperlink{classUtil_1_1ArraySet}{Array\+Set}} provides O(\+N) sequential access to all elements of a set, O(1) insertion and deletion, and O(1) access to a randomly chosen element. 
+
+Definition at line 46 of file Array\+Set.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1ArraySet_ab518733b8c00197c369ebc1bbb900a09}\label{classUtil_1_1ArraySet_ab518733b8c00197c369ebc1bbb900a09}} 
+\index{Util::ArraySet$<$ Data $>$@{Util::ArraySet$<$ Data $>$}!ArraySet@{ArraySet}}
+\index{ArraySet@{ArraySet}!Util::ArraySet$<$ Data $>$@{Util::ArraySet$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{ArraySet()}{ArraySet()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+\mbox{\hyperlink{classUtil_1_1ArraySet}{Util\+::\+Array\+Set}}$<$ Data $>$\+::\mbox{\hyperlink{classUtil_1_1ArraySet}{Array\+Set}}}
+
+
+
+Constructor. 
+
+
+
+Definition at line 187 of file Array\+Set.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1ArraySet_a2bd362d1e0877b43c42dfbadf7195180}\label{classUtil_1_1ArraySet_a2bd362d1e0877b43c42dfbadf7195180}} 
+\index{Util::ArraySet$<$ Data $>$@{Util::ArraySet$<$ Data $>$}!````~ArraySet@{$\sim$ArraySet}}
+\index{````~ArraySet@{$\sim$ArraySet}!Util::ArraySet$<$ Data $>$@{Util::ArraySet$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{$\sim$ArraySet()}{~ArraySet()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+\mbox{\hyperlink{classUtil_1_1ArraySet}{Util\+::\+Array\+Set}}$<$ Data $>$\+::$\sim$\mbox{\hyperlink{classUtil_1_1ArraySet}{Array\+Set}}\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+Definition at line 196 of file Array\+Set.\+h.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1ArraySet_a5c12e86ed6a4c2051b32c348991779cc}\label{classUtil_1_1ArraySet_a5c12e86ed6a4c2051b32c348991779cc}} 
+\index{Util::ArraySet$<$ Data $>$@{Util::ArraySet$<$ Data $>$}!allocate@{allocate}}
+\index{allocate@{allocate}!Util::ArraySet$<$ Data $>$@{Util::ArraySet$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{allocate()}{allocate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+void \mbox{\hyperlink{classUtil_1_1ArraySet}{Util\+::\+Array\+Set}}$<$ Data $>$\+::allocate (\begin{DoxyParamCaption}\item[{const Data $\ast$}]{array,  }\item[{int}]{capacity }\end{DoxyParamCaption})}
+
+
+
+Associate with a C array and allocate required memory. 
+
+This method associates an \mbox{\hyperlink{classUtil_1_1ArraySet}{Array\+Set}} with a bare C array, and allocates all memory required by the \mbox{\hyperlink{classUtil_1_1ArraySet}{Array\+Set}}.
+
+An \mbox{\hyperlink{classUtil_1_1ArraySet}{Array\+Set}} may only be allocated once. This method throws an \mbox{\hyperlink{classUtil_1_1Exception}{Exception}} if it is called more than once.
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & associated C array of Data objects \\
+\hline
+{\em capacity} & number of elements in the array \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 210 of file Array\+Set.\+h.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1ArraySet_a97280670f56e2d7d7b623d7b6879bd7f}\label{classUtil_1_1ArraySet_a97280670f56e2d7d7b623d7b6879bd7f}} 
+\index{Util::ArraySet$<$ Data $>$@{Util::ArraySet$<$ Data $>$}!allocate@{allocate}}
+\index{allocate@{allocate}!Util::ArraySet$<$ Data $>$@{Util::ArraySet$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{allocate()}{allocate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+void \mbox{\hyperlink{classUtil_1_1ArraySet}{Util\+::\+Array\+Set}}$<$ Data $>$\+::allocate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1Array}{Array}}$<$ Data $>$ \&}]{array }\end{DoxyParamCaption})}
+
+
+
+Associate with an \mbox{\hyperlink{classUtil_1_1Array}{Array}} container and allocate required memory. 
+
+Invokes allocate(\&array\mbox{[}0\mbox{]}, array.\+capacity()) internally.
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & associated Array$<$\+Data$>$ container \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 237 of file Array\+Set.\+h.
+
+
+
+References Util\+::\+Array$<$ Data $>$\+::capacity().
+
+\mbox{\Hypertarget{classUtil_1_1ArraySet_a369d0413775cfab246ed105a6a103735}\label{classUtil_1_1ArraySet_a369d0413775cfab246ed105a6a103735}} 
+\index{Util::ArraySet$<$ Data $>$@{Util::ArraySet$<$ Data $>$}!append@{append}}
+\index{append@{append}!Util::ArraySet$<$ Data $>$@{Util::ArraySet$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{append()}{append()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+void \mbox{\hyperlink{classUtil_1_1ArraySet}{Util\+::\+Array\+Set}}$<$ Data $>$\+::append (\begin{DoxyParamCaption}\item[{Data \&}]{data }\end{DoxyParamCaption})}
+
+
+
+Append an element to the set. 
+
+This appends a new element to the end of the sequence. This does not change the order of other elements.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & array element to be added. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 244 of file Array\+Set.\+h.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1ArraySet_a7c21a57396aa00fb4e2e755415d20a72}\label{classUtil_1_1ArraySet_a7c21a57396aa00fb4e2e755415d20a72}} 
+\index{Util::ArraySet$<$ Data $>$@{Util::ArraySet$<$ Data $>$}!remove@{remove}}
+\index{remove@{remove}!Util::ArraySet$<$ Data $>$@{Util::ArraySet$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+void \mbox{\hyperlink{classUtil_1_1ArraySet}{Util\+::\+Array\+Set}}$<$ Data $>$\+::remove (\begin{DoxyParamCaption}\item[{const Data \&}]{data }\end{DoxyParamCaption})}
+
+
+
+Remove an element from the set. 
+
+Removal of an element generally changes the order of the remaining elements.
+
+Throws an \mbox{\hyperlink{classUtil_1_1Exception}{Exception}} if data is not in this \mbox{\hyperlink{classUtil_1_1ArraySet}{Array\+Set}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & array element to be added. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 268 of file Array\+Set.\+h.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1ArraySet_af43a53675807b89feaaa9c2f0baa116d}\label{classUtil_1_1ArraySet_af43a53675807b89feaaa9c2f0baa116d}} 
+\index{Util::ArraySet$<$ Data $>$@{Util::ArraySet$<$ Data $>$}!pop@{pop}}
+\index{pop@{pop}!Util::ArraySet$<$ Data $>$@{Util::ArraySet$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{pop()}{pop()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+Data \& \mbox{\hyperlink{classUtil_1_1ArraySet}{Util\+::\+Array\+Set}}$<$ Data $>$\+::pop}
+
+
+
+Pop the topmost from the set. 
+
+Popping the top element does not change the order of the remaining elements. 
+
+Definition at line 301 of file Array\+Set.\+h.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1ArraySet_ad3af3cbc5fbdfa5fad49c042f2fadc37}\label{classUtil_1_1ArraySet_ad3af3cbc5fbdfa5fad49c042f2fadc37}} 
+\index{Util::ArraySet$<$ Data $>$@{Util::ArraySet$<$ Data $>$}!clear@{clear}}
+\index{clear@{clear}!Util::ArraySet$<$ Data $>$@{Util::ArraySet$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+void \mbox{\hyperlink{classUtil_1_1ArraySet}{Util\+::\+Array\+Set}}$<$ Data $>$\+::clear}
+
+
+
+Reset to empty state. 
+
+
+
+Definition at line 319 of file Array\+Set.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1ArraySet_ab963109e370cf57ab4a7375a969b9280}\label{classUtil_1_1ArraySet_ab963109e370cf57ab4a7375a969b9280}} 
+\index{Util::ArraySet$<$ Data $>$@{Util::ArraySet$<$ Data $>$}!index@{index}}
+\index{index@{index}!Util::ArraySet$<$ Data $>$@{Util::ArraySet$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{index()}{index()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+int \mbox{\hyperlink{classUtil_1_1ArraySet}{Util\+::\+Array\+Set}}$<$ Data $>$\+::index (\begin{DoxyParamCaption}\item[{const Data \&}]{data }\end{DoxyParamCaption}) const}
+
+
+
+Return the current index of an element within the set, if any. 
+
+Return the current index of an element within the set, or return a negative value -\/1 if the element is not in the set.
+
+This method returns the current index of the pointer to object data within this \mbox{\hyperlink{classUtil_1_1ArraySet}{Array\+Set}}, in the range 0 $<$ index $<$ \mbox{\hyperlink{classUtil_1_1PArray_a2b0709ba78b786a7eb4412e817c486b1}{size()}} -\/1. The method returns -\/1 if data is an element of the associated array but is not in the \mbox{\hyperlink{classUtil_1_1ArraySet}{Array\+Set}}.
+
+Throws an exception if data is not in the associated array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & array element of interest. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+current index of pointer to element within this \mbox{\hyperlink{classUtil_1_1ArraySet}{Array\+Set}}. 
+\end{DoxyReturn}
+
+
+Definition at line 335 of file Array\+Set.\+h.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1ArraySet_aca2ab9734b30f16fa4a7cf54cc351a37}\label{classUtil_1_1ArraySet_aca2ab9734b30f16fa4a7cf54cc351a37}} 
+\index{Util::ArraySet$<$ Data $>$@{Util::ArraySet$<$ Data $>$}!isAllocated@{isAllocated}}
+\index{isAllocated@{isAllocated}!Util::ArraySet$<$ Data $>$@{Util::ArraySet$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{isAllocated()}{isAllocated()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+bool \mbox{\hyperlink{classUtil_1_1ArraySet}{Util\+::\+Array\+Set}}$<$ Data $>$\+::is\+Allocated\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return true if the \mbox{\hyperlink{classUtil_1_1ArraySet}{Array\+Set}} is initialized, false otherwise. 
+
+
+
+Definition at line 348 of file Array\+Set.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1ArraySet_a395b8ffea666edc964cb9697809182be}\label{classUtil_1_1ArraySet_a395b8ffea666edc964cb9697809182be}} 
+\index{Util::ArraySet$<$ Data $>$@{Util::ArraySet$<$ Data $>$}!isValid@{isValid}}
+\index{isValid@{isValid}!Util::ArraySet$<$ Data $>$@{Util::ArraySet$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{isValid()}{isValid()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+bool \mbox{\hyperlink{classUtil_1_1ArraySet}{Util\+::\+Array\+Set}}$<$ Data $>$\+::is\+Valid}
+
+
+
+Return true if the \mbox{\hyperlink{classUtil_1_1ArraySet}{Array\+Set}} is valid, or throw an exception. 
+
+
+
+Definition at line 355 of file Array\+Set.\+h.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1ArraySet_a3f2005fa5143b930f5f1a809ce04f98f}\label{classUtil_1_1ArraySet_a3f2005fa5143b930f5f1a809ce04f98f}} 
+\index{Util::ArraySet$<$ Data $>$@{Util::ArraySet$<$ Data $>$}!dump@{dump}}
+\index{dump@{dump}!Util::ArraySet$<$ Data $>$@{Util::ArraySet$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{dump()}{dump()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+void \mbox{\hyperlink{classUtil_1_1ArraySet}{Util\+::\+Array\+Set}}$<$ Data $>$\+::dump (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Write the internal state of the \mbox{\hyperlink{classUtil_1_1ArraySet}{Array\+Set}} to std\+::cout. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Array\+Set.\+h\end{DoxyCompactItemize}

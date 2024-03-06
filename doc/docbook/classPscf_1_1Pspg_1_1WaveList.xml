@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classPscf_1_1Pspg_1_1WaveList">
+<title>Pscf::Pspg::WaveList&lt; D &gt; Class Template Reference</title>
+<indexterm><primary>Pscf::Pspg::WaveList&lt; D &gt;</primary></indexterm>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;int D&gt;
+class Pscf::Pspg::WaveList&lt; D &gt;</title></simplesect>
+
+<para>
+Definition at line 27 of file WaveList.h.</para>
+<para>
+The documentation for this class was generated from the following files:</para>
+WaveList.hWaveList.tpp</section>
+</section>

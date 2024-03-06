@@ -1,0 +1,157 @@
+\hypertarget{classUtil_1_1Signal}{}\doxysubsection{Util\+::Signal$<$ T $>$ Class Template Reference}
+\label{classUtil_1_1Signal}\index{Util::Signal$<$ T $>$@{Util::Signal$<$ T $>$}}
+
+
+\mbox{\hyperlink{classUtil_1_1Notifier}{Notifier}} (or subject) in the \mbox{\hyperlink{classUtil_1_1Observer}{Observer}} design pattern.  
+
+
+
+
+{\ttfamily \#include $<$Signal.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1Signal_abe13ce83b40040c6fb4b6899dd02dd61}{Signal}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1Signal_a64c2fc78dc8faaf94912ff8722aa2b12}{$\sim$\+Signal}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Observer $>$ }\\void \mbox{\hyperlink{classUtil_1_1Signal_a78124b00fed766dea183e1366b74c264}{add\+Observer}} (\mbox{\hyperlink{classUtil_1_1Observer}{Observer}} \&observer, void(Observer\+::$\ast$method\+Ptr)(const T \&))
+\begin{DoxyCompactList}\small\item\em Register an observer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1Signal_acd6e98ab3f9a2c68aa19cfabc2947d00}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Clear all observerse from list. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUtil_1_1Signal_ad660e7a8ffc6c4b270078a13ef4450f4}{n\+Observer}} () const
+\begin{DoxyCompactList}\small\item\em Get number of registered observers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1Signal_ae4c8adf7cb5ed88454aa2a2ca19d330b}{notify}} (const T \&t)
+\begin{DoxyCompactList}\small\item\em Notify all observers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$typename T = void$>$\newline
+class Util\+::\+Signal$<$ T $>$}
+
+\mbox{\hyperlink{classUtil_1_1Notifier}{Notifier}} (or subject) in the \mbox{\hyperlink{classUtil_1_1Observer}{Observer}} design pattern. 
+
+A \mbox{\hyperlink{classUtil_1_1Signal}{Signal}} manages a list of registered functor objects, and provides a void \mbox{\hyperlink{classUtil_1_1Signal_ae4c8adf7cb5ed88454aa2a2ca19d330b}{Signal$<$\+T$>$\+::notify(const T\&)}} method that calls them all with the same argument.
+
+The explicit specialization \mbox{\hyperlink{classUtil_1_1Signal_3_01void_01_4}{Signal$<$void$>$}}, or Signal$<$$>$, has a notify method void \mbox{\hyperlink{classUtil_1_1Signal_ae4c8adf7cb5ed88454aa2a2ca19d330b}{Signal$<$$>$\+::notify()}} that takes no parameters, which calls a method of each observer that takes no parameters. 
+
+Definition at line 38 of file Signal.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1Signal_abe13ce83b40040c6fb4b6899dd02dd61}\label{classUtil_1_1Signal_abe13ce83b40040c6fb4b6899dd02dd61}} 
+\index{Util::Signal$<$ T $>$@{Util::Signal$<$ T $>$}!Signal@{Signal}}
+\index{Signal@{Signal}!Util::Signal$<$ T $>$@{Util::Signal$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{Signal()}{Signal()}}
+{\footnotesize\ttfamily template$<$typename T  = void$>$ \\
+\mbox{\hyperlink{classUtil_1_1Signal}{Util\+::\+Signal}}$<$ T $>$\+::\mbox{\hyperlink{classUtil_1_1Signal}{Signal}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor. 
+
+
+
+Definition at line 48 of file Signal.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Signal_a64c2fc78dc8faaf94912ff8722aa2b12}\label{classUtil_1_1Signal_a64c2fc78dc8faaf94912ff8722aa2b12}} 
+\index{Util::Signal$<$ T $>$@{Util::Signal$<$ T $>$}!````~Signal@{$\sim$Signal}}
+\index{````~Signal@{$\sim$Signal}!Util::Signal$<$ T $>$@{Util::Signal$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{$\sim$Signal()}{~Signal()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classUtil_1_1Signal}{Util\+::\+Signal}}$<$ T $>$\+::$\sim$\mbox{\hyperlink{classUtil_1_1Signal}{Signal}}}
+
+
+
+Destructor. 
+
+
+
+Definition at line 16 of file Signal.\+cpp.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1Signal_a78124b00fed766dea183e1366b74c264}\label{classUtil_1_1Signal_a78124b00fed766dea183e1366b74c264}} 
+\index{Util::Signal$<$ T $>$@{Util::Signal$<$ T $>$}!addObserver@{addObserver}}
+\index{addObserver@{addObserver}!Util::Signal$<$ T $>$@{Util::Signal$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{addObserver()}{addObserver()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+template$<$class Observer $>$ \\
+void \mbox{\hyperlink{classUtil_1_1Signal}{Util\+::\+Signal}}$<$ T $>$\+::add\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1Observer}{Observer}} \&}]{observer,  }\item[{void(Observer\+::$\ast$)(const T \&)}]{method\+Ptr }\end{DoxyParamCaption})}
+
+
+
+Register an observer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & observer object (invokes method) \\
+\hline
+{\em method\+Ptr} & pointer to relevant method \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 111 of file Signal.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Signal_acd6e98ab3f9a2c68aa19cfabc2947d00}\label{classUtil_1_1Signal_acd6e98ab3f9a2c68aa19cfabc2947d00}} 
+\index{Util::Signal$<$ T $>$@{Util::Signal$<$ T $>$}!clear@{clear}}
+\index{clear@{clear}!Util::Signal$<$ T $>$@{Util::Signal$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classUtil_1_1Signal}{Util\+::\+Signal}}$<$ T $>$\+::clear}
+
+
+
+Clear all observerse from list. 
+
+
+
+Definition at line 36 of file Signal.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1Signal_ad660e7a8ffc6c4b270078a13ef4450f4}\label{classUtil_1_1Signal_ad660e7a8ffc6c4b270078a13ef4450f4}} 
+\index{Util::Signal$<$ T $>$@{Util::Signal$<$ T $>$}!nObserver@{nObserver}}
+\index{nObserver@{nObserver}!Util::Signal$<$ T $>$@{Util::Signal$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{nObserver()}{nObserver()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int \mbox{\hyperlink{classUtil_1_1Signal}{Util\+::\+Signal}}$<$ T $>$\+::n\+Observer}
+
+
+
+Get number of registered observers. 
+
+
+
+Definition at line 51 of file Signal.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1Signal_ae4c8adf7cb5ed88454aa2a2ca19d330b}\label{classUtil_1_1Signal_ae4c8adf7cb5ed88454aa2a2ca19d330b}} 
+\index{Util::Signal$<$ T $>$@{Util::Signal$<$ T $>$}!notify@{notify}}
+\index{notify@{notify}!Util::Signal$<$ T $>$@{Util::Signal$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{notify()}{notify()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classUtil_1_1Signal}{Util\+::\+Signal}}$<$ T $>$\+::notify (\begin{DoxyParamCaption}\item[{const T \&}]{t }\end{DoxyParamCaption})}
+
+
+
+Notify all observers. 
+
+This method notifies all registered observers by calling the appropriate method of each observer, passing each the parameter t as argument. The explicit specialization Signal$<$$>$, with T=void, is used for notification methods that take
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Argument passed to notification methods of all observers. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 22 of file Signal.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Signal.\+h\item 
+Signal.\+cpp\end{DoxyCompactItemize}

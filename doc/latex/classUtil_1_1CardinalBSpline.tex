@@ -1,0 +1,161 @@
+\hypertarget{classUtil_1_1CardinalBSpline}{}\doxysubsection{Util\+::Cardinal\+B\+Spline Class Reference}
+\label{classUtil_1_1CardinalBSpline}\index{Util::CardinalBSpline@{Util::CardinalBSpline}}
+
+
+A cardinal B-\/spline basis function.  
+
+
+
+
+{\ttfamily \#include $<$Cardinal\+B\+Spline.\+h$>$}
+
+\doxysubsubsection*{Constructor and Destructor}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1CardinalBSpline_a1b521154e39dea95d175fec322965a0e}{Cardinal\+B\+Spline}} (int \mbox{\hyperlink{classUtil_1_1CardinalBSpline_a1778e2eda38708e6c47ba66f50c15959}{degree}}, bool verbose=false)
+\begin{DoxyCompactList}\small\item\em Construct a spline basis of specified degree. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1CardinalBSpline_aed6c671061a74d80de5d02632df3b68c}{$\sim$\+Cardinal\+B\+Spline}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}}$<$ double $>$ \& \mbox{\hyperlink{classUtil_1_1CardinalBSpline_a85837146fd28197b2c966c068bb5c3b6}{operator\mbox{[}$\,$\mbox{]}}} (int i) const
+\begin{DoxyCompactList}\small\item\em Get \mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial$<$double$>$}} object for domain \mbox{[}i,i+1\mbox{]}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classUtil_1_1CardinalBSpline_a4e1b8b2a3021af01c70e49432e90ec8f}{operator()}} (double x) const
+\begin{DoxyCompactList}\small\item\em Compute the value of the spline basis function. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUtil_1_1CardinalBSpline_a1778e2eda38708e6c47ba66f50c15959}{degree}} () const
+\begin{DoxyCompactList}\small\item\em Return degree of basis function (i.\+e., degree of polynomials). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+A cardinal B-\/spline basis function. 
+
+A cardinal B-\/\+Spline of order m or degree k = m -\/ 1 is a piecewise continuous polynomial of degree k defined over the domain \mbox{[}0, k+1\mbox{]}. Such a function is defined by k different polynomials, each of which has a domain \mbox{[}i, i+1\mbox{]} for an integer i with 0 $<$= i $<$=k. For k $>$ 0, the function and k-\/1 derivatives are continuous.
+
+A \mbox{\hyperlink{classUtil_1_1CardinalBSpline}{Cardinal\+B\+Spline}} object of degree k has k \mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial$<$double$>$}} objects, indexed by an integer 0 $<$= i $<$= k, each of which defines the polynomial with a domain \mbox{[}i,i+1\mbox{]}.
+
+If object b is a \mbox{\hyperlink{classUtil_1_1CardinalBSpline}{Cardinal\+B\+Spline}} of degree k, then\+:
+
+
+\begin{DoxyItemize}
+\item Operator b\mbox{[}i\mbox{]} returns the \mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial$<$double$>$}} for domain \mbox{[}i,i+1\mbox{]}
+\item Operator b(x) returns the value of basis function b for real x. 
+\end{DoxyItemize}
+
+Definition at line 42 of file Cardinal\+B\+Spline.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1CardinalBSpline_a1b521154e39dea95d175fec322965a0e}\label{classUtil_1_1CardinalBSpline_a1b521154e39dea95d175fec322965a0e}} 
+\index{Util::CardinalBSpline@{Util::CardinalBSpline}!CardinalBSpline@{CardinalBSpline}}
+\index{CardinalBSpline@{CardinalBSpline}!Util::CardinalBSpline@{Util::CardinalBSpline}}
+\doxyparagraph{\texorpdfstring{CardinalBSpline()}{CardinalBSpline()}}
+{\footnotesize\ttfamily Util\+::\+Cardinal\+B\+Spline\+::\+Cardinal\+B\+Spline (\begin{DoxyParamCaption}\item[{int}]{degree,  }\item[{bool}]{verbose = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Construct a spline basis of specified degree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em degree} & degree of the function (i.\+e., degree of polynomials) \\
+\hline
+{\em verbose} & if true, write verbose report to std\+::cout \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 17 of file Cardinal\+B\+Spline.\+cpp.
+
+
+
+References Util\+::\+D\+Array$<$ Data $>$\+::allocate(), degree(), and U\+T\+I\+L\+\_\+\+C\+H\+E\+CK.
+
+\mbox{\Hypertarget{classUtil_1_1CardinalBSpline_aed6c671061a74d80de5d02632df3b68c}\label{classUtil_1_1CardinalBSpline_aed6c671061a74d80de5d02632df3b68c}} 
+\index{Util::CardinalBSpline@{Util::CardinalBSpline}!````~CardinalBSpline@{$\sim$CardinalBSpline}}
+\index{````~CardinalBSpline@{$\sim$CardinalBSpline}!Util::CardinalBSpline@{Util::CardinalBSpline}}
+\doxyparagraph{\texorpdfstring{$\sim$CardinalBSpline()}{~CardinalBSpline()}}
+{\footnotesize\ttfamily Util\+::\+Cardinal\+B\+Spline\+::$\sim$\+Cardinal\+B\+Spline (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+Definition at line 125 of file Cardinal\+B\+Spline.\+cpp.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1CardinalBSpline_a85837146fd28197b2c966c068bb5c3b6}\label{classUtil_1_1CardinalBSpline_a85837146fd28197b2c966c068bb5c3b6}} 
+\index{Util::CardinalBSpline@{Util::CardinalBSpline}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Util::CardinalBSpline@{Util::CardinalBSpline}}
+\doxyparagraph{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial}}$<$ double $>$ \& Util\+::\+Cardinal\+B\+Spline\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get \mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial$<$double$>$}} object for domain \mbox{[}i,i+1\mbox{]}. 
+
+If b is a \mbox{\hyperlink{classUtil_1_1CardinalBSpline}{Cardinal\+B\+Spline}}, b\mbox{[}i\mbox{]} returns the \mbox{\hyperlink{classUtil_1_1Polynomial}{Polynomial$<$double$>$}} object (the polynomial with double precision floating point coefficients) associated with the domain \mbox{[}i,i+1\mbox{]}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & integer index in range 0 $<$= i $<$= degree. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+polynomial associated with domain \mbox{[}i, i+1\mbox{]} 
+\end{DoxyReturn}
+
+
+Definition at line 119 of file Cardinal\+B\+Spline.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1CardinalBSpline_a4e1b8b2a3021af01c70e49432e90ec8f}\label{classUtil_1_1CardinalBSpline_a4e1b8b2a3021af01c70e49432e90ec8f}} 
+\index{Util::CardinalBSpline@{Util::CardinalBSpline}!operator()@{operator()}}
+\index{operator()@{operator()}!Util::CardinalBSpline@{Util::CardinalBSpline}}
+\doxyparagraph{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily double Util\+::\+Cardinal\+B\+Spline\+::operator() (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compute the value of the spline basis function. 
+
+If b is a \mbox{\hyperlink{classUtil_1_1CardinalBSpline}{Cardinal\+B\+Spline}}, b(x) returns the value of the spline function for specified floating point argument x, giving a nonzero value only for 0 $<$ x $<$ degree + 1.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & argument of spline basis function \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 126 of file Cardinal\+B\+Spline.\+h.
+
+
+
+References U\+T\+I\+L\+\_\+\+A\+S\+S\+E\+RT.
+
+\mbox{\Hypertarget{classUtil_1_1CardinalBSpline_a1778e2eda38708e6c47ba66f50c15959}\label{classUtil_1_1CardinalBSpline_a1778e2eda38708e6c47ba66f50c15959}} 
+\index{Util::CardinalBSpline@{Util::CardinalBSpline}!degree@{degree}}
+\index{degree@{degree}!Util::CardinalBSpline@{Util::CardinalBSpline}}
+\doxyparagraph{\texorpdfstring{degree()}{degree()}}
+{\footnotesize\ttfamily int Util\+::\+Cardinal\+B\+Spline\+::degree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return degree of basis function (i.\+e., degree of polynomials). 
+
+
+
+Definition at line 139 of file Cardinal\+B\+Spline.\+h.
+
+
+
+Referenced by Cardinal\+B\+Spline().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Cardinal\+B\+Spline.\+h\item 
+Cardinal\+B\+Spline.\+cpp\end{DoxyCompactItemize}

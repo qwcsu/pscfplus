@@ -1,0 +1,237 @@
+\hypertarget{classUtil_1_1XmlStartTag}{}\doxysubsection{Util\+::Xml\+Start\+Tag Class Reference}
+\label{classUtil_1_1XmlStartTag}\index{Util::XmlStartTag@{Util::XmlStartTag}}
+
+
+Parser for an X\+ML start tag.  
+
+
+
+
+{\ttfamily \#include $<$Xml\+Start\+Tag.\+h$>$}
+
+Inheritance diagram for Util\+::Xml\+Start\+Tag\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classUtil_1_1XmlStartTag}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1XmlStartTag_a8ccaf812e03823724ff8eead8d44176f}{Xml\+Start\+Tag}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1XmlStartTag_a52d41c578db665a7b0066ffae3a83b4f}{$\sim$\+Xml\+Start\+Tag}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUtil_1_1XmlStartTag_aa50edd5a24da954642e1c52469f256fd}{match\+Label}} (const std\+::string \&\mbox{\hyperlink{classUtil_1_1XmlBase_a8378a6c87659891e9f1e5458dbfc1413}{string}}, int begin)
+\begin{DoxyCompactList}\small\item\em Match opening bracket and any label. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1XmlStartTag_a660350fae4ee421b9379bef7d9f6b9bc}{match\+Label}} (const std\+::string expected, const std\+::string \&\mbox{\hyperlink{classUtil_1_1XmlBase_a8378a6c87659891e9f1e5458dbfc1413}{string}}, int begin)
+\begin{DoxyCompactList}\small\item\em Match opening bracket and a specific required label. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUtil_1_1XmlStartTag_a17d9f4ff33c352b0bd47dad58b259985}{match\+Attribute}} (\mbox{\hyperlink{classUtil_1_1XmlAttribute}{Xml\+Attribute}} \&attribute)
+\begin{DoxyCompactList}\small\item\em Attempt to match an attribute. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1XmlStartTag_ae3aa0e68e3db32ba85c224dab3565690}{finish}} ()
+\begin{DoxyCompactList}\small\item\em Check if end bracket was found. \end{DoxyCompactList}\item 
+const std\+::string \mbox{\hyperlink{classUtil_1_1XmlStartTag_a6c572530affe221679652f215ae1fd22}{label}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classUtil_1_1Label}{Label}} string. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUtil_1_1XmlStartTag_a64c901edd703aa779b506d99b8fead48}{end\+Bracket}} ()
+\begin{DoxyCompactList}\small\item\em True if a closing bracket was found. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Parser for an X\+ML start tag. 
+
+Usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classUtil_1_1XmlStartTag_a8ccaf812e03823724ff8eead8d44176f}{XmlStartTag}} tag;}
+\DoxyCodeLine{XmlAttribute attribute;}
+\DoxyCodeLine{std::string line;}
+\DoxyCodeLine{tag.matchLabel(line, 0);}
+\DoxyCodeLine{\textcolor{keywordflow}{while} (\mbox{\hyperlink{classUtil_1_1XmlStartTag_a17d9f4ff33c352b0bd47dad58b259985}{matchAttribute}}(attribute)) \{}
+\DoxyCodeLine{   \textcolor{comment}{// process attribute;}}
+\DoxyCodeLine{\} }
+\DoxyCodeLine{tag.finish();}
+\end{DoxyCode}
+ 
+
+Definition at line 36 of file Xml\+Start\+Tag.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1XmlStartTag_a8ccaf812e03823724ff8eead8d44176f}\label{classUtil_1_1XmlStartTag_a8ccaf812e03823724ff8eead8d44176f}} 
+\index{Util::XmlStartTag@{Util::XmlStartTag}!XmlStartTag@{XmlStartTag}}
+\index{XmlStartTag@{XmlStartTag}!Util::XmlStartTag@{Util::XmlStartTag}}
+\doxyparagraph{\texorpdfstring{XmlStartTag()}{XmlStartTag()}}
+{\footnotesize\ttfamily Util\+::\+Xml\+Start\+Tag\+::\+Xml\+Start\+Tag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+
+Definition at line 14 of file Xml\+Start\+Tag.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1XmlStartTag_a52d41c578db665a7b0066ffae3a83b4f}\label{classUtil_1_1XmlStartTag_a52d41c578db665a7b0066ffae3a83b4f}} 
+\index{Util::XmlStartTag@{Util::XmlStartTag}!````~XmlStartTag@{$\sim$XmlStartTag}}
+\index{````~XmlStartTag@{$\sim$XmlStartTag}!Util::XmlStartTag@{Util::XmlStartTag}}
+\doxyparagraph{\texorpdfstring{$\sim$XmlStartTag()}{~XmlStartTag()}}
+{\footnotesize\ttfamily Util\+::\+Xml\+Start\+Tag\+::$\sim$\+Xml\+Start\+Tag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+Definition at line 18 of file Xml\+Start\+Tag.\+cpp.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1XmlStartTag_aa50edd5a24da954642e1c52469f256fd}\label{classUtil_1_1XmlStartTag_aa50edd5a24da954642e1c52469f256fd}} 
+\index{Util::XmlStartTag@{Util::XmlStartTag}!matchLabel@{matchLabel}}
+\index{matchLabel@{matchLabel}!Util::XmlStartTag@{Util::XmlStartTag}}
+\doxyparagraph{\texorpdfstring{matchLabel()}{matchLabel()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Util\+::\+Xml\+Start\+Tag\+::match\+Label (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{string,  }\item[{int}]{begin }\end{DoxyParamCaption})}
+
+
+
+Match opening bracket and any label. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & containing text of X\+ML tag \\
+\hline
+{\em begin} & index of first character \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if match, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 21 of file Xml\+Start\+Tag.\+cpp.
+
+
+
+References Util\+::\+Xml\+Base\+::c(), Util\+::\+Xml\+Base\+::cursor(), Util\+::\+Xml\+Base\+::is\+End(), Util\+::\+Xml\+Base\+::next(), Util\+::\+Xml\+Base\+::set\+String(), Util\+::\+Xml\+Base\+::skip(), and Util\+::\+Xml\+Base\+::string().
+
+
+
+Referenced by match\+Label().
+
+\mbox{\Hypertarget{classUtil_1_1XmlStartTag_a660350fae4ee421b9379bef7d9f6b9bc}\label{classUtil_1_1XmlStartTag_a660350fae4ee421b9379bef7d9f6b9bc}} 
+\index{Util::XmlStartTag@{Util::XmlStartTag}!matchLabel@{matchLabel}}
+\index{matchLabel@{matchLabel}!Util::XmlStartTag@{Util::XmlStartTag}}
+\doxyparagraph{\texorpdfstring{matchLabel()}{matchLabel()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Util\+::\+Xml\+Start\+Tag\+::match\+Label (\begin{DoxyParamCaption}\item[{const std\+::string}]{expected,  }\item[{const std\+::string \&}]{string,  }\item[{int}]{begin }\end{DoxyParamCaption})}
+
+
+
+Match opening bracket and a specific required label. 
+
+Throws exception if no match.
+
+
+\begin{DoxyParams}{Parameters}
+{\em expected} & expected label string \\
+\hline
+{\em string} & containing text of X\+ML tag \\
+\hline
+{\em begin} & index of first character \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 58 of file Xml\+Start\+Tag.\+cpp.
+
+
+
+References Util\+::\+Log\+::file(), label(), match\+Label(), and U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1XmlStartTag_a17d9f4ff33c352b0bd47dad58b259985}\label{classUtil_1_1XmlStartTag_a17d9f4ff33c352b0bd47dad58b259985}} 
+\index{Util::XmlStartTag@{Util::XmlStartTag}!matchAttribute@{matchAttribute}}
+\index{matchAttribute@{matchAttribute}!Util::XmlStartTag@{Util::XmlStartTag}}
+\doxyparagraph{\texorpdfstring{matchAttribute()}{matchAttribute()}}
+{\footnotesize\ttfamily bool Util\+::\+Xml\+Start\+Tag\+::match\+Attribute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1XmlAttribute}{Xml\+Attribute}} \&}]{attribute }\end{DoxyParamCaption})}
+
+
+
+Attempt to match an attribute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em attribute} & on return, matched attribute, if any \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if an attribute is found, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 71 of file Xml\+Start\+Tag.\+cpp.
+
+
+
+References Util\+::\+Xml\+Base\+::c(), Util\+::\+Xml\+Base\+::is\+End(), Util\+::\+Xml\+Attribute\+::match(), Util\+::\+Xml\+Base\+::next(), and Util\+::\+Xml\+Base\+::skip().
+
+\mbox{\Hypertarget{classUtil_1_1XmlStartTag_ae3aa0e68e3db32ba85c224dab3565690}\label{classUtil_1_1XmlStartTag_ae3aa0e68e3db32ba85c224dab3565690}} 
+\index{Util::XmlStartTag@{Util::XmlStartTag}!finish@{finish}}
+\index{finish@{finish}!Util::XmlStartTag@{Util::XmlStartTag}}
+\doxyparagraph{\texorpdfstring{finish()}{finish()}}
+{\footnotesize\ttfamily void Util\+::\+Xml\+Start\+Tag\+::finish (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check if end bracket was found. 
+
+Throws exception if no end bracket was found. 
+
+Definition at line 93 of file Xml\+Start\+Tag.\+cpp.
+
+
+
+References end\+Bracket(), Util\+::\+Log\+::file(), Util\+::\+Xml\+Base\+::string(), and U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1XmlStartTag_a6c572530affe221679652f215ae1fd22}\label{classUtil_1_1XmlStartTag_a6c572530affe221679652f215ae1fd22}} 
+\index{Util::XmlStartTag@{Util::XmlStartTag}!label@{label}}
+\index{label@{label}!Util::XmlStartTag@{Util::XmlStartTag}}
+\doxyparagraph{\texorpdfstring{label()}{label()}}
+{\footnotesize\ttfamily const std\+::string Util\+::\+Xml\+Start\+Tag\+::label (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\mbox{\hyperlink{classUtil_1_1Label}{Label}} string. 
+
+
+
+Definition at line 90 of file Xml\+Start\+Tag.\+h.
+
+
+
+Referenced by match\+Label().
+
+\mbox{\Hypertarget{classUtil_1_1XmlStartTag_a64c901edd703aa779b506d99b8fead48}\label{classUtil_1_1XmlStartTag_a64c901edd703aa779b506d99b8fead48}} 
+\index{Util::XmlStartTag@{Util::XmlStartTag}!endBracket@{endBracket}}
+\index{endBracket@{endBracket}!Util::XmlStartTag@{Util::XmlStartTag}}
+\doxyparagraph{\texorpdfstring{endBracket()}{endBracket()}}
+{\footnotesize\ttfamily bool Util\+::\+Xml\+Start\+Tag\+::end\+Bracket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+True if a closing bracket was found. 
+
+
+
+Definition at line 96 of file Xml\+Start\+Tag.\+h.
+
+
+
+Referenced by finish().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Xml\+Start\+Tag.\+h\item 
+Xml\+Start\+Tag.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,243 @@
+\hypertarget{classUtil_1_1Int}{}\doxysubsection{Util\+::Int Class Reference}
+\label{classUtil_1_1Int}\index{Util::Int@{Util::Int}}
+
+
+Wrapper for an int, for formatted ostream output.  
+
+
+
+
+{\ttfamily \#include $<$Int.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{Indent}\textbf{ Constructors}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1Int_aeec8da6a22358888665628f09ed1eac1}{Int}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1Int_a92470f1480965b8b574a4673b9a0813b}{Int}} (int \mbox{\hyperlink{classUtil_1_1Int_a7b535b25e70bf105fd38d28b31a7c830}{value}})
+\begin{DoxyCompactList}\small\item\em Constructor, value only. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1Int_a5ff8b33acfd92d5b53eaca5005a7a777}{Int}} (int \mbox{\hyperlink{classUtil_1_1Int_a7b535b25e70bf105fd38d28b31a7c830}{value}}, int \mbox{\hyperlink{classUtil_1_1Int_af8d7886f28020cacde093657f9978b4b}{width}})
+\begin{DoxyCompactList}\small\item\em Constructor, value and width. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Setters}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classUtil_1_1Int_ac30b52294f76a6e01c2ef055569c918b}{set\+Value}} (int \mbox{\hyperlink{classUtil_1_1Int_a7b535b25e70bf105fd38d28b31a7c830}{value}})
+\begin{DoxyCompactList}\small\item\em Set the integer value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1Int_a7c8763a64c5e9c8c46ae05b2d97fba2c}{set\+Width}} (int \mbox{\hyperlink{classUtil_1_1Int_af8d7886f28020cacde093657f9978b4b}{width}})
+\begin{DoxyCompactList}\small\item\em Set the output field width. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Accessors}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classUtil_1_1Int_a7b535b25e70bf105fd38d28b31a7c830}{value}} ()
+\begin{DoxyCompactList}\small\item\em Get the integer value. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUtil_1_1Int_af8d7886f28020cacde093657f9978b4b}{width}} ()
+\begin{DoxyCompactList}\small\item\em Get the minimum field width. \end{DoxyCompactList}\item 
+std\+::istream \& \mbox{\hyperlink{classUtil_1_1Int_a9270b420c345367295553f9e40f2c471}{operator$>$$>$}} (std\+::istream \&in, \mbox{\hyperlink{classUtil_1_1Int}{Int}} \&object)
+\begin{DoxyCompactList}\small\item\em Input stream extractor for an \mbox{\hyperlink{classUtil_1_1Int}{Int}} object. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{classUtil_1_1Int_affe48f3d725906553c7b1808b7c4c121}{operator$<$$<$}} (std\+::ostream \&out, const \mbox{\hyperlink{classUtil_1_1Int}{Int}} \&object)
+\begin{DoxyCompactList}\small\item\em Output stream inserter for an \mbox{\hyperlink{classUtil_1_1Int}{Int}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Wrapper for an int, for formatted ostream output. 
+
+An \mbox{\hyperlink{classUtil_1_1Int}{Int}} object has a int numerical value, and a minimum output field width. The $<$$<$ operator for an \mbox{\hyperlink{classUtil_1_1Int}{Int}} uses the specified width. The numerical value and width may both be specified as parameters to a constructor. If the width is not specified as a constructor parameter, it is set within the constructor to a default value equal to \mbox{\hyperlink{classUtil_1_1Format_ac6cf6620e160c66757429bec0fb4dd23}{Format\+::default\+Width()}}.
+
+An \mbox{\hyperlink{classUtil_1_1Int}{Int}} object may be passed to an ostream as a temporary object. For example, the expression\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{std::cout << \mbox{\hyperlink{classUtil_1_1Int_aeec8da6a22358888665628f09ed1eac1}{Int}}(13) << \mbox{\hyperlink{classUtil_1_1Int_aeec8da6a22358888665628f09ed1eac1}{Int}}(25, 10) << std::endl;}
+\end{DoxyCode}
+ outputs the number 13 using the default width, followed by the number 25 in a field of minimum width 10. 
+
+Definition at line 36 of file Int.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1Int_aeec8da6a22358888665628f09ed1eac1}\label{classUtil_1_1Int_aeec8da6a22358888665628f09ed1eac1}} 
+\index{Util::Int@{Util::Int}!Int@{Int}}
+\index{Int@{Int}!Util::Int@{Util::Int}}
+\doxyparagraph{\texorpdfstring{Int()}{Int()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Util\+::\+Int\+::\+Int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+
+
+Definition at line 19 of file Int.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1Int_a92470f1480965b8b574a4673b9a0813b}\label{classUtil_1_1Int_a92470f1480965b8b574a4673b9a0813b}} 
+\index{Util::Int@{Util::Int}!Int@{Int}}
+\index{Int@{Int}!Util::Int@{Util::Int}}
+\doxyparagraph{\texorpdfstring{Int()}{Int()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Util\+::\+Int\+::\+Int (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor, value only. 
+
+
+
+Definition at line 27 of file Int.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1Int_a5ff8b33acfd92d5b53eaca5005a7a777}\label{classUtil_1_1Int_a5ff8b33acfd92d5b53eaca5005a7a777}} 
+\index{Util::Int@{Util::Int}!Int@{Int}}
+\index{Int@{Int}!Util::Int@{Util::Int}}
+\doxyparagraph{\texorpdfstring{Int()}{Int()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Util\+::\+Int\+::\+Int (\begin{DoxyParamCaption}\item[{int}]{value,  }\item[{int}]{width }\end{DoxyParamCaption})}
+
+
+
+Constructor, value and width. 
+
+
+
+Definition at line 35 of file Int.\+cpp.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1Int_ac30b52294f76a6e01c2ef055569c918b}\label{classUtil_1_1Int_ac30b52294f76a6e01c2ef055569c918b}} 
+\index{Util::Int@{Util::Int}!setValue@{setValue}}
+\index{setValue@{setValue}!Util::Int@{Util::Int}}
+\doxyparagraph{\texorpdfstring{setValue()}{setValue()}}
+{\footnotesize\ttfamily void Util\+::\+Int\+::set\+Value (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the integer value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & value of the associated int variable \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 43 of file Int.\+cpp.
+
+
+
+References value().
+
+\mbox{\Hypertarget{classUtil_1_1Int_a7c8763a64c5e9c8c46ae05b2d97fba2c}\label{classUtil_1_1Int_a7c8763a64c5e9c8c46ae05b2d97fba2c}} 
+\index{Util::Int@{Util::Int}!setWidth@{setWidth}}
+\index{setWidth@{setWidth}!Util::Int@{Util::Int}}
+\doxyparagraph{\texorpdfstring{setWidth()}{setWidth()}}
+{\footnotesize\ttfamily void Util\+::\+Int\+::set\+Width (\begin{DoxyParamCaption}\item[{int}]{width }\end{DoxyParamCaption})}
+
+
+
+Set the output field width. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & output field width \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 49 of file Int.\+cpp.
+
+
+
+References width().
+
+\mbox{\Hypertarget{classUtil_1_1Int_a7b535b25e70bf105fd38d28b31a7c830}\label{classUtil_1_1Int_a7b535b25e70bf105fd38d28b31a7c830}} 
+\index{Util::Int@{Util::Int}!value@{value}}
+\index{value@{value}!Util::Int@{Util::Int}}
+\doxyparagraph{\texorpdfstring{value()}{value()}}
+{\footnotesize\ttfamily int Util\+::\+Int\+::value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the integer value. 
+
+
+
+Definition at line 55 of file Int.\+cpp.
+
+
+
+Referenced by set\+Value().
+
+\mbox{\Hypertarget{classUtil_1_1Int_af8d7886f28020cacde093657f9978b4b}\label{classUtil_1_1Int_af8d7886f28020cacde093657f9978b4b}} 
+\index{Util::Int@{Util::Int}!width@{width}}
+\index{width@{width}!Util::Int@{Util::Int}}
+\doxyparagraph{\texorpdfstring{width()}{width()}}
+{\footnotesize\ttfamily int Util\+::\+Int\+::width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the minimum field width. 
+
+
+
+Definition at line 61 of file Int.\+cpp.
+
+
+
+Referenced by set\+Width().
+
+
+
+\doxysubsubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1Int_a9270b420c345367295553f9e40f2c471}\label{classUtil_1_1Int_a9270b420c345367295553f9e40f2c471}} 
+\index{Util::Int@{Util::Int}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Util::Int@{Util::Int}}
+\doxyparagraph{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily std\+::istream\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in,  }\item[{\mbox{\hyperlink{classUtil_1_1Int}{Int}} \&}]{object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Input stream extractor for an \mbox{\hyperlink{classUtil_1_1Int}{Int}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & input stream \\
+\hline
+{\em object} & \mbox{\hyperlink{classUtil_1_1Int}{Int}} object to be read from stream \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+modified input stream 
+\end{DoxyReturn}
+
+
+Definition at line 71 of file Int.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1Int_affe48f3d725906553c7b1808b7c4c121}\label{classUtil_1_1Int_affe48f3d725906553c7b1808b7c4c121}} 
+\index{Util::Int@{Util::Int}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Util::Int@{Util::Int}}
+\doxyparagraph{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{const \mbox{\hyperlink{classUtil_1_1Int}{Int}} \&}]{object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Output stream inserter for an \mbox{\hyperlink{classUtil_1_1Int}{Int}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & output stream \\
+\hline
+{\em object} & \mbox{\hyperlink{classUtil_1_1Int}{Int}} to be written to stream \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+modified output stream 
+\end{DoxyReturn}
+
+
+Definition at line 84 of file Int.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Int.\+h\item 
+Int.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,78 @@
+\mbox{\hyperlink{user_page}{User Guide}} (Prev) ~ ~ ~ ~ ~\newline
+
+
+\doxysubsubsection*{Contents\+:}
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{structure_page}{4.\+1 Directory Structure}}  
+\item \mbox{\hyperlink{code_format_page}{4.\+2 Coding Standards}} 
+
+~\newline
+ \mbox{\hyperlink{user_page}{User Guide}} (Prev) ~ ~ ~ ~ \mbox{\hyperlink{index}{Main Page}} (Up) ~ ~ ~ ~ 
+\end{DoxyItemize}\hypertarget{structure_page}{}\doxysubsection{4.1 Directory Structure}\label{structure_page}
+\mbox{\hyperlink{developer_page}{4 Developer Information}} (Prev) ~ ~ ~ ~ \mbox{\hyperlink{code_format_page}{4.\+2 Coding Standards}} (Next) ~\newline
+
+
+All source files of P\+S\+C\+F+ are in the pscfplus/src/ directory tree. The header and source file for each class are in the same directory. The name of each C++ file is the same as the class name, followed by an extension to indicate file type. We use extension .h to indicate a header file, .tpp to indicate the implementation of a class template, .cpp to indicate a C++ source file, and .cu to indicate a C\+U\+DA source file. All class names and corresponding file names are upper space camel (like \mbox{\hyperlink{classUtil_1_1Vector}{Util\+::\+Vector}} or \mbox{\hyperlink{classPscf_1_1Basis}{Pscf\+::\+Basis}}).
+
+The source code in pscfpp/src is divided among two top-\/level namespaces, named \mbox{\hyperlink{namespaceUtil}{Util}} and \mbox{\hyperlink{namespacePscf}{Pscf}}.
+
+The \mbox{\hyperlink{namespaceUtil}{Util}} namespace contains a collection of utilities for scientific computation that is also used by other projects. All code in the \mbox{\hyperlink{namespaceUtil}{Util}} namespace is contained in the src/util directory. This directory contains the contents of a separate github git repository (repository dmorse/util) that is imported into the pscfpp as a submodule.
+
+The \mbox{\hyperlink{namespacePscf}{Pscf}} namespace contains all C++ and C\+U\+DA code that is specific to the P\+S\+C\+F+ project. The \mbox{\hyperlink{namespacePscf}{Pscf}} namespace contains several enclosed namespaces that each contain code that is used only by one program or set of closely related programs.
+
+The main subdirectories of src/ are\+:
+
+
+\begin{DoxyItemize}
+\item src/util/ contains code of utilities for scientific computation that is also used by other projects.
+\item src/pscf/ contains basic classes in the \mbox{\hyperlink{namespacePscf}{Pscf}} namespace for polymer self-\/consistent field calculations, which is accessible to all P\+S\+C\+F+ programs.
+\item src/pspg/ contains C\+U\+DA code of utilities in the \mbox{\hyperlink{namespacePscf_1_1Pspg}{Pscf\+::\+Pspg}} namespace for scientific computation, including encapsulation of fast fourier transform, fast cosine transform, and input/output of omega/phi fields storing in G\+PU R\+AM.
+\item src/pgc/ contains implementation of model system using continuous Gaussian chain model in the \mbox{\hyperlink{namespacePscf_1_1Pspg_1_1Continuous}{Pscf\+::\+Pspg\+::\+Continuous}} namespace
+\item src/pgd/ contains implementation of model system using discrete chain model, including discrete Gaussian and freely-\/jointed chain, in the \mbox{\hyperlink{namespacePscf_1_1Pspg_1_1Discrete}{Pscf\+::\+Pspg\+::\+Discrete}}.
+\end{DoxyItemize}
+
+~\newline
+ \mbox{\hyperlink{developer_page}{4 Developer Information}} (Prev) ~ ~ ~ ~ \mbox{\hyperlink{index}{Main Page}} (Up) ~ ~ ~ ~ \mbox{\hyperlink{code_format_page}{4.\+2 Coding Standards}} (Next) \hypertarget{code_format_page}{}\doxysubsection{4.2 Coding Standards}\label{code_format_page}
+\mbox{\hyperlink{structure_page}{4.\+1 Directory Structure}} (Prev) ~ ~ ~ ~ build\+\_\+page (Next) ~\newline
+
+
+
+\begin{DoxyItemize}
+\item Naming Conventions\+:
+\end{DoxyItemize}
+
+Camel\+Case\+: Use camel\+Case for variable and function names. Start with a lowercase letter, and capitalize the first letter of each subsequent word within the name. For example\+: my\+Variable, calculate\+Total\+Cost(). Pascal\+Case\+: Use Pascal\+Case for class names. Start with an uppercase letter, and capitalize the first letter of each subsequent word within the name. For example\+: My\+Class. U\+P\+P\+E\+R\+\_\+\+C\+A\+S\+E\+\_\+\+W\+I\+T\+H\+\_\+\+U\+N\+D\+E\+R\+S\+C\+O\+R\+ES\+: Use uppercase letters and underscores to name constants and macros. For example\+: PI, M\+A\+X\+\_\+\+V\+A\+L\+UE. Namespace Names\+: Namespace names should follow the same rules as other identifiers. Typically, they are in lowercase, and underscores can be used to separate words. For example\+: my\+\_\+namespace.
+
+
+\begin{DoxyItemize}
+\item File Names\+: File names should generally be in lowercase and use underscores to separate words. For example\+: my\+\_\+file\+\_\+name.\+cpp.
+\item Formatting\+: The code of P\+S\+C\+F+ are reformatted using Prettier, which a free plug-\/in supported by many editors. Here is the configuration file for Prettier\+:
+\end{DoxyItemize}
+
+\begin{DoxyVerb}{
+  "printWidth": 80,
+  "tabWidth": 4,
+  "useTabs": false,
+  "semi": true,
+  "singleQuote": false,
+  "trailingComma": "none",
+  "bracketSpacing": true,
+  "endOfLine": "lf"
+}
+- printWidth: Sets the maximum line length.
+- tabWidth: The number of spaces per tab.
+- useTabs: Whether to use tabs or spaces for indentation.
+- semi: Whether to add semicolons at the end of statements.
+- singleQuote: Whether to prefer single quotes over double quotes. 
+- trailingComma: Whether to add a trailing comma in multi-line arrays or objects. 
+- bracketSpacing: Controls whether spaces are added inside object braces.
+- endOfLine: Defines the line ending format, useful for maintaining consistency across different OSes
+\end{DoxyVerb}
+
+
+Please see \href{https://prettier.io/}{\texttt{ Prettier documentation}} for details.
+
+~\newline
+ \mbox{\hyperlink{structure_page}{4.\+1 Directory Structure}} (Prev) ~ ~ ~ ~ \mbox{\hyperlink{index}{Main Page}} (Up) ~ ~ ~ ~ build\+\_\+page (Next) 

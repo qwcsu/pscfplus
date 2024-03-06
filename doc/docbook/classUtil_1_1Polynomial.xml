@@ -1,0 +1,777 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1Polynomial">
+<title>Util::Polynomial&lt; T &gt; Class Template Reference</title>
+<indexterm><primary>Util::Polynomial&lt; T &gt;</primary></indexterm>
+<para>
+
+<para>A <link linkend="_classUtil_1_1Polynomial">Polynomial</link> (i.e,. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;Polynomial.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Util::Polynomial&lt; T &gt;:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classUtil_1_1Polynomial.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+<simplesect><title>Constructors, Destructors, and Assignment</title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1Polynomial_1a8f5756ae819fd48688a2d7a2362d09a5">Polynomial</link> (int <link linkend="_classUtil_1_1GArray_1a95de2f1b3d2aac8cdc04a4cae5cdd891">capacity</link>=10)</para>
+
+<para>Construct a zero polynomial. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Polynomial_1abd28dcec1c83b7ca02f0812cf498cce6">Polynomial</link> (T c)</para>
+
+<para>Construct a constant polynomial. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Polynomial_1a73729b3456181ab52448969e592a6db4">Polynomial</link> (<link linkend="_classUtil_1_1Array">Array</link>&lt; T &gt; const &amp;coeffs)</para>
+
+<para>Construct a polynomial from array of coefficients. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Polynomial_1adc0ad51c4f9703fcf9892b8937774057">Polynomial</link> (<link linkend="_classUtil_1_1Polynomial">Polynomial</link>&lt; T &gt; const &amp;other)</para>
+
+<para>Copy constructor. </para>
+</listitem>
+            <listitem><para>template&lt;typename U &gt; </para><para><link linkend="_classUtil_1_1Polynomial">Polynomial</link>&lt; T &gt; &amp; <link linkend="_classUtil_1_1Polynomial_1a550880e07f558b0702a3e7a30276e095">operator=</link> (<link linkend="_classUtil_1_1Polynomial">Polynomial</link>&lt; U &gt; const &amp;other)</para>
+
+<para>Assignment from another polynomial. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1Polynomial_1acc106c34179a667f3cc826ed09bde731">setToZero</link> ()</para>
+
+<para>Assign this polynomial a value of zero. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</simplesect>
+<simplesect><title>Simple Accessors</title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_classUtil_1_1Polynomial_1a812bd83ab3e911bb2368386be0186b56">degree</link> () const</para>
+
+<para>Return degree of polynomial. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect><title>Arithmetic Assignment Operators</title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1Polynomial">Polynomial</link>&lt; T &gt; &amp; <link linkend="_classUtil_1_1Polynomial_1ab47d4fabce096c49b3866e569b26832e">operator+=</link> (const <link linkend="_classUtil_1_1Polynomial">Polynomial</link>&lt; T &gt; &amp;a)</para>
+
+<para>Add another polynomial to this one. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Polynomial">Polynomial</link>&lt; T &gt; &amp; <link linkend="_classUtil_1_1Polynomial_1a823b1aa2a24192dc07d498e045fc3f48">operator+=</link> (T a)</para>
+
+<para>Add a constant to this polynomial. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Polynomial">Polynomial</link>&lt; T &gt; &amp; <link linkend="_classUtil_1_1Polynomial_1a3b11bb2ff102cfc685e261272afa2927">operator-=</link> (const <link linkend="_classUtil_1_1Polynomial">Polynomial</link>&lt; T &gt; &amp;a)</para>
+
+<para>Subtract another polynomial from this one. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Polynomial">Polynomial</link>&lt; T &gt; &amp; <link linkend="_classUtil_1_1Polynomial_1a615c4cb1d5c182d19ae755aea43aa33e">operator-=</link> (T a)</para>
+
+<para>Subtract a constant from this polynomial. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Polynomial">Polynomial</link>&lt; T &gt; &amp; <link linkend="_classUtil_1_1Polynomial_1acf6affe22221027c97256b15027ed333">operator*=</link> (T a)</para>
+
+<para>Multiply this polynomial by a scalar. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Polynomial">Polynomial</link>&lt; T &gt; &amp; <link linkend="_classUtil_1_1Polynomial_1a16e67d48ed0864f64aa3103f1ec87ca0">operator/=</link> (T a)</para>
+
+<para>Divide this polynomial by a scalar. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Polynomial">Polynomial</link>&lt; T &gt; &amp; <link linkend="_classUtil_1_1Polynomial_1a1bcd39d67a7af8f34a86fa1b4b527ba2">operator*=</link> (const <link linkend="_classUtil_1_1Polynomial">Polynomial</link>&lt; T &gt; &amp;a)</para>
+
+<para>Multiply this polynomial by another. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect><title>Mathematical Functions (return polynomials)</title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1Polynomial">Polynomial</link>&lt; T &gt; <link linkend="_classUtil_1_1Polynomial_1ab0b8c33b704c7143fa42bf777e18ed32">integrate</link> () const</para>
+
+<para>Compute and return indefinite integral of this polynomial. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Polynomial">Polynomial</link>&lt; T &gt; <link linkend="_classUtil_1_1Polynomial_1af0c558118e3566b144c80dc34eed620f">differentiate</link> () const</para>
+
+<para>Compute and return derivative of this polynomial. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Polynomial">Polynomial</link>&lt; T &gt; <link linkend="_classUtil_1_1Polynomial_1a8e8ab561f0fe66900c37f4420e999642">reflect</link> () const</para>
+
+<para>Compute and return reflected polynomial f(-x). </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Polynomial">Polynomial</link>&lt; T &gt; <link linkend="_classUtil_1_1Polynomial_1a948cf01af7581e7f9d2ae035338ecc35">shift</link> (T a) const</para>
+
+<para>Compute and return shifted polynomial f(x+a). </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Polynomial Evaluation Functions    </title>
+        <itemizedlist>
+            <listitem><para>T <link linkend="_classUtil_1_1Polynomial_1a4b94c96af332c12cb117f34a72241996">operator()</link> (T x) const</para>
+
+<para>Evaluate polynomial at specific argument of type T. </para>
+</listitem>
+            <listitem><para>double <link linkend="_classUtil_1_1Polynomial_1ac263c5e8aeb6aef9a4e82ef4e59fab65">evaluate</link> (double x) const</para>
+
+<para>Evaluate polynomial at specific floating point argument. </para>
+</listitem>
+            <listitem><para>static <link linkend="_classUtil_1_1Polynomial">Polynomial</link>&lt; T &gt; <link linkend="_classUtil_1_1Polynomial_1aa1d136d94b8c323bce738340774dca6c">monomial</link> (int n)</para>
+
+<para>Return a monomial f(x) = x^{n}. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;typename T = Rational&gt;
+class Util::Polynomial&lt; T &gt;</title></simplesect>
+
+
+<para>A <link linkend="_classUtil_1_1Polynomial">Polynomial</link> (i.e,. </para>
+
+
+
+<para>a list of coefficents). </para>
+<para>
+Definition at line 30 of file Polynomial.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1Polynomial_1a8f5756ae819fd48688a2d7a2362d09a5"/>    <section>
+    <title>Polynomial()<computeroutput>[1/4]</computeroutput></title>
+<indexterm><primary>Polynomial</primary><secondary>Util::Polynomial&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Util::Polynomial&lt; T &gt;</primary><secondary>Polynomial</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1Polynomial">Util::Polynomial</link>&lt; T &gt;::<link linkend="_classUtil_1_1Polynomial">Polynomial</link> (int capacity = <computeroutput>10</computeroutput>
+)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Construct a zero polynomial. </para>
+</para>
+
+<para>Creates a zero polynomial f(x) = 0, with no stored coefficients. The capacity parameter specifies how much physical space to allocate for subsqequent growth in the array of coefficients.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>capacity</entry>
+                                <entry>
+<para>initial capacity of coefficient array. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 264 of file Polynomial.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Polynomial_1abd28dcec1c83b7ca02f0812cf498cce6"/>    <section>
+    <title>Polynomial()<computeroutput>[2/4]</computeroutput></title>
+<indexterm><primary>Polynomial</primary><secondary>Util::Polynomial&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Util::Polynomial&lt; T &gt;</primary><secondary>Polynomial</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1Polynomial">Util::Polynomial</link>&lt; T &gt;::<link linkend="_classUtil_1_1Polynomial">Polynomial</link> (T c)<computeroutput>[inline]</computeroutput>, <computeroutput>[explicit]</computeroutput></computeroutput></para><para>
+
+<para>Construct a constant polynomial. </para>
+</para>
+
+<para>Creates a polynomial f(x) = c, with <link linkend="_classUtil_1_1Polynomial_1a812bd83ab3e911bb2368386be0186b56">degree()</link> = 0.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>c</entry>
+                                <entry>
+<para>constant coefficient value </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 272 of file Polynomial.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Polynomial_1a73729b3456181ab52448969e592a6db4"/>    <section>
+    <title>Polynomial()<computeroutput>[3/4]</computeroutput></title>
+<indexterm><primary>Polynomial</primary><secondary>Util::Polynomial&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Util::Polynomial&lt; T &gt;</primary><secondary>Polynomial</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1Polynomial">Util::Polynomial</link>&lt; T &gt;::<link linkend="_classUtil_1_1Polynomial">Polynomial</link> (<link linkend="_classUtil_1_1Array">Array</link>&lt; T &gt; const &amp; coeffs)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Construct a polynomial from array of coefficients. </para>
+</para>
+
+<para>Constructs a polynomial in which the coefficient of x^{i} is given by coeffs[i]. The logical and physical size of the coefficient array are both set to the capacity of coeffs.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>coeffs</entry>
+                                <entry>
+<para>array of coefficients. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 283 of file Polynomial.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Polynomial_1adc0ad51c4f9703fcf9892b8937774057"/>    <section>
+    <title>Polynomial()<computeroutput>[4/4]</computeroutput></title>
+<indexterm><primary>Polynomial</primary><secondary>Util::Polynomial&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Util::Polynomial&lt; T &gt;</primary><secondary>Polynomial</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1Polynomial">Util::Polynomial</link>&lt; T &gt;::<link linkend="_classUtil_1_1Polynomial">Polynomial</link> (<link linkend="_classUtil_1_1Polynomial">Polynomial</link>&lt; T &gt; const &amp; other)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Copy constructor. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>other</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Polynomial">Polynomial</link> to be copied </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 298 of file Polynomial.h.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1Polynomial_1a550880e07f558b0702a3e7a30276e095"/>    <section>
+    <title>operator=()</title>
+<indexterm><primary>operator=</primary><secondary>Util::Polynomial&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Util::Polynomial&lt; T &gt;</primary><secondary>operator=</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><computeroutput>template&lt;typename U &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1Polynomial">Polynomial</link>&lt; T &gt; &amp; <link linkend="_classUtil_1_1Polynomial">Util::Polynomial</link>&lt; T &gt;::operator= (<link linkend="_classUtil_1_1Polynomial">Polynomial</link>&lt; U &gt; const &amp; other)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Assignment from another polynomial. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>other</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Polynomial">Polynomial</link> to assign. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 314 of file Polynomial.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Polynomial_1acc106c34179a667f3cc826ed09bde731"/>    <section>
+    <title>setToZero()</title>
+<indexterm><primary>setToZero</primary><secondary>Util::Polynomial&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Util::Polynomial&lt; T &gt;</primary><secondary>setToZero</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1Polynomial">Util::Polynomial</link>&lt; T &gt;::setToZero<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Assign this polynomial a value of zero. </para>
+</para>
+
+<para>Equivalent to <link linkend="_classUtil_1_1GArray_1aca73c195a08afe7f22fff01f80e8feac">GArray::clear()</link>: Clears all coefficients, setting size = 0 and degree = -1. </para>
+<para>
+Definition at line 335 of file Polynomial.h.</para>
+<para>
+Referenced by Util::Polynomial&lt; double &gt;::differentiate(), and Util::Polynomial&lt; double &gt;::integrate().</para>
+    </section><anchor xml:id="_classUtil_1_1Polynomial_1a812bd83ab3e911bb2368386be0186b56"/>    <section>
+    <title>degree()</title>
+<indexterm><primary>degree</primary><secondary>Util::Polynomial&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Util::Polynomial&lt; T &gt;</primary><secondary>degree</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>int <link linkend="_classUtil_1_1Polynomial">Util::Polynomial</link>&lt; T &gt;::degree<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return degree of polynomial. </para>
+</para>
+
+<para>Returns <link linkend="_classUtil_1_1GArray_1a6d44bce57ca63ed069af80eaf9ac016f">size()</link> - 1, number of coefficients - 1. By convention, a zero polynomial has degree = -1. </para>
+<para>
+Definition at line 343 of file Polynomial.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Polynomial_1ab47d4fabce096c49b3866e569b26832e"/>    <section>
+    <title>operator+=()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator+=</primary><secondary>Util::Polynomial&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Util::Polynomial&lt; T &gt;</primary><secondary>operator+=</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1Polynomial">Polynomial</link>&lt; T &gt; &amp; <link linkend="_classUtil_1_1Polynomial">Util::Polynomial</link>&lt; T &gt;::operator+= (const <link linkend="_classUtil_1_1Polynomial">Polynomial</link>&lt; T &gt; &amp; a)</computeroutput></para><para>
+
+<para>Add another polynomial to this one. </para>
+</para>
+
+<para>Upon return, *this = this + a.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>a</entry>
+                                <entry>
+<para>increment (input) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 350 of file Polynomial.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Polynomial_1a823b1aa2a24192dc07d498e045fc3f48"/>    <section>
+    <title>operator+=()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator+=</primary><secondary>Util::Polynomial&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Util::Polynomial&lt; T &gt;</primary><secondary>operator+=</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1Polynomial">Polynomial</link>&lt; T &gt; &amp; <link linkend="_classUtil_1_1Polynomial">Util::Polynomial</link>&lt; T &gt;::operator+= (T a)</computeroutput></para><para>
+
+<para>Add a constant to this polynomial. </para>
+</para>
+
+<para>Upon return, *this = this + a.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>a</entry>
+                                <entry>
+<para>increment (input) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 373 of file Polynomial.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Polynomial_1a3b11bb2ff102cfc685e261272afa2927"/>    <section>
+    <title>operator-=()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator-=</primary><secondary>Util::Polynomial&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Util::Polynomial&lt; T &gt;</primary><secondary>operator-=</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1Polynomial">Polynomial</link>&lt; T &gt; &amp; <link linkend="_classUtil_1_1Polynomial">Util::Polynomial</link>&lt; T &gt;::operator-= (const <link linkend="_classUtil_1_1Polynomial">Polynomial</link>&lt; T &gt; &amp; a)</computeroutput></para><para>
+
+<para>Subtract another polynomial from this one. </para>
+</para>
+
+<para>Upon return, *this = this + a.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>a</entry>
+                                <entry>
+<para>decrement (input) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 387 of file Polynomial.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Polynomial_1a615c4cb1d5c182d19ae755aea43aa33e"/>    <section>
+    <title>operator-=()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator-=</primary><secondary>Util::Polynomial&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Util::Polynomial&lt; T &gt;</primary><secondary>operator-=</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1Polynomial">Polynomial</link>&lt; T &gt; &amp; <link linkend="_classUtil_1_1Polynomial">Util::Polynomial</link>&lt; T &gt;::operator-= (T a)</computeroutput></para><para>
+
+<para>Subtract a constant from this polynomial. </para>
+</para>
+
+<para>Upon return, *this = this + a.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>a</entry>
+                                <entry>
+<para>increment (input) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 410 of file Polynomial.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Polynomial_1acf6affe22221027c97256b15027ed333"/>    <section>
+    <title>operator*=()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator*=</primary><secondary>Util::Polynomial&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Util::Polynomial&lt; T &gt;</primary><secondary>operator*=</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1Polynomial">Polynomial</link>&lt; T &gt; &amp; <link linkend="_classUtil_1_1Polynomial">Util::Polynomial</link>&lt; T &gt;::operator*= (T a)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Multiply this polynomial by a scalar. </para>
+</para>
+
+<para>Upon return, *this = this*a.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>a</entry>
+                                <entry>
+<para>scalar factor </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 425 of file Polynomial.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Polynomial_1a16e67d48ed0864f64aa3103f1ec87ca0"/>    <section>
+    <title>operator/=()</title>
+<indexterm><primary>operator/=</primary><secondary>Util::Polynomial&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Util::Polynomial&lt; T &gt;</primary><secondary>operator/=</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1Polynomial">Polynomial</link>&lt; T &gt; &amp; <link linkend="_classUtil_1_1Polynomial">Util::Polynomial</link>&lt; T &gt;::operator/= (T a)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Divide this polynomial by a scalar. </para>
+</para>
+
+<para>Upon return, *this = this*a.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>a</entry>
+                                <entry>
+<para>scalar factor (input) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 440 of file Polynomial.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Polynomial_1a1bcd39d67a7af8f34a86fa1b4b527ba2"/>    <section>
+    <title>operator*=()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator*=</primary><secondary>Util::Polynomial&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Util::Polynomial&lt; T &gt;</primary><secondary>operator*=</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1Polynomial">Polynomial</link>&lt; T &gt; &amp; <link linkend="_classUtil_1_1Polynomial">Util::Polynomial</link>&lt; T &gt;::operator*= (const <link linkend="_classUtil_1_1Polynomial">Polynomial</link>&lt; T &gt; &amp; a)</computeroutput></para><para>
+
+<para>Multiply this polynomial by another. </para>
+</para>
+
+<para>Upon return, *this = this*a.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>a</entry>
+                                <entry>
+<para>increment (input) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 454 of file Polynomial.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Polynomial_1ab0b8c33b704c7143fa42bf777e18ed32"/>    <section>
+    <title>integrate()</title>
+<indexterm><primary>integrate</primary><secondary>Util::Polynomial&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Util::Polynomial&lt; T &gt;</primary><secondary>integrate</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1Polynomial">Polynomial</link>&lt; T &gt; <link linkend="_classUtil_1_1Polynomial">Util::Polynomial</link>&lt; T &gt;::integrate</computeroutput></para><para>
+
+<para>Compute and return indefinite integral of this polynomial. </para>
+</para>
+
+<para>Returns an indefinite integral with zero constant term.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>indefinite integral polynomial. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 502 of file Polynomial.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Polynomial_1af0c558118e3566b144c80dc34eed620f"/>    <section>
+    <title>differentiate()</title>
+<indexterm><primary>differentiate</primary><secondary>Util::Polynomial&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Util::Polynomial&lt; T &gt;</primary><secondary>differentiate</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1Polynomial">Polynomial</link>&lt; T &gt; <link linkend="_classUtil_1_1Polynomial">Util::Polynomial</link>&lt; T &gt;::differentiate</computeroutput></para><para>
+
+<para>Compute and return derivative of this polynomial. </para>
+</para>
+
+<para>Returns a polynomial of one smaller degree.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>derivative polynomial </para>
+</formalpara>
+</para>
+<para>
+Definition at line 528 of file Polynomial.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Polynomial_1a8e8ab561f0fe66900c37f4420e999642"/>    <section>
+    <title>reflect()</title>
+<indexterm><primary>reflect</primary><secondary>Util::Polynomial&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Util::Polynomial&lt; T &gt;</primary><secondary>reflect</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1Polynomial">Polynomial</link>&lt; T &gt; <link linkend="_classUtil_1_1Polynomial">Util::Polynomial</link>&lt; T &gt;::reflect</computeroutput></para><para>
+
+<para>Compute and return reflected polynomial f(-x). </para>
+</para>
+
+<para>If this polynomial is f(x), this returns a polynomial g(x) = f(-x) created by the reflection operation x-&gt; -x. This yields a polynomial in which the sign is reversed for all coefficients of odd powers of x.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>polynomial created by reflection x -&gt; -x. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 557 of file Polynomial.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Polynomial_1a948cf01af7581e7f9d2ae035338ecc35"/>    <section>
+    <title>shift()</title>
+<indexterm><primary>shift</primary><secondary>Util::Polynomial&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Util::Polynomial&lt; T &gt;</primary><secondary>shift</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1Polynomial">Polynomial</link>&lt; T &gt; <link linkend="_classUtil_1_1Polynomial">Util::Polynomial</link>&lt; T &gt;::shift (T a) const</computeroutput></para><para>
+
+<para>Compute and return shifted polynomial f(x+a). </para>
+</para>
+
+<para>If this polynomial is f(x), this returns a polynomial g(x) = f(x+a) created by the shift operation x-&gt; x + a.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>polynomial created by shift operation x -&gt; x + a. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 576 of file Polynomial.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Polynomial_1a4b94c96af332c12cb117f34a72241996"/>    <section>
+    <title>operator()()</title>
+<indexterm><primary>operator()</primary><secondary>Util::Polynomial&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Util::Polynomial&lt; T &gt;</primary><secondary>operator()</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>T <link linkend="_classUtil_1_1Polynomial">Util::Polynomial</link>&lt; T &gt;::operator() (T x) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Evaluate polynomial at specific argument of type T. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>x</entry>
+                                <entry>
+<para>value of argument </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Value f(x) of this polynomial at specified x </para>
+</formalpara>
+</para>
+<para>
+Definition at line 602 of file Polynomial.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Polynomial_1ac263c5e8aeb6aef9a4e82ef4e59fab65"/>    <section>
+    <title>evaluate()</title>
+<indexterm><primary>evaluate</primary><secondary>Util::Polynomial&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Util::Polynomial&lt; T &gt;</primary><secondary>evaluate</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>double <link linkend="_classUtil_1_1Polynomial">Util::Polynomial</link>&lt; T &gt;::evaluate (double x) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Evaluate polynomial at specific floating point argument. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>x</entry>
+                                <entry>
+<para>value of argument x </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Value f(x) of polynomial at specified x </para>
+</formalpara>
+</para>
+<para>
+Definition at line 623 of file Polynomial.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Polynomial_1aa1d136d94b8c323bce738340774dca6c"/>    <section>
+    <title>monomial()</title>
+<indexterm><primary>monomial</primary><secondary>Util::Polynomial&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Util::Polynomial&lt; T &gt;</primary><secondary>monomial</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1Polynomial">Polynomial</link>&lt; T &gt; <link linkend="_classUtil_1_1Polynomial">Util::Polynomial</link>&lt; T &gt;::monomial (int n)<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Return a monomial f(x) = x^{n}. </para>
+</para>
+
+<para>Return a monomial.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>n</entry>
+                                <entry>
+<para>power of x in monomial. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 646 of file Polynomial.h.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Polynomial.h</section>
+</section>

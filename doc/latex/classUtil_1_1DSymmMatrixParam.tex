@@ -1,0 +1,213 @@
+\hypertarget{classUtil_1_1DSymmMatrixParam}{}\doxysubsection{Util\+::D\+Symm\+Matrix\+Param$<$ Type $>$ Class Template Reference}
+\label{classUtil_1_1DSymmMatrixParam}\index{Util::DSymmMatrixParam$<$ Type $>$@{Util::DSymmMatrixParam$<$ Type $>$}}
+
+
+A \mbox{\hyperlink{classUtil_1_1Parameter}{Parameter}} associated with a symmetric \mbox{\hyperlink{classUtil_1_1DMatrix}{D\+Matrix}}.  
+
+
+
+
+{\ttfamily \#include $<$D\+Symm\+Matrix\+Param.\+h$>$}
+
+Inheritance diagram for Util\+::D\+Symm\+Matrix\+Param$<$ Type $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classUtil_1_1DSymmMatrixParam}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1DSymmMatrixParam_a4d071e1aec22fe5212810b785a1da250}{D\+Symm\+Matrix\+Param}} (const char $\ast$\mbox{\hyperlink{classUtil_1_1Parameter_a2e6a63d5a0827ee3de51d481aee38174}{label}}, \mbox{\hyperlink{classUtil_1_1DMatrix}{D\+Matrix}}$<$ Type $>$ \&matrix, int n, bool \mbox{\hyperlink{classUtil_1_1Parameter_accdc4c9c774b9394b387277543c1ba74}{is\+Required}}=true)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1DSymmMatrixParam_a2b79cac29d99726a7acc6aee366544c3}{write\+Param}} (std\+::ostream \&out)
+\begin{DoxyCompactList}\small\item\em Write \mbox{\hyperlink{classUtil_1_1DMatrix}{D\+Matrix}} to file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classUtil_1_1DSymmMatrixParam_a0273f653b47f5a47a57605e94fcbdcb9}{read\+Value}} (std\+::istream \&in)
+\begin{DoxyCompactList}\small\item\em Read parameter value from an input stream. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUtil_1_1DSymmMatrixParam_a3c962514154258d7fe8da1772bb98013}{load\+Value}} (\mbox{\hyperlink{classUtil_1_1Serializable_ac6bcbf9bac926cada5a398804410e891}{Serializable\+::\+I\+Archive}} \&ar)
+\begin{DoxyCompactList}\small\item\em Load bare parameter value from an archive. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUtil_1_1DSymmMatrixParam_aafb1e7d98687bd74f53eeae8d83d9095}{save\+Value}} (\mbox{\hyperlink{classUtil_1_1Serializable_aca43a1eea5ec5f13189a57892a7a6d04}{Serializable\+::\+O\+Archive}} \&ar)
+\begin{DoxyCompactList}\small\item\em Save parameter value to an archive. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUtil_1_1DSymmMatrixParam_afadea2af59b27500f31138805773ab4f}{bcast\+Value}} ()
+\begin{DoxyCompactList}\small\item\em Broadcast parameter value within the io\+Communicator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$class Type$>$\newline
+class Util\+::\+D\+Symm\+Matrix\+Param$<$ Type $>$}
+
+A \mbox{\hyperlink{classUtil_1_1Parameter}{Parameter}} associated with a symmetric \mbox{\hyperlink{classUtil_1_1DMatrix}{D\+Matrix}}. 
+
+Definition at line 30 of file D\+Symm\+Matrix\+Param.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1DSymmMatrixParam_a4d071e1aec22fe5212810b785a1da250}\label{classUtil_1_1DSymmMatrixParam_a4d071e1aec22fe5212810b785a1da250}} 
+\index{Util::DSymmMatrixParam$<$ Type $>$@{Util::DSymmMatrixParam$<$ Type $>$}!DSymmMatrixParam@{DSymmMatrixParam}}
+\index{DSymmMatrixParam@{DSymmMatrixParam}!Util::DSymmMatrixParam$<$ Type $>$@{Util::DSymmMatrixParam$<$ Type $>$}}
+\doxyparagraph{\texorpdfstring{DSymmMatrixParam()}{DSymmMatrixParam()}}
+{\footnotesize\ttfamily template$<$class Type $>$ \\
+\mbox{\hyperlink{classUtil_1_1DSymmMatrixParam}{Util\+::\+D\+Symm\+Matrix\+Param}}$<$ Type $>$\+::\mbox{\hyperlink{classUtil_1_1DSymmMatrixParam}{D\+Symm\+Matrix\+Param}} (\begin{DoxyParamCaption}\item[{const char $\ast$}]{label,  }\item[{\mbox{\hyperlink{classUtil_1_1DMatrix}{D\+Matrix}}$<$ Type $>$ \&}]{matrix,  }\item[{int}]{n,  }\item[{bool}]{is\+Required = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & parameter label (a literal C-\/string) \\
+\hline
+{\em matrix} & \mbox{\hyperlink{classUtil_1_1DMatrix}{D\+Matrix$<$\+Type$>$}} object \\
+\hline
+{\em n} & number of rows or columns \\
+\hline
+{\em is\+Required} & Is this a required parameter? \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 94 of file D\+Symm\+Matrix\+Param.\+h.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1DSymmMatrixParam_a2b79cac29d99726a7acc6aee366544c3}\label{classUtil_1_1DSymmMatrixParam_a2b79cac29d99726a7acc6aee366544c3}} 
+\index{Util::DSymmMatrixParam$<$ Type $>$@{Util::DSymmMatrixParam$<$ Type $>$}!writeParam@{writeParam}}
+\index{writeParam@{writeParam}!Util::DSymmMatrixParam$<$ Type $>$@{Util::DSymmMatrixParam$<$ Type $>$}}
+\doxyparagraph{\texorpdfstring{writeParam()}{writeParam()}}
+{\footnotesize\ttfamily template$<$class Type $>$ \\
+void \mbox{\hyperlink{classUtil_1_1DSymmMatrixParam}{Util\+::\+D\+Symm\+Matrix\+Param}}$<$ Type $>$\+::write\+Param (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Write \mbox{\hyperlink{classUtil_1_1DMatrix}{D\+Matrix}} to file. 
+
+
+
+Implements \mbox{\hyperlink{classUtil_1_1ParamComponent_ac17d6ab63f9b0e5f966d6a3cfbc26d86}{Util\+::\+Param\+Component}}.
+
+
+
+Definition at line 208 of file D\+Symm\+Matrix\+Param.\+h.
+
+
+
+References Util\+::\+Parameter\+::\+Precision, U\+T\+I\+L\+\_\+\+T\+H\+R\+OW, and Util\+::\+Parameter\+::\+Width.
+
+\mbox{\Hypertarget{classUtil_1_1DSymmMatrixParam_a0273f653b47f5a47a57605e94fcbdcb9}\label{classUtil_1_1DSymmMatrixParam_a0273f653b47f5a47a57605e94fcbdcb9}} 
+\index{Util::DSymmMatrixParam$<$ Type $>$@{Util::DSymmMatrixParam$<$ Type $>$}!readValue@{readValue}}
+\index{readValue@{readValue}!Util::DSymmMatrixParam$<$ Type $>$@{Util::DSymmMatrixParam$<$ Type $>$}}
+\doxyparagraph{\texorpdfstring{readValue()}{readValue()}}
+{\footnotesize\ttfamily template$<$class Type $>$ \\
+void \mbox{\hyperlink{classUtil_1_1DSymmMatrixParam}{Util\+::\+D\+Symm\+Matrix\+Param}}$<$ Type $>$\+::read\+Value (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Read parameter value from an input stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & input stream from which to read \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classUtil_1_1Parameter_a5817fa95bf2e32808d384a66e272dc37}{Util\+::\+Parameter}}.
+
+
+
+Definition at line 104 of file D\+Symm\+Matrix\+Param.\+h.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1DSymmMatrixParam_a3c962514154258d7fe8da1772bb98013}\label{classUtil_1_1DSymmMatrixParam_a3c962514154258d7fe8da1772bb98013}} 
+\index{Util::DSymmMatrixParam$<$ Type $>$@{Util::DSymmMatrixParam$<$ Type $>$}!loadValue@{loadValue}}
+\index{loadValue@{loadValue}!Util::DSymmMatrixParam$<$ Type $>$@{Util::DSymmMatrixParam$<$ Type $>$}}
+\doxyparagraph{\texorpdfstring{loadValue()}{loadValue()}}
+{\footnotesize\ttfamily template$<$class Type $>$ \\
+void \mbox{\hyperlink{classUtil_1_1DSymmMatrixParam}{Util\+::\+D\+Symm\+Matrix\+Param}}$<$ Type $>$\+::load\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1Serializable_ac6bcbf9bac926cada5a398804410e891}{Serializable\+::\+I\+Archive}} \&}]{ar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Load bare parameter value from an archive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & input archive from which to load \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classUtil_1_1Parameter_a9e3d8dbd2198974017cd8711ae9c990d}{Util\+::\+Parameter}}.
+
+
+
+Definition at line 153 of file D\+Symm\+Matrix\+Param.\+h.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1DSymmMatrixParam_aafb1e7d98687bd74f53eeae8d83d9095}\label{classUtil_1_1DSymmMatrixParam_aafb1e7d98687bd74f53eeae8d83d9095}} 
+\index{Util::DSymmMatrixParam$<$ Type $>$@{Util::DSymmMatrixParam$<$ Type $>$}!saveValue@{saveValue}}
+\index{saveValue@{saveValue}!Util::DSymmMatrixParam$<$ Type $>$@{Util::DSymmMatrixParam$<$ Type $>$}}
+\doxyparagraph{\texorpdfstring{saveValue()}{saveValue()}}
+{\footnotesize\ttfamily template$<$class Type $>$ \\
+void \mbox{\hyperlink{classUtil_1_1DSymmMatrixParam}{Util\+::\+D\+Symm\+Matrix\+Param}}$<$ Type $>$\+::save\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1Serializable_aca43a1eea5ec5f13189a57892a7a6d04}{Serializable\+::\+O\+Archive}} \&}]{ar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Save parameter value to an archive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & output archive to which to save \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classUtil_1_1Parameter_a61858c5163b492f2618689a35ff05044}{Util\+::\+Parameter}}.
+
+
+
+Definition at line 172 of file D\+Symm\+Matrix\+Param.\+h.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1DSymmMatrixParam_afadea2af59b27500f31138805773ab4f}\label{classUtil_1_1DSymmMatrixParam_afadea2af59b27500f31138805773ab4f}} 
+\index{Util::DSymmMatrixParam$<$ Type $>$@{Util::DSymmMatrixParam$<$ Type $>$}!bcastValue@{bcastValue}}
+\index{bcastValue@{bcastValue}!Util::DSymmMatrixParam$<$ Type $>$@{Util::DSymmMatrixParam$<$ Type $>$}}
+\doxyparagraph{\texorpdfstring{bcastValue()}{bcastValue()}}
+{\footnotesize\ttfamily template$<$class Type $>$ \\
+void \mbox{\hyperlink{classUtil_1_1DSymmMatrixParam}{Util\+::\+D\+Symm\+Matrix\+Param}}$<$ Type $>$\+::bcast\+Value\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Broadcast parameter value within the io\+Communicator. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classUtil_1_1Parameter_ad93ad2700686a5a32755fdb67b2a0792}{Util\+::\+Parameter}}.
+
+
+
+Definition at line 188 of file D\+Symm\+Matrix\+Param.\+h.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+Symm\+Matrix\+Param.\+h\end{DoxyCompactItemize}

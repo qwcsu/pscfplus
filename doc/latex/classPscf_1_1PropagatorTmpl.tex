@@ -1,0 +1,302 @@
+\hypertarget{classPscf_1_1PropagatorTmpl}{}\doxysubsection{Pscf\+::Propagator\+Tmpl$<$ TP $>$ Class Template Reference}
+\label{classPscf_1_1PropagatorTmpl}\index{Pscf::PropagatorTmpl$<$ TP $>$@{Pscf::PropagatorTmpl$<$ TP $>$}}
+
+
+Template for propagator classes.  
+
+
+
+
+{\ttfamily \#include $<$Propagator\+Tmpl.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPscf_1_1PropagatorTmpl_ae10622e3f32581d329805356b41b73a5}{Propagator\+Tmpl}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Mutators}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classPscf_1_1PropagatorTmpl_a5590bab1688380936fab98fadae752f8}{set\+Direction\+Id}} (int \mbox{\hyperlink{classPscf_1_1PropagatorTmpl_a6502dd072870ebc485a2a360ec93f136}{direction\+Id}})
+\begin{DoxyCompactList}\small\item\em Associate this propagator with a direction index. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1PropagatorTmpl_adeac58f52fe90fe96c0ffe9e485e75ce}{set\+Partner}} (const TP \&\mbox{\hyperlink{classPscf_1_1PropagatorTmpl_a24e0cc27574f4a7953e2cebbab398efc}{partner}})
+\begin{DoxyCompactList}\small\item\em Set the partner of this propagator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1PropagatorTmpl_a17956f30957a7dde5234bb906b0d67ac}{add\+Source}} (const TP \&\mbox{\hyperlink{classPscf_1_1PropagatorTmpl_a26b1abc2d10158da46d49fba5dc8fe5f}{source}})
+\begin{DoxyCompactList}\small\item\em Add a propagator to the list of sources for this one. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1PropagatorTmpl_a05315758e7567ff08d1aea4166dbbc93}{set\+Is\+Solved}} (bool \mbox{\hyperlink{classPscf_1_1PropagatorTmpl_a63edc883faabf165c833071db58ac9fa}{is\+Solved}})
+\begin{DoxyCompactList}\small\item\em Set the is\+Solved flag to true or false. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Accessors}
+\begin{DoxyCompactItemize}
+\item 
+const TP \& \mbox{\hyperlink{classPscf_1_1PropagatorTmpl_a26b1abc2d10158da46d49fba5dc8fe5f}{source}} (int id) const
+\begin{DoxyCompactList}\small\item\em Get a source propagator. \end{DoxyCompactList}\item 
+const TP \& \mbox{\hyperlink{classPscf_1_1PropagatorTmpl_a24e0cc27574f4a7953e2cebbab398efc}{partner}} () const
+\begin{DoxyCompactList}\small\item\em Get partner propagator. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPscf_1_1PropagatorTmpl_a6502dd072870ebc485a2a360ec93f136}{direction\+Id}} () const
+\begin{DoxyCompactList}\small\item\em Get direction index for this propagator. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPscf_1_1PropagatorTmpl_af7b58cb39720994b0b95168ebf95799a}{n\+Source}} () const
+\begin{DoxyCompactList}\small\item\em Number of source / prerequisite propagators. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPscf_1_1PropagatorTmpl_ada82db8c7e34d219ec91927ceb14c118}{has\+Partner}} () const
+\begin{DoxyCompactList}\small\item\em Does this have a partner propagator? \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPscf_1_1PropagatorTmpl_a63edc883faabf165c833071db58ac9fa}{is\+Solved}} () const
+\begin{DoxyCompactList}\small\item\em Has the modified diffusion equation been solved? \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPscf_1_1PropagatorTmpl_adba1597dd24cb3f60d45da15e6160ea2}{is\+Ready}} () const
+\begin{DoxyCompactList}\small\item\em Are all source propagators are solved? \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$class TP$>$\newline
+class Pscf\+::\+Propagator\+Tmpl$<$ T\+P $>$}
+
+Template for propagator classes. 
+
+The template argument TP should be a concrete propagator class that is derived from the template Propagator\+Tmpl$<$\+T\+P$>$. By convention, each implementation of S\+C\+FT is defined in a different sub-\/namespace of namespace \mbox{\hyperlink{namespacePscf}{Pscf}}. For each such implementation, there is a concrete propagator class, named Propagator by convention, that is a subclass of the template instance Propagator\+Tmpl$<$\+Propagator$>$, using the syntax shown below\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class }Propagator : \textcolor{keyword}{public} \mbox{\hyperlink{classPscf_1_1PropagatorTmpl_ae10622e3f32581d329805356b41b73a5}{PropagatorTmpl}}<Propagator>}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{ ...}
+\DoxyCodeLine{\};}
+\end{DoxyCode}
+ This usage is an example of the so-\/called \char`\"{}curiously recurring
+template pattern\char`\"{} (C\+R\+TP). It is used here to allow the template Propagator\+Tmpl$<$\+Propagator$>$ to have a member variables that store pointers to other instances of derived class Propagator (or TP).
+
+The TP propagator class is used in templates \mbox{\hyperlink{classPscf_1_1BlockTmpl}{Block\+Tmpl}}, \mbox{\hyperlink{classPscf_1_1PolymerTmpl}{Polymer\+Tmpl}} and System\+Tmpl. The usage in those templates require that it define the following public typedefs and member functions\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class }TP : \textcolor{keyword}{public} \mbox{\hyperlink{classPscf_1_1PropagatorTmpl_ae10622e3f32581d329805356b41b73a5}{PropagatorTmpl}}<TP>}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Chemical potential field type.}}
+\DoxyCodeLine{    \textcolor{keyword}{typedef} DArray<double> WField;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Monomer concentration field type.}}
+\DoxyCodeLine{    \textcolor{keyword}{typedef} DArray<double> CField;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Solve the modified diffusion equation for this direction.}}
+\DoxyCodeLine{    \textcolor{keywordtype}{void} solve();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Compute and return the molecular partition function Q.}}
+\DoxyCodeLine{    \textcolor{keywordtype}{double} computeQ();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\};}
+\end{DoxyCode}
+ The typedefs W\+Field and C\+Field define the types of the objects used to represent a chemical potential field for a particular monomer type and a monomer concentration field. In the above example, both of these type names are defined to be synonyms for \mbox{\hyperlink{classUtil_1_1DArray}{D\+Array$<$double$>$}}, i.\+e., for dynamically allocated arrays of double precision floating point numbers. Other implementations may use more specialized types. 
+
+Definition at line 76 of file Propagator\+Tmpl.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPscf_1_1PropagatorTmpl_ae10622e3f32581d329805356b41b73a5}\label{classPscf_1_1PropagatorTmpl_ae10622e3f32581d329805356b41b73a5}} 
+\index{Pscf::PropagatorTmpl$<$ TP $>$@{Pscf::PropagatorTmpl$<$ TP $>$}!PropagatorTmpl@{PropagatorTmpl}}
+\index{PropagatorTmpl@{PropagatorTmpl}!Pscf::PropagatorTmpl$<$ TP $>$@{Pscf::PropagatorTmpl$<$ TP $>$}}
+\doxyparagraph{\texorpdfstring{PropagatorTmpl()}{PropagatorTmpl()}}
+{\footnotesize\ttfamily template$<$class TP $>$ \\
+\mbox{\hyperlink{classPscf_1_1PropagatorTmpl}{Pscf\+::\+Propagator\+Tmpl}}$<$ TP $>$\+::\mbox{\hyperlink{classPscf_1_1PropagatorTmpl}{Propagator\+Tmpl}}}
+
+
+
+Constructor. 
+
+
+
+Definition at line 226 of file Propagator\+Tmpl.\+h.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPscf_1_1PropagatorTmpl_a5590bab1688380936fab98fadae752f8}\label{classPscf_1_1PropagatorTmpl_a5590bab1688380936fab98fadae752f8}} 
+\index{Pscf::PropagatorTmpl$<$ TP $>$@{Pscf::PropagatorTmpl$<$ TP $>$}!setDirectionId@{setDirectionId}}
+\index{setDirectionId@{setDirectionId}!Pscf::PropagatorTmpl$<$ TP $>$@{Pscf::PropagatorTmpl$<$ TP $>$}}
+\doxyparagraph{\texorpdfstring{setDirectionId()}{setDirectionId()}}
+{\footnotesize\ttfamily template$<$class TP $>$ \\
+void \mbox{\hyperlink{classPscf_1_1PropagatorTmpl}{Pscf\+::\+Propagator\+Tmpl}}$<$ TP $>$\+::set\+Direction\+Id (\begin{DoxyParamCaption}\item[{int}]{direction\+Id }\end{DoxyParamCaption})}
+
+
+
+Associate this propagator with a direction index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em direction\+Id} & direction = 0 or 1. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 237 of file Propagator\+Tmpl.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1PropagatorTmpl_adeac58f52fe90fe96c0ffe9e485e75ce}\label{classPscf_1_1PropagatorTmpl_adeac58f52fe90fe96c0ffe9e485e75ce}} 
+\index{Pscf::PropagatorTmpl$<$ TP $>$@{Pscf::PropagatorTmpl$<$ TP $>$}!setPartner@{setPartner}}
+\index{setPartner@{setPartner}!Pscf::PropagatorTmpl$<$ TP $>$@{Pscf::PropagatorTmpl$<$ TP $>$}}
+\doxyparagraph{\texorpdfstring{setPartner()}{setPartner()}}
+{\footnotesize\ttfamily template$<$class TP $>$ \\
+void \mbox{\hyperlink{classPscf_1_1PropagatorTmpl}{Pscf\+::\+Propagator\+Tmpl}}$<$ TP $>$\+::set\+Partner (\begin{DoxyParamCaption}\item[{const TP \&}]{partner }\end{DoxyParamCaption})}
+
+
+
+Set the partner of this propagator. 
+
+The partner of a propagator is the propagator for the same block that propagates in the opposite direction.
+
+
+\begin{DoxyParams}{Parameters}
+{\em partner} & reference to partner propagator \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 244 of file Propagator\+Tmpl.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1PropagatorTmpl_a17956f30957a7dde5234bb906b0d67ac}\label{classPscf_1_1PropagatorTmpl_a17956f30957a7dde5234bb906b0d67ac}} 
+\index{Pscf::PropagatorTmpl$<$ TP $>$@{Pscf::PropagatorTmpl$<$ TP $>$}!addSource@{addSource}}
+\index{addSource@{addSource}!Pscf::PropagatorTmpl$<$ TP $>$@{Pscf::PropagatorTmpl$<$ TP $>$}}
+\doxyparagraph{\texorpdfstring{addSource()}{addSource()}}
+{\footnotesize\ttfamily template$<$class TP $>$ \\
+void \mbox{\hyperlink{classPscf_1_1PropagatorTmpl}{Pscf\+::\+Propagator\+Tmpl}}$<$ TP $>$\+::add\+Source (\begin{DoxyParamCaption}\item[{const TP \&}]{source }\end{DoxyParamCaption})}
+
+
+
+Add a propagator to the list of sources for this one. 
+
+A source is a propagator that terminates at the root vertex of this one and is needed to compute the initial condition for this one, and that thus must be computed before this.
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & reference to source propagator \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 251 of file Propagator\+Tmpl.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1PropagatorTmpl_a05315758e7567ff08d1aea4166dbbc93}\label{classPscf_1_1PropagatorTmpl_a05315758e7567ff08d1aea4166dbbc93}} 
+\index{Pscf::PropagatorTmpl$<$ TP $>$@{Pscf::PropagatorTmpl$<$ TP $>$}!setIsSolved@{setIsSolved}}
+\index{setIsSolved@{setIsSolved}!Pscf::PropagatorTmpl$<$ TP $>$@{Pscf::PropagatorTmpl$<$ TP $>$}}
+\doxyparagraph{\texorpdfstring{setIsSolved()}{setIsSolved()}}
+{\footnotesize\ttfamily template$<$class TP $>$ \\
+void \mbox{\hyperlink{classPscf_1_1PropagatorTmpl}{Pscf\+::\+Propagator\+Tmpl}}$<$ TP $>$\+::set\+Is\+Solved (\begin{DoxyParamCaption}\item[{bool}]{is\+Solved }\end{DoxyParamCaption})}
+
+
+
+Set the is\+Solved flag to true or false. 
+
+
+
+Definition at line 269 of file Propagator\+Tmpl.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1PropagatorTmpl_a26b1abc2d10158da46d49fba5dc8fe5f}\label{classPscf_1_1PropagatorTmpl_a26b1abc2d10158da46d49fba5dc8fe5f}} 
+\index{Pscf::PropagatorTmpl$<$ TP $>$@{Pscf::PropagatorTmpl$<$ TP $>$}!source@{source}}
+\index{source@{source}!Pscf::PropagatorTmpl$<$ TP $>$@{Pscf::PropagatorTmpl$<$ TP $>$}}
+\doxyparagraph{\texorpdfstring{source()}{source()}}
+{\footnotesize\ttfamily template$<$class TP $>$ \\
+const TP \& \mbox{\hyperlink{classPscf_1_1PropagatorTmpl}{Pscf\+::\+Propagator\+Tmpl}}$<$ TP $>$\+::source (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get a source propagator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & index of source propagator, $<$ n\+Source \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 202 of file Propagator\+Tmpl.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1PropagatorTmpl_a24e0cc27574f4a7953e2cebbab398efc}\label{classPscf_1_1PropagatorTmpl_a24e0cc27574f4a7953e2cebbab398efc}} 
+\index{Pscf::PropagatorTmpl$<$ TP $>$@{Pscf::PropagatorTmpl$<$ TP $>$}!partner@{partner}}
+\index{partner@{partner}!Pscf::PropagatorTmpl$<$ TP $>$@{Pscf::PropagatorTmpl$<$ TP $>$}}
+\doxyparagraph{\texorpdfstring{partner()}{partner()}}
+{\footnotesize\ttfamily template$<$class TP $>$ \\
+const TP \& \mbox{\hyperlink{classPscf_1_1PropagatorTmpl}{Pscf\+::\+Propagator\+Tmpl}}$<$ TP $>$\+::partner}
+
+
+
+Get partner propagator. 
+
+
+
+Definition at line 258 of file Propagator\+Tmpl.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1PropagatorTmpl_a6502dd072870ebc485a2a360ec93f136}\label{classPscf_1_1PropagatorTmpl_a6502dd072870ebc485a2a360ec93f136}} 
+\index{Pscf::PropagatorTmpl$<$ TP $>$@{Pscf::PropagatorTmpl$<$ TP $>$}!directionId@{directionId}}
+\index{directionId@{directionId}!Pscf::PropagatorTmpl$<$ TP $>$@{Pscf::PropagatorTmpl$<$ TP $>$}}
+\doxyparagraph{\texorpdfstring{directionId()}{directionId()}}
+{\footnotesize\ttfamily template$<$class TP $>$ \\
+int \mbox{\hyperlink{classPscf_1_1PropagatorTmpl}{Pscf\+::\+Propagator\+Tmpl}}$<$ TP $>$\+::direction\+Id\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get direction index for this propagator. 
+
+
+
+Definition at line 187 of file Propagator\+Tmpl.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1PropagatorTmpl_af7b58cb39720994b0b95168ebf95799a}\label{classPscf_1_1PropagatorTmpl_af7b58cb39720994b0b95168ebf95799a}} 
+\index{Pscf::PropagatorTmpl$<$ TP $>$@{Pscf::PropagatorTmpl$<$ TP $>$}!nSource@{nSource}}
+\index{nSource@{nSource}!Pscf::PropagatorTmpl$<$ TP $>$@{Pscf::PropagatorTmpl$<$ TP $>$}}
+\doxyparagraph{\texorpdfstring{nSource()}{nSource()}}
+{\footnotesize\ttfamily template$<$class TP $>$ \\
+int \mbox{\hyperlink{classPscf_1_1PropagatorTmpl}{Pscf\+::\+Propagator\+Tmpl}}$<$ TP $>$\+::n\+Source\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Number of source / prerequisite propagators. 
+
+
+
+Definition at line 194 of file Propagator\+Tmpl.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1PropagatorTmpl_ada82db8c7e34d219ec91927ceb14c118}\label{classPscf_1_1PropagatorTmpl_ada82db8c7e34d219ec91927ceb14c118}} 
+\index{Pscf::PropagatorTmpl$<$ TP $>$@{Pscf::PropagatorTmpl$<$ TP $>$}!hasPartner@{hasPartner}}
+\index{hasPartner@{hasPartner}!Pscf::PropagatorTmpl$<$ TP $>$@{Pscf::PropagatorTmpl$<$ TP $>$}}
+\doxyparagraph{\texorpdfstring{hasPartner()}{hasPartner()}}
+{\footnotesize\ttfamily template$<$class TP $>$ \\
+bool \mbox{\hyperlink{classPscf_1_1PropagatorTmpl}{Pscf\+::\+Propagator\+Tmpl}}$<$ TP $>$\+::has\+Partner\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Does this have a partner propagator? 
+
+
+
+Definition at line 210 of file Propagator\+Tmpl.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1PropagatorTmpl_a63edc883faabf165c833071db58ac9fa}\label{classPscf_1_1PropagatorTmpl_a63edc883faabf165c833071db58ac9fa}} 
+\index{Pscf::PropagatorTmpl$<$ TP $>$@{Pscf::PropagatorTmpl$<$ TP $>$}!isSolved@{isSolved}}
+\index{isSolved@{isSolved}!Pscf::PropagatorTmpl$<$ TP $>$@{Pscf::PropagatorTmpl$<$ TP $>$}}
+\doxyparagraph{\texorpdfstring{isSolved()}{isSolved()}}
+{\footnotesize\ttfamily template$<$class TP $>$ \\
+bool \mbox{\hyperlink{classPscf_1_1PropagatorTmpl}{Pscf\+::\+Propagator\+Tmpl}}$<$ TP $>$\+::is\+Solved\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Has the modified diffusion equation been solved? 
+
+
+
+Definition at line 217 of file Propagator\+Tmpl.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1PropagatorTmpl_adba1597dd24cb3f60d45da15e6160ea2}\label{classPscf_1_1PropagatorTmpl_adba1597dd24cb3f60d45da15e6160ea2}} 
+\index{Pscf::PropagatorTmpl$<$ TP $>$@{Pscf::PropagatorTmpl$<$ TP $>$}!isReady@{isReady}}
+\index{isReady@{isReady}!Pscf::PropagatorTmpl$<$ TP $>$@{Pscf::PropagatorTmpl$<$ TP $>$}}
+\doxyparagraph{\texorpdfstring{isReady()}{isReady()}}
+{\footnotesize\ttfamily template$<$class TP $>$ \\
+bool \mbox{\hyperlink{classPscf_1_1PropagatorTmpl}{Pscf\+::\+Propagator\+Tmpl}}$<$ TP $>$\+::is\+Ready}
+
+
+
+Are all source propagators are solved? 
+
+
+
+Definition at line 276 of file Propagator\+Tmpl.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Propagator\+Tmpl.\+h\end{DoxyCompactItemize}

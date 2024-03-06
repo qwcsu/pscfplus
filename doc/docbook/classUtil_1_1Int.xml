@@ -1,0 +1,303 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1Int">
+<title>Util::Int Class Reference</title>
+<indexterm><primary>Util::Int</primary></indexterm>
+<para>
+
+<para>Wrapper for an int, for formatted ostream output. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;Int.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+<simplesect><title>Constructors</title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1Int_1aeec8da6a22358888665628f09ed1eac1">Int</link> ()</para>
+
+<para>Default constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Int_1a92470f1480965b8b574a4673b9a0813b">Int</link> (int <link linkend="_classUtil_1_1Int_1a7b535b25e70bf105fd38d28b31a7c830">value</link>)</para>
+
+<para>Constructor, value only. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Int_1a5ff8b33acfd92d5b53eaca5005a7a777">Int</link> (int <link linkend="_classUtil_1_1Int_1a7b535b25e70bf105fd38d28b31a7c830">value</link>, int <link linkend="_classUtil_1_1Int_1af8d7886f28020cacde093657f9978b4b">width</link>)</para>
+
+<para>Constructor, value and width. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</simplesect>
+<simplesect><title>Setters</title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_classUtil_1_1Int_1ac30b52294f76a6e01c2ef055569c918b">setValue</link> (int <link linkend="_classUtil_1_1Int_1a7b535b25e70bf105fd38d28b31a7c830">value</link>)</para>
+
+<para>Set the integer value. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1Int_1a7c8763a64c5e9c8c46ae05b2d97fba2c">setWidth</link> (int <link linkend="_classUtil_1_1Int_1af8d7886f28020cacde093657f9978b4b">width</link>)</para>
+
+<para>Set the output field width. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Accessors    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_classUtil_1_1Int_1a7b535b25e70bf105fd38d28b31a7c830">value</link> ()</para>
+
+<para>Get the integer value. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1Int_1af8d7886f28020cacde093657f9978b4b">width</link> ()</para>
+
+<para>Get the minimum field width. </para>
+</listitem>
+            <listitem><para>std::istream &amp; <link linkend="_classUtil_1_1Int_1a9270b420c345367295553f9e40f2c471">operator&gt;&gt;</link> (std::istream &amp;in, <link linkend="_classUtil_1_1Int">Int</link> &amp;object)</para>
+
+<para>Input stream extractor for an <link linkend="_classUtil_1_1Int">Int</link> object. </para>
+</listitem>
+            <listitem><para>std::ostream &amp; <link linkend="_classUtil_1_1Int_1affe48f3d725906553c7b1808b7c4c121">operator&lt;&lt;</link> (std::ostream &amp;out, const <link linkend="_classUtil_1_1Int">Int</link> &amp;object)</para>
+
+<para>Output stream inserter for an <link linkend="_classUtil_1_1Int">Int</link> object. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Wrapper for an int, for formatted ostream output. </para>
+
+
+
+<para>An <link linkend="_classUtil_1_1Int">Int</link> object has a int numerical value, and a minimum output field width. The &lt;&lt; operator for an <link linkend="_classUtil_1_1Int">Int</link> uses the specified width. The numerical value and width may both be specified as parameters to a constructor. If the width is not specified as a constructor parameter, it is set within the constructor to a default value equal to <link linkend="_classUtil_1_1Format_1ac6cf6620e160c66757429bec0fb4dd23">Format::defaultWidth()</link>.</para>
+
+<para>An <link linkend="_classUtil_1_1Int">Int</link> object may be passed to an ostream as a temporary object. For example, the expression: <literallayout><computeroutput>std::cout&#32;&lt;&lt;&#32;Int(13)&#32;&lt;&lt;&#32;Int(25,&#32;10)&#32;&lt;&lt;&#32;std::endl;
+</computeroutput></literallayout> outputs the number 13 using the default width, followed by the number 25 in a field of minimum width 10. </para>
+<para>
+Definition at line 36 of file Int.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1Int_1aeec8da6a22358888665628f09ed1eac1"/>    <section>
+    <title>Int()<computeroutput>[1/3]</computeroutput></title>
+<indexterm><primary>Int</primary><secondary>Util::Int</secondary></indexterm>
+<indexterm><primary>Util::Int</primary><secondary>Int</secondary></indexterm>
+<para><computeroutput>Util::Int::Int ( )</computeroutput></para><para>
+
+<para>Default constructor. </para>
+</para>
+<para>
+Definition at line 19 of file Int.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1Int_1a92470f1480965b8b574a4673b9a0813b"/>    <section>
+    <title>Int()<computeroutput>[2/3]</computeroutput></title>
+<indexterm><primary>Int</primary><secondary>Util::Int</secondary></indexterm>
+<indexterm><primary>Util::Int</primary><secondary>Int</secondary></indexterm>
+<para><computeroutput>Util::Int::Int (int value)<computeroutput>[explicit]</computeroutput></computeroutput></para><para>
+
+<para>Constructor, value only. </para>
+</para>
+<para>
+Definition at line 27 of file Int.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1Int_1a5ff8b33acfd92d5b53eaca5005a7a777"/>    <section>
+    <title>Int()<computeroutput>[3/3]</computeroutput></title>
+<indexterm><primary>Int</primary><secondary>Util::Int</secondary></indexterm>
+<indexterm><primary>Util::Int</primary><secondary>Int</secondary></indexterm>
+<para><computeroutput>Util::Int::Int (int value, int width)</computeroutput></para><para>
+
+<para>Constructor, value and width. </para>
+</para>
+<para>
+Definition at line 35 of file Int.cpp.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1Int_1ac30b52294f76a6e01c2ef055569c918b"/>    <section>
+    <title>setValue()</title>
+<indexterm><primary>setValue</primary><secondary>Util::Int</secondary></indexterm>
+<indexterm><primary>Util::Int</primary><secondary>setValue</secondary></indexterm>
+<para><computeroutput>void Util::Int::setValue (int value)</computeroutput></para><para>
+
+<para>Set the integer value. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>value</entry>
+                                <entry>
+<para>value of the associated int variable </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 43 of file Int.cpp.</para>
+<para>
+References value().</para>
+    </section><anchor xml:id="_classUtil_1_1Int_1a7c8763a64c5e9c8c46ae05b2d97fba2c"/>    <section>
+    <title>setWidth()</title>
+<indexterm><primary>setWidth</primary><secondary>Util::Int</secondary></indexterm>
+<indexterm><primary>Util::Int</primary><secondary>setWidth</secondary></indexterm>
+<para><computeroutput>void Util::Int::setWidth (int width)</computeroutput></para><para>
+
+<para>Set the output field width. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>width</entry>
+                                <entry>
+<para>output field width </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 49 of file Int.cpp.</para>
+<para>
+References width().</para>
+    </section><anchor xml:id="_classUtil_1_1Int_1a7b535b25e70bf105fd38d28b31a7c830"/>    <section>
+    <title>value()</title>
+<indexterm><primary>value</primary><secondary>Util::Int</secondary></indexterm>
+<indexterm><primary>Util::Int</primary><secondary>value</secondary></indexterm>
+<para><computeroutput>int Util::Int::value ( )</computeroutput></para><para>
+
+<para>Get the integer value. </para>
+</para>
+<para>
+Definition at line 55 of file Int.cpp.</para>
+<para>
+Referenced by setValue().</para>
+    </section><anchor xml:id="_classUtil_1_1Int_1af8d7886f28020cacde093657f9978b4b"/>    <section>
+    <title>width()</title>
+<indexterm><primary>width</primary><secondary>Util::Int</secondary></indexterm>
+<indexterm><primary>Util::Int</primary><secondary>width</secondary></indexterm>
+<para><computeroutput>int Util::Int::width ( )</computeroutput></para><para>
+
+<para>Get the minimum field width. </para>
+</para>
+<para>
+Definition at line 61 of file Int.cpp.</para>
+<para>
+Referenced by setWidth().</para>
+</section>
+</section>
+<section>
+<title>Friends And Related Function Documentation</title>
+<anchor xml:id="_classUtil_1_1Int_1a9270b420c345367295553f9e40f2c471"/>    <section>
+    <title>operator&gt;&gt;</title>
+<indexterm><primary>operator&gt;&gt;</primary><secondary>Util::Int</secondary></indexterm>
+<indexterm><primary>Util::Int</primary><secondary>operator&gt;&gt;</secondary></indexterm>
+<para><computeroutput>std::istream&amp; operator&gt;&gt; (std::istream &amp; in, <link linkend="_classUtil_1_1Int">Int</link> &amp; object)<computeroutput>[friend]</computeroutput></computeroutput></para><para>
+
+<para>Input stream extractor for an <link linkend="_classUtil_1_1Int">Int</link> object. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>object</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Int">Int</link> object to be read from stream </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified input stream </para>
+</formalpara>
+</para>
+<para>
+Definition at line 71 of file Int.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1Int_1affe48f3d725906553c7b1808b7c4c121"/>    <section>
+    <title>operator&lt;&lt;</title>
+<indexterm><primary>operator&lt;&lt;</primary><secondary>Util::Int</secondary></indexterm>
+<indexterm><primary>Util::Int</primary><secondary>operator&lt;&lt;</secondary></indexterm>
+<para><computeroutput>std::ostream&amp; operator&lt;&lt; (std::ostream &amp; out, const <link linkend="_classUtil_1_1Int">Int</link> &amp; object)<computeroutput>[friend]</computeroutput></computeroutput></para><para>
+
+<para>Output stream inserter for an <link linkend="_classUtil_1_1Int">Int</link> object. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>out</entry>
+                                <entry>
+<para>output stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>object</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Int">Int</link> to be written to stream </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified output stream </para>
+</formalpara>
+</para>
+<para>
+Definition at line 84 of file Int.cpp.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+Int.hInt.cpp</section>
+</section>

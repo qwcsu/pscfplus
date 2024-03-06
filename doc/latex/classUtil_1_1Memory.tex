@@ -1,0 +1,234 @@
+\hypertarget{classUtil_1_1Memory}{}\doxysubsection{Util\+::Memory Class Reference}
+\label{classUtil_1_1Memory}\index{Util::Memory@{Util::Memory}}
+
+
+Provides method to allocate array.  
+
+
+
+
+{\ttfamily \#include $<$Memory.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Data $>$ }\\static void \mbox{\hyperlink{classUtil_1_1Memory_af6003f193ae6c7a0fc049d7e443e0348}{allocate}} (Data $\ast$\&ptr, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Allocate a C++ array. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Data $>$ }\\static void \mbox{\hyperlink{classUtil_1_1Memory_a3ded7c631c8cbdb6968f03f8084485a2}{deallocate}} (Data $\ast$\&ptr, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Deallocate a C++ array. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Data $>$ }\\static void \mbox{\hyperlink{classUtil_1_1Memory_ab2c695bb5d97abccbfff59e4fde16530}{reallocate}} (Data $\ast$\&ptr, size\+\_\+t old\+Size, size\+\_\+t new\+Size)
+\begin{DoxyCompactList}\small\item\em Reallocate a C++ array. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{classUtil_1_1Memory_a8aa7aec77dc5cf6fe9da9c41ddc1293f}{n\+Allocate}} ()
+\begin{DoxyCompactList}\small\item\em Return number of times \mbox{\hyperlink{classUtil_1_1Memory_af6003f193ae6c7a0fc049d7e443e0348}{allocate()}} was called. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{classUtil_1_1Memory_afbb82ff54c3b15e33e4c1ac7d7501dc9}{n\+Deallocate}} ()
+\begin{DoxyCompactList}\small\item\em Return number of times \mbox{\hyperlink{classUtil_1_1Memory_a3ded7c631c8cbdb6968f03f8084485a2}{deallocate()}} was called. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{classUtil_1_1Memory_adfde1ae02377c69ebb91f662600d87cd}{total}} ()
+\begin{DoxyCompactList}\small\item\em Return total amount of memory currently allocated. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{classUtil_1_1Memory_a52d87603f7bf2c9b39f4598aa05c6b0f}{max}} ()
+\begin{DoxyCompactList}\small\item\em Return the maximum amount of allocated heap memory thus far. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{classUtil_1_1Memory_a30fcfa71e89c3fa5327abfda1b2be711}{max}} (M\+P\+I\+::\+Intracomm \&communicator)
+\begin{DoxyCompactList}\small\item\em Return max for any processor in communicator. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classUtil_1_1Memory_acefa80470b03b3ccc2469aad3d38cd04}{init\+Static}} ()
+\begin{DoxyCompactList}\small\item\em Call this just to guarantee initialization of static memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Provides method to allocate array. 
+
+The \mbox{\hyperlink{classUtil_1_1Memory_af6003f193ae6c7a0fc049d7e443e0348}{Memory\+::allocate()}} method invokes the new operator within a try catch block, and keeps track of the total memory allocated. 
+
+Definition at line 28 of file Memory.\+h.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1Memory_af6003f193ae6c7a0fc049d7e443e0348}\label{classUtil_1_1Memory_af6003f193ae6c7a0fc049d7e443e0348}} 
+\index{Util::Memory@{Util::Memory}!allocate@{allocate}}
+\index{allocate@{allocate}!Util::Memory@{Util::Memory}}
+\doxyparagraph{\texorpdfstring{allocate()}{allocate()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+void Util\+::\+Memory\+::allocate (\begin{DoxyParamCaption}\item[{Data $\ast$\&}]{ptr,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Allocate a C++ array. 
+
+Uses new to allocates a Data array of size elements, assigns ptr the address of the first element.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & reference to pointer (output) \\
+\hline
+{\em size} & number of elements \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 132 of file Memory.\+h.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+
+
+Referenced by Pscf\+::\+Field$<$ T $>$\+::\+Field(), and reallocate().
+
+\mbox{\Hypertarget{classUtil_1_1Memory_a3ded7c631c8cbdb6968f03f8084485a2}\label{classUtil_1_1Memory_a3ded7c631c8cbdb6968f03f8084485a2}} 
+\index{Util::Memory@{Util::Memory}!deallocate@{deallocate}}
+\index{deallocate@{deallocate}!Util::Memory@{Util::Memory}}
+\doxyparagraph{\texorpdfstring{deallocate()}{deallocate()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+void Util\+::\+Memory\+::deallocate (\begin{DoxyParamCaption}\item[{Data $\ast$\&}]{ptr,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Deallocate a C++ array. 
+
+Uses free to deallocate a Data array of size elements.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & reference to pointer (intput, ptr = 0 on output) \\
+\hline
+{\em size} & number of elements in existing array \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 152 of file Memory.\+h.
+
+
+
+References U\+T\+I\+L\+\_\+\+C\+H\+E\+CK.
+
+
+
+Referenced by reallocate(), Util\+::\+G\+P\+Array$<$ Data $>$\+::$\sim$\+G\+P\+Array(), and Util\+::\+G\+Stack$<$ Data $>$\+::$\sim$\+G\+Stack().
+
+\mbox{\Hypertarget{classUtil_1_1Memory_ab2c695bb5d97abccbfff59e4fde16530}\label{classUtil_1_1Memory_ab2c695bb5d97abccbfff59e4fde16530}} 
+\index{Util::Memory@{Util::Memory}!reallocate@{reallocate}}
+\index{reallocate@{reallocate}!Util::Memory@{Util::Memory}}
+\doxyparagraph{\texorpdfstring{reallocate()}{reallocate()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+void Util\+::\+Memory\+::reallocate (\begin{DoxyParamCaption}\item[{Data $\ast$\&}]{ptr,  }\item[{size\+\_\+t}]{old\+Size,  }\item[{size\+\_\+t}]{new\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Reallocate a C++ array. 
+
+This function calls allocate to allocate a new array, copies all existing elements and deallocates old and calls deallocate to free the old array. On outputs, ptr is the address of the new array.
+
+Precondition\+: On input, new\+Size $>$ old\+Size.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & reference to pointer (input/output) \\
+\hline
+{\em old\+Size} & number of elements in existing array \\
+\hline
+{\em new\+Size} & number of elements in new array \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 168 of file Memory.\+h.
+
+
+
+References allocate(), deallocate(), and U\+T\+I\+L\+\_\+\+C\+H\+E\+CK.
+
+\mbox{\Hypertarget{classUtil_1_1Memory_a8aa7aec77dc5cf6fe9da9c41ddc1293f}\label{classUtil_1_1Memory_a8aa7aec77dc5cf6fe9da9c41ddc1293f}} 
+\index{Util::Memory@{Util::Memory}!nAllocate@{nAllocate}}
+\index{nAllocate@{nAllocate}!Util::Memory@{Util::Memory}}
+\doxyparagraph{\texorpdfstring{nAllocate()}{nAllocate()}}
+{\footnotesize\ttfamily int Util\+::\+Memory\+::n\+Allocate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Return number of times \mbox{\hyperlink{classUtil_1_1Memory_af6003f193ae6c7a0fc049d7e443e0348}{allocate()}} was called. 
+
+Each call to \mbox{\hyperlink{classUtil_1_1Memory_ab2c695bb5d97abccbfff59e4fde16530}{reallocate()}} also increments \mbox{\hyperlink{classUtil_1_1Memory_a8aa7aec77dc5cf6fe9da9c41ddc1293f}{n\+Allocate()}}, because \mbox{\hyperlink{classUtil_1_1Memory_af6003f193ae6c7a0fc049d7e443e0348}{allocate()}} is called internally. 
+
+Definition at line 34 of file Memory.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1Memory_afbb82ff54c3b15e33e4c1ac7d7501dc9}\label{classUtil_1_1Memory_afbb82ff54c3b15e33e4c1ac7d7501dc9}} 
+\index{Util::Memory@{Util::Memory}!nDeallocate@{nDeallocate}}
+\index{nDeallocate@{nDeallocate}!Util::Memory@{Util::Memory}}
+\doxyparagraph{\texorpdfstring{nDeallocate()}{nDeallocate()}}
+{\footnotesize\ttfamily int Util\+::\+Memory\+::n\+Deallocate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Return number of times \mbox{\hyperlink{classUtil_1_1Memory_a3ded7c631c8cbdb6968f03f8084485a2}{deallocate()}} was called. 
+
+Each call to \mbox{\hyperlink{classUtil_1_1Memory_ab2c695bb5d97abccbfff59e4fde16530}{reallocate()}} also increments \mbox{\hyperlink{classUtil_1_1Memory_afbb82ff54c3b15e33e4c1ac7d7501dc9}{n\+Deallocate()}}, because \mbox{\hyperlink{classUtil_1_1Memory_a3ded7c631c8cbdb6968f03f8084485a2}{deallocate()}} is called internally. 
+
+Definition at line 40 of file Memory.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1Memory_adfde1ae02377c69ebb91f662600d87cd}\label{classUtil_1_1Memory_adfde1ae02377c69ebb91f662600d87cd}} 
+\index{Util::Memory@{Util::Memory}!total@{total}}
+\index{total@{total}!Util::Memory@{Util::Memory}}
+\doxyparagraph{\texorpdfstring{total()}{total()}}
+{\footnotesize\ttfamily int Util\+::\+Memory\+::total (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Return total amount of memory currently allocated. 
+
+
+
+Definition at line 46 of file Memory.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1Memory_a52d87603f7bf2c9b39f4598aa05c6b0f}\label{classUtil_1_1Memory_a52d87603f7bf2c9b39f4598aa05c6b0f}} 
+\index{Util::Memory@{Util::Memory}!max@{max}}
+\index{max@{max}!Util::Memory@{Util::Memory}}
+\doxyparagraph{\texorpdfstring{max()}{max()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Util\+::\+Memory\+::max (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Return the maximum amount of allocated heap memory thus far. 
+
+This function returns the temporal maximum of \mbox{\hyperlink{classUtil_1_1Memory_adfde1ae02377c69ebb91f662600d87cd}{total()}}. 
+
+Definition at line 52 of file Memory.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1Memory_a30fcfa71e89c3fa5327abfda1b2be711}\label{classUtil_1_1Memory_a30fcfa71e89c3fa5327abfda1b2be711}} 
+\index{Util::Memory@{Util::Memory}!max@{max}}
+\index{max@{max}!Util::Memory@{Util::Memory}}
+\doxyparagraph{\texorpdfstring{max()}{max()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Util\+::\+Memory\+::max (\begin{DoxyParamCaption}\item[{M\+P\+I\+::\+Intracomm \&}]{communicator }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Return max for any processor in communicator. 
+
+
+
+Definition at line 56 of file Memory.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1Memory_acefa80470b03b3ccc2469aad3d38cd04}\label{classUtil_1_1Memory_acefa80470b03b3ccc2469aad3d38cd04}} 
+\index{Util::Memory@{Util::Memory}!initStatic@{initStatic}}
+\index{initStatic@{initStatic}!Util::Memory@{Util::Memory}}
+\doxyparagraph{\texorpdfstring{initStatic()}{initStatic()}}
+{\footnotesize\ttfamily void Util\+::\+Memory\+::init\+Static (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Call this just to guarantee initialization of static memory. 
+
+
+
+Definition at line 28 of file Memory.\+cpp.
+
+
+
+Referenced by Util\+::init\+Static().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Memory.\+h\item 
+Memory.\+cpp\end{DoxyCompactItemize}

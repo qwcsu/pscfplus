@@ -1,0 +1,97 @@
+\hypertarget{classUtil_1_1Notifier}{}\doxysubsection{Util\+::Notifier$<$ Event $>$ Class Template Reference}
+\label{classUtil_1_1Notifier}\index{Util::Notifier$<$ Event $>$@{Util::Notifier$<$ Event $>$}}
+
+
+Abstract template for a notifier (or subject) in the \mbox{\hyperlink{classUtil_1_1Observer}{Observer}} design pattern.  
+
+
+
+
+{\ttfamily \#include $<$Notifier.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classUtil_1_1Notifier_a8d05ff7df558cee4c97f332fd34ba8bf}{register\+Observer}} (\mbox{\hyperlink{classUtil_1_1Observer}{Observer}}$<$ Event $>$ \&observer)
+\begin{DoxyCompactList}\small\item\em Register an observer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1Notifier_a206ae63d630c0dedaef65e8feab4e179}{remove\+Observer}} (\mbox{\hyperlink{classUtil_1_1Observer}{Observer}}$<$ Event $>$ \&observer)
+\begin{DoxyCompactList}\small\item\em Remove an analyzer observer from the container list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1Notifier_a789c7fe0ee38d5f6d5c675c4ded96c8c}{notify\+Observers}} (const Event \&event)
+\begin{DoxyCompactList}\small\item\em Notify the list of observers about an Event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$typename Event$>$\newline
+class Util\+::\+Notifier$<$ Event $>$}
+
+Abstract template for a notifier (or subject) in the \mbox{\hyperlink{classUtil_1_1Observer}{Observer}} design pattern. 
+
+In the observer design pattern, a \mbox{\hyperlink{classUtil_1_1Notifier}{Notifier}} manages a list of registered \mbox{\hyperlink{classUtil_1_1Observer}{Observer}} objects, and provides a method to notify all observers when some event occurs. A list of observer objects is maintained as a list of \mbox{\hyperlink{classUtil_1_1Observer}{Observer}} pointers. The method Notifier\+::notify\+Observers(\+Event\&) method calls the the update(\+Event\&) method of every \mbox{\hyperlink{classUtil_1_1Observer}{Observer}} in the list.
+
+The typename parameter Event is the type of the object that must be passed to the update() method of each observer. This type can name either a primitive C data type or a class, but must encode whatever information is required for any \mbox{\hyperlink{classUtil_1_1Observer}{Observer}} to respond appropriately when notified. 
+
+Definition at line 41 of file Notifier.\+h.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1Notifier_a8d05ff7df558cee4c97f332fd34ba8bf}\label{classUtil_1_1Notifier_a8d05ff7df558cee4c97f332fd34ba8bf}} 
+\index{Util::Notifier$<$ Event $>$@{Util::Notifier$<$ Event $>$}!registerObserver@{registerObserver}}
+\index{registerObserver@{registerObserver}!Util::Notifier$<$ Event $>$@{Util::Notifier$<$ Event $>$}}
+\doxyparagraph{\texorpdfstring{registerObserver()}{registerObserver()}}
+{\footnotesize\ttfamily template$<$typename Event $>$ \\
+void \mbox{\hyperlink{classUtil_1_1Notifier}{Util\+::\+Notifier}}$<$ Event $>$\+::register\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1Observer}{Observer}}$<$ Event $>$ \&}]{observer }\end{DoxyParamCaption})}
+
+
+
+Register an observer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & observer object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 80 of file Notifier.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Notifier_a206ae63d630c0dedaef65e8feab4e179}\label{classUtil_1_1Notifier_a206ae63d630c0dedaef65e8feab4e179}} 
+\index{Util::Notifier$<$ Event $>$@{Util::Notifier$<$ Event $>$}!removeObserver@{removeObserver}}
+\index{removeObserver@{removeObserver}!Util::Notifier$<$ Event $>$@{Util::Notifier$<$ Event $>$}}
+\doxyparagraph{\texorpdfstring{removeObserver()}{removeObserver()}}
+{\footnotesize\ttfamily template$<$typename Event $>$ \\
+void \mbox{\hyperlink{classUtil_1_1Notifier}{Util\+::\+Notifier}}$<$ Event $>$\+::remove\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1Observer}{Observer}}$<$ Event $>$ \&}]{observer }\end{DoxyParamCaption})}
+
+
+
+Remove an analyzer observer from the container list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & observer object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 89 of file Notifier.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Notifier_a789c7fe0ee38d5f6d5c675c4ded96c8c}\label{classUtil_1_1Notifier_a789c7fe0ee38d5f6d5c675c4ded96c8c}} 
+\index{Util::Notifier$<$ Event $>$@{Util::Notifier$<$ Event $>$}!notifyObservers@{notifyObservers}}
+\index{notifyObservers@{notifyObservers}!Util::Notifier$<$ Event $>$@{Util::Notifier$<$ Event $>$}}
+\doxyparagraph{\texorpdfstring{notifyObservers()}{notifyObservers()}}
+{\footnotesize\ttfamily template$<$typename Event $>$ \\
+void \mbox{\hyperlink{classUtil_1_1Notifier}{Util\+::\+Notifier}}$<$ Event $>$\+::notify\+Observers (\begin{DoxyParamCaption}\item[{const Event \&}]{event }\end{DoxyParamCaption})}
+
+
+
+Notify the list of observers about an Event. 
+
+
+
+Definition at line 98 of file Notifier.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Notifier.\+h\end{DoxyCompactItemize}

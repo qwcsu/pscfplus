@@ -1,0 +1,239 @@
+\hypertarget{classUtil_1_1XdrFileIArchive}{}\doxysubsection{Util\+::Xdr\+File\+I\+Archive Class Reference}
+\label{classUtil_1_1XdrFileIArchive}\index{Util::XdrFileIArchive@{Util::XdrFileIArchive}}
+
+
+Loading / input archive for binary X\+DR file.  
+
+
+
+
+{\ttfamily \#include $<$Xdr\+File\+I\+Archive.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1XdrFileIArchive_a2cbb3386afbe20100c9656fca3a9ec46}{Xdr\+File\+I\+Archive}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1XdrFileIArchive_aa87b537b1a5ae591f1f2540e7512e0b3}{Xdr\+File\+I\+Archive}} (std\+::string filename)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1XdrFileIArchive_a9d484060c3307845514d197b199ab4b4}{Xdr\+File\+I\+Archive}} (std\+::ofstream \&\mbox{\hyperlink{classUtil_1_1XdrFileIArchive_a1a7fdc169a4cedb5c22864a7d7ab271c}{file}})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classUtil_1_1XdrFileIArchive_a95543d6bf51028c41aa9d02137c9ec09}{$\sim$\+Xdr\+File\+I\+Archive}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1XdrFileIArchive_a8c44ad31feea91479d371cfb9e223524}{init}} (F\+I\+LE $\ast$\mbox{\hyperlink{classUtil_1_1XdrFileIArchive_a1a7fdc169a4cedb5c22864a7d7ab271c}{file}})
+\begin{DoxyCompactList}\small\item\em Initialize by associating with an open file. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{classUtil_1_1XdrFileIArchive}{Xdr\+File\+I\+Archive}} \& \mbox{\hyperlink{classUtil_1_1XdrFileIArchive_a872a12c8140f086046301b0f71e4260a}{operator\&}} (T \&data)
+\begin{DoxyCompactList}\small\item\em Load one object. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{classUtil_1_1XdrFileIArchive}{Xdr\+File\+I\+Archive}} \& \mbox{\hyperlink{classUtil_1_1XdrFileIArchive_ae5a26c2c54da0cc4a78465fdfadea9b8}{operator$>$$>$}} (T \&data)
+\begin{DoxyCompactList}\small\item\em Load one object. \end{DoxyCompactList}\item 
+F\+I\+LE $\ast$ \mbox{\hyperlink{classUtil_1_1XdrFileIArchive_a1a7fdc169a4cedb5c22864a7d7ab271c}{file}} ()
+\begin{DoxyCompactList}\small\item\em Get the underlying file handle. \end{DoxyCompactList}\item 
+X\+DR $\ast$ \mbox{\hyperlink{classUtil_1_1XdrFileIArchive_a98a7fe3ea451698bfe41b551b1f93591}{xdr\+Ptr}} ()
+\begin{DoxyCompactList}\small\item\em Get a pointer to the enclosed X\+DR object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classUtil_1_1XdrFileIArchive_a6bb96474491b0118aa3b87f95aa7e620}{is\+\_\+saving}} ()
+\begin{DoxyCompactList}\small\item\em Returns false. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classUtil_1_1XdrFileIArchive_a21efaaf7670fbf2f5b84f2dc86362404}{is\+\_\+loading}} ()
+\begin{DoxyCompactList}\small\item\em Returns true. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Loading / input archive for binary X\+DR file. 
+
+X\+DR is a standard protocol for writing and reading binary in a portable format. This archive saves data to an associated file in X\+DR format. It depends on the unix xdr library $<$rpc/xdr.\+h$>$. Because this library is written in C (not C++), this archive uses a standard C library file handle, not a C++ iostream. 
+
+Definition at line 39 of file Xdr\+File\+I\+Archive.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1XdrFileIArchive_a2cbb3386afbe20100c9656fca3a9ec46}\label{classUtil_1_1XdrFileIArchive_a2cbb3386afbe20100c9656fca3a9ec46}} 
+\index{Util::XdrFileIArchive@{Util::XdrFileIArchive}!XdrFileIArchive@{XdrFileIArchive}}
+\index{XdrFileIArchive@{XdrFileIArchive}!Util::XdrFileIArchive@{Util::XdrFileIArchive}}
+\doxyparagraph{\texorpdfstring{XdrFileIArchive()}{XdrFileIArchive()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Util\+::\+Xdr\+File\+I\+Archive\+::\+Xdr\+File\+I\+Archive (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+
+Definition at line 17 of file Xdr\+File\+I\+Archive.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1XdrFileIArchive_aa87b537b1a5ae591f1f2540e7512e0b3}\label{classUtil_1_1XdrFileIArchive_aa87b537b1a5ae591f1f2540e7512e0b3}} 
+\index{Util::XdrFileIArchive@{Util::XdrFileIArchive}!XdrFileIArchive@{XdrFileIArchive}}
+\index{XdrFileIArchive@{XdrFileIArchive}!Util::XdrFileIArchive@{Util::XdrFileIArchive}}
+\doxyparagraph{\texorpdfstring{XdrFileIArchive()}{XdrFileIArchive()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Util\+::\+Xdr\+File\+I\+Archive\+::\+Xdr\+File\+I\+Archive (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & name of file to open for reading. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 27 of file Xdr\+File\+I\+Archive.\+cpp.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1XdrFileIArchive_a9d484060c3307845514d197b199ab4b4}\label{classUtil_1_1XdrFileIArchive_a9d484060c3307845514d197b199ab4b4}} 
+\index{Util::XdrFileIArchive@{Util::XdrFileIArchive}!XdrFileIArchive@{XdrFileIArchive}}
+\index{XdrFileIArchive@{XdrFileIArchive}!Util::XdrFileIArchive@{Util::XdrFileIArchive}}
+\doxyparagraph{\texorpdfstring{XdrFileIArchive()}{XdrFileIArchive()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Util\+::\+Xdr\+File\+I\+Archive\+::\+Xdr\+File\+I\+Archive (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{file }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & output file \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUtil_1_1XdrFileIArchive_a95543d6bf51028c41aa9d02137c9ec09}\label{classUtil_1_1XdrFileIArchive_a95543d6bf51028c41aa9d02137c9ec09}} 
+\index{Util::XdrFileIArchive@{Util::XdrFileIArchive}!````~XdrFileIArchive@{$\sim$XdrFileIArchive}}
+\index{````~XdrFileIArchive@{$\sim$XdrFileIArchive}!Util::XdrFileIArchive@{Util::XdrFileIArchive}}
+\doxyparagraph{\texorpdfstring{$\sim$XdrFileIArchive()}{~XdrFileIArchive()}}
+{\footnotesize\ttfamily Util\+::\+Xdr\+File\+I\+Archive\+::$\sim$\+Xdr\+File\+I\+Archive (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+Definition at line 45 of file Xdr\+File\+I\+Archive.\+cpp.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1XdrFileIArchive_a6bb96474491b0118aa3b87f95aa7e620}\label{classUtil_1_1XdrFileIArchive_a6bb96474491b0118aa3b87f95aa7e620}} 
+\index{Util::XdrFileIArchive@{Util::XdrFileIArchive}!is\_saving@{is\_saving}}
+\index{is\_saving@{is\_saving}!Util::XdrFileIArchive@{Util::XdrFileIArchive}}
+\doxyparagraph{\texorpdfstring{is\_saving()}{is\_saving()}}
+{\footnotesize\ttfamily bool Util\+::\+Xdr\+File\+I\+Archive\+::is\+\_\+saving (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns false. 
+
+
+
+Definition at line 121 of file Xdr\+File\+I\+Archive.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1XdrFileIArchive_a21efaaf7670fbf2f5b84f2dc86362404}\label{classUtil_1_1XdrFileIArchive_a21efaaf7670fbf2f5b84f2dc86362404}} 
+\index{Util::XdrFileIArchive@{Util::XdrFileIArchive}!is\_loading@{is\_loading}}
+\index{is\_loading@{is\_loading}!Util::XdrFileIArchive@{Util::XdrFileIArchive}}
+\doxyparagraph{\texorpdfstring{is\_loading()}{is\_loading()}}
+{\footnotesize\ttfamily bool Util\+::\+Xdr\+File\+I\+Archive\+::is\+\_\+loading (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns true. 
+
+
+
+Definition at line 124 of file Xdr\+File\+I\+Archive.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1XdrFileIArchive_a8c44ad31feea91479d371cfb9e223524}\label{classUtil_1_1XdrFileIArchive_a8c44ad31feea91479d371cfb9e223524}} 
+\index{Util::XdrFileIArchive@{Util::XdrFileIArchive}!init@{init}}
+\index{init@{init}!Util::XdrFileIArchive@{Util::XdrFileIArchive}}
+\doxyparagraph{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Util\+::\+Xdr\+File\+I\+Archive\+::init (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{file }\end{DoxyParamCaption})}
+
+
+
+Initialize by associating with an open file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & C library file handle, must be open for reading. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 51 of file Xdr\+File\+I\+Archive.\+cpp.
+
+
+
+References file().
+
+\mbox{\Hypertarget{classUtil_1_1XdrFileIArchive_a872a12c8140f086046301b0f71e4260a}\label{classUtil_1_1XdrFileIArchive_a872a12c8140f086046301b0f71e4260a}} 
+\index{Util::XdrFileIArchive@{Util::XdrFileIArchive}!operator\&@{operator\&}}
+\index{operator\&@{operator\&}!Util::XdrFileIArchive@{Util::XdrFileIArchive}}
+\doxyparagraph{\texorpdfstring{operator\&()}{operator\&()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classUtil_1_1XdrFileIArchive}{Xdr\+File\+I\+Archive}} \& Util\+::\+Xdr\+File\+I\+Archive\+::operator\& (\begin{DoxyParamCaption}\item[{T \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Load one object. 
+
+
+
+Definition at line 133 of file Xdr\+File\+I\+Archive.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1XdrFileIArchive_ae5a26c2c54da0cc4a78465fdfadea9b8}\label{classUtil_1_1XdrFileIArchive_ae5a26c2c54da0cc4a78465fdfadea9b8}} 
+\index{Util::XdrFileIArchive@{Util::XdrFileIArchive}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Util::XdrFileIArchive@{Util::XdrFileIArchive}}
+\doxyparagraph{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classUtil_1_1XdrFileIArchive}{Xdr\+File\+I\+Archive}} \& Util\+::\+Xdr\+File\+I\+Archive\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{T \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Load one object. 
+
+
+
+Definition at line 143 of file Xdr\+File\+I\+Archive.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1XdrFileIArchive_a1a7fdc169a4cedb5c22864a7d7ab271c}\label{classUtil_1_1XdrFileIArchive_a1a7fdc169a4cedb5c22864a7d7ab271c}} 
+\index{Util::XdrFileIArchive@{Util::XdrFileIArchive}!file@{file}}
+\index{file@{file}!Util::XdrFileIArchive@{Util::XdrFileIArchive}}
+\doxyparagraph{\texorpdfstring{file()}{file()}}
+{\footnotesize\ttfamily F\+I\+LE $\ast$ Util\+::\+Xdr\+File\+I\+Archive\+::file (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the underlying file handle. 
+
+
+
+Definition at line 152 of file Xdr\+File\+I\+Archive.\+h.
+
+
+
+Referenced by init().
+
+\mbox{\Hypertarget{classUtil_1_1XdrFileIArchive_a98a7fe3ea451698bfe41b551b1f93591}\label{classUtil_1_1XdrFileIArchive_a98a7fe3ea451698bfe41b551b1f93591}} 
+\index{Util::XdrFileIArchive@{Util::XdrFileIArchive}!xdrPtr@{xdrPtr}}
+\index{xdrPtr@{xdrPtr}!Util::XdrFileIArchive@{Util::XdrFileIArchive}}
+\doxyparagraph{\texorpdfstring{xdrPtr()}{xdrPtr()}}
+{\footnotesize\ttfamily X\+DR $\ast$ Util\+::\+Xdr\+File\+I\+Archive\+::xdr\+Ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get a pointer to the enclosed X\+DR object. 
+
+
+
+Definition at line 158 of file Xdr\+File\+I\+Archive.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Xdr\+File\+I\+Archive.\+h\item 
+Xdr\+File\+I\+Archive.\+cpp\end{DoxyCompactItemize}

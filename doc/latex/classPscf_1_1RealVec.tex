@@ -1,0 +1,161 @@
+\hypertarget{classPscf_1_1RealVec}{}\doxysubsection{Pscf\+::Real\+Vec$<$ D, T $>$ Class Template Reference}
+\label{classPscf_1_1RealVec}\index{Pscf::RealVec$<$ D, T $>$@{Pscf::RealVec$<$ D, T $>$}}
+
+
+A Real\+Vec$<$\+D, T$>$ is D-\/component vector with elements of floating type T.  
+
+
+
+
+{\ttfamily \#include $<$Real\+Vec.\+h$>$}
+
+Inheritance diagram for Pscf\+::Real\+Vec$<$ D, T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPscf_1_1RealVec}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Constructors}
+\begin{DoxyCompactItemize}
+\item 
+static const int \mbox{\hyperlink{classPscf_1_1RealVec_a3f56689bd9485a0aee3635b82a3fa3f5}{Width}} = 25
+\begin{DoxyCompactList}\small\item\em Width of field per Cartesian coordinate in stream IO. \end{DoxyCompactList}\item 
+static const int \mbox{\hyperlink{classPscf_1_1RealVec_a794215fd28d5bb7df9db3a472f5b9bc4}{Precision}} = 17
+\begin{DoxyCompactList}\small\item\em Precision in stream IO of Real\+Vec$<$\+D, T$>$ coordinates. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1RealVec_a96c5c8268aefb7e53db7f8ddb4a54d19}{Real\+Vec}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1RealVec_a7c68d63f3bf82211f5431f9913b61567}{Real\+Vec}} (const \mbox{\hyperlink{classPscf_1_1RealVec}{Real\+Vec}}$<$ D, T $>$ \&v)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1RealVec_af1831395e335b85d23bc3c3bc1337726}{Real\+Vec}} (T const $\ast$v)
+\begin{DoxyCompactList}\small\item\em Construct from C array. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1RealVec_a12625ad873dbfb809656c99d50a65198}{Real\+Vec}} (T s)
+\begin{DoxyCompactList}\small\item\em Constructor, initialize all elements to a scalar value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$int D, typename T = double$>$\newline
+class Pscf\+::\+Real\+Vec$<$ D, T $>$}
+
+A Real\+Vec$<$\+D, T$>$ is D-\/component vector with elements of floating type T. 
+
+Default of type T is T = double. 
+
+Definition at line 27 of file Real\+Vec.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPscf_1_1RealVec_a96c5c8268aefb7e53db7f8ddb4a54d19}\label{classPscf_1_1RealVec_a96c5c8268aefb7e53db7f8ddb4a54d19}} 
+\index{Pscf::RealVec$<$ D, T $>$@{Pscf::RealVec$<$ D, T $>$}!RealVec@{RealVec}}
+\index{RealVec@{RealVec}!Pscf::RealVec$<$ D, T $>$@{Pscf::RealVec$<$ D, T $>$}}
+\doxyparagraph{\texorpdfstring{RealVec()}{RealVec()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$int D, typename T  = double$>$ \\
+\mbox{\hyperlink{classPscf_1_1RealVec}{Pscf\+::\+Real\+Vec}}$<$ D, T $>$\+::\mbox{\hyperlink{classPscf_1_1RealVec}{Real\+Vec}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor. 
+
+
+
+Definition at line 38 of file Real\+Vec.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1RealVec_a7c68d63f3bf82211f5431f9913b61567}\label{classPscf_1_1RealVec_a7c68d63f3bf82211f5431f9913b61567}} 
+\index{Pscf::RealVec$<$ D, T $>$@{Pscf::RealVec$<$ D, T $>$}!RealVec@{RealVec}}
+\index{RealVec@{RealVec}!Pscf::RealVec$<$ D, T $>$@{Pscf::RealVec$<$ D, T $>$}}
+\doxyparagraph{\texorpdfstring{RealVec()}{RealVec()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$int D, typename T  = double$>$ \\
+\mbox{\hyperlink{classPscf_1_1RealVec}{Pscf\+::\+Real\+Vec}}$<$ D, T $>$\+::\mbox{\hyperlink{classPscf_1_1RealVec}{Real\+Vec}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPscf_1_1RealVec}{Real\+Vec}}$<$ D, T $>$ \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & Real\+Vec$<$\+D, T$>$ to be copied \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 47 of file Real\+Vec.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1RealVec_af1831395e335b85d23bc3c3bc1337726}\label{classPscf_1_1RealVec_af1831395e335b85d23bc3c3bc1337726}} 
+\index{Pscf::RealVec$<$ D, T $>$@{Pscf::RealVec$<$ D, T $>$}!RealVec@{RealVec}}
+\index{RealVec@{RealVec}!Pscf::RealVec$<$ D, T $>$@{Pscf::RealVec$<$ D, T $>$}}
+\doxyparagraph{\texorpdfstring{RealVec()}{RealVec()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$int D, typename T  = double$>$ \\
+\mbox{\hyperlink{classPscf_1_1RealVec}{Pscf\+::\+Real\+Vec}}$<$ D, T $>$\+::\mbox{\hyperlink{classPscf_1_1RealVec}{Real\+Vec}} (\begin{DoxyParamCaption}\item[{T const $\ast$}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct from C array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & C array to be copied \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 56 of file Real\+Vec.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1RealVec_a12625ad873dbfb809656c99d50a65198}\label{classPscf_1_1RealVec_a12625ad873dbfb809656c99d50a65198}} 
+\index{Pscf::RealVec$<$ D, T $>$@{Pscf::RealVec$<$ D, T $>$}!RealVec@{RealVec}}
+\index{RealVec@{RealVec}!Pscf::RealVec$<$ D, T $>$@{Pscf::RealVec$<$ D, T $>$}}
+\doxyparagraph{\texorpdfstring{RealVec()}{RealVec()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$int D, typename T  = double$>$ \\
+\mbox{\hyperlink{classPscf_1_1RealVec}{Pscf\+::\+Real\+Vec}}$<$ D, T $>$\+::\mbox{\hyperlink{classPscf_1_1RealVec}{Real\+Vec}} (\begin{DoxyParamCaption}\item[{T}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructor, initialize all elements to a scalar value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & scalar initial value for all elements. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 65 of file Real\+Vec.\+h.
+
+
+
+\doxysubsubsection{Member Data Documentation}
+\mbox{\Hypertarget{classPscf_1_1RealVec_a3f56689bd9485a0aee3635b82a3fa3f5}\label{classPscf_1_1RealVec_a3f56689bd9485a0aee3635b82a3fa3f5}} 
+\index{Pscf::RealVec$<$ D, T $>$@{Pscf::RealVec$<$ D, T $>$}!Width@{Width}}
+\index{Width@{Width}!Pscf::RealVec$<$ D, T $>$@{Pscf::RealVec$<$ D, T $>$}}
+\doxyparagraph{\texorpdfstring{Width}{Width}}
+{\footnotesize\ttfamily template$<$int D, typename T  = double$>$ \\
+const int \mbox{\hyperlink{classPscf_1_1RealVec}{Pscf\+::\+Real\+Vec}}$<$ D, T $>$\+::Width = 25\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Width of field per Cartesian coordinate in stream IO. 
+
+
+
+Definition at line 70 of file Real\+Vec.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1RealVec_a794215fd28d5bb7df9db3a472f5b9bc4}\label{classPscf_1_1RealVec_a794215fd28d5bb7df9db3a472f5b9bc4}} 
+\index{Pscf::RealVec$<$ D, T $>$@{Pscf::RealVec$<$ D, T $>$}!Precision@{Precision}}
+\index{Precision@{Precision}!Pscf::RealVec$<$ D, T $>$@{Pscf::RealVec$<$ D, T $>$}}
+\doxyparagraph{\texorpdfstring{Precision}{Precision}}
+{\footnotesize\ttfamily template$<$int D, typename T  = double$>$ \\
+const int \mbox{\hyperlink{classPscf_1_1RealVec}{Pscf\+::\+Real\+Vec}}$<$ D, T $>$\+::Precision = 17\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Precision in stream IO of Real\+Vec$<$\+D, T$>$ coordinates. 
+
+
+
+Definition at line 73 of file Real\+Vec.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Real\+Vec.\+h\end{DoxyCompactItemize}

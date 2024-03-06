@@ -1,0 +1,52 @@
+/*! \page install_environment_page  Environment Variables
+
+\ref install_source_page (Prev)   &nbsp; &nbsp; &nbsp; &nbsp; 
+\ref install_page   (Up)           &nbsp; &nbsp; &nbsp; &nbsp; 
+\ref compilation_page (Next) 
+<BR>
+
+To compile PSCF+ in a Unix environment, before compiling any code, 
+the user should modify the following Unix environment variables:
+
+  - Add the ``pscfplus/bin/`` directory to the Unix ``$PATH`` shell 
+    environment variable (the shell command search path).
+    By default, executable file created by the PSCF+ build system
+    is installed in the ``pscfplus/bin/`` directory.  The directory in
+    which these files are located must be added to the user's ``$PATH``
+    variable in order to allow the Unix shell to find the executable 
+    file when it is invoked by name in a command executed from
+    any other directory.
+
+  - Add the ``pscfplus/lib/python`` directory to the ``$PYTHONPATH``
+    environment variable (the python module search path).
+    The ``pscfplus/scripts/python`` directory contains a python script that 
+    is used by the build system during compilation to generate information 
+    about dependencies among C++ files. This directory must be added to 
+    the ``$PYTHONPATH`` variable in order to allow the python interpreter to
+    find this file. 
+
+To make these changes using a bash shell, add some variant of the 
+following lines to the ``.profile`` or ``.bash_profile`` file in your user 
+home directory:
+\code
+PSCFPLUS_DIR=${HOME}/pscfplus
+export PATH=${PATH}:/${PSCFPLUS_DIR}/bin
+export PYTHONPATH=${PYTHONPATH}:/${PSCFPLUS_DIR}/scripts/python
+\endcode
+The value of PSCFPLUS_DIR should be set to the path to the PSCF+ root 
+directory (<i>i.e.</i>, the root of the directory tree created by cloning the 
+PSCF+ git repository).  In the above fragment, as an example, it is 
+assumed that this is a subdirectory named ``pscfplus/`` within the user's 
+home directory. 
+
+After adding an appropriate variant of these lines to ``.profile`` or 
+``.bash_profile``, re-login, and then enter ``echo $PATH`` and
+``echo $PYTHONPATH`` to make sure that these variables have been set 
+correctly. 
+
+<BR>
+\ref install_source_page (Prev) &nbsp; &nbsp; &nbsp; &nbsp; 
+\ref install_page   (Up) &nbsp; &nbsp; &nbsp; &nbsp; 
+\ref compilation_page (Next) 
+
+*/

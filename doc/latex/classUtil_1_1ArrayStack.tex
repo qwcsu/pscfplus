@@ -1,0 +1,259 @@
+\hypertarget{classUtil_1_1ArrayStack}{}\doxysubsection{Util\+::Array\+Stack$<$ Data $>$ Class Template Reference}
+\label{classUtil_1_1ArrayStack}\index{Util::ArrayStack$<$ Data $>$@{Util::ArrayStack$<$ Data $>$}}
+
+
+A stack of fixed capacity.  
+
+
+
+
+{\ttfamily \#include $<$Array\+Stack.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1ArrayStack_a0e4921bfb900602dc04cd9e59d7ba7a7}{Array\+Stack}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classUtil_1_1ArrayStack_a461271be8a15ff40115dfa5f778cb222}{$\sim$\+Array\+Stack}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1ArrayStack_af0c55e24d3ccb45ed50711bc15468d7f}{allocate}} (int \mbox{\hyperlink{classUtil_1_1ArrayStack_aeec5b99e22d2a72b94a0a8be984f5600}{capacity}})
+\begin{DoxyCompactList}\small\item\em Initialize and allocate required memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Mutators}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classUtil_1_1ArrayStack_a7d20f6c7d2f067ba8f74d120ec8ce4d5}{push}} (Data \&data)
+\begin{DoxyCompactList}\small\item\em Push an element onto the Stack. \end{DoxyCompactList}\item 
+Data \& \mbox{\hyperlink{classUtil_1_1ArrayStack_a0465b9e61f008e56b8e6a83c13c3598a}{pop}} ()
+\begin{DoxyCompactList}\small\item\em Pop an element off the stack. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Accessors}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classUtil_1_1ArrayStack_aeec5b99e22d2a72b94a0a8be984f5600}{capacity}} () const
+\begin{DoxyCompactList}\small\item\em Return capacity of the underlying array. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUtil_1_1ArrayStack_a2d3331030d57b3f7e6c834bfb5bc3039}{size}} () const
+\begin{DoxyCompactList}\small\item\em Get the number of elements in the stack. \end{DoxyCompactList}\item 
+Data \& \mbox{\hyperlink{classUtil_1_1ArrayStack_a0eb89f6af3ddb8a1217ce285a167c419}{peek}} ()
+\begin{DoxyCompactList}\small\item\em Return a reference to the top element (don\textquotesingle{}t pop). \end{DoxyCompactList}\item 
+const Data \& \mbox{\hyperlink{classUtil_1_1ArrayStack_a13239be9f43ec6a26df387bbf20e095b}{peek}} () const
+\begin{DoxyCompactList}\small\item\em Return a const ref to the top element (don\textquotesingle{}t pop). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUtil_1_1ArrayStack_a12426cebdb9cf6e53a2de4196b3ae2e1}{is\+Valid}} () const
+\begin{DoxyCompactList}\small\item\em Return true if the \mbox{\hyperlink{classUtil_1_1ArrayStack}{Array\+Stack}} is valid, or throw an exception. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUtil_1_1ArrayStack_a03704454022fda5c11e74b7c92f3ecd8}{is\+Allocated}} () const
+\begin{DoxyCompactList}\small\item\em Return true only if the \mbox{\hyperlink{classUtil_1_1ArrayStack}{Array\+Stack}} has been allocated. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$typename Data$>$\newline
+class Util\+::\+Array\+Stack$<$ Data $>$}
+
+A stack of fixed capacity. 
+
+Pointers to elements are stored in an allocatable, non-\/resizable array. 
+
+Definition at line 25 of file Array\+Stack.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1ArrayStack_a0e4921bfb900602dc04cd9e59d7ba7a7}\label{classUtil_1_1ArrayStack_a0e4921bfb900602dc04cd9e59d7ba7a7}} 
+\index{Util::ArrayStack$<$ Data $>$@{Util::ArrayStack$<$ Data $>$}!ArrayStack@{ArrayStack}}
+\index{ArrayStack@{ArrayStack}!Util::ArrayStack$<$ Data $>$@{Util::ArrayStack$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{ArrayStack()}{ArrayStack()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+\mbox{\hyperlink{classUtil_1_1ArrayStack}{Util\+::\+Array\+Stack}}$<$ Data $>$\+::\mbox{\hyperlink{classUtil_1_1ArrayStack}{Array\+Stack}}}
+
+
+
+Default constructor. 
+
+
+
+Definition at line 126 of file Array\+Stack.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1ArrayStack_a461271be8a15ff40115dfa5f778cb222}\label{classUtil_1_1ArrayStack_a461271be8a15ff40115dfa5f778cb222}} 
+\index{Util::ArrayStack$<$ Data $>$@{Util::ArrayStack$<$ Data $>$}!````~ArrayStack@{$\sim$ArrayStack}}
+\index{````~ArrayStack@{$\sim$ArrayStack}!Util::ArrayStack$<$ Data $>$@{Util::ArrayStack$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{$\sim$ArrayStack()}{~ArrayStack()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+\mbox{\hyperlink{classUtil_1_1ArrayStack}{Util\+::\+Array\+Stack}}$<$ Data $>$\+::$\sim$\mbox{\hyperlink{classUtil_1_1ArrayStack}{Array\+Stack}}\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+Definition at line 136 of file Array\+Stack.\+h.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1ArrayStack_af0c55e24d3ccb45ed50711bc15468d7f}\label{classUtil_1_1ArrayStack_af0c55e24d3ccb45ed50711bc15468d7f}} 
+\index{Util::ArrayStack$<$ Data $>$@{Util::ArrayStack$<$ Data $>$}!allocate@{allocate}}
+\index{allocate@{allocate}!Util::ArrayStack$<$ Data $>$@{Util::ArrayStack$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{allocate()}{allocate()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+void \mbox{\hyperlink{classUtil_1_1ArrayStack}{Util\+::\+Array\+Stack}}$<$ Data $>$\+::allocate (\begin{DoxyParamCaption}\item[{int}]{capacity }\end{DoxyParamCaption})}
+
+
+
+Initialize and allocate required memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & maximum size of stack. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 147 of file Array\+Stack.\+h.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1ArrayStack_a7d20f6c7d2f067ba8f74d120ec8ce4d5}\label{classUtil_1_1ArrayStack_a7d20f6c7d2f067ba8f74d120ec8ce4d5}} 
+\index{Util::ArrayStack$<$ Data $>$@{Util::ArrayStack$<$ Data $>$}!push@{push}}
+\index{push@{push}!Util::ArrayStack$<$ Data $>$@{Util::ArrayStack$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+void \mbox{\hyperlink{classUtil_1_1ArrayStack}{Util\+::\+Array\+Stack}}$<$ Data $>$\+::push (\begin{DoxyParamCaption}\item[{Data \&}]{data }\end{DoxyParamCaption})}
+
+
+
+Push an element onto the Stack. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & element to be added to stack. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 183 of file Array\+Stack.\+h.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1ArrayStack_a0465b9e61f008e56b8e6a83c13c3598a}\label{classUtil_1_1ArrayStack_a0465b9e61f008e56b8e6a83c13c3598a}} 
+\index{Util::ArrayStack$<$ Data $>$@{Util::ArrayStack$<$ Data $>$}!pop@{pop}}
+\index{pop@{pop}!Util::ArrayStack$<$ Data $>$@{Util::ArrayStack$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{pop()}{pop()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+Data \& \mbox{\hyperlink{classUtil_1_1ArrayStack}{Util\+::\+Array\+Stack}}$<$ Data $>$\+::pop}
+
+
+
+Pop an element off the stack. 
+
+\begin{DoxyReturn}{Returns}
+the top element (which is popped off stack). 
+\end{DoxyReturn}
+
+
+Definition at line 196 of file Array\+Stack.\+h.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1ArrayStack_aeec5b99e22d2a72b94a0a8be984f5600}\label{classUtil_1_1ArrayStack_aeec5b99e22d2a72b94a0a8be984f5600}} 
+\index{Util::ArrayStack$<$ Data $>$@{Util::ArrayStack$<$ Data $>$}!capacity@{capacity}}
+\index{capacity@{capacity}!Util::ArrayStack$<$ Data $>$@{Util::ArrayStack$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{capacity()}{capacity()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+int \mbox{\hyperlink{classUtil_1_1ArrayStack}{Util\+::\+Array\+Stack}}$<$ Data $>$\+::capacity}
+
+
+
+Return capacity of the underlying array. 
+
+\begin{DoxyReturn}{Returns}
+Number of elements allocated in array. 
+\end{DoxyReturn}
+
+
+Definition at line 169 of file Array\+Stack.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1ArrayStack_a2d3331030d57b3f7e6c834bfb5bc3039}\label{classUtil_1_1ArrayStack_a2d3331030d57b3f7e6c834bfb5bc3039}} 
+\index{Util::ArrayStack$<$ Data $>$@{Util::ArrayStack$<$ Data $>$}!size@{size}}
+\index{size@{size}!Util::ArrayStack$<$ Data $>$@{Util::ArrayStack$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+int \mbox{\hyperlink{classUtil_1_1ArrayStack}{Util\+::\+Array\+Stack}}$<$ Data $>$\+::size\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the number of elements in the stack. 
+
+
+
+Definition at line 176 of file Array\+Stack.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1ArrayStack_a0eb89f6af3ddb8a1217ce285a167c419}\label{classUtil_1_1ArrayStack_a0eb89f6af3ddb8a1217ce285a167c419}} 
+\index{Util::ArrayStack$<$ Data $>$@{Util::ArrayStack$<$ Data $>$}!peek@{peek}}
+\index{peek@{peek}!Util::ArrayStack$<$ Data $>$@{Util::ArrayStack$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{peek()}{peek()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+const Data \& \mbox{\hyperlink{classUtil_1_1ArrayStack}{Util\+::\+Array\+Stack}}$<$ Data $>$\+::peek\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return a reference to the top element (don\textquotesingle{}t pop). 
+
+
+
+Definition at line 211 of file Array\+Stack.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1ArrayStack_a13239be9f43ec6a26df387bbf20e095b}\label{classUtil_1_1ArrayStack_a13239be9f43ec6a26df387bbf20e095b}} 
+\index{Util::ArrayStack$<$ Data $>$@{Util::ArrayStack$<$ Data $>$}!peek@{peek}}
+\index{peek@{peek}!Util::ArrayStack$<$ Data $>$@{Util::ArrayStack$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{peek()}{peek()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+const Data\& \mbox{\hyperlink{classUtil_1_1ArrayStack}{Util\+::\+Array\+Stack}}$<$ Data $>$\+::peek (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return a const ref to the top element (don\textquotesingle{}t pop). 
+
+\mbox{\Hypertarget{classUtil_1_1ArrayStack_a12426cebdb9cf6e53a2de4196b3ae2e1}\label{classUtil_1_1ArrayStack_a12426cebdb9cf6e53a2de4196b3ae2e1}} 
+\index{Util::ArrayStack$<$ Data $>$@{Util::ArrayStack$<$ Data $>$}!isValid@{isValid}}
+\index{isValid@{isValid}!Util::ArrayStack$<$ Data $>$@{Util::ArrayStack$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{isValid()}{isValid()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+bool \mbox{\hyperlink{classUtil_1_1ArrayStack}{Util\+::\+Array\+Stack}}$<$ Data $>$\+::is\+Valid}
+
+
+
+Return true if the \mbox{\hyperlink{classUtil_1_1ArrayStack}{Array\+Stack}} is valid, or throw an exception. 
+
+
+
+Definition at line 225 of file Array\+Stack.\+h.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1ArrayStack_a03704454022fda5c11e74b7c92f3ecd8}\label{classUtil_1_1ArrayStack_a03704454022fda5c11e74b7c92f3ecd8}} 
+\index{Util::ArrayStack$<$ Data $>$@{Util::ArrayStack$<$ Data $>$}!isAllocated@{isAllocated}}
+\index{isAllocated@{isAllocated}!Util::ArrayStack$<$ Data $>$@{Util::ArrayStack$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{isAllocated()}{isAllocated()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+bool \mbox{\hyperlink{classUtil_1_1ArrayStack}{Util\+::\+Array\+Stack}}$<$ Data $>$\+::is\+Allocated\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return true only if the \mbox{\hyperlink{classUtil_1_1ArrayStack}{Array\+Stack}} has been allocated. 
+
+
+
+Definition at line 261 of file Array\+Stack.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Array\+Stack.\+h\end{DoxyCompactItemize}

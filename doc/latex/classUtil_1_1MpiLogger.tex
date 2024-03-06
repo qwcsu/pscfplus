@@ -1,0 +1,94 @@
+\hypertarget{classUtil_1_1MpiLogger}{}\doxysubsection{Util\+::Mpi\+Logger Class Reference}
+\label{classUtil_1_1MpiLogger}\index{Util::MpiLogger@{Util::MpiLogger}}
+
+
+Allows information from every processor in a communicator, to be output in rank sequence.  
+
+
+
+
+{\ttfamily \#include $<$Mpi\+Logger.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1MpiLogger_a5b20fa66084e68fbf7c66ae7fd6528ed}{Mpi\+Logger}} (M\+P\+I\+::\+Intracomm \&comm=M\+P\+I\+::\+C\+O\+M\+M\+\_\+\+W\+O\+R\+LD)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1MpiLogger_a5ab2113f1d384e087a41c7ba949ffce3}{begin}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classUtil_1_1Begin}{Begin}} logging block. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1MpiLogger_a030c2339c8bf527706045445b42a6cbd}{end}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classUtil_1_1End}{End}} logging block. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Allows information from every processor in a communicator, to be output in rank sequence. 
+
+The \mbox{\hyperlink{classUtil_1_1MpiLogger_a5ab2113f1d384e087a41c7ba949ffce3}{begin()}} method for processor of rank $>$ 0 waits for receipt of a message from processor rank -\/ 1. The \mbox{\hyperlink{classUtil_1_1MpiLogger_a030c2339c8bf527706045445b42a6cbd}{end()}} method sends a message to processor rank + 1.
+
+Usage\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classUtil_1_1MpiLogger_a5b20fa66084e68fbf7c66ae7fd6528ed}{MpiLogger}} logger;}
+\DoxyCodeLine{logger.begin();}
+\DoxyCodeLine{std::cout << \textcolor{stringliteral}{"Print from processor "} << MPI::COMM\_WORLD.Get\_rank() << std::endl;}
+\DoxyCodeLine{logger.endl();}
+\end{DoxyCode}
+ 
+
+Definition at line 37 of file Mpi\+Logger.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1MpiLogger_a5b20fa66084e68fbf7c66ae7fd6528ed}\label{classUtil_1_1MpiLogger_a5b20fa66084e68fbf7c66ae7fd6528ed}} 
+\index{Util::MpiLogger@{Util::MpiLogger}!MpiLogger@{MpiLogger}}
+\index{MpiLogger@{MpiLogger}!Util::MpiLogger@{Util::MpiLogger}}
+\doxyparagraph{\texorpdfstring{MpiLogger()}{MpiLogger()}}
+{\footnotesize\ttfamily Util\+::\+Mpi\+Logger\+::\+Mpi\+Logger (\begin{DoxyParamCaption}\item[{M\+P\+I\+::\+Intracomm \&}]{comm = {\ttfamily MPI\+:\+:COMM\+\_\+WORLD} }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+
+Definition at line 18 of file Mpi\+Logger.\+cpp.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1MpiLogger_a5ab2113f1d384e087a41c7ba949ffce3}\label{classUtil_1_1MpiLogger_a5ab2113f1d384e087a41c7ba949ffce3}} 
+\index{Util::MpiLogger@{Util::MpiLogger}!begin@{begin}}
+\index{begin@{begin}!Util::MpiLogger@{Util::MpiLogger}}
+\doxyparagraph{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily void Util\+::\+Mpi\+Logger\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classUtil_1_1Begin}{Begin}} logging block. 
+
+
+
+Definition at line 26 of file Mpi\+Logger.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1MpiLogger_a030c2339c8bf527706045445b42a6cbd}\label{classUtil_1_1MpiLogger_a030c2339c8bf527706045445b42a6cbd}} 
+\index{Util::MpiLogger@{Util::MpiLogger}!end@{end}}
+\index{end@{end}!Util::MpiLogger@{Util::MpiLogger}}
+\doxyparagraph{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily void Util\+::\+Mpi\+Logger\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classUtil_1_1End}{End}} logging block. 
+
+
+
+Definition at line 42 of file Mpi\+Logger.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Mpi\+Logger.\+h\item 
+Mpi\+Logger.\+cpp\end{DoxyCompactItemize}

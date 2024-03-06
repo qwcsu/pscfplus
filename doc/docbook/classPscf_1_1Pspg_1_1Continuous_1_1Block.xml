@@ -1,0 +1,738 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block">
+<title>Pscf::Pspg::Continuous::Block&lt; D &gt; Class Template Reference</title>
+<indexterm><primary>Pscf::Pspg::Continuous::Block&lt; D &gt;</primary></indexterm>
+<para>
+
+<para><link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block">Block</link> within a branched polymer. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;Block.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Pscf::Pspg::Continuous::Block&lt; D &gt;:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classPscf_1_1Pspg_1_1Continuous_1_1Block.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Types    </title>
+        <itemizedlist>
+            <listitem><para>typedef <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Propagator">Pscf::Pspg::Continuous::Propagator</link>&lt; D &gt;::<link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1a92f623fc5e663aa2452727ede198b463">Field</link> <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1a92f623fc5e663aa2452727ede198b463">Field</link></para>
+
+<para>Generic field (base class) </para>
+</listitem>
+            <listitem><para>typedef <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Propagator">Pscf::Pspg::Continuous::Propagator</link>&lt; D &gt;::<link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1a592dc978fb65bdbea2d3f975a7f9cbb3">WField</link> <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1a592dc978fb65bdbea2d3f975a7f9cbb3">WField</link></para>
+
+<para><link linkend="_classPscf_1_1Monomer">Monomer</link> chemical potential field. </para>
+</listitem>
+            <listitem><para>typedef <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Propagator">Pscf::Pspg::Continuous::Propagator</link>&lt; D &gt;::<link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1ae33b6c239ebb8cdce5dacc3567c3e4d1">QField</link> <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1ae33b6c239ebb8cdce5dacc3567c3e4d1">QField</link></para>
+
+<para>Constrained partition function q(r,s) for fixed s. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1a5907a3ccd3a06daba93dd36532ea9360">Block</link> ()</para>
+
+<para>Constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1a1bd806151a7aa9d8f27c7fd3394e0562">~Block</link> ()</para>
+
+<para>Destructor. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1af48c90573d96160cd1c8c0c778bf1f3e">setDiscretization</link> (double <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1a5153e1dcbdeab426d9747b029218844d">ds</link>, const <link linkend="_classPscf_1_1Mesh">Mesh</link>&lt; D &gt; &amp;<link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1aaa1acc7d8d890ffc06082c00982e4cf7">mesh</link>)</para>
+
+<para>Initialize discretization and allocate required memory. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1aada75114932c8fd0b58cf7a5ca5063a7">setupUnitCell</link> (const <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; D &gt; &amp;unitCell, const <link linkend="_classPscf_1_1Pspg_1_1WaveList">WaveList</link>&lt; D &gt; &amp;wavelist)</para>
+
+<para>Setup parameters that depend on the unit cell. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1acbe2b9e40ebc7a766f85adf9215dca8f">setupSolver</link> (<link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1a592dc978fb65bdbea2d3f975a7f9cbb3">WField</link> const &amp;w)</para>
+
+<para>Set solver for this block. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1a3e6440e1c223eb2d92efeb26268e92df">setupFFT</link> ()</para>
+
+<para>Initialize <link linkend="_classPscf_1_1Pspg_1_1FFT">FFT</link> and batch <link linkend="_classPscf_1_1Pspg_1_1FFT">FFT</link> classes. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1ae700b2422a5de629aca4f4e91c0e5fb4">step</link> (const cudaReal *q, cudaReal *qNew)</para>
+
+<para>Compute step of integration loop, from i to i+1. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1a563cc6e0a07baa7d04fb04f77bc9a091">computeStress</link> (double prefactor)</para>
+
+<para>Compute derivatives of free energy with respect to cell parameters. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1af2b7511e4c242a0f386cbcf112f9de67">computeInt</link> (cudaReal *q, cudaReal *qs, int ic)</para>
+
+<para>Compute the integral using RI-K while the backword propagtors are being computed from &quot;slices&quot;. </para>
+</listitem>
+            <listitem><para>double <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1ae32b0a0d0229112beea0b1feb2dd561f">stress</link> (int n)</para>
+
+<para>Get derivative of free energy with respect to a unit cell parameter. </para>
+</listitem>
+            <listitem><para>const <link linkend="_classPscf_1_1Mesh">Mesh</link>&lt; D &gt; &amp; <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1aaa1acc7d8d890ffc06082c00982e4cf7">mesh</link> () const</para>
+
+<para>Return associated spatial <link linkend="_classPscf_1_1Mesh">Mesh</link> by reference. </para>
+</listitem>
+            <listitem><para>double <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1a5153e1dcbdeab426d9747b029218844d">ds</link> () const</para>
+
+<para>Contour length step size. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1aa7eb0d81f097cd0c154ada32f41da84a">ns</link> () const</para>
+
+<para>Number of contour length steps. </para>
+</listitem>
+            <listitem><para><link linkend="_classPscf_1_1Pspg_1_1FFT">FFT</link>&lt; D &gt; &amp; <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1ae70390994f52d6c366114cfa334e0357">fft</link> ()</para>
+
+<para>Return the fast Fourier transform object by reference. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1ae6d146ea95e29c6dd75810a1173e25d7">id</link> () const</para>
+
+<para>Get the id of this block. </para>
+</listitem>
+            <listitem><para>double <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1a23abf25dda80acdeff037dae2265bebf">length</link> () const</para>
+
+<para>Get the length (number of monomers) in this block. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1aa019c69765cd0a85b0c7ff1f6357ebb6">monomerId</link> () const</para>
+
+<para>Get the monomer type id. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1a425c0ead6ab355b97a465b71fbf9251c">setId</link> (int <link linkend="_classPscf_1_1BlockDescriptor_1ae6d146ea95e29c6dd75810a1173e25d7">id</link>)</para>
+
+<para>Set the id for this block. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1ac8a6edca57fc63695babcea1c683ff8a">setLength</link> (double <link linkend="_classPscf_1_1BlockDescriptor_1a23abf25dda80acdeff037dae2265bebf">length</link>)</para>
+
+<para>Set the length of this block. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1ae9dfbf2184bff9d4538c0ec969013233">setMonomerId</link> (int <link linkend="_classPscf_1_1BlockDescriptor_1aa019c69765cd0a85b0c7ff1f6357ebb6">monomerId</link>)</para>
+
+<para>Set the monomer id. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1ade41946abd1ca05ff74d41822d2de716">setVertexIds</link> (int vertexAId, int vertexBId)</para>
+
+<para>Set indices of associated vertices. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1a2eab787ed2d40088285e59e847a65396">vertexId</link> (int i) const</para>
+
+<para>Get id of an associated vertex. </para>
+</listitem>
+            <listitem><para>const <link linkend="_classUtil_1_1Pair">Pair</link>&lt; int &gt; &amp; <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1aa20c2133084d74b7757abef3111cf1c4">vertexIds</link> () const</para>
+
+<para>Get the pair of associated vertex ids. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;int D&gt;
+class Pscf::Pspg::Continuous::Block&lt; D &gt;</title></simplesect>
+
+
+<para><link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block">Block</link> within a branched polymer. </para>
+
+
+
+<para>(<link linkend="_namespacePscf_1_1Pspg_1_1Continuous">Continuous</link> Gaussian chain)</para>
+
+<para>Derived from <link linkend="_classPscf_1_1BlockTmpl">BlockTmpl</link>&lt; Propagator&lt;D&gt; &gt;. A <link linkend="_classPscf_1_1BlockTmpl">BlockTmpl</link>&lt; Propagator&lt;D&gt; &gt; has two Propagator&lt;D&gt; members and is derived from <link linkend="_classPscf_1_1BlockDescriptor">BlockDescriptor</link>. </para>
+<para>
+Definition at line 48 of file Block.h.</para>
+</section>
+<section>
+<title>Member Typedef Documentation</title>
+<anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1a92f623fc5e663aa2452727ede198b463"/>    <section>
+    <title>Field</title>
+<indexterm><primary>Field</primary><secondary>Pscf::Pspg::Continuous::Block&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Continuous::Block&lt; D &gt;</primary><secondary>Field</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>typedef <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Propagator">Pscf::Pspg::Continuous::Propagator</link>&lt;D&gt;::<link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1a92f623fc5e663aa2452727ede198b463">Field</link> <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block">Pscf::Pspg::Continuous::Block</link>&lt; D &gt;::<link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1a92f623fc5e663aa2452727ede198b463">Field</link></computeroutput></para><para>
+
+<para>Generic field (base class) </para>
+</para>
+<para>
+Definition at line 55 of file Block.h.</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1a592dc978fb65bdbea2d3f975a7f9cbb3"/>    <section>
+    <title>WField</title>
+<indexterm><primary>WField</primary><secondary>Pscf::Pspg::Continuous::Block&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Continuous::Block&lt; D &gt;</primary><secondary>WField</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>typedef <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Propagator">Pscf::Pspg::Continuous::Propagator</link>&lt;D&gt;::<link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1a592dc978fb65bdbea2d3f975a7f9cbb3">WField</link> <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block">Pscf::Pspg::Continuous::Block</link>&lt; D &gt;::<link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1a592dc978fb65bdbea2d3f975a7f9cbb3">WField</link></computeroutput></para><para>
+
+<para><link linkend="_classPscf_1_1Monomer">Monomer</link> chemical potential field. </para>
+</para>
+<para>
+Definition at line 60 of file Block.h.</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1ae33b6c239ebb8cdce5dacc3567c3e4d1"/>    <section>
+    <title>QField</title>
+<indexterm><primary>QField</primary><secondary>Pscf::Pspg::Continuous::Block&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Continuous::Block&lt; D &gt;</primary><secondary>QField</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>typedef <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Propagator">Pscf::Pspg::Continuous::Propagator</link>&lt;D&gt;::<link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1ae33b6c239ebb8cdce5dacc3567c3e4d1">QField</link> <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block">Pscf::Pspg::Continuous::Block</link>&lt; D &gt;::<link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1ae33b6c239ebb8cdce5dacc3567c3e4d1">QField</link></computeroutput></para><para>
+
+<para>Constrained partition function q(r,s) for fixed s. </para>
+</para>
+<para>
+Definition at line 65 of file Block.h.</para>
+</section>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1a5907a3ccd3a06daba93dd36532ea9360"/>    <section>
+    <title>Block()</title>
+<indexterm><primary>Block</primary><secondary>Pscf::Pspg::Continuous::Block&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Continuous::Block&lt; D &gt;</primary><secondary>Block</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput><link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block">Pscf::Pspg::Continuous::Block</link>&lt; D &gt;::<link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block">Block</link></computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+<para>
+Definition at line 328 of file Block.tpp.</para>
+<para>
+References Pscf::BlockTmpl&lt; Propagator&lt; D &gt; &gt;::propagator().</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1a1bd806151a7aa9d8f27c7fd3394e0562"/>    <section>
+    <title>~Block()</title>
+<indexterm><primary>~Block</primary><secondary>Pscf::Pspg::Continuous::Block&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Continuous::Block&lt; D &gt;</primary><secondary>~Block</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput><link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block">Pscf::Pspg::Continuous::Block</link>&lt; D &gt;::~<link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block">Block</link></computeroutput></para><para>
+
+<para>Destructor. </para>
+</para>
+<para>
+Definition at line 341 of file Block.tpp.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1af48c90573d96160cd1c8c0c778bf1f3e"/>    <section>
+    <title>setDiscretization()</title>
+<indexterm><primary>setDiscretization</primary><secondary>Pscf::Pspg::Continuous::Block&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Continuous::Block&lt; D &gt;</primary><secondary>setDiscretization</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>void <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block">Pscf::Pspg::Continuous::Block</link>&lt; D &gt;::setDiscretization (double ds, const <link linkend="_classPscf_1_1Mesh">Mesh</link>&lt; D &gt; &amp; mesh)</computeroutput></para><para>
+
+<para>Initialize discretization and allocate required memory. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ds</entry>
+                                <entry>
+<para>desired (optimal) value for contour length step </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>mesh</entry>
+                                <entry>
+<para>spatial discretization mesh </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 407 of file Block.tpp.</para>
+<para>
+References Pscf::Pspg::ThreadGrid::setThreadsLogical(), Pscf::Mesh&lt; D &gt;::size(), and UTIL_CHECK.</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1aada75114932c8fd0b58cf7a5ca5063a7"/>    <section>
+    <title>setupUnitCell()</title>
+<indexterm><primary>setupUnitCell</primary><secondary>Pscf::Pspg::Continuous::Block&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Continuous::Block&lt; D &gt;</primary><secondary>setupUnitCell</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>void <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block">Pscf::Pspg::Continuous::Block</link>&lt; D &gt;::setupUnitCell (const <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; D &gt; &amp; unitCell, const <link linkend="_classPscf_1_1Pspg_1_1WaveList">WaveList</link>&lt; D &gt; &amp; wavelist)</computeroutput></para><para>
+
+<para>Setup parameters that depend on the unit cell. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>unitCell</entry>
+                                <entry>
+<para>unit cell, defining cell dimensions </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>waveList</entry>
+                                <entry>
+<para>container for properties of recip wavevectors </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 689 of file Block.tpp.</para>
+<para>
+References Pscf::MeshIterator&lt; D &gt;::atEnd(), Pscf::MeshIterator&lt; D &gt;::begin(), Pscf::UnitCellBase&lt; D &gt;::dksq(), Pscf::UnitCellBase&lt; D &gt;::ksq(), Pscf::UnitCellBase&lt; D &gt;::nParameter(), Pscf::MeshIterator&lt; D &gt;::position(), Pscf::MeshIterator&lt; D &gt;::rank(), and Pscf::MeshIterator&lt; D &gt;::setDimensions().</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1acbe2b9e40ebc7a766f85adf9215dca8f"/>    <section>
+    <title>setupSolver()</title>
+<indexterm><primary>setupSolver</primary><secondary>Pscf::Pspg::Continuous::Block&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Continuous::Block&lt; D &gt;</primary><secondary>setupSolver</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>void <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block">Pscf::Pspg::Continuous::Block</link>&lt; D &gt;::setupSolver (<link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1a592dc978fb65bdbea2d3f975a7f9cbb3">WField</link> const &amp; w)</computeroutput></para><para>
+
+<para>Set solver for this block. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>w</entry>
+                                <entry>
+<para>chemical potential field for this monomer type </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 858 of file Block.tpp.</para>
+<para>
+References Pscf::Pspg::DField&lt; Data &gt;::cDField(), Pscf::Pspg::ThreadGrid::setThreadsLogical(), and UTIL_CHECK.</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1a3e6440e1c223eb2d92efeb26268e92df"/>    <section>
+    <title>setupFFT()</title>
+<indexterm><primary>setupFFT</primary><secondary>Pscf::Pspg::Continuous::Block&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Continuous::Block&lt; D &gt;</primary><secondary>setupFFT</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>void <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block">Pscf::Pspg::Continuous::Block</link>&lt; D &gt;::setupFFT</computeroutput></para><para>
+
+<para>Initialize <link linkend="_classPscf_1_1Pspg_1_1FFT">FFT</link> and batch <link linkend="_classPscf_1_1Pspg_1_1FFT">FFT</link> classes. </para>
+</para>
+<para>
+Definition at line 899 of file Block.tpp.</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1ae700b2422a5de629aca4f4e91c0e5fb4"/>    <section>
+    <title>step()</title>
+<indexterm><primary>step</primary><secondary>Pscf::Pspg::Continuous::Block&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Continuous::Block&lt; D &gt;</primary><secondary>step</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>void <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block">Pscf::Pspg::Continuous::Block</link>&lt; D &gt;::step (const cudaReal * q, cudaReal * qNew)</computeroutput></para><para>
+
+<para>Compute step of integration loop, from i to i+1. </para>
+</para>
+
+<para>Apply pseudo-spectral algorithm</para>
+<para>
+Definition at line 943 of file Block.tpp.</para>
+<para>
+References Pscf::Pspg::ThreadGrid::setThreadsLogical(), and UTIL_CHECK.</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1a563cc6e0a07baa7d04fb04f77bc9a091"/>    <section>
+    <title>computeStress()</title>
+<indexterm><primary>computeStress</primary><secondary>Pscf::Pspg::Continuous::Block&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Continuous::Block&lt; D &gt;</primary><secondary>computeStress</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>void <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block">Pscf::Pspg::Continuous::Block</link>&lt; D &gt;::computeStress (double prefactor)</computeroutput></para><para>
+
+<para>Compute derivatives of free energy with respect to cell parameters. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>waveList</entry>
+                                <entry>
+<para>container for properties of recip. latt. wavevectors. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>prefactor</entry>
+                                <entry>
+<para>prefactor = exp(mu_)/length(), where mu_ and <link linkend="_classPscf_1_1BlockDescriptor_1a23abf25dda80acdeff037dae2265bebf">length()</link> is the chemical potential and chain length of the corresponding polymer, respectively. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 1181 of file Block.tpp.</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1af2b7511e4c242a0f386cbcf112f9de67"/>    <section>
+    <title>computeInt()</title>
+<indexterm><primary>computeInt</primary><secondary>Pscf::Pspg::Continuous::Block&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Continuous::Block&lt; D &gt;</primary><secondary>computeInt</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>void <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block">Pscf::Pspg::Continuous::Block</link>&lt; D &gt;::computeInt (cudaReal * q, cudaReal * qs, int ic)</computeroutput></para><para>
+
+<para>Compute the integral using RI-K while the backword propagtors are being computed from &quot;slices&quot;. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>q</entry>
+                                <entry>
+<para>Foward propagator. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>qs</entry>
+                                <entry>
+<para>Backward propagtor. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>ic</entry>
+                                <entry>
+<para>Coefficient given by RI-K method. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 1201 of file Block.tpp.</para>
+<para>
+References Pscf::Pspg::ThreadGrid::setThreadsLogical(), and UTIL_CHECK.</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1ae32b0a0d0229112beea0b1feb2dd561f"/>    <section>
+    <title>stress()</title>
+<indexterm><primary>stress</primary><secondary>Pscf::Pspg::Continuous::Block&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Continuous::Block&lt; D &gt;</primary><secondary>stress</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>double <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block">Pscf::Pspg::Continuous::Block</link>&lt; D &gt;::stress (int n)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get derivative of free energy with respect to a unit cell parameter. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>n</entry>
+                                <entry>
+<para>unit cell parameter index </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 336 of file Block.h.</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1aaa1acc7d8d890ffc06082c00982e4cf7"/>    <section>
+    <title>mesh()</title>
+<indexterm><primary>mesh</primary><secondary>Pscf::Pspg::Continuous::Block&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Continuous::Block&lt; D &gt;</primary><secondary>mesh</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>const <link linkend="_classPscf_1_1Mesh">Mesh</link>&lt; D &gt; &amp; <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block">Pscf::Pspg::Continuous::Block</link>&lt; D &gt;::mesh<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return associated spatial <link linkend="_classPscf_1_1Mesh">Mesh</link> by reference. </para>
+</para>
+
+<para>Get <link linkend="_classPscf_1_1Mesh">Mesh</link> by reference. </para>
+<para>
+Definition at line 343 of file Block.h.</para>
+<para>
+References UTIL_ASSERT.</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1a5153e1dcbdeab426d9747b029218844d"/>    <section>
+    <title>ds()</title>
+<indexterm><primary>ds</primary><secondary>Pscf::Pspg::Continuous::Block&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Continuous::Block&lt; D &gt;</primary><secondary>ds</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>double <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block">Pscf::Pspg::Continuous::Block</link>&lt; D &gt;::ds<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Contour length step size. </para>
+</para>
+
+<para>Get number of contour steps. </para>
+<para>
+Definition at line 329 of file Block.h.</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1aa7eb0d81f097cd0c154ada32f41da84a"/>    <section>
+    <title>ns()</title>
+<indexterm><primary>ns</primary><secondary>Pscf::Pspg::Continuous::Block&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Continuous::Block&lt; D &gt;</primary><secondary>ns</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>int <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block">Pscf::Pspg::Continuous::Block</link>&lt; D &gt;::ns<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Number of contour length steps. </para>
+</para>
+
+<para>Get number of contour steps. </para>
+<para>
+Definition at line 322 of file Block.h.</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1ae70390994f52d6c366114cfa334e0357"/>    <section>
+    <title>fft()</title>
+<indexterm><primary>fft</primary><secondary>Pscf::Pspg::Continuous::Block&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Continuous::Block&lt; D &gt;</primary><secondary>fft</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput><link linkend="_classPscf_1_1Pspg_1_1FFT">FFT</link>&lt; D &gt; &amp; <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block">Pscf::Pspg::Continuous::Block</link>&lt; D &gt;::fft<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return the fast Fourier transform object by reference. </para>
+</para>
+<para>
+Definition at line 350 of file Block.h.</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1ae6d146ea95e29c6dd75810a1173e25d7"/>    <section>
+    <title>id()</title>
+<indexterm><primary>id</primary><secondary>Pscf::Pspg::Continuous::Block&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Continuous::Block&lt; D &gt;</primary><secondary>id</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>int Pscf::BlockDescriptor::id<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get the id of this block. </para>
+</para>
+<para>
+Definition at line 156 of file BlockDescriptor.h.</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1a23abf25dda80acdeff037dae2265bebf"/>    <section>
+    <title>length()</title>
+<indexterm><primary>length</primary><secondary>Pscf::Pspg::Continuous::Block&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Continuous::Block&lt; D &gt;</primary><secondary>length</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>double Pscf::BlockDescriptor::length<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get the length (number of monomers) in this block. </para>
+</para>
+<para>
+Definition at line 180 of file BlockDescriptor.h.</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1aa019c69765cd0a85b0c7ff1f6357ebb6"/>    <section>
+    <title>monomerId()</title>
+<indexterm><primary>monomerId</primary><secondary>Pscf::Pspg::Continuous::Block&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Continuous::Block&lt; D &gt;</primary><secondary>monomerId</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>int Pscf::BlockDescriptor::monomerId<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get the monomer type id. </para>
+</para>
+<para>
+Definition at line 162 of file BlockDescriptor.h.</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1a425c0ead6ab355b97a465b71fbf9251c"/>    <section>
+    <title>setId()</title>
+<indexterm><primary>setId</primary><secondary>Pscf::Pspg::Continuous::Block&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Continuous::Block&lt; D &gt;</primary><secondary>setId</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>void Pscf::BlockDescriptor::setId</computeroutput></para><para>
+
+<para>Set the id for this block. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>id</entry>
+                                <entry>
+<para>integer index for this block </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 26 of file BlockDescriptor.cpp.</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1ac8a6edca57fc63695babcea1c683ff8a"/>    <section>
+    <title>setLength()</title>
+<indexterm><primary>setLength</primary><secondary>Pscf::Pspg::Continuous::Block&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Continuous::Block&lt; D &gt;</primary><secondary>setLength</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>void Pscf::BlockDescriptor::setLength</computeroutput></para><para>
+
+<para>Set the length of this block. </para>
+</para>
+
+<para>The &quot;length&quot; is steric volume / reference volume.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>length</entry>
+                                <entry>
+<para>block length (number of monomers). </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 47 of file BlockDescriptor.cpp.</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1ae9dfbf2184bff9d4538c0ec969013233"/>    <section>
+    <title>setMonomerId()</title>
+<indexterm><primary>setMonomerId</primary><secondary>Pscf::Pspg::Continuous::Block&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Continuous::Block&lt; D &gt;</primary><secondary>setMonomerId</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>void Pscf::BlockDescriptor::setMonomerId</computeroutput></para><para>
+
+<para>Set the monomer id. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>monomerId</entry>
+                                <entry>
+<para>integer id of monomer type (&gt;=0) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 41 of file BlockDescriptor.cpp.</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1ade41946abd1ca05ff74d41822d2de716"/>    <section>
+    <title>setVertexIds()</title>
+<indexterm><primary>setVertexIds</primary><secondary>Pscf::Pspg::Continuous::Block&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Continuous::Block&lt; D &gt;</primary><secondary>setVertexIds</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>void Pscf::BlockDescriptor::setVertexIds</computeroutput></para><para>
+
+<para>Set indices of associated vertices. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>vertexAId</entry>
+                                <entry>
+<para>integer id of vertex A </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>vertexBId</entry>
+                                <entry>
+<para>integer id of vertex B </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 32 of file BlockDescriptor.cpp.</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1a2eab787ed2d40088285e59e847a65396"/>    <section>
+    <title>vertexId()</title>
+<indexterm><primary>vertexId</primary><secondary>Pscf::Pspg::Continuous::Block&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Continuous::Block&lt; D &gt;</primary><secondary>vertexId</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>int Pscf::BlockDescriptor::vertexId<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get id of an associated vertex. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>i</entry>
+                                <entry>
+<para>index of vertex (0 or 1) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 174 of file BlockDescriptor.h.</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Block_1aa20c2133084d74b7757abef3111cf1c4"/>    <section>
+    <title>vertexIds()</title>
+<indexterm><primary>vertexIds</primary><secondary>Pscf::Pspg::Continuous::Block&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Continuous::Block&lt; D &gt;</primary><secondary>vertexIds</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>const <link linkend="_classUtil_1_1Pair">Pair</link>&lt; int &gt; &amp; Pscf::BlockDescriptor::vertexIds<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get the pair of associated vertex ids. </para>
+</para>
+<para>
+Definition at line 168 of file BlockDescriptor.h.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+Block.hBlock.tpp</section>
+</section>

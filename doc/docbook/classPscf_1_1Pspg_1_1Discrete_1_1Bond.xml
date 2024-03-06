@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classPscf_1_1Pspg_1_1Discrete_1_1Bond">
+<title>Pscf::Pspg::Discrete::Bond&lt; D &gt; Class Template Reference</title>
+<indexterm><primary>Pscf::Pspg::Discrete::Bond&lt; D &gt;</primary></indexterm>
+<para>
+
+<para><link linkend="_classPscf_1_1Pspg_1_1Discrete_1_1Bond">Bond</link> within a branched polymer. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;Bond.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Pscf::Pspg::Discrete::Bond&lt; D &gt;:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classPscf_1_1Pspg_1_1Discrete_1_1Bond.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>bool <link linkend="_classPscf_1_1Pspg_1_1Discrete_1_1Bond_1a65d86dc623dbba3a0c13955f4d067246">bondtype</link> () const</para>
+
+<para>Get the type of this bond. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classPscf_1_1Pspg_1_1Discrete_1_1Bond_1a872a90ee3d43766af8c5b2a3a85af60b">length</link> () const</para>
+
+<para>Get the number of segments in this bond. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;int D&gt;
+class Pscf::Pspg::Discrete::Bond&lt; D &gt;</title></simplesect>
+
+
+<para><link linkend="_classPscf_1_1Pspg_1_1Discrete_1_1Bond">Bond</link> within a branched polymer. </para>
+
+
+
+<para>(discrete chain model)</para>
+
+<para>Derived from <link linkend="_classPscf_1_1Pspg_1_1Discrete_1_1BondTmpl">BondTmpl</link>&lt; DPropagator&lt;D&gt; &gt;. A <link linkend="_classPscf_1_1Pspg_1_1Discrete_1_1BondTmpl">BondTmpl</link>&lt; DPropagator&lt;D&gt; &gt; has two SPropagator&lt;D&gt; members and is derived from <link linkend="_classPscf_1_1BondDescriptor">BondDescriptor</link>. </para>
+<para>
+Definition at line 37 of file Bond.h.</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classPscf_1_1Pspg_1_1Discrete_1_1Bond_1a65d86dc623dbba3a0c13955f4d067246"/>    <section>
+    <title>bondtype()</title>
+<indexterm><primary>bondtype</primary><secondary>Pscf::Pspg::Discrete::Bond&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Discrete::Bond&lt; D &gt;</primary><secondary>bondtype</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>bool Pscf::BondDescriptor::bondtype<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get the type of this bond. </para>
+</para>
+
+<para>true for block-bond; false for joint-bond </para>
+<para>
+Definition at line 193 of file BondDescriptor.h.</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1Discrete_1_1Bond_1a872a90ee3d43766af8c5b2a3a85af60b"/>    <section>
+    <title>length()</title>
+<indexterm><primary>length</primary><secondary>Pscf::Pspg::Discrete::Bond&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Discrete::Bond&lt; D &gt;</primary><secondary>length</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>int Pscf::BondDescriptor::length<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get the number of segments in this bond. </para>
+</para>
+
+<para>For a block bond, the return value should be a positive integer number. </para>
+<para>
+Definition at line 185 of file BondDescriptor.h.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+Bond.hBond.tpp</section>
+</section>

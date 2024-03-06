@@ -1,0 +1,356 @@
+\hypertarget{classUtil_1_1FPArray}{}\doxysubsection{Util\+::F\+P\+Array$<$ Data, Capacity $>$ Class Template Reference}
+\label{classUtil_1_1FPArray}\index{Util::FPArray$<$ Data, Capacity $>$@{Util::FPArray$<$ Data, Capacity $>$}}
+
+
+Statically allocated pointer array.  
+
+
+
+
+{\ttfamily \#include $<$F\+P\+Array.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1FPArray_a334c513c03ed5250836e7b6b412af698}{F\+P\+Array}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1FPArray_a3e003076eca37c568a9b95c7992138c0}{F\+P\+Array}} (const \mbox{\hyperlink{classUtil_1_1FPArray}{F\+P\+Array}}$<$ Data, Capacity $>$ \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1FPArray_a3019cd50e9b1db6c97adf2fff89c71b9}{$\sim$\+F\+P\+Array}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1FPArray}{F\+P\+Array}}$<$ Data, Capacity $>$ \& \mbox{\hyperlink{classUtil_1_1FPArray_aea1ae935a392c2116eb84c01ff961f51}{operator=}} (const \mbox{\hyperlink{classUtil_1_1FPArray}{F\+P\+Array}}$<$ Data, Capacity $>$ \&other)
+\begin{DoxyCompactList}\small\item\em Assignment, element by element. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1FPArray_a92c2e3541b37d351d5e94d84ce681c46}{append}} (Data \&data)
+\begin{DoxyCompactList}\small\item\em Append an element to the end of the array. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1FPArray_a266f12e22535485418288b4137664d33}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Set logical size to zero and nullify all elements. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUtil_1_1FPArray_addc112616ba13384265f5f8037d0dc1c}{capacity}} () const
+\begin{DoxyCompactList}\small\item\em Return physical capacity of array. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUtil_1_1FPArray_ae34cedd531aa9ef85f6b57f25d7c518a}{size}} () const
+\begin{DoxyCompactList}\small\item\em Return logical size of this array. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1FPArray_acf11384cb26c7a3c40a98afe0aab7f84}{begin}} (\mbox{\hyperlink{classUtil_1_1PArrayIterator}{P\+Array\+Iterator}}$<$ Data $>$ \&iterator)
+\begin{DoxyCompactList}\small\item\em Set an iterator to begin this container. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1FPArray_ae4f42b2b5ce0e39f41b13e8ef3e4872b}{begin}} (\mbox{\hyperlink{classUtil_1_1ConstPArrayIterator}{Const\+P\+Array\+Iterator}}$<$ Data $>$ \&iterator) const
+\begin{DoxyCompactList}\small\item\em Set a const iterator to begin this container. \end{DoxyCompactList}\item 
+Data \& \mbox{\hyperlink{classUtil_1_1FPArray_a004d5b290ae68240fe50fb8c1ab24150}{operator\mbox{[}$\,$\mbox{]}}} (int i)
+\begin{DoxyCompactList}\small\item\em Get an element by reference (mimic C-\/array subscripting). \end{DoxyCompactList}\item 
+const Data \& \mbox{\hyperlink{classUtil_1_1FPArray_a0daabd401bc01205bce411b62b18a52f}{operator\mbox{[}$\,$\mbox{]}}} (int i) const
+\begin{DoxyCompactList}\small\item\em Get an element by const reference (mimic C-\/array subscripting). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Data $\ast$ \mbox{\hyperlink{classUtil_1_1FPArray_a22e7fa9f7fccd292606e2d883b4f6efa}{ptrs\+\_\+}} \mbox{[}Capacity\mbox{]}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classUtil_1_1Array}{Array}} of pointers to Data objects. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUtil_1_1FPArray_a85026ccfb57ce84ea928148d366286d2}{size\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Logical size of array (number of elements used). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$typename Data, int Capacity$>$\newline
+class Util\+::\+F\+P\+Array$<$ Data, Capacity $>$}
+
+Statically allocated pointer array. 
+
+A \mbox{\hyperlink{classUtil_1_1FPArray}{F\+P\+Array}} is a statically allocated array that actually holds pointers to Data objects, but for which the \mbox{[}\mbox{]} operator returns a reference to the associated object. It is implemented as a wrapper for a statically allocated C array of Data$\ast$ pointers. A \mbox{\hyperlink{classUtil_1_1FPArray}{F\+P\+Array}} is not responsible for destroying the associated Data objects.
+
+The interface of an \mbox{\hyperlink{classUtil_1_1FPArray}{F\+P\+Array}} is identical to that of an \mbox{\hyperlink{classUtil_1_1FSArray}{F\+S\+Array}}. An \mbox{\hyperlink{classUtil_1_1FPArray}{F\+P\+Array}} has both a capacity that is set at compile time, which is the physical size of the underlying C array, and a size, which is the number of contiguous elements (indexed from 0 to size-\/1) that contain valid pointers. The size can only be increased only by the \mbox{\hyperlink{classUtil_1_1FPArray_a92c2e3541b37d351d5e94d84ce681c46}{append()}} method, which adds an element to the end of the array.
+
+When compiled in debug mode, the operator \mbox{[}\mbox{]} checks that the index is less than the size and non-\/negative. 
+
+Definition at line 40 of file F\+P\+Array.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1FPArray_a334c513c03ed5250836e7b6b412af698}\label{classUtil_1_1FPArray_a334c513c03ed5250836e7b6b412af698}} 
+\index{Util::FPArray$<$ Data, Capacity $>$@{Util::FPArray$<$ Data, Capacity $>$}!FPArray@{FPArray}}
+\index{FPArray@{FPArray}!Util::FPArray$<$ Data, Capacity $>$@{Util::FPArray$<$ Data, Capacity $>$}}
+\doxyparagraph{\texorpdfstring{FPArray()}{FPArray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Data , int Capacity$>$ \\
+\mbox{\hyperlink{classUtil_1_1FPArray}{Util\+::\+F\+P\+Array}}$<$ Data, Capacity $>$\+::\mbox{\hyperlink{classUtil_1_1FPArray}{F\+P\+Array}}\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor. 
+
+Constructor. 
+
+Definition at line 139 of file F\+P\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1FPArray_a3e003076eca37c568a9b95c7992138c0}\label{classUtil_1_1FPArray_a3e003076eca37c568a9b95c7992138c0}} 
+\index{Util::FPArray$<$ Data, Capacity $>$@{Util::FPArray$<$ Data, Capacity $>$}!FPArray@{FPArray}}
+\index{FPArray@{FPArray}!Util::FPArray$<$ Data, Capacity $>$@{Util::FPArray$<$ Data, Capacity $>$}}
+\doxyparagraph{\texorpdfstring{FPArray()}{FPArray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Data , int Capacity$>$ \\
+\mbox{\hyperlink{classUtil_1_1FPArray}{Util\+::\+F\+P\+Array}}$<$ Data, Capacity $>$\+::\mbox{\hyperlink{classUtil_1_1FPArray}{F\+P\+Array}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1FPArray}{F\+P\+Array}}$<$ Data, Capacity $>$ \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+Copies all pointers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the \mbox{\hyperlink{classUtil_1_1FPArray}{F\+P\+Array}} to be copied. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 147 of file F\+P\+Array.\+h.
+
+
+
+References Util\+::\+F\+P\+Array$<$ Data, Capacity $>$\+::ptrs\+\_\+, and Util\+::\+F\+P\+Array$<$ Data, Capacity $>$\+::size\+\_\+.
+
+\mbox{\Hypertarget{classUtil_1_1FPArray_a3019cd50e9b1db6c97adf2fff89c71b9}\label{classUtil_1_1FPArray_a3019cd50e9b1db6c97adf2fff89c71b9}} 
+\index{Util::FPArray$<$ Data, Capacity $>$@{Util::FPArray$<$ Data, Capacity $>$}!````~FPArray@{$\sim$FPArray}}
+\index{````~FPArray@{$\sim$FPArray}!Util::FPArray$<$ Data, Capacity $>$@{Util::FPArray$<$ Data, Capacity $>$}}
+\doxyparagraph{\texorpdfstring{$\sim$FPArray()}{~FPArray()}}
+{\footnotesize\ttfamily template$<$typename Data , int Capacity$>$ \\
+\mbox{\hyperlink{classUtil_1_1FPArray}{Util\+::\+F\+P\+Array}}$<$ Data, Capacity $>$\+::$\sim$\mbox{\hyperlink{classUtil_1_1FPArray}{F\+P\+Array}}}
+
+
+
+Destructor. 
+
+
+
+Definition at line 202 of file F\+P\+Array.\+h.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1FPArray_aea1ae935a392c2116eb84c01ff961f51}\label{classUtil_1_1FPArray_aea1ae935a392c2116eb84c01ff961f51}} 
+\index{Util::FPArray$<$ Data, Capacity $>$@{Util::FPArray$<$ Data, Capacity $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Util::FPArray$<$ Data, Capacity $>$@{Util::FPArray$<$ Data, Capacity $>$}}
+\doxyparagraph{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename Data , int Capacity$>$ \\
+\mbox{\hyperlink{classUtil_1_1FPArray}{F\+P\+Array}}$<$ Data, Capacity $>$ \& \mbox{\hyperlink{classUtil_1_1FPArray}{Util\+::\+F\+P\+Array}}$<$ Data, Capacity $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1FPArray}{F\+P\+Array}}$<$ Data, Capacity $>$ \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Assignment, element by element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the rhs \mbox{\hyperlink{classUtil_1_1FPArray}{F\+P\+Array}} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 171 of file F\+P\+Array.\+h.
+
+
+
+References Util\+::\+F\+P\+Array$<$ Data, Capacity $>$\+::size\+\_\+, and U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1FPArray_a92c2e3541b37d351d5e94d84ce681c46}\label{classUtil_1_1FPArray_a92c2e3541b37d351d5e94d84ce681c46}} 
+\index{Util::FPArray$<$ Data, Capacity $>$@{Util::FPArray$<$ Data, Capacity $>$}!append@{append}}
+\index{append@{append}!Util::FPArray$<$ Data, Capacity $>$@{Util::FPArray$<$ Data, Capacity $>$}}
+\doxyparagraph{\texorpdfstring{append()}{append()}}
+{\footnotesize\ttfamily template$<$typename Data , int Capacity$>$ \\
+void \mbox{\hyperlink{classUtil_1_1FPArray}{Util\+::\+F\+P\+Array}}$<$ Data, Capacity $>$\+::append (\begin{DoxyParamCaption}\item[{Data \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Append an element to the end of the array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Data to add to end of array. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 275 of file F\+P\+Array.\+h.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1FPArray_a266f12e22535485418288b4137664d33}\label{classUtil_1_1FPArray_a266f12e22535485418288b4137664d33}} 
+\index{Util::FPArray$<$ Data, Capacity $>$@{Util::FPArray$<$ Data, Capacity $>$}!clear@{clear}}
+\index{clear@{clear}!Util::FPArray$<$ Data, Capacity $>$@{Util::FPArray$<$ Data, Capacity $>$}}
+\doxyparagraph{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily template$<$typename Data , int Capacity$>$ \\
+void \mbox{\hyperlink{classUtil_1_1FPArray}{Util\+::\+F\+P\+Array}}$<$ Data, Capacity $>$\+::clear\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set logical size to zero and nullify all elements. 
+
+
+
+Definition at line 288 of file F\+P\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1FPArray_addc112616ba13384265f5f8037d0dc1c}\label{classUtil_1_1FPArray_addc112616ba13384265f5f8037d0dc1c}} 
+\index{Util::FPArray$<$ Data, Capacity $>$@{Util::FPArray$<$ Data, Capacity $>$}!capacity@{capacity}}
+\index{capacity@{capacity}!Util::FPArray$<$ Data, Capacity $>$@{Util::FPArray$<$ Data, Capacity $>$}}
+\doxyparagraph{\texorpdfstring{capacity()}{capacity()}}
+{\footnotesize\ttfamily template$<$typename Data , int Capacity$>$ \\
+int \mbox{\hyperlink{classUtil_1_1FPArray}{Util\+::\+F\+P\+Array}}$<$ Data, Capacity $>$\+::capacity\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return physical capacity of array. 
+
+
+
+Definition at line 209 of file F\+P\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1FPArray_ae34cedd531aa9ef85f6b57f25d7c518a}\label{classUtil_1_1FPArray_ae34cedd531aa9ef85f6b57f25d7c518a}} 
+\index{Util::FPArray$<$ Data, Capacity $>$@{Util::FPArray$<$ Data, Capacity $>$}!size@{size}}
+\index{size@{size}!Util::FPArray$<$ Data, Capacity $>$@{Util::FPArray$<$ Data, Capacity $>$}}
+\doxyparagraph{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename Data , int Capacity$>$ \\
+int \mbox{\hyperlink{classUtil_1_1FPArray}{Util\+::\+F\+P\+Array}}$<$ Data, Capacity $>$\+::size\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return logical size of this array. 
+
+
+
+Definition at line 216 of file F\+P\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1FPArray_acf11384cb26c7a3c40a98afe0aab7f84}\label{classUtil_1_1FPArray_acf11384cb26c7a3c40a98afe0aab7f84}} 
+\index{Util::FPArray$<$ Data, Capacity $>$@{Util::FPArray$<$ Data, Capacity $>$}!begin@{begin}}
+\index{begin@{begin}!Util::FPArray$<$ Data, Capacity $>$@{Util::FPArray$<$ Data, Capacity $>$}}
+\doxyparagraph{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Data , int Capacity$>$ \\
+void \mbox{\hyperlink{classUtil_1_1FPArray}{Util\+::\+F\+P\+Array}}$<$ Data, Capacity $>$\+::begin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1PArrayIterator}{P\+Array\+Iterator}}$<$ Data $>$ \&}]{iterator }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set an iterator to begin this container. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em iterator} & \mbox{\hyperlink{classUtil_1_1PArrayIterator}{P\+Array\+Iterator}}, initialized on output. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 224 of file F\+P\+Array.\+h.
+
+
+
+References Util\+::\+P\+Array\+Iterator$<$ Data $>$\+::set\+Current(), and Util\+::\+P\+Array\+Iterator$<$ Data $>$\+::set\+End().
+
+\mbox{\Hypertarget{classUtil_1_1FPArray_ae4f42b2b5ce0e39f41b13e8ef3e4872b}\label{classUtil_1_1FPArray_ae4f42b2b5ce0e39f41b13e8ef3e4872b}} 
+\index{Util::FPArray$<$ Data, Capacity $>$@{Util::FPArray$<$ Data, Capacity $>$}!begin@{begin}}
+\index{begin@{begin}!Util::FPArray$<$ Data, Capacity $>$@{Util::FPArray$<$ Data, Capacity $>$}}
+\doxyparagraph{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Data , int Capacity$>$ \\
+void \mbox{\hyperlink{classUtil_1_1FPArray}{Util\+::\+F\+P\+Array}}$<$ Data, Capacity $>$\+::begin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1ConstPArrayIterator}{Const\+P\+Array\+Iterator}}$<$ Data $>$ \&}]{iterator }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set a const iterator to begin this container. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em iterator} & \mbox{\hyperlink{classUtil_1_1ConstPArrayIterator}{Const\+P\+Array\+Iterator}}, initialized on output. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 235 of file F\+P\+Array.\+h.
+
+
+
+References Util\+::\+Const\+P\+Array\+Iterator$<$ Data $>$\+::set\+Current(), and Util\+::\+Const\+P\+Array\+Iterator$<$ Data $>$\+::set\+End().
+
+\mbox{\Hypertarget{classUtil_1_1FPArray_a004d5b290ae68240fe50fb8c1ab24150}\label{classUtil_1_1FPArray_a004d5b290ae68240fe50fb8c1ab24150}} 
+\index{Util::FPArray$<$ Data, Capacity $>$@{Util::FPArray$<$ Data, Capacity $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Util::FPArray$<$ Data, Capacity $>$@{Util::FPArray$<$ Data, Capacity $>$}}
+\doxyparagraph{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Data , int Capacity$>$ \\
+Data \& \mbox{\hyperlink{classUtil_1_1FPArray}{Util\+::\+F\+P\+Array}}$<$ Data, Capacity $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get an element by reference (mimic C-\/array subscripting). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & array index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to element i 
+\end{DoxyReturn}
+
+
+Definition at line 248 of file F\+P\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1FPArray_a0daabd401bc01205bce411b62b18a52f}\label{classUtil_1_1FPArray_a0daabd401bc01205bce411b62b18a52f}} 
+\index{Util::FPArray$<$ Data, Capacity $>$@{Util::FPArray$<$ Data, Capacity $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Util::FPArray$<$ Data, Capacity $>$@{Util::FPArray$<$ Data, Capacity $>$}}
+\doxyparagraph{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Data , int Capacity$>$ \\
+const Data \& \mbox{\hyperlink{classUtil_1_1FPArray}{Util\+::\+F\+P\+Array}}$<$ Data, Capacity $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get an element by const reference (mimic C-\/array subscripting). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & array index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const reference to element i 
+\end{DoxyReturn}
+
+
+Definition at line 262 of file F\+P\+Array.\+h.
+
+
+
+\doxysubsubsection{Member Data Documentation}
+\mbox{\Hypertarget{classUtil_1_1FPArray_a22e7fa9f7fccd292606e2d883b4f6efa}\label{classUtil_1_1FPArray_a22e7fa9f7fccd292606e2d883b4f6efa}} 
+\index{Util::FPArray$<$ Data, Capacity $>$@{Util::FPArray$<$ Data, Capacity $>$}!ptrs\_@{ptrs\_}}
+\index{ptrs\_@{ptrs\_}!Util::FPArray$<$ Data, Capacity $>$@{Util::FPArray$<$ Data, Capacity $>$}}
+\doxyparagraph{\texorpdfstring{ptrs\_}{ptrs\_}}
+{\footnotesize\ttfamily template$<$typename Data , int Capacity$>$ \\
+Data$\ast$ \mbox{\hyperlink{classUtil_1_1FPArray}{Util\+::\+F\+P\+Array}}$<$ Data, Capacity $>$\+::ptrs\+\_\+\mbox{[}Capacity\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\mbox{\hyperlink{classUtil_1_1Array}{Array}} of pointers to Data objects. 
+
+
+
+Definition at line 126 of file F\+P\+Array.\+h.
+
+
+
+Referenced by Util\+::\+F\+P\+Array$<$ Data, Capacity $>$\+::\+F\+P\+Array().
+
+\mbox{\Hypertarget{classUtil_1_1FPArray_a85026ccfb57ce84ea928148d366286d2}\label{classUtil_1_1FPArray_a85026ccfb57ce84ea928148d366286d2}} 
+\index{Util::FPArray$<$ Data, Capacity $>$@{Util::FPArray$<$ Data, Capacity $>$}!size\_@{size\_}}
+\index{size\_@{size\_}!Util::FPArray$<$ Data, Capacity $>$@{Util::FPArray$<$ Data, Capacity $>$}}
+\doxyparagraph{\texorpdfstring{size\_}{size\_}}
+{\footnotesize\ttfamily template$<$typename Data , int Capacity$>$ \\
+int \mbox{\hyperlink{classUtil_1_1FPArray}{Util\+::\+F\+P\+Array}}$<$ Data, Capacity $>$\+::size\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Logical size of array (number of elements used). 
+
+
+
+Definition at line 129 of file F\+P\+Array.\+h.
+
+
+
+Referenced by Util\+::\+F\+P\+Array$<$ Data, Capacity $>$\+::\+F\+P\+Array(), and Util\+::\+F\+P\+Array$<$ Data, Capacity $>$\+::operator=().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+F\+P\+Array.\+h\end{DoxyCompactItemize}

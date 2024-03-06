@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_group__Util__NS__Module">
+<title>Util namespace</title>
+<indexterm><primary>Util namespace</primary></indexterm>
+<para>
+
+<para>Group of modules containing classes in the <link linkend="_namespaceUtil">Util</link> namespace. </para>
+ 
+</para>
+<simplesect>
+    <title>Modules    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_group__Accumulators__Module">Accumulators</link></para>
+
+<para>Statistical operations (e.g., averages or autocorrelations) on a data sequence. </para>
+</listitem>
+            <listitem><para><link linkend="_group__Serialize__Module">Serialization</link></para>
+</listitem>
+            <listitem><para><link linkend="_group__Container__Module">Container Templates</link></para>
+</listitem>
+            <listitem><para><link linkend="_group__Format__Module">Output Format</link></para>
+
+<para>Utilities to simplify formatted C++ stream output. </para>
+</listitem>
+            <listitem><para><link linkend="_group__Math__Module">Mathematics</link></para>
+
+<para>Mathematical constants and utilities. </para>
+</listitem>
+            <listitem><para><link linkend="_group__Misc__Module">Miscellaneous Utilities</link></para>
+</listitem>
+            <listitem><para><link linkend="_group__Manager__Module">Managers and Factories</link></para>
+</listitem>
+            <listitem><para><link linkend="_group__Param__Module">Parameter File IO</link></para>
+</listitem>
+            <listitem><para><link linkend="_group__Random__Module">Random</link></para>
+
+<para><link linkend="_classUtil_1_1Random">Random</link> numbers and processes. </para>
+</listitem>
+            <listitem><para><link linkend="_group__Util__Signal__Module">Signals (Observer Pattern)</link></para>
+</listitem>
+            <listitem><para><link linkend="_group__Space__Module">Space (Vector, Tensor)</link></para>
+
+<para>Classes that represent spatial Vectors, Tensors, etc. </para>
+</listitem>
+            <listitem><para><link linkend="_group__XmlTag__Module">Xml Tag Parsers</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Group of modules containing classes in the <link linkend="_namespaceUtil">Util</link> namespace. </para>
+</section>
+</section>

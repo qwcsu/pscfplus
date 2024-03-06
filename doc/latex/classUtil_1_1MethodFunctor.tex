@@ -1,0 +1,106 @@
+\hypertarget{classUtil_1_1MethodFunctor}{}\doxysubsection{Util\+::Method\+Functor$<$ Object, T $>$ Class Template Reference}
+\label{classUtil_1_1MethodFunctor}\index{Util::MethodFunctor$<$ Object, T $>$@{Util::MethodFunctor$<$ Object, T $>$}}
+
+
+Functor that wraps a one-\/argument class member function.  
+
+
+
+
+{\ttfamily \#include $<$Method\+Functor.\+h$>$}
+
+Inheritance diagram for Util\+::Method\+Functor$<$ Object, T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classUtil_1_1MethodFunctor}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1MethodFunctor_a0ed650622f138fa47ecdb9144ec4bec0}{Method\+Functor}} (Object \&object, Method1\+Ptr method\+Ptr)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classUtil_1_1MethodFunctor_a1070b1927ebf237aba0c2da9589765ee}{$\sim$\+Method\+Functor}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUtil_1_1MethodFunctor_ac48a27bb67f2916dd6ab2dd355006f99}{operator()}} (const T \&t)
+\begin{DoxyCompactList}\small\item\em Operator (). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$class Object, typename T = void$>$\newline
+class Util\+::\+Method\+Functor$<$ Object, T $>$}
+
+Functor that wraps a one-\/argument class member function. 
+
+The constructor to Method\+Functor$<$\+T$>$ takes pointers to an invoking instance of class Object and a member function that takes one T argument. The operator () (const T\&) invokes that method on that object. 
+
+Definition at line 26 of file Method\+Functor.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1MethodFunctor_a0ed650622f138fa47ecdb9144ec4bec0}\label{classUtil_1_1MethodFunctor_a0ed650622f138fa47ecdb9144ec4bec0}} 
+\index{Util::MethodFunctor$<$ Object, T $>$@{Util::MethodFunctor$<$ Object, T $>$}!MethodFunctor@{MethodFunctor}}
+\index{MethodFunctor@{MethodFunctor}!Util::MethodFunctor$<$ Object, T $>$@{Util::MethodFunctor$<$ Object, T $>$}}
+\doxyparagraph{\texorpdfstring{MethodFunctor()}{MethodFunctor()}}
+{\footnotesize\ttfamily template$<$class Object , typename T  = void$>$ \\
+\mbox{\hyperlink{classUtil_1_1MethodFunctor}{Util\+::\+Method\+Functor}}$<$ Object, T $>$\+::\mbox{\hyperlink{classUtil_1_1MethodFunctor}{Method\+Functor}} (\begin{DoxyParamCaption}\item[{Object \&}]{object,  }\item[{Method1\+Ptr}]{method\+Ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & invoking object \\
+\hline
+{\em method\+Ptr} & pointer to member function \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 38 of file Method\+Functor.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1MethodFunctor_a1070b1927ebf237aba0c2da9589765ee}\label{classUtil_1_1MethodFunctor_a1070b1927ebf237aba0c2da9589765ee}} 
+\index{Util::MethodFunctor$<$ Object, T $>$@{Util::MethodFunctor$<$ Object, T $>$}!````~MethodFunctor@{$\sim$MethodFunctor}}
+\index{````~MethodFunctor@{$\sim$MethodFunctor}!Util::MethodFunctor$<$ Object, T $>$@{Util::MethodFunctor$<$ Object, T $>$}}
+\doxyparagraph{\texorpdfstring{$\sim$MethodFunctor()}{~MethodFunctor()}}
+{\footnotesize\ttfamily template$<$class Object , typename T  = void$>$ \\
+virtual \mbox{\hyperlink{classUtil_1_1MethodFunctor}{Util\+::\+Method\+Functor}}$<$ Object, T $>$\+::$\sim$\mbox{\hyperlink{classUtil_1_1MethodFunctor}{Method\+Functor}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+Definition at line 46 of file Method\+Functor.\+h.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1MethodFunctor_ac48a27bb67f2916dd6ab2dd355006f99}\label{classUtil_1_1MethodFunctor_ac48a27bb67f2916dd6ab2dd355006f99}} 
+\index{Util::MethodFunctor$<$ Object, T $>$@{Util::MethodFunctor$<$ Object, T $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!Util::MethodFunctor$<$ Object, T $>$@{Util::MethodFunctor$<$ Object, T $>$}}
+\doxyparagraph{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily template$<$class Object , typename T  = void$>$ \\
+virtual void \mbox{\hyperlink{classUtil_1_1MethodFunctor}{Util\+::\+Method\+Functor}}$<$ Object, T $>$\+::operator() (\begin{DoxyParamCaption}\item[{const T \&}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Operator (). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & \mbox{\hyperlink{classUtil_1_1Parameter}{Parameter}} passed to method of associated T object. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 53 of file Method\+Functor.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Method\+Functor.\+h\end{DoxyCompactItemize}

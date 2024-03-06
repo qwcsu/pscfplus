@@ -1,0 +1,156 @@
+\hypertarget{classUtil_1_1XmlAttribute}{}\doxysubsection{Util\+::Xml\+Attribute Class Reference}
+\label{classUtil_1_1XmlAttribute}\index{Util::XmlAttribute@{Util::XmlAttribute}}
+
+
+Parser for an X\+ML attribute.  
+
+
+
+
+{\ttfamily \#include $<$Xml\+Attribute.\+h$>$}
+
+Inheritance diagram for Util\+::Xml\+Attribute\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classUtil_1_1XmlAttribute}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1XmlAttribute_a20c363478f0983aa13406d0ec5502717}{Xml\+Attribute}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classUtil_1_1XmlAttribute_a7ce03fbb8028f37a05b10438a73f8bf0}{$\sim$\+Xml\+Attribute}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUtil_1_1XmlAttribute_a8c334a0fe631fc95c1b4c9386489f069}{match}} (const std\+::string \&\mbox{\hyperlink{classUtil_1_1XmlBase_a8378a6c87659891e9f1e5458dbfc1413}{string}}, int begin)
+\begin{DoxyCompactList}\small\item\em Return true if an attribute is found, false otherwise. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUtil_1_1XmlAttribute_a37d82ccba38b43d9759a5267d74fc869}{match}} (\mbox{\hyperlink{classUtil_1_1XmlBase}{Xml\+Base}} \&parser)
+\begin{DoxyCompactList}\small\item\em If successful return true and advance cursor or parent parser. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classUtil_1_1XmlAttribute_a5f5d7bb20c77fb07322fc8cf1d5e399d}{label}} ()
+\begin{DoxyCompactList}\small\item\em Return label string. \end{DoxyCompactList}\item 
+std\+::stringstream \& \mbox{\hyperlink{classUtil_1_1XmlAttribute_aac1b9f77e97f0060ae05340b21fe9680}{value}} ()
+\begin{DoxyCompactList}\small\item\em Return value string, without quotes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Parser for an X\+ML attribute. 
+
+Definition at line 23 of file Xml\+Attribute.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1XmlAttribute_a20c363478f0983aa13406d0ec5502717}\label{classUtil_1_1XmlAttribute_a20c363478f0983aa13406d0ec5502717}} 
+\index{Util::XmlAttribute@{Util::XmlAttribute}!XmlAttribute@{XmlAttribute}}
+\index{XmlAttribute@{XmlAttribute}!Util::XmlAttribute@{Util::XmlAttribute}}
+\doxyparagraph{\texorpdfstring{XmlAttribute()}{XmlAttribute()}}
+{\footnotesize\ttfamily Util\+::\+Xml\+Attribute\+::\+Xml\+Attribute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+
+Definition at line 14 of file Xml\+Attribute.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1XmlAttribute_a7ce03fbb8028f37a05b10438a73f8bf0}\label{classUtil_1_1XmlAttribute_a7ce03fbb8028f37a05b10438a73f8bf0}} 
+\index{Util::XmlAttribute@{Util::XmlAttribute}!````~XmlAttribute@{$\sim$XmlAttribute}}
+\index{````~XmlAttribute@{$\sim$XmlAttribute}!Util::XmlAttribute@{Util::XmlAttribute}}
+\doxyparagraph{\texorpdfstring{$\sim$XmlAttribute()}{~XmlAttribute()}}
+{\footnotesize\ttfamily Util\+::\+Xml\+Attribute\+::$\sim$\+Xml\+Attribute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+Definition at line 23 of file Xml\+Attribute.\+cpp.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1XmlAttribute_a8c334a0fe631fc95c1b4c9386489f069}\label{classUtil_1_1XmlAttribute_a8c334a0fe631fc95c1b4c9386489f069}} 
+\index{Util::XmlAttribute@{Util::XmlAttribute}!match@{match}}
+\index{match@{match}!Util::XmlAttribute@{Util::XmlAttribute}}
+\doxyparagraph{\texorpdfstring{match()}{match()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Util\+::\+Xml\+Attribute\+::match (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{string,  }\item[{int}]{begin }\end{DoxyParamCaption})}
+
+
+
+Return true if an attribute is found, false otherwise. 
+
+
+
+Definition at line 26 of file Xml\+Attribute.\+cpp.
+
+
+
+References Util\+::\+Xml\+Base\+::c(), Util\+::\+Xml\+Base\+::cursor(), Util\+::\+Xml\+Base\+::is\+End(), Util\+::\+Xml\+Base\+::next(), Util\+::r\+Strip(), Util\+::\+Xml\+Base\+::set\+String(), Util\+::\+Xml\+Base\+::skip(), and Util\+::\+Xml\+Base\+::string().
+
+
+
+Referenced by match(), and Util\+::\+Xml\+Start\+Tag\+::match\+Attribute().
+
+\mbox{\Hypertarget{classUtil_1_1XmlAttribute_a37d82ccba38b43d9759a5267d74fc869}\label{classUtil_1_1XmlAttribute_a37d82ccba38b43d9759a5267d74fc869}} 
+\index{Util::XmlAttribute@{Util::XmlAttribute}!match@{match}}
+\index{match@{match}!Util::XmlAttribute@{Util::XmlAttribute}}
+\doxyparagraph{\texorpdfstring{match()}{match()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Util\+::\+Xml\+Attribute\+::match (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1XmlBase}{Xml\+Base}} \&}]{parser }\end{DoxyParamCaption})}
+
+
+
+If successful return true and advance cursor or parent parser. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parser} & parent parser object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 82 of file Xml\+Attribute.\+cpp.
+
+
+
+References Util\+::\+Xml\+Base\+::cursor(), match(), Util\+::\+Xml\+Base\+::set\+Cursor(), and Util\+::\+Xml\+Base\+::string().
+
+\mbox{\Hypertarget{classUtil_1_1XmlAttribute_a5f5d7bb20c77fb07322fc8cf1d5e399d}\label{classUtil_1_1XmlAttribute_a5f5d7bb20c77fb07322fc8cf1d5e399d}} 
+\index{Util::XmlAttribute@{Util::XmlAttribute}!label@{label}}
+\index{label@{label}!Util::XmlAttribute@{Util::XmlAttribute}}
+\doxyparagraph{\texorpdfstring{label()}{label()}}
+{\footnotesize\ttfamily const std\+::string\& Util\+::\+Xml\+Attribute\+::label (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return label string. 
+
+
+
+Definition at line 53 of file Xml\+Attribute.\+h.
+
+
+
+Referenced by Util\+::\+Xml\+Xml\+Tag\+::match().
+
+\mbox{\Hypertarget{classUtil_1_1XmlAttribute_aac1b9f77e97f0060ae05340b21fe9680}\label{classUtil_1_1XmlAttribute_aac1b9f77e97f0060ae05340b21fe9680}} 
+\index{Util::XmlAttribute@{Util::XmlAttribute}!value@{value}}
+\index{value@{value}!Util::XmlAttribute@{Util::XmlAttribute}}
+\doxyparagraph{\texorpdfstring{value()}{value()}}
+{\footnotesize\ttfamily std\+::stringstream\& Util\+::\+Xml\+Attribute\+::value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return value string, without quotes. 
+
+
+
+Definition at line 59 of file Xml\+Attribute.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Xml\+Attribute.\+h\item 
+Xml\+Attribute.\+cpp\end{DoxyCompactItemize}

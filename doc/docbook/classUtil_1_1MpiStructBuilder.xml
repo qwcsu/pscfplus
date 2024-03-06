@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1MpiStructBuilder">
+<title>Util::MpiStructBuilder Class Reference</title>
+<indexterm><primary>Util::MpiStructBuilder</primary></indexterm>
+<para>
+
+<para>A <link linkend="_classUtil_1_1MpiStructBuilder">MpiStructBuilder</link> objects is used to create an MPI Struct datatype. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;MpiStructBuilder.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1MpiStructBuilder_1a3a65505e0cd724576e4f64a32c23fda9">MpiStructBuilder</link> ()</para>
+
+<para>Default constructor. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1MpiStructBuilder_1a34f85f4a1e1c296ba324fe274ea22f24">setBase</link> (void *objectAddress)</para>
+
+<para>Set address of an class instance. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1MpiStructBuilder_1a0b7815cfc8afac5fb7f225de784b07a1">addMember</link> (void *memberAddress, MPI::Datatype type, int count=1)</para>
+
+<para>Add a new member variable to the type map. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1MpiStructBuilder_1ae95e12f80d3991fe0bd7848010924c25">commit</link> (MPI::Datatype &amp;newType)</para>
+
+<para>Build and commit a user-defined MPI Struct datatype. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>A <link linkend="_classUtil_1_1MpiStructBuilder">MpiStructBuilder</link> objects is used to create an MPI Struct datatype. </para>
+
+
+
+<para>This class provides methods to simplify construction of an MPI data type that can stores instances of a C struct or C++ class.</para>
+
+<para>As an example, consider the creation of an MPI datatype MyClassMpi for class MyClass, with a class definition: <literallayout><computeroutput>class&#32;MyClass&#32;
+{
+&#32;&#32;&#32;double&#32;x[3];
+&#32;&#32;&#32;int&#32;&#32;&#32;&#32;i,&#32;j;
+}
+</computeroutput></literallayout> The code required to build and commit the MPI datatype MyClassMpi is: <literallayout><computeroutput>MyClass&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;object;
+MPI::Datatype&#32;&#32;MyClassMpi;
+MpiStructBuilder&#32;builder;
+
+builder.setBase(&amp;object)
+builder.addMember(&amp;object.x,&#32;MPI::DOUBLE,&#32;3);
+builder.addMember(&amp;object.i,&#32;MPI::INT,&#32;1);
+builder.addMember(&amp;object.j,&#32;MPI::INT,&#32;1);
+builder.commit(&amp;MyClassMpi);
+</computeroutput></literallayout> The setBase and addMember classes require addresses of an instance of the class and of its members, respectively. These addresses must all refer to same instance. The commit method calculates the offset of each member by subtracting the address of the object from the address of each of its members. </para>
+<para>
+Definition at line 54 of file MpiStructBuilder.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1MpiStructBuilder_1a3a65505e0cd724576e4f64a32c23fda9"/>    <section>
+    <title>MpiStructBuilder()</title>
+<indexterm><primary>MpiStructBuilder</primary><secondary>Util::MpiStructBuilder</secondary></indexterm>
+<indexterm><primary>Util::MpiStructBuilder</primary><secondary>MpiStructBuilder</secondary></indexterm>
+<para><computeroutput>Util::MpiStructBuilder::MpiStructBuilder ( )</computeroutput></para><para>
+
+<para>Default constructor. </para>
+</para>
+<para>
+Definition at line 10 of file MpiStructBuilder.cpp.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1MpiStructBuilder_1a34f85f4a1e1c296ba324fe274ea22f24"/>    <section>
+    <title>setBase()</title>
+<indexterm><primary>setBase</primary><secondary>Util::MpiStructBuilder</secondary></indexterm>
+<indexterm><primary>Util::MpiStructBuilder</primary><secondary>setBase</secondary></indexterm>
+<para><computeroutput>void Util::MpiStructBuilder::setBase (void * objectAddress)</computeroutput></para><para>
+
+<para>Set address of an class instance. </para>
+</para>
+<para>
+Definition at line 18 of file MpiStructBuilder.cpp.</para>
+<para>
+Referenced by Util::Pair&lt; DPropagator &gt;::commitMpiType(), Util::FArray&lt; DPropagator, 2 &gt;::commitMpiType(), Util::Tensor::commitMpiType(), Util::Vector::commitMpiType(), and Util::IntVector::commitMpiType().</para>
+    </section><anchor xml:id="_classUtil_1_1MpiStructBuilder_1a0b7815cfc8afac5fb7f225de784b07a1"/>    <section>
+    <title>addMember()</title>
+<indexterm><primary>addMember</primary><secondary>Util::MpiStructBuilder</secondary></indexterm>
+<indexterm><primary>Util::MpiStructBuilder</primary><secondary>addMember</secondary></indexterm>
+<para><computeroutput>void Util::MpiStructBuilder::addMember (void * memberAddress, MPI::Datatype type, int count = <computeroutput>1</computeroutput>
+)</computeroutput></para><para>
+
+<para>Add a new member variable to the type map. </para>
+</para>
+
+<para>This method must be called once for each member. The address parameter must be a pointer to a member variable of the object whose base address is passed to <link linkend="_classUtil_1_1MpiStructBuilder_1a34f85f4a1e1c296ba324fe274ea22f24">setBase()</link>.</para>
+
+<para>The count parameter is required only for array members: the default value of count=1 may be used for scalar members.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>memberAddress</entry>
+                                <entry>
+<para>displacement of variable, in bytes. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>type</entry>
+                                <entry>
+<para>data type (MPI::INT, MPI::DOUBLE, etc.) </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>count</entry>
+                                <entry>
+<para>number of contiguous variables (array count) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 26 of file MpiStructBuilder.cpp.</para>
+<para>
+Referenced by Util::Pair&lt; DPropagator &gt;::commitMpiType(), Util::FArray&lt; DPropagator, 2 &gt;::commitMpiType(), Util::Tensor::commitMpiType(), Util::Vector::commitMpiType(), and Util::IntVector::commitMpiType().</para>
+    </section><anchor xml:id="_classUtil_1_1MpiStructBuilder_1ae95e12f80d3991fe0bd7848010924c25"/>    <section>
+    <title>commit()</title>
+<indexterm><primary>commit</primary><secondary>Util::MpiStructBuilder</secondary></indexterm>
+<indexterm><primary>Util::MpiStructBuilder</primary><secondary>commit</secondary></indexterm>
+<para><computeroutput>void Util::MpiStructBuilder::commit (MPI::Datatype &amp; newType)</computeroutput></para><para>
+
+<para>Build and commit a user-defined MPI Struct datatype. </para>
+</para>
+
+<para>The <link linkend="_classUtil_1_1MpiStructBuilder_1a34f85f4a1e1c296ba324fe274ea22f24">setBase()</link> method must be called once and the <link linkend="_classUtil_1_1MpiStructBuilder_1a0b7815cfc8afac5fb7f225de784b07a1">addMember()</link> method must be called once per member before calling this method.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>newType</entry>
+                                <entry>
+<para>new MPI datatype (on output). </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 39 of file MpiStructBuilder.cpp.</para>
+<para>
+Referenced by Util::Pair&lt; DPropagator &gt;::commitMpiType(), Util::FArray&lt; DPropagator, 2 &gt;::commitMpiType(), Util::Tensor::commitMpiType(), Util::Vector::commitMpiType(), and Util::IntVector::commitMpiType().</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+MpiStructBuilder.hMpiStructBuilder.cpp</section>
+</section>

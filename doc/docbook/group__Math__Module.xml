@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_group__Math__Module">
+<title>Mathematics</title>
+<indexterm><primary>Mathematics</primary></indexterm>
+<para>
+
+<para>Mathematical constants and utilities. </para>
+ 
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classUtil_1_1Binomial">Util::Binomial</link></para>
+
+<para>Class for binomial coefficients (all static members) </para>
+</listitem>
+            <listitem><para>class <link linkend="_classUtil_1_1CardinalBSpline">Util::CardinalBSpline</link></para>
+
+<para>A cardinal B-spline basis function. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classUtil_1_1Constants">Util::Constants</link></para>
+
+<para>Mathematical constants. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classUtil_1_1Polynomial">Util::Polynomial&lt; T &gt;</link></para>
+
+<para>A <link linkend="_classUtil_1_1Polynomial">Polynomial</link> (i.e,. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classUtil_1_1Rational">Util::Rational</link></para>
+
+<para>A <link linkend="_classUtil_1_1Rational">Rational</link> number (a ratio of integers). </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>bool <link linkend="_group__Math__Module_1gaf9ba7221315579826dfe3f88eb717c04">Util::feq</link> (double x, double y, double eps=1.0E-10)</para>
+
+<para>Are two floating point numbers equal to within round-off error? </para>
+</listitem>
+            <listitem><para>int <link linkend="_group__Math__Module_1ga9754693e721344ee74376e5bc0c8676b">Util::gcd</link> (int a, int b)</para>
+
+<para>Compute greatest common divisor (gcd) of two integers. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Mathematical constants and utilities. </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_group__Math__Module_1gaf9ba7221315579826dfe3f88eb717c04"/>    <section>
+    <title>feq()</title>
+<indexterm><primary>feq</primary><secondary>Mathematics</secondary></indexterm>
+<indexterm><primary>Mathematics</primary><secondary>feq</secondary></indexterm>
+<para><computeroutput>bool Util::feq (double x, double y, double eps = <computeroutput>1.0E-10</computeroutput>
+)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Are two floating point numbers equal to within round-off error? </para>
+</para>
+
+<para>Returns true if eps &gt; fabs(x-y)*c/(fabs(x)+fabs(y)+c), c=1.05E-5.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>x</entry>
+                                <entry>
+<para>first real argument </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>y</entry>
+                                <entry>
+<para>second real argument </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>eps</entry>
+                                <entry>
+<para>maximum tolerance for nominally &quot;equal&quot; values </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>true if equal to within tolerance, false otherwise </para>
+</formalpara>
+</para>
+<para>
+Definition at line 27 of file feq.h.</para>
+<para>
+Referenced by Util::RadialDistribution::loadParameters(), Util::Distribution::loadParameters(), and Util::Distribution::serialize().</para>
+    </section><anchor xml:id="_group__Math__Module_1ga9754693e721344ee74376e5bc0c8676b"/>    <section>
+    <title>gcd()</title>
+<indexterm><primary>gcd</primary><secondary>Mathematics</secondary></indexterm>
+<indexterm><primary>Mathematics</primary><secondary>gcd</secondary></indexterm>
+<para><computeroutput>int Util::gcd (int a, int b)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Compute greatest common divisor (gcd) of two integers. </para>
+</para>
+
+<para>Uses Euclidean algorithm to compute gcd. Always returns a non-negative integer. If one argument is zero, the absolute value of the other is returned. Returns zero if and only if both integers are zero.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>a</entry>
+                                <entry>
+<para>1st integer </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>b</entry>
+                                <entry>
+<para>2nd integer </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>greatest common divisor of a and b </para>
+</formalpara>
+</para>
+<para>
+Definition at line 30 of file gcd.h.</para>
+</section>
+</section>
+</section>

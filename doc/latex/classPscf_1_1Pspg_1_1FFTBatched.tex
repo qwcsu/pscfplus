@@ -1,0 +1,171 @@
+\hypertarget{classPscf_1_1Pspg_1_1FFTBatched}{}\doxysubsection{Pscf\+::Pspg\+::F\+F\+T\+Batched$<$ D $>$ Class Template Reference}
+\label{classPscf_1_1Pspg_1_1FFTBatched}\index{Pscf::Pspg::FFTBatched$<$ D $>$@{Pscf::Pspg::FFTBatched$<$ D $>$}}
+
+
+Fourier transform wrapper for real data.  
+
+
+
+
+{\ttfamily \#include $<$F\+F\+T\+Batched.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPscf_1_1Pspg_1_1FFTBatched_a872024039cf5de0053e29a8985c60054}{F\+F\+T\+Batched}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classPscf_1_1Pspg_1_1FFTBatched_ad1e53b5d0f1e545c100e6d36106d7ec1}{$\sim$\+F\+F\+T\+Batched}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1Pspg_1_1FFTBatched_a9f390cf515fc8aa7cfc29d6b7e03e1f3}{setup}} (\mbox{\hyperlink{classPscf_1_1Pspg_1_1RDField}{R\+D\+Field}}$<$ D $>$ \&r\+D\+Field, \mbox{\hyperlink{classPscf_1_1Pspg_1_1RDFieldDft}{R\+D\+Field\+Dft}}$<$ D $>$ \&k\+D\+Field)
+\begin{DoxyCompactList}\small\item\em Check and setup grid dimensions if necessary. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1Pspg_1_1FFTBatched_ad4fad61e2ae30fd81386b61b66059150}{forward\+Transform}} (\mbox{\hyperlink{classPscf_1_1Pspg_1_1RDField}{R\+D\+Field}}$<$ D $>$ \&in, \mbox{\hyperlink{classPscf_1_1Pspg_1_1RDFieldDft}{R\+D\+Field\+Dft}}$<$ D $>$ \&out)
+\begin{DoxyCompactList}\small\item\em Compute forward (real-\/to-\/complex) Fourier transform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1Pspg_1_1FFTBatched_ac099bc4b2d0e3a6abfcc7740f09b6ac0}{inverse\+Transform}} (\mbox{\hyperlink{classPscf_1_1Pspg_1_1RDFieldDft}{R\+D\+Field\+Dft}}$<$ D $>$ \&in, \mbox{\hyperlink{classPscf_1_1Pspg_1_1RDField}{R\+D\+Field}}$<$ D $>$ \&out)
+\begin{DoxyCompactList}\small\item\em Compute inverse (complex-\/to-\/real) Fourier transform. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec}}$<$ D $>$ \& \mbox{\hyperlink{classPscf_1_1Pspg_1_1FFTBatched_aff71764d890898632c6d85bb262bcbf2}{mesh\+Dimensions}} () const
+\begin{DoxyCompactList}\small\item\em Return the dimensions of the grid for which this was allocated. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$int D$>$\newline
+class Pscf\+::\+Pspg\+::\+F\+F\+T\+Batched$<$ D $>$}
+
+Fourier transform wrapper for real data. 
+
+Definition at line 36 of file F\+F\+T\+Batched.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1FFTBatched_a872024039cf5de0053e29a8985c60054}\label{classPscf_1_1Pspg_1_1FFTBatched_a872024039cf5de0053e29a8985c60054}} 
+\index{Pscf::Pspg::FFTBatched$<$ D $>$@{Pscf::Pspg::FFTBatched$<$ D $>$}!FFTBatched@{FFTBatched}}
+\index{FFTBatched@{FFTBatched}!Pscf::Pspg::FFTBatched$<$ D $>$@{Pscf::Pspg::FFTBatched$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{FFTBatched()}{FFTBatched()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classPscf_1_1Pspg_1_1FFTBatched}{Pscf\+::\+Pspg\+::\+F\+F\+T\+Batched}}$<$ D $>$\+::\mbox{\hyperlink{classPscf_1_1Pspg_1_1FFTBatched}{F\+F\+T\+Batched}}}
+
+
+
+Default constructor. 
+
+
+
+Definition at line 39 of file F\+F\+T\+Batched.\+tpp.
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1FFTBatched_ad1e53b5d0f1e545c100e6d36106d7ec1}\label{classPscf_1_1Pspg_1_1FFTBatched_ad1e53b5d0f1e545c100e6d36106d7ec1}} 
+\index{Pscf::Pspg::FFTBatched$<$ D $>$@{Pscf::Pspg::FFTBatched$<$ D $>$}!````~FFTBatched@{$\sim$FFTBatched}}
+\index{````~FFTBatched@{$\sim$FFTBatched}!Pscf::Pspg::FFTBatched$<$ D $>$@{Pscf::Pspg::FFTBatched$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{$\sim$FFTBatched()}{~FFTBatched()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classPscf_1_1Pspg_1_1FFTBatched}{Pscf\+::\+Pspg\+::\+F\+F\+T\+Batched}}$<$ D $>$\+::$\sim$\mbox{\hyperlink{classPscf_1_1Pspg_1_1FFTBatched}{F\+F\+T\+Batched}}\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+Definition at line 52 of file F\+F\+T\+Batched.\+tpp.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1FFTBatched_a9f390cf515fc8aa7cfc29d6b7e03e1f3}\label{classPscf_1_1Pspg_1_1FFTBatched_a9f390cf515fc8aa7cfc29d6b7e03e1f3}} 
+\index{Pscf::Pspg::FFTBatched$<$ D $>$@{Pscf::Pspg::FFTBatched$<$ D $>$}!setup@{setup}}
+\index{setup@{setup}!Pscf::Pspg::FFTBatched$<$ D $>$@{Pscf::Pspg::FFTBatched$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+void \mbox{\hyperlink{classPscf_1_1Pspg_1_1FFTBatched}{Pscf\+::\+Pspg\+::\+F\+F\+T\+Batched}}$<$ D $>$\+::setup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPscf_1_1Pspg_1_1RDField}{R\+D\+Field}}$<$ D $>$ \&}]{r\+D\+Field,  }\item[{\mbox{\hyperlink{classPscf_1_1Pspg_1_1RDFieldDft}{R\+D\+Field\+Dft}}$<$ D $>$ \&}]{k\+D\+Field }\end{DoxyParamCaption})}
+
+
+
+Check and setup grid dimensions if necessary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r\+D\+Field} & real data on r-\/space grid (device mem) \\
+\hline
+{\em k\+D\+Field} & complex data on k-\/space grid (device mem) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 66 of file F\+F\+T\+Batched.\+tpp.
+
+
+
+References Pscf\+::\+Pspg\+::\+R\+D\+Field\+Dft$<$ D $>$\+::mesh\+Dimensions(), Pscf\+::\+Pspg\+::\+R\+D\+Field$<$ D $>$\+::mesh\+Dimensions(), and U\+T\+I\+L\+\_\+\+C\+H\+E\+CK.
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1FFTBatched_ad4fad61e2ae30fd81386b61b66059150}\label{classPscf_1_1Pspg_1_1FFTBatched_ad4fad61e2ae30fd81386b61b66059150}} 
+\index{Pscf::Pspg::FFTBatched$<$ D $>$@{Pscf::Pspg::FFTBatched$<$ D $>$}!forwardTransform@{forwardTransform}}
+\index{forwardTransform@{forwardTransform}!Pscf::Pspg::FFTBatched$<$ D $>$@{Pscf::Pspg::FFTBatched$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{forwardTransform()}{forwardTransform()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+void \mbox{\hyperlink{classPscf_1_1Pspg_1_1FFTBatched}{Pscf\+::\+Pspg\+::\+F\+F\+T\+Batched}}$<$ D $>$\+::forward\+Transform (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPscf_1_1Pspg_1_1RDField}{R\+D\+Field}}$<$ D $>$ \&}]{in,  }\item[{\mbox{\hyperlink{classPscf_1_1Pspg_1_1RDFieldDft}{R\+D\+Field\+Dft}}$<$ D $>$ \&}]{out }\end{DoxyParamCaption})}
+
+
+
+Compute forward (real-\/to-\/complex) Fourier transform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & array of real values on r-\/space grid (device mem) \\
+\hline
+{\em out} & array of complex values on k-\/space grid (device mem) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 241 of file F\+F\+T\+Batched.\+tpp.
+
+
+
+References Pscf\+::\+Pspg\+::\+D\+Field$<$ cuda\+Real $>$\+::capacity(), Pscf\+::\+Pspg\+::\+D\+Field$<$ cuda\+Complex $>$\+::capacity(), Pscf\+::\+Pspg\+::\+D\+Field$<$ cuda\+Real $>$\+::c\+D\+Field(), Pscf\+::\+Pspg\+::\+D\+Field$<$ cuda\+Complex $>$\+::c\+D\+Field(), Pscf\+::\+Pspg\+::\+Thread\+Grid\+::set\+Threads\+Logical(), and U\+T\+I\+L\+\_\+\+C\+H\+E\+CK.
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1FFTBatched_ac099bc4b2d0e3a6abfcc7740f09b6ac0}\label{classPscf_1_1Pspg_1_1FFTBatched_ac099bc4b2d0e3a6abfcc7740f09b6ac0}} 
+\index{Pscf::Pspg::FFTBatched$<$ D $>$@{Pscf::Pspg::FFTBatched$<$ D $>$}!inverseTransform@{inverseTransform}}
+\index{inverseTransform@{inverseTransform}!Pscf::Pspg::FFTBatched$<$ D $>$@{Pscf::Pspg::FFTBatched$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{inverseTransform()}{inverseTransform()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+void \mbox{\hyperlink{classPscf_1_1Pspg_1_1FFTBatched}{Pscf\+::\+Pspg\+::\+F\+F\+T\+Batched}}$<$ D $>$\+::inverse\+Transform (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPscf_1_1Pspg_1_1RDFieldDft}{R\+D\+Field\+Dft}}$<$ D $>$ \&}]{in,  }\item[{\mbox{\hyperlink{classPscf_1_1Pspg_1_1RDField}{R\+D\+Field}}$<$ D $>$ \&}]{out }\end{DoxyParamCaption})}
+
+
+
+Compute inverse (complex-\/to-\/real) Fourier transform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & array of complex values on k-\/space grid (device mem) \\
+\hline
+{\em out} & array of real values on r-\/space grid (device mem) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 315 of file F\+F\+T\+Batched.\+tpp.
+
+
+
+References Pscf\+::\+Pspg\+::\+D\+Field$<$ cuda\+Complex $>$\+::c\+D\+Field(), and Pscf\+::\+Pspg\+::\+D\+Field$<$ cuda\+Real $>$\+::c\+D\+Field().
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1FFTBatched_aff71764d890898632c6d85bb262bcbf2}\label{classPscf_1_1Pspg_1_1FFTBatched_aff71764d890898632c6d85bb262bcbf2}} 
+\index{Pscf::Pspg::FFTBatched$<$ D $>$@{Pscf::Pspg::FFTBatched$<$ D $>$}!meshDimensions@{meshDimensions}}
+\index{meshDimensions@{meshDimensions}!Pscf::Pspg::FFTBatched$<$ D $>$@{Pscf::Pspg::FFTBatched$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{meshDimensions()}{meshDimensions()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+const \mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec}}$<$ D $>$ \& \mbox{\hyperlink{classPscf_1_1Pspg_1_1FFTBatched}{Pscf\+::\+Pspg\+::\+F\+F\+T\+Batched}}$<$ D $>$\+::mesh\+Dimensions\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the dimensions of the grid for which this was allocated. 
+
+
+
+Definition at line 123 of file F\+F\+T\+Batched.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+F\+F\+T\+Batched.\+h\item 
+F\+F\+T\+Batched.\+tpp\end{DoxyCompactItemize}

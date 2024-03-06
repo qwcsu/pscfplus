@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structPscf_1_1TWave">
+<title>Pscf::TWave&lt; D &gt; Struct Template Reference</title>
+<indexterm><primary>Pscf::TWave&lt; D &gt;</primary></indexterm>
+<para>
+
+<para>Simple wave struct for use within <link linkend="_classPscf_1_1Basis">Basis</link> construction. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;TWave.h&gt;</computeroutput>
+</para>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;int D&gt;
+struct Pscf::TWave&lt; D &gt;</title></simplesect>
+
+
+<para>Simple wave struct for use within <link linkend="_classPscf_1_1Basis">Basis</link> construction. </para>
+<para>
+Definition at line 22 of file TWave.h.</para>
+<para>
+The documentation for this struct was generated from the following file:</para>
+TWave.h</section>
+</section>

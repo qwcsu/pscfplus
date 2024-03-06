@@ -1,0 +1,340 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1Array">
+<title>Util::Array&lt; Data &gt; Class Template Reference</title>
+<indexterm><primary>Util::Array&lt; Data &gt;</primary></indexterm>
+<para>
+
+<para><link linkend="_classUtil_1_1Array">Array</link> container class template. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;Array.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Util::Array&lt; Data &gt;:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classUtil_1_1Array.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>virtual <link linkend="_classUtil_1_1Array_1acb20bc6899f722fc3daecdfcbe7e6dc1">~Array</link> ()</para>
+
+<para>Destructor. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1Array_1a66a4be07c83c3b49eae3536a3afd9fb0">capacity</link> () const</para>
+
+<para>Return allocated size. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1Array_1aab6a0fd78f093c72eb3d9fadc10e975f">begin</link> (<link linkend="_classUtil_1_1ArrayIterator">ArrayIterator</link>&lt; Data &gt; &amp;iterator)</para>
+
+<para>Set an iterator to begin this <link linkend="_classUtil_1_1Array">Array</link>. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1Array_1a2b291d1a8575a60ee9fe4578538af0d4">begin</link> (<link linkend="_classUtil_1_1ConstArrayIterator">ConstArrayIterator</link>&lt; Data &gt; &amp;iterator) const</para>
+
+<para>Set a const iterator to begin this <link linkend="_classUtil_1_1Array">Array</link>. </para>
+</listitem>
+            <listitem><para>Data &amp; <link linkend="_classUtil_1_1Array_1ab90b22d68aa6336afbd6d512f048a23e">operator[]</link> (int i)</para>
+
+<para>Get an element by non-const reference. </para>
+</listitem>
+            <listitem><para>const Data &amp; <link linkend="_classUtil_1_1Array_1a20cc3fb625cb752cb82bfde7e6be63d3">operator[]</link> (int i) const</para>
+
+<para>Get an element by const reference. </para>
+</listitem>
+            <listitem><para>Data * <link linkend="_classUtil_1_1Array_1afc2e404b7ef57d6fa20b78df7c0b7557">cArray</link> ()</para>
+
+<para>Return pointer to underlying C array. </para>
+</listitem>
+            <listitem><para>const Data * <link linkend="_classUtil_1_1Array_1ae4cef1b4fd4452380c8f3f0e253f442f">cArray</link> () const</para>
+
+<para>Return pointer to const to underlying C array. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1Array_1afebcbd322d16507b686ac0b1152410a4">Array</link> ()</para>
+
+<para>Default constructor. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para>Data * <link linkend="_classUtil_1_1Array_1a3e7b24fc0708bb01cfd053bc15d2fcad">data_</link></para>
+
+<para>Pointer to an array of Data elements. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1Array_1af41ed573abecee2abb3745a26128c9a8">capacity_</link></para>
+
+<para>Allocated size of the data_ array. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;typename Data&gt;
+class Util::Array&lt; Data &gt;</title></simplesect>
+
+
+<para><link linkend="_classUtil_1_1Array">Array</link> container class template. </para>
+
+
+
+<para>An <link linkend="_classUtil_1_1Array">Array</link> is a sequence that supports random access via an overloaded operator [], and that wraps a dynamically allocated C array.</para>
+
+<para><link linkend="_classUtil_1_1Array">Array</link> is a base class for <link linkend="_classUtil_1_1DArray">DArray</link>, which is dynamically allocated, and <link linkend="_classUtil_1_1RArray">RArray</link>, which acts as a reference to another <link linkend="_classUtil_1_1DArray">DArray</link> or <link linkend="_classUtil_1_1FSArray">FSArray</link>.</para>
+
+<para>When compiled in debug mode (i.e., when NDEBUG is not defined) the subscript operator [] checks the validity of the element index. </para>
+<para>
+Definition at line 28 of file AutoCorrArray.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1Array_1acb20bc6899f722fc3daecdfcbe7e6dc1"/>    <section>
+    <title>~Array()</title>
+<indexterm><primary>~Array</primary><secondary>Util::Array&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::Array&lt; Data &gt;</primary><secondary>~Array</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1Array">Util::Array</link>&lt; Data &gt;::~<link linkend="_classUtil_1_1Array">Array</link><computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Destructor. </para>
+</para>
+<para>
+Definition at line 146 of file Array.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Array_1afebcbd322d16507b686ac0b1152410a4"/>    <section>
+    <title>Array()</title>
+<indexterm><primary>Array</primary><secondary>Util::Array&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::Array&lt; Data &gt;</primary><secondary>Array</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1Array">Util::Array</link>&lt; Data &gt;::<link linkend="_classUtil_1_1Array">Array</link><computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Default constructor. </para>
+</para>
+
+<para>Protected to prevent direct instantiation. </para>
+<para>
+Definition at line 137 of file Array.h.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1Array_1a66a4be07c83c3b49eae3536a3afd9fb0"/>    <section>
+    <title>capacity()</title>
+<indexterm><primary>capacity</primary><secondary>Util::Array&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::Array&lt; Data &gt;</primary><secondary>capacity</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>int <link linkend="_classUtil_1_1Array">Util::Array</link>&lt; Data &gt;::capacity<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return allocated size. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Number of elements allocated in array. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 153 of file Array.h.</para>
+<para>
+Referenced by Util::DRaggedMatrix&lt; Data &gt;::allocate(), Util::ArraySet&lt; Data &gt;::allocate(), Util::RArray&lt; Data &gt;::associate(), Util::bcast(), Pscf::Homogeneous::Mixture::computePhi(), Util::Distribution::Distribution(), Util::IntDistribution::IntDistribution(), Util::RadialDistribution::loadParameters(), Util::IntDistribution::loadParameters(), Util::Distribution::loadParameters(), Util::IntDistribution::operator=(), Util::Distribution::operator=(), Util::DArray&lt; Pscf::Monomer &gt;::operator=(), Util::Polynomial&lt; double &gt;::Polynomial(), Util::recv(), Util::send(), Util::Distribution::serialize(), and Pscf::LuSolver::solve().</para>
+    </section><anchor xml:id="_classUtil_1_1Array_1aab6a0fd78f093c72eb3d9fadc10e975f"/>    <section>
+    <title>begin()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>begin</primary><secondary>Util::Array&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::Array&lt; Data &gt;</primary><secondary>begin</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1Array">Util::Array</link>&lt; Data &gt;::begin (<link linkend="_classUtil_1_1ArrayIterator">ArrayIterator</link>&lt; Data &gt; &amp; iterator)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Set an iterator to begin this <link linkend="_classUtil_1_1Array">Array</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>iterator</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1ArrayIterator">ArrayIterator</link>, initialized on output. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 160 of file Array.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Array_1a2b291d1a8575a60ee9fe4578538af0d4"/>    <section>
+    <title>begin()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>begin</primary><secondary>Util::Array&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::Array&lt; Data &gt;</primary><secondary>begin</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1Array">Util::Array</link>&lt; Data &gt;::begin (<link linkend="_classUtil_1_1ConstArrayIterator">ConstArrayIterator</link>&lt; Data &gt; &amp; iterator) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Set a const iterator to begin this <link linkend="_classUtil_1_1Array">Array</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>iterator</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1ConstArrayIterator">ConstArrayIterator</link>, initialized on output. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 172 of file Array.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Array_1ab90b22d68aa6336afbd6d512f048a23e"/>    <section>
+    <title>operator[]()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator[]</primary><secondary>Util::Array&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::Array&lt; Data &gt;</primary><secondary>operator[]</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>Data &amp; <link linkend="_classUtil_1_1Array">Util::Array</link>&lt; Data &gt;::operator[] (int i)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get an element by non-const reference. </para>
+</para>
+
+<para>Mimic C-array subscripting.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>i</entry>
+                                <entry>
+<para>array index </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>non-const reference to element i </para>
+</formalpara>
+</para>
+<para>
+Definition at line 184 of file Array.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Array_1a20cc3fb625cb752cb82bfde7e6be63d3"/>    <section>
+    <title>operator[]()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator[]</primary><secondary>Util::Array&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::Array&lt; Data &gt;</primary><secondary>operator[]</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>const Data &amp; <link linkend="_classUtil_1_1Array">Util::Array</link>&lt; Data &gt;::operator[] (int i) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get an element by const reference. </para>
+</para>
+
+<para>Mimics C-array subscripting.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>i</entry>
+                                <entry>
+<para>array index </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>const reference to element i </para>
+</formalpara>
+</para>
+<para>
+Definition at line 196 of file Array.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Array_1afc2e404b7ef57d6fa20b78df7c0b7557"/>    <section>
+    <title>cArray()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>cArray</primary><secondary>Util::Array&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::Array&lt; Data &gt;</primary><secondary>cArray</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>const Data * <link linkend="_classUtil_1_1Array">Util::Array</link>&lt; Data &gt;::cArray<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return pointer to underlying C array. </para>
+</para>
+<para>
+Definition at line 208 of file Array.h.</para>
+<para>
+Referenced by Util::Distribution::reduce(), and Pscf::LuSolver::solve().</para>
+    </section><anchor xml:id="_classUtil_1_1Array_1ae4cef1b4fd4452380c8f3f0e253f442f"/>    <section>
+    <title>cArray()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>cArray</primary><secondary>Util::Array&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::Array&lt; Data &gt;</primary><secondary>cArray</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>const Data* <link linkend="_classUtil_1_1Array">Util::Array</link>&lt; Data &gt;::cArray ( ) const</computeroutput></para><para>
+
+<para>Return pointer to const to underlying C array. </para>
+</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classUtil_1_1Array_1a3e7b24fc0708bb01cfd053bc15d2fcad"/>    <section>
+    <title>data_</title>
+<indexterm><primary>data_</primary><secondary>Util::Array&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::Array&lt; Data &gt;</primary><secondary>data_</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>Data* <link linkend="_classUtil_1_1Array">Util::Array</link>&lt; Data &gt;::data_<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Pointer to an array of Data elements. </para>
+</para>
+<para>
+Definition at line 103 of file Array.h.</para>
+<para>
+Referenced by Util::RArray&lt; Data &gt;::associate(), Util::DArray&lt; Pscf::Monomer &gt;::DArray(), and Util::RArray&lt; Data &gt;::RArray().</para>
+    </section><anchor xml:id="_classUtil_1_1Array_1af41ed573abecee2abb3745a26128c9a8"/>    <section>
+    <title>capacity_</title>
+<indexterm><primary>capacity_</primary><secondary>Util::Array&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::Array&lt; Data &gt;</primary><secondary>capacity_</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>int <link linkend="_classUtil_1_1Array">Util::Array</link>&lt; Data &gt;::capacity_<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Allocated size of the data_ array. </para>
+</para>
+<para>
+Definition at line 106 of file Array.h.</para>
+<para>
+Referenced by Util::RArray&lt; Data &gt;::associate(), Util::DArray&lt; Pscf::Monomer &gt;::DArray(), Util::DArray&lt; Pscf::Monomer &gt;::operator=(), and Util::RArray&lt; Data &gt;::RArray().</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+AutoCorrArray.hArray.h</section>
+</section>

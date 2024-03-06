@@ -1,0 +1,271 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1ArrayIterator">
+<title>Util::ArrayIterator&lt; Data &gt; Class Template Reference</title>
+<indexterm><primary>Util::ArrayIterator&lt; Data &gt;</primary></indexterm>
+<para>
+
+<para>Forward iterator for an <link linkend="_classUtil_1_1Array">Array</link> or a C array. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;ArrayIterator.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1ArrayIterator_1a85f96b02ec0abfdeffb7016f3b06acd8">ArrayIterator</link> ()</para>
+
+<para>Default constructor. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1ArrayIterator_1ac208690b94d1be77cad9c51eb1cfcdb8">setCurrent</link> (Data *ptr)</para>
+
+<para>Set the current pointer value. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1ArrayIterator_1a5527ef0f4bdae08eeacd11025b91a971">setEnd</link> (Data *ptr)</para>
+
+<para>Set the value of the end pointer. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_classUtil_1_1ArrayIterator_1a006c952467e85734bcf2f9ddc311938a">isEnd</link> () const</para>
+
+<para>Has the end of the array been reached? </para>
+</listitem>
+            <listitem><para>bool <link linkend="_classUtil_1_1ArrayIterator_1a1f024d7a3b2e7bcb4e08ab53abe91ae4">notEnd</link> () const</para>
+
+<para>Is the current pointer not at the end of the array? </para>
+</listitem>
+            <listitem><para>Data * <link linkend="_classUtil_1_1ArrayIterator_1a7788fbd5945286d3d90c093d06f75b03">get</link> () const</para>
+
+<para>Return a pointer to the current data. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Operators    </title>
+        <itemizedlist>
+            <listitem><para>Data &amp; <link linkend="_classUtil_1_1ArrayIterator_1a18326f3bcc610503442060e9506b9f72">operator*</link> () const</para>
+
+<para>Get a reference to the current Data. </para>
+</listitem>
+            <listitem><para>Data * <link linkend="_classUtil_1_1ArrayIterator_1a97f662bfb58481abc8c76a505ef5a91b">operator-&gt;</link> () const</para>
+
+<para>Provide a pointer to the current Data object. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1ArrayIterator">ArrayIterator</link>&lt; Data &gt; &amp; <link linkend="_classUtil_1_1ArrayIterator_1acd90001bd9ecb205d3b3d80c445e3924">operator++</link> ()</para>
+
+<para>Increment the current pointer. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;typename Data&gt;
+class Util::ArrayIterator&lt; Data &gt;</title></simplesect>
+
+
+<para>Forward iterator for an <link linkend="_classUtil_1_1Array">Array</link> or a C array. </para>
+
+
+
+<para>An <link linkend="_classUtil_1_1ArrayIterator">ArrayIterator</link> is an abstraction of a pointer, similar to an STL forward iterator. The * operator returns a reference to an associated Data object, the -&gt; operator returns a pointer to that object. The ++ operator increments the current pointer by one array element.</para>
+
+<para>Unlike an STL forward iterator, an <link linkend="_classUtil_1_1ArrayIterator">ArrayIterator</link> contains the address of the end of the array. The <link linkend="_classUtil_1_1ArrayIterator_1a006c952467e85734bcf2f9ddc311938a">isEnd()</link> method can be used to test for termination of a for or while loop. When <link linkend="_classUtil_1_1ArrayIterator_1a006c952467e85734bcf2f9ddc311938a">isEnd()</link> is true, the current pointer is one past the end of the array, and thus the iterator has no current value, and cannot be incremented further.</para>
+
+<para>An <link linkend="_classUtil_1_1ArrayIterator">ArrayIterator</link> behave like a pointer to non-const data, and provides read-write access to the objects to which it points. A <link linkend="_classUtil_1_1ConstArrayIterator">ConstArrayIterator</link> behaves like a pointer to const, and provides read-only access </para>
+<para>
+Definition at line 39 of file ArrayIterator.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1ArrayIterator_1a85f96b02ec0abfdeffb7016f3b06acd8"/>    <section>
+    <title>ArrayIterator()</title>
+<indexterm><primary>ArrayIterator</primary><secondary>Util::ArrayIterator&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::ArrayIterator&lt; Data &gt;</primary><secondary>ArrayIterator</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1ArrayIterator">Util::ArrayIterator</link>&lt; Data &gt;::<link linkend="_classUtil_1_1ArrayIterator">ArrayIterator</link> ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Default constructor. </para>
+</para>
+
+<para>
+<literallayout>&#160;&#xa;</literallayout>
+</para>
+
+<para>Constructs an uninitialized iterator. 
+<literallayout>&#160;&#xa;</literallayout>
+ </para>
+<para>
+Definition at line 49 of file ArrayIterator.h.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1ArrayIterator_1ac208690b94d1be77cad9c51eb1cfcdb8"/>    <section>
+    <title>setCurrent()</title>
+<indexterm><primary>setCurrent</primary><secondary>Util::ArrayIterator&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::ArrayIterator&lt; Data &gt;</primary><secondary>setCurrent</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1ArrayIterator">Util::ArrayIterator</link>&lt; Data &gt;::setCurrent (Data * ptr)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Set the current pointer value. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ptr</entry>
+                                <entry>
+<para>Pointer to current element of the array. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 59 of file ArrayIterator.h.</para>
+<para>
+Referenced by Util::Array&lt; Pscf::Monomer &gt;::begin(), Util::FSArray&lt; double, 6 &gt;::begin(), Util::FArray&lt; DPropagator, 2 &gt;::begin(), Util::GArray&lt; Rational &gt;::begin(), and Util::DSArray&lt; Data &gt;::begin().</para>
+    </section><anchor xml:id="_classUtil_1_1ArrayIterator_1a5527ef0f4bdae08eeacd11025b91a971"/>    <section>
+    <title>setEnd()</title>
+<indexterm><primary>setEnd</primary><secondary>Util::ArrayIterator&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::ArrayIterator&lt; Data &gt;</primary><secondary>setEnd</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1ArrayIterator">Util::ArrayIterator</link>&lt; Data &gt;::setEnd (Data * ptr)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Set the value of the end pointer. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ptr</entry>
+                                <entry>
+<para>Pointer to one element past end of array. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 67 of file ArrayIterator.h.</para>
+<para>
+Referenced by Util::Array&lt; Pscf::Monomer &gt;::begin(), Util::FSArray&lt; double, 6 &gt;::begin(), Util::FArray&lt; DPropagator, 2 &gt;::begin(), Util::GArray&lt; Rational &gt;::begin(), and Util::DSArray&lt; Data &gt;::begin().</para>
+    </section><anchor xml:id="_classUtil_1_1ArrayIterator_1a006c952467e85734bcf2f9ddc311938a"/>    <section>
+    <title>isEnd()</title>
+<indexterm><primary>isEnd</primary><secondary>Util::ArrayIterator&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::ArrayIterator&lt; Data &gt;</primary><secondary>isEnd</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>bool <link linkend="_classUtil_1_1ArrayIterator">Util::ArrayIterator</link>&lt; Data &gt;::isEnd ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Has the end of the array been reached? </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>true if at end, false otherwise. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 75 of file ArrayIterator.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ArrayIterator_1a1f024d7a3b2e7bcb4e08ab53abe91ae4"/>    <section>
+    <title>notEnd()</title>
+<indexterm><primary>notEnd</primary><secondary>Util::ArrayIterator&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::ArrayIterator&lt; Data &gt;</primary><secondary>notEnd</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>bool <link linkend="_classUtil_1_1ArrayIterator">Util::ArrayIterator</link>&lt; Data &gt;::notEnd ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Is the current pointer not at the end of the array? </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>true if not at end, false otherwise. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 83 of file ArrayIterator.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ArrayIterator_1a7788fbd5945286d3d90c093d06f75b03"/>    <section>
+    <title>get()</title>
+<indexterm><primary>get</primary><secondary>Util::ArrayIterator&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::ArrayIterator&lt; Data &gt;</primary><secondary>get</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>Data* <link linkend="_classUtil_1_1ArrayIterator">Util::ArrayIterator</link>&lt; Data &gt;::get ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return a pointer to the current data. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>true if at end, false otherwise. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 91 of file ArrayIterator.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ArrayIterator_1a18326f3bcc610503442060e9506b9f72"/>    <section>
+    <title>operator*()</title>
+<indexterm><primary>operator*</primary><secondary>Util::ArrayIterator&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::ArrayIterator&lt; Data &gt;</primary><secondary>operator*</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>Data&amp; <link linkend="_classUtil_1_1ArrayIterator">Util::ArrayIterator</link>&lt; Data &gt;::operator* ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get a reference to the current Data. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>reference to associated Data object </para>
+</formalpara>
+</para>
+<para>
+Definition at line 102 of file ArrayIterator.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ArrayIterator_1a97f662bfb58481abc8c76a505ef5a91b"/>    <section>
+    <title>operator-&gt;()</title>
+<indexterm><primary>operator-&gt;</primary><secondary>Util::ArrayIterator&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::ArrayIterator&lt; Data &gt;</primary><secondary>operator-&gt;</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>Data* <link linkend="_classUtil_1_1ArrayIterator">Util::ArrayIterator</link>&lt; Data &gt;::operator-&gt; ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Provide a pointer to the current Data object. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>const pointer to the Data object </para>
+</formalpara>
+</para>
+<para>
+Definition at line 110 of file ArrayIterator.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ArrayIterator_1acd90001bd9ecb205d3b3d80c445e3924"/>    <section>
+    <title>operator++()</title>
+<indexterm><primary>operator++</primary><secondary>Util::ArrayIterator&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::ArrayIterator&lt; Data &gt;</primary><secondary>operator++</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1ArrayIterator">ArrayIterator</link>&lt;Data&gt;&amp; <link linkend="_classUtil_1_1ArrayIterator">Util::ArrayIterator</link>&lt; Data &gt;::operator++ ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Increment the current pointer. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>this <link linkend="_classUtil_1_1ArrayIterator">ArrayIterator</link>, after modification. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 118 of file ArrayIterator.h.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+ArrayIterator.h</section>
+</section>

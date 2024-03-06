@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1Constants">
+<title>Util::Constants Class Reference</title>
+<indexterm><primary>Util::Constants</primary></indexterm>
+<para>
+
+<para>Mathematical constants. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;Constants.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static void <link linkend="_classUtil_1_1Constants_1a2f82625c02e82ee8afc52b40aeac44d6">initStatic</link> ()</para>
+
+<para>Initialize static constants. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>static const double <link linkend="_classUtil_1_1Constants_1a02241b62130cf631078a6f7c52af22db">Pi</link> = 2.0*acos(0.0)</para>
+
+<para>Trigonometric constant Pi. </para>
+</listitem>
+            <listitem><para>static const std::complex&lt; double &gt; <link linkend="_classUtil_1_1Constants_1af5e73d2cc0c0da9efe5cdb9c3b100d86">Im</link> = std::complex&lt;double&gt;(0.0, 1.0)</para>
+
+<para>Square root of -1. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Mathematical constants. </para>
+<para>
+Definition at line 22 of file Constants.h.</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1Constants_1a2f82625c02e82ee8afc52b40aeac44d6"/>    <section>
+    <title>initStatic()</title>
+<indexterm><primary>initStatic</primary><secondary>Util::Constants</secondary></indexterm>
+<indexterm><primary>Util::Constants</primary><secondary>initStatic</secondary></indexterm>
+<para><computeroutput>void Util::Constants::initStatic ( )<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Initialize static constants. </para>
+</para>
+<para>
+Definition at line 22 of file Constants.cpp.</para>
+<para>
+Referenced by Util::initStatic().</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classUtil_1_1Constants_1a02241b62130cf631078a6f7c52af22db"/>    <section>
+    <title>Pi</title>
+<indexterm><primary>Pi</primary><secondary>Util::Constants</secondary></indexterm>
+<indexterm><primary>Util::Constants</primary><secondary>Pi</secondary></indexterm>
+<para><computeroutput>const double Util::Constants::Pi = 2.0*acos(0.0)<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Trigonometric constant Pi. </para>
+</para>
+<para>
+Definition at line 35 of file Constants.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Constants_1af5e73d2cc0c0da9efe5cdb9c3b100d86"/>    <section>
+    <title>Im</title>
+<indexterm><primary>Im</primary><secondary>Util::Constants</secondary></indexterm>
+<indexterm><primary>Util::Constants</primary><secondary>Im</secondary></indexterm>
+<para><computeroutput>const std::complex&lt; double &gt; Util::Constants::Im = std::complex&lt;double&gt;(0.0, 1.0)<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Square root of -1. </para>
+</para>
+<para>
+Definition at line 40 of file Constants.h.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+Constants.hConstants.cpp</section>
+</section>

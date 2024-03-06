@@ -1,0 +1,157 @@
+\hypertarget{classPscf_1_1Pspg_1_1Solvent}{}\doxysubsection{Pscf\+::Pspg\+::Solvent$<$ D $>$ Class Template Reference}
+\label{classPscf_1_1Pspg_1_1Solvent}\index{Pscf::Pspg::Solvent$<$ D $>$@{Pscf::Pspg::Solvent$<$ D $>$}}
+
+
+Class representing a solvent species.  
+
+
+
+
+{\ttfamily \#include $<$Solvent.\+h$>$}
+
+Inheritance diagram for Pscf\+::Pspg\+::Solvent$<$ D $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classPscf_1_1Pspg_1_1Solvent}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{classPscf_1_1Pspg_1_1RDField}{R\+D\+Field}}$<$ D $>$ \mbox{\hyperlink{classPscf_1_1Pspg_1_1Solvent_af70c867e1692755aa1de798ef48d7688}{C\+Field}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classPscf_1_1Monomer}{Monomer}} concentration field. \end{DoxyCompactList}\item 
+typedef \mbox{\hyperlink{classPscf_1_1Pspg_1_1RDField}{R\+D\+Field}}$<$ D $>$ \mbox{\hyperlink{classPscf_1_1Pspg_1_1Solvent_ab2a893f0c7c622da0b7c485b1f6231e8}{W\+Field}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classPscf_1_1Monomer}{Monomer}} chemical potential field. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPscf_1_1Pspg_1_1Solvent_a88d1f8cefb1210a2f8c1f0d0b562cb83}{Solvent}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1Pspg_1_1Solvent_a120494905d47d284f395888f5f4cf0ad}{$\sim$\+Solvent}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPscf_1_1Pspg_1_1Solvent_a2526c546654319ab776953ac7e2a12cd}{compute}} (\mbox{\hyperlink{classPscf_1_1Pspg_1_1Solvent_ab2a893f0c7c622da0b7c485b1f6231e8}{W\+Field}} const \&w\+Field)
+\begin{DoxyCompactList}\small\item\em Compute monomer concentration field and phi and/or mu. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classPscf_1_1Pspg_1_1Solvent_af70c867e1692755aa1de798ef48d7688}{C\+Field}} \& \mbox{\hyperlink{classPscf_1_1Pspg_1_1Solvent_af9058364495c875f22c09b0968a30345}{concentration}} () const
+\begin{DoxyCompactList}\small\item\em Get monomer concentration field for this solvent. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$int D$>$\newline
+class Pscf\+::\+Pspg\+::\+Solvent$<$ D $>$}
+
+Class representing a solvent species. 
+
+Definition at line 27 of file Solvent.\+h.
+
+
+
+\doxysubsubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1Solvent_af70c867e1692755aa1de798ef48d7688}\label{classPscf_1_1Pspg_1_1Solvent_af70c867e1692755aa1de798ef48d7688}} 
+\index{Pscf::Pspg::Solvent$<$ D $>$@{Pscf::Pspg::Solvent$<$ D $>$}!CField@{CField}}
+\index{CField@{CField}!Pscf::Pspg::Solvent$<$ D $>$@{Pscf::Pspg::Solvent$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{CField}{CField}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+typedef \mbox{\hyperlink{classPscf_1_1Pspg_1_1RDField}{R\+D\+Field}}$<$D$>$ \mbox{\hyperlink{classPscf_1_1Pspg_1_1Solvent}{Pscf\+::\+Pspg\+::\+Solvent}}$<$ D $>$\+::\mbox{\hyperlink{classPscf_1_1Pspg_1_1Solvent_af70c867e1692755aa1de798ef48d7688}{C\+Field}}}
+
+
+
+\mbox{\hyperlink{classPscf_1_1Monomer}{Monomer}} concentration field. 
+
+
+
+Definition at line 33 of file Solvent.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1Solvent_ab2a893f0c7c622da0b7c485b1f6231e8}\label{classPscf_1_1Pspg_1_1Solvent_ab2a893f0c7c622da0b7c485b1f6231e8}} 
+\index{Pscf::Pspg::Solvent$<$ D $>$@{Pscf::Pspg::Solvent$<$ D $>$}!WField@{WField}}
+\index{WField@{WField}!Pscf::Pspg::Solvent$<$ D $>$@{Pscf::Pspg::Solvent$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{WField}{WField}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+typedef \mbox{\hyperlink{classPscf_1_1Pspg_1_1RDField}{R\+D\+Field}}$<$D$>$ \mbox{\hyperlink{classPscf_1_1Pspg_1_1Solvent}{Pscf\+::\+Pspg\+::\+Solvent}}$<$ D $>$\+::\mbox{\hyperlink{classPscf_1_1Pspg_1_1Solvent_ab2a893f0c7c622da0b7c485b1f6231e8}{W\+Field}}}
+
+
+
+\mbox{\hyperlink{classPscf_1_1Monomer}{Monomer}} chemical potential field. 
+
+
+
+Definition at line 38 of file Solvent.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1Solvent_a88d1f8cefb1210a2f8c1f0d0b562cb83}\label{classPscf_1_1Pspg_1_1Solvent_a88d1f8cefb1210a2f8c1f0d0b562cb83}} 
+\index{Pscf::Pspg::Solvent$<$ D $>$@{Pscf::Pspg::Solvent$<$ D $>$}!Solvent@{Solvent}}
+\index{Solvent@{Solvent}!Pscf::Pspg::Solvent$<$ D $>$@{Pscf::Pspg::Solvent$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{Solvent()}{Solvent()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classPscf_1_1Pspg_1_1Solvent}{Pscf\+::\+Pspg\+::\+Solvent}}$<$ D $>$\+::\mbox{\hyperlink{classPscf_1_1Pspg_1_1Solvent}{Solvent}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+
+
+Definition at line 43 of file Solvent.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1Solvent_a120494905d47d284f395888f5f4cf0ad}\label{classPscf_1_1Pspg_1_1Solvent_a120494905d47d284f395888f5f4cf0ad}} 
+\index{Pscf::Pspg::Solvent$<$ D $>$@{Pscf::Pspg::Solvent$<$ D $>$}!````~Solvent@{$\sim$Solvent}}
+\index{````~Solvent@{$\sim$Solvent}!Pscf::Pspg::Solvent$<$ D $>$@{Pscf::Pspg::Solvent$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{$\sim$Solvent()}{~Solvent()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classPscf_1_1Pspg_1_1Solvent}{Pscf\+::\+Pspg\+::\+Solvent}}$<$ D $>$\+::$\sim$\mbox{\hyperlink{classPscf_1_1Pspg_1_1Solvent}{Solvent}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+
+
+Definition at line 50 of file Solvent.\+h.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1Solvent_a2526c546654319ab776953ac7e2a12cd}\label{classPscf_1_1Pspg_1_1Solvent_a2526c546654319ab776953ac7e2a12cd}} 
+\index{Pscf::Pspg::Solvent$<$ D $>$@{Pscf::Pspg::Solvent$<$ D $>$}!compute@{compute}}
+\index{compute@{compute}!Pscf::Pspg::Solvent$<$ D $>$@{Pscf::Pspg::Solvent$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{compute()}{compute()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+virtual void \mbox{\hyperlink{classPscf_1_1Pspg_1_1Solvent}{Pscf\+::\+Pspg\+::\+Solvent}}$<$ D $>$\+::compute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPscf_1_1Pspg_1_1Solvent_ab2a893f0c7c622da0b7c485b1f6231e8}{W\+Field}} const \&}]{w\+Field }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Compute monomer concentration field and phi and/or mu. 
+
+Pure virtual function\+: Must be implemented by subclasses. Upon return, concentration field, phi and mu are all set.
+
+
+\begin{DoxyParams}{Parameters}
+{\em w\+Field} & monomer chemical potential field. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 62 of file Solvent.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1Solvent_af9058364495c875f22c09b0968a30345}\label{classPscf_1_1Pspg_1_1Solvent_af9058364495c875f22c09b0968a30345}} 
+\index{Pscf::Pspg::Solvent$<$ D $>$@{Pscf::Pspg::Solvent$<$ D $>$}!concentration@{concentration}}
+\index{concentration@{concentration}!Pscf::Pspg::Solvent$<$ D $>$@{Pscf::Pspg::Solvent$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{concentration()}{concentration()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+const \mbox{\hyperlink{classPscf_1_1Pspg_1_1Solvent_af70c867e1692755aa1de798ef48d7688}{C\+Field}}\& \mbox{\hyperlink{classPscf_1_1Pspg_1_1Solvent}{Pscf\+::\+Pspg\+::\+Solvent}}$<$ D $>$\+::concentration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get monomer concentration field for this solvent. 
+
+
+
+Definition at line 67 of file Solvent.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Solvent.\+h\end{DoxyCompactItemize}

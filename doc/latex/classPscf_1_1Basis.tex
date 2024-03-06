@@ -1,0 +1,324 @@
+\hypertarget{classPscf_1_1Basis}{}\doxysubsection{Pscf\+::Basis$<$ D $>$ Class Template Reference}
+\label{classPscf_1_1Basis}\index{Pscf::Basis$<$ D $>$@{Pscf::Basis$<$ D $>$}}
+
+
+Symmetry-\/adapted basis for pseudo-\/spectral scft.  
+
+
+
+
+{\ttfamily \#include $<$Basis.\+h$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classPscf_1_1Basis_1_1Star}{Star}}
+\begin{DoxyCompactList}\small\item\em List of wavevectors that are related by space-\/group symmetries. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classPscf_1_1Basis_1_1Wave}{Wave}}
+\begin{DoxyCompactList}\small\item\em Wavevector used to construct a basis function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPscf_1_1Basis_aba2091a6bf2dc3a9cc82f2ce9262b29d}{Basis}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1Basis_a0c5588999baf2ba21ae76a3d8bf2cd65}{$\sim$\+Basis}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1Basis_a3a6bf3ad823bd8795038c3d2390c435f}{make\+Basis}} (const \mbox{\hyperlink{classPscf_1_1Mesh}{Mesh}}$<$ D $>$ \&mesh, const \mbox{\hyperlink{classPscf_1_1UnitCell}{Unit\+Cell}}$<$ D $>$ \&unit\+Cell, std\+::string group\+Name)
+\begin{DoxyCompactList}\small\item\em Construct basis for a specific grid and space group. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1Basis_a66fb2252c2b0f1953ac380124f77dbe3}{make\+Basis}} (const \mbox{\hyperlink{classPscf_1_1Mesh}{Mesh}}$<$ D $>$ \&mesh, const \mbox{\hyperlink{classPscf_1_1UnitCell}{Unit\+Cell}}$<$ D $>$ \&unit\+Cell, const \mbox{\hyperlink{classPscf_1_1SpaceGroup}{Space\+Group}}$<$ D $>$ \&group)
+\begin{DoxyCompactList}\small\item\em Construct basis for a specific grid and space group. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1Basis_aa4c60265e2031cf0bd9b72a42cd1aa00}{update}} ()
+\begin{DoxyCompactList}\small\item\em Update values after change in unit cell parameters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1Basis_af9a597de566186cf18cd1e3f32557a99}{output\+Waves}} (std\+::ostream \&out, bool output\+All=false) const
+\begin{DoxyCompactList}\small\item\em Print a list of all waves to an output stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1Basis_a585436ef20f1b89c6aab1ba3f97e15aa}{output\+Stars}} (std\+::ostream \&out, bool output\+All=false) const
+\begin{DoxyCompactList}\small\item\em Print a list of all stars to an output stream. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPscf_1_1Basis_a1d54b8408c248dc90b764e24fde721c1}{is\+Valid}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if valid, false otherwise. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPscf_1_1Basis_a4a094fa3025849c0b92e3cea3c276269}{n\+Wave}} () const
+\begin{DoxyCompactList}\small\item\em Total number of wavevectors. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPscf_1_1Basis_a3479377a98886e6e160a04e09a06439c}{n\+Basis\+Wave}} () const
+\begin{DoxyCompactList}\small\item\em Total number of wavevectors in uncancelled stars. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPscf_1_1Basis_a9698b594fef645478474472d57bc08aa}{n\+Star}} () const
+\begin{DoxyCompactList}\small\item\em Total number of stars. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPscf_1_1Basis_a13ed27641b796e2e077d443fb7458b7b}{n\+Basis}} () const
+\begin{DoxyCompactList}\small\item\em Total number of nonzero symmetry-\/adapted basis functions. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classPscf_1_1Basis_1_1Star}{Star}} \& \mbox{\hyperlink{classPscf_1_1Basis_aa5423219c8a82622dc5b691317a050b1}{star}} (int i) const
+\begin{DoxyCompactList}\small\item\em Get a \mbox{\hyperlink{classPscf_1_1Basis_1_1Star}{Star}}, access by integer index. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classPscf_1_1Basis_1_1Wave}{Wave}} \& \mbox{\hyperlink{classPscf_1_1Basis_a89037c222b32863b02ffa44bb83b38f6}{wave}} (int i) const
+\begin{DoxyCompactList}\small\item\em Get a specific \mbox{\hyperlink{classPscf_1_1Basis_1_1Wave}{Wave}}, access by integer index. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPscf_1_1Basis_a8f8ac5fb0d7061f99f532073d6cd5445}{wave\+Id}} (\mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec}}$<$ D $>$ vector) const
+\begin{DoxyCompactList}\small\item\em Get integer index of a \mbox{\hyperlink{classPscf_1_1Basis_1_1Wave}{Wave}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$int D$>$\newline
+class Pscf\+::\+Basis$<$ D $>$}
+
+Symmetry-\/adapted basis for pseudo-\/spectral scft. 
+
+Definition at line 27 of file Basis.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPscf_1_1Basis_aba2091a6bf2dc3a9cc82f2ce9262b29d}\label{classPscf_1_1Basis_aba2091a6bf2dc3a9cc82f2ce9262b29d}} 
+\index{Pscf::Basis$<$ D $>$@{Pscf::Basis$<$ D $>$}!Basis@{Basis}}
+\index{Basis@{Basis}!Pscf::Basis$<$ D $>$@{Pscf::Basis$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{Basis()}{Basis()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classPscf_1_1Basis}{Pscf\+::\+Basis}}$<$ D $>$\+::\mbox{\hyperlink{classPscf_1_1Basis}{Basis}}}
+
+
+
+Default constructor. 
+
+
+
+Definition at line 27 of file Basis.\+tpp.
+
+\mbox{\Hypertarget{classPscf_1_1Basis_a0c5588999baf2ba21ae76a3d8bf2cd65}\label{classPscf_1_1Basis_a0c5588999baf2ba21ae76a3d8bf2cd65}} 
+\index{Pscf::Basis$<$ D $>$@{Pscf::Basis$<$ D $>$}!````~Basis@{$\sim$Basis}}
+\index{````~Basis@{$\sim$Basis}!Pscf::Basis$<$ D $>$@{Pscf::Basis$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{$\sim$Basis()}{~Basis()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classPscf_1_1Basis}{Pscf\+::\+Basis}}$<$ D $>$\+::$\sim$\mbox{\hyperlink{classPscf_1_1Basis}{Basis}}}
+
+
+
+Destructor. 
+
+
+
+Definition at line 39 of file Basis.\+tpp.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPscf_1_1Basis_a3a6bf3ad823bd8795038c3d2390c435f}\label{classPscf_1_1Basis_a3a6bf3ad823bd8795038c3d2390c435f}} 
+\index{Pscf::Basis$<$ D $>$@{Pscf::Basis$<$ D $>$}!makeBasis@{makeBasis}}
+\index{makeBasis@{makeBasis}!Pscf::Basis$<$ D $>$@{Pscf::Basis$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{makeBasis()}{makeBasis()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+void \mbox{\hyperlink{classPscf_1_1Basis}{Pscf\+::\+Basis}}$<$ D $>$\+::make\+Basis (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPscf_1_1Mesh}{Mesh}}$<$ D $>$ \&}]{mesh,  }\item[{const \mbox{\hyperlink{classPscf_1_1UnitCell}{Unit\+Cell}}$<$ D $>$ \&}]{unit\+Cell,  }\item[{std\+::string}]{group\+Name }\end{DoxyParamCaption})}
+
+
+
+Construct basis for a specific grid and space group. 
+
+Proposal\+: Initially implementation functions correctly only for identity group, withgroup\+Name == \textquotesingle{}I\textquotesingle{}. 
+
+Definition at line 46 of file Basis.\+tpp.
+
+
+
+References Util\+::\+Log\+::file(), Pscf\+::\+Symmetry\+Group$<$ Space\+Symmetry$<$ D $>$ $>$\+::make\+Complete\+Group(), Pscf\+::make\+Group\+File\+Name(), U\+T\+I\+L\+\_\+\+C\+H\+E\+CK, and U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classPscf_1_1Basis_a66fb2252c2b0f1953ac380124f77dbe3}\label{classPscf_1_1Basis_a66fb2252c2b0f1953ac380124f77dbe3}} 
+\index{Pscf::Basis$<$ D $>$@{Pscf::Basis$<$ D $>$}!makeBasis@{makeBasis}}
+\index{makeBasis@{makeBasis}!Pscf::Basis$<$ D $>$@{Pscf::Basis$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{makeBasis()}{makeBasis()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+void \mbox{\hyperlink{classPscf_1_1Basis}{Pscf\+::\+Basis}}$<$ D $>$\+::make\+Basis (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPscf_1_1Mesh}{Mesh}}$<$ D $>$ \&}]{mesh,  }\item[{const \mbox{\hyperlink{classPscf_1_1UnitCell}{Unit\+Cell}}$<$ D $>$ \&}]{unit\+Cell,  }\item[{const \mbox{\hyperlink{classPscf_1_1SpaceGroup}{Space\+Group}}$<$ D $>$ \&}]{group }\end{DoxyParamCaption})}
+
+
+
+Construct basis for a specific grid and space group. 
+
+
+
+Definition at line 87 of file Basis.\+tpp.
+
+
+
+References Pscf\+::\+Mesh$<$ D $>$\+::size(), and U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classPscf_1_1Basis_aa4c60265e2031cf0bd9b72a42cd1aa00}\label{classPscf_1_1Basis_aa4c60265e2031cf0bd9b72a42cd1aa00}} 
+\index{Pscf::Basis$<$ D $>$@{Pscf::Basis$<$ D $>$}!update@{update}}
+\index{update@{update}!Pscf::Basis$<$ D $>$@{Pscf::Basis$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+void \mbox{\hyperlink{classPscf_1_1Basis}{Pscf\+::\+Basis}}$<$ D $>$\+::update}
+
+
+
+Update values after change in unit cell parameters. 
+
+
+
+Definition at line 647 of file Basis.\+tpp.
+
+\mbox{\Hypertarget{classPscf_1_1Basis_af9a597de566186cf18cd1e3f32557a99}\label{classPscf_1_1Basis_af9a597de566186cf18cd1e3f32557a99}} 
+\index{Pscf::Basis$<$ D $>$@{Pscf::Basis$<$ D $>$}!outputWaves@{outputWaves}}
+\index{outputWaves@{outputWaves}!Pscf::Basis$<$ D $>$@{Pscf::Basis$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{outputWaves()}{outputWaves()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+void \mbox{\hyperlink{classPscf_1_1Basis}{Pscf\+::\+Basis}}$<$ D $>$\+::output\+Waves (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{bool}]{output\+All = {\ttfamily false} }\end{DoxyParamCaption}) const}
+
+
+
+Print a list of all waves to an output stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & output stream to which to write \\
+\hline
+{\em output\+All} & output cancelled waves only if true \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 671 of file Basis.\+tpp.
+
+\mbox{\Hypertarget{classPscf_1_1Basis_a585436ef20f1b89c6aab1ba3f97e15aa}\label{classPscf_1_1Basis_a585436ef20f1b89c6aab1ba3f97e15aa}} 
+\index{Pscf::Basis$<$ D $>$@{Pscf::Basis$<$ D $>$}!outputStars@{outputStars}}
+\index{outputStars@{outputStars}!Pscf::Basis$<$ D $>$@{Pscf::Basis$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{outputStars()}{outputStars()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+void \mbox{\hyperlink{classPscf_1_1Basis}{Pscf\+::\+Basis}}$<$ D $>$\+::output\+Stars (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{bool}]{output\+All = {\ttfamily false} }\end{DoxyParamCaption}) const}
+
+
+
+Print a list of all stars to an output stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & output stream to which to write \\
+\hline
+{\em output\+All} & output cancelled waves only if true \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 706 of file Basis.\+tpp.
+
+\mbox{\Hypertarget{classPscf_1_1Basis_a1d54b8408c248dc90b764e24fde721c1}\label{classPscf_1_1Basis_a1d54b8408c248dc90b764e24fde721c1}} 
+\index{Pscf::Basis$<$ D $>$@{Pscf::Basis$<$ D $>$}!isValid@{isValid}}
+\index{isValid@{isValid}!Pscf::Basis$<$ D $>$@{Pscf::Basis$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{isValid()}{isValid()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+bool \mbox{\hyperlink{classPscf_1_1Basis}{Pscf\+::\+Basis}}$<$ D $>$\+::is\+Valid}
+
+
+
+Returns true if valid, false otherwise. 
+
+
+
+Definition at line 743 of file Basis.\+tpp.
+
+
+
+References Pscf\+::\+Mesh\+Iterator$<$ D $>$\+::at\+End(), Pscf\+::\+Mesh\+Iterator$<$ D $>$\+::begin(), Pscf\+::\+Vec$<$ D, T $>$\+::negate(), and Pscf\+::\+Mesh\+Iterator$<$ D $>$\+::position().
+
+\mbox{\Hypertarget{classPscf_1_1Basis_a4a094fa3025849c0b92e3cea3c276269}\label{classPscf_1_1Basis_a4a094fa3025849c0b92e3cea3c276269}} 
+\index{Pscf::Basis$<$ D $>$@{Pscf::Basis$<$ D $>$}!nWave@{nWave}}
+\index{nWave@{nWave}!Pscf::Basis$<$ D $>$@{Pscf::Basis$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{nWave()}{nWave()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+int \mbox{\hyperlink{classPscf_1_1Basis}{Pscf\+::\+Basis}}$<$ D $>$\+::n\+Wave\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Total number of wavevectors. 
+
+
+
+Definition at line 278 of file Basis.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Basis_a3479377a98886e6e160a04e09a06439c}\label{classPscf_1_1Basis_a3479377a98886e6e160a04e09a06439c}} 
+\index{Pscf::Basis$<$ D $>$@{Pscf::Basis$<$ D $>$}!nBasisWave@{nBasisWave}}
+\index{nBasisWave@{nBasisWave}!Pscf::Basis$<$ D $>$@{Pscf::Basis$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{nBasisWave()}{nBasisWave()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+int \mbox{\hyperlink{classPscf_1_1Basis}{Pscf\+::\+Basis}}$<$ D $>$\+::n\+Basis\+Wave\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Total number of wavevectors in uncancelled stars. 
+
+
+
+Definition at line 282 of file Basis.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Basis_a9698b594fef645478474472d57bc08aa}\label{classPscf_1_1Basis_a9698b594fef645478474472d57bc08aa}} 
+\index{Pscf::Basis$<$ D $>$@{Pscf::Basis$<$ D $>$}!nStar@{nStar}}
+\index{nStar@{nStar}!Pscf::Basis$<$ D $>$@{Pscf::Basis$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{nStar()}{nStar()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+int \mbox{\hyperlink{classPscf_1_1Basis}{Pscf\+::\+Basis}}$<$ D $>$\+::n\+Star\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Total number of stars. 
+
+
+
+Definition at line 286 of file Basis.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Basis_a13ed27641b796e2e077d443fb7458b7b}\label{classPscf_1_1Basis_a13ed27641b796e2e077d443fb7458b7b}} 
+\index{Pscf::Basis$<$ D $>$@{Pscf::Basis$<$ D $>$}!nBasis@{nBasis}}
+\index{nBasis@{nBasis}!Pscf::Basis$<$ D $>$@{Pscf::Basis$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{nBasis()}{nBasis()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+int \mbox{\hyperlink{classPscf_1_1Basis}{Pscf\+::\+Basis}}$<$ D $>$\+::n\+Basis}
+
+
+
+Total number of nonzero symmetry-\/adapted basis functions. 
+
+
+
+Definition at line 666 of file Basis.\+tpp.
+
+\mbox{\Hypertarget{classPscf_1_1Basis_aa5423219c8a82622dc5b691317a050b1}\label{classPscf_1_1Basis_aa5423219c8a82622dc5b691317a050b1}} 
+\index{Pscf::Basis$<$ D $>$@{Pscf::Basis$<$ D $>$}!star@{star}}
+\index{star@{star}!Pscf::Basis$<$ D $>$@{Pscf::Basis$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{star()}{star()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+const \mbox{\hyperlink{classPscf_1_1Basis}{Basis}}$<$ D $>$\+::\mbox{\hyperlink{classPscf_1_1Basis_1_1Star}{Star}} \& \mbox{\hyperlink{classPscf_1_1Basis}{Pscf\+::\+Basis}}$<$ D $>$\+::star (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get a \mbox{\hyperlink{classPscf_1_1Basis_1_1Star}{Star}}, access by integer index. 
+
+
+
+Definition at line 296 of file Basis.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Basis_a89037c222b32863b02ffa44bb83b38f6}\label{classPscf_1_1Basis_a89037c222b32863b02ffa44bb83b38f6}} 
+\index{Pscf::Basis$<$ D $>$@{Pscf::Basis$<$ D $>$}!wave@{wave}}
+\index{wave@{wave}!Pscf::Basis$<$ D $>$@{Pscf::Basis$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{wave()}{wave()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+const \mbox{\hyperlink{classPscf_1_1Basis}{Basis}}$<$ D $>$\+::\mbox{\hyperlink{classPscf_1_1Basis_1_1Wave}{Wave}} \& \mbox{\hyperlink{classPscf_1_1Basis}{Pscf\+::\+Basis}}$<$ D $>$\+::wave (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get a specific \mbox{\hyperlink{classPscf_1_1Basis_1_1Wave}{Wave}}, access by integer index. 
+
+
+
+Definition at line 291 of file Basis.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Basis_a8f8ac5fb0d7061f99f532073d6cd5445}\label{classPscf_1_1Basis_a8f8ac5fb0d7061f99f532073d6cd5445}} 
+\index{Pscf::Basis$<$ D $>$@{Pscf::Basis$<$ D $>$}!waveId@{waveId}}
+\index{waveId@{waveId}!Pscf::Basis$<$ D $>$@{Pscf::Basis$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{waveId()}{waveId()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+int \mbox{\hyperlink{classPscf_1_1Basis}{Pscf\+::\+Basis}}$<$ D $>$\+::wave\+Id (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec}}$<$ D $>$}]{vector }\end{DoxyParamCaption}) const}
+
+
+
+Get integer index of a \mbox{\hyperlink{classPscf_1_1Basis_1_1Wave}{Wave}}. 
+
+
+
+Definition at line 300 of file Basis.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Basis.\+h\item 
+Basis.\+tpp\end{DoxyCompactItemize}

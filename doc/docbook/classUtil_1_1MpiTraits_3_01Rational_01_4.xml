@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1MpiTraits_3_01Rational_01_4">
+<title>Util::MpiTraits&lt; Rational &gt; Class Reference</title>
+<indexterm><primary>Util::MpiTraits&lt; Rational &gt;</primary></indexterm>
+<para>
+
+<para>Explicit specialization <link linkend="_classUtil_1_1MpiTraits_3_01Rational_01_4">MpiTraits&lt;Rational&gt;</link>. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;Rational.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Static Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>static MPI::Datatype <link linkend="_classUtil_1_1MpiTraits_3_01Rational_01_4_1a8abbce2f5a068f876f3456ea7fd65c56">type</link></para>
+
+<para>MPI Datatype. </para>
+</listitem>
+            <listitem><para>static bool <link linkend="_classUtil_1_1MpiTraits_3_01Rational_01_4_1aaea7928a9293da20df1b35efa2a07b61">hasType</link></para>
+
+<para>Is the MPI type initialized? </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Explicit specialization <link linkend="_classUtil_1_1MpiTraits_3_01Rational_01_4">MpiTraits&lt;Rational&gt;</link>. </para>
+<para>
+Definition at line 759 of file Rational.h.</para>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classUtil_1_1MpiTraits_3_01Rational_01_4_1a8abbce2f5a068f876f3456ea7fd65c56"/>    <section>
+    <title>type</title>
+<indexterm><primary>type</primary><secondary>Util::MpiTraits&lt; Rational &gt;</secondary></indexterm>
+<indexterm><primary>Util::MpiTraits&lt; Rational &gt;</primary><secondary>type</secondary></indexterm>
+<para><computeroutput>MPI::Datatype <link linkend="_classUtil_1_1MpiTraits">Util::MpiTraits</link>&lt; <link linkend="_classUtil_1_1Rational">Rational</link> &gt;::type<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>MPI Datatype. </para>
+</para>
+<para>
+Definition at line 762 of file Rational.h.</para>
+    </section><anchor xml:id="_classUtil_1_1MpiTraits_3_01Rational_01_4_1aaea7928a9293da20df1b35efa2a07b61"/>    <section>
+    <title>hasType</title>
+<indexterm><primary>hasType</primary><secondary>Util::MpiTraits&lt; Rational &gt;</secondary></indexterm>
+<indexterm><primary>Util::MpiTraits&lt; Rational &gt;</primary><secondary>hasType</secondary></indexterm>
+<para><computeroutput>bool <link linkend="_classUtil_1_1MpiTraits">Util::MpiTraits</link>&lt; <link linkend="_classUtil_1_1Rational">Rational</link> &gt;::hasType<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Is the MPI type initialized? </para>
+</para>
+<para>
+Definition at line 763 of file Rational.h.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Rational.h</section>
+</section>

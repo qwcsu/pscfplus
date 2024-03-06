@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1Notifier">
+<title>Util::Notifier&lt; Event &gt; Class Template Reference</title>
+<indexterm><primary>Util::Notifier&lt; Event &gt;</primary></indexterm>
+<para>
+
+<para>Abstract template for a notifier (or subject) in the <link linkend="_classUtil_1_1Observer">Observer</link> design pattern. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;Notifier.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_classUtil_1_1Notifier_1a8d05ff7df558cee4c97f332fd34ba8bf">registerObserver</link> (<link linkend="_classUtil_1_1Observer">Observer</link>&lt; Event &gt; &amp;observer)</para>
+
+<para>Register an observer. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1Notifier_1a206ae63d630c0dedaef65e8feab4e179">removeObserver</link> (<link linkend="_classUtil_1_1Observer">Observer</link>&lt; Event &gt; &amp;observer)</para>
+
+<para>Remove an analyzer observer from the container list. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1Notifier_1a789c7fe0ee38d5f6d5c675c4ded96c8c">notifyObservers</link> (const Event &amp;event)</para>
+
+<para>Notify the list of observers about an Event. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;typename Event&gt;
+class Util::Notifier&lt; Event &gt;</title></simplesect>
+
+
+<para>Abstract template for a notifier (or subject) in the <link linkend="_classUtil_1_1Observer">Observer</link> design pattern. </para>
+
+
+
+<para>In the observer design pattern, a <link linkend="_classUtil_1_1Notifier">Notifier</link> manages a list of registered <link linkend="_classUtil_1_1Observer">Observer</link> objects, and provides a method to notify all observers when some event occurs. A list of observer objects is maintained as a list of <link linkend="_classUtil_1_1Observer">Observer</link> pointers. The method Notifier::notifyObservers(Event&amp;) method calls the the update(Event&amp;) method of every <link linkend="_classUtil_1_1Observer">Observer</link> in the list.</para>
+
+<para>The typename parameter Event is the type of the object that must be passed to the update() method of each observer. This type can name either a primitive C data type or a class, but must encode whatever information is required for any <link linkend="_classUtil_1_1Observer">Observer</link> to respond appropriately when notified. </para>
+<para>
+Definition at line 41 of file Notifier.h.</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1Notifier_1a8d05ff7df558cee4c97f332fd34ba8bf"/>    <section>
+    <title>registerObserver()</title>
+<indexterm><primary>registerObserver</primary><secondary>Util::Notifier&lt; Event &gt;</secondary></indexterm>
+<indexterm><primary>Util::Notifier&lt; Event &gt;</primary><secondary>registerObserver</secondary></indexterm>
+<computeroutput>template&lt;typename Event &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1Notifier">Util::Notifier</link>&lt; Event &gt;::registerObserver (<link linkend="_classUtil_1_1Observer">Observer</link>&lt; Event &gt; &amp; observer)</computeroutput></para><para>
+
+<para>Register an observer. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>observer</entry>
+                                <entry>
+<para>observer object </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 80 of file Notifier.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Notifier_1a206ae63d630c0dedaef65e8feab4e179"/>    <section>
+    <title>removeObserver()</title>
+<indexterm><primary>removeObserver</primary><secondary>Util::Notifier&lt; Event &gt;</secondary></indexterm>
+<indexterm><primary>Util::Notifier&lt; Event &gt;</primary><secondary>removeObserver</secondary></indexterm>
+<computeroutput>template&lt;typename Event &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1Notifier">Util::Notifier</link>&lt; Event &gt;::removeObserver (<link linkend="_classUtil_1_1Observer">Observer</link>&lt; Event &gt; &amp; observer)</computeroutput></para><para>
+
+<para>Remove an analyzer observer from the container list. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>observer</entry>
+                                <entry>
+<para>observer object </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 89 of file Notifier.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Notifier_1a789c7fe0ee38d5f6d5c675c4ded96c8c"/>    <section>
+    <title>notifyObservers()</title>
+<indexterm><primary>notifyObservers</primary><secondary>Util::Notifier&lt; Event &gt;</secondary></indexterm>
+<indexterm><primary>Util::Notifier&lt; Event &gt;</primary><secondary>notifyObservers</secondary></indexterm>
+<computeroutput>template&lt;typename Event &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1Notifier">Util::Notifier</link>&lt; Event &gt;::notifyObservers (const Event &amp; event)</computeroutput></para><para>
+
+<para>Notify the list of observers about an Event. </para>
+</para>
+<para>
+Definition at line 98 of file Notifier.h.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Notifier.h</section>
+</section>

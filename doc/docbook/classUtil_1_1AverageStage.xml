@@ -1,0 +1,405 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1AverageStage">
+<title>Util::AverageStage Class Reference</title>
+<indexterm><primary>Util::AverageStage</primary></indexterm>
+<para>
+
+<para>Evaluate average with hierarchical blocking error analysis. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;AverageStage.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Util::AverageStage:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classUtil_1_1AverageStage.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1AverageStage_1a7701e756ad43b74902b286c725b06da3">AverageStage</link> (int blockFactor=2)</para>
+
+<para>Constructor. </para>
+</listitem>
+            <listitem><para>virtual <link linkend="_classUtil_1_1AverageStage_1a213800ca7b66ec765edafd5a4b667cda">~AverageStage</link> ()</para>
+
+<para>Destructor. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1AverageStage_1a1e8eed31e022fd90bcb063064d4afb14">setBlockFactor</link> (int blockFactor)</para>
+
+<para>Reset the value of blockFactor. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classUtil_1_1AverageStage_1a2c9065506a570a96cf72e66b574f9f1a">clear</link> ()</para>
+
+<para>Initialize all accumulators and recursively destroy all children. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classUtil_1_1AverageStage_1a27a1cf9ab8b5478c5ff655705bf1e380">sample</link> (double value)</para>
+
+<para>Add a sampled value to the ensemble. </para>
+</listitem>
+            <listitem><para>template&lt;class Archive &gt; </para><para>void <link linkend="_classUtil_1_1AverageStage_1a845f62098e78b0be73189d84994d648b">serialize</link> (Archive &amp;ar, const unsigned int version)</para>
+
+<para>Add a sampled value to the ensemble. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Accessors    </title>
+        <itemizedlist>
+            <listitem><para>double <link linkend="_classUtil_1_1AverageStage_1a8e5e5d3633513b373fbf3d607820e087">average</link> () const</para>
+
+<para>Return the average of all sampled values. </para>
+</listitem>
+            <listitem><para>double <link linkend="_classUtil_1_1AverageStage_1aa2cdf8a6542b55ed052cbb397eac86f7">variance</link> () const</para>
+
+<para>Return the variance of all sampled values. </para>
+</listitem>
+            <listitem><para>double <link linkend="_classUtil_1_1AverageStage_1ad710fb80d0f4e75b93417560b0fe1380">stdDeviation</link> () const</para>
+
+<para>Return the standard deviation of all sampled values. </para>
+</listitem>
+            <listitem><para>double <link linkend="_classUtil_1_1AverageStage_1ac25752465fb4d68fa72ffe445432df4f">error</link> () const</para>
+
+<para>Return a naive estimate for the std deviation of the average. </para>
+</listitem>
+            <listitem><para>long <link linkend="_classUtil_1_1AverageStage_1ad2c016a2244ef085973a723e37f96dad">nSample</link> () const</para>
+
+<para>Return the number of sampled values in this sequence. </para>
+</listitem>
+            <listitem><para>long <link linkend="_classUtil_1_1AverageStage_1a24e8e985d879ac2fc753b412120473ad">stageInterval</link> () const</para>
+
+<para>Return the number of sampled values per block at this stage. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_classUtil_1_1AverageStage_1a08a68dc753a2a7069956240fb9cbe4ac">hasChild</link> () const</para>
+
+<para>Does this object have a child <link linkend="_classUtil_1_1AverageStage">AverageStage</link> for block averages? </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1AverageStage">AverageStage</link> &amp; <link linkend="_classUtil_1_1AverageStage_1ac88bc31cf10bb51036015e156b3f5a74">child</link> ()</para>
+
+<para>Return the child <link linkend="_classUtil_1_1AverageStage">AverageStage</link> by reference. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Evaluate average with hierarchical blocking error analysis. </para>
+
+
+
+<para>This class implements an algorithm to evaluate the average of a sequence, using a hierarchical blocking algorithm to estimate the error on the average. The algorithm is based on the calculation of variances for sequences of block averages for multiple levels of block sizes, as described in the following reference:</para>
+
+<para>``Error estimates on averages of correlated data&quot;, H. Flyvbjerg and H.G. Petersen, J. Chem. Phys. 91, pgs. 461-466 (1989).</para>
+
+<para>The blocking algorithm is implemented here by a creating a linked list of <link linkend="_classUtil_1_1AverageStage">AverageStage</link> objects, each of which is responsible for computing the variance on block averages using a different level of blocking. Each object in this list is assigned an integer chainId. The first <link linkend="_classUtil_1_1AverageStage">AverageStage</link> object in the list, with chainId=0, calculates the average and variance for a &quot;primary&quot; sequence of measured values that are passed as parameters to its sample method. This first object is normally an instance of the <link linkend="_classUtil_1_1Average">Average</link> class, which is a subclass of <link linkend="_classUtil_1_1AverageStage">AverageStage</link> that implements features that are only required by the primary stage. This object has a pointer to a child <link linkend="_classUtil_1_1AverageStage">AverageStage</link> with chainId=1 that calculates the variance of a secondary sequence in which each value is the average of blockFactor consecutive values in the primary sequence. The object with chainId=1 in turn has has a pointer to a child object with chainId=2 that calculates the variance of a sequence in which each value is the average of a block of blockFactor**2 consecutive values of the primary sequence, and so on. In general, the object with chainId=n, calculates the variance of a sequence in which each value is an average of blockFactor**n values of the primary sequence. Each value in the sequence analyzed by the object with chainId=n+1 is calculated by the parent object with chainId=n, by calculating an average of a block of blockFactor consecutive values of its own sequence and passing this block average as a parameter the <link linkend="_classUtil_1_1AverageStage_1a27a1cf9ab8b5478c5ff655705bf1e380">sample()</link> function of the object with chainId=n+1. New stages in this linked list are instantiated and to the list as needed as the length of the primary sequence grows: When an object with chainId=n has been passed a sequence of exactly blockFactor values, it creates a child <link linkend="_classUtil_1_1AverageStage">AverageStage</link> object with chainId=n+1 and passes the average of these first blockFactor values to the sample function of the child object as the first value in its sequence.</para>
+
+<para>A value of the integer parameter blockFactor is passed to the constructor of the primary <link linkend="_classUtil_1_1AverageStage">AverageStage</link> object. This parameter is set to blockFactor=2 by default. Its value may be reset using the <link linkend="_classUtil_1_1AverageStage_1a1e8eed31e022fd90bcb063064d4afb14">setBlockFactor()</link> function before any data is sampled, but may not be changed thereafter. </para>
+<para>
+Definition at line 66 of file AverageStage.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1AverageStage_1a7701e756ad43b74902b286c725b06da3"/>    <section>
+    <title>AverageStage()</title>
+<indexterm><primary>AverageStage</primary><secondary>Util::AverageStage</secondary></indexterm>
+<indexterm><primary>Util::AverageStage</primary><secondary>AverageStage</secondary></indexterm>
+<para><computeroutput>Util::AverageStage::AverageStage (int blockFactor = <computeroutput>2</computeroutput>
+)</computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+
+<para>This constructor creates a primary <link linkend="_classUtil_1_1AverageStage">AverageStage</link> object with stageId = 0 and stageInterval = 1. A private constructor is used to recursively create children of this object.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>blockFactor</entry>
+                                <entry>
+<para>ratio of block sizes of subsequent stages </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 20 of file AverageStage.cpp.</para>
+<para>
+Referenced by sample(), and serialize().</para>
+    </section><anchor xml:id="_classUtil_1_1AverageStage_1a213800ca7b66ec765edafd5a4b667cda"/>    <section>
+    <title>~AverageStage()</title>
+<indexterm><primary>~AverageStage</primary><secondary>Util::AverageStage</secondary></indexterm>
+<indexterm><primary>Util::AverageStage</primary><secondary>~AverageStage</secondary></indexterm>
+<para><computeroutput>Util::AverageStage::~AverageStage ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Destructor. </para>
+</para>
+
+<para>Recursively destroy all children. </para>
+<para>
+Definition at line 53 of file AverageStage.cpp.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1AverageStage_1a1e8eed31e022fd90bcb063064d4afb14"/>    <section>
+    <title>setBlockFactor()</title>
+<indexterm><primary>setBlockFactor</primary><secondary>Util::AverageStage</secondary></indexterm>
+<indexterm><primary>Util::AverageStage</primary><secondary>setBlockFactor</secondary></indexterm>
+<para><computeroutput>void Util::AverageStage::setBlockFactor (int blockFactor)</computeroutput></para><para>
+
+<para>Reset the value of blockFactor. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Exceptions                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry><link linkend="_classUtil_1_1Exception">Exception</link></entry>
+                                <entry>
+<para>if called when nSample &gt; 0. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 63 of file AverageStage.cpp.</para>
+<para>
+References UTIL_THROW.</para>
+    </section><anchor xml:id="_classUtil_1_1AverageStage_1a2c9065506a570a96cf72e66b574f9f1a"/>    <section>
+    <title>clear()</title>
+<indexterm><primary>clear</primary><secondary>Util::AverageStage</secondary></indexterm>
+<indexterm><primary>Util::AverageStage</primary><secondary>clear</secondary></indexterm>
+<para><computeroutput>void Util::AverageStage::clear ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Initialize all accumulators and recursively destroy all children. </para>
+</para>
+<para>
+Reimplemented in <link linkend="_classUtil_1_1Average_1a03fe5551e0a62d22ef7b923c94a457de">Util::Average</link>.</para>
+<para>
+Definition at line 80 of file AverageStage.cpp.</para>
+<para>
+Referenced by Util::Average::clear().</para>
+    </section><anchor xml:id="_classUtil_1_1AverageStage_1a27a1cf9ab8b5478c5ff655705bf1e380"/>    <section>
+    <title>sample()</title>
+<indexterm><primary>sample</primary><secondary>Util::AverageStage</secondary></indexterm>
+<indexterm><primary>Util::AverageStage</primary><secondary>sample</secondary></indexterm>
+<para><computeroutput>void Util::AverageStage::sample (double value)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Add a sampled value to the ensemble. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>value</entry>
+                                <entry>
+<para>sampled value </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Reimplemented in <link linkend="_classUtil_1_1Average_1adf13dad094b6b95cbbd7d7a7dc9fb65c">Util::Average</link>.</para>
+<para>
+Definition at line 95 of file AverageStage.cpp.</para>
+<para>
+References AverageStage(), and sample().</para>
+<para>
+Referenced by sample(), and Util::Average::sample().</para>
+    </section><anchor xml:id="_classUtil_1_1AverageStage_1a845f62098e78b0be73189d84994d648b"/>    <section>
+    <title>serialize()</title>
+<indexterm><primary>serialize</primary><secondary>Util::AverageStage</secondary></indexterm>
+<indexterm><primary>Util::AverageStage</primary><secondary>serialize</secondary></indexterm>
+<computeroutput>template&lt;class Archive &gt; </computeroutput><para><computeroutput>void Util::AverageStage::serialize (Archive &amp; ar, const unsigned int version)</computeroutput></para><para>
+
+<para>Add a sampled value to the ensemble. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>input or output archive </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>version</entry>
+                                <entry>
+<para>file version id </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 252 of file AverageStage.h.</para>
+<para>
+References AverageStage(), and hasChild().</para>
+<para>
+Referenced by Util::Average::loadParameters(), and Util::Average::serialize().</para>
+    </section><anchor xml:id="_classUtil_1_1AverageStage_1a8e5e5d3633513b373fbf3d607820e087"/>    <section>
+    <title>average()</title>
+<indexterm><primary>average</primary><secondary>Util::AverageStage</secondary></indexterm>
+<indexterm><primary>Util::AverageStage</primary><secondary>average</secondary></indexterm>
+<para><computeroutput>double Util::AverageStage::average ( ) const</computeroutput></para><para>
+
+<para>Return the average of all sampled values. </para>
+</para>
+<para>
+Definition at line 131 of file AverageStage.cpp.</para>
+<para>
+Referenced by Util::Average::output().</para>
+    </section><anchor xml:id="_classUtil_1_1AverageStage_1aa2cdf8a6542b55ed052cbb397eac86f7"/>    <section>
+    <title>variance()</title>
+<indexterm><primary>variance</primary><secondary>Util::AverageStage</secondary></indexterm>
+<indexterm><primary>Util::AverageStage</primary><secondary>variance</secondary></indexterm>
+<para><computeroutput>double Util::AverageStage::variance ( ) const</computeroutput></para><para>
+
+<para>Return the variance of all sampled values. </para>
+</para>
+<para>
+Definition at line 137 of file AverageStage.cpp.</para>
+<para>
+Referenced by error(), Util::Average::output(), and stdDeviation().</para>
+    </section><anchor xml:id="_classUtil_1_1AverageStage_1ad710fb80d0f4e75b93417560b0fe1380"/>    <section>
+    <title>stdDeviation()</title>
+<indexterm><primary>stdDeviation</primary><secondary>Util::AverageStage</secondary></indexterm>
+<indexterm><primary>Util::AverageStage</primary><secondary>stdDeviation</secondary></indexterm>
+<para><computeroutput>double Util::AverageStage::stdDeviation ( ) const</computeroutput></para><para>
+
+<para>Return the standard deviation of all sampled values. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>sqrt(variance()) </para>
+</formalpara>
+</para>
+<para>
+Definition at line 148 of file AverageStage.cpp.</para>
+<para>
+References variance().</para>
+<para>
+Referenced by Util::Average::output().</para>
+    </section><anchor xml:id="_classUtil_1_1AverageStage_1ac25752465fb4d68fa72ffe445432df4f"/>    <section>
+    <title>error()</title>
+<indexterm><primary>error</primary><secondary>Util::AverageStage</secondary></indexterm>
+<indexterm><primary>Util::AverageStage</primary><secondary>error</secondary></indexterm>
+<para><computeroutput>double Util::AverageStage::error ( ) const</computeroutput></para><para>
+
+<para>Return a naive estimate for the std deviation of the average. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>sqrt(<link linkend="_classUtil_1_1AverageStage_1aa2cdf8a6542b55ed052cbb397eac86f7">variance()</link>/nSample()) </para>
+</formalpara>
+</para>
+<para>
+Definition at line 166 of file AverageStage.cpp.</para>
+<para>
+References variance().</para>
+<para>
+Referenced by Util::Average::blockingError(), and Util::Average::output().</para>
+    </section><anchor xml:id="_classUtil_1_1AverageStage_1ad2c016a2244ef085973a723e37f96dad"/>    <section>
+    <title>nSample()</title>
+<indexterm><primary>nSample</primary><secondary>Util::AverageStage</secondary></indexterm>
+<indexterm><primary>Util::AverageStage</primary><secondary>nSample</secondary></indexterm>
+<para><computeroutput>long Util::AverageStage::nSample ( ) const</computeroutput></para><para>
+
+<para>Return the number of sampled values in this sequence. </para>
+</para>
+<para>
+Definition at line 154 of file AverageStage.cpp.</para>
+<para>
+Referenced by Util::Average::blockingError(), and Util::Average::output().</para>
+    </section><anchor xml:id="_classUtil_1_1AverageStage_1a24e8e985d879ac2fc753b412120473ad"/>    <section>
+    <title>stageInterval()</title>
+<indexterm><primary>stageInterval</primary><secondary>Util::AverageStage</secondary></indexterm>
+<indexterm><primary>Util::AverageStage</primary><secondary>stageInterval</secondary></indexterm>
+<para><computeroutput>long Util::AverageStage::stageInterval ( ) const</computeroutput></para><para>
+
+<para>Return the number of sampled values per block at this stage. </para>
+</para>
+<para>
+Definition at line 160 of file AverageStage.cpp.</para>
+<para>
+Referenced by Util::Average::output().</para>
+    </section><anchor xml:id="_classUtil_1_1AverageStage_1a08a68dc753a2a7069956240fb9cbe4ac"/>    <section>
+    <title>hasChild()</title>
+<indexterm><primary>hasChild</primary><secondary>Util::AverageStage</secondary></indexterm>
+<indexterm><primary>Util::AverageStage</primary><secondary>hasChild</secondary></indexterm>
+<para><computeroutput>bool Util::AverageStage::hasChild ( ) const<computeroutput>[inline]</computeroutput>, <computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Does this object have a child <link linkend="_classUtil_1_1AverageStage">AverageStage</link> for block averages? </para>
+</para>
+<para>
+Definition at line 237 of file AverageStage.h.</para>
+<para>
+Referenced by serialize().</para>
+    </section><anchor xml:id="_classUtil_1_1AverageStage_1ac88bc31cf10bb51036015e156b3f5a74"/>    <section>
+    <title>child()</title>
+<indexterm><primary>child</primary><secondary>Util::AverageStage</secondary></indexterm>
+<indexterm><primary>Util::AverageStage</primary><secondary>child</secondary></indexterm>
+<para><computeroutput><link linkend="_classUtil_1_1AverageStage">AverageStage</link> &amp; Util::AverageStage::child ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Return the child <link linkend="_classUtil_1_1AverageStage">AverageStage</link> by reference. </para>
+</para>
+<para>
+Definition at line 243 of file AverageStage.h.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+AverageStage.hAverageStage.cpp</section>
+</section>

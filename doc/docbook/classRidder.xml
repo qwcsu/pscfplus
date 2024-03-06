@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classRidder">
+<title>Ridder&lt; System, T &gt; Class Template Reference</title>
+<indexterm><primary>Ridder&lt; System, T &gt;</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classRidder_1aed7cc4ae5166a4b289c47f555d7e9094">Ridder</link> ()=default</para>
+
+<para>Construct a new <link linkend="_classRidder">Ridder</link> object. </para>
+</listitem>
+            <listitem><para><link linkend="_classRidder_1a9f2291f38ef594c506dcf8095255f89d">Ridder</link> (int max_itr, T err)</para>
+
+<para>Construct a new <link linkend="_classRidder">Ridder</link> object. </para>
+</listitem>
+            <listitem><para><link linkend="_classRidder_1ae374617b2ccbd88d225fd46efa146d24">~Ridder</link> ()=default</para>
+
+<para>Destroy the <link linkend="_classRidder">Ridder</link> object. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;class System, typename T = double&gt;
+class Ridder&lt; System, T &gt;</title></simplesect>
+
+<para>
+Definition at line 9 of file Ridder.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classRidder_1aed7cc4ae5166a4b289c47f555d7e9094"/>    <section>
+    <title>Ridder()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>Ridder</primary><secondary>Ridder&lt; System, T &gt;</secondary></indexterm>
+<indexterm><primary>Ridder&lt; System, T &gt;</primary><secondary>Ridder</secondary></indexterm>
+<computeroutput>template&lt;class System , typename T  = double&gt; </computeroutput><para><computeroutput><link linkend="_classRidder">Ridder</link>&lt; System, T &gt;::<link linkend="_classRidder">Ridder</link> ( )<computeroutput>[default]</computeroutput></computeroutput></para><para>
+
+<para>Construct a new <link linkend="_classRidder">Ridder</link> object. </para>
+</para>
+    </section><anchor xml:id="_classRidder_1a9f2291f38ef594c506dcf8095255f89d"/>    <section>
+    <title>Ridder()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>Ridder</primary><secondary>Ridder&lt; System, T &gt;</secondary></indexterm>
+<indexterm><primary>Ridder&lt; System, T &gt;</primary><secondary>Ridder</secondary></indexterm>
+<computeroutput>template&lt;class System , typename T &gt; </computeroutput><para><computeroutput><link linkend="_classRidder">Ridder</link>&lt; System, T &gt;::<link linkend="_classRidder">Ridder</link> (int max_itr, T err)</computeroutput></para><para>
+
+<para>Construct a new <link linkend="_classRidder">Ridder</link> object. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>max_itr</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>err</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 46 of file Ridder.h.</para>
+    </section><anchor xml:id="_classRidder_1ae374617b2ccbd88d225fd46efa146d24"/>    <section>
+    <title>~Ridder()</title>
+<indexterm><primary>~Ridder</primary><secondary>Ridder&lt; System, T &gt;</secondary></indexterm>
+<indexterm><primary>Ridder&lt; System, T &gt;</primary><secondary>~Ridder</secondary></indexterm>
+<computeroutput>template&lt;class System , typename T  = double&gt; </computeroutput><para><computeroutput><link linkend="_classRidder">Ridder</link>&lt; System, T &gt;::~<link linkend="_classRidder">Ridder</link> ( )<computeroutput>[default]</computeroutput></computeroutput></para><para>
+
+<para>Destroy the <link linkend="_classRidder">Ridder</link> object. </para>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Ridder.h</section>
+</section>

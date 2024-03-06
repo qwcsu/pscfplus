@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_group__Pscf__Base__Module">
+<title>Pscf Common</title>
+<indexterm><primary>Pscf Common</primary></indexterm>
+<para>
+
+<para>Basic classes in the <link linkend="_namespacePscf">Pscf</link> namespace, accessible to all sub-namespaces. </para>
+ 
+</para>
+<simplesect>
+    <title>Modules    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_group__Pscf__Chem__Module">Chemical Structure</link></para>
+
+<para>Classes that describe chemical structure of polymers and solvents. </para>
+</listitem>
+            <listitem><para><link linkend="_group__Pscf__Crystal__Module">Crystallography</link></para>
+
+<para>Classes that describe crystallographic information. </para>
+</listitem>
+            <listitem><para><link linkend="_group__Pscf__Homogeneous__Module">Homogeneous Mixtures</link></para>
+
+<para>Classes to compute properties of spatially homogeneous mixtures. </para>
+</listitem>
+            <listitem><para><link linkend="_group__Pscf__Math__Module">Mathematics</link></para>
+
+<para>Miscellaneous mathematical utility classes. </para>
+</listitem>
+            <listitem><para><link linkend="_group__Pscf__Mesh__Module">Spatial Mesh</link></para>
+
+<para>Classes to define a regular grid or mesh. </para>
+</listitem>
+            <listitem><para><link linkend="_group__Pscf__Solver__Module">Solver Templates</link></para>
+
+<para>Templates for classes that solve modified diffusion equations. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Basic classes in the <link linkend="_namespacePscf">Pscf</link> namespace, accessible to all sub-namespaces. </para>
+</section>
+</section>

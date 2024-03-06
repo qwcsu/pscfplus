@@ -1,0 +1,25 @@
+/*! \page user_field_page  Field Files
+
+ \ref user_command_page   (Prev) &nbsp; &nbsp; &nbsp; &nbsp; 
+ \ref developer_page (Next)
+<BR>
+
+The files of omega field and volume fraction field in PSCF+ share the same format 
+with C++/CUDA version of PSCF. please see https://dmorse.github.io/pscfpp-man/ for details.
+
+
+ <BR>
+ \ref user_command_page  (Prev) &nbsp; &nbsp; &nbsp; &nbsp; 
+ \ref user_page          (Up) &nbsp; &nbsp; &nbsp; &nbsp; 
+ \ref developer_page (Next)
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+*/

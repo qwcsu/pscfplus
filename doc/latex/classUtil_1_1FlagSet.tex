@@ -1,0 +1,203 @@
+\hypertarget{classUtil_1_1FlagSet}{}\doxysubsection{Util\+::Flag\+Set Class Reference}
+\label{classUtil_1_1FlagSet}\index{Util::FlagSet@{Util::FlagSet}}
+
+
+A set of boolean variables represented by characters.  
+
+
+
+
+{\ttfamily \#include $<$Flag\+Set.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1FlagSet_ace5ca61a16586e06954294d500310b08}{Flag\+Set}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1FlagSet_a89257d452123260b7cca4529e8a85a83}{Flag\+Set}} (std\+::string \mbox{\hyperlink{classUtil_1_1FlagSet_a2f08f6602ae873d8a4c8f1e5b8e2889b}{allowed}})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1FlagSet_a9e211790c557854e95e54fcca020ea5c}{set\+Allowed}} (std\+::string \mbox{\hyperlink{classUtil_1_1FlagSet_a2f08f6602ae873d8a4c8f1e5b8e2889b}{allowed}})
+\begin{DoxyCompactList}\small\item\em Set or reset the string of allowed flags. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1FlagSet_a00db8a8ae180b92290976537252a6ef2}{set\+Actual\+Ordered}} (std\+::string \mbox{\hyperlink{classUtil_1_1FlagSet_a3f3935f359d409e120b96c03d9f9acfc}{actual}})
+\begin{DoxyCompactList}\small\item\em Set the string of actual flag characters. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUtil_1_1FlagSet_a1ee0b5e8fb224b8e3f29744772de2209}{is\+Active}} (char c) const
+\begin{DoxyCompactList}\small\item\em Is the flag associated with character c active? \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classUtil_1_1FlagSet_a2f08f6602ae873d8a4c8f1e5b8e2889b}{allowed}} () const
+\begin{DoxyCompactList}\small\item\em Return the string of allowed characters. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classUtil_1_1FlagSet_a3f3935f359d409e120b96c03d9f9acfc}{actual}} () const
+\begin{DoxyCompactList}\small\item\em Return the string of character for which flags are set. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+A set of boolean variables represented by characters. 
+
+A \mbox{\hyperlink{classUtil_1_1FlagSet}{Flag\+Set}} has a string of allowed characters, each of which which represents a boolean variable (i.\+e., a flag), and a string of actual characters containing the subset of the allowed characters that should be set on (i.\+e., true). 
+
+Definition at line 28 of file Flag\+Set.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1FlagSet_ace5ca61a16586e06954294d500310b08}\label{classUtil_1_1FlagSet_ace5ca61a16586e06954294d500310b08}} 
+\index{Util::FlagSet@{Util::FlagSet}!FlagSet@{FlagSet}}
+\index{FlagSet@{FlagSet}!Util::FlagSet@{Util::FlagSet}}
+\doxyparagraph{\texorpdfstring{FlagSet()}{FlagSet()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Util\+::\+Flag\+Set\+::\+Flag\+Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+
+
+Definition at line 17 of file Flag\+Set.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1FlagSet_a89257d452123260b7cca4529e8a85a83}\label{classUtil_1_1FlagSet_a89257d452123260b7cca4529e8a85a83}} 
+\index{Util::FlagSet@{Util::FlagSet}!FlagSet@{FlagSet}}
+\index{FlagSet@{FlagSet}!Util::FlagSet@{Util::FlagSet}}
+\doxyparagraph{\texorpdfstring{FlagSet()}{FlagSet()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Util\+::\+Flag\+Set\+::\+Flag\+Set (\begin{DoxyParamCaption}\item[{std\+::string}]{allowed }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+This function calls set\+Allowed(string) internally.
+
+
+\begin{DoxyParams}{Parameters}
+{\em allowed} & string of all allowed characters. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 23 of file Flag\+Set.\+cpp.
+
+
+
+References allowed(), and set\+Allowed().
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1FlagSet_a9e211790c557854e95e54fcca020ea5c}\label{classUtil_1_1FlagSet_a9e211790c557854e95e54fcca020ea5c}} 
+\index{Util::FlagSet@{Util::FlagSet}!setAllowed@{setAllowed}}
+\index{setAllowed@{setAllowed}!Util::FlagSet@{Util::FlagSet}}
+\doxyparagraph{\texorpdfstring{setAllowed()}{setAllowed()}}
+{\footnotesize\ttfamily void Util\+::\+Flag\+Set\+::set\+Allowed (\begin{DoxyParamCaption}\item[{std\+::string}]{allowed }\end{DoxyParamCaption})}
+
+
+
+Set or reset the string of allowed flags. 
+
+This function sets is\+Active false for all flags and clears the actual string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em allowed} & string of all allowed characters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 29 of file Flag\+Set.\+cpp.
+
+
+
+References allowed().
+
+
+
+Referenced by Flag\+Set().
+
+\mbox{\Hypertarget{classUtil_1_1FlagSet_a00db8a8ae180b92290976537252a6ef2}\label{classUtil_1_1FlagSet_a00db8a8ae180b92290976537252a6ef2}} 
+\index{Util::FlagSet@{Util::FlagSet}!setActualOrdered@{setActualOrdered}}
+\index{setActualOrdered@{setActualOrdered}!Util::FlagSet@{Util::FlagSet}}
+\doxyparagraph{\texorpdfstring{setActualOrdered()}{setActualOrdered()}}
+{\footnotesize\ttfamily void Util\+::\+Flag\+Set\+::set\+Actual\+Ordered (\begin{DoxyParamCaption}\item[{std\+::string}]{actual }\end{DoxyParamCaption})}
+
+
+
+Set the string of actual flag characters. 
+
+This function requires that the characters in the actual string appear in the same order as they do in the allowed string, but allows some allowed characters to be absent.
+
+An \mbox{\hyperlink{classUtil_1_1Exception}{Exception}} is thrown if actual contains a character that is not allowed, or if it is not in order.
+
+
+\begin{DoxyParams}{Parameters}
+{\em actual} & string containing a subset of allowed characters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 47 of file Flag\+Set.\+cpp.
+
+
+
+References actual(), and U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1FlagSet_a1ee0b5e8fb224b8e3f29744772de2209}\label{classUtil_1_1FlagSet_a1ee0b5e8fb224b8e3f29744772de2209}} 
+\index{Util::FlagSet@{Util::FlagSet}!isActive@{isActive}}
+\index{isActive@{isActive}!Util::FlagSet@{Util::FlagSet}}
+\doxyparagraph{\texorpdfstring{isActive()}{isActive()}}
+{\footnotesize\ttfamily bool Util\+::\+Flag\+Set\+::is\+Active (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Is the flag associated with character c active? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & character to be tested. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 110 of file Flag\+Set.\+h.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1FlagSet_a2f08f6602ae873d8a4c8f1e5b8e2889b}\label{classUtil_1_1FlagSet_a2f08f6602ae873d8a4c8f1e5b8e2889b}} 
+\index{Util::FlagSet@{Util::FlagSet}!allowed@{allowed}}
+\index{allowed@{allowed}!Util::FlagSet@{Util::FlagSet}}
+\doxyparagraph{\texorpdfstring{allowed()}{allowed()}}
+{\footnotesize\ttfamily const std\+::string \& Util\+::\+Flag\+Set\+::allowed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the string of allowed characters. 
+
+
+
+Definition at line 123 of file Flag\+Set.\+h.
+
+
+
+Referenced by Flag\+Set(), and set\+Allowed().
+
+\mbox{\Hypertarget{classUtil_1_1FlagSet_a3f3935f359d409e120b96c03d9f9acfc}\label{classUtil_1_1FlagSet_a3f3935f359d409e120b96c03d9f9acfc}} 
+\index{Util::FlagSet@{Util::FlagSet}!actual@{actual}}
+\index{actual@{actual}!Util::FlagSet@{Util::FlagSet}}
+\doxyparagraph{\texorpdfstring{actual()}{actual()}}
+{\footnotesize\ttfamily const std\+::string \& Util\+::\+Flag\+Set\+::actual (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the string of character for which flags are set. 
+
+
+
+Definition at line 130 of file Flag\+Set.\+h.
+
+
+
+Referenced by set\+Actual\+Ordered().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Flag\+Set.\+h\item 
+Flag\+Set.\+cpp\end{DoxyCompactItemize}

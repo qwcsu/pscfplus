@@ -1,0 +1,456 @@
+\hypertarget{classUtil_1_1MemoryIArchive}{}\doxysubsection{Util\+::Memory\+I\+Archive Class Reference}
+\label{classUtil_1_1MemoryIArchive}\index{Util::MemoryIArchive@{Util::MemoryIArchive}}
+
+
+Input archive for packed heterogeneous binary data.  
+
+
+
+
+{\ttfamily \#include $<$Memory\+I\+Archive.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1MemoryIArchive_ad1b6b461d5523b030808b510f15e975d}{Memory\+I\+Archive}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1MemoryIArchive_a553ed49f9f378b3f9240fffbab064d90}{$\sim$\+Memory\+I\+Archive}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1MemoryIArchive_a4365cb5b4e996c26f1f1bf784693aaac}{allocate}} (size\+\_\+t \mbox{\hyperlink{classUtil_1_1MemoryIArchive_a5003545e69669aaac2f057f04b152bc3}{capacity}})
+\begin{DoxyCompactList}\small\item\em Allocate memory block. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1MemoryIArchive}{Memory\+I\+Archive}} \& \mbox{\hyperlink{classUtil_1_1MemoryIArchive_a3448aacc330d1b81b1774309d980330b}{operator=}} (\mbox{\hyperlink{classUtil_1_1MemoryOArchive}{Memory\+O\+Archive}} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment from \mbox{\hyperlink{classUtil_1_1MemoryOArchive}{Memory\+O\+Archive}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1MemoryIArchive_a4a3a6fb013f08ddebd1d00dc960d37f5}{reset}} ()
+\begin{DoxyCompactList}\small\item\em Reset the cursor to the beginning (for rereading). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1MemoryIArchive_a52addbde62cee5bea45fc589eb3f465f}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Reset to empty state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1MemoryIArchive_abd9c8fcadbb564c1ef37134b928928b1}{release}} ()
+\begin{DoxyCompactList}\small\item\em Release memory obtained by assignment. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{classUtil_1_1MemoryIArchive}{Memory\+I\+Archive}} \& \mbox{\hyperlink{classUtil_1_1MemoryIArchive_a2351b8ad2ba3b0b1b2f0e1d2cb0e172d}{operator\&}} (T \&data)
+\begin{DoxyCompactList}\small\item\em Load one object. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{classUtil_1_1MemoryIArchive}{Memory\+I\+Archive}} \& \mbox{\hyperlink{classUtil_1_1MemoryIArchive_a8d1dbbb72a1aae14841c68770554a9bb}{operator$>$$>$}} (T \&data)
+\begin{DoxyCompactList}\small\item\em Load one object. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classUtil_1_1MemoryIArchive_a5dac6eaf477b457713449d1c4c4bf6de}{unpack}} (T \&data)
+\begin{DoxyCompactList}\small\item\em Unpack one object of type T. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classUtil_1_1MemoryIArchive_a71ca8251f6566f5bce28da8c8b9b2aac}{unpack}} (T $\ast$array, int n)
+\begin{DoxyCompactList}\small\item\em Read a C-\/array of objects of type T. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classUtil_1_1MemoryIArchive_a8a3491794a89173d9072f9659270f0e2}{unpack}} (T $\ast$array, int m, int n, int np)
+\begin{DoxyCompactList}\small\item\em Unpack a 2D C array. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1MemoryIArchive_a01542e31d8712cad4cf5e7c198656124}{recv}} (M\+P\+I\+::\+Intracomm \&comm, int source)
+\begin{DoxyCompactList}\small\item\em Receive packed data via M\+PI. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceUtil_aeb6f2071b71e3433dd3cfc1bce6c2e6d}{Byte}} $\ast$ \mbox{\hyperlink{classUtil_1_1MemoryIArchive_a0172653810f64259d6ce085f65b88d35}{begin}} () const
+\begin{DoxyCompactList}\small\item\em Return pointer to beginning of block. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceUtil_aeb6f2071b71e3433dd3cfc1bce6c2e6d}{Byte}} $\ast$ \mbox{\hyperlink{classUtil_1_1MemoryIArchive_a756e8803adb0b303ee93cd215a40c577}{cursor}} () const
+\begin{DoxyCompactList}\small\item\em Return pointer to current position (cursor). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceUtil_aeb6f2071b71e3433dd3cfc1bce6c2e6d}{Byte}} $\ast$ \mbox{\hyperlink{classUtil_1_1MemoryIArchive_ada9af1f5d670e7cefea218a40ab6ff8e}{end}} () const
+\begin{DoxyCompactList}\small\item\em Return pointer to end of packed block (one Byte past the last). \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classUtil_1_1MemoryIArchive_a5003545e69669aaac2f057f04b152bc3}{capacity}} () const
+\begin{DoxyCompactList}\small\item\em Return capacity in Bytes. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUtil_1_1MemoryIArchive_afa9d8105fece672b6cf93c10dd08b090}{is\+Allocated}} () const
+\begin{DoxyCompactList}\small\item\em Has memory been allocated? \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classUtil_1_1MemoryIArchive_a1d4fc725be4e2292b9638b4ad89af14a}{is\+\_\+saving}} ()
+\begin{DoxyCompactList}\small\item\em Returns true;. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classUtil_1_1MemoryIArchive_a26d268aeb6df7fca7ed34ed64b708b7d}{is\+\_\+loading}} ()
+\begin{DoxyCompactList}\small\item\em Returns false;. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Input archive for packed heterogeneous binary data. 
+
+Definition at line 31 of file Memory\+I\+Archive.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1MemoryIArchive_ad1b6b461d5523b030808b510f15e975d}\label{classUtil_1_1MemoryIArchive_ad1b6b461d5523b030808b510f15e975d}} 
+\index{Util::MemoryIArchive@{Util::MemoryIArchive}!MemoryIArchive@{MemoryIArchive}}
+\index{MemoryIArchive@{MemoryIArchive}!Util::MemoryIArchive@{Util::MemoryIArchive}}
+\doxyparagraph{\texorpdfstring{MemoryIArchive()}{MemoryIArchive()}}
+{\footnotesize\ttfamily Util\+::\+Memory\+I\+Archive\+::\+Memory\+I\+Archive (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+
+Definition at line 20 of file Memory\+I\+Archive.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1MemoryIArchive_a553ed49f9f378b3f9240fffbab064d90}\label{classUtil_1_1MemoryIArchive_a553ed49f9f378b3f9240fffbab064d90}} 
+\index{Util::MemoryIArchive@{Util::MemoryIArchive}!````~MemoryIArchive@{$\sim$MemoryIArchive}}
+\index{````~MemoryIArchive@{$\sim$MemoryIArchive}!Util::MemoryIArchive@{Util::MemoryIArchive}}
+\doxyparagraph{\texorpdfstring{$\sim$MemoryIArchive()}{~MemoryIArchive()}}
+{\footnotesize\ttfamily Util\+::\+Memory\+I\+Archive\+::$\sim$\+Memory\+I\+Archive (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+Definition at line 35 of file Memory\+I\+Archive.\+cpp.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1MemoryIArchive_a1d4fc725be4e2292b9638b4ad89af14a}\label{classUtil_1_1MemoryIArchive_a1d4fc725be4e2292b9638b4ad89af14a}} 
+\index{Util::MemoryIArchive@{Util::MemoryIArchive}!is\_saving@{is\_saving}}
+\index{is\_saving@{is\_saving}!Util::MemoryIArchive@{Util::MemoryIArchive}}
+\doxyparagraph{\texorpdfstring{is\_saving()}{is\_saving()}}
+{\footnotesize\ttfamily bool Util\+::\+Memory\+I\+Archive\+::is\+\_\+saving (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns true;. 
+
+
+
+Definition at line 196 of file Memory\+I\+Archive.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1MemoryIArchive_a26d268aeb6df7fca7ed34ed64b708b7d}\label{classUtil_1_1MemoryIArchive_a26d268aeb6df7fca7ed34ed64b708b7d}} 
+\index{Util::MemoryIArchive@{Util::MemoryIArchive}!is\_loading@{is\_loading}}
+\index{is\_loading@{is\_loading}!Util::MemoryIArchive@{Util::MemoryIArchive}}
+\doxyparagraph{\texorpdfstring{is\_loading()}{is\_loading()}}
+{\footnotesize\ttfamily bool Util\+::\+Memory\+I\+Archive\+::is\+\_\+loading (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns false;. 
+
+
+
+Definition at line 199 of file Memory\+I\+Archive.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1MemoryIArchive_a4365cb5b4e996c26f1f1bf784693aaac}\label{classUtil_1_1MemoryIArchive_a4365cb5b4e996c26f1f1bf784693aaac}} 
+\index{Util::MemoryIArchive@{Util::MemoryIArchive}!allocate@{allocate}}
+\index{allocate@{allocate}!Util::MemoryIArchive@{Util::MemoryIArchive}}
+\doxyparagraph{\texorpdfstring{allocate()}{allocate()}}
+{\footnotesize\ttfamily void Util\+::\+Memory\+I\+Archive\+::allocate (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{capacity }\end{DoxyParamCaption})}
+
+
+
+Allocate memory block. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & sizeof of block, in Bytes. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 46 of file Memory\+I\+Archive.\+cpp.
+
+
+
+References capacity(), and U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1MemoryIArchive_a3448aacc330d1b81b1774309d980330b}\label{classUtil_1_1MemoryIArchive_a3448aacc330d1b81b1774309d980330b}} 
+\index{Util::MemoryIArchive@{Util::MemoryIArchive}!operator=@{operator=}}
+\index{operator=@{operator=}!Util::MemoryIArchive@{Util::MemoryIArchive}}
+\doxyparagraph{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUtil_1_1MemoryIArchive}{Memory\+I\+Archive}} \& Util\+::\+Memory\+I\+Archive\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1MemoryOArchive}{Memory\+O\+Archive}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Assignment from \mbox{\hyperlink{classUtil_1_1MemoryOArchive}{Memory\+O\+Archive}}. 
+
+
+
+Definition at line 64 of file Memory\+I\+Archive.\+cpp.
+
+
+
+References is\+Allocated(), and U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1MemoryIArchive_a4a3a6fb013f08ddebd1d00dc960d37f5}\label{classUtil_1_1MemoryIArchive_a4a3a6fb013f08ddebd1d00dc960d37f5}} 
+\index{Util::MemoryIArchive@{Util::MemoryIArchive}!reset@{reset}}
+\index{reset@{reset}!Util::MemoryIArchive@{Util::MemoryIArchive}}
+\doxyparagraph{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Util\+::\+Memory\+I\+Archive\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reset the cursor to the beginning (for rereading). 
+
+
+
+Definition at line 84 of file Memory\+I\+Archive.\+cpp.
+
+
+
+References begin(), is\+Allocated(), and U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1MemoryIArchive_a52addbde62cee5bea45fc589eb3f465f}\label{classUtil_1_1MemoryIArchive_a52addbde62cee5bea45fc589eb3f465f}} 
+\index{Util::MemoryIArchive@{Util::MemoryIArchive}!clear@{clear}}
+\index{clear@{clear}!Util::MemoryIArchive@{Util::MemoryIArchive}}
+\doxyparagraph{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void Util\+::\+Memory\+I\+Archive\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reset to empty state. 
+
+Resets cursor and end pointers to beginning of memory block. 
+
+Definition at line 95 of file Memory\+I\+Archive.\+cpp.
+
+
+
+References begin(), is\+Allocated(), and U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1MemoryIArchive_abd9c8fcadbb564c1ef37134b928928b1}\label{classUtil_1_1MemoryIArchive_abd9c8fcadbb564c1ef37134b928928b1}} 
+\index{Util::MemoryIArchive@{Util::MemoryIArchive}!release@{release}}
+\index{release@{release}!Util::MemoryIArchive@{Util::MemoryIArchive}}
+\doxyparagraph{\texorpdfstring{release()}{release()}}
+{\footnotesize\ttfamily void Util\+::\+Memory\+I\+Archive\+::release (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Release memory obtained by assignment. 
+
+
+
+Definition at line 110 of file Memory\+I\+Archive.\+cpp.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1MemoryIArchive_a2351b8ad2ba3b0b1b2f0e1d2cb0e172d}\label{classUtil_1_1MemoryIArchive_a2351b8ad2ba3b0b1b2f0e1d2cb0e172d}} 
+\index{Util::MemoryIArchive@{Util::MemoryIArchive}!operator\&@{operator\&}}
+\index{operator\&@{operator\&}!Util::MemoryIArchive@{Util::MemoryIArchive}}
+\doxyparagraph{\texorpdfstring{operator\&()}{operator\&()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classUtil_1_1MemoryIArchive}{Memory\+I\+Archive}} \& Util\+::\+Memory\+I\+Archive\+::operator\& (\begin{DoxyParamCaption}\item[{T \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Load one object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & object to be loaded from this archive. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 240 of file Memory\+I\+Archive.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1MemoryIArchive_a8d1dbbb72a1aae14841c68770554a9bb}\label{classUtil_1_1MemoryIArchive_a8d1dbbb72a1aae14841c68770554a9bb}} 
+\index{Util::MemoryIArchive@{Util::MemoryIArchive}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Util::MemoryIArchive@{Util::MemoryIArchive}}
+\doxyparagraph{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classUtil_1_1MemoryIArchive}{Memory\+I\+Archive}} \& Util\+::\+Memory\+I\+Archive\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{T \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Load one object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & object to be loaded from this archive. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 250 of file Memory\+I\+Archive.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1MemoryIArchive_a5dac6eaf477b457713449d1c4c4bf6de}\label{classUtil_1_1MemoryIArchive_a5dac6eaf477b457713449d1c4c4bf6de}} 
+\index{Util::MemoryIArchive@{Util::MemoryIArchive}!unpack@{unpack}}
+\index{unpack@{unpack}!Util::MemoryIArchive@{Util::MemoryIArchive}}
+\doxyparagraph{\texorpdfstring{unpack()}{unpack()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Util\+::\+Memory\+I\+Archive\+::unpack (\begin{DoxyParamCaption}\item[{T \&}]{data }\end{DoxyParamCaption})}
+
+
+
+Unpack one object of type T. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & object to be loaded from this archive. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 260 of file Memory\+I\+Archive.\+h.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1MemoryIArchive_a71ca8251f6566f5bce28da8c8b9b2aac}\label{classUtil_1_1MemoryIArchive_a71ca8251f6566f5bce28da8c8b9b2aac}} 
+\index{Util::MemoryIArchive@{Util::MemoryIArchive}!unpack@{unpack}}
+\index{unpack@{unpack}!Util::MemoryIArchive@{Util::MemoryIArchive}}
+\doxyparagraph{\texorpdfstring{unpack()}{unpack()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Util\+::\+Memory\+I\+Archive\+::unpack (\begin{DoxyParamCaption}\item[{T $\ast$}]{array,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Read a C-\/array of objects of type T. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & array into which data should be loaded. \\
+\hline
+{\em n} & expected number of elements in the array. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 275 of file Memory\+I\+Archive.\+h.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1MemoryIArchive_a8a3491794a89173d9072f9659270f0e2}\label{classUtil_1_1MemoryIArchive_a8a3491794a89173d9072f9659270f0e2}} 
+\index{Util::MemoryIArchive@{Util::MemoryIArchive}!unpack@{unpack}}
+\index{unpack@{unpack}!Util::MemoryIArchive@{Util::MemoryIArchive}}
+\doxyparagraph{\texorpdfstring{unpack()}{unpack()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Util\+::\+Memory\+I\+Archive\+::unpack (\begin{DoxyParamCaption}\item[{T $\ast$}]{array,  }\item[{int}]{m,  }\item[{int}]{n,  }\item[{int}]{np }\end{DoxyParamCaption})}
+
+
+
+Unpack a 2D C array. 
+
+Unpack m rows of n elements into array of type T array\mbox{[}mp\mbox{]}\mbox{[}np\mbox{]}, with m $<$= mp and n $<$= np.
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & pointer to \mbox{[}0\mbox{]}\mbox{[}0\mbox{]} element of 2D array \\
+\hline
+{\em m} & logical number of rows \\
+\hline
+{\em n} & logical number of columns \\
+\hline
+{\em np} & physical number of columns \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 292 of file Memory\+I\+Archive.\+h.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1MemoryIArchive_a01542e31d8712cad4cf5e7c198656124}\label{classUtil_1_1MemoryIArchive_a01542e31d8712cad4cf5e7c198656124}} 
+\index{Util::MemoryIArchive@{Util::MemoryIArchive}!recv@{recv}}
+\index{recv@{recv}!Util::MemoryIArchive@{Util::MemoryIArchive}}
+\doxyparagraph{\texorpdfstring{recv()}{recv()}}
+{\footnotesize\ttfamily void Util\+::\+Memory\+I\+Archive\+::recv (\begin{DoxyParamCaption}\item[{M\+P\+I\+::\+Intracomm \&}]{comm,  }\item[{int}]{source }\end{DoxyParamCaption})}
+
+
+
+Receive packed data via M\+PI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em comm} & M\+PI communicator \\
+\hline
+{\em source} & rank of processor from which data is sent. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 133 of file Memory\+I\+Archive.\+cpp.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1MemoryIArchive_a0172653810f64259d6ce085f65b88d35}\label{classUtil_1_1MemoryIArchive_a0172653810f64259d6ce085f65b88d35}} 
+\index{Util::MemoryIArchive@{Util::MemoryIArchive}!begin@{begin}}
+\index{begin@{begin}!Util::MemoryIArchive@{Util::MemoryIArchive}}
+\doxyparagraph{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceUtil_aeb6f2071b71e3433dd3cfc1bce6c2e6d}{Byte}} $\ast$ Util\+::\+Memory\+I\+Archive\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return pointer to beginning of block. 
+
+
+
+Definition at line 207 of file Memory\+I\+Archive.\+h.
+
+
+
+Referenced by clear(), and reset().
+
+\mbox{\Hypertarget{classUtil_1_1MemoryIArchive_a756e8803adb0b303ee93cd215a40c577}\label{classUtil_1_1MemoryIArchive_a756e8803adb0b303ee93cd215a40c577}} 
+\index{Util::MemoryIArchive@{Util::MemoryIArchive}!cursor@{cursor}}
+\index{cursor@{cursor}!Util::MemoryIArchive@{Util::MemoryIArchive}}
+\doxyparagraph{\texorpdfstring{cursor()}{cursor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceUtil_aeb6f2071b71e3433dd3cfc1bce6c2e6d}{Byte}} $\ast$ Util\+::\+Memory\+I\+Archive\+::cursor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return pointer to current position (cursor). 
+
+
+
+Definition at line 213 of file Memory\+I\+Archive.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1MemoryIArchive_ada9af1f5d670e7cefea218a40ab6ff8e}\label{classUtil_1_1MemoryIArchive_ada9af1f5d670e7cefea218a40ab6ff8e}} 
+\index{Util::MemoryIArchive@{Util::MemoryIArchive}!end@{end}}
+\index{end@{end}!Util::MemoryIArchive@{Util::MemoryIArchive}}
+\doxyparagraph{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceUtil_aeb6f2071b71e3433dd3cfc1bce6c2e6d}{Byte}} $\ast$ Util\+::\+Memory\+I\+Archive\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return pointer to end of packed block (one Byte past the last). 
+
+
+
+Definition at line 219 of file Memory\+I\+Archive.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1MemoryIArchive_a5003545e69669aaac2f057f04b152bc3}\label{classUtil_1_1MemoryIArchive_a5003545e69669aaac2f057f04b152bc3}} 
+\index{Util::MemoryIArchive@{Util::MemoryIArchive}!capacity@{capacity}}
+\index{capacity@{capacity}!Util::MemoryIArchive@{Util::MemoryIArchive}}
+\doxyparagraph{\texorpdfstring{capacity()}{capacity()}}
+{\footnotesize\ttfamily size\+\_\+t Util\+::\+Memory\+I\+Archive\+::capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return capacity in Bytes. 
+
+
+
+Definition at line 225 of file Memory\+I\+Archive.\+h.
+
+
+
+Referenced by allocate().
+
+\mbox{\Hypertarget{classUtil_1_1MemoryIArchive_afa9d8105fece672b6cf93c10dd08b090}\label{classUtil_1_1MemoryIArchive_afa9d8105fece672b6cf93c10dd08b090}} 
+\index{Util::MemoryIArchive@{Util::MemoryIArchive}!isAllocated@{isAllocated}}
+\index{isAllocated@{isAllocated}!Util::MemoryIArchive@{Util::MemoryIArchive}}
+\doxyparagraph{\texorpdfstring{isAllocated()}{isAllocated()}}
+{\footnotesize\ttfamily bool Util\+::\+Memory\+I\+Archive\+::is\+Allocated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Has memory been allocated? 
+
+
+
+Definition at line 231 of file Memory\+I\+Archive.\+h.
+
+
+
+Referenced by clear(), operator=(), and reset().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Memory\+I\+Archive.\+h\item 
+Memory\+I\+Archive.\+cpp\end{DoxyCompactItemize}

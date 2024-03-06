@@ -1,0 +1,375 @@
+\hypertarget{classTestRunner}{}\doxysubsection{Test\+Runner Class Reference}
+\label{classTestRunner}\index{TestRunner@{TestRunner}}
+
+
+Abstract base class for classes that run tests.  
+
+
+
+
+{\ttfamily \#include $<$Test\+Runner.\+h$>$}
+
+Inheritance diagram for Test\+Runner\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTestRunner}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTestRunner_adf6d073e739128299841d29a6701d34b}{Test\+Runner}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classTestRunner_a121456d7e522c0d83d648a0118ec0c6f}{$\sim$\+Test\+Runner}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classTestRunner_a3216b1149a6e1f207253c1659a617e77}{run}} ()=0
+\begin{DoxyCompactList}\small\item\em Run all tests. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTestRunner_ab5810788fc836edbc8285d3ad2f7c2bd}{record\+Failure}} ()
+\begin{DoxyCompactList}\small\item\em Increment counter for failed tests, and that of parent (if any). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTestRunner_acc6fe0c6afd26fd05dcdc8e5addb193d}{record\+Success}} ()
+\begin{DoxyCompactList}\small\item\em Increment counter for successful tests, and that of parent (if any). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTestRunner_af6ef606de6b797e933f224f636078ef0}{set\+Parent}} (\mbox{\hyperlink{classTestRunner}{Test\+Runner}} \&\mbox{\hyperlink{classTestRunner_a3fa2de2b9d08e850046029f8d83476ab}{parent}})
+\begin{DoxyCompactList}\small\item\em Set another \mbox{\hyperlink{classTestRunner}{Test\+Runner}} as the parent. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTestRunner}{Test\+Runner}} \& \mbox{\hyperlink{classTestRunner_a3fa2de2b9d08e850046029f8d83476ab}{parent}} ()
+\begin{DoxyCompactList}\small\item\em Return the parent object, if any. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTestRunner_a0127473b7e0b4661785a33595188b03e}{has\+Parent}} () const
+\begin{DoxyCompactList}\small\item\em Does this object have a parent? \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classTestRunner_a6b8aee43d4dba17affc7d0c79569fbca}{n\+Success}} () const
+\begin{DoxyCompactList}\small\item\em Return number of successful tests run. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classTestRunner_ad16612e6afc78a84bb970e6c9dcc7a6a}{n\+Failure}} () const
+\begin{DoxyCompactList}\small\item\em Return number of failed tests run. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTestRunner_aeef507284fa5b1251a5ed8349ec2ab81}{report}} () const
+\begin{DoxyCompactList}\small\item\em If this object has no parent, report success and failure counters. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTestRunner_a2aae8b21506425cb9565fa1972b0252a}{is\+Io\+Processor}} () const
+\begin{DoxyCompactList}\small\item\em Is this the IO processor of an M\+PI communicator? \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classTestRunner_ae977948edaf2121faa85af96b7aefdcf}{add\+File\+Prefix}} (const std\+::string \&prefix)
+\begin{DoxyCompactList}\small\item\em Prepend argument prefix to existing file\+Prefix. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classTestRunner_aab86f36baca230df05f4896e6f359e8c}{file\+Prefix}} () const
+\begin{DoxyCompactList}\small\item\em Return file prefix by const reference. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classTestRunner_ac6aba17162d35cb7dfa0f6f536556310}{file\+Prefix\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Prefix added to file names. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Abstract base class for classes that run tests. 
+
+\mbox{\hyperlink{classTestRunner}{Test\+Runner}} is an abstract base class with two types of subclass\+: The \mbox{\hyperlink{classUnitTestRunner}{Unit\+Test\+Runner}} class template defines a \mbox{\hyperlink{classTestRunner}{Test\+Runner}} that runs the tests for an associated \mbox{\hyperlink{classUnitTest}{Unit\+Test}}. A \mbox{\hyperlink{classCompositeTestRunner}{Composite\+Test\+Runner}} runs the tests for a sequence of other \mbox{\hyperlink{classTestRunner}{Test\+Runner}} objects, each of which can be a \mbox{\hyperlink{classUnitTestRunner}{Unit\+Test\+Runner}} or another \mbox{\hyperlink{classCompositeTestRunner}{Composite\+Test\+Runner}}.
+
+An implementation of the pure virtual \mbox{\hyperlink{classTestRunner_a3216b1149a6e1f207253c1659a617e77}{run()}} method of must run all of the associated test methods, and records the number \mbox{\hyperlink{classTestRunner_a6b8aee43d4dba17affc7d0c79569fbca}{n\+Success()}} of tests that succeed and the number \mbox{\hyperlink{classTestRunner_ad16612e6afc78a84bb970e6c9dcc7a6a}{n\+Failure()}} that fail. A test fails if it throws a \mbox{\hyperlink{classTestException}{Test\+Exception}}. Test methods use the T\+E\+S\+T\+\_\+\+A\+S\+S\+E\+R\+T(expr) macro to assert the truth of a logical exprression expr, which throws a \mbox{\hyperlink{classTestException}{Test\+Exception}} if expr is false. The implementation of \mbox{\hyperlink{classTestRunner_a3216b1149a6e1f207253c1659a617e77}{run()}} for a \mbox{\hyperlink{classUnitTestRunner}{Unit\+Test\+Runner}} runs each unit test method of the associated \mbox{\hyperlink{classUnitTest}{Unit\+Test}} in a try-\/catch block and catches any thrown Test\+Exceptions. The implementation of run for a Test\+Composite calls the \mbox{\hyperlink{classTestRunner_a3216b1149a6e1f207253c1659a617e77}{run()}} method for each of its children.
+
+Each \mbox{\hyperlink{classTestRunner}{Test\+Runner}} may optionally have a parent \mbox{\hyperlink{classTestRunner}{Test\+Runner}}. The parent if any, is always a Test\+Composite. A Test\+Composite can have any number of children. ~\newline
+
+
+The \mbox{\hyperlink{classTestRunner_ab5810788fc836edbc8285d3ad2f7c2bd}{record\+Failure()}} and \mbox{\hyperlink{classTestRunner_acc6fe0c6afd26fd05dcdc8e5addb193d}{record\+Success()}} methods of a \mbox{\hyperlink{classTestRunner}{Test\+Runner}}, which can be called by the run method, increment the n\+Success or n\+Failure counters. If the \mbox{\hyperlink{classTestRunner}{Test\+Runner}} has a parent, each function also calls the corresponding function of the parent, thus incrementing the corresponding counter of the parent. The n\+Success and n\+Failure counters for a Test\+Composite thereby keep track of the total number of successful and failed unit test methods run by all descendants.
+
+Each \mbox{\hyperlink{classTestRunner}{Test\+Runner}} has a file\+Prefix string. The file\+Prefix is initialized to an empty string, and may be modified by the virtual \mbox{\hyperlink{classTestRunner_ae977948edaf2121faa85af96b7aefdcf}{add\+File\+Prefix()}} function. The default implementation of this function prepends a string argument to the existing file\+Prefix.
+
+The \mbox{\hyperlink{classUnitTestRunner}{Unit\+Test\+Runner}} class template supplies the file\+Prefix to instances of the associated \mbox{\hyperlink{classUnitTest}{Unit\+Test}} class when a \mbox{\hyperlink{classUnitTest}{Unit\+Test}} is created. (See the notes for \mbox{\hyperlink{classUnitTestRunner}{Unit\+Test\+Runner}} for details of how). The file\+Prefix string of the \mbox{\hyperlink{classUnitTest}{Unit\+Test}} is then prepended to the names of any files opened by the functions open\+Input\+File(), open\+Output\+File(), and open\+File of the \mbox{\hyperlink{classUnitTest}{Unit\+Test}} subclass.
+
+The implementation of \mbox{\hyperlink{classTestRunner_ae977948edaf2121faa85af96b7aefdcf}{add\+File\+Prefix()}} by the Test\+Composite subclass calls the add\+File\+Prefix method of each of its children, and thus allows a common prefix to be added to the file paths used by all of its children. 
+
+Definition at line 73 of file Test\+Runner.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTestRunner_adf6d073e739128299841d29a6701d34b}\label{classTestRunner_adf6d073e739128299841d29a6701d34b}} 
+\index{TestRunner@{TestRunner}!TestRunner@{TestRunner}}
+\index{TestRunner@{TestRunner}!TestRunner@{TestRunner}}
+\doxyparagraph{\texorpdfstring{TestRunner()}{TestRunner()}}
+{\footnotesize\ttfamily Test\+Runner\+::\+Test\+Runner (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+
+Definition at line 252 of file Test\+Runner.\+h.
+
+\mbox{\Hypertarget{classTestRunner_a121456d7e522c0d83d648a0118ec0c6f}\label{classTestRunner_a121456d7e522c0d83d648a0118ec0c6f}} 
+\index{TestRunner@{TestRunner}!````~TestRunner@{$\sim$TestRunner}}
+\index{````~TestRunner@{$\sim$TestRunner}!TestRunner@{TestRunner}}
+\doxyparagraph{\texorpdfstring{$\sim$TestRunner()}{~TestRunner()}}
+{\footnotesize\ttfamily Test\+Runner\+::$\sim$\+Test\+Runner (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+Definition at line 278 of file Test\+Runner.\+h.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTestRunner_a3216b1149a6e1f207253c1659a617e77}\label{classTestRunner_a3216b1149a6e1f207253c1659a617e77}} 
+\index{TestRunner@{TestRunner}!run@{run}}
+\index{run@{run}!TestRunner@{TestRunner}}
+\doxyparagraph{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily virtual int Test\+Runner\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Run all tests. 
+
+\begin{DoxyReturn}{Returns}
+number of failures. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classUnitTestRunner_a7ff91831fb3150b633fad2a73e6c4522}{Unit\+Test\+Runner$<$ Unit\+Test\+Class $>$}}, and \mbox{\hyperlink{classCompositeTestRunner_a3997c37095a5cb5cfc7084d04d9c141c}{Composite\+Test\+Runner}}.
+
+\mbox{\Hypertarget{classTestRunner_ab5810788fc836edbc8285d3ad2f7c2bd}\label{classTestRunner_ab5810788fc836edbc8285d3ad2f7c2bd}} 
+\index{TestRunner@{TestRunner}!recordFailure@{recordFailure}}
+\index{recordFailure@{recordFailure}!TestRunner@{TestRunner}}
+\doxyparagraph{\texorpdfstring{recordFailure()}{recordFailure()}}
+{\footnotesize\ttfamily void Test\+Runner\+::record\+Failure (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Increment counter for failed tests, and that of parent (if any). 
+
+
+
+Definition at line 284 of file Test\+Runner.\+h.
+
+
+
+References has\+Parent(), is\+Io\+Processor(), parent(), and record\+Failure().
+
+
+
+Referenced by record\+Failure().
+
+\mbox{\Hypertarget{classTestRunner_acc6fe0c6afd26fd05dcdc8e5addb193d}\label{classTestRunner_acc6fe0c6afd26fd05dcdc8e5addb193d}} 
+\index{TestRunner@{TestRunner}!recordSuccess@{recordSuccess}}
+\index{recordSuccess@{recordSuccess}!TestRunner@{TestRunner}}
+\doxyparagraph{\texorpdfstring{recordSuccess()}{recordSuccess()}}
+{\footnotesize\ttfamily void Test\+Runner\+::record\+Success (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Increment counter for successful tests, and that of parent (if any). 
+
+
+
+Definition at line 297 of file Test\+Runner.\+h.
+
+
+
+References has\+Parent(), is\+Io\+Processor(), parent(), and record\+Success().
+
+
+
+Referenced by record\+Success().
+
+\mbox{\Hypertarget{classTestRunner_af6ef606de6b797e933f224f636078ef0}\label{classTestRunner_af6ef606de6b797e933f224f636078ef0}} 
+\index{TestRunner@{TestRunner}!setParent@{setParent}}
+\index{setParent@{setParent}!TestRunner@{TestRunner}}
+\doxyparagraph{\texorpdfstring{setParent()}{setParent()}}
+{\footnotesize\ttfamily void Test\+Runner\+::set\+Parent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTestRunner}{Test\+Runner}} \&}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set another \mbox{\hyperlink{classTestRunner}{Test\+Runner}} as the parent. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & parent \mbox{\hyperlink{classCompositeTestRunner}{Composite\+Test\+Runner}} object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 199 of file Test\+Runner.\+h.
+
+
+
+References parent().
+
+
+
+Referenced by Composite\+Test\+Runner\+::add\+Child().
+
+\mbox{\Hypertarget{classTestRunner_a3fa2de2b9d08e850046029f8d83476ab}\label{classTestRunner_a3fa2de2b9d08e850046029f8d83476ab}} 
+\index{TestRunner@{TestRunner}!parent@{parent}}
+\index{parent@{parent}!TestRunner@{TestRunner}}
+\doxyparagraph{\texorpdfstring{parent()}{parent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTestRunner}{Test\+Runner}} \& Test\+Runner\+::parent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the parent object, if any. 
+
+
+
+Definition at line 205 of file Test\+Runner.\+h.
+
+
+
+Referenced by record\+Failure(), record\+Success(), and set\+Parent().
+
+\mbox{\Hypertarget{classTestRunner_a0127473b7e0b4661785a33595188b03e}\label{classTestRunner_a0127473b7e0b4661785a33595188b03e}} 
+\index{TestRunner@{TestRunner}!hasParent@{hasParent}}
+\index{hasParent@{hasParent}!TestRunner@{TestRunner}}
+\doxyparagraph{\texorpdfstring{hasParent()}{hasParent()}}
+{\footnotesize\ttfamily bool Test\+Runner\+::has\+Parent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Does this object have a parent? 
+
+
+
+Definition at line 211 of file Test\+Runner.\+h.
+
+
+
+Referenced by record\+Failure(), record\+Success(), and report().
+
+\mbox{\Hypertarget{classTestRunner_a6b8aee43d4dba17affc7d0c79569fbca}\label{classTestRunner_a6b8aee43d4dba17affc7d0c79569fbca}} 
+\index{TestRunner@{TestRunner}!nSuccess@{nSuccess}}
+\index{nSuccess@{nSuccess}!TestRunner@{TestRunner}}
+\doxyparagraph{\texorpdfstring{nSuccess()}{nSuccess()}}
+{\footnotesize\ttfamily int Test\+Runner\+::n\+Success (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return number of successful tests run. 
+
+
+
+Definition at line 217 of file Test\+Runner.\+h.
+
+\mbox{\Hypertarget{classTestRunner_ad16612e6afc78a84bb970e6c9dcc7a6a}\label{classTestRunner_ad16612e6afc78a84bb970e6c9dcc7a6a}} 
+\index{TestRunner@{TestRunner}!nFailure@{nFailure}}
+\index{nFailure@{nFailure}!TestRunner@{TestRunner}}
+\doxyparagraph{\texorpdfstring{nFailure()}{nFailure()}}
+{\footnotesize\ttfamily int Test\+Runner\+::n\+Failure (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return number of failed tests run. 
+
+
+
+Definition at line 223 of file Test\+Runner.\+h.
+
+
+
+Referenced by Composite\+Test\+Runner\+::run().
+
+\mbox{\Hypertarget{classTestRunner_aeef507284fa5b1251a5ed8349ec2ab81}\label{classTestRunner_aeef507284fa5b1251a5ed8349ec2ab81}} 
+\index{TestRunner@{TestRunner}!report@{report}}
+\index{report@{report}!TestRunner@{TestRunner}}
+\doxyparagraph{\texorpdfstring{report()}{report()}}
+{\footnotesize\ttfamily void Test\+Runner\+::report (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+If this object has no parent, report success and failure counters. 
+
+
+
+Definition at line 310 of file Test\+Runner.\+h.
+
+
+
+References has\+Parent(), and is\+Io\+Processor().
+
+
+
+Referenced by Composite\+Test\+Runner\+::run().
+
+\mbox{\Hypertarget{classTestRunner_a2aae8b21506425cb9565fa1972b0252a}\label{classTestRunner_a2aae8b21506425cb9565fa1972b0252a}} 
+\index{TestRunner@{TestRunner}!isIoProcessor@{isIoProcessor}}
+\index{isIoProcessor@{isIoProcessor}!TestRunner@{TestRunner}}
+\doxyparagraph{\texorpdfstring{isIoProcessor()}{isIoProcessor()}}
+{\footnotesize\ttfamily bool Test\+Runner\+::is\+Io\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Is this the IO processor of an M\+PI communicator? 
+
+
+
+Definition at line 236 of file Test\+Runner.\+h.
+
+
+
+Referenced by record\+Failure(), record\+Success(), report(), and Unit\+Test\+Runner$<$ Unit\+Test\+Class $>$\+::\+Unit\+Test\+Runner().
+
+\mbox{\Hypertarget{classTestRunner_ae977948edaf2121faa85af96b7aefdcf}\label{classTestRunner_ae977948edaf2121faa85af96b7aefdcf}} 
+\index{TestRunner@{TestRunner}!addFilePrefix@{addFilePrefix}}
+\index{addFilePrefix@{addFilePrefix}!TestRunner@{TestRunner}}
+\doxyparagraph{\texorpdfstring{addFilePrefix()}{addFilePrefix()}}
+{\footnotesize\ttfamily void Test\+Runner\+::add\+File\+Prefix (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{prefix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Prepend argument prefix to existing file\+Prefix. 
+
+
+
+Reimplemented in \mbox{\hyperlink{classCompositeTestRunner_a82bcc97f1d88455c6d1d5f3a88041a5f}{Composite\+Test\+Runner}}.
+
+
+
+Definition at line 323 of file Test\+Runner.\+h.
+
+
+
+References file\+Prefix\+\_\+.
+
+
+
+Referenced by Composite\+Test\+Runner\+::add\+Child(), and Composite\+Test\+Runner\+::add\+File\+Prefix().
+
+\mbox{\Hypertarget{classTestRunner_aab86f36baca230df05f4896e6f359e8c}\label{classTestRunner_aab86f36baca230df05f4896e6f359e8c}} 
+\index{TestRunner@{TestRunner}!filePrefix@{filePrefix}}
+\index{filePrefix@{filePrefix}!TestRunner@{TestRunner}}
+\doxyparagraph{\texorpdfstring{filePrefix()}{filePrefix()}}
+{\footnotesize\ttfamily const std\+::string \& Test\+Runner\+::file\+Prefix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return file prefix by const reference. 
+
+
+
+Definition at line 230 of file Test\+Runner.\+h.
+
+
+
+References file\+Prefix\+\_\+.
+
+
+
+\doxysubsubsection{Member Data Documentation}
+\mbox{\Hypertarget{classTestRunner_ac6aba17162d35cb7dfa0f6f536556310}\label{classTestRunner_ac6aba17162d35cb7dfa0f6f536556310}} 
+\index{TestRunner@{TestRunner}!filePrefix\_@{filePrefix\_}}
+\index{filePrefix\_@{filePrefix\_}!TestRunner@{TestRunner}}
+\doxyparagraph{\texorpdfstring{filePrefix\_}{filePrefix\_}}
+{\footnotesize\ttfamily std\+::string Test\+Runner\+::file\+Prefix\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Prefix added to file names. 
+
+
+
+Definition at line 167 of file Test\+Runner.\+h.
+
+
+
+Referenced by add\+File\+Prefix(), and file\+Prefix().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Test\+Runner.\+h\end{DoxyCompactItemize}

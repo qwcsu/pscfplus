@@ -1,0 +1,211 @@
+\hypertarget{classUtil_1_1DMatrix}{}\doxysubsection{Util\+::D\+Matrix$<$ Data $>$ Class Template Reference}
+\label{classUtil_1_1DMatrix}\index{Util::DMatrix$<$ Data $>$@{Util::DMatrix$<$ Data $>$}}
+
+
+Dynamically allocated \mbox{\hyperlink{classUtil_1_1Matrix}{Matrix}}.  
+
+
+
+
+{\ttfamily \#include $<$D\+Matrix.\+h$>$}
+
+Inheritance diagram for Util\+::D\+Matrix$<$ Data $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classUtil_1_1DMatrix}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1DMatrix_a915e63b4182c912a7b3e824d8294e1d5}{D\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1DMatrix_a667a0ef842f2ce01facd591f7f3352a1}{D\+Matrix}} (const \mbox{\hyperlink{classUtil_1_1DMatrix}{D\+Matrix}}$<$ Data $>$ \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1DMatrix}{D\+Matrix}}$<$ Data $>$ \& \mbox{\hyperlink{classUtil_1_1DMatrix_ad7f0ca9b56c6243c7d0a3afc308f61e9}{operator=}} (const \mbox{\hyperlink{classUtil_1_1DMatrix}{D\+Matrix}}$<$ Data $>$ \&other)
+\begin{DoxyCompactList}\small\item\em Assignment. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1DMatrix_ae78ec62d306902cd9b1a0454cc032a69}{$\sim$\+D\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1DMatrix_a8a6eee18a2a8458ccad0cd58df0d6846}{allocate}} (int \mbox{\hyperlink{classUtil_1_1Matrix_ac9dae1ea955cf776d7915e8126ffdf04}{capacity1}}, int \mbox{\hyperlink{classUtil_1_1Matrix_a479ba9941d5e43042e8382baa433c07f}{capacity2}})
+\begin{DoxyCompactList}\small\item\em Allocate memory for a matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1DMatrix_aa988d5f2e55572e801e44cdedba4ce69}{deallocate}} ()
+\begin{DoxyCompactList}\small\item\em Deallocate the underlying memory block. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUtil_1_1DMatrix_aa30c56e4ba49d083f22f0200219746cd}{is\+Allocated}} () const
+\begin{DoxyCompactList}\small\item\em Return true if the \mbox{\hyperlink{classUtil_1_1DMatrix}{D\+Matrix}} has been allocated, false otherwise. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Archive $>$ }\\void \mbox{\hyperlink{classUtil_1_1DMatrix_a78d6c405fc3a05d4a154e19bcf9cd2e1}{serialize}} (Archive \&ar, const unsigned int version)
+\begin{DoxyCompactList}\small\item\em Serialize a \mbox{\hyperlink{classUtil_1_1DMatrix}{D\+Matrix}} to/from an Archive. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$typename Data$>$\newline
+class Util\+::\+D\+Matrix$<$ Data $>$}
+
+Dynamically allocated \mbox{\hyperlink{classUtil_1_1Matrix}{Matrix}}. 
+
+Definition at line 24 of file D\+Matrix.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1DMatrix_a915e63b4182c912a7b3e824d8294e1d5}\label{classUtil_1_1DMatrix_a915e63b4182c912a7b3e824d8294e1d5}} 
+\index{Util::DMatrix$<$ Data $>$@{Util::DMatrix$<$ Data $>$}!DMatrix@{DMatrix}}
+\index{DMatrix@{DMatrix}!Util::DMatrix$<$ Data $>$@{Util::DMatrix$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{DMatrix()}{DMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+\mbox{\hyperlink{classUtil_1_1DMatrix}{Util\+::\+D\+Matrix}}$<$ Data $>$\+::\mbox{\hyperlink{classUtil_1_1DMatrix}{D\+Matrix}}}
+
+
+
+Constructor. 
+
+
+
+Definition at line 94 of file D\+Matrix.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1DMatrix_a667a0ef842f2ce01facd591f7f3352a1}\label{classUtil_1_1DMatrix_a667a0ef842f2ce01facd591f7f3352a1}} 
+\index{Util::DMatrix$<$ Data $>$@{Util::DMatrix$<$ Data $>$}!DMatrix@{DMatrix}}
+\index{DMatrix@{DMatrix}!Util::DMatrix$<$ Data $>$@{Util::DMatrix$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{DMatrix()}{DMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+\mbox{\hyperlink{classUtil_1_1DMatrix}{Util\+::\+D\+Matrix}}$<$ Data $>$\+::\mbox{\hyperlink{classUtil_1_1DMatrix}{D\+Matrix}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1DMatrix}{D\+Matrix}}$<$ Data $>$ \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+
+Definition at line 102 of file D\+Matrix.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1DMatrix_ae78ec62d306902cd9b1a0454cc032a69}\label{classUtil_1_1DMatrix_ae78ec62d306902cd9b1a0454cc032a69}} 
+\index{Util::DMatrix$<$ Data $>$@{Util::DMatrix$<$ Data $>$}!````~DMatrix@{$\sim$DMatrix}}
+\index{````~DMatrix@{$\sim$DMatrix}!Util::DMatrix$<$ Data $>$@{Util::DMatrix$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{$\sim$DMatrix()}{~DMatrix()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+\mbox{\hyperlink{classUtil_1_1DMatrix}{Util\+::\+D\+Matrix}}$<$ Data $>$\+::$\sim$\mbox{\hyperlink{classUtil_1_1DMatrix}{D\+Matrix}}}
+
+
+
+Destructor. 
+
+Delete dynamically allocated C array. 
+
+Definition at line 156 of file D\+Matrix.\+h.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1DMatrix_ad7f0ca9b56c6243c7d0a3afc308f61e9}\label{classUtil_1_1DMatrix_ad7f0ca9b56c6243c7d0a3afc308f61e9}} 
+\index{Util::DMatrix$<$ Data $>$@{Util::DMatrix$<$ Data $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Util::DMatrix$<$ Data $>$@{Util::DMatrix$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+\mbox{\hyperlink{classUtil_1_1DMatrix}{D\+Matrix}}$<$ Data $>$ \& \mbox{\hyperlink{classUtil_1_1DMatrix}{Util\+::\+D\+Matrix}}$<$ Data $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1DMatrix}{D\+Matrix}}$<$ Data $>$ \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Assignment. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{classUtil_1_1Exception}{Exception}}} & if L\+HS and R\+HS dimensions do not match. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 121 of file D\+Matrix.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1DMatrix_a8a6eee18a2a8458ccad0cd58df0d6846}\label{classUtil_1_1DMatrix_a8a6eee18a2a8458ccad0cd58df0d6846}} 
+\index{Util::DMatrix$<$ Data $>$@{Util::DMatrix$<$ Data $>$}!allocate@{allocate}}
+\index{allocate@{allocate}!Util::DMatrix$<$ Data $>$@{Util::DMatrix$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{allocate()}{allocate()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+void \mbox{\hyperlink{classUtil_1_1DMatrix}{Util\+::\+D\+Matrix}}$<$ Data $>$\+::allocate (\begin{DoxyParamCaption}\item[{int}]{capacity1,  }\item[{int}]{capacity2 }\end{DoxyParamCaption})}
+
+
+
+Allocate memory for a matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity1} & number of rows (range of first index) \\
+\hline
+{\em capacity2} & number of columns (range of second index) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 170 of file D\+Matrix.\+h.
+
+
+
+Referenced by Pscf\+::\+Homogeneous\+::\+Mixture\+::compute\+Phi(), and Pscf\+::\+Chi\+Interaction\+::read\+Parameters().
+
+\mbox{\Hypertarget{classUtil_1_1DMatrix_aa988d5f2e55572e801e44cdedba4ce69}\label{classUtil_1_1DMatrix_aa988d5f2e55572e801e44cdedba4ce69}} 
+\index{Util::DMatrix$<$ Data $>$@{Util::DMatrix$<$ Data $>$}!deallocate@{deallocate}}
+\index{deallocate@{deallocate}!Util::DMatrix$<$ Data $>$@{Util::DMatrix$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{deallocate()}{deallocate()}}
+{\footnotesize\ttfamily template$<$class Data $>$ \\
+void \mbox{\hyperlink{classUtil_1_1DMatrix}{Util\+::\+D\+Matrix}}$<$ Data $>$\+::deallocate}
+
+
+
+Deallocate the underlying memory block. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{classUtil_1_1Exception}{Exception}}} & if the \mbox{\hyperlink{classUtil_1_1DMatrix}{D\+Matrix}} is not allocated. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 188 of file D\+Matrix.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1DMatrix_aa30c56e4ba49d083f22f0200219746cd}\label{classUtil_1_1DMatrix_aa30c56e4ba49d083f22f0200219746cd}} 
+\index{Util::DMatrix$<$ Data $>$@{Util::DMatrix$<$ Data $>$}!isAllocated@{isAllocated}}
+\index{isAllocated@{isAllocated}!Util::DMatrix$<$ Data $>$@{Util::DMatrix$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{isAllocated()}{isAllocated()}}
+{\footnotesize\ttfamily template$<$class Data $>$ \\
+bool \mbox{\hyperlink{classUtil_1_1DMatrix}{Util\+::\+D\+Matrix}}$<$ Data $>$\+::is\+Allocated\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return true if the \mbox{\hyperlink{classUtil_1_1DMatrix}{D\+Matrix}} has been allocated, false otherwise. 
+
+
+
+Definition at line 202 of file D\+Matrix.\+h.
+
+
+
+Referenced by Util\+::bcast(), Util\+::recv(), and Util\+::send().
+
+\mbox{\Hypertarget{classUtil_1_1DMatrix_a78d6c405fc3a05d4a154e19bcf9cd2e1}\label{classUtil_1_1DMatrix_a78d6c405fc3a05d4a154e19bcf9cd2e1}} 
+\index{Util::DMatrix$<$ Data $>$@{Util::DMatrix$<$ Data $>$}!serialize@{serialize}}
+\index{serialize@{serialize}!Util::DMatrix$<$ Data $>$@{Util::DMatrix$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$class Data $>$ \\
+template$<$class Archive $>$ \\
+void \mbox{\hyperlink{classUtil_1_1DMatrix}{Util\+::\+D\+Matrix}}$<$ Data $>$\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{ar,  }\item[{const unsigned int}]{version }\end{DoxyParamCaption})}
+
+
+
+Serialize a \mbox{\hyperlink{classUtil_1_1DMatrix}{D\+Matrix}} to/from an Archive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & archive \\
+\hline
+{\em version} & archive version id \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 210 of file D\+Matrix.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+Matrix.\+h\end{DoxyCompactItemize}

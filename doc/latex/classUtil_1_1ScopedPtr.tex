@@ -1,0 +1,173 @@
+\hypertarget{classUtil_1_1ScopedPtr}{}\doxysubsection{Util\+::Scoped\+Ptr$<$ T $>$ Class Template Reference}
+\label{classUtil_1_1ScopedPtr}\index{Util::ScopedPtr$<$ T $>$@{Util::ScopedPtr$<$ T $>$}}
+
+
+A very simple R\+A\+II pointer.  
+
+
+
+
+{\ttfamily \#include $<$Scoped\+Ptr.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef T \mbox{\hyperlink{classUtil_1_1ScopedPtr_a79c8d038f8866286dbd9fb5b61695aae}{element\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em Type of object pointed to. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1ScopedPtr_a22abac4cdd74330f0bb494c13bde9689}{Scoped\+Ptr}} (T $\ast$p=0)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1ScopedPtr_ae2ff7cd2c067c140d225126c8f933e20}{$\sim$\+Scoped\+Ptr}} ()
+\begin{DoxyCompactList}\small\item\em Destructor, destroys object pointed to, if any. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1ScopedPtr_acb03afa4ff6d00f458453ea7a5ddade1}{reset}} (T $\ast$p=0)
+\begin{DoxyCompactList}\small\item\em Acquire ownership of a built-\/in pointer. \end{DoxyCompactList}\item 
+T \& \mbox{\hyperlink{classUtil_1_1ScopedPtr_a94ac1fa0b8546004914bb4a3670d2904}{operator$\ast$}} () const
+\begin{DoxyCompactList}\small\item\em Dereference. \end{DoxyCompactList}\item 
+T $\ast$ \mbox{\hyperlink{classUtil_1_1ScopedPtr_aaee5eb1ba250b08e774656467a716f99}{operator-\/$>$}} () const
+\begin{DoxyCompactList}\small\item\em Member access. \end{DoxyCompactList}\item 
+T $\ast$ \mbox{\hyperlink{classUtil_1_1ScopedPtr_a360921f1c00103a00d015165c2422911}{get}} () const
+\begin{DoxyCompactList}\small\item\em Return enclosed built-\/in pointer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Util\+::\+Scoped\+Ptr$<$ T $>$}
+
+A very simple R\+A\+II pointer. 
+
+A \mbox{\hyperlink{classUtil_1_1ScopedPtr}{Scoped\+Ptr}} mimics a built-\/in pointer, except that guarantees destruction of the object to which it points when the \mbox{\hyperlink{classUtil_1_1ScopedPtr}{Scoped\+Ptr}} goes out of scope. It accepts ownership of a built-\/in pointer either upon construction or by the \mbox{\hyperlink{classUtil_1_1ScopedPtr_acb03afa4ff6d00f458453ea7a5ddade1}{reset()}} method, and deletes the associated object in its destructor. A \mbox{\hyperlink{classUtil_1_1ScopedPtr}{Scoped\+Ptr}} cannot be copy constructed or assigned.
+
+Similar to boost\+::scoped\+\_\+ptr, with minor differences. It takes the same amount of memory as a built-\/in pointer, and should be equally fast. 
+
+Definition at line 29 of file Scoped\+Ptr.\+h.
+
+
+
+\doxysubsubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classUtil_1_1ScopedPtr_a79c8d038f8866286dbd9fb5b61695aae}\label{classUtil_1_1ScopedPtr_a79c8d038f8866286dbd9fb5b61695aae}} 
+\index{Util::ScopedPtr$<$ T $>$@{Util::ScopedPtr$<$ T $>$}!element\_type@{element\_type}}
+\index{element\_type@{element\_type}!Util::ScopedPtr$<$ T $>$@{Util::ScopedPtr$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{element\_type}{element\_type}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+typedef T \mbox{\hyperlink{classUtil_1_1ScopedPtr}{Util\+::\+Scoped\+Ptr}}$<$ T $>$\+::\mbox{\hyperlink{classUtil_1_1ScopedPtr_a79c8d038f8866286dbd9fb5b61695aae}{element\+\_\+type}}}
+
+
+
+Type of object pointed to. 
+
+
+
+Definition at line 35 of file Scoped\+Ptr.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1ScopedPtr_a22abac4cdd74330f0bb494c13bde9689}\label{classUtil_1_1ScopedPtr_a22abac4cdd74330f0bb494c13bde9689}} 
+\index{Util::ScopedPtr$<$ T $>$@{Util::ScopedPtr$<$ T $>$}!ScopedPtr@{ScopedPtr}}
+\index{ScopedPtr@{ScopedPtr}!Util::ScopedPtr$<$ T $>$@{Util::ScopedPtr$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{ScopedPtr()}{ScopedPtr()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classUtil_1_1ScopedPtr}{Util\+::\+Scoped\+Ptr}}$<$ T $>$\+::\mbox{\hyperlink{classUtil_1_1ScopedPtr}{Scoped\+Ptr}} (\begin{DoxyParamCaption}\item[{T $\ast$}]{p = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructor. 
+
+
+
+Definition at line 38 of file Scoped\+Ptr.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1ScopedPtr_ae2ff7cd2c067c140d225126c8f933e20}\label{classUtil_1_1ScopedPtr_ae2ff7cd2c067c140d225126c8f933e20}} 
+\index{Util::ScopedPtr$<$ T $>$@{Util::ScopedPtr$<$ T $>$}!````~ScopedPtr@{$\sim$ScopedPtr}}
+\index{````~ScopedPtr@{$\sim$ScopedPtr}!Util::ScopedPtr$<$ T $>$@{Util::ScopedPtr$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{$\sim$ScopedPtr()}{~ScopedPtr()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classUtil_1_1ScopedPtr}{Util\+::\+Scoped\+Ptr}}$<$ T $>$\+::$\sim$\mbox{\hyperlink{classUtil_1_1ScopedPtr}{Scoped\+Ptr}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destructor, destroys object pointed to, if any. 
+
+
+
+Definition at line 42 of file Scoped\+Ptr.\+h.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1ScopedPtr_acb03afa4ff6d00f458453ea7a5ddade1}\label{classUtil_1_1ScopedPtr_acb03afa4ff6d00f458453ea7a5ddade1}} 
+\index{Util::ScopedPtr$<$ T $>$@{Util::ScopedPtr$<$ T $>$}!reset@{reset}}
+\index{reset@{reset}!Util::ScopedPtr$<$ T $>$@{Util::ScopedPtr$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classUtil_1_1ScopedPtr}{Util\+::\+Scoped\+Ptr}}$<$ T $>$\+::reset (\begin{DoxyParamCaption}\item[{T $\ast$}]{p = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Acquire ownership of a built-\/in pointer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & built-\/in pointer to acquire. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 54 of file Scoped\+Ptr.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1ScopedPtr_a94ac1fa0b8546004914bb4a3670d2904}\label{classUtil_1_1ScopedPtr_a94ac1fa0b8546004914bb4a3670d2904}} 
+\index{Util::ScopedPtr$<$ T $>$@{Util::ScopedPtr$<$ T $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Util::ScopedPtr$<$ T $>$@{Util::ScopedPtr$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T\& \mbox{\hyperlink{classUtil_1_1ScopedPtr}{Util\+::\+Scoped\+Ptr}}$<$ T $>$\+::operator$\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Dereference. 
+
+
+
+Definition at line 63 of file Scoped\+Ptr.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1ScopedPtr_aaee5eb1ba250b08e774656467a716f99}\label{classUtil_1_1ScopedPtr_aaee5eb1ba250b08e774656467a716f99}} 
+\index{Util::ScopedPtr$<$ T $>$@{Util::ScopedPtr$<$ T $>$}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!Util::ScopedPtr$<$ T $>$@{Util::ScopedPtr$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{operator-\/$>$()}{operator->()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T$\ast$ \mbox{\hyperlink{classUtil_1_1ScopedPtr}{Util\+::\+Scoped\+Ptr}}$<$ T $>$\+::operator-\/$>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Member access. 
+
+
+
+Definition at line 67 of file Scoped\+Ptr.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1ScopedPtr_a360921f1c00103a00d015165c2422911}\label{classUtil_1_1ScopedPtr_a360921f1c00103a00d015165c2422911}} 
+\index{Util::ScopedPtr$<$ T $>$@{Util::ScopedPtr$<$ T $>$}!get@{get}}
+\index{get@{get}!Util::ScopedPtr$<$ T $>$@{Util::ScopedPtr$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T$\ast$ \mbox{\hyperlink{classUtil_1_1ScopedPtr}{Util\+::\+Scoped\+Ptr}}$<$ T $>$\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return enclosed built-\/in pointer. 
+
+
+
+Definition at line 71 of file Scoped\+Ptr.\+h.
+
+
+
+Referenced by Util\+::is\+Null().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Scoped\+Ptr.\+h\end{DoxyCompactItemize}

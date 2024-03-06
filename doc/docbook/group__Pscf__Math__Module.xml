@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_group__Pscf__Math__Module">
+<title>Mathematics</title>
+<indexterm><primary>Mathematics</primary></indexterm>
+<para>
+
+<para>Miscellaneous mathematical utility classes. </para>
+ 
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classPscf_1_1IntVec">Pscf::IntVec&lt; D, T &gt;</link></para>
+
+<para>An IntVec&lt;D, T&gt; is a D-component vector of elements of integer type T. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1LuSolver">Pscf::LuSolver</link></para>
+
+<para>Solve Ax=b by LU decomposition of A. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1RealVec">Pscf::RealVec&lt; D, T &gt;</link></para>
+
+<para>A RealVec&lt;D, T&gt; is D-component vector with elements of floating type T. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1TridiagonalSolver">Pscf::TridiagonalSolver</link></para>
+
+<para>Solver for Ax=b with tridiagonal matrix A. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Miscellaneous mathematical utility classes. </para>
+</section>
+</section>

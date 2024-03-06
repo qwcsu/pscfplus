@@ -1,0 +1,662 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classPscf_1_1UnitCellBase">
+<title>Pscf::UnitCellBase&lt; D &gt; Class Template Reference</title>
+<indexterm><primary>Pscf::UnitCellBase&lt; D &gt;</primary></indexterm>
+<para>
+
+<para>Base class template for a crystallographic unit cell. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;UnitCellBase.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Pscf::UnitCellBase&lt; D &gt;:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classPscf_1_1UnitCellBase.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classPscf_1_1UnitCellBase_1ad89c64c43d5dcadf9964d11bc96d1b13">UnitCellBase</link> ()</para>
+
+<para>Constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classPscf_1_1UnitCellBase_1a8747888fa67dbea65d26062947801584">~UnitCellBase</link> ()</para>
+
+<para>Destructor. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classPscf_1_1UnitCellBase_1a70f16278fa59a3e317eb485db1340248">setLattice</link> ()</para>
+
+<para>Compute all private data, given latticeSystem and parameters. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classPscf_1_1UnitCellBase_1a4ffe7d850fd8cc53751d258d174213d8">setParameters</link> (<link linkend="_classUtil_1_1FSArray">FSArray</link>&lt; double, 6 &gt; const &amp;<link linkend="_classPscf_1_1UnitCellBase_1ab87b0b0df1657db2f84bcee837ffcb29">parameters</link>)</para>
+
+<para>Set all the parameters of unit cell (new version). </para>
+</listitem>
+            <listitem><para>virtual double <link linkend="_classPscf_1_1UnitCellBase_1a81575d561eacfc79109dcbe89fe849d9">ksq</link> (<link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D &gt; const &amp;k) const</para>
+
+<para>Compute square magnitude of reciprocal lattice vector. </para>
+</listitem>
+            <listitem><para>virtual double <link linkend="_classPscf_1_1UnitCellBase_1a3df0eca0eec3b294f76c9380320a8223">dksq</link> (<link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D &gt; const &amp;vec, int n) const</para>
+
+<para>Compute derivative of square wavevector w/ respect to cell parameter. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classPscf_1_1UnitCellBase_1a3d42cb0762f66d99ce543f6d3c51e36d">nParameter</link> () const</para>
+
+<para>Get the number of parameters in the unit cell. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1FSArray">FSArray</link>&lt; double, 6 &gt; <link linkend="_classPscf_1_1UnitCellBase_1ab87b0b0df1657db2f84bcee837ffcb29">parameters</link> () const</para>
+
+<para>Get the parameters of this unit cell. </para>
+</listitem>
+            <listitem><para>double <link linkend="_classPscf_1_1UnitCellBase_1aa1d08ed025990b4ccd3cb67adaec87cd">parameter</link> (int i) const</para>
+
+<para>Get a single parameter of the unit cell. </para>
+</listitem>
+            <listitem><para>const <link linkend="_classPscf_1_1RealVec">RealVec</link>&lt; D &gt; &amp; <link linkend="_classPscf_1_1UnitCellBase_1ae937330b42d0ec604324c02f34bdb529">rBasis</link> (int i) const</para>
+
+<para>Get Bravais basis vector i, denoted by a_i. </para>
+</listitem>
+            <listitem><para>const <link linkend="_classPscf_1_1RealVec">RealVec</link>&lt; D &gt; &amp; <link linkend="_classPscf_1_1UnitCellBase_1a3f38ec4fb4d1e077d81f134222986a7e">kBasis</link> (int i) const</para>
+
+<para>Get reciprocal basis vector i, denoted by b_i. </para>
+</listitem>
+            <listitem><para>double <link linkend="_classPscf_1_1UnitCellBase_1ae83a88e16827b99e3fd6080ff20347af">drBasis</link> (int k, int i, int j) const</para>
+
+<para>Get component j of derivative of rBasis vector a_i w/respect to k. </para>
+</listitem>
+            <listitem><para>double <link linkend="_classPscf_1_1UnitCellBase_1aa143c284402fa9241d9122ef6155cc33">dkBasis</link> (int k, int i, int j) const</para>
+
+<para>Get component j of derivative of kBasis vector bi w/respect to k. </para>
+</listitem>
+            <listitem><para>double <link linkend="_classPscf_1_1UnitCellBase_1a528bdff04ca8d29126da2bfaae85fb03">drrBasis</link> (int k, int i, int j) const</para>
+
+<para>Get the derivative of dot product ri.rj with respect to parameter k. </para>
+</listitem>
+            <listitem><para>double <link linkend="_classPscf_1_1UnitCellBase_1ae196ebbd2415dbc8926afd18d0835fc6">dkkBasis</link> (int k, int i, int j) const</para>
+
+<para>Get the derivative of dot product bi.bj with respect to parameter k. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1FArray">FArray</link>&lt; <link linkend="_classPscf_1_1RealVec">RealVec</link>&lt; D &gt;, D &gt; <link linkend="_classPscf_1_1UnitCellBase_1aa4019d080655cdd1f4b18115d7c1883e">rBasis_</link></para>
+
+<para>Array of Bravais lattice basis vectors. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1FArray">FArray</link>&lt; <link linkend="_classPscf_1_1RealVec">RealVec</link>&lt; D &gt;, D &gt; <link linkend="_classPscf_1_1UnitCellBase_1af2035f1422fae972912acd6ca665cde1">kBasis_</link></para>
+
+<para>Array of reciprocal lattice basis vectors. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1FArray">FArray</link>&lt; <link linkend="_classUtil_1_1FMatrix">FMatrix</link>&lt; double, D, D &gt;, 6 &gt; <link linkend="_classPscf_1_1UnitCellBase_1a0c211729843dda8843e5f516308b3cd1">drBasis_</link></para>
+
+<para>Array of derivatives of rBasis. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1FArray">FArray</link>&lt; <link linkend="_classUtil_1_1FMatrix">FMatrix</link>&lt; double, D, D &gt;, 6 &gt; <link linkend="_classPscf_1_1UnitCellBase_1a45c04d1a351bef6332082b5ef368ca04">dkBasis_</link></para>
+
+<para>Array of derivatives of kBasis. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1FArray">FArray</link>&lt; <link linkend="_classUtil_1_1FMatrix">FMatrix</link>&lt; double, D, D &gt;, 6 &gt; <link linkend="_classPscf_1_1UnitCellBase_1a05aea8ecf93bcff194cb8aa978f81c38">drrBasis_</link></para>
+
+<para>Array of derivatives of a_i.a_j. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1FArray">FArray</link>&lt; <link linkend="_classUtil_1_1FMatrix">FMatrix</link>&lt; double, D, D &gt;, 6 &gt; <link linkend="_classPscf_1_1UnitCellBase_1a59d5d6000caa8a70d6f905522da86164">dkkBasis_</link></para>
+
+<para>Array of derivatives of b_i.b_j. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1FArray">FArray</link>&lt; double, 6 &gt; <link linkend="_classPscf_1_1UnitCellBase_1a2287e61b7d83679df5d3f5219f0a9485">parameters_</link></para>
+
+<para>Parameters used to describe the unit cell. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classPscf_1_1UnitCellBase_1a1d9cd19248ba7888ddc6f4a018558d6b">nParameter_</link></para>
+
+<para>Number of parameters required to specify unit cell. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;int D&gt;
+class Pscf::UnitCellBase&lt; D &gt;</title></simplesect>
+
+
+<para>Base class template for a crystallographic unit cell. </para>
+<para>
+Definition at line 29 of file UnitCellBase.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classPscf_1_1UnitCellBase_1ad89c64c43d5dcadf9964d11bc96d1b13"/>    <section>
+    <title>UnitCellBase()</title>
+<indexterm><primary>UnitCellBase</primary><secondary>Pscf::UnitCellBase&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::UnitCellBase&lt; D &gt;</primary><secondary>UnitCellBase</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput><link linkend="_classPscf_1_1UnitCellBase">Pscf::UnitCellBase</link>&lt; D &gt;::<link linkend="_classPscf_1_1UnitCellBase">UnitCellBase</link></computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+<para>
+Definition at line 305 of file UnitCellBase.h.</para>
+    </section><anchor xml:id="_classPscf_1_1UnitCellBase_1a8747888fa67dbea65d26062947801584"/>    <section>
+    <title>~UnitCellBase()</title>
+<indexterm><primary>~UnitCellBase</primary><secondary>Pscf::UnitCellBase&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::UnitCellBase&lt; D &gt;</primary><secondary>~UnitCellBase</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput><link linkend="_classPscf_1_1UnitCellBase">Pscf::UnitCellBase</link>&lt; D &gt;::~<link linkend="_classPscf_1_1UnitCellBase">UnitCellBase</link></computeroutput></para><para>
+
+<para>Destructor. </para>
+</para>
+<para>
+Definition at line 313 of file UnitCellBase.h.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classPscf_1_1UnitCellBase_1a70f16278fa59a3e317eb485db1340248"/>    <section>
+    <title>setLattice()</title>
+<indexterm><primary>setLattice</primary><secondary>Pscf::UnitCellBase&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::UnitCellBase&lt; D &gt;</primary><secondary>setLattice</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>void <link linkend="_classPscf_1_1UnitCellBase">Pscf::UnitCellBase</link>&lt; D &gt;::setLattice</computeroutput></para><para>
+
+<para>Compute all private data, given latticeSystem and parameters. </para>
+</para>
+
+<para>Calls initializeToZero, setBasis, computeDerivatives internally. </para>
+<para>
+Definition at line 441 of file UnitCellBase.h.</para>
+<para>
+Referenced by Pscf::operator&gt;&gt;(), and Pscf::readUnitCellHeader().</para>
+    </section><anchor xml:id="_classPscf_1_1UnitCellBase_1a4ffe7d850fd8cc53751d258d174213d8"/>    <section>
+    <title>setParameters()</title>
+<indexterm><primary>setParameters</primary><secondary>Pscf::UnitCellBase&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::UnitCellBase&lt; D &gt;</primary><secondary>setParameters</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>void <link linkend="_classPscf_1_1UnitCellBase">Pscf::UnitCellBase</link>&lt; D &gt;::setParameters (<link linkend="_classUtil_1_1FSArray">FSArray</link>&lt; double, 6 &gt; const &amp; parameters)</computeroutput></para><para>
+
+<para>Set all the parameters of unit cell (new version). </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>parameters</entry>
+                                <entry>
+<para>array of unit cell parameters </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 320 of file UnitCellBase.h.</para>
+    </section><anchor xml:id="_classPscf_1_1UnitCellBase_1a81575d561eacfc79109dcbe89fe849d9"/>    <section>
+    <title>ksq()</title>
+<indexterm><primary>ksq</primary><secondary>Pscf::UnitCellBase&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::UnitCellBase&lt; D &gt;</primary><secondary>ksq</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>double <link linkend="_classPscf_1_1UnitCellBase">Pscf::UnitCellBase</link>&lt; D &gt;::ksq (<link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D &gt; const &amp; k) const<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Compute square magnitude of reciprocal lattice vector. </para>
+</para>
+<para>
+Definition at line 333 of file UnitCellBase.h.</para>
+<para>
+Referenced by Pscf::Pspg::Continuous::Block&lt; D &gt;::setupUnitCell(), and Pscf::Pspg::Continuous::Mixture&lt; D &gt;::setupUnitCell().</para>
+    </section><anchor xml:id="_classPscf_1_1UnitCellBase_1a3df0eca0eec3b294f76c9380320a8223"/>    <section>
+    <title>dksq()</title>
+<indexterm><primary>dksq</primary><secondary>Pscf::UnitCellBase&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::UnitCellBase&lt; D &gt;</primary><secondary>dksq</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>double <link linkend="_classPscf_1_1UnitCellBase">Pscf::UnitCellBase</link>&lt; D &gt;::dksq (<link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D &gt; const &amp; vec, int n) const<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Compute derivative of square wavevector w/ respect to cell parameter. </para>
+</para>
+
+<para>This function computes and returns a derivative with respect to unit cell parameter number n of the square of a reciprocal lattice vector with integer coefficients given by the elements of vec.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>vec</entry>
+                                <entry>
+<para>vector of components of a reciprocal lattice vector </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>n</entry>
+                                <entry>
+<para>index of a unit cell parameter </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 352 of file UnitCellBase.h.</para>
+<para>
+Referenced by Pscf::Pspg::Continuous::Block&lt; D &gt;::setupUnitCell().</para>
+    </section><anchor xml:id="_classPscf_1_1UnitCellBase_1a3d42cb0762f66d99ce543f6d3c51e36d"/>    <section>
+    <title>nParameter()</title>
+<indexterm><primary>nParameter</primary><secondary>Pscf::UnitCellBase&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::UnitCellBase&lt; D &gt;</primary><secondary>nParameter</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>int <link linkend="_classPscf_1_1UnitCellBase">Pscf::UnitCellBase</link>&lt; D &gt;::nParameter<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get the number of parameters in the unit cell. </para>
+</para>
+<para>
+Definition at line 228 of file UnitCellBase.h.</para>
+<para>
+Referenced by Pscf::Pspg::Continuous::Mixture&lt; D &gt;::setMesh(), Pscf::Pspg::Continuous::Block&lt; D &gt;::setupUnitCell(), and Pscf::Pspg::Continuous::Mixture&lt; D &gt;::setupUnitCell().</para>
+    </section><anchor xml:id="_classPscf_1_1UnitCellBase_1ab87b0b0df1657db2f84bcee837ffcb29"/>    <section>
+    <title>parameters()</title>
+<indexterm><primary>parameters</primary><secondary>Pscf::UnitCellBase&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::UnitCellBase&lt; D &gt;</primary><secondary>parameters</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1FSArray">FSArray</link>&lt; double, 6 &gt; <link linkend="_classPscf_1_1UnitCellBase">Pscf::UnitCellBase</link>&lt; D &gt;::parameters<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get the parameters of this unit cell. </para>
+</para>
+<para>
+Definition at line 236 of file UnitCellBase.h.</para>
+    </section><anchor xml:id="_classPscf_1_1UnitCellBase_1aa1d08ed025990b4ccd3cb67adaec87cd"/>    <section>
+    <title>parameter()</title>
+<indexterm><primary>parameter</primary><secondary>Pscf::UnitCellBase&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::UnitCellBase&lt; D &gt;</primary><secondary>parameter</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>double <link linkend="_classPscf_1_1UnitCellBase">Pscf::UnitCellBase</link>&lt; D &gt;::parameter (int i) const</computeroutput></para><para>
+
+<para>Get a single parameter of the unit cell. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>i</entry>
+                                <entry>
+<para>array index of the desired parameter </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 249 of file UnitCellBase.h.</para>
+    </section><anchor xml:id="_classPscf_1_1UnitCellBase_1ae937330b42d0ec604324c02f34bdb529"/>    <section>
+    <title>rBasis()</title>
+<indexterm><primary>rBasis</primary><secondary>Pscf::UnitCellBase&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::UnitCellBase&lt; D &gt;</primary><secondary>rBasis</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>const <link linkend="_classPscf_1_1RealVec">RealVec</link>&lt; D &gt; &amp; <link linkend="_classPscf_1_1UnitCellBase">Pscf::UnitCellBase</link>&lt; D &gt;::rBasis (int i) const</computeroutput></para><para>
+
+<para>Get Bravais basis vector i, denoted by a_i. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>i</entry>
+                                <entry>
+<para>array index of the desired basis vector </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 256 of file UnitCellBase.h.</para>
+    </section><anchor xml:id="_classPscf_1_1UnitCellBase_1a3f38ec4fb4d1e077d81f134222986a7e"/>    <section>
+    <title>kBasis()</title>
+<indexterm><primary>kBasis</primary><secondary>Pscf::UnitCellBase&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::UnitCellBase&lt; D &gt;</primary><secondary>kBasis</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>const <link linkend="_classPscf_1_1RealVec">RealVec</link>&lt; D &gt; &amp; <link linkend="_classPscf_1_1UnitCellBase">Pscf::UnitCellBase</link>&lt; D &gt;::kBasis (int i) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get reciprocal basis vector i, denoted by b_i. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>i</entry>
+                                <entry>
+<para>array index of the desired reciprocal lattice basis vector </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 264 of file UnitCellBase.h.</para>
+    </section><anchor xml:id="_classPscf_1_1UnitCellBase_1ae83a88e16827b99e3fd6080ff20347af"/>    <section>
+    <title>drBasis()</title>
+<indexterm><primary>drBasis</primary><secondary>Pscf::UnitCellBase&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::UnitCellBase&lt; D &gt;</primary><secondary>drBasis</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>double <link linkend="_classPscf_1_1UnitCellBase">Pscf::UnitCellBase</link>&lt; D &gt;::drBasis (int k, int i, int j) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get component j of derivative of rBasis vector a_i w/respect to k. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>i</entry>
+                                <entry>
+<para>array index of the desired basis vector a_i </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>j</entry>
+                                <entry>
+<para>index of a Cartesian component of a_i </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>k</entry>
+                                <entry>
+<para>index of cell parameter </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 272 of file UnitCellBase.h.</para>
+    </section><anchor xml:id="_classPscf_1_1UnitCellBase_1aa143c284402fa9241d9122ef6155cc33"/>    <section>
+    <title>dkBasis()</title>
+<indexterm><primary>dkBasis</primary><secondary>Pscf::UnitCellBase&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::UnitCellBase&lt; D &gt;</primary><secondary>dkBasis</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>double <link linkend="_classPscf_1_1UnitCellBase">Pscf::UnitCellBase</link>&lt; D &gt;::dkBasis (int k, int i, int j) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get component j of derivative of kBasis vector bi w/respect to k. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>i</entry>
+                                <entry>
+<para>array index of the desired reciprocal basis vector b_i </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>j</entry>
+                                <entry>
+<para>index of a Cartesian component of b_i </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>k</entry>
+                                <entry>
+<para>index of cell parameter </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 280 of file UnitCellBase.h.</para>
+    </section><anchor xml:id="_classPscf_1_1UnitCellBase_1a528bdff04ca8d29126da2bfaae85fb03"/>    <section>
+    <title>drrBasis()</title>
+<indexterm><primary>drrBasis</primary><secondary>Pscf::UnitCellBase&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::UnitCellBase&lt; D &gt;</primary><secondary>drrBasis</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>double <link linkend="_classPscf_1_1UnitCellBase">Pscf::UnitCellBase</link>&lt; D &gt;::drrBasis (int k, int i, int j) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get the derivative of dot product ri.rj with respect to parameter k. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>i</entry>
+                                <entry>
+<para>array index of 1st Bravais basis vector b_i </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>j</entry>
+                                <entry>
+<para>array index of 2nd Bravais basis vector b_i </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>k</entry>
+                                <entry>
+<para>index of cell parameter </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 296 of file UnitCellBase.h.</para>
+    </section><anchor xml:id="_classPscf_1_1UnitCellBase_1ae196ebbd2415dbc8926afd18d0835fc6"/>    <section>
+    <title>dkkBasis()</title>
+<indexterm><primary>dkkBasis</primary><secondary>Pscf::UnitCellBase&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::UnitCellBase&lt; D &gt;</primary><secondary>dkkBasis</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>double <link linkend="_classPscf_1_1UnitCellBase">Pscf::UnitCellBase</link>&lt; D &gt;::dkkBasis (int k, int i, int j) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get the derivative of dot product bi.bj with respect to parameter k. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>i</entry>
+                                <entry>
+<para>array index of 1st reciprocal basis vector b_i </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>j</entry>
+                                <entry>
+<para>array index of 2nd reciprocal basis vector b_i </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>k</entry>
+                                <entry>
+<para>index of cell parameter </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 288 of file UnitCellBase.h.</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classPscf_1_1UnitCellBase_1aa4019d080655cdd1f4b18115d7c1883e"/>    <section>
+    <title>rBasis_</title>
+<indexterm><primary>rBasis_</primary><secondary>Pscf::UnitCellBase&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::UnitCellBase&lt; D &gt;</primary><secondary>rBasis_</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1FArray">FArray</link>&lt;<link linkend="_classPscf_1_1RealVec">RealVec</link>&lt;D&gt;, D&gt; <link linkend="_classPscf_1_1UnitCellBase">Pscf::UnitCellBase</link>&lt; D &gt;::rBasis_<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Array of Bravais lattice basis vectors. </para>
+</para>
+<para>
+Definition at line 146 of file UnitCellBase.h.</para>
+    </section><anchor xml:id="_classPscf_1_1UnitCellBase_1af2035f1422fae972912acd6ca665cde1"/>    <section>
+    <title>kBasis_</title>
+<indexterm><primary>kBasis_</primary><secondary>Pscf::UnitCellBase&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::UnitCellBase&lt; D &gt;</primary><secondary>kBasis_</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1FArray">FArray</link>&lt;<link linkend="_classPscf_1_1RealVec">RealVec</link>&lt;D&gt;, D&gt; <link linkend="_classPscf_1_1UnitCellBase">Pscf::UnitCellBase</link>&lt; D &gt;::kBasis_<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Array of reciprocal lattice basis vectors. </para>
+</para>
+<para>
+Definition at line 151 of file UnitCellBase.h.</para>
+    </section><anchor xml:id="_classPscf_1_1UnitCellBase_1a0c211729843dda8843e5f516308b3cd1"/>    <section>
+    <title>drBasis_</title>
+<indexterm><primary>drBasis_</primary><secondary>Pscf::UnitCellBase&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::UnitCellBase&lt; D &gt;</primary><secondary>drBasis_</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1FArray">FArray</link>&lt;<link linkend="_classUtil_1_1FMatrix">FMatrix</link>&lt;double, D, D&gt;, 6&gt; <link linkend="_classPscf_1_1UnitCellBase">Pscf::UnitCellBase</link>&lt; D &gt;::drBasis_<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Array of derivatives of rBasis. </para>
+</para>
+
+<para>Element drBasis_[k](i,j) is derivative with respect to parameter k of component j of Bravais basis vector i. </para>
+<para>
+Definition at line 159 of file UnitCellBase.h.</para>
+    </section><anchor xml:id="_classPscf_1_1UnitCellBase_1a45c04d1a351bef6332082b5ef368ca04"/>    <section>
+    <title>dkBasis_</title>
+<indexterm><primary>dkBasis_</primary><secondary>Pscf::UnitCellBase&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::UnitCellBase&lt; D &gt;</primary><secondary>dkBasis_</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1FArray">FArray</link>&lt;<link linkend="_classUtil_1_1FMatrix">FMatrix</link>&lt;double, D, D&gt;, 6&gt; <link linkend="_classPscf_1_1UnitCellBase">Pscf::UnitCellBase</link>&lt; D &gt;::dkBasis_<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Array of derivatives of kBasis. </para>
+</para>
+
+<para>Element dkBasis_[k](i,j) is derivative with respect to parameter k of component j of reciprocal basis vector i. </para>
+<para>
+Definition at line 167 of file UnitCellBase.h.</para>
+    </section><anchor xml:id="_classPscf_1_1UnitCellBase_1a05aea8ecf93bcff194cb8aa978f81c38"/>    <section>
+    <title>drrBasis_</title>
+<indexterm><primary>drrBasis_</primary><secondary>Pscf::UnitCellBase&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::UnitCellBase&lt; D &gt;</primary><secondary>drrBasis_</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1FArray">FArray</link>&lt;<link linkend="_classUtil_1_1FMatrix">FMatrix</link>&lt;double, D, D&gt;, 6&gt; <link linkend="_classPscf_1_1UnitCellBase">Pscf::UnitCellBase</link>&lt; D &gt;::drrBasis_<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Array of derivatives of a_i.a_j. </para>
+</para>
+
+<para>Element drrBasis_[k](i,j) is derivative with respect to parameter k of the dot product (a_i.a_j) of Bravais lattice basis vectors a_i and a_j. </para>
+<para>
+Definition at line 176 of file UnitCellBase.h.</para>
+    </section><anchor xml:id="_classPscf_1_1UnitCellBase_1a59d5d6000caa8a70d6f905522da86164"/>    <section>
+    <title>dkkBasis_</title>
+<indexterm><primary>dkkBasis_</primary><secondary>Pscf::UnitCellBase&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::UnitCellBase&lt; D &gt;</primary><secondary>dkkBasis_</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1FArray">FArray</link>&lt;<link linkend="_classUtil_1_1FMatrix">FMatrix</link>&lt;double, D, D&gt;, 6&gt; <link linkend="_classPscf_1_1UnitCellBase">Pscf::UnitCellBase</link>&lt; D &gt;::dkkBasis_<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Array of derivatives of b_i.b_j. </para>
+</para>
+
+<para>Element dkkBasis_[k](i,j) is derivative with respect to parameter k of the dot product (b_i.b_j) of reciprocal lattice basis vectors b_i and b_j. </para>
+<para>
+Definition at line 185 of file UnitCellBase.h.</para>
+    </section><anchor xml:id="_classPscf_1_1UnitCellBase_1a2287e61b7d83679df5d3f5219f0a9485"/>    <section>
+    <title>parameters_</title>
+<indexterm><primary>parameters_</primary><secondary>Pscf::UnitCellBase&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::UnitCellBase&lt; D &gt;</primary><secondary>parameters_</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1FArray">FArray</link>&lt;double, 6&gt; <link linkend="_classPscf_1_1UnitCellBase">Pscf::UnitCellBase</link>&lt; D &gt;::parameters_<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Parameters used to describe the unit cell. </para>
+</para>
+<para>
+Definition at line 190 of file UnitCellBase.h.</para>
+<para>
+Referenced by Pscf::operator&lt;&lt;(), Pscf::operator&gt;&gt;(), Pscf::readUnitCellHeader(), Pscf::serialize(), and Pscf::writeUnitCellHeader().</para>
+    </section><anchor xml:id="_classPscf_1_1UnitCellBase_1a1d9cd19248ba7888ddc6f4a018558d6b"/>    <section>
+    <title>nParameter_</title>
+<indexterm><primary>nParameter_</primary><secondary>Pscf::UnitCellBase&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::UnitCellBase&lt; D &gt;</primary><secondary>nParameter_</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>int <link linkend="_classPscf_1_1UnitCellBase">Pscf::UnitCellBase</link>&lt; D &gt;::nParameter_<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Number of parameters required to specify unit cell. </para>
+</para>
+<para>
+Definition at line 195 of file UnitCellBase.h.</para>
+<para>
+Referenced by Pscf::operator&lt;&lt;(), Pscf::operator&gt;&gt;(), Pscf::readUnitCellHeader(), Pscf::serialize(), and Pscf::writeUnitCellHeader().</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+UnitCellBase.h</section>
+</section>

@@ -1,0 +1,201 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1MTRand__int32">
+<title>Util::MTRand_int32 Class Reference</title>
+<indexterm><primary>Util::MTRand_int32</primary></indexterm>
+<para>
+
+<para>Mersenne Twister random number generator engine. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;mtrand.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Util::MTRand_int32:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classUtil_1_1MTRand__int32.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1MTRand__int32_1aaa749d3ebf94aeac78c2f3fc3d4aed06">MTRand_int32</link> ()</para>
+
+<para>Default constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1MTRand__int32_1aeae93088d1c23a2abd4a1707f99b0215">MTRand_int32</link> (unsigned long s)</para>
+
+<para>Constructor with 32 bit int as seed. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1MTRand__int32_1ac89a3d46037663c195cf6ac2d498f0b6">MTRand_int32</link> (const unsigned long *array, int size)</para>
+
+<para>Constructor with array of size 32 bit ints as seed. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1MTRand__int32_1a1980249753ec7ecea4c6812a96719cab">MTRand_int32</link> (const <link linkend="_classUtil_1_1MTRand__int32">MTRand_int32</link> &amp;)</para>
+
+<para>Copy constructor. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1MTRand__int32_1ac02a734c3fb0e277b59bdcae56aac262">operator=</link> (const <link linkend="_classUtil_1_1MTRand__int32">MTRand_int32</link> &amp;)</para>
+
+<para>Assignment. </para>
+</listitem>
+            <listitem><para>virtual <link linkend="_classUtil_1_1MTRand__int32_1a1775c787e09231ba79f4039c1362bd23">~MTRand_int32</link> ()</para>
+
+<para>Destructor. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1MTRand__int32_1aa7bdd37d658e6f6912a2ae694cda03a0">seed</link> (unsigned long)</para>
+
+<para>Seed with 32 bit integer. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1MTRand__int32_1a7957aba44c68fc08209bc6fded788284">seed</link> (const unsigned long *, int size)</para>
+
+<para>Seed with array. </para>
+</listitem>
+            <listitem><para>unsigned long <link linkend="_classUtil_1_1MTRand__int32_1a7e4712f3deef939232b3f9e47a27d2fd">operator()</link> ()</para>
+
+<para>Overload operator() to make this a generator (functor) </para>
+</listitem>
+            <listitem><para>template&lt;class Archive &gt; </para><para>void <link linkend="_classUtil_1_1MTRand__int32_1a8107c8d0aaf1ecf387f26b2ec1c64f1a">serialize</link> (Archive &amp;ar, const unsigned int version)</para>
+
+<para>Serialize to/from an archive. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Mersenne Twister random number generator engine. </para>
+
+
+
+<para>Generates unsigned long integers randomly distributed over the range 0 &lt; i &lt; 2^{32} - 1. </para>
+<para>
+Definition at line 70 of file mtrand.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1MTRand__int32_1aaa749d3ebf94aeac78c2f3fc3d4aed06"/>    <section>
+    <title>MTRand_int32()<computeroutput>[1/4]</computeroutput></title>
+<indexterm><primary>MTRand_int32</primary><secondary>Util::MTRand_int32</secondary></indexterm>
+<indexterm><primary>Util::MTRand_int32</primary><secondary>MTRand_int32</secondary></indexterm>
+<para><computeroutput>Util::MTRand_int32::MTRand_int32 ( )</computeroutput></para><para>
+
+<para>Default constructor. </para>
+</para>
+<para>
+Definition at line 13 of file mtrand.cpp.</para>
+<para>
+References seed().</para>
+    </section><anchor xml:id="_classUtil_1_1MTRand__int32_1aeae93088d1c23a2abd4a1707f99b0215"/>    <section>
+    <title>MTRand_int32()<computeroutput>[2/4]</computeroutput></title>
+<indexterm><primary>MTRand_int32</primary><secondary>Util::MTRand_int32</secondary></indexterm>
+<indexterm><primary>Util::MTRand_int32</primary><secondary>MTRand_int32</secondary></indexterm>
+<para><computeroutput>Util::MTRand_int32::MTRand_int32 (unsigned long s)</computeroutput></para><para>
+
+<para>Constructor with 32 bit int as seed. </para>
+</para>
+<para>
+Definition at line 25 of file mtrand.cpp.</para>
+<para>
+References seed().</para>
+    </section><anchor xml:id="_classUtil_1_1MTRand__int32_1ac89a3d46037663c195cf6ac2d498f0b6"/>    <section>
+    <title>MTRand_int32()<computeroutput>[3/4]</computeroutput></title>
+<indexterm><primary>MTRand_int32</primary><secondary>Util::MTRand_int32</secondary></indexterm>
+<indexterm><primary>Util::MTRand_int32</primary><secondary>MTRand_int32</secondary></indexterm>
+<para><computeroutput>Util::MTRand_int32::MTRand_int32 (const unsigned long * array, int size)</computeroutput></para><para>
+
+<para>Constructor with array of size 32 bit ints as seed. </para>
+</para>
+<para>
+Definition at line 37 of file mtrand.cpp.</para>
+<para>
+References seed().</para>
+    </section><anchor xml:id="_classUtil_1_1MTRand__int32_1a1980249753ec7ecea4c6812a96719cab"/>    <section>
+    <title>MTRand_int32()<computeroutput>[4/4]</computeroutput></title>
+<indexterm><primary>MTRand_int32</primary><secondary>Util::MTRand_int32</secondary></indexterm>
+<indexterm><primary>Util::MTRand_int32</primary><secondary>MTRand_int32</secondary></indexterm>
+<para><computeroutput>Util::MTRand_int32::MTRand_int32 (const <link linkend="_classUtil_1_1MTRand__int32">MTRand_int32</link> &amp; other)</computeroutput></para><para>
+
+<para>Copy constructor. </para>
+</para>
+<para>
+Definition at line 49 of file mtrand.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1MTRand__int32_1a1775c787e09231ba79f4039c1362bd23"/>    <section>
+    <title>~MTRand_int32()</title>
+<indexterm><primary>~MTRand_int32</primary><secondary>Util::MTRand_int32</secondary></indexterm>
+<indexterm><primary>Util::MTRand_int32</primary><secondary>~MTRand_int32</secondary></indexterm>
+<para><computeroutput>virtual Util::MTRand_int32::~MTRand_int32 ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Destructor. </para>
+</para>
+
+<para>2007-02-11: made the destructor virtual; Thanks &quot;double more&quot; for pointing this out </para>
+<para>
+Definition at line 105 of file mtrand.h.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1MTRand__int32_1ac02a734c3fb0e277b59bdcae56aac262"/>    <section>
+    <title>operator=()</title>
+<indexterm><primary>operator=</primary><secondary>Util::MTRand_int32</secondary></indexterm>
+<indexterm><primary>Util::MTRand_int32</primary><secondary>operator=</secondary></indexterm>
+<para><computeroutput>void Util::MTRand_int32::operator= (const <link linkend="_classUtil_1_1MTRand__int32">MTRand_int32</link> &amp; other)</computeroutput></para><para>
+
+<para>Assignment. </para>
+</para>
+<para>
+Definition at line 61 of file mtrand.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1MTRand__int32_1aa7bdd37d658e6f6912a2ae694cda03a0"/>    <section>
+    <title>seed()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>seed</primary><secondary>Util::MTRand_int32</secondary></indexterm>
+<indexterm><primary>Util::MTRand_int32</primary><secondary>seed</secondary></indexterm>
+<para><computeroutput>void Util::MTRand_int32::seed (unsigned long s)</computeroutput></para><para>
+
+<para>Seed with 32 bit integer. </para>
+</para>
+<para>
+Definition at line 86 of file mtrand.cpp.</para>
+<para>
+Referenced by MTRand_int32(), and seed().</para>
+    </section><anchor xml:id="_classUtil_1_1MTRand__int32_1a7957aba44c68fc08209bc6fded788284"/>    <section>
+    <title>seed()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>seed</primary><secondary>Util::MTRand_int32</secondary></indexterm>
+<indexterm><primary>Util::MTRand_int32</primary><secondary>seed</secondary></indexterm>
+<para><computeroutput>void Util::MTRand_int32::seed (const unsigned long * array, int size)</computeroutput></para><para>
+
+<para>Seed with array. </para>
+</para>
+<para>
+Definition at line 98 of file mtrand.cpp.</para>
+<para>
+References seed().</para>
+    </section><anchor xml:id="_classUtil_1_1MTRand__int32_1a7e4712f3deef939232b3f9e47a27d2fd"/>    <section>
+    <title>operator()()</title>
+<indexterm><primary>operator()</primary><secondary>Util::MTRand_int32</secondary></indexterm>
+<indexterm><primary>Util::MTRand_int32</primary><secondary>operator()</secondary></indexterm>
+<para><computeroutput>unsigned long Util::MTRand_int32::operator() ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Overload operator() to make this a generator (functor) </para>
+</para>
+
+<para>Generate 32 bit random int, public method. </para>
+<para>
+Definition at line 197 of file mtrand.h.</para>
+    </section><anchor xml:id="_classUtil_1_1MTRand__int32_1a8107c8d0aaf1ecf387f26b2ec1c64f1a"/>    <section>
+    <title>serialize()</title>
+<indexterm><primary>serialize</primary><secondary>Util::MTRand_int32</secondary></indexterm>
+<indexterm><primary>Util::MTRand_int32</primary><secondary>serialize</secondary></indexterm>
+<computeroutput>template&lt;class Archive &gt; </computeroutput><para><computeroutput>void Util::MTRand_int32::serialize (Archive &amp; ar, const unsigned int version)</computeroutput></para><para>
+
+<para>Serialize to/from an archive. </para>
+</para>
+<para>
+Definition at line 185 of file mtrand.h.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+mtrand.hmtrand.cpp</section>
+</section>

@@ -1,0 +1,143 @@
+\hypertarget{classPscf_1_1Pspg_1_1Continuous_1_1Polymer}{}\doxysubsection{Pscf\+::Pspg\+::Continuous\+::Polymer$<$ D $>$ Class Template Reference}
+\label{classPscf_1_1Pspg_1_1Continuous_1_1Polymer}\index{Pscf::Pspg::Continuous::Polymer$<$ D $>$@{Pscf::Pspg::Continuous::Polymer$<$ D $>$}}
+
+
+Descriptor and solver for a branched polymer species.  
+
+
+
+
+{\ttfamily \#include $<$Polymer.\+h$>$}
+
+Inheritance diagram for Pscf\+::Pspg\+::Continuous\+::Polymer$<$ D $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.005723cm]{classPscf_1_1Pspg_1_1Continuous_1_1Polymer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Polymer_a483d070e1374b9b2f743ac946cd2ba41}{compute}} (\mbox{\hyperlink{classUtil_1_1DArray}{D\+Array}}$<$ \mbox{\hyperlink{classPscf_1_1Pspg_1_1RDField}{W\+Field}} $>$ const \&w\+Fields)
+\begin{DoxyCompactList}\small\item\em Compute solution to M\+DE and concentrations. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Polymer_a72fbfc1ba61aafc6a80cb42c275ddbff}{compute\+Vertex}} (const \mbox{\hyperlink{classPscf_1_1Mesh}{Mesh}}$<$ D $>$ \&mesh)
+\begin{DoxyCompactList}\small\item\em Compute vertex density fields. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Polymer_a5498e3962284b04e2d20721c041808cf}{compute\+Stress}} (\mbox{\hyperlink{classPscf_1_1Pspg_1_1WaveList}{Wave\+List}}$<$ D $>$ \&wavelist)
+\begin{DoxyCompactList}\small\item\em Compute stress from a polymer chain, needs a pointer to basis. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Polymer_a703f4cb83c97bc22bdfff9c659939d5f}{stress}} (int n)
+\begin{DoxyCompactList}\small\item\em Get derivative of free energy w/ respect to a unit cell parameter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Polymer_a30752567fd7b8b93e5c8476bbe8592c5}{set\+Class\+Name}} (const char $\ast$\mbox{\hyperlink{classUtil_1_1ParamComposite_a93e3a9fd3bd01dcc3c606a7bf3112c0e}{class\+Name}})
+\begin{DoxyCompactList}\small\item\em Set class name string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$int D$>$\newline
+class Pscf\+::\+Pspg\+::\+Continuous\+::\+Polymer$<$ D $>$}
+
+Descriptor and solver for a branched polymer species. 
+
+The block concentrations stored in the constituent Block$<$\+D$>$ objects contain the block concentrations (i.\+e., volume fractions) computed in the most recent call of the compute function.
+
+The \mbox{\hyperlink{classPscf_1_1Species_a1956df7c7b319005c9f8b6cc274a7dc7}{phi()}} and \mbox{\hyperlink{classPscf_1_1Species_acaa3a7b3452b1100290920467bf99a57}{mu()}} accessor functions, which are inherited from Polymer\+Tmp$<$ Block$<$\+D$>$ $>$, return the value of phi (spatial average volume fraction of a species) or mu (chemical potential) computed in the last call of the compute function. If the ensemble for this species is closed, phi is read from the parameter file and mu is computed. If the ensemble is open, mu is read from the parameter file and phi is computed. 
+
+Definition at line 44 of file Polymer.\+h.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1Continuous_1_1Polymer_a483d070e1374b9b2f743ac946cd2ba41}\label{classPscf_1_1Pspg_1_1Continuous_1_1Polymer_a483d070e1374b9b2f743ac946cd2ba41}} 
+\index{Pscf::Pspg::Continuous::Polymer$<$ D $>$@{Pscf::Pspg::Continuous::Polymer$<$ D $>$}!compute@{compute}}
+\index{compute@{compute}!Pscf::Pspg::Continuous::Polymer$<$ D $>$@{Pscf::Pspg::Continuous::Polymer$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{compute()}{compute()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+void \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Polymer}{Pscf\+::\+Pspg\+::\+Continuous\+::\+Polymer}}$<$ D $>$\+::compute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1DArray}{D\+Array}}$<$ \mbox{\hyperlink{classPscf_1_1Pspg_1_1RDField}{W\+Field}} $>$ const \&}]{w\+Fields }\end{DoxyParamCaption})}
+
+
+
+Compute solution to M\+DE and concentrations. 
+
+
+
+Definition at line 63 of file Polymer.\+tpp.
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1Continuous_1_1Polymer_a72fbfc1ba61aafc6a80cb42c275ddbff}\label{classPscf_1_1Pspg_1_1Continuous_1_1Polymer_a72fbfc1ba61aafc6a80cb42c275ddbff}} 
+\index{Pscf::Pspg::Continuous::Polymer$<$ D $>$@{Pscf::Pspg::Continuous::Polymer$<$ D $>$}!computeVertex@{computeVertex}}
+\index{computeVertex@{computeVertex}!Pscf::Pspg::Continuous::Polymer$<$ D $>$@{Pscf::Pspg::Continuous::Polymer$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{computeVertex()}{computeVertex()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+void \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Polymer}{Pscf\+::\+Pspg\+::\+Continuous\+::\+Polymer}}$<$ D $>$\+::compute\+Vertex (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPscf_1_1Mesh}{Mesh}}$<$ D $>$ \&}]{mesh }\end{DoxyParamCaption})}
+
+
+
+Compute vertex density fields. 
+
+
+
+Definition at line 132 of file Polymer.\+tpp.
+
+
+
+References Pscf\+::\+Mesh$<$ D $>$\+::dimensions(), Pscf\+::\+Pspg\+::\+Thread\+Grid\+::set\+Threads\+Logical(), and Pscf\+::\+Mesh$<$ D $>$\+::size().
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1Continuous_1_1Polymer_a5498e3962284b04e2d20721c041808cf}\label{classPscf_1_1Pspg_1_1Continuous_1_1Polymer_a5498e3962284b04e2d20721c041808cf}} 
+\index{Pscf::Pspg::Continuous::Polymer$<$ D $>$@{Pscf::Pspg::Continuous::Polymer$<$ D $>$}!computeStress@{computeStress}}
+\index{computeStress@{computeStress}!Pscf::Pspg::Continuous::Polymer$<$ D $>$@{Pscf::Pspg::Continuous::Polymer$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{computeStress()}{computeStress()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+void \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Polymer}{Pscf\+::\+Pspg\+::\+Continuous\+::\+Polymer}}$<$ D $>$\+::compute\+Stress (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPscf_1_1Pspg_1_1WaveList}{Wave\+List}}$<$ D $>$ \&}]{wavelist }\end{DoxyParamCaption})}
+
+
+
+Compute stress from a polymer chain, needs a pointer to basis. 
+
+
+
+Definition at line 183 of file Polymer.\+tpp.
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1Continuous_1_1Polymer_a703f4cb83c97bc22bdfff9c659939d5f}\label{classPscf_1_1Pspg_1_1Continuous_1_1Polymer_a703f4cb83c97bc22bdfff9c659939d5f}} 
+\index{Pscf::Pspg::Continuous::Polymer$<$ D $>$@{Pscf::Pspg::Continuous::Polymer$<$ D $>$}!stress@{stress}}
+\index{stress@{stress}!Pscf::Pspg::Continuous::Polymer$<$ D $>$@{Pscf::Pspg::Continuous::Polymer$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{stress()}{stress()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+cuda\+Real \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Polymer}{Pscf\+::\+Pspg\+::\+Continuous\+::\+Polymer}}$<$ D $>$\+::stress (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get derivative of free energy w/ respect to a unit cell parameter. 
+
+Get the contribution from this polymer species to the derivative of free energy per monomer with respect to unit cell parameter n.
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & unit cell parameter index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 126 of file Polymer.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1Continuous_1_1Polymer_a30752567fd7b8b93e5c8476bbe8592c5}\label{classPscf_1_1Pspg_1_1Continuous_1_1Polymer_a30752567fd7b8b93e5c8476bbe8592c5}} 
+\index{Pscf::Pspg::Continuous::Polymer$<$ D $>$@{Pscf::Pspg::Continuous::Polymer$<$ D $>$}!setClassName@{setClassName}}
+\index{setClassName@{setClassName}!Pscf::Pspg::Continuous::Polymer$<$ D $>$@{Pscf::Pspg::Continuous::Polymer$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{setClassName()}{setClassName()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+void Util\+::\+Param\+Composite\+::set\+Class\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Set class name string. 
+
+Should be set in subclass constructor. 
+
+Definition at line 377 of file Param\+Composite.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Polymer.\+h\item 
+Polymer.\+tpp\end{DoxyCompactItemize}

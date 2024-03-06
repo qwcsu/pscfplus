@@ -1,0 +1,447 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture">
+<title>Pscf::Pspg::Continuous::Mixture&lt; D &gt; Class Template Reference</title>
+<indexterm><primary>Pscf::Pspg::Continuous::Mixture&lt; D &gt;</primary></indexterm>
+<para>
+
+<para>Solver for a mixture of polymers and solvents. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;Mixture.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Pscf::Pspg::Continuous::Mixture&lt; D &gt;:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classPscf_1_1Pspg_1_1Continuous_1_1Mixture.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Types    </title>
+        <itemizedlist>
+            <listitem><para>typedef <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Propagator">Propagator</link>&lt; D &gt;::<link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture_1ab8295d8d0695c7affcd0202e19915ac0">WField</link> <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture_1ab8295d8d0695c7affcd0202e19915ac0">WField</link></para>
+
+<para><link linkend="_classPscf_1_1Monomer">Monomer</link> chemical potential field type. </para>
+</listitem>
+            <listitem><para>typedef <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Propagator">Propagator</link>&lt; D &gt;::<link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture_1a210f45ae5cf6823ff78b00707afe7031">CField</link> <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture_1a210f45ae5cf6823ff78b00707afe7031">CField</link></para>
+
+<para><link linkend="_classPscf_1_1Monomer">Monomer</link> concentration or volume fraction field type. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture_1a78d330b8fc541aefdd94f9bd6836a102">Mixture</link> ()</para>
+
+<para>Constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture_1a2b76d33d4f89fbf78c4dfd882c7f5c7e">~Mixture</link> ()</para>
+
+<para>Destructor. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture_1ade33c91c8055983824e6068d8a81b7e3">readParameters</link> (std::istream &amp;in)</para>
+
+<para>Read all parameters and initialize. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture_1a6441447d6c68895dfd546cd4d13d0d0e">setMesh</link> (<link linkend="_classPscf_1_1Mesh">Mesh</link>&lt; D &gt; const &amp;mesh, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; D &gt; &amp;unitCell)</para>
+
+<para>Create an association with the mesh and allocate memory. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture_1a38739a2b396e6b42f17a097a3bf5cfb8">setupUnitCell</link> (const <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; D &gt; &amp;unitCell, const <link linkend="_classPscf_1_1Pspg_1_1WaveList">WaveList</link>&lt; D &gt; &amp;wavelist)</para>
+
+<para>Set unit cell parameters used in solver. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture_1acf2d8b773d723f5c0587e0aa8987028b">compute</link> (<link linkend="_classUtil_1_1DArray">DArray</link>&lt; <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture_1ab8295d8d0695c7affcd0202e19915ac0">WField</link> &gt; const &amp;wFields, <link linkend="_classUtil_1_1DArray">DArray</link>&lt; <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture_1a210f45ae5cf6823ff78b00707afe7031">CField</link> &gt; &amp;cFields)</para>
+
+<para>Compute concentrations. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture_1a83593e067a2e57aef002f98f73a0f211">computeStress</link> (<link linkend="_classPscf_1_1Pspg_1_1WaveList">WaveList</link>&lt; D &gt; &amp;wavelist)</para>
+
+<para>Get monomer reference volume. </para>
+</listitem>
+            <listitem><para>double <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture_1ad7f4cfe8d403237d0aaf2b7db0bed18d">stress</link> (int n)</para>
+
+<para>Get derivative of free energy w/ respect to cell parameter. </para>
+</listitem>
+            <listitem><para>double <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture_1aeba23c128fbf9f8cda4beb277530097a">vMonomer</link> () const</para>
+
+<para>Get monomer reference volume. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;typename Type &gt; </para><para><link linkend="_classUtil_1_1ScalarParam">ScalarParam</link>&lt; Type &gt; &amp; <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture_1a21c4ae1412ec944d4189cb7c7b6a3171">read</link> (std::istream &amp;in, const char *label, Type &amp;value)</para>
+
+<para>Add and read a new required ScalarParam &lt; Type &gt; object. </para>
+</listitem>
+            <listitem><para>template&lt;typename Type &gt; </para><para><link linkend="_classUtil_1_1ScalarParam">ScalarParam</link>&lt; Type &gt; &amp; <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture_1a5d9f133993e0aa0b18cd59938ccf8700">readOptional</link> (std::istream &amp;in, const char *label, Type &amp;value)</para>
+
+<para>Add and read a new optional ScalarParam &lt; Type &gt; object. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;int D&gt;
+class Pscf::Pspg::Continuous::Mixture&lt; D &gt;</title></simplesect>
+
+
+<para>Solver for a mixture of polymers and solvents. </para>
+
+
+
+<para>A <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture">Mixture</link> contains a list of <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Polymer">Polymer</link> and <link linkend="_classPscf_1_1Pspg_1_1Solvent">Solvent</link> objects. Each such object can solve the single-molecule statistical mechanics problem for an ideal gas of the associated species in a set of specified chemical potential fields, and thereby compute concentrations and single-molecule partition functions. A <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture">Mixture</link> is thus both a chemistry descriptor and an ideal-gas solver.</para>
+
+<para>A <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture">Mixture</link> is associated with a Mesh&lt;D&gt; object, which models a spatial discretization mesh. </para>
+<para>
+Definition at line 50 of file pgc/solvers/Mixture.h.</para>
+</section>
+<section>
+<title>Member Typedef Documentation</title>
+<anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture_1ab8295d8d0695c7affcd0202e19915ac0"/>    <section>
+    <title>WField</title>
+<indexterm><primary>WField</primary><secondary>Pscf::Pspg::Continuous::Mixture&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Continuous::Mixture&lt; D &gt;</primary><secondary>WField</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>typedef <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Propagator">Propagator</link>&lt;D&gt;::<link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture_1ab8295d8d0695c7affcd0202e19915ac0">WField</link> <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture">Pscf::Pspg::Continuous::Mixture</link>&lt; D &gt;::<link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture_1ab8295d8d0695c7affcd0202e19915ac0">WField</link></computeroutput></para><para>
+
+<para><link linkend="_classPscf_1_1Monomer">Monomer</link> chemical potential field type. </para>
+</para>
+<para>
+Definition at line 59 of file pgc/solvers/Mixture.h.</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture_1a210f45ae5cf6823ff78b00707afe7031"/>    <section>
+    <title>CField</title>
+<indexterm><primary>CField</primary><secondary>Pscf::Pspg::Continuous::Mixture&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Continuous::Mixture&lt; D &gt;</primary><secondary>CField</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>typedef <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Propagator">Propagator</link>&lt;D&gt;::<link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture_1a210f45ae5cf6823ff78b00707afe7031">CField</link> <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture">Pscf::Pspg::Continuous::Mixture</link>&lt; D &gt;::<link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture_1a210f45ae5cf6823ff78b00707afe7031">CField</link></computeroutput></para><para>
+
+<para><link linkend="_classPscf_1_1Monomer">Monomer</link> concentration or volume fraction field type. </para>
+</para>
+<para>
+Definition at line 64 of file pgc/solvers/Mixture.h.</para>
+</section>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture_1a78d330b8fc541aefdd94f9bd6836a102"/>    <section>
+    <title>Mixture()</title>
+<indexterm><primary>Mixture</primary><secondary>Pscf::Pspg::Continuous::Mixture&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Continuous::Mixture&lt; D &gt;</primary><secondary>Mixture</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput><link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture">Pscf::Pspg::Continuous::Mixture</link>&lt; D &gt;::<link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture">Mixture</link></computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+<para>
+Definition at line 36 of file Mixture.tpp.</para>
+<para>
+References Util::ParamComposite::setClassName().</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture_1a2b76d33d4f89fbf78c4dfd882c7f5c7e"/>    <section>
+    <title>~Mixture()</title>
+<indexterm><primary>~Mixture</primary><secondary>Pscf::Pspg::Continuous::Mixture&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Continuous::Mixture&lt; D &gt;</primary><secondary>~Mixture</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput><link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture">Pscf::Pspg::Continuous::Mixture</link>&lt; D &gt;::~<link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture">Mixture</link> ( )<computeroutput>[default]</computeroutput></computeroutput></para><para>
+
+<para>Destructor. </para>
+</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture_1ade33c91c8055983824e6068d8a81b7e3"/>    <section>
+    <title>readParameters()</title>
+<indexterm><primary>readParameters</primary><secondary>Pscf::Pspg::Continuous::Mixture&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Continuous::Mixture&lt; D &gt;</primary><secondary>readParameters</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>void <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture">Pscf::Pspg::Continuous::Mixture</link>&lt; D &gt;::readParameters (std::istream &amp; in)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Read all parameters and initialize. </para>
+</para>
+
+<para>This function reads in a complete description of the chemical composition and structure of all species, as well as the target contour length step size ds.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input parameter stream </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Reimplemented from <link linkend="_classPscf_1_1MixtureTmpl_1add538e69f3ef64693601a88d9db7d766">Pscf::MixtureTmpl&lt; Polymer&lt; D &gt;, Solvent&lt; D &gt; &gt;</link>.</para>
+<para>
+Definition at line 48 of file Mixture.tpp.</para>
+<para>
+References UTIL_CHECK.</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture_1a6441447d6c68895dfd546cd4d13d0d0e"/>    <section>
+    <title>setMesh()</title>
+<indexterm><primary>setMesh</primary><secondary>Pscf::Pspg::Continuous::Mixture&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Continuous::Mixture&lt; D &gt;</primary><secondary>setMesh</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>void <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture">Pscf::Pspg::Continuous::Mixture</link>&lt; D &gt;::setMesh (<link linkend="_classPscf_1_1Mesh">Mesh</link>&lt; D &gt; const &amp; mesh, <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; D &gt; &amp; unitCell)</computeroutput></para><para>
+
+<para>Create an association with the mesh and allocate memory. </para>
+</para>
+
+<para>The Mesh&lt;D&gt; object must have already been initialized, e.g., by reading its parameters from a file, so that the mesh dimensions are known on entry.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>mesh</entry>
+                                <entry>
+<para>associated Mesh&lt;D&gt; object (stores address). </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 81 of file Mixture.tpp.</para>
+<para>
+References Pscf::Mesh&lt; D &gt;::dimensions(), Pscf::UnitCellBase&lt; D &gt;::nParameter(), Pscf::Pspg::ThreadGrid::setThreadsLogical(), and UTIL_CHECK.</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture_1a38739a2b396e6b42f17a097a3bf5cfb8"/>    <section>
+    <title>setupUnitCell()</title>
+<indexterm><primary>setupUnitCell</primary><secondary>Pscf::Pspg::Continuous::Mixture&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Continuous::Mixture&lt; D &gt;</primary><secondary>setupUnitCell</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>void <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture">Pscf::Pspg::Continuous::Mixture</link>&lt; D &gt;::setupUnitCell (const <link linkend="_classPscf_1_1UnitCell">UnitCell</link>&lt; D &gt; &amp; unitCell, const <link linkend="_classPscf_1_1Pspg_1_1WaveList">WaveList</link>&lt; D &gt; &amp; wavelist)</computeroutput></para><para>
+
+<para>Set unit cell parameters used in solver. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>unitCell</entry>
+                                <entry>
+<para>UnitCell&lt;D&gt; object that contains Bravais lattice. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 238 of file Mixture.tpp.</para>
+<para>
+References Pscf::MeshIterator&lt; D &gt;::atEnd(), Pscf::MeshIterator&lt; D &gt;::begin(), Pscf::UnitCellBase&lt; D &gt;::ksq(), Pscf::UnitCellBase&lt; D &gt;::nParameter(), Pscf::MeshIterator&lt; D &gt;::position(), Pscf::MeshIterator&lt; D &gt;::rank(), and Pscf::MeshIterator&lt; D &gt;::setDimensions().</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture_1acf2d8b773d723f5c0587e0aa8987028b"/>    <section>
+    <title>compute()</title>
+<indexterm><primary>compute</primary><secondary>Pscf::Pspg::Continuous::Mixture&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Continuous::Mixture&lt; D &gt;</primary><secondary>compute</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>void <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture">Pscf::Pspg::Continuous::Mixture</link>&lt; D &gt;::compute (<link linkend="_classUtil_1_1DArray">DArray</link>&lt; <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture_1ab8295d8d0695c7affcd0202e19915ac0">WField</link> &gt; const &amp; wFields, <link linkend="_classUtil_1_1DArray">DArray</link>&lt; <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture_1a210f45ae5cf6823ff78b00707afe7031">CField</link> &gt; &amp; cFields)</computeroutput></para><para>
+
+<para>Compute concentrations. </para>
+</para>
+
+<para>This function calls the compute function of every molecular species, and then adds the resulting block concentration fields for blocks of each type to compute a total monomer concentration (or volume fraction) for each monomer type. Upon return, values are set for volume fraction and chemical potential (mu) members of each species, and for the concentration fields for each <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block">Block</link> and <link linkend="_classPscf_1_1Pspg_1_1Solvent">Solvent</link>. The total concentration for each monomer type is returned in the cFields output parameter.</para>
+
+<para>The arrays wFields and cFields must each have size <link linkend="_classPscf_1_1MixtureTmpl_1aa5801f478b598a8d1d5ef312be281b19">nMonomer()</link>, and contain fields that are indexed by monomer type index.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>wFields</entry>
+                                <entry>
+<para>array of chemical potential fields (input) </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>cFields</entry>
+                                <entry>
+<para>array of monomer concentration fields (output) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 335 of file Mixture.tpp.</para>
+<para>
+References Pscf::Pspg::DField&lt; Data &gt;::cDField(), Pscf::Pspg::ThreadGrid::setThreadsLogical(), and UTIL_CHECK.</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture_1a83593e067a2e57aef002f98f73a0f211"/>    <section>
+    <title>computeStress()</title>
+<indexterm><primary>computeStress</primary><secondary>Pscf::Pspg::Continuous::Mixture&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Continuous::Mixture&lt; D &gt;</primary><secondary>computeStress</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>void <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture">Pscf::Pspg::Continuous::Mixture</link>&lt; D &gt;::computeStress (<link linkend="_classPscf_1_1Pspg_1_1WaveList">WaveList</link>&lt; D &gt; &amp; wavelist)</computeroutput></para><para>
+
+<para>Get monomer reference volume. </para>
+</para>
+<para>
+Definition at line 408 of file Mixture.tpp.</para>
+<para>
+References Pscf::Pspg::ThreadGrid::setThreadsLogical().</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture_1ad7f4cfe8d403237d0aaf2b7db0bed18d"/>    <section>
+    <title>stress()</title>
+<indexterm><primary>stress</primary><secondary>Pscf::Pspg::Continuous::Mixture&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Continuous::Mixture&lt; D &gt;</primary><secondary>stress</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>double <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture">Pscf::Pspg::Continuous::Mixture</link>&lt; D &gt;::stress (int n)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get derivative of free energy w/ respect to cell parameter. </para>
+</para>
+
+<para>Get precomputed value of derivative of free energy per monomer with respect to unit cell parameter number n.</para>
+
+<para>\int n unit cell parameter id </para>
+<para>
+Definition at line 158 of file pgc/solvers/Mixture.h.</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture_1aeba23c128fbf9f8cda4beb277530097a"/>    <section>
+    <title>vMonomer()</title>
+<indexterm><primary>vMonomer</primary><secondary>Pscf::Pspg::Continuous::Mixture&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Continuous::Mixture&lt; D &gt;</primary><secondary>vMonomer</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>double <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture">Pscf::Pspg::Continuous::Mixture</link>&lt; D &gt;::vMonomer<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get monomer reference volume. </para>
+</para>
+<para>
+Definition at line 267 of file pgc/solvers/Mixture.h.</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture_1a21c4ae1412ec944d4189cb7c7b6a3171"/>    <section>
+    <title>read()</title>
+<indexterm><primary>read</primary><secondary>Pscf::Pspg::Continuous::Mixture&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Continuous::Mixture&lt; D &gt;</primary><secondary>read</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><computeroutput>template&lt;typename Type &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1ScalarParam">ScalarParam</link>&lt; Type &gt; &amp; Util::ParamComposite::read (typename Type )<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Add and read a new required ScalarParam &lt; Type &gt; object. </para>
+</para>
+
+<para>This is equivalent to ScalarParam&lt;Type&gt;(in, label, value, true).</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream for reading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>label</entry>
+                                <entry>
+<para>Label string </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>value</entry>
+                                <entry>
+<para>reference to new ScalarParam&lt; Type &gt; </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 1156 of file ParamComposite.h.</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture_1a5d9f133993e0aa0b18cd59938ccf8700"/>    <section>
+    <title>readOptional()</title>
+<indexterm><primary>readOptional</primary><secondary>Pscf::Pspg::Continuous::Mixture&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Continuous::Mixture&lt; D &gt;</primary><secondary>readOptional</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><computeroutput>template&lt;typename Type &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1ScalarParam">ScalarParam</link>&lt; Type &gt; &amp; Util::ParamComposite::readOptional (typename Type )<computeroutput>[inline]</computeroutput>, <computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Add and read a new optional ScalarParam &lt; Type &gt; object. </para>
+</para>
+
+<para>This is equivalent to ScalarParam&lt;Type&gt;(in, label, value, false).</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream for reading </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>label</entry>
+                                <entry>
+<para>Label string </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>value</entry>
+                                <entry>
+<para>reference to new ScalarParam&lt; Type &gt; </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 1164 of file ParamComposite.h.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+pgc/solvers/Mixture.hMixture.tpp</section>
+</section>

@@ -1,0 +1,289 @@
+\hypertarget{classUtil_1_1Array}{}\doxysubsection{Util\+::Array$<$ Data $>$ Class Template Reference}
+\label{classUtil_1_1Array}\index{Util::Array$<$ Data $>$@{Util::Array$<$ Data $>$}}
+
+
+\mbox{\hyperlink{classUtil_1_1Array}{Array}} container class template.  
+
+
+
+
+{\ttfamily \#include $<$Array.\+h$>$}
+
+Inheritance diagram for Util\+::Array$<$ Data $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classUtil_1_1Array}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classUtil_1_1Array_acb20bc6899f722fc3daecdfcbe7e6dc1}{$\sim$\+Array}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUtil_1_1Array_a66a4be07c83c3b49eae3536a3afd9fb0}{capacity}} () const
+\begin{DoxyCompactList}\small\item\em Return allocated size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1Array_aab6a0fd78f093c72eb3d9fadc10e975f}{begin}} (\mbox{\hyperlink{classUtil_1_1ArrayIterator}{Array\+Iterator}}$<$ Data $>$ \&iterator)
+\begin{DoxyCompactList}\small\item\em Set an iterator to begin this \mbox{\hyperlink{classUtil_1_1Array}{Array}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1Array_a2b291d1a8575a60ee9fe4578538af0d4}{begin}} (\mbox{\hyperlink{classUtil_1_1ConstArrayIterator}{Const\+Array\+Iterator}}$<$ Data $>$ \&iterator) const
+\begin{DoxyCompactList}\small\item\em Set a const iterator to begin this \mbox{\hyperlink{classUtil_1_1Array}{Array}}. \end{DoxyCompactList}\item 
+Data \& \mbox{\hyperlink{classUtil_1_1Array_ab90b22d68aa6336afbd6d512f048a23e}{operator\mbox{[}$\,$\mbox{]}}} (int i)
+\begin{DoxyCompactList}\small\item\em Get an element by non-\/const reference. \end{DoxyCompactList}\item 
+const Data \& \mbox{\hyperlink{classUtil_1_1Array_a20cc3fb625cb752cb82bfde7e6be63d3}{operator\mbox{[}$\,$\mbox{]}}} (int i) const
+\begin{DoxyCompactList}\small\item\em Get an element by const reference. \end{DoxyCompactList}\item 
+Data $\ast$ \mbox{\hyperlink{classUtil_1_1Array_afc2e404b7ef57d6fa20b78df7c0b7557}{c\+Array}} ()
+\begin{DoxyCompactList}\small\item\em Return pointer to underlying C array. \end{DoxyCompactList}\item 
+const Data $\ast$ \mbox{\hyperlink{classUtil_1_1Array_ae4cef1b4fd4452380c8f3f0e253f442f}{c\+Array}} () const
+\begin{DoxyCompactList}\small\item\em Return pointer to const to underlying C array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1Array_afebcbd322d16507b686ac0b1152410a4}{Array}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Data $\ast$ \mbox{\hyperlink{classUtil_1_1Array_a3e7b24fc0708bb01cfd053bc15d2fcad}{data\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Pointer to an array of Data elements. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUtil_1_1Array_af41ed573abecee2abb3745a26128c9a8}{capacity\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Allocated size of the data\+\_\+ array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$typename Data$>$\newline
+class Util\+::\+Array$<$ Data $>$}
+
+\mbox{\hyperlink{classUtil_1_1Array}{Array}} container class template. 
+
+An \mbox{\hyperlink{classUtil_1_1Array}{Array}} is a sequence that supports random access via an overloaded operator \mbox{[}\mbox{]}, and that wraps a dynamically allocated C array.
+
+\mbox{\hyperlink{classUtil_1_1Array}{Array}} is a base class for \mbox{\hyperlink{classUtil_1_1DArray}{D\+Array}}, which is dynamically allocated, and \mbox{\hyperlink{classUtil_1_1RArray}{R\+Array}}, which acts as a reference to another \mbox{\hyperlink{classUtil_1_1DArray}{D\+Array}} or \mbox{\hyperlink{classUtil_1_1FSArray}{F\+S\+Array}}.
+
+When compiled in debug mode (i.\+e., when N\+D\+E\+B\+UG is not defined) the subscript operator \mbox{[}\mbox{]} checks the validity of the element index. 
+
+Definition at line 28 of file Auto\+Corr\+Array.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1Array_acb20bc6899f722fc3daecdfcbe7e6dc1}\label{classUtil_1_1Array_acb20bc6899f722fc3daecdfcbe7e6dc1}} 
+\index{Util::Array$<$ Data $>$@{Util::Array$<$ Data $>$}!````~Array@{$\sim$Array}}
+\index{````~Array@{$\sim$Array}!Util::Array$<$ Data $>$@{Util::Array$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{$\sim$Array()}{~Array()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+\mbox{\hyperlink{classUtil_1_1Array}{Util\+::\+Array}}$<$ Data $>$\+::$\sim$\mbox{\hyperlink{classUtil_1_1Array}{Array}}\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+Definition at line 146 of file Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Array_afebcbd322d16507b686ac0b1152410a4}\label{classUtil_1_1Array_afebcbd322d16507b686ac0b1152410a4}} 
+\index{Util::Array$<$ Data $>$@{Util::Array$<$ Data $>$}!Array@{Array}}
+\index{Array@{Array}!Util::Array$<$ Data $>$@{Util::Array$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{Array()}{Array()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+\mbox{\hyperlink{classUtil_1_1Array}{Util\+::\+Array}}$<$ Data $>$\+::\mbox{\hyperlink{classUtil_1_1Array}{Array}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Default constructor. 
+
+Protected to prevent direct instantiation. 
+
+Definition at line 137 of file Array.\+h.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1Array_a66a4be07c83c3b49eae3536a3afd9fb0}\label{classUtil_1_1Array_a66a4be07c83c3b49eae3536a3afd9fb0}} 
+\index{Util::Array$<$ Data $>$@{Util::Array$<$ Data $>$}!capacity@{capacity}}
+\index{capacity@{capacity}!Util::Array$<$ Data $>$@{Util::Array$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{capacity()}{capacity()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+int \mbox{\hyperlink{classUtil_1_1Array}{Util\+::\+Array}}$<$ Data $>$\+::capacity\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return allocated size. 
+
+\begin{DoxyReturn}{Returns}
+Number of elements allocated in array. 
+\end{DoxyReturn}
+
+
+Definition at line 153 of file Array.\+h.
+
+
+
+Referenced by Util\+::\+D\+Ragged\+Matrix$<$ Data $>$\+::allocate(), Util\+::\+Array\+Set$<$ Data $>$\+::allocate(), Util\+::\+R\+Array$<$ Data $>$\+::associate(), Util\+::bcast(), Pscf\+::\+Homogeneous\+::\+Mixture\+::compute\+Phi(), Util\+::\+Distribution\+::\+Distribution(), Util\+::\+Int\+Distribution\+::\+Int\+Distribution(), Util\+::\+Radial\+Distribution\+::load\+Parameters(), Util\+::\+Int\+Distribution\+::load\+Parameters(), Util\+::\+Distribution\+::load\+Parameters(), Util\+::\+Int\+Distribution\+::operator=(), Util\+::\+Distribution\+::operator=(), Util\+::\+D\+Array$<$ Pscf\+::\+Monomer $>$\+::operator=(), Util\+::\+Polynomial$<$ double $>$\+::\+Polynomial(), Util\+::recv(), Util\+::send(), Util\+::\+Distribution\+::serialize(), and Pscf\+::\+Lu\+Solver\+::solve().
+
+\mbox{\Hypertarget{classUtil_1_1Array_aab6a0fd78f093c72eb3d9fadc10e975f}\label{classUtil_1_1Array_aab6a0fd78f093c72eb3d9fadc10e975f}} 
+\index{Util::Array$<$ Data $>$@{Util::Array$<$ Data $>$}!begin@{begin}}
+\index{begin@{begin}!Util::Array$<$ Data $>$@{Util::Array$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+void \mbox{\hyperlink{classUtil_1_1Array}{Util\+::\+Array}}$<$ Data $>$\+::begin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1ArrayIterator}{Array\+Iterator}}$<$ Data $>$ \&}]{iterator }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set an iterator to begin this \mbox{\hyperlink{classUtil_1_1Array}{Array}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em iterator} & \mbox{\hyperlink{classUtil_1_1ArrayIterator}{Array\+Iterator}}, initialized on output. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 160 of file Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Array_a2b291d1a8575a60ee9fe4578538af0d4}\label{classUtil_1_1Array_a2b291d1a8575a60ee9fe4578538af0d4}} 
+\index{Util::Array$<$ Data $>$@{Util::Array$<$ Data $>$}!begin@{begin}}
+\index{begin@{begin}!Util::Array$<$ Data $>$@{Util::Array$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+void \mbox{\hyperlink{classUtil_1_1Array}{Util\+::\+Array}}$<$ Data $>$\+::begin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1ConstArrayIterator}{Const\+Array\+Iterator}}$<$ Data $>$ \&}]{iterator }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set a const iterator to begin this \mbox{\hyperlink{classUtil_1_1Array}{Array}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em iterator} & \mbox{\hyperlink{classUtil_1_1ConstArrayIterator}{Const\+Array\+Iterator}}, initialized on output. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 172 of file Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Array_ab90b22d68aa6336afbd6d512f048a23e}\label{classUtil_1_1Array_ab90b22d68aa6336afbd6d512f048a23e}} 
+\index{Util::Array$<$ Data $>$@{Util::Array$<$ Data $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Util::Array$<$ Data $>$@{Util::Array$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+Data \& \mbox{\hyperlink{classUtil_1_1Array}{Util\+::\+Array}}$<$ Data $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get an element by non-\/const reference. 
+
+Mimic C-\/array subscripting.
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & array index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+non-\/const reference to element i 
+\end{DoxyReturn}
+
+
+Definition at line 184 of file Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Array_a20cc3fb625cb752cb82bfde7e6be63d3}\label{classUtil_1_1Array_a20cc3fb625cb752cb82bfde7e6be63d3}} 
+\index{Util::Array$<$ Data $>$@{Util::Array$<$ Data $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Util::Array$<$ Data $>$@{Util::Array$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+const Data \& \mbox{\hyperlink{classUtil_1_1Array}{Util\+::\+Array}}$<$ Data $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get an element by const reference. 
+
+Mimics C-\/array subscripting.
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & array index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const reference to element i 
+\end{DoxyReturn}
+
+
+Definition at line 196 of file Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Array_afc2e404b7ef57d6fa20b78df7c0b7557}\label{classUtil_1_1Array_afc2e404b7ef57d6fa20b78df7c0b7557}} 
+\index{Util::Array$<$ Data $>$@{Util::Array$<$ Data $>$}!cArray@{cArray}}
+\index{cArray@{cArray}!Util::Array$<$ Data $>$@{Util::Array$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{cArray()}{cArray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+const Data $\ast$ \mbox{\hyperlink{classUtil_1_1Array}{Util\+::\+Array}}$<$ Data $>$\+::c\+Array\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return pointer to underlying C array. 
+
+
+
+Definition at line 208 of file Array.\+h.
+
+
+
+Referenced by Util\+::\+Distribution\+::reduce(), and Pscf\+::\+Lu\+Solver\+::solve().
+
+\mbox{\Hypertarget{classUtil_1_1Array_ae4cef1b4fd4452380c8f3f0e253f442f}\label{classUtil_1_1Array_ae4cef1b4fd4452380c8f3f0e253f442f}} 
+\index{Util::Array$<$ Data $>$@{Util::Array$<$ Data $>$}!cArray@{cArray}}
+\index{cArray@{cArray}!Util::Array$<$ Data $>$@{Util::Array$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{cArray()}{cArray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+const Data$\ast$ \mbox{\hyperlink{classUtil_1_1Array}{Util\+::\+Array}}$<$ Data $>$\+::c\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return pointer to const to underlying C array. 
+
+
+
+\doxysubsubsection{Member Data Documentation}
+\mbox{\Hypertarget{classUtil_1_1Array_a3e7b24fc0708bb01cfd053bc15d2fcad}\label{classUtil_1_1Array_a3e7b24fc0708bb01cfd053bc15d2fcad}} 
+\index{Util::Array$<$ Data $>$@{Util::Array$<$ Data $>$}!data\_@{data\_}}
+\index{data\_@{data\_}!Util::Array$<$ Data $>$@{Util::Array$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{data\_}{data\_}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+Data$\ast$ \mbox{\hyperlink{classUtil_1_1Array}{Util\+::\+Array}}$<$ Data $>$\+::data\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Pointer to an array of Data elements. 
+
+
+
+Definition at line 103 of file Array.\+h.
+
+
+
+Referenced by Util\+::\+R\+Array$<$ Data $>$\+::associate(), Util\+::\+D\+Array$<$ Pscf\+::\+Monomer $>$\+::\+D\+Array(), and Util\+::\+R\+Array$<$ Data $>$\+::\+R\+Array().
+
+\mbox{\Hypertarget{classUtil_1_1Array_af41ed573abecee2abb3745a26128c9a8}\label{classUtil_1_1Array_af41ed573abecee2abb3745a26128c9a8}} 
+\index{Util::Array$<$ Data $>$@{Util::Array$<$ Data $>$}!capacity\_@{capacity\_}}
+\index{capacity\_@{capacity\_}!Util::Array$<$ Data $>$@{Util::Array$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{capacity\_}{capacity\_}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+int \mbox{\hyperlink{classUtil_1_1Array}{Util\+::\+Array}}$<$ Data $>$\+::capacity\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Allocated size of the data\+\_\+ array. 
+
+
+
+Definition at line 106 of file Array.\+h.
+
+
+
+Referenced by Util\+::\+R\+Array$<$ Data $>$\+::associate(), Util\+::\+D\+Array$<$ Pscf\+::\+Monomer $>$\+::\+D\+Array(), Util\+::\+D\+Array$<$ Pscf\+::\+Monomer $>$\+::operator=(), and Util\+::\+R\+Array$<$ Data $>$\+::\+R\+Array().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Auto\+Corr\+Array.\+h\item 
+Array.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1Ar1Process">
+<title>Util::Ar1Process Class Reference</title>
+<indexterm><primary>Util::Ar1Process</primary></indexterm>
+<para>
+
+<para>Generator for a discrete AR(1) Markov process. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;Ar1Process.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1Ar1Process_1ae3d25b29d622056190dc94cbe38a18db">Ar1Process</link> ()</para>
+
+<para>Constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Ar1Process_1a47aad8b46f43dfe7e76b8d7560e2201f">Ar1Process</link> (<link linkend="_classUtil_1_1Random">Random</link> &amp;random)</para>
+
+<para>Constructor. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1Ar1Process_1a9c60ab97782c9c20e96d8668f2391019">setRNG</link> (<link linkend="_classUtil_1_1Random">Random</link> &amp;random)</para>
+
+<para>Associate a random number generator. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1Ar1Process_1a9816d24784201773a2f3cc4d14b45070">init</link> (double tau)</para>
+
+<para>Initialize process. </para>
+</listitem>
+            <listitem><para>double <link linkend="_classUtil_1_1Ar1Process_1a9619754ea96eab7f45c1ee3731138d32">operator()</link> ()</para>
+
+<para>Generate and return a new value. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Generator for a discrete AR(1) Markov process. </para>
+
+
+
+<para>An auto-regressive AR(1) process is a discrete stationary Markov process x(n) with an autocorrelation function &lt;x(n)*x(n+m)&gt; = exp(-m/tau), where tau is a decay time. It is a discrete version of the Ornstein-Uhlenbeck continuous Markov process. </para>
+<para>
+Definition at line 27 of file Ar1Process.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1Ar1Process_1ae3d25b29d622056190dc94cbe38a18db"/>    <section>
+    <title>Ar1Process()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>Ar1Process</primary><secondary>Util::Ar1Process</secondary></indexterm>
+<indexterm><primary>Util::Ar1Process</primary><secondary>Ar1Process</secondary></indexterm>
+<para><computeroutput>Util::Ar1Process::Ar1Process ( )</computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+<para>
+Definition at line 16 of file Ar1Process.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1Ar1Process_1a47aad8b46f43dfe7e76b8d7560e2201f"/>    <section>
+    <title>Ar1Process()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>Ar1Process</primary><secondary>Util::Ar1Process</secondary></indexterm>
+<indexterm><primary>Util::Ar1Process</primary><secondary>Ar1Process</secondary></indexterm>
+<para><computeroutput>Util::Ar1Process::Ar1Process (<link linkend="_classUtil_1_1Random">Random</link> &amp; random)</computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>random</entry>
+                                <entry>
+<para>associated random number generator. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 27 of file Ar1Process.cpp.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1Ar1Process_1a9c60ab97782c9c20e96d8668f2391019"/>    <section>
+    <title>setRNG()</title>
+<indexterm><primary>setRNG</primary><secondary>Util::Ar1Process</secondary></indexterm>
+<indexterm><primary>Util::Ar1Process</primary><secondary>setRNG</secondary></indexterm>
+<para><computeroutput>void Util::Ar1Process::setRNG (<link linkend="_classUtil_1_1Random">Random</link> &amp; random)</computeroutput></para><para>
+
+<para>Associate a random number generator. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>random</entry>
+                                <entry>
+<para>associated random number generator. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 38 of file Ar1Process.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1Ar1Process_1a9816d24784201773a2f3cc4d14b45070"/>    <section>
+    <title>init()</title>
+<indexterm><primary>init</primary><secondary>Util::Ar1Process</secondary></indexterm>
+<indexterm><primary>Util::Ar1Process</primary><secondary>init</secondary></indexterm>
+<para><computeroutput>void Util::Ar1Process::init (double tau)</computeroutput></para><para>
+
+<para>Initialize process. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>tau</entry>
+                                <entry>
+<para>decay time (in discrete steps) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 46 of file Ar1Process.cpp.</para>
+<para>
+References Util::Random::gaussian(), and UTIL_THROW.</para>
+    </section><anchor xml:id="_classUtil_1_1Ar1Process_1a9619754ea96eab7f45c1ee3731138d32"/>    <section>
+    <title>operator()()</title>
+<indexterm><primary>operator()</primary><secondary>Util::Ar1Process</secondary></indexterm>
+<indexterm><primary>Util::Ar1Process</primary><secondary>operator()</secondary></indexterm>
+<para><computeroutput>double Util::Ar1Process::operator() ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Generate and return a new value. </para>
+</para>
+<para>
+Definition at line 77 of file Ar1Process.h.</para>
+<para>
+References Util::Random::gaussian().</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+Ar1Process.hAr1Process.cpp</section>
+</section>

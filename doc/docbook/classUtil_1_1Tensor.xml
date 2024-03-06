@@ -1,0 +1,1250 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1Tensor">
+<title>Util::Tensor Class Reference</title>
+<indexterm><primary>Util::Tensor</primary></indexterm>
+<para>
+
+<para>A <link linkend="_classUtil_1_1Tensor">Tensor</link> represents a Cartesian tensor. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;Tensor.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+<simplesect><title>Constructors</title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1Tensor_1a742164de495b221bc10bf98b974df39c">Tensor</link> ()</para>
+
+<para>Default constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Tensor_1a496bdc1bf0a852ca414cf29f42c558e2">Tensor</link> (const <link linkend="_classUtil_1_1Tensor">Tensor</link> &amp;t)</para>
+
+<para>Copy constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Tensor_1a719e784eec4529cc0935da8ac924725a">Tensor</link> (double scalar)</para>
+
+<para>Constructor, initialize all elements to a scalar value. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Tensor_1a3ba10f8939f5d9521194d3cadd844ab6">Tensor</link> (const double a[][<link linkend="_group__Space__Module_1ga2772f5ec799816685d37798d8d358ef7">Dimension</link>])</para>
+
+<para>Construct <link linkend="_classUtil_1_1Tensor">Tensor</link> from double [][Dimension] 2D C array. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</simplesect>
+<simplesect><title>Assignment</title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; <link linkend="_classUtil_1_1Tensor_1ab4d94f20d3b11ca7f7997854fee27c59">operator=</link> (const <link linkend="_classUtil_1_1Tensor">Tensor</link> &amp;t)</para>
+
+<para>Copy assignment. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; <link linkend="_classUtil_1_1Tensor_1a9623859327629bb7a4c607441ec5f2c5">operator=</link> (const double a[][<link linkend="_group__Space__Module_1ga2772f5ec799816685d37798d8d358ef7">Dimension</link>])</para>
+
+<para>Assignment from C double [Dimension][Dimension] 2D array. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect><title>Arithmetic Assignment</title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_classUtil_1_1Tensor_1ac98b79462df1e9c5587f7cc705ce6de0">operator+=</link> (const <link linkend="_classUtil_1_1Tensor">Tensor</link> &amp;dt)</para>
+
+<para>Add tensor dt to this tensor. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1Tensor_1a9e4809aba09d563d81ed3b0adc1aecd8">operator-=</link> (const <link linkend="_classUtil_1_1Tensor">Tensor</link> &amp;dt)</para>
+
+<para>Subtract tensor dt from this tensor. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1Tensor_1aaa8b59bdbb55943de626045ba4ad3aa8">operator*=</link> (double s)</para>
+
+<para>Multiply this tensor by scalar s. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1Tensor_1a35bf37b54c6704459183df0829e03d32">operator/=</link> (double s)</para>
+
+<para>Divide this tensor by scalar s. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect><title>Array Subscript</title>
+        <itemizedlist>
+            <listitem><para>const double &amp; <link linkend="_classUtil_1_1Tensor_1a792fce0410f396ffbb43a64af497d6cb">operator()</link> (int i, int j) const</para>
+
+<para>Return one element by value. </para>
+</listitem>
+            <listitem><para>double &amp; <link linkend="_classUtil_1_1Tensor_1aa6c03f6146d3ab0c9c3f65f15db3ddf1">operator()</link> (int i, int j)</para>
+
+<para>Return one element by non-const reference. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect><title>Tensor valued functions (result assigned to invoking object)</title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; <link linkend="_classUtil_1_1Tensor_1aac0c50df8b2fddfa0a2264e9b0866441">zero</link> ()</para>
+
+<para>Set all elements of this tensor to zero. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; <link linkend="_classUtil_1_1Tensor_1ad572359e94fe7bb2978e03dd232a4a14">identity</link> ()</para>
+
+<para>Set this to the identity (unity) tensor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; <link linkend="_classUtil_1_1Tensor_1acc7765b96a570176187318c29e367eb1">setRow</link> (int i, const <link linkend="_classUtil_1_1Vector">Vector</link> &amp;r)</para>
+
+<para>Set row i of this <link linkend="_classUtil_1_1Tensor">Tensor</link> to elements of <link linkend="_classUtil_1_1Vector">Vector</link> r. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; <link linkend="_classUtil_1_1Tensor_1a930742044d17d87706afd826bf416e7a">setColumn</link> (int i, const <link linkend="_classUtil_1_1Vector">Vector</link> &amp;r)</para>
+
+<para>Set column i of this <link linkend="_classUtil_1_1Tensor">Tensor</link> to elements of <link linkend="_classUtil_1_1Vector">Vector</link> r. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; <link linkend="_classUtil_1_1Tensor_1a4cea7d3360169503bbc6c611849d2b64">add</link> (const <link linkend="_classUtil_1_1Tensor">Tensor</link> &amp;t1, const <link linkend="_classUtil_1_1Tensor">Tensor</link> &amp;t2)</para>
+
+<para>Add tensors t1 and t2. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; <link linkend="_classUtil_1_1Tensor_1a75b8bb7a97457441188540abfc541f76">subtract</link> (const <link linkend="_classUtil_1_1Tensor">Tensor</link> &amp;t1, const <link linkend="_classUtil_1_1Tensor">Tensor</link> &amp;t2)</para>
+
+<para>Subtract tensor t2 from t1. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; <link linkend="_classUtil_1_1Tensor_1a63c6e5a3ee3c7f6a3a517a109358203e">multiply</link> (const <link linkend="_classUtil_1_1Tensor">Tensor</link> &amp;t, double s)</para>
+
+<para>Multiply a tensor t by a scalar s. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; <link linkend="_classUtil_1_1Tensor_1abdcd1b61cffc679faf6bb3911c199948">divide</link> (const <link linkend="_classUtil_1_1Tensor">Tensor</link> &amp;t, double s)</para>
+
+<para>Divide a <link linkend="_classUtil_1_1Tensor">Tensor</link> t by a scalar s. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; <link linkend="_classUtil_1_1Tensor_1ac9942abf0a3805738acc1f866e4870b5">transpose</link> (const <link linkend="_classUtil_1_1Tensor">Tensor</link> &amp;t)</para>
+
+<para>Compute transpose of a tensor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; <link linkend="_classUtil_1_1Tensor_1af7e15fba7a10a96e59d6e42f740fb185">transpose</link> ()</para>
+
+<para>Transpose this tensor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; <link linkend="_classUtil_1_1Tensor_1a1a34bb71f1b728afb8f28e84c8eb5466">symmetrize</link> (const <link linkend="_classUtil_1_1Tensor">Tensor</link> &amp;t)</para>
+
+<para>Compute symmetric part of a tensor t. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; <link linkend="_classUtil_1_1Tensor_1a70239ee5060596eaebcc3d7d3c76b8ff">symmetrize</link> ()</para>
+
+<para>Symmetrize this tensor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; <link linkend="_classUtil_1_1Tensor_1a7571741bc53301d594df62d27899a000">dyad</link> (const <link linkend="_classUtil_1_1Vector">Vector</link> &amp;v1, const <link linkend="_classUtil_1_1Vector">Vector</link> &amp;v2)</para>
+
+<para>Create dyad of two vectors. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect><title>Miscellaneous</title>
+        <itemizedlist>
+            <listitem><para>double <link linkend="_classUtil_1_1Tensor_1a9e8380021677804a89cf5bb914330629">trace</link> () const</para>
+
+<para>Return the trace of this tensor. </para>
+</listitem>
+            <listitem><para>template&lt;class Archive &gt; </para><para>void <link linkend="_classUtil_1_1Tensor_1af4a0aa68c4e835b7f182c1647d238b1a">serialize</link> (Archive &amp;ar, const unsigned int version)</para>
+
+<para>Serialize this to/from an archive. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Members    </title>
+        <itemizedlist>
+            <listitem><para>static const <link linkend="_classUtil_1_1Tensor">Tensor</link> <link linkend="_classUtil_1_1Tensor_1ac1dd4f6bf592cc81526289c6b7e867bf">Zero</link> = <link linkend="_classUtil_1_1Tensor">Tensor</link>(0.0)</para>
+
+<para>Constant <link linkend="_classUtil_1_1Tensor">Tensor</link> with all zero elements. </para>
+</listitem>
+            <listitem><para>static const <link linkend="_classUtil_1_1Tensor">Tensor</link> <link linkend="_classUtil_1_1Tensor_1afdab38efabeda2b45fae618ac19802ca">Identity</link> = <link linkend="_classUtil_1_1Tensor">Tensor</link>().<link linkend="_classUtil_1_1Tensor_1ad572359e94fe7bb2978e03dd232a4a14">identity</link>()</para>
+
+<para>Constant idenity <link linkend="_classUtil_1_1Tensor">Tensor</link> (diagonal diagonal elements all 1). </para>
+</listitem>
+            <listitem><para>static void <link linkend="_classUtil_1_1Tensor_1ace1048c4742dfb965e80e59f50afa488">initStatic</link> ()</para>
+
+<para>Call to guarantee initialization of Zero and Identity tensors. </para>
+</listitem>
+            <listitem><para>static void <link linkend="_classUtil_1_1Tensor_1ad57a483c6b720ba31bc5560d5b49cd2e">commitMpiType</link> ()</para>
+
+<para>Commit MPI datatype <link linkend="_classUtil_1_1MpiTraits_3_01Tensor_01_4_1a68faa4fee8fbbc9664afee720874ce5c">MpiTraits&lt;Tensor&gt;::type</link>. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_classUtil_1_1Tensor_1a390070739cdb38a698e2b2e6ec993579">operator==</link> (const <link linkend="_classUtil_1_1Tensor">Tensor</link> &amp;t1, const <link linkend="_classUtil_1_1Tensor">Tensor</link> &amp;t2)</para>
+
+<para>Equality for Tensors. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_classUtil_1_1Tensor_1a93d24a9bf32d221e3518e6366ecc6013">operator==</link> (const <link linkend="_classUtil_1_1Tensor">Tensor</link> &amp;t1, const double t2[][<link linkend="_group__Space__Module_1ga2772f5ec799816685d37798d8d358ef7">Dimension</link>])</para>
+
+<para>Equality of <link linkend="_classUtil_1_1Tensor">Tensor</link> and 2D C array. </para>
+</listitem>
+            <listitem><para>std::istream &amp; <link linkend="_classUtil_1_1Tensor_1ada145e28745704482ec13be3acfbe3b0">operator&gt;&gt;</link> (std::istream &amp;in, <link linkend="_classUtil_1_1Tensor">Tensor</link> &amp;tensor)</para>
+
+<para>istream extractor for a <link linkend="_classUtil_1_1Tensor">Tensor</link>. </para>
+</listitem>
+            <listitem><para>std::ostream &amp; <link linkend="_classUtil_1_1Tensor_1aef436d3b7e66d1410ead8b7aedcbe18c">operator&lt;&lt;</link> (std::ostream &amp;out, const <link linkend="_classUtil_1_1Tensor">Tensor</link> &amp;tensor)</para>
+
+<para>ostream inserter for a <link linkend="_classUtil_1_1Tensor">Tensor</link>. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>A <link linkend="_classUtil_1_1Tensor">Tensor</link> represents a Cartesian tensor. </para>
+<para>
+Definition at line 32 of file Tensor.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1Tensor_1a742164de495b221bc10bf98b974df39c"/>    <section>
+    <title>Tensor()<computeroutput>[1/4]</computeroutput></title>
+<indexterm><primary>Tensor</primary><secondary>Util::Tensor</secondary></indexterm>
+<indexterm><primary>Util::Tensor</primary><secondary>Tensor</secondary></indexterm>
+<para><computeroutput>Util::Tensor::Tensor ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Default constructor. </para>
+</para>
+<para>
+Definition at line 399 of file Tensor.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Tensor_1a496bdc1bf0a852ca414cf29f42c558e2"/>    <section>
+    <title>Tensor()<computeroutput>[2/4]</computeroutput></title>
+<indexterm><primary>Tensor</primary><secondary>Util::Tensor</secondary></indexterm>
+<indexterm><primary>Util::Tensor</primary><secondary>Tensor</secondary></indexterm>
+<para><computeroutput>Util::Tensor::Tensor (const <link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; t)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Copy constructor. </para>
+</para>
+<para>
+Definition at line 406 of file Tensor.h.</para>
+<para>
+References Util::DimensionSq.</para>
+    </section><anchor xml:id="_classUtil_1_1Tensor_1a719e784eec4529cc0935da8ac924725a"/>    <section>
+    <title>Tensor()<computeroutput>[3/4]</computeroutput></title>
+<indexterm><primary>Tensor</primary><secondary>Util::Tensor</secondary></indexterm>
+<indexterm><primary>Util::Tensor</primary><secondary>Tensor</secondary></indexterm>
+<para><computeroutput>Util::Tensor::Tensor (double scalar)<computeroutput>[inline]</computeroutput>, <computeroutput>[explicit]</computeroutput></computeroutput></para><para>
+
+<para>Constructor, initialize all elements to a scalar value. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>scalar</entry>
+                                <entry>
+<para>initial value for all elements. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 417 of file Tensor.h.</para>
+<para>
+References Util::DimensionSq.</para>
+    </section><anchor xml:id="_classUtil_1_1Tensor_1a3ba10f8939f5d9521194d3cadd844ab6"/>    <section>
+    <title>Tensor()<computeroutput>[4/4]</computeroutput></title>
+<indexterm><primary>Tensor</primary><secondary>Util::Tensor</secondary></indexterm>
+<indexterm><primary>Util::Tensor</primary><secondary>Tensor</secondary></indexterm>
+<para><computeroutput>Util::Tensor::Tensor (const double a[][Dimension])<computeroutput>[inline]</computeroutput>, <computeroutput>[explicit]</computeroutput></computeroutput></para><para>
+
+<para>Construct <link linkend="_classUtil_1_1Tensor">Tensor</link> from double [][Dimension] 2D C array. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>a</entry>
+                                <entry>
+<para>2D array a[Dimension][Dimension] </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 428 of file Tensor.h.</para>
+<para>
+References Util::Dimension.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1Tensor_1ab4d94f20d3b11ca7f7997854fee27c59"/>    <section>
+    <title>operator=()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator=</primary><secondary>Util::Tensor</secondary></indexterm>
+<indexterm><primary>Util::Tensor</primary><secondary>operator=</secondary></indexterm>
+<para><computeroutput><link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; Util::Tensor::operator= (const <link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; t)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Copy assignment. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>t</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Tensor">Tensor</link> to assign. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 468 of file Tensor.h.</para>
+<para>
+References Util::DimensionSq.</para>
+    </section><anchor xml:id="_classUtil_1_1Tensor_1a9623859327629bb7a4c607441ec5f2c5"/>    <section>
+    <title>operator=()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator=</primary><secondary>Util::Tensor</secondary></indexterm>
+<indexterm><primary>Util::Tensor</primary><secondary>operator=</secondary></indexterm>
+<para><computeroutput><link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; Util::Tensor::operator= (const double a[][Dimension])<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Assignment from C double [Dimension][Dimension] 2D array. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>a</entry>
+                                <entry>
+<para>2D array a[Dimension][Dimension] </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 480 of file Tensor.h.</para>
+<para>
+References Util::Dimension.</para>
+    </section><anchor xml:id="_classUtil_1_1Tensor_1ac98b79462df1e9c5587f7cc705ce6de0"/>    <section>
+    <title>operator+=()</title>
+<indexterm><primary>operator+=</primary><secondary>Util::Tensor</secondary></indexterm>
+<indexterm><primary>Util::Tensor</primary><secondary>operator+=</secondary></indexterm>
+<para><computeroutput>void Util::Tensor::operator+= (const <link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; dt)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Add tensor dt to this tensor. </para>
+</para>
+
+<para>Upon return, *this = *this + dt.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>dt</entry>
+                                <entry>
+<para>tensor increment (input) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 495 of file Tensor.h.</para>
+<para>
+References Util::DimensionSq.</para>
+    </section><anchor xml:id="_classUtil_1_1Tensor_1a9e4809aba09d563d81ed3b0adc1aecd8"/>    <section>
+    <title>operator-=()</title>
+<indexterm><primary>operator-=</primary><secondary>Util::Tensor</secondary></indexterm>
+<indexterm><primary>Util::Tensor</primary><secondary>operator-=</secondary></indexterm>
+<para><computeroutput>void Util::Tensor::operator-= (const <link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; dt)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Subtract tensor dt from this tensor. </para>
+</para>
+
+<para>Upon return, *this = *this - dt.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>dt</entry>
+                                <entry>
+<para>tensor increment (input) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 506 of file Tensor.h.</para>
+<para>
+References Util::DimensionSq.</para>
+    </section><anchor xml:id="_classUtil_1_1Tensor_1aaa8b59bdbb55943de626045ba4ad3aa8"/>    <section>
+    <title>operator*=()</title>
+<indexterm><primary>operator*=</primary><secondary>Util::Tensor</secondary></indexterm>
+<indexterm><primary>Util::Tensor</primary><secondary>operator*=</secondary></indexterm>
+<para><computeroutput>void Util::Tensor::operator*= (double s)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Multiply this tensor by scalar s. </para>
+</para>
+
+<para>Upon return, *this = (*this)*s.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>s</entry>
+                                <entry>
+<para>scalar multiplier </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 517 of file Tensor.h.</para>
+<para>
+References Util::DimensionSq.</para>
+    </section><anchor xml:id="_classUtil_1_1Tensor_1a35bf37b54c6704459183df0829e03d32"/>    <section>
+    <title>operator/=()</title>
+<indexterm><primary>operator/=</primary><secondary>Util::Tensor</secondary></indexterm>
+<indexterm><primary>Util::Tensor</primary><secondary>operator/=</secondary></indexterm>
+<para><computeroutput>void Util::Tensor::operator/= (double s)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Divide this tensor by scalar s. </para>
+</para>
+
+<para>Upon return, *this = (*this)/s.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>s</entry>
+                                <entry>
+<para>scalar divisor (input) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 528 of file Tensor.h.</para>
+<para>
+References Util::DimensionSq.</para>
+    </section><anchor xml:id="_classUtil_1_1Tensor_1a792fce0410f396ffbb43a64af497d6cb"/>    <section>
+    <title>operator()()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator()</primary><secondary>Util::Tensor</secondary></indexterm>
+<indexterm><primary>Util::Tensor</primary><secondary>operator()</secondary></indexterm>
+<para><computeroutput>const double &amp; Util::Tensor::operator() (int i, int j) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return one element by value. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>i</entry>
+                                <entry>
+<para>row element index </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>j</entry>
+                                <entry>
+<para>column element index </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>element (i, j) of the tensor </para>
+</formalpara>
+</para>
+<para>
+Definition at line 539 of file Tensor.h.</para>
+<para>
+References Util::Dimension.</para>
+    </section><anchor xml:id="_classUtil_1_1Tensor_1aa6c03f6146d3ab0c9c3f65f15db3ddf1"/>    <section>
+    <title>operator()()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator()</primary><secondary>Util::Tensor</secondary></indexterm>
+<indexterm><primary>Util::Tensor</primary><secondary>operator()</secondary></indexterm>
+<para><computeroutput>double &amp; Util::Tensor::operator() (int i, int j)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return one element by non-const reference. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>i</entry>
+                                <entry>
+<para>row element index </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>j</entry>
+                                <entry>
+<para>column element index </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>element i of the tensor </para>
+</formalpara>
+</para>
+<para>
+Definition at line 552 of file Tensor.h.</para>
+<para>
+References Util::Dimension.</para>
+    </section><anchor xml:id="_classUtil_1_1Tensor_1aac0c50df8b2fddfa0a2264e9b0866441"/>    <section>
+    <title>zero()</title>
+<indexterm><primary>zero</primary><secondary>Util::Tensor</secondary></indexterm>
+<indexterm><primary>Util::Tensor</primary><secondary>zero</secondary></indexterm>
+<para><computeroutput><link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; Util::Tensor::zero ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Set all elements of this tensor to zero. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>reference to this tensor </para>
+</formalpara>
+</para>
+<para>
+Definition at line 441 of file Tensor.h.</para>
+<para>
+References Util::DimensionSq.</para>
+<para>
+Referenced by Util::setToZero().</para>
+    </section><anchor xml:id="_classUtil_1_1Tensor_1ad572359e94fe7bb2978e03dd232a4a14"/>    <section>
+    <title>identity()</title>
+<indexterm><primary>identity</primary><secondary>Util::Tensor</secondary></indexterm>
+<indexterm><primary>Util::Tensor</primary><secondary>identity</secondary></indexterm>
+<para><computeroutput><link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; Util::Tensor::identity ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Set this to the identity (unity) tensor. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>reference to this tensor </para>
+</formalpara>
+</para>
+<para>
+Definition at line 453 of file Tensor.h.</para>
+<para>
+References Util::Dimension, and Util::DimensionSq.</para>
+    </section><anchor xml:id="_classUtil_1_1Tensor_1acc7765b96a570176187318c29e367eb1"/>    <section>
+    <title>setRow()</title>
+<indexterm><primary>setRow</primary><secondary>Util::Tensor</secondary></indexterm>
+<indexterm><primary>Util::Tensor</primary><secondary>setRow</secondary></indexterm>
+<para><computeroutput><link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; Util::Tensor::setRow (int i, const <link linkend="_classUtil_1_1Vector">Vector</link> &amp; r)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Set row i of this <link linkend="_classUtil_1_1Tensor">Tensor</link> to elements of <link linkend="_classUtil_1_1Vector">Vector</link> r. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>reference to this tensor </para>
+</formalpara>
+</para>
+<para>
+Definition at line 737 of file Tensor.h.</para>
+<para>
+References Util::Dimension.</para>
+    </section><anchor xml:id="_classUtil_1_1Tensor_1a930742044d17d87706afd826bf416e7a"/>    <section>
+    <title>setColumn()</title>
+<indexterm><primary>setColumn</primary><secondary>Util::Tensor</secondary></indexterm>
+<indexterm><primary>Util::Tensor</primary><secondary>setColumn</secondary></indexterm>
+<para><computeroutput><link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; Util::Tensor::setColumn (int i, const <link linkend="_classUtil_1_1Vector">Vector</link> &amp; r)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Set column i of this <link linkend="_classUtil_1_1Tensor">Tensor</link> to elements of <link linkend="_classUtil_1_1Vector">Vector</link> r. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>reference to this tensor </para>
+</formalpara>
+</para>
+<para>
+Definition at line 749 of file Tensor.h.</para>
+<para>
+References Util::Dimension.</para>
+    </section><anchor xml:id="_classUtil_1_1Tensor_1a4cea7d3360169503bbc6c611849d2b64"/>    <section>
+    <title>add()</title>
+<indexterm><primary>add</primary><secondary>Util::Tensor</secondary></indexterm>
+<indexterm><primary>Util::Tensor</primary><secondary>add</secondary></indexterm>
+<para><computeroutput><link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; Util::Tensor::add (const <link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; t1, const <link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; t2)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Add tensors t1 and t2. </para>
+</para>
+
+<para>Upon return, *this = t1 + t2.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>t1</entry>
+                                <entry>
+<para>tensor </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>t2</entry>
+                                <entry>
+<para>tensor </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to this tensor </para>
+</formalpara>
+</para>
+<para>
+Definition at line 567 of file Tensor.h.</para>
+<para>
+References Util::DimensionSq.</para>
+    </section><anchor xml:id="_classUtil_1_1Tensor_1a75b8bb7a97457441188540abfc541f76"/>    <section>
+    <title>subtract()</title>
+<indexterm><primary>subtract</primary><secondary>Util::Tensor</secondary></indexterm>
+<indexterm><primary>Util::Tensor</primary><secondary>subtract</secondary></indexterm>
+<para><computeroutput><link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; Util::Tensor::subtract (const <link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; t1, const <link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; t2)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Subtract tensor t2 from t1. </para>
+</para>
+
+<para>Upon return, *this == t1 - t2.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>t1</entry>
+                                <entry>
+<para>tensor (input) </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>t2</entry>
+                                <entry>
+<para>tensor (input) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to this tensor </para>
+</formalpara>
+</para>
+<para>
+Definition at line 581 of file Tensor.h.</para>
+<para>
+References Util::DimensionSq.</para>
+    </section><anchor xml:id="_classUtil_1_1Tensor_1a63c6e5a3ee3c7f6a3a517a109358203e"/>    <section>
+    <title>multiply()</title>
+<indexterm><primary>multiply</primary><secondary>Util::Tensor</secondary></indexterm>
+<indexterm><primary>Util::Tensor</primary><secondary>multiply</secondary></indexterm>
+<para><computeroutput><link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; Util::Tensor::multiply (const <link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; t, double s)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Multiply a tensor t by a scalar s. </para>
+</para>
+
+<para>Upon return, *this == v*s.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>t</entry>
+                                <entry>
+<para>tensor factor </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>s</entry>
+                                <entry>
+<para>scalar factor </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to this tensor </para>
+</formalpara>
+</para>
+<para>
+Definition at line 595 of file Tensor.h.</para>
+<para>
+References Util::DimensionSq.</para>
+    </section><anchor xml:id="_classUtil_1_1Tensor_1abdcd1b61cffc679faf6bb3911c199948"/>    <section>
+    <title>divide()</title>
+<indexterm><primary>divide</primary><secondary>Util::Tensor</secondary></indexterm>
+<indexterm><primary>Util::Tensor</primary><secondary>divide</secondary></indexterm>
+<para><computeroutput><link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; Util::Tensor::divide (const <link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; t, double s)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Divide a <link linkend="_classUtil_1_1Tensor">Tensor</link> t by a scalar s. </para>
+</para>
+
+<para>Upon return, *this = v/s;</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>t</entry>
+                                <entry>
+<para>tensor input </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>s</entry>
+                                <entry>
+<para>scalar denominator </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to this tensor </para>
+</formalpara>
+</para>
+<para>
+Definition at line 609 of file Tensor.h.</para>
+<para>
+References Util::DimensionSq.</para>
+    </section><anchor xml:id="_classUtil_1_1Tensor_1ac9942abf0a3805738acc1f866e4870b5"/>    <section>
+    <title>transpose()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>transpose</primary><secondary>Util::Tensor</secondary></indexterm>
+<indexterm><primary>Util::Tensor</primary><secondary>transpose</secondary></indexterm>
+<para><computeroutput><link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; Util::Tensor::transpose (const <link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; t)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Compute transpose of a tensor. </para>
+</para>
+
+<para>Upon return, *this is the transpose of t</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>t</entry>
+                                <entry>
+<para>input tensor </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to this tensor </para>
+</formalpara>
+</para>
+<para>
+Definition at line 636 of file Tensor.h.</para>
+<para>
+References Util::Dimension.</para>
+    </section><anchor xml:id="_classUtil_1_1Tensor_1af7e15fba7a10a96e59d6e42f740fb185"/>    <section>
+    <title>transpose()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>transpose</primary><secondary>Util::Tensor</secondary></indexterm>
+<indexterm><primary>Util::Tensor</primary><secondary>transpose</secondary></indexterm>
+<para><computeroutput><link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; Util::Tensor::transpose ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Transpose this tensor. </para>
+</para>
+
+<para>Upon return, *this is transposed.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>reference to this tensor </para>
+</formalpara>
+</para>
+<para>
+Definition at line 657 of file Tensor.h.</para>
+<para>
+References Util::Dimension.</para>
+    </section><anchor xml:id="_classUtil_1_1Tensor_1a1a34bb71f1b728afb8f28e84c8eb5466"/>    <section>
+    <title>symmetrize()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>symmetrize</primary><secondary>Util::Tensor</secondary></indexterm>
+<indexterm><primary>Util::Tensor</primary><secondary>symmetrize</secondary></indexterm>
+<para><computeroutput><link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; Util::Tensor::symmetrize (const <link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; t)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Compute symmetric part of a tensor t. </para>
+</para>
+
+<para>Upon return, *this = [t + t.transpose()]/2</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>t</entry>
+                                <entry>
+<para>tensor input </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to this tensor </para>
+</formalpara>
+</para>
+<para>
+Definition at line 678 of file Tensor.h.</para>
+<para>
+References Util::Dimension.</para>
+    </section><anchor xml:id="_classUtil_1_1Tensor_1a70239ee5060596eaebcc3d7d3c76b8ff"/>    <section>
+    <title>symmetrize()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>symmetrize</primary><secondary>Util::Tensor</secondary></indexterm>
+<indexterm><primary>Util::Tensor</primary><secondary>symmetrize</secondary></indexterm>
+<para><computeroutput><link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; Util::Tensor::symmetrize ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Symmetrize this tensor. </para>
+</para>
+
+<para>Upon return, this is symmetrized, equal to half the sum of the original tensor and its transpose.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>reference to this tensor </para>
+</formalpara>
+</para>
+<para>
+Definition at line 701 of file Tensor.h.</para>
+<para>
+References Util::Dimension.</para>
+    </section><anchor xml:id="_classUtil_1_1Tensor_1a7571741bc53301d594df62d27899a000"/>    <section>
+    <title>dyad()</title>
+<indexterm><primary>dyad</primary><secondary>Util::Tensor</secondary></indexterm>
+<indexterm><primary>Util::Tensor</primary><secondary>dyad</secondary></indexterm>
+<para><computeroutput><link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; Util::Tensor::dyad (const <link linkend="_classUtil_1_1Vector">Vector</link> &amp; v1, const <link linkend="_classUtil_1_1Vector">Vector</link> &amp; v2)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Create dyad of two vectors. </para>
+</para>
+
+<para>Upon return, *this equals the dyad v1 ^ v2. Equivalently: (*this)(i , j) == v1[i]*v2[j]</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>v1</entry>
+                                <entry>
+<para>vector input </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>v2</entry>
+                                <entry>
+<para>vector input </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>reference to this tensor </para>
+</formalpara>
+</para>
+<para>
+Definition at line 763 of file Tensor.h.</para>
+<para>
+References Util::Dimension.</para>
+    </section><anchor xml:id="_classUtil_1_1Tensor_1a9e8380021677804a89cf5bb914330629"/>    <section>
+    <title>trace()</title>
+<indexterm><primary>trace</primary><secondary>Util::Tensor</secondary></indexterm>
+<indexterm><primary>Util::Tensor</primary><secondary>trace</secondary></indexterm>
+<para><computeroutput>double Util::Tensor::trace ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return the trace of this tensor. </para>
+</para>
+<para>
+Definition at line 621 of file Tensor.h.</para>
+<para>
+References Util::Dimension.</para>
+    </section><anchor xml:id="_classUtil_1_1Tensor_1af4a0aa68c4e835b7f182c1647d238b1a"/>    <section>
+    <title>serialize()</title>
+<indexterm><primary>serialize</primary><secondary>Util::Tensor</secondary></indexterm>
+<indexterm><primary>Util::Tensor</primary><secondary>serialize</secondary></indexterm>
+<computeroutput>template&lt;class Archive &gt; </computeroutput><para><computeroutput>void Util::Tensor::serialize (Archive &amp; ar, const unsigned int version)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Serialize this to/from an archive. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>archive </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>version</entry>
+                                <entry>
+<para>archive version id </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 720 of file Tensor.h.</para>
+<para>
+References Util::DimensionSq.</para>
+    </section><anchor xml:id="_classUtil_1_1Tensor_1ace1048c4742dfb965e80e59f50afa488"/>    <section>
+    <title>initStatic()</title>
+<indexterm><primary>initStatic</primary><secondary>Util::Tensor</secondary></indexterm>
+<indexterm><primary>Util::Tensor</primary><secondary>initStatic</secondary></indexterm>
+<para><computeroutput>void Util::Tensor::initStatic ( )<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Call to guarantee initialization of Zero and Identity tensors. </para>
+</para>
+
+<para>Call this function once to guarantee that this file is linked. </para>
+<para>
+Definition at line 27 of file Tensor.cpp.</para>
+<para>
+References UTIL_THROW.</para>
+<para>
+Referenced by Util::initStatic().</para>
+    </section><anchor xml:id="_classUtil_1_1Tensor_1ad57a483c6b720ba31bc5560d5b49cd2e"/>    <section>
+    <title>commitMpiType()</title>
+<indexterm><primary>commitMpiType</primary><secondary>Util::Tensor</secondary></indexterm>
+<indexterm><primary>Util::Tensor</primary><secondary>commitMpiType</secondary></indexterm>
+<para><computeroutput>void Util::Tensor::commitMpiType ( )<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Commit MPI datatype <link linkend="_classUtil_1_1MpiTraits_3_01Tensor_01_4_1a68faa4fee8fbbc9664afee720874ce5c">MpiTraits&lt;Tensor&gt;::type</link>. </para>
+</para>
+<para>
+Definition at line 125 of file Tensor.cpp.</para>
+<para>
+References Util::MpiStructBuilder::addMember(), Util::MpiStructBuilder::commit(), Util::Dimension, and Util::MpiStructBuilder::setBase().</para>
+</section>
+</section>
+<section>
+<title>Friends And Related Function Documentation</title>
+<anchor xml:id="_classUtil_1_1Tensor_1a390070739cdb38a698e2b2e6ec993579"/>    <section>
+    <title>operator==<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator==</primary><secondary>Util::Tensor</secondary></indexterm>
+<indexterm><primary>Util::Tensor</primary><secondary>operator==</secondary></indexterm>
+<para><computeroutput>bool operator== (const <link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; t1, const <link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; t2)<computeroutput>[friend]</computeroutput></computeroutput></para><para>
+
+<para>Equality for Tensors. </para>
+</para>
+<para>
+Definition at line 43 of file Tensor.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1Tensor_1a93d24a9bf32d221e3518e6366ecc6013"/>    <section>
+    <title>operator==<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator==</primary><secondary>Util::Tensor</secondary></indexterm>
+<indexterm><primary>Util::Tensor</primary><secondary>operator==</secondary></indexterm>
+<para><computeroutput>bool operator== (const <link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; t1, const double t2[][Dimension])<computeroutput>[friend]</computeroutput></computeroutput></para><para>
+
+<para>Equality of <link linkend="_classUtil_1_1Tensor">Tensor</link> and 2D C array. </para>
+</para>
+<para>
+Definition at line 56 of file Tensor.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1Tensor_1ada145e28745704482ec13be3acfbe3b0"/>    <section>
+    <title>operator&gt;&gt;</title>
+<indexterm><primary>operator&gt;&gt;</primary><secondary>Util::Tensor</secondary></indexterm>
+<indexterm><primary>Util::Tensor</primary><secondary>operator&gt;&gt;</secondary></indexterm>
+<para><computeroutput>std::istream&amp; operator&gt;&gt; (std::istream &amp; in, <link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; tensor)<computeroutput>[friend]</computeroutput></computeroutput></para><para>
+
+<para>istream extractor for a <link linkend="_classUtil_1_1Tensor">Tensor</link>. </para>
+</para>
+
+<para>Input elements of a tensor from stream, without line breaks.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>tensor</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Tensor">Tensor</link> to be read from stream </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified input stream </para>
+</formalpara>
+</para>
+<para>
+Definition at line 93 of file Tensor.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1Tensor_1aef436d3b7e66d1410ead8b7aedcbe18c"/>    <section>
+    <title>operator&lt;&lt;</title>
+<indexterm><primary>operator&lt;&lt;</primary><secondary>Util::Tensor</secondary></indexterm>
+<indexterm><primary>Util::Tensor</primary><secondary>operator&lt;&lt;</secondary></indexterm>
+<para><computeroutput>std::ostream&amp; operator&lt;&lt; (std::ostream &amp; out, const <link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; tensor)<computeroutput>[friend]</computeroutput></computeroutput></para><para>
+
+<para>ostream inserter for a <link linkend="_classUtil_1_1Tensor">Tensor</link>. </para>
+</para>
+
+<para>Output elements of a tensor to stream, without line breaks. 
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>out</entry>
+                                <entry>
+<para>output stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>tensor</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Tensor">Tensor</link> to be written to stream </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified output stream </para>
+</formalpara>
+</para>
+<para>
+Definition at line 104 of file Tensor.cpp.</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classUtil_1_1Tensor_1ac1dd4f6bf592cc81526289c6b7e867bf"/>    <section>
+    <title>Zero</title>
+<indexterm><primary>Zero</primary><secondary>Util::Tensor</secondary></indexterm>
+<indexterm><primary>Util::Tensor</primary><secondary>Zero</secondary></indexterm>
+<para><computeroutput>const <link linkend="_classUtil_1_1Tensor">Tensor</link> Util::Tensor::Zero = <link linkend="_classUtil_1_1Tensor">Tensor</link>(0.0)<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Constant <link linkend="_classUtil_1_1Tensor">Tensor</link> with all zero elements. </para>
+</para>
+<para>
+Definition at line 297 of file Tensor.h.</para>
+    </section><anchor xml:id="_classUtil_1_1Tensor_1afdab38efabeda2b45fae618ac19802ca"/>    <section>
+    <title>Identity</title>
+<indexterm><primary>Identity</primary><secondary>Util::Tensor</secondary></indexterm>
+<indexterm><primary>Util::Tensor</primary><secondary>Identity</secondary></indexterm>
+<para><computeroutput>const <link linkend="_classUtil_1_1Tensor">Tensor</link> Util::Tensor::Identity = <link linkend="_classUtil_1_1Tensor">Tensor</link>().<link linkend="_classUtil_1_1Tensor_1ad572359e94fe7bb2978e03dd232a4a14">identity</link>()<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Constant idenity <link linkend="_classUtil_1_1Tensor">Tensor</link> (diagonal diagonal elements all 1). </para>
+</para>
+<para>
+Definition at line 302 of file Tensor.h.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+Tensor.hTensor.cpp</section>
+</section>

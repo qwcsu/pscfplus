@@ -1,0 +1,269 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1ArrayStack">
+<title>Util::ArrayStack&lt; Data &gt; Class Template Reference</title>
+<indexterm><primary>Util::ArrayStack&lt; Data &gt;</primary></indexterm>
+<para>
+
+<para>A stack of fixed capacity. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;ArrayStack.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1ArrayStack_1a0e4921bfb900602dc04cd9e59d7ba7a7">ArrayStack</link> ()</para>
+
+<para>Default constructor. </para>
+</listitem>
+            <listitem><para>virtual <link linkend="_classUtil_1_1ArrayStack_1a461271be8a15ff40115dfa5f778cb222">~ArrayStack</link> ()</para>
+
+<para>Destructor. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1ArrayStack_1af0c55e24d3ccb45ed50711bc15468d7f">allocate</link> (int <link linkend="_classUtil_1_1ArrayStack_1aeec5b99e22d2a72b94a0a8be984f5600">capacity</link>)</para>
+
+<para>Initialize and allocate required memory. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect><title>Mutators</title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_classUtil_1_1ArrayStack_1a7d20f6c7d2f067ba8f74d120ec8ce4d5">push</link> (Data &amp;data)</para>
+
+<para>Push an element onto the Stack. </para>
+</listitem>
+            <listitem><para>Data &amp; <link linkend="_classUtil_1_1ArrayStack_1a0465b9e61f008e56b8e6a83c13c3598a">pop</link> ()</para>
+
+<para>Pop an element off the stack. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Accessors    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_classUtil_1_1ArrayStack_1aeec5b99e22d2a72b94a0a8be984f5600">capacity</link> () const</para>
+
+<para>Return capacity of the underlying array. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1ArrayStack_1a2d3331030d57b3f7e6c834bfb5bc3039">size</link> () const</para>
+
+<para>Get the number of elements in the stack. </para>
+</listitem>
+            <listitem><para>Data &amp; <link linkend="_classUtil_1_1ArrayStack_1a0eb89f6af3ddb8a1217ce285a167c419">peek</link> ()</para>
+
+<para>Return a reference to the top element (don&apos;t pop). </para>
+</listitem>
+            <listitem><para>const Data &amp; <link linkend="_classUtil_1_1ArrayStack_1a13239be9f43ec6a26df387bbf20e095b">peek</link> () const</para>
+
+<para>Return a const ref to the top element (don&apos;t pop). </para>
+</listitem>
+            <listitem><para>bool <link linkend="_classUtil_1_1ArrayStack_1a12426cebdb9cf6e53a2de4196b3ae2e1">isValid</link> () const</para>
+
+<para>Return true if the <link linkend="_classUtil_1_1ArrayStack">ArrayStack</link> is valid, or throw an exception. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_classUtil_1_1ArrayStack_1a03704454022fda5c11e74b7c92f3ecd8">isAllocated</link> () const</para>
+
+<para>Return true only if the <link linkend="_classUtil_1_1ArrayStack">ArrayStack</link> has been allocated. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;typename Data&gt;
+class Util::ArrayStack&lt; Data &gt;</title></simplesect>
+
+
+<para>A stack of fixed capacity. </para>
+
+
+
+<para>Pointers to elements are stored in an allocatable, non-resizable array. </para>
+<para>
+Definition at line 25 of file ArrayStack.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1ArrayStack_1a0e4921bfb900602dc04cd9e59d7ba7a7"/>    <section>
+    <title>ArrayStack()</title>
+<indexterm><primary>ArrayStack</primary><secondary>Util::ArrayStack&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::ArrayStack&lt; Data &gt;</primary><secondary>ArrayStack</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1ArrayStack">Util::ArrayStack</link>&lt; Data &gt;::<link linkend="_classUtil_1_1ArrayStack">ArrayStack</link></computeroutput></para><para>
+
+<para>Default constructor. </para>
+</para>
+<para>
+Definition at line 126 of file ArrayStack.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ArrayStack_1a461271be8a15ff40115dfa5f778cb222"/>    <section>
+    <title>~ArrayStack()</title>
+<indexterm><primary>~ArrayStack</primary><secondary>Util::ArrayStack&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::ArrayStack&lt; Data &gt;</primary><secondary>~ArrayStack</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1ArrayStack">Util::ArrayStack</link>&lt; Data &gt;::~<link linkend="_classUtil_1_1ArrayStack">ArrayStack</link><computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Destructor. </para>
+</para>
+<para>
+Definition at line 136 of file ArrayStack.h.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1ArrayStack_1af0c55e24d3ccb45ed50711bc15468d7f"/>    <section>
+    <title>allocate()</title>
+<indexterm><primary>allocate</primary><secondary>Util::ArrayStack&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::ArrayStack&lt; Data &gt;</primary><secondary>allocate</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1ArrayStack">Util::ArrayStack</link>&lt; Data &gt;::allocate (int capacity)</computeroutput></para><para>
+
+<para>Initialize and allocate required memory. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>capacity</entry>
+                                <entry>
+<para>maximum size of stack. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 147 of file ArrayStack.h.</para>
+<para>
+References UTIL_THROW.</para>
+    </section><anchor xml:id="_classUtil_1_1ArrayStack_1a7d20f6c7d2f067ba8f74d120ec8ce4d5"/>    <section>
+    <title>push()</title>
+<indexterm><primary>push</primary><secondary>Util::ArrayStack&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::ArrayStack&lt; Data &gt;</primary><secondary>push</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1ArrayStack">Util::ArrayStack</link>&lt; Data &gt;::push (Data &amp; data)</computeroutput></para><para>
+
+<para>Push an element onto the Stack. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>data</entry>
+                                <entry>
+<para>element to be added to stack. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 183 of file ArrayStack.h.</para>
+<para>
+References UTIL_THROW.</para>
+    </section><anchor xml:id="_classUtil_1_1ArrayStack_1a0465b9e61f008e56b8e6a83c13c3598a"/>    <section>
+    <title>pop()</title>
+<indexterm><primary>pop</primary><secondary>Util::ArrayStack&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::ArrayStack&lt; Data &gt;</primary><secondary>pop</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>Data &amp; <link linkend="_classUtil_1_1ArrayStack">Util::ArrayStack</link>&lt; Data &gt;::pop</computeroutput></para><para>
+
+<para>Pop an element off the stack. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the top element (which is popped off stack). </para>
+</formalpara>
+</para>
+<para>
+Definition at line 196 of file ArrayStack.h.</para>
+<para>
+References UTIL_THROW.</para>
+    </section><anchor xml:id="_classUtil_1_1ArrayStack_1aeec5b99e22d2a72b94a0a8be984f5600"/>    <section>
+    <title>capacity()</title>
+<indexterm><primary>capacity</primary><secondary>Util::ArrayStack&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::ArrayStack&lt; Data &gt;</primary><secondary>capacity</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>int <link linkend="_classUtil_1_1ArrayStack">Util::ArrayStack</link>&lt; Data &gt;::capacity</computeroutput></para><para>
+
+<para>Return capacity of the underlying array. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Number of elements allocated in array. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 169 of file ArrayStack.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ArrayStack_1a2d3331030d57b3f7e6c834bfb5bc3039"/>    <section>
+    <title>size()</title>
+<indexterm><primary>size</primary><secondary>Util::ArrayStack&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::ArrayStack&lt; Data &gt;</primary><secondary>size</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>int <link linkend="_classUtil_1_1ArrayStack">Util::ArrayStack</link>&lt; Data &gt;::size<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get the number of elements in the stack. </para>
+</para>
+<para>
+Definition at line 176 of file ArrayStack.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ArrayStack_1a0eb89f6af3ddb8a1217ce285a167c419"/>    <section>
+    <title>peek()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>peek</primary><secondary>Util::ArrayStack&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::ArrayStack&lt; Data &gt;</primary><secondary>peek</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>const Data &amp; <link linkend="_classUtil_1_1ArrayStack">Util::ArrayStack</link>&lt; Data &gt;::peek<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return a reference to the top element (don&apos;t pop). </para>
+</para>
+<para>
+Definition at line 211 of file ArrayStack.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ArrayStack_1a13239be9f43ec6a26df387bbf20e095b"/>    <section>
+    <title>peek()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>peek</primary><secondary>Util::ArrayStack&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::ArrayStack&lt; Data &gt;</primary><secondary>peek</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>const Data&amp; <link linkend="_classUtil_1_1ArrayStack">Util::ArrayStack</link>&lt; Data &gt;::peek ( ) const</computeroutput></para><para>
+
+<para>Return a const ref to the top element (don&apos;t pop). </para>
+</para>
+    </section><anchor xml:id="_classUtil_1_1ArrayStack_1a12426cebdb9cf6e53a2de4196b3ae2e1"/>    <section>
+    <title>isValid()</title>
+<indexterm><primary>isValid</primary><secondary>Util::ArrayStack&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::ArrayStack&lt; Data &gt;</primary><secondary>isValid</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>bool <link linkend="_classUtil_1_1ArrayStack">Util::ArrayStack</link>&lt; Data &gt;::isValid</computeroutput></para><para>
+
+<para>Return true if the <link linkend="_classUtil_1_1ArrayStack">ArrayStack</link> is valid, or throw an exception. </para>
+</para>
+<para>
+Definition at line 225 of file ArrayStack.h.</para>
+<para>
+References UTIL_THROW.</para>
+    </section><anchor xml:id="_classUtil_1_1ArrayStack_1a03704454022fda5c11e74b7c92f3ecd8"/>    <section>
+    <title>isAllocated()</title>
+<indexterm><primary>isAllocated</primary><secondary>Util::ArrayStack&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::ArrayStack&lt; Data &gt;</primary><secondary>isAllocated</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>bool <link linkend="_classUtil_1_1ArrayStack">Util::ArrayStack</link>&lt; Data &gt;::isAllocated<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return true only if the <link linkend="_classUtil_1_1ArrayStack">ArrayStack</link> has been allocated. </para>
+</para>
+<para>
+Definition at line 261 of file ArrayStack.h.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+ArrayStack.h</section>
+</section>

@@ -1,0 +1,254 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classCompositeTestRunner">
+<title>CompositeTestRunner Class Reference</title>
+<indexterm><primary>CompositeTestRunner</primary></indexterm>
+<para>
+
+<para>A <link linkend="_classTestRunner">TestRunner</link> comprised of one or more child TestRunners. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;CompositeTestRunner.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for CompositeTestRunner:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classCompositeTestRunner.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>virtual <link linkend="_classCompositeTestRunner_1a4c1e85d5440c856177079137dc3480fd">~CompositeTestRunner</link> ()</para>
+
+<para>Destructor. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classCompositeTestRunner_1a243489304777b34985afbccb5a579877">addChild</link> (<link linkend="_classTestRunner">TestRunner</link> &amp;child)</para>
+
+<para>Add an existing <link linkend="_classTestRunner">TestRunner</link> as a child. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classCompositeTestRunner_1a86c573665a03b02e175fe5c7b289f04b">addChild</link> (<link linkend="_classTestRunner">TestRunner</link> *childPtr)</para>
+
+<para>Add a <link linkend="_classTestRunner">TestRunner</link> as a child, and accept ownership. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classCompositeTestRunner_1ad4c103c260f6e64f8128137645992909">addChild</link> (<link linkend="_classTestRunner">TestRunner</link> *childPtr, const std::string &amp;prefix)</para>
+
+<para>Add a <link linkend="_classTestRunner">TestRunner</link> as a child, accept ownership, and initialize filePrefix. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classCompositeTestRunner_1a82bcc97f1d88455c6d1d5f3a88041a5f">addFilePrefix</link> (const std::string &amp;prefix)</para>
+
+<para>Prepend argument prefix to existing filePrefix. </para>
+</listitem>
+            <listitem><para>virtual int <link linkend="_classCompositeTestRunner_1a3997c37095a5cb5cfc7084d04d9c141c">run</link> ()</para>
+
+<para>Run all children in sequence, using depth-first recursion. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>A <link linkend="_classTestRunner">TestRunner</link> comprised of one or more child TestRunners. </para>
+<para>
+Definition at line 19 of file CompositeTestRunner.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classCompositeTestRunner_1a4c1e85d5440c856177079137dc3480fd"/>    <section>
+    <title>~CompositeTestRunner()</title>
+<indexterm><primary>~CompositeTestRunner</primary><secondary>CompositeTestRunner</secondary></indexterm>
+<indexterm><primary>CompositeTestRunner</primary><secondary>~CompositeTestRunner</secondary></indexterm>
+<para><computeroutput>CompositeTestRunner::~CompositeTestRunner ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Destructor. </para>
+</para>
+<para>
+Definition at line 97 of file CompositeTestRunner.h.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classCompositeTestRunner_1a243489304777b34985afbccb5a579877"/>    <section>
+    <title>addChild()<computeroutput>[1/3]</computeroutput></title>
+<indexterm><primary>addChild</primary><secondary>CompositeTestRunner</secondary></indexterm>
+<indexterm><primary>CompositeTestRunner</primary><secondary>addChild</secondary></indexterm>
+<para><computeroutput>void CompositeTestRunner::addChild (<link linkend="_classTestRunner">TestRunner</link> &amp; child)</computeroutput></para><para>
+
+<para>Add an existing <link linkend="_classTestRunner">TestRunner</link> as a child. </para>
+</para>
+
+<para>Children added by this method are not destroyed by the parent <link linkend="_classCompositeTestRunner">CompositeTestRunner</link> destructor.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>child</entry>
+                                <entry>
+<para>enclosed <link linkend="_classTestRunner">TestRunner</link> object </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 108 of file CompositeTestRunner.h.</para>
+<para>
+References TestRunner::setParent().</para>
+<para>
+Referenced by addChild().</para>
+    </section><anchor xml:id="_classCompositeTestRunner_1a86c573665a03b02e175fe5c7b289f04b"/>    <section>
+    <title>addChild()<computeroutput>[2/3]</computeroutput></title>
+<indexterm><primary>addChild</primary><secondary>CompositeTestRunner</secondary></indexterm>
+<indexterm><primary>CompositeTestRunner</primary><secondary>addChild</secondary></indexterm>
+<para><computeroutput>void CompositeTestRunner::addChild (<link linkend="_classTestRunner">TestRunner</link> * childPtr)</computeroutput></para><para>
+
+<para>Add a <link linkend="_classTestRunner">TestRunner</link> as a child, and accept ownership. </para>
+</para>
+
+<para>Children added by this method are owned by the parent <link linkend="_classCompositeTestRunner">CompositeTestRunner</link>, and so are destroyed by its destructor. 
+<literallayout>&#160;&#xa;</literallayout>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>childPtr</entry>
+                                <entry>
+<para>pointer to child <link linkend="_classTestRunner">TestRunner</link> </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 117 of file CompositeTestRunner.h.</para>
+<para>
+References TestRunner::setParent().</para>
+    </section><anchor xml:id="_classCompositeTestRunner_1ad4c103c260f6e64f8128137645992909"/>    <section>
+    <title>addChild()<computeroutput>[3/3]</computeroutput></title>
+<indexterm><primary>addChild</primary><secondary>CompositeTestRunner</secondary></indexterm>
+<indexterm><primary>CompositeTestRunner</primary><secondary>addChild</secondary></indexterm>
+<para><computeroutput>void CompositeTestRunner::addChild (<link linkend="_classTestRunner">TestRunner</link> * childPtr, const std::string &amp; prefix)</computeroutput></para><para>
+
+<para>Add a <link linkend="_classTestRunner">TestRunner</link> as a child, accept ownership, and initialize filePrefix. </para>
+</para>
+
+<para>Children added by this method are owned by the parent <link linkend="_classCompositeTestRunner">CompositeTestRunner</link>, and so are destroyed by its destructor. The file prefix argument should normally be a path for a particular child defined relative to any common prefix used by all tests in this composite. The common prefix can then be prepended by calling addFilePrefix at run time.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>childPtr</entry>
+                                <entry>
+<para>pointer to child <link linkend="_classTestRunner">TestRunner</link> </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>prefix</entry>
+                                <entry>
+<para>prefix to append to file names in all descendants </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 127 of file CompositeTestRunner.h.</para>
+<para>
+References addChild(), and TestRunner::addFilePrefix().</para>
+    </section><anchor xml:id="_classCompositeTestRunner_1a82bcc97f1d88455c6d1d5f3a88041a5f"/>    <section>
+    <title>addFilePrefix()</title>
+<indexterm><primary>addFilePrefix</primary><secondary>CompositeTestRunner</secondary></indexterm>
+<indexterm><primary>CompositeTestRunner</primary><secondary>addFilePrefix</secondary></indexterm>
+<para><computeroutput>void CompositeTestRunner::addFilePrefix (const std::string &amp; prefix)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Prepend argument prefix to existing filePrefix. </para>
+</para>
+
+<para>This function also prepends prefix to all children. If this function is called at run-time for the highest level composite in a hierarchy, the prefix is thus propagated to all TestRunners in the hierarchy, and thus also used in the methods of <link linkend="_classUnitTest">UnitTest</link> that are used to open files.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>prefix</entry>
+                                <entry>
+<para>string to prepend to existing filePrefix. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Reimplemented from <link linkend="_classTestRunner_1ae977948edaf2121faa85af96b7aefdcf">TestRunner</link>.</para>
+<para>
+Definition at line 137 of file CompositeTestRunner.h.</para>
+<para>
+References TestRunner::addFilePrefix().</para>
+    </section><anchor xml:id="_classCompositeTestRunner_1a3997c37095a5cb5cfc7084d04d9c141c"/>    <section>
+    <title>run()</title>
+<indexterm><primary>run</primary><secondary>CompositeTestRunner</secondary></indexterm>
+<indexterm><primary>CompositeTestRunner</primary><secondary>run</secondary></indexterm>
+<para><computeroutput>int CompositeTestRunner::run ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Run all children in sequence, using depth-first recursion. </para>
+</para>
+<para>
+Implements <link linkend="_classTestRunner_1a3216b1149a6e1f207253c1659a617e77">TestRunner</link>.</para>
+<para>
+Definition at line 148 of file CompositeTestRunner.h.</para>
+<para>
+References TestRunner::nFailure(), and TestRunner::report().</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+CompositeTestRunner.h</section>
+</section>

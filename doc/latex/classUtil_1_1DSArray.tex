@@ -1,0 +1,486 @@
+\hypertarget{classUtil_1_1DSArray}{}\doxysubsection{Util\+::D\+S\+Array$<$ Data $>$ Class Template Reference}
+\label{classUtil_1_1DSArray}\index{Util::DSArray$<$ Data $>$@{Util::DSArray$<$ Data $>$}}
+
+
+Dynamically allocated array with variable logical size.  
+
+
+
+
+{\ttfamily \#include $<$D\+S\+Array.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1DSArray_ad64cd3de2cab760298f47b02053d996d}{D\+S\+Array}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1DSArray_abe1f06b9a3a067685f22b820d19649d6}{D\+S\+Array}} (const \mbox{\hyperlink{classUtil_1_1DSArray}{D\+S\+Array}}$<$ Data $>$ \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1DSArray}{D\+S\+Array}}$<$ Data $>$ \& \mbox{\hyperlink{classUtil_1_1DSArray_a181e369c3a69ee9321097bb91dbe0696}{operator=}} (const \mbox{\hyperlink{classUtil_1_1DSArray}{D\+S\+Array}}$<$ Data $>$ \&other)
+\begin{DoxyCompactList}\small\item\em Assignment, element by element. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classUtil_1_1DSArray_a190de23863bbf1fbf3376f184aa1acc0}{$\sim$\+D\+S\+Array}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1DSArray_ad9e1548874eb6705e42b88d457da9d6b}{allocate}} (int \mbox{\hyperlink{classUtil_1_1DSArray_a9980acef0bd3349954a29eb53a9236ef}{capacity}})
+\begin{DoxyCompactList}\small\item\em Allocates the underlying C array. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1DSArray_a4ac821902ea29016412aaf7d545e3fd7}{append}} (const Data \&data)
+\begin{DoxyCompactList}\small\item\em Append data to the end of the array. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1DSArray_a64d41954aff28febedc96b210e0d959a}{resize}} (int \mbox{\hyperlink{classUtil_1_1DSArray_a7f33a3afebd64bce4d10de81563c8c1f}{size}})
+\begin{DoxyCompactList}\small\item\em Modify logical size without modifying data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1DSArray_a604a0b36a322430157c415ca16b5355c}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Set logical size to zero. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Archive $>$ }\\void \mbox{\hyperlink{classUtil_1_1DSArray_a1af3f836d880814d23ebe3d098b6bb5f}{serialize}} (Archive \&ar, const unsigned int version)
+\begin{DoxyCompactList}\small\item\em Serialize a \mbox{\hyperlink{classUtil_1_1DSArray}{D\+S\+Array}} to/from an Archive. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1DSArray_a20d31a303e4f8747d30955fc232ffce4}{begin}} (\mbox{\hyperlink{classUtil_1_1ArrayIterator}{Array\+Iterator}}$<$ Data $>$ \&iterator)
+\begin{DoxyCompactList}\small\item\em Set an \mbox{\hyperlink{classUtil_1_1ArrayIterator}{Array\+Iterator}} to the beginning of this \mbox{\hyperlink{classUtil_1_1Array}{Array}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1DSArray_a680727f69ddf30eeaf4f441e5976b1c5}{begin}} (\mbox{\hyperlink{classUtil_1_1ConstArrayIterator}{Const\+Array\+Iterator}}$<$ Data $>$ \&iterator) const
+\begin{DoxyCompactList}\small\item\em Set a \mbox{\hyperlink{classUtil_1_1ConstArrayIterator}{Const\+Array\+Iterator}} to the beginning of this \mbox{\hyperlink{classUtil_1_1Array}{Array}}. \end{DoxyCompactList}\item 
+Data \& \mbox{\hyperlink{classUtil_1_1DSArray_a64d57aff171ea7fd76f1e1466481360c}{operator\mbox{[}$\,$\mbox{]}}} (int i)
+\begin{DoxyCompactList}\small\item\em Mimic C array subscripting. \end{DoxyCompactList}\item 
+const Data \& \mbox{\hyperlink{classUtil_1_1DSArray_a4d9cb5262ef0469e84c931b4900447e2}{operator\mbox{[}$\,$\mbox{]}}} (int i) const
+\begin{DoxyCompactList}\small\item\em Mimic C array subscripting. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUtil_1_1DSArray_a9980acef0bd3349954a29eb53a9236ef}{capacity}} () const
+\begin{DoxyCompactList}\small\item\em Return physical capacity of array. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUtil_1_1DSArray_a7f33a3afebd64bce4d10de81563c8c1f}{size}} () const
+\begin{DoxyCompactList}\small\item\em Return logical size of this array (i.\+e., number of elements). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUtil_1_1DSArray_a1e589485650c8f6eb3dac75fd7778105}{is\+Allocated}} () const
+\begin{DoxyCompactList}\small\item\em Return true if the \mbox{\hyperlink{classUtil_1_1DSArray}{D\+S\+Array}} has been allocated, false otherwise. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Data $\ast$ \mbox{\hyperlink{classUtil_1_1DSArray_a59fab10a4eea7d2e3565bf8d8c112894}{data\+\_\+}}
+\begin{DoxyCompactList}\small\item\em C array of Data elements. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUtil_1_1DSArray_acecc67e62224b979dac5532f6e1e6505}{size\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Logical size of array (number of elements used). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUtil_1_1DSArray_ae965fbda8c2b0eaa0e71ce6fc0a9bd36}{capacity\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Capacity (physical size) of underlying C array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$typename Data$>$\newline
+class Util\+::\+D\+S\+Array$<$ Data $>$}
+
+Dynamically allocated array with variable logical size. 
+
+A \mbox{\hyperlink{classUtil_1_1DSArray}{D\+S\+Array}} $<$ Data $>$ is a wrapper for a dynamically allocated C array, with continuous elements and a logical size that may be less than or equal to its physical capacity. The logical size is the number of contiguous elements that have been added using the \mbox{\hyperlink{classUtil_1_1DSArray_a4ac821902ea29016412aaf7d545e3fd7}{append()}} method. 
+
+Definition at line 30 of file D\+S\+Array.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1DSArray_ad64cd3de2cab760298f47b02053d996d}\label{classUtil_1_1DSArray_ad64cd3de2cab760298f47b02053d996d}} 
+\index{Util::DSArray$<$ Data $>$@{Util::DSArray$<$ Data $>$}!DSArray@{DSArray}}
+\index{DSArray@{DSArray}!Util::DSArray$<$ Data $>$@{Util::DSArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{DSArray()}{DSArray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class Data $>$ \\
+\mbox{\hyperlink{classUtil_1_1DSArray}{Util\+::\+D\+S\+Array}}$<$ Data $>$\+::\mbox{\hyperlink{classUtil_1_1DSArray}{D\+S\+Array}}}
+
+
+
+Constructor. 
+
+
+
+Definition at line 170 of file D\+S\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1DSArray_abe1f06b9a3a067685f22b820d19649d6}\label{classUtil_1_1DSArray_abe1f06b9a3a067685f22b820d19649d6}} 
+\index{Util::DSArray$<$ Data $>$@{Util::DSArray$<$ Data $>$}!DSArray@{DSArray}}
+\index{DSArray@{DSArray}!Util::DSArray$<$ Data $>$@{Util::DSArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{DSArray()}{DSArray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class Data $>$ \\
+\mbox{\hyperlink{classUtil_1_1DSArray}{Util\+::\+D\+S\+Array}}$<$ Data $>$\+::\mbox{\hyperlink{classUtil_1_1DSArray}{D\+S\+Array}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1DSArray}{D\+S\+Array}}$<$ Data $>$ \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the \mbox{\hyperlink{classUtil_1_1DSArray}{D\+S\+Array}} to be copied. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 180 of file D\+S\+Array.\+h.
+
+
+
+References Util\+::\+D\+S\+Array$<$ Data $>$\+::capacity\+\_\+, Util\+::\+D\+S\+Array$<$ Data $>$\+::data\+\_\+, Util\+::\+D\+S\+Array$<$ Data $>$\+::is\+Allocated(), Util\+::\+D\+S\+Array$<$ Data $>$\+::size\+\_\+, and U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1DSArray_a190de23863bbf1fbf3376f184aa1acc0}\label{classUtil_1_1DSArray_a190de23863bbf1fbf3376f184aa1acc0}} 
+\index{Util::DSArray$<$ Data $>$@{Util::DSArray$<$ Data $>$}!````~DSArray@{$\sim$DSArray}}
+\index{````~DSArray@{$\sim$DSArray}!Util::DSArray$<$ Data $>$@{Util::DSArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{$\sim$DSArray()}{~DSArray()}}
+{\footnotesize\ttfamily template$<$class Data $>$ \\
+\mbox{\hyperlink{classUtil_1_1DSArray}{Util\+::\+D\+S\+Array}}$<$ Data $>$\+::$\sim$\mbox{\hyperlink{classUtil_1_1DSArray}{D\+S\+Array}}\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+Definition at line 233 of file D\+S\+Array.\+h.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1DSArray_a181e369c3a69ee9321097bb91dbe0696}\label{classUtil_1_1DSArray_a181e369c3a69ee9321097bb91dbe0696}} 
+\index{Util::DSArray$<$ Data $>$@{Util::DSArray$<$ Data $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Util::DSArray$<$ Data $>$@{Util::DSArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$class Data $>$ \\
+\mbox{\hyperlink{classUtil_1_1DSArray}{D\+S\+Array}}$<$ Data $>$ \& \mbox{\hyperlink{classUtil_1_1DSArray}{Util\+::\+D\+S\+Array}}$<$ Data $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1DSArray}{D\+S\+Array}}$<$ Data $>$ \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Assignment, element by element. 
+
+Capacity of L\+HS must be either zero or equal that of R\+HS \mbox{\hyperlink{classUtil_1_1DSArray}{D\+S\+Array}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the R\+HS \mbox{\hyperlink{classUtil_1_1DSArray}{D\+S\+Array}} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 204 of file D\+S\+Array.\+h.
+
+
+
+References Util\+::\+D\+S\+Array$<$ Data $>$\+::capacity\+\_\+, Util\+::\+D\+S\+Array$<$ Data $>$\+::is\+Allocated(), Util\+::\+D\+S\+Array$<$ Data $>$\+::size\+\_\+, and U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1DSArray_ad9e1548874eb6705e42b88d457da9d6b}\label{classUtil_1_1DSArray_ad9e1548874eb6705e42b88d457da9d6b}} 
+\index{Util::DSArray$<$ Data $>$@{Util::DSArray$<$ Data $>$}!allocate@{allocate}}
+\index{allocate@{allocate}!Util::DSArray$<$ Data $>$@{Util::DSArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{allocate()}{allocate()}}
+{\footnotesize\ttfamily template$<$class Data $>$ \\
+void \mbox{\hyperlink{classUtil_1_1DSArray}{Util\+::\+D\+S\+Array}}$<$ Data $>$\+::allocate (\begin{DoxyParamCaption}\item[{int}]{capacity }\end{DoxyParamCaption})}
+
+
+
+Allocates the underlying C array. 
+
+Throw an exception if the \mbox{\hyperlink{classUtil_1_1DSArray}{D\+S\+Array}} has already been allocated -\/ A \mbox{\hyperlink{classUtil_1_1DSArray}{D\+S\+Array}} can only be allocated once.
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & number of elements to allocate \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 247 of file D\+S\+Array.\+h.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1DSArray_a4ac821902ea29016412aaf7d545e3fd7}\label{classUtil_1_1DSArray_a4ac821902ea29016412aaf7d545e3fd7}} 
+\index{Util::DSArray$<$ Data $>$@{Util::DSArray$<$ Data $>$}!append@{append}}
+\index{append@{append}!Util::DSArray$<$ Data $>$@{Util::DSArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{append()}{append()}}
+{\footnotesize\ttfamily template$<$class Data $>$ \\
+void \mbox{\hyperlink{classUtil_1_1DSArray}{Util\+::\+D\+S\+Array}}$<$ Data $>$\+::append (\begin{DoxyParamCaption}\item[{const Data \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Append data to the end of the array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Data to add to end of array. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 345 of file D\+S\+Array.\+h.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1DSArray_a64d41954aff28febedc96b210e0d959a}\label{classUtil_1_1DSArray_a64d41954aff28febedc96b210e0d959a}} 
+\index{Util::DSArray$<$ Data $>$@{Util::DSArray$<$ Data $>$}!resize@{resize}}
+\index{resize@{resize}!Util::DSArray$<$ Data $>$@{Util::DSArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{resize()}{resize()}}
+{\footnotesize\ttfamily template$<$class Data $>$ \\
+void \mbox{\hyperlink{classUtil_1_1DSArray}{Util\+::\+D\+S\+Array}}$<$ Data $>$\+::resize (\begin{DoxyParamCaption}\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Modify logical size without modifying data. 
+
+The size parameter must be non-\/negative and may not exceed the physical allocated capacity.
+
+This function simply changes the logical size without modifying any elements of the underlying physical array. When the size increases, added elements are uninitialized.
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & new logical size, 0 $<$= size $<$ capacity.\\
+\hline
+\end{DoxyParams}
+The size parameter must be non-\/negative and may not exceed the capacity.
+
+This function simply changes the logical size of without modifying any elements of the underlying physical array. If the size increases, added elements are uninitialized.
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & new logical size, 0 $<$= size $<$ capacity. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 367 of file D\+S\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1DSArray_a604a0b36a322430157c415ca16b5355c}\label{classUtil_1_1DSArray_a604a0b36a322430157c415ca16b5355c}} 
+\index{Util::DSArray$<$ Data $>$@{Util::DSArray$<$ Data $>$}!clear@{clear}}
+\index{clear@{clear}!Util::DSArray$<$ Data $>$@{Util::DSArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily template$<$class Data $>$ \\
+void \mbox{\hyperlink{classUtil_1_1DSArray}{Util\+::\+D\+S\+Array}}$<$ Data $>$\+::clear\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set logical size to zero. 
+
+
+
+Definition at line 374 of file D\+S\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1DSArray_a1af3f836d880814d23ebe3d098b6bb5f}\label{classUtil_1_1DSArray_a1af3f836d880814d23ebe3d098b6bb5f}} 
+\index{Util::DSArray$<$ Data $>$@{Util::DSArray$<$ Data $>$}!serialize@{serialize}}
+\index{serialize@{serialize}!Util::DSArray$<$ Data $>$@{Util::DSArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$class Data $>$ \\
+template$<$class Archive $>$ \\
+void \mbox{\hyperlink{classUtil_1_1DSArray}{Util\+::\+D\+S\+Array}}$<$ Data $>$\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{ar,  }\item[{const unsigned int}]{version }\end{DoxyParamCaption})}
+
+
+
+Serialize a \mbox{\hyperlink{classUtil_1_1DSArray}{D\+S\+Array}} to/from an Archive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & archive \\
+\hline
+{\em version} & archive version id \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 265 of file D\+S\+Array.\+h.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1DSArray_a20d31a303e4f8747d30955fc232ffce4}\label{classUtil_1_1DSArray_a20d31a303e4f8747d30955fc232ffce4}} 
+\index{Util::DSArray$<$ Data $>$@{Util::DSArray$<$ Data $>$}!begin@{begin}}
+\index{begin@{begin}!Util::DSArray$<$ Data $>$@{Util::DSArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class Data $>$ \\
+void \mbox{\hyperlink{classUtil_1_1DSArray}{Util\+::\+D\+S\+Array}}$<$ Data $>$\+::begin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1ArrayIterator}{Array\+Iterator}}$<$ Data $>$ \&}]{iterator }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set an \mbox{\hyperlink{classUtil_1_1ArrayIterator}{Array\+Iterator}} to the beginning of this \mbox{\hyperlink{classUtil_1_1Array}{Array}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em iterator} & \mbox{\hyperlink{classUtil_1_1ArrayIterator}{Array\+Iterator}}, initialized on output. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 302 of file D\+S\+Array.\+h.
+
+
+
+References Util\+::\+Array\+Iterator$<$ Data $>$\+::set\+Current(), and Util\+::\+Array\+Iterator$<$ Data $>$\+::set\+End().
+
+\mbox{\Hypertarget{classUtil_1_1DSArray_a680727f69ddf30eeaf4f441e5976b1c5}\label{classUtil_1_1DSArray_a680727f69ddf30eeaf4f441e5976b1c5}} 
+\index{Util::DSArray$<$ Data $>$@{Util::DSArray$<$ Data $>$}!begin@{begin}}
+\index{begin@{begin}!Util::DSArray$<$ Data $>$@{Util::DSArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class Data $>$ \\
+void \mbox{\hyperlink{classUtil_1_1DSArray}{Util\+::\+D\+S\+Array}}$<$ Data $>$\+::begin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1ConstArrayIterator}{Const\+Array\+Iterator}}$<$ Data $>$ \&}]{iterator }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set a \mbox{\hyperlink{classUtil_1_1ConstArrayIterator}{Const\+Array\+Iterator}} to the beginning of this \mbox{\hyperlink{classUtil_1_1Array}{Array}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em iterator} & \mbox{\hyperlink{classUtil_1_1ConstArrayIterator}{Const\+Array\+Iterator}}, initialized on output. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 313 of file D\+S\+Array.\+h.
+
+
+
+References Util\+::\+Const\+Array\+Iterator$<$ Data $>$\+::set\+Current(), and Util\+::\+Const\+Array\+Iterator$<$ Data $>$\+::set\+End().
+
+\mbox{\Hypertarget{classUtil_1_1DSArray_a64d57aff171ea7fd76f1e1466481360c}\label{classUtil_1_1DSArray_a64d57aff171ea7fd76f1e1466481360c}} 
+\index{Util::DSArray$<$ Data $>$@{Util::DSArray$<$ Data $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Util::DSArray$<$ Data $>$@{Util::DSArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class Data $>$ \\
+Data \& \mbox{\hyperlink{classUtil_1_1DSArray}{Util\+::\+D\+S\+Array}}$<$ Data $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Mimic C array subscripting. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & array index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to element i 
+\end{DoxyReturn}
+
+
+Definition at line 323 of file D\+S\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1DSArray_a4d9cb5262ef0469e84c931b4900447e2}\label{classUtil_1_1DSArray_a4d9cb5262ef0469e84c931b4900447e2}} 
+\index{Util::DSArray$<$ Data $>$@{Util::DSArray$<$ Data $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Util::DSArray$<$ Data $>$@{Util::DSArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class Data $>$ \\
+const Data \& \mbox{\hyperlink{classUtil_1_1DSArray}{Util\+::\+D\+S\+Array}}$<$ Data $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Mimic C array subscripting. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & array index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const reference to element i 
+\end{DoxyReturn}
+
+
+Definition at line 334 of file D\+S\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1DSArray_a9980acef0bd3349954a29eb53a9236ef}\label{classUtil_1_1DSArray_a9980acef0bd3349954a29eb53a9236ef}} 
+\index{Util::DSArray$<$ Data $>$@{Util::DSArray$<$ Data $>$}!capacity@{capacity}}
+\index{capacity@{capacity}!Util::DSArray$<$ Data $>$@{Util::DSArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{capacity()}{capacity()}}
+{\footnotesize\ttfamily template$<$class Data $>$ \\
+int \mbox{\hyperlink{classUtil_1_1DSArray}{Util\+::\+D\+S\+Array}}$<$ Data $>$\+::capacity\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return physical capacity of array. 
+
+
+
+Definition at line 381 of file D\+S\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1DSArray_a7f33a3afebd64bce4d10de81563c8c1f}\label{classUtil_1_1DSArray_a7f33a3afebd64bce4d10de81563c8c1f}} 
+\index{Util::DSArray$<$ Data $>$@{Util::DSArray$<$ Data $>$}!size@{size}}
+\index{size@{size}!Util::DSArray$<$ Data $>$@{Util::DSArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$class Data $>$ \\
+int \mbox{\hyperlink{classUtil_1_1DSArray}{Util\+::\+D\+S\+Array}}$<$ Data $>$\+::size\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return logical size of this array (i.\+e., number of elements). 
+
+
+
+Definition at line 388 of file D\+S\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1DSArray_a1e589485650c8f6eb3dac75fd7778105}\label{classUtil_1_1DSArray_a1e589485650c8f6eb3dac75fd7778105}} 
+\index{Util::DSArray$<$ Data $>$@{Util::DSArray$<$ Data $>$}!isAllocated@{isAllocated}}
+\index{isAllocated@{isAllocated}!Util::DSArray$<$ Data $>$@{Util::DSArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{isAllocated()}{isAllocated()}}
+{\footnotesize\ttfamily template$<$class Data $>$ \\
+bool \mbox{\hyperlink{classUtil_1_1DSArray}{Util\+::\+D\+S\+Array}}$<$ Data $>$\+::is\+Allocated\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return true if the \mbox{\hyperlink{classUtil_1_1DSArray}{D\+S\+Array}} has been allocated, false otherwise. 
+
+
+
+Definition at line 395 of file D\+S\+Array.\+h.
+
+
+
+Referenced by Util\+::\+D\+S\+Array$<$ Data $>$\+::\+D\+S\+Array(), and Util\+::\+D\+S\+Array$<$ Data $>$\+::operator=().
+
+
+
+\doxysubsubsection{Member Data Documentation}
+\mbox{\Hypertarget{classUtil_1_1DSArray_a59fab10a4eea7d2e3565bf8d8c112894}\label{classUtil_1_1DSArray_a59fab10a4eea7d2e3565bf8d8c112894}} 
+\index{Util::DSArray$<$ Data $>$@{Util::DSArray$<$ Data $>$}!data\_@{data\_}}
+\index{data\_@{data\_}!Util::DSArray$<$ Data $>$@{Util::DSArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{data\_}{data\_}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+Data$\ast$ \mbox{\hyperlink{classUtil_1_1DSArray}{Util\+::\+D\+S\+Array}}$<$ Data $>$\+::data\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+C array of Data elements. 
+
+
+
+Definition at line 154 of file D\+S\+Array.\+h.
+
+
+
+Referenced by Util\+::\+D\+S\+Array$<$ Data $>$\+::\+D\+S\+Array().
+
+\mbox{\Hypertarget{classUtil_1_1DSArray_acecc67e62224b979dac5532f6e1e6505}\label{classUtil_1_1DSArray_acecc67e62224b979dac5532f6e1e6505}} 
+\index{Util::DSArray$<$ Data $>$@{Util::DSArray$<$ Data $>$}!size\_@{size\_}}
+\index{size\_@{size\_}!Util::DSArray$<$ Data $>$@{Util::DSArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{size\_}{size\_}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+int \mbox{\hyperlink{classUtil_1_1DSArray}{Util\+::\+D\+S\+Array}}$<$ Data $>$\+::size\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Logical size of array (number of elements used). 
+
+
+
+Definition at line 157 of file D\+S\+Array.\+h.
+
+
+
+Referenced by Util\+::\+D\+S\+Array$<$ Data $>$\+::\+D\+S\+Array(), and Util\+::\+D\+S\+Array$<$ Data $>$\+::operator=().
+
+\mbox{\Hypertarget{classUtil_1_1DSArray_ae965fbda8c2b0eaa0e71ce6fc0a9bd36}\label{classUtil_1_1DSArray_ae965fbda8c2b0eaa0e71ce6fc0a9bd36}} 
+\index{Util::DSArray$<$ Data $>$@{Util::DSArray$<$ Data $>$}!capacity\_@{capacity\_}}
+\index{capacity\_@{capacity\_}!Util::DSArray$<$ Data $>$@{Util::DSArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{capacity\_}{capacity\_}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+int \mbox{\hyperlink{classUtil_1_1DSArray}{Util\+::\+D\+S\+Array}}$<$ Data $>$\+::capacity\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Capacity (physical size) of underlying C array. 
+
+
+
+Definition at line 160 of file D\+S\+Array.\+h.
+
+
+
+Referenced by Util\+::\+D\+S\+Array$<$ Data $>$\+::\+D\+S\+Array(), and Util\+::\+D\+S\+Array$<$ Data $>$\+::operator=().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+S\+Array.\+h\end{DoxyCompactItemize}

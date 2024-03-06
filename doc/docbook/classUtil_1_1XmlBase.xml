@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1XmlBase">
+<title>Util::XmlBase Class Reference</title>
+<indexterm><primary>Util::XmlBase</primary></indexterm>
+<para>
+
+<para>Base class for classes that parse XML markup tags. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;XmlBase.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Util::XmlBase:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classUtil_1_1XmlBase.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1XmlBase_1a0ae2293642cdee2623f5174c7cf0d726">XmlBase</link> ()</para>
+
+<para>Constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1XmlBase_1af3bf473df48a30e13752fd653380f98b">~XmlBase</link> ()</para>
+
+<para>Destructor. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1XmlBase_1ac7da0b117f9d23991eedb46c7a88e255">setString</link> (const std::string &amp;<link linkend="_classUtil_1_1XmlBase_1a8378a6c87659891e9f1e5458dbfc1413">string</link>, int <link linkend="_classUtil_1_1XmlBase_1ab082c1d74ac35556722d153b6539d5f4">cursor</link>=0)</para>
+
+<para>Initialize string and cursor. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1XmlBase_1a84cbe3cede50b8eec0dd21c9d30933cd">setCursor</link> (int <link linkend="_classUtil_1_1XmlBase_1ab082c1d74ac35556722d153b6539d5f4">cursor</link>)</para>
+
+<para>Set cursor. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1XmlBase_1a699f3846ba2afb74f62d6bc1f4a89f35">skip</link> ()</para>
+
+<para>Skip leading white space, if any. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1XmlBase_1aa2d50f9150f8998517ba3119038d6cea">next</link> ()</para>
+
+<para>Advance to the next character. </para>
+</listitem>
+            <listitem><para>const std::string &amp; <link linkend="_classUtil_1_1XmlBase_1a8378a6c87659891e9f1e5458dbfc1413">string</link> () const</para>
+
+<para>Return the associated string. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1XmlBase_1ab082c1d74ac35556722d153b6539d5f4">cursor</link> () const</para>
+
+<para>Return the index of the current character. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1XmlBase_1aca09ecb2957e5dcc2d69c2d6ef67938b">c</link> () const</para>
+
+<para>Return the current character. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_classUtil_1_1XmlBase_1ace5da36fc7b1686aea413ade38540aaf">isEnd</link> () const</para>
+
+<para>Has the cursor reached the end of the string? </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Base class for classes that parse XML markup tags. </para>
+<para>
+Definition at line 22 of file XmlBase.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1XmlBase_1a0ae2293642cdee2623f5174c7cf0d726"/>    <section>
+    <title>XmlBase()</title>
+<indexterm><primary>XmlBase</primary><secondary>Util::XmlBase</secondary></indexterm>
+<indexterm><primary>Util::XmlBase</primary><secondary>XmlBase</secondary></indexterm>
+<para><computeroutput>Util::XmlBase::XmlBase ( )</computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+<para>
+Definition at line 16 of file XmlBase.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1XmlBase_1af3bf473df48a30e13752fd653380f98b"/>    <section>
+    <title>~XmlBase()</title>
+<indexterm><primary>~XmlBase</primary><secondary>Util::XmlBase</secondary></indexterm>
+<indexterm><primary>Util::XmlBase</primary><secondary>~XmlBase</secondary></indexterm>
+<para><computeroutput>Util::XmlBase::~XmlBase ( )</computeroutput></para><para>
+
+<para>Destructor. </para>
+</para>
+<para>
+Definition at line 26 of file XmlBase.cpp.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1XmlBase_1ac7da0b117f9d23991eedb46c7a88e255"/>    <section>
+    <title>setString()</title>
+<indexterm><primary>setString</primary><secondary>Util::XmlBase</secondary></indexterm>
+<indexterm><primary>Util::XmlBase</primary><secondary>setString</secondary></indexterm>
+<para><computeroutput>void Util::XmlBase::setString (const std::string &amp; string, int cursor = <computeroutput>0</computeroutput>
+)</computeroutput></para><para>
+
+<para>Initialize string and cursor. </para>
+</para>
+<para>
+Definition at line 32 of file XmlBase.cpp.</para>
+<para>
+References cursor(), setCursor(), and string().</para>
+<para>
+Referenced by Util::XmlAttribute::match(), Util::XmlEndTag::match(), and Util::XmlStartTag::matchLabel().</para>
+    </section><anchor xml:id="_classUtil_1_1XmlBase_1a84cbe3cede50b8eec0dd21c9d30933cd"/>    <section>
+    <title>setCursor()</title>
+<indexterm><primary>setCursor</primary><secondary>Util::XmlBase</secondary></indexterm>
+<indexterm><primary>Util::XmlBase</primary><secondary>setCursor</secondary></indexterm>
+<para><computeroutput>void Util::XmlBase::setCursor (int cursor)</computeroutput></para><para>
+
+<para>Set cursor. </para>
+</para>
+
+<para>String must already be set. </para>
+<para>
+Definition at line 42 of file XmlBase.cpp.</para>
+<para>
+References cursor(), and UTIL_THROW.</para>
+<para>
+Referenced by Util::XmlAttribute::match(), and setString().</para>
+    </section><anchor xml:id="_classUtil_1_1XmlBase_1a699f3846ba2afb74f62d6bc1f4a89f35"/>    <section>
+    <title>skip()</title>
+<indexterm><primary>skip</primary><secondary>Util::XmlBase</secondary></indexterm>
+<indexterm><primary>Util::XmlBase</primary><secondary>skip</secondary></indexterm>
+<para><computeroutput>void Util::XmlBase::skip ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Skip leading white space, if any. </para>
+</para>
+<para>
+Definition at line 88 of file XmlBase.h.</para>
+<para>
+Referenced by Util::XmlAttribute::match(), Util::XmlEndTag::match(), Util::XmlStartTag::matchAttribute(), and Util::XmlStartTag::matchLabel().</para>
+    </section><anchor xml:id="_classUtil_1_1XmlBase_1aa2d50f9150f8998517ba3119038d6cea"/>    <section>
+    <title>next()</title>
+<indexterm><primary>next</primary><secondary>Util::XmlBase</secondary></indexterm>
+<indexterm><primary>Util::XmlBase</primary><secondary>next</secondary></indexterm>
+<para><computeroutput>void Util::XmlBase::next ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Advance to the next character. </para>
+</para>
+<para>
+Definition at line 104 of file XmlBase.h.</para>
+<para>
+Referenced by Util::XmlAttribute::match(), Util::XmlEndTag::match(), Util::XmlStartTag::matchAttribute(), and Util::XmlStartTag::matchLabel().</para>
+    </section><anchor xml:id="_classUtil_1_1XmlBase_1a8378a6c87659891e9f1e5458dbfc1413"/>    <section>
+    <title>string()</title>
+<indexterm><primary>string</primary><secondary>Util::XmlBase</secondary></indexterm>
+<indexterm><primary>Util::XmlBase</primary><secondary>string</secondary></indexterm>
+<para><computeroutput>const std::string &amp; Util::XmlBase::string ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return the associated string. </para>
+</para>
+<para>
+Definition at line 118 of file XmlBase.h.</para>
+<para>
+Referenced by Util::XmlStartTag::finish(), Util::XmlAttribute::match(), Util::XmlEndTag::match(), Util::XmlStartTag::matchLabel(), and setString().</para>
+    </section><anchor xml:id="_classUtil_1_1XmlBase_1ab082c1d74ac35556722d153b6539d5f4"/>    <section>
+    <title>cursor()</title>
+<indexterm><primary>cursor</primary><secondary>Util::XmlBase</secondary></indexterm>
+<indexterm><primary>Util::XmlBase</primary><secondary>cursor</secondary></indexterm>
+<para><computeroutput>int Util::XmlBase::cursor ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return the index of the current character. </para>
+</para>
+<para>
+Definition at line 124 of file XmlBase.h.</para>
+<para>
+Referenced by Util::XmlAttribute::match(), Util::XmlEndTag::match(), Util::XmlStartTag::matchLabel(), setCursor(), and setString().</para>
+    </section><anchor xml:id="_classUtil_1_1XmlBase_1aca09ecb2957e5dcc2d69c2d6ef67938b"/>    <section>
+    <title>c()</title>
+<indexterm><primary>c</primary><secondary>Util::XmlBase</secondary></indexterm>
+<indexterm><primary>Util::XmlBase</primary><secondary>c</secondary></indexterm>
+<para><computeroutput>int Util::XmlBase::c ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return the current character. </para>
+</para>
+<para>
+Definition at line 130 of file XmlBase.h.</para>
+<para>
+Referenced by Util::XmlAttribute::match(), Util::XmlEndTag::match(), Util::XmlStartTag::matchAttribute(), and Util::XmlStartTag::matchLabel().</para>
+    </section><anchor xml:id="_classUtil_1_1XmlBase_1ace5da36fc7b1686aea413ade38540aaf"/>    <section>
+    <title>isEnd()</title>
+<indexterm><primary>isEnd</primary><secondary>Util::XmlBase</secondary></indexterm>
+<indexterm><primary>Util::XmlBase</primary><secondary>isEnd</secondary></indexterm>
+<para><computeroutput>bool Util::XmlBase::isEnd ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Has the cursor reached the end of the string? </para>
+</para>
+<para>
+Definition at line 136 of file XmlBase.h.</para>
+<para>
+Referenced by Util::XmlAttribute::match(), Util::XmlEndTag::match(), Util::XmlStartTag::matchAttribute(), and Util::XmlStartTag::matchLabel().</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+XmlBase.hXmlBase.cpp</section>
+</section>

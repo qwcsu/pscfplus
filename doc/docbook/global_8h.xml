@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_global_8h">
+<title>global.h File Reference</title>
+<indexterm><primary>global.h</primary></indexterm>
+<para>
+
+<para>File containing preprocessor macros for error handling. </para>
+ 
+</para>
+<programlisting>#include &lt;mpi.h&gt;
+#include &lt;util/misc/Log.h&gt;
+#include &quot;assert.h&quot;
+#include &quot;misc/Exception.h&quot;
+</programlisting><simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_global_8h_1a8de3ed741dadc9c979a4ff17c0a9116e">NDEBUG</link></para>
+
+<para>Include access to a Log file. </para>
+</listitem>
+            <listitem><para>#define <link linkend="_global_8h_1a36b40b7d270f4423cb39fa91d62c5351">UTIL_FUNC</link>   __PRETTY_FUNCTION__</para>
+
+<para>Macro for the name of the current function (compiler dependent). </para>
+</listitem>
+            <listitem><para>#define <link linkend="_global_8h_1ad2512f8bd062d41d66799cf900151487">UTIL_THROW</link>(msg)</para>
+
+<para>Macro for throwing an Exception, reporting function, file and line number. </para>
+</listitem>
+            <listitem><para>#define <link linkend="_global_8h_1aaf3bc07accafc94019d126e4cffa81e7">UTIL_CHECK</link>(condition)   if (!(condition)) { <link linkend="_global_8h_1ad2512f8bd062d41d66799cf900151487">UTIL_THROW</link>(&quot;Failed assertion: &quot; #condition); }</para>
+
+<para>Assertion macro suitable for serial or parallel production code. </para>
+</listitem>
+            <listitem><para>#define <link linkend="_global_8h_1aeb3d01af710489fd0112efe3054345b4">UTIL_ASSERT</link>(condition)   {}</para>
+
+<para>Assertion macro suitable for debugging serial or parallel code. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>File containing preprocessor macros for error handling. </para>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_global_8h_1a8de3ed741dadc9c979a4ff17c0a9116e"/>    <section>
+    <title>NDEBUG</title>
+<indexterm><primary>NDEBUG</primary><secondary>global.h</secondary></indexterm>
+<indexterm><primary>global.h</primary><secondary>NDEBUG</secondary></indexterm>
+<para><computeroutput>#define NDEBUG</computeroutput></para><para>
+
+<para>Include access to a Log file. </para>
+</para>
+
+<para>If defined, disable all C assert(...) statements. </para>
+<para>
+Definition at line 32 of file global.h.</para>
+    </section><anchor xml:id="_global_8h_1a36b40b7d270f4423cb39fa91d62c5351"/>    <section>
+    <title>UTIL_FUNC</title>
+<indexterm><primary>UTIL_FUNC</primary><secondary>global.h</secondary></indexterm>
+<indexterm><primary>global.h</primary><secondary>UTIL_FUNC</secondary></indexterm>
+<para><computeroutput>#define UTIL_FUNC   __PRETTY_FUNCTION__</computeroutput></para><para>
+
+<para>Macro for the name of the current function (compiler dependent). </para>
+</para>
+<para>
+Definition at line 42 of file global.h.</para>
+    </section><anchor xml:id="_global_8h_1ad2512f8bd062d41d66799cf900151487"/>    <section>
+    <title>UTIL_THROW</title>
+<indexterm><primary>UTIL_THROW</primary><secondary>global.h</secondary></indexterm>
+<indexterm><primary>global.h</primary><secondary>UTIL_THROW</secondary></indexterm>
+<para><computeroutput>#define UTIL_THROW( msg)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting>&#32;&#32;&#32;&#32;&#32;&#32;{&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;Exception&#32;e(<link linkend="_global_8h_1a36b40b7d270f4423cb39fa91d62c5351">UTIL_FUNC</link>,&#32;msg,&#32;__FILE__,&#32;__LINE__);&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;MpiThrow(e);&#32;}
+</programlisting><para>
+
+<para>Macro for throwing an Exception, reporting function, file and line number. </para>
+</para>
+<para>
+Definition at line 51 of file global.h.</para>
+    </section><anchor xml:id="_global_8h_1aaf3bc07accafc94019d126e4cffa81e7"/>    <section>
+    <title>UTIL_CHECK</title>
+<indexterm><primary>UTIL_CHECK</primary><secondary>global.h</secondary></indexterm>
+<indexterm><primary>global.h</primary><secondary>UTIL_CHECK</secondary></indexterm>
+<para><computeroutput>#define UTIL_CHECK( condition)   if (!(condition)) { <link linkend="_global_8h_1ad2512f8bd062d41d66799cf900151487">UTIL_THROW</link>(&quot;Failed assertion: &quot; #condition); }</computeroutput></para><para>
+
+<para>Assertion macro suitable for serial or parallel production code. </para>
+</para>
+<para>
+Definition at line 68 of file global.h.</para>
+    </section><anchor xml:id="_global_8h_1aeb3d01af710489fd0112efe3054345b4"/>    <section>
+    <title>UTIL_ASSERT</title>
+<indexterm><primary>UTIL_ASSERT</primary><secondary>global.h</secondary></indexterm>
+<indexterm><primary>global.h</primary><secondary>UTIL_ASSERT</secondary></indexterm>
+<para><computeroutput>#define UTIL_ASSERT( condition)   {}</computeroutput></para><para>
+
+<para>Assertion macro suitable for debugging serial or parallel code. </para>
+</para>
+<para>
+Definition at line 75 of file global.h.</para>
+</section>
+</section>
+</section>

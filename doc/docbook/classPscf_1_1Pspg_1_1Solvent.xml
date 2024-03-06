@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classPscf_1_1Pspg_1_1Solvent">
+<title>Pscf::Pspg::Solvent&lt; D &gt; Class Template Reference</title>
+<indexterm><primary>Pscf::Pspg::Solvent&lt; D &gt;</primary></indexterm>
+<para>
+
+<para>Class representing a solvent species. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;Solvent.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Pscf::Pspg::Solvent&lt; D &gt;:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classPscf_1_1Pspg_1_1Solvent.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Types    </title>
+        <itemizedlist>
+            <listitem><para>typedef <link linkend="_classPscf_1_1Pspg_1_1RDField">RDField</link>&lt; D &gt; <link linkend="_classPscf_1_1Pspg_1_1Solvent_1af70c867e1692755aa1de798ef48d7688">CField</link></para>
+
+<para><link linkend="_classPscf_1_1Monomer">Monomer</link> concentration field. </para>
+</listitem>
+            <listitem><para>typedef <link linkend="_classPscf_1_1Pspg_1_1RDField">RDField</link>&lt; D &gt; <link linkend="_classPscf_1_1Pspg_1_1Solvent_1ab2a893f0c7c622da0b7c485b1f6231e8">WField</link></para>
+
+<para><link linkend="_classPscf_1_1Monomer">Monomer</link> chemical potential field. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classPscf_1_1Pspg_1_1Solvent_1a88d1f8cefb1210a2f8c1f0d0b562cb83">Solvent</link> ()</para>
+
+<para>Constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classPscf_1_1Pspg_1_1Solvent_1a120494905d47d284f395888f5f4cf0ad">~Solvent</link> ()</para>
+
+<para>Constructor. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classPscf_1_1Pspg_1_1Solvent_1a2526c546654319ab776953ac7e2a12cd">compute</link> (<link linkend="_classPscf_1_1Pspg_1_1Solvent_1ab2a893f0c7c622da0b7c485b1f6231e8">WField</link> const &amp;wField)</para>
+
+<para>Compute monomer concentration field and phi and/or mu. </para>
+</listitem>
+            <listitem><para>const <link linkend="_classPscf_1_1Pspg_1_1Solvent_1af70c867e1692755aa1de798ef48d7688">CField</link> &amp; <link linkend="_classPscf_1_1Pspg_1_1Solvent_1af9058364495c875f22c09b0968a30345">concentration</link> () const</para>
+
+<para>Get monomer concentration field for this solvent. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;int D&gt;
+class Pscf::Pspg::Solvent&lt; D &gt;</title></simplesect>
+
+
+<para>Class representing a solvent species. </para>
+<para>
+Definition at line 27 of file Solvent.h.</para>
+</section>
+<section>
+<title>Member Typedef Documentation</title>
+<anchor xml:id="_classPscf_1_1Pspg_1_1Solvent_1af70c867e1692755aa1de798ef48d7688"/>    <section>
+    <title>CField</title>
+<indexterm><primary>CField</primary><secondary>Pscf::Pspg::Solvent&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Solvent&lt; D &gt;</primary><secondary>CField</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>typedef <link linkend="_classPscf_1_1Pspg_1_1RDField">RDField</link>&lt;D&gt; <link linkend="_classPscf_1_1Pspg_1_1Solvent">Pscf::Pspg::Solvent</link>&lt; D &gt;::<link linkend="_classPscf_1_1Pspg_1_1Solvent_1af70c867e1692755aa1de798ef48d7688">CField</link></computeroutput></para><para>
+
+<para><link linkend="_classPscf_1_1Monomer">Monomer</link> concentration field. </para>
+</para>
+<para>
+Definition at line 33 of file Solvent.h.</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1Solvent_1ab2a893f0c7c622da0b7c485b1f6231e8"/>    <section>
+    <title>WField</title>
+<indexterm><primary>WField</primary><secondary>Pscf::Pspg::Solvent&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Solvent&lt; D &gt;</primary><secondary>WField</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>typedef <link linkend="_classPscf_1_1Pspg_1_1RDField">RDField</link>&lt;D&gt; <link linkend="_classPscf_1_1Pspg_1_1Solvent">Pscf::Pspg::Solvent</link>&lt; D &gt;::<link linkend="_classPscf_1_1Pspg_1_1Solvent_1ab2a893f0c7c622da0b7c485b1f6231e8">WField</link></computeroutput></para><para>
+
+<para><link linkend="_classPscf_1_1Monomer">Monomer</link> chemical potential field. </para>
+</para>
+<para>
+Definition at line 38 of file Solvent.h.</para>
+</section>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classPscf_1_1Pspg_1_1Solvent_1a88d1f8cefb1210a2f8c1f0d0b562cb83"/>    <section>
+    <title>Solvent()</title>
+<indexterm><primary>Solvent</primary><secondary>Pscf::Pspg::Solvent&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Solvent&lt; D &gt;</primary><secondary>Solvent</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput><link linkend="_classPscf_1_1Pspg_1_1Solvent">Pscf::Pspg::Solvent</link>&lt; D &gt;::<link linkend="_classPscf_1_1Pspg_1_1Solvent">Solvent</link> ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+<para>
+Definition at line 43 of file Solvent.h.</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1Solvent_1a120494905d47d284f395888f5f4cf0ad"/>    <section>
+    <title>~Solvent()</title>
+<indexterm><primary>~Solvent</primary><secondary>Pscf::Pspg::Solvent&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Solvent&lt; D &gt;</primary><secondary>~Solvent</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput><link linkend="_classPscf_1_1Pspg_1_1Solvent">Pscf::Pspg::Solvent</link>&lt; D &gt;::~<link linkend="_classPscf_1_1Pspg_1_1Solvent">Solvent</link> ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+<para>
+Definition at line 50 of file Solvent.h.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classPscf_1_1Pspg_1_1Solvent_1a2526c546654319ab776953ac7e2a12cd"/>    <section>
+    <title>compute()</title>
+<indexterm><primary>compute</primary><secondary>Pscf::Pspg::Solvent&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Solvent&lt; D &gt;</primary><secondary>compute</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>virtual void <link linkend="_classPscf_1_1Pspg_1_1Solvent">Pscf::Pspg::Solvent</link>&lt; D &gt;::compute (<link linkend="_classPscf_1_1Pspg_1_1Solvent_1ab2a893f0c7c622da0b7c485b1f6231e8">WField</link> const &amp; wField)<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Compute monomer concentration field and phi and/or mu. </para>
+</para>
+
+<para>Pure virtual function: Must be implemented by subclasses. Upon return, concentration field, phi and mu are all set.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>wField</entry>
+                                <entry>
+<para>monomer chemical potential field. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 62 of file Solvent.h.</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1Solvent_1af9058364495c875f22c09b0968a30345"/>    <section>
+    <title>concentration()</title>
+<indexterm><primary>concentration</primary><secondary>Pscf::Pspg::Solvent&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Solvent&lt; D &gt;</primary><secondary>concentration</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>const <link linkend="_classPscf_1_1Pspg_1_1Solvent_1af70c867e1692755aa1de798ef48d7688">CField</link>&amp; <link linkend="_classPscf_1_1Pspg_1_1Solvent">Pscf::Pspg::Solvent</link>&lt; D &gt;::concentration ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get monomer concentration field for this solvent. </para>
+</para>
+<para>
+Definition at line 67 of file Solvent.h.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Solvent.h</section>
+</section>

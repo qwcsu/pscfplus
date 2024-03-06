@@ -1,0 +1,274 @@
+\hypertarget{classUtil_1_1TextFileOArchive}{}\doxysubsection{Util\+::Text\+File\+O\+Archive Class Reference}
+\label{classUtil_1_1TextFileOArchive}\index{Util::TextFileOArchive@{Util::TextFileOArchive}}
+
+
+Saving archive for character based ostream.  
+
+
+
+
+{\ttfamily \#include $<$Text\+File\+O\+Archive.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1TextFileOArchive_a615ad7aa36ecf2a8805777f1ef83aa18}{Text\+File\+O\+Archive}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1TextFileOArchive_a4ce1d03e047558f93ad2627ee15def5d}{Text\+File\+O\+Archive}} (std\+::string filename)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1TextFileOArchive_ad120b79cbcb9fc8aff90b47e90ef4689}{Text\+File\+O\+Archive}} (std\+::ofstream \&\mbox{\hyperlink{classUtil_1_1TextFileOArchive_ad6d7acff24145b660636600a2b140530}{file}})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classUtil_1_1TextFileOArchive_a8bda4c49a046ca31dd3e30d3cedb9ef1}{$\sim$\+Text\+File\+O\+Archive}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+std\+::ofstream \& \mbox{\hyperlink{classUtil_1_1TextFileOArchive_ad6d7acff24145b660636600a2b140530}{file}} ()
+\begin{DoxyCompactList}\small\item\em Get the underlying ifstream by reference. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{classUtil_1_1TextFileOArchive}{Text\+File\+O\+Archive}} \& \mbox{\hyperlink{classUtil_1_1TextFileOArchive_ad6d2d5ca2015174d6f7f57e4e7f0497d}{operator\&}} (T \&data)
+\begin{DoxyCompactList}\small\item\em Save one T object to this archive. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{classUtil_1_1TextFileOArchive}{Text\+File\+O\+Archive}} \& \mbox{\hyperlink{classUtil_1_1TextFileOArchive_a16c32562f7157c4a0786c2d2b78b52ee}{operator$<$$<$}} (T \&data)
+\begin{DoxyCompactList}\small\item\em Save one T object to this archive. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classUtil_1_1TextFileOArchive_ad6f89031a70eeeb9ed032f45183ffafb}{pack}} (const T \&data)
+\begin{DoxyCompactList}\small\item\em Save one T object to this archive. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classUtil_1_1TextFileOArchive_a2786dbb2735ae21049d62a27c9a13016}{pack}} (const T $\ast$array, int n)
+\begin{DoxyCompactList}\small\item\em Save a C-\/array of T objects to this archive. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classUtil_1_1TextFileOArchive_a5925fd3f49f7a2bf5b118fdd4d8c310a}{pack}} (const T $\ast$array, int m, int n, int np)
+\begin{DoxyCompactList}\small\item\em Save a 2D C array to this archive. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classUtil_1_1TextFileOArchive_a88e2eeb4e5dac16c1b358bac03ade290}{is\+\_\+saving}} ()
+\begin{DoxyCompactList}\small\item\em Returns true;. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classUtil_1_1TextFileOArchive_a77b902134583a8d1807aaf78fc15c54e}{is\+\_\+loading}} ()
+\begin{DoxyCompactList}\small\item\em Returns false;. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Saving archive for character based ostream. 
+
+Definition at line 30 of file Text\+File\+O\+Archive.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1TextFileOArchive_a615ad7aa36ecf2a8805777f1ef83aa18}\label{classUtil_1_1TextFileOArchive_a615ad7aa36ecf2a8805777f1ef83aa18}} 
+\index{Util::TextFileOArchive@{Util::TextFileOArchive}!TextFileOArchive@{TextFileOArchive}}
+\index{TextFileOArchive@{TextFileOArchive}!Util::TextFileOArchive@{Util::TextFileOArchive}}
+\doxyparagraph{\texorpdfstring{TextFileOArchive()}{TextFileOArchive()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Util\+::\+Text\+File\+O\+Archive\+::\+Text\+File\+O\+Archive (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+
+Definition at line 16 of file Text\+File\+O\+Archive.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1TextFileOArchive_a4ce1d03e047558f93ad2627ee15def5d}\label{classUtil_1_1TextFileOArchive_a4ce1d03e047558f93ad2627ee15def5d}} 
+\index{Util::TextFileOArchive@{Util::TextFileOArchive}!TextFileOArchive@{TextFileOArchive}}
+\index{TextFileOArchive@{TextFileOArchive}!Util::TextFileOArchive@{Util::TextFileOArchive}}
+\doxyparagraph{\texorpdfstring{TextFileOArchive()}{TextFileOArchive()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Util\+::\+Text\+File\+O\+Archive\+::\+Text\+File\+O\+Archive (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & name of file to open for reading. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 25 of file Text\+File\+O\+Archive.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1TextFileOArchive_ad120b79cbcb9fc8aff90b47e90ef4689}\label{classUtil_1_1TextFileOArchive_ad120b79cbcb9fc8aff90b47e90ef4689}} 
+\index{Util::TextFileOArchive@{Util::TextFileOArchive}!TextFileOArchive@{TextFileOArchive}}
+\index{TextFileOArchive@{TextFileOArchive}!Util::TextFileOArchive@{Util::TextFileOArchive}}
+\doxyparagraph{\texorpdfstring{TextFileOArchive()}{TextFileOArchive()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Util\+::\+Text\+File\+O\+Archive\+::\+Text\+File\+O\+Archive (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{file }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & output file \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 35 of file Text\+File\+O\+Archive.\+cpp.
+
+
+
+References file(), and U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1TextFileOArchive_a8bda4c49a046ca31dd3e30d3cedb9ef1}\label{classUtil_1_1TextFileOArchive_a8bda4c49a046ca31dd3e30d3cedb9ef1}} 
+\index{Util::TextFileOArchive@{Util::TextFileOArchive}!````~TextFileOArchive@{$\sim$TextFileOArchive}}
+\index{````~TextFileOArchive@{$\sim$TextFileOArchive}!Util::TextFileOArchive@{Util::TextFileOArchive}}
+\doxyparagraph{\texorpdfstring{$\sim$TextFileOArchive()}{~TextFileOArchive()}}
+{\footnotesize\ttfamily Util\+::\+Text\+File\+O\+Archive\+::$\sim$\+Text\+File\+O\+Archive (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+Definition at line 48 of file Text\+File\+O\+Archive.\+cpp.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1TextFileOArchive_a88e2eeb4e5dac16c1b358bac03ade290}\label{classUtil_1_1TextFileOArchive_a88e2eeb4e5dac16c1b358bac03ade290}} 
+\index{Util::TextFileOArchive@{Util::TextFileOArchive}!is\_saving@{is\_saving}}
+\index{is\_saving@{is\_saving}!Util::TextFileOArchive@{Util::TextFileOArchive}}
+\doxyparagraph{\texorpdfstring{is\_saving()}{is\_saving()}}
+{\footnotesize\ttfamily bool Util\+::\+Text\+File\+O\+Archive\+::is\+\_\+saving (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns true;. 
+
+
+
+Definition at line 125 of file Text\+File\+O\+Archive.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1TextFileOArchive_a77b902134583a8d1807aaf78fc15c54e}\label{classUtil_1_1TextFileOArchive_a77b902134583a8d1807aaf78fc15c54e}} 
+\index{Util::TextFileOArchive@{Util::TextFileOArchive}!is\_loading@{is\_loading}}
+\index{is\_loading@{is\_loading}!Util::TextFileOArchive@{Util::TextFileOArchive}}
+\doxyparagraph{\texorpdfstring{is\_loading()}{is\_loading()}}
+{\footnotesize\ttfamily bool Util\+::\+Text\+File\+O\+Archive\+::is\+\_\+loading (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns false;. 
+
+
+
+Definition at line 128 of file Text\+File\+O\+Archive.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1TextFileOArchive_ad6d7acff24145b660636600a2b140530}\label{classUtil_1_1TextFileOArchive_ad6d7acff24145b660636600a2b140530}} 
+\index{Util::TextFileOArchive@{Util::TextFileOArchive}!file@{file}}
+\index{file@{file}!Util::TextFileOArchive@{Util::TextFileOArchive}}
+\doxyparagraph{\texorpdfstring{file()}{file()}}
+{\footnotesize\ttfamily std\+::ofstream \& Util\+::\+Text\+File\+O\+Archive\+::file (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the underlying ifstream by reference. 
+
+
+
+Definition at line 58 of file Text\+File\+O\+Archive.\+cpp.
+
+
+
+Referenced by Text\+File\+O\+Archive().
+
+\mbox{\Hypertarget{classUtil_1_1TextFileOArchive_ad6d2d5ca2015174d6f7f57e4e7f0497d}\label{classUtil_1_1TextFileOArchive_ad6d2d5ca2015174d6f7f57e4e7f0497d}} 
+\index{Util::TextFileOArchive@{Util::TextFileOArchive}!operator\&@{operator\&}}
+\index{operator\&@{operator\&}!Util::TextFileOArchive@{Util::TextFileOArchive}}
+\doxyparagraph{\texorpdfstring{operator\&()}{operator\&()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classUtil_1_1TextFileOArchive}{Text\+File\+O\+Archive}} \& Util\+::\+Text\+File\+O\+Archive\+::operator\& (\begin{DoxyParamCaption}\item[{T \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Save one T object to this archive. 
+
+
+
+Definition at line 137 of file Text\+File\+O\+Archive.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1TextFileOArchive_a16c32562f7157c4a0786c2d2b78b52ee}\label{classUtil_1_1TextFileOArchive_a16c32562f7157c4a0786c2d2b78b52ee}} 
+\index{Util::TextFileOArchive@{Util::TextFileOArchive}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Util::TextFileOArchive@{Util::TextFileOArchive}}
+\doxyparagraph{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classUtil_1_1TextFileOArchive}{Text\+File\+O\+Archive}} \& Util\+::\+Text\+File\+O\+Archive\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{T \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Save one T object to this archive. 
+
+
+
+Definition at line 147 of file Text\+File\+O\+Archive.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1TextFileOArchive_ad6f89031a70eeeb9ed032f45183ffafb}\label{classUtil_1_1TextFileOArchive_ad6f89031a70eeeb9ed032f45183ffafb}} 
+\index{Util::TextFileOArchive@{Util::TextFileOArchive}!pack@{pack}}
+\index{pack@{pack}!Util::TextFileOArchive@{Util::TextFileOArchive}}
+\doxyparagraph{\texorpdfstring{pack()}{pack()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Util\+::\+Text\+File\+O\+Archive\+::pack (\begin{DoxyParamCaption}\item[{const T \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Save one T object to this archive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & object to be written to file \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 159 of file Text\+File\+O\+Archive.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1TextFileOArchive_a2786dbb2735ae21049d62a27c9a13016}\label{classUtil_1_1TextFileOArchive_a2786dbb2735ae21049d62a27c9a13016}} 
+\index{Util::TextFileOArchive@{Util::TextFileOArchive}!pack@{pack}}
+\index{pack@{pack}!Util::TextFileOArchive@{Util::TextFileOArchive}}
+\doxyparagraph{\texorpdfstring{pack()}{pack()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Util\+::\+Text\+File\+O\+Archive\+::pack (\begin{DoxyParamCaption}\item[{const T $\ast$}]{array,  }\item[{int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Save a C-\/array of T objects to this archive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & C array of T objects (pointer to first element) \\
+\hline
+{\em n} & number of elements \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 178 of file Text\+File\+O\+Archive.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1TextFileOArchive_a5925fd3f49f7a2bf5b118fdd4d8c310a}\label{classUtil_1_1TextFileOArchive_a5925fd3f49f7a2bf5b118fdd4d8c310a}} 
+\index{Util::TextFileOArchive@{Util::TextFileOArchive}!pack@{pack}}
+\index{pack@{pack}!Util::TextFileOArchive@{Util::TextFileOArchive}}
+\doxyparagraph{\texorpdfstring{pack()}{pack()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Util\+::\+Text\+File\+O\+Archive\+::pack (\begin{DoxyParamCaption}\item[{const T $\ast$}]{array,  }\item[{int}]{m,  }\item[{int}]{n,  }\item[{int}]{np }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Save a 2D C array to this archive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & address of first element array\mbox{[}0\mbox{]}\mbox{[}0\mbox{]} of 2D array \\
+\hline
+{\em m} & logical number of rows \\
+\hline
+{\em n} & logical number of columns \\
+\hline
+{\em np} & physical number of columns \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 190 of file Text\+File\+O\+Archive.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Text\+File\+O\+Archive.\+h\item 
+Text\+File\+O\+Archive.\+cpp\end{DoxyCompactItemize}

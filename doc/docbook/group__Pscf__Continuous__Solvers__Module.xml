@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_group__Pscf__Continuous__Solvers__Module">
+<title>Solvers</title>
+<indexterm><primary>Solvers</primary></indexterm>
+<para>
+
+<para>Classes that solve modified diffusion equations for periodic microstrucures using a pseudo-spectral algorithm. </para>
+ 
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block">Pscf::Pspg::Continuous::Block&lt; D &gt;</link></para>
+
+<para><link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Block">Block</link> within a branched polymer. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Mixture">Pscf::Pspg::Continuous::Mixture&lt; D &gt;</link></para>
+
+<para>Solver for a mixture of polymers and solvents. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Polymer">Pscf::Pspg::Continuous::Polymer&lt; D &gt;</link></para>
+
+<para>Descriptor and solver for a branched polymer species. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1Propagator">Pscf::Pspg::Continuous::Propagator&lt; D &gt;</link></para>
+
+<para>MDE solver for one-direction of one block. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Classes that solve modified diffusion equations for periodic microstrucures using a pseudo-spectral algorithm. </para>
+</section>
+</section>

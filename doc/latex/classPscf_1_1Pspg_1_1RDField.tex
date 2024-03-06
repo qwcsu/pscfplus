@@ -1,0 +1,222 @@
+\hypertarget{classPscf_1_1Pspg_1_1RDField}{}\doxysubsection{Pscf\+::Pspg\+::R\+D\+Field$<$ D $>$ Class Template Reference}
+\label{classPscf_1_1Pspg_1_1RDField}\index{Pscf::Pspg::RDField$<$ D $>$@{Pscf::Pspg::RDField$<$ D $>$}}
+
+
+\mbox{\hyperlink{classPscf_1_1Field}{Field}} of real single precision values on an \mbox{\hyperlink{classPscf_1_1Pspg_1_1FFT}{F\+FT}} mesh on a device.  
+
+
+
+
+{\ttfamily \#include $<$R\+D\+Field.\+h$>$}
+
+Inheritance diagram for Pscf\+::Pspg\+::R\+D\+Field$<$ D $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPscf_1_1Pspg_1_1RDField}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPscf_1_1Pspg_1_1RDField_a158f81c275b802ff8e0a49f9ef658911}{R\+D\+Field}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1Pspg_1_1RDField_a849298ee7d4be4a10d19b2bae135292b}{R\+D\+Field}} (\mbox{\hyperlink{classPscf_1_1Pspg_1_1RDField}{R\+D\+Field}}$<$ D $>$ const \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classPscf_1_1Pspg_1_1RDField_a9a5d78e3dbb9e8bcc7ec94d92a22eb7f}{$\sim$\+R\+D\+Field}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1Pspg_1_1RDField}{R\+D\+Field}} \& \mbox{\hyperlink{classPscf_1_1Pspg_1_1RDField_aac0a37511918b2cb3bb84b491ee80c2b}{operator=}} (\mbox{\hyperlink{classPscf_1_1Pspg_1_1RDField}{R\+D\+Field}}$<$ D $>$ const \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1Pspg_1_1RDField_a0f2a07c766fbc4cc0597afcd5de3ef47}{allocate}} (const \mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec}}$<$ D $>$ \&\mbox{\hyperlink{classPscf_1_1Pspg_1_1RDField_ad7293a28930285b9b91f36946b62c5cc}{mesh\+Dimensions}})
+\begin{DoxyCompactList}\small\item\em Allocate the underlying C array for an \mbox{\hyperlink{classPscf_1_1Pspg_1_1FFT}{F\+FT}} grid. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec}}$<$ D $>$ \& \mbox{\hyperlink{classPscf_1_1Pspg_1_1RDField_ad7293a28930285b9b91f36946b62c5cc}{mesh\+Dimensions}} () const
+\begin{DoxyCompactList}\small\item\em Return mesh dimensions by constant reference. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Archive $>$ }\\void \mbox{\hyperlink{classPscf_1_1Pspg_1_1RDField_a4d9ca041a8183f219b4f443befa7d6bd}{serialize}} (Archive \&ar, const unsigned int version)
+\begin{DoxyCompactList}\small\item\em Serialize a \mbox{\hyperlink{classPscf_1_1Field}{Field}} to/from an Archive. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$int D$>$\newline
+class Pscf\+::\+Pspg\+::\+R\+D\+Field$<$ D $>$}
+
+\mbox{\hyperlink{classPscf_1_1Field}{Field}} of real single precision values on an \mbox{\hyperlink{classPscf_1_1Pspg_1_1FFT}{F\+FT}} mesh on a device. 
+
+cuda\+Real = float 
+
+Definition at line 33 of file R\+D\+Field.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1RDField_a158f81c275b802ff8e0a49f9ef658911}\label{classPscf_1_1Pspg_1_1RDField_a158f81c275b802ff8e0a49f9ef658911}} 
+\index{Pscf::Pspg::RDField$<$ D $>$@{Pscf::Pspg::RDField$<$ D $>$}!RDField@{RDField}}
+\index{RDField@{RDField}!Pscf::Pspg::RDField$<$ D $>$@{Pscf::Pspg::RDField$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{RDField()}{RDField()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classPscf_1_1Pspg_1_1RDField}{Pscf\+::\+Pspg\+::\+R\+D\+Field}}$<$ D $>$\+::\mbox{\hyperlink{classPscf_1_1Pspg_1_1RDField}{R\+D\+Field}}}
+
+
+
+Default constructor. 
+
+
+
+Definition at line 22 of file R\+D\+Field.\+tpp.
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1RDField_a849298ee7d4be4a10d19b2bae135292b}\label{classPscf_1_1Pspg_1_1RDField_a849298ee7d4be4a10d19b2bae135292b}} 
+\index{Pscf::Pspg::RDField$<$ D $>$@{Pscf::Pspg::RDField$<$ D $>$}!RDField@{RDField}}
+\index{RDField@{RDField}!Pscf::Pspg::RDField$<$ D $>$@{Pscf::Pspg::RDField$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{RDField()}{RDField()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classPscf_1_1Pspg_1_1RDField}{Pscf\+::\+Pspg\+::\+R\+D\+Field}}$<$ D $>$\+::\mbox{\hyperlink{classPscf_1_1Pspg_1_1RDField}{R\+D\+Field}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPscf_1_1Pspg_1_1RDField}{R\+D\+Field}}$<$ D $>$ const \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+Allocates new memory and copies all elements by value.
+
+uses memcpy! slow! 
+\begin{DoxyParams}{Parameters}
+{\em other} & the R\+Field to be copied. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 41 of file R\+D\+Field.\+tpp.
+
+
+
+References Pscf\+::\+Pspg\+::\+D\+Field$<$ cuda\+Real $>$\+::capacity\+\_\+, Pscf\+::\+Pspg\+::\+D\+Field$<$ cuda\+Real $>$\+::c\+D\+Field(), Pscf\+::\+Pspg\+::\+D\+Field$<$ cuda\+Real $>$\+::data\+\_\+, Pscf\+::\+Pspg\+::\+D\+Field$<$ cuda\+Real $>$\+::is\+Allocated(), and U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1RDField_a9a5d78e3dbb9e8bcc7ec94d92a22eb7f}\label{classPscf_1_1Pspg_1_1RDField_a9a5d78e3dbb9e8bcc7ec94d92a22eb7f}} 
+\index{Pscf::Pspg::RDField$<$ D $>$@{Pscf::Pspg::RDField$<$ D $>$}!````~RDField@{$\sim$RDField}}
+\index{````~RDField@{$\sim$RDField}!Pscf::Pspg::RDField$<$ D $>$@{Pscf::Pspg::RDField$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{$\sim$RDField()}{~RDField()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classPscf_1_1Pspg_1_1RDField}{Pscf\+::\+Pspg\+::\+R\+D\+Field}}$<$ D $>$\+::$\sim$\mbox{\hyperlink{classPscf_1_1Pspg_1_1RDField}{R\+D\+Field}}\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+Deletes underlying C array, if allocated previously. 
+
+Definition at line 30 of file R\+D\+Field.\+tpp.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1RDField_aac0a37511918b2cb3bb84b491ee80c2b}\label{classPscf_1_1Pspg_1_1RDField_aac0a37511918b2cb3bb84b491ee80c2b}} 
+\index{Pscf::Pspg::RDField$<$ D $>$@{Pscf::Pspg::RDField$<$ D $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Pscf::Pspg::RDField$<$ D $>$@{Pscf::Pspg::RDField$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classPscf_1_1Pspg_1_1RDField}{R\+D\+Field}}$<$ D $>$ \& \mbox{\hyperlink{classPscf_1_1Pspg_1_1RDField}{Pscf\+::\+Pspg\+::\+R\+D\+Field}}$<$ D $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPscf_1_1Pspg_1_1RDField}{R\+D\+Field}}$<$ D $>$ const \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Assignment operator. 
+
+If this \mbox{\hyperlink{classPscf_1_1Field}{Field}} is not allocated, launch a kernel to swap memory.
+
+If this and the other \mbox{\hyperlink{classPscf_1_1Field}{Field}} are both allocated, the capacities must be exactly equal. If so, this method copies all elements.
+
+uses memcpy! slow! 
+\begin{DoxyParams}{Parameters}
+{\em other} & the R\+HS R\+Field \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 67 of file R\+D\+Field.\+tpp.
+
+
+
+References Pscf\+::\+Pspg\+::\+D\+Field$<$ cuda\+Real $>$\+::capacity(), Pscf\+::\+Pspg\+::\+D\+Field$<$ cuda\+Real $>$\+::capacity\+\_\+, Pscf\+::\+Pspg\+::\+D\+Field$<$ cuda\+Real $>$\+::c\+D\+Field(), Pscf\+::\+Pspg\+::\+D\+Field$<$ cuda\+Real $>$\+::is\+Allocated(), and U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1RDField_a0f2a07c766fbc4cc0597afcd5de3ef47}\label{classPscf_1_1Pspg_1_1RDField_a0f2a07c766fbc4cc0597afcd5de3ef47}} 
+\index{Pscf::Pspg::RDField$<$ D $>$@{Pscf::Pspg::RDField$<$ D $>$}!allocate@{allocate}}
+\index{allocate@{allocate}!Pscf::Pspg::RDField$<$ D $>$@{Pscf::Pspg::RDField$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{allocate()}{allocate()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+void \mbox{\hyperlink{classPscf_1_1Pspg_1_1RDField}{Pscf\+::\+Pspg\+::\+R\+D\+Field}}$<$ D $>$\+::allocate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec}}$<$ D $>$ \&}]{mesh\+Dimensions }\end{DoxyParamCaption})}
+
+
+
+Allocate the underlying C array for an \mbox{\hyperlink{classPscf_1_1Pspg_1_1FFT}{F\+FT}} grid. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & if the R\+Field is already allocated.\\
+\hline
+\end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+{\em mesh\+Dimensions} & vector containing number of grid points in each direction \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 109 of file R\+D\+Field.\+h.
+
+
+
+References Pscf\+::\+Pspg\+::\+D\+Field$<$ Data $>$\+::allocate(), and U\+T\+I\+L\+\_\+\+C\+H\+E\+CK.
+
+
+
+Referenced by Pscf\+::\+Pspg\+::\+Continuous\+::\+Am\+Iterator$<$ D $>$\+::minimize\+Coeff().
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1RDField_ad7293a28930285b9b91f36946b62c5cc}\label{classPscf_1_1Pspg_1_1RDField_ad7293a28930285b9b91f36946b62c5cc}} 
+\index{Pscf::Pspg::RDField$<$ D $>$@{Pscf::Pspg::RDField$<$ D $>$}!meshDimensions@{meshDimensions}}
+\index{meshDimensions@{meshDimensions}!Pscf::Pspg::RDField$<$ D $>$@{Pscf::Pspg::RDField$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{meshDimensions()}{meshDimensions()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+const \mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec}}$<$ D $>$ \& \mbox{\hyperlink{classPscf_1_1Pspg_1_1RDField}{Pscf\+::\+Pspg\+::\+R\+D\+Field}}$<$ D $>$\+::mesh\+Dimensions\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return mesh dimensions by constant reference. 
+
+
+
+Definition at line 124 of file R\+D\+Field.\+h.
+
+
+
+Referenced by Pscf\+::\+Pspg\+::\+F\+F\+T$<$ D $>$\+::setup(), and Pscf\+::\+Pspg\+::\+F\+F\+T\+Batched$<$ D $>$\+::setup().
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1RDField_a4d9ca041a8183f219b4f443befa7d6bd}\label{classPscf_1_1Pspg_1_1RDField_a4d9ca041a8183f219b4f443befa7d6bd}} 
+\index{Pscf::Pspg::RDField$<$ D $>$@{Pscf::Pspg::RDField$<$ D $>$}!serialize@{serialize}}
+\index{serialize@{serialize}!Pscf::Pspg::RDField$<$ D $>$@{Pscf::Pspg::RDField$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+template$<$class Archive $>$ \\
+void \mbox{\hyperlink{classPscf_1_1Pspg_1_1RDField}{Pscf\+::\+Pspg\+::\+R\+D\+Field}}$<$ D $>$\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{ar,  }\item[{const unsigned int}]{version }\end{DoxyParamCaption})}
+
+
+
+Serialize a \mbox{\hyperlink{classPscf_1_1Field}{Field}} to/from an Archive. 
+
+Temporarily uses a memcpy 
+\begin{DoxyParams}{Parameters}
+{\em ar} & archive \\
+\hline
+{\em version} & archive version id \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 132 of file R\+D\+Field.\+h.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+R\+D\+Field.\+h\item 
+R\+D\+Field.\+tpp\end{DoxyCompactItemize}

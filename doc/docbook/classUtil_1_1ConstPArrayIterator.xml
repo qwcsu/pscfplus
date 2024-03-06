@@ -1,0 +1,285 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1ConstPArrayIterator">
+<title>Util::ConstPArrayIterator&lt; Data &gt; Class Template Reference</title>
+<indexterm><primary>Util::ConstPArrayIterator&lt; Data &gt;</primary></indexterm>
+<para>
+
+<para>Forward iterator for a <link linkend="_classUtil_1_1PArray">PArray</link>. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;ConstPArrayIterator.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1ConstPArrayIterator_1a4be0e5b3e183c5fffe8896ed0678575f">ConstPArrayIterator</link> ()</para>
+
+<para>Default constructor. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1ConstPArrayIterator_1a527a5e7aa3ff82ef4d2f73cc8e2a83e4">setCurrent</link> (Data **ptr)</para>
+
+<para>Set the current pointer value. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1ConstPArrayIterator_1a0a8be86610173337dbb3c30adccb36d6">setEnd</link> (Data **ptr)</para>
+
+<para>Set the value of the end pointer. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1ConstPArrayIterator_1aa288662fb8269962188b39aa31ad5a8d">setNull</link> ()</para>
+
+<para>Nullify the iterator. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_classUtil_1_1ConstPArrayIterator_1adcb369a3888508422598f3154dbab101">isEnd</link> () const</para>
+
+<para>Is the current pointer at the end of the array. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_classUtil_1_1ConstPArrayIterator_1a61351a835fbc479860e8b712139a4a5f">notEnd</link> () const</para>
+
+<para>Is the current pointer not at the end of the array? </para>
+</listitem>
+            <listitem><para>const Data * <link linkend="_classUtil_1_1ConstPArrayIterator_1a1faeeed2a35959002cbfd92aa6ea2465">get</link> () const</para>
+
+<para>Return a pointer to const current data. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Operators    </title>
+        <itemizedlist>
+            <listitem><para>const Data &amp; <link linkend="_classUtil_1_1ConstPArrayIterator_1adc4ce6ce7887df217da4c850a0b56f39">operator*</link> () const</para>
+
+<para>Return a const refererence to the current Data. </para>
+</listitem>
+            <listitem><para>const Data * <link linkend="_classUtil_1_1ConstPArrayIterator_1a1b76ba334ad428fc79a7d7ad5509f47b">operator-&gt;</link> () const</para>
+
+<para>Provide a pointer to the current Data object. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1ConstPArrayIterator">ConstPArrayIterator</link>&lt; Data &gt; &amp; <link linkend="_classUtil_1_1ConstPArrayIterator_1a4ee7cdcd2274f6f7560fbb0aa8e29884">operator++</link> ()</para>
+
+<para>Increment the current pointer. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;typename Data&gt;
+class Util::ConstPArrayIterator&lt; Data &gt;</title></simplesect>
+
+
+<para>Forward iterator for a <link linkend="_classUtil_1_1PArray">PArray</link>. </para>
+
+
+
+<para>An <link linkend="_classUtil_1_1ConstPArrayIterator">ConstPArrayIterator</link> is an abstraction of a pointer, similar to an STL forward iterator. The * operator returns a reference to an associated Data object, the -&gt; operator returns a pointer to that object. The ++ operator increments the current pointer by one array element.</para>
+
+<para>Unlike an STL forward iterator, an <link linkend="_classUtil_1_1ConstPArrayIterator">ConstPArrayIterator</link> contains the address of the end of the array. The <link linkend="_classUtil_1_1ConstPArrayIterator_1adcb369a3888508422598f3154dbab101">isEnd()</link> method can be used to test for termination of a for or while loop. When <link linkend="_classUtil_1_1ConstPArrayIterator_1adcb369a3888508422598f3154dbab101">isEnd()</link> is true, the iterator has no current value, and cannot be incremented further. The <link linkend="_classUtil_1_1ConstPArrayIterator_1adcb369a3888508422598f3154dbab101">isEnd()</link> method returns true either if the iterator: i) has already been incremented one past the end of an associated <link linkend="_classUtil_1_1PArray">PArray</link>, or ii) is in a null state that is produced by the constructor and the clear() method. </para>
+<para>
+Definition at line 34 of file ConstPArrayIterator.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1ConstPArrayIterator_1a4be0e5b3e183c5fffe8896ed0678575f"/>    <section>
+    <title>ConstPArrayIterator()</title>
+<indexterm><primary>ConstPArrayIterator</primary><secondary>Util::ConstPArrayIterator&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::ConstPArrayIterator&lt; Data &gt;</primary><secondary>ConstPArrayIterator</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1ConstPArrayIterator">Util::ConstPArrayIterator</link>&lt; Data &gt;::<link linkend="_classUtil_1_1ConstPArrayIterator">ConstPArrayIterator</link> ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Default constructor. </para>
+</para>
+
+<para>
+<literallayout>&#160;&#xa;</literallayout>
+</para>
+
+<para>Constructs a null iterator. 
+<literallayout>&#160;&#xa;</literallayout>
+ </para>
+<para>
+Definition at line 44 of file ConstPArrayIterator.h.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1ConstPArrayIterator_1a527a5e7aa3ff82ef4d2f73cc8e2a83e4"/>    <section>
+    <title>setCurrent()</title>
+<indexterm><primary>setCurrent</primary><secondary>Util::ConstPArrayIterator&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::ConstPArrayIterator&lt; Data &gt;</primary><secondary>setCurrent</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1ConstPArrayIterator">Util::ConstPArrayIterator</link>&lt; Data &gt;::setCurrent (Data ** ptr)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Set the current pointer value. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ptr</entry>
+                                <entry>
+<para>Pointer to current element of array of Data* pointers. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 55 of file ConstPArrayIterator.h.</para>
+<para>
+Referenced by Util::PArray&lt; Data &gt;::begin(), Util::FPArray&lt; Data, Capacity &gt;::begin(), and Util::SSet&lt; Data, Capacity &gt;::begin().</para>
+    </section><anchor xml:id="_classUtil_1_1ConstPArrayIterator_1a0a8be86610173337dbb3c30adccb36d6"/>    <section>
+    <title>setEnd()</title>
+<indexterm><primary>setEnd</primary><secondary>Util::ConstPArrayIterator&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::ConstPArrayIterator&lt; Data &gt;</primary><secondary>setEnd</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1ConstPArrayIterator">Util::ConstPArrayIterator</link>&lt; Data &gt;::setEnd (Data ** ptr)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Set the value of the end pointer. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ptr</entry>
+                                <entry>
+<para>Pointer to one element past end of array of Data* pointers. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 66 of file ConstPArrayIterator.h.</para>
+<para>
+Referenced by Util::PArray&lt; Data &gt;::begin(), Util::FPArray&lt; Data, Capacity &gt;::begin(), and Util::SSet&lt; Data, Capacity &gt;::begin().</para>
+    </section><anchor xml:id="_classUtil_1_1ConstPArrayIterator_1aa288662fb8269962188b39aa31ad5a8d"/>    <section>
+    <title>setNull()</title>
+<indexterm><primary>setNull</primary><secondary>Util::ConstPArrayIterator&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::ConstPArrayIterator&lt; Data &gt;</primary><secondary>setNull</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1ConstPArrayIterator">Util::ConstPArrayIterator</link>&lt; Data &gt;::setNull ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Nullify the iterator. </para>
+</para>
+<para>
+Definition at line 72 of file ConstPArrayIterator.h.</para>
+<para>
+Referenced by Util::PArray&lt; Data &gt;::begin().</para>
+    </section><anchor xml:id="_classUtil_1_1ConstPArrayIterator_1adcb369a3888508422598f3154dbab101"/>    <section>
+    <title>isEnd()</title>
+<indexterm><primary>isEnd</primary><secondary>Util::ConstPArrayIterator&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::ConstPArrayIterator&lt; Data &gt;</primary><secondary>isEnd</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>bool <link linkend="_classUtil_1_1ConstPArrayIterator">Util::ConstPArrayIterator</link>&lt; Data &gt;::isEnd ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Is the current pointer at the end of the array. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>true if at end, false otherwise. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 84 of file ConstPArrayIterator.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ConstPArrayIterator_1a61351a835fbc479860e8b712139a4a5f"/>    <section>
+    <title>notEnd()</title>
+<indexterm><primary>notEnd</primary><secondary>Util::ConstPArrayIterator&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::ConstPArrayIterator&lt; Data &gt;</primary><secondary>notEnd</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>bool <link linkend="_classUtil_1_1ConstPArrayIterator">Util::ConstPArrayIterator</link>&lt; Data &gt;::notEnd ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Is the current pointer not at the end of the array? </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>true if not at end, false otherwise. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 92 of file ConstPArrayIterator.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ConstPArrayIterator_1a1faeeed2a35959002cbfd92aa6ea2465"/>    <section>
+    <title>get()</title>
+<indexterm><primary>get</primary><secondary>Util::ConstPArrayIterator&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::ConstPArrayIterator&lt; Data &gt;</primary><secondary>get</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>const Data* <link linkend="_classUtil_1_1ConstPArrayIterator">Util::ConstPArrayIterator</link>&lt; Data &gt;::get ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return a pointer to const current data. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>true if at end, false otherwise. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 100 of file ConstPArrayIterator.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ConstPArrayIterator_1adc4ce6ce7887df217da4c850a0b56f39"/>    <section>
+    <title>operator*()</title>
+<indexterm><primary>operator*</primary><secondary>Util::ConstPArrayIterator&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::ConstPArrayIterator&lt; Data &gt;</primary><secondary>operator*</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>const Data&amp; <link linkend="_classUtil_1_1ConstPArrayIterator">Util::ConstPArrayIterator</link>&lt; Data &gt;::operator* ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return a const refererence to the current Data. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>const reference to the Data object </para>
+</formalpara>
+</para>
+<para>
+Definition at line 111 of file ConstPArrayIterator.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ConstPArrayIterator_1a1b76ba334ad428fc79a7d7ad5509f47b"/>    <section>
+    <title>operator-&gt;()</title>
+<indexterm><primary>operator-&gt;</primary><secondary>Util::ConstPArrayIterator&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::ConstPArrayIterator&lt; Data &gt;</primary><secondary>operator-&gt;</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>const Data* <link linkend="_classUtil_1_1ConstPArrayIterator">Util::ConstPArrayIterator</link>&lt; Data &gt;::operator-&gt; ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Provide a pointer to the current Data object. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>pointer to the Data object </para>
+</formalpara>
+</para>
+<para>
+Definition at line 119 of file ConstPArrayIterator.h.</para>
+    </section><anchor xml:id="_classUtil_1_1ConstPArrayIterator_1a4ee7cdcd2274f6f7560fbb0aa8e29884"/>    <section>
+    <title>operator++()</title>
+<indexterm><primary>operator++</primary><secondary>Util::ConstPArrayIterator&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::ConstPArrayIterator&lt; Data &gt;</primary><secondary>operator++</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1ConstPArrayIterator">ConstPArrayIterator</link>&lt;Data&gt;&amp; <link linkend="_classUtil_1_1ConstPArrayIterator">Util::ConstPArrayIterator</link>&lt; Data &gt;::operator++ ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Increment the current pointer. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>this <link linkend="_classUtil_1_1ConstPArrayIterator">ConstPArrayIterator</link>, after modification. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 127 of file ConstPArrayIterator.h.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+ConstPArrayIterator.h</section>
+</section>

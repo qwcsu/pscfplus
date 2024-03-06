@@ -1,0 +1,61 @@
+\hypertarget{classPscf_1_1Pspg_1_1Discrete_1_1DPolymer}{}\doxysubsection{Pscf\+::Pspg\+::Discrete\+::D\+Polymer$<$ D $>$ Class Template Reference}
+\label{classPscf_1_1Pspg_1_1Discrete_1_1DPolymer}\index{Pscf::Pspg::Discrete::DPolymer$<$ D $>$@{Pscf::Pspg::Discrete::DPolymer$<$ D $>$}}
+
+
+Descriptor and solver for a branched polymer species (\mbox{\hyperlink{namespacePscf_1_1Pspg_1_1Discrete}{Discrete}} chain model).  
+
+
+
+
+{\ttfamily \#include $<$D\+Polymer.\+h$>$}
+
+Inheritance diagram for Pscf\+::Pspg\+::Discrete\+::D\+Polymer$<$ D $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.129793cm]{classPscf_1_1Pspg_1_1Discrete_1_1DPolymer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classPscf_1_1Pspg_1_1Discrete_1_1DPolymer_a30752567fd7b8b93e5c8476bbe8592c5}{set\+Class\+Name}} (const char $\ast$\mbox{\hyperlink{classUtil_1_1ParamComposite_a93e3a9fd3bd01dcc3c606a7bf3112c0e}{class\+Name}})
+\begin{DoxyCompactList}\small\item\em Set class name string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$int D$>$\newline
+class Pscf\+::\+Pspg\+::\+Discrete\+::\+D\+Polymer$<$ D $>$}
+
+Descriptor and solver for a branched polymer species (\mbox{\hyperlink{namespacePscf_1_1Pspg_1_1Discrete}{Discrete}} chain model). 
+
+The block-\/bond concentrations stored in the constituent Bond$<$\+D$>$ objects contain the block-\/bond concentrations (i.\+e., volume fractions) computed in the most recent call of the compute function.
+
+The \mbox{\hyperlink{classPscf_1_1Species_a1956df7c7b319005c9f8b6cc274a7dc7}{phi()}} and \mbox{\hyperlink{classPscf_1_1Species_acaa3a7b3452b1100290920467bf99a57}{mu()}} accessor functions, which are inherited from D\+Polymer\+Tmp$<$ Bond$<$\+D$>$ $>$, return the value of phi (spatial average volume fraction of a species) or mu (chemical potential) computed in the last call of the compute function. If the ensemble for this species is closed, phi is read from the parameter file and mu is computed. If the ensemble is open, mu is read from the parameter file and phi is computed. 
+
+Definition at line 37 of file D\+Polymer.\+h.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1Discrete_1_1DPolymer_a30752567fd7b8b93e5c8476bbe8592c5}\label{classPscf_1_1Pspg_1_1Discrete_1_1DPolymer_a30752567fd7b8b93e5c8476bbe8592c5}} 
+\index{Pscf::Pspg::Discrete::DPolymer$<$ D $>$@{Pscf::Pspg::Discrete::DPolymer$<$ D $>$}!setClassName@{setClassName}}
+\index{setClassName@{setClassName}!Pscf::Pspg::Discrete::DPolymer$<$ D $>$@{Pscf::Pspg::Discrete::DPolymer$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{setClassName()}{setClassName()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+void Util\+::\+Param\+Composite\+::set\+Class\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Set class name string. 
+
+Should be set in subclass constructor. 
+
+Definition at line 377 of file Param\+Composite.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+Polymer.\+h\item 
+D\+Polymer.\+tpp\end{DoxyCompactItemize}

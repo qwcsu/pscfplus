@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_group__Pspg__Math__Module">
+<title>Mathematics</title>
+<indexterm><primary>Mathematics</primary></indexterm>
+<para>
+
+<para>Mathematical utility classes specific to the CUDA implementation. </para>
+ 
+</para>
+<section>
+<title>Detailed Description</title>
+
+<para>Mathematical utility classes specific to the CUDA implementation. </para>
+</section>
+</section>

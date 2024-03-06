@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_user_field_page">
+
+<para><link linkend="_user_command_page">Command Files</link> (Prev) &#160; &#160; &#160; &#160; <link linkend="_developer_page">4 Developer Information</link> (Next) 
+<literallayout>&#160;&#xa;</literallayout>
+</para>
+
+<para>The files of omega field and volume fraction field in PSCF+ share the same format with C++/CUDA version of PSCF. please see <link xlink:href="https://dmorse.github.io/pscfpp-man/">https://dmorse.github.io/pscfpp-man/</link> for details.</para>
+
+<para>
+<literallayout>&#160;&#xa;</literallayout>
+ <link linkend="_user_command_page">Command Files</link> (Prev) &#160; &#160; &#160; &#160; <link linkend="_user_page">User Guide</link> (Up) &#160; &#160; &#160; &#160; <link linkend="_developer_page">4 Developer Information</link> (Next) </para>
+</section>

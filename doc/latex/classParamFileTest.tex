@@ -1,0 +1,155 @@
+\hypertarget{classParamFileTest}{}\doxysubsection{Param\+File\+Test Class Reference}
+\label{classParamFileTest}\index{ParamFileTest@{ParamFileTest}}
+
+
+A \mbox{\hyperlink{classUnitTest}{Unit\+Test}} with a built-\/in input file.  
+
+
+
+
+{\ttfamily \#include $<$Param\+File\+Test.\+h$>$}
+
+Inheritance diagram for Param\+File\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classParamFileTest}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classParamFileTest_ad5d7ddb0463d451230b764f293b44e78}{Param\+File\+Test}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classParamFileTest_a076b2041a4a40054b0f8831312d3f8c9}{$\sim$\+Param\+File\+Test}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classParamFileTest_a0d840c0f3cf405a8abd72625796e8a8b}{tear\+Down}} ()
+\begin{DoxyCompactList}\small\item\em Close the input file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classParamFileTest_a906e5720c9b70230912b569a6dcd8607}{open\+File}} (const char $\ast$file\+Name)
+\begin{DoxyCompactList}\small\item\em Open the input file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classParamFileTest_af82db0494d599d93429594fc3c3fcf7d}{close\+File}} ()
+\begin{DoxyCompactList}\small\item\em Close the input file. \end{DoxyCompactList}\item 
+std\+::ifstream \& \mbox{\hyperlink{classParamFileTest_af82f6a8d2cdff97edddbb398ef5375c2}{file}} ()
+\begin{DoxyCompactList}\small\item\em Returns input file by reference. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+
+
+\doxysubsubsection{Detailed Description}
+A \mbox{\hyperlink{classUnitTest}{Unit\+Test}} with a built-\/in input file. 
+
+Definition at line 15 of file Param\+File\+Test.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classParamFileTest_ad5d7ddb0463d451230b764f293b44e78}\label{classParamFileTest_ad5d7ddb0463d451230b764f293b44e78}} 
+\index{ParamFileTest@{ParamFileTest}!ParamFileTest@{ParamFileTest}}
+\index{ParamFileTest@{ParamFileTest}!ParamFileTest@{ParamFileTest}}
+\doxyparagraph{\texorpdfstring{ParamFileTest()}{ParamFileTest()}}
+{\footnotesize\ttfamily Param\+File\+Test\+::\+Param\+File\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+
+
+Definition at line 23 of file Param\+File\+Test.\+h.
+
+\mbox{\Hypertarget{classParamFileTest_a076b2041a4a40054b0f8831312d3f8c9}\label{classParamFileTest_a076b2041a4a40054b0f8831312d3f8c9}} 
+\index{ParamFileTest@{ParamFileTest}!````~ParamFileTest@{$\sim$ParamFileTest}}
+\index{````~ParamFileTest@{$\sim$ParamFileTest}!ParamFileTest@{ParamFileTest}}
+\doxyparagraph{\texorpdfstring{$\sim$ParamFileTest()}{~ParamFileTest()}}
+{\footnotesize\ttfamily Param\+File\+Test\+::$\sim$\+Param\+File\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destructor. 
+
+
+
+Definition at line 30 of file Param\+File\+Test.\+h.
+
+
+
+References close\+File().
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classParamFileTest_a0d840c0f3cf405a8abd72625796e8a8b}\label{classParamFileTest_a0d840c0f3cf405a8abd72625796e8a8b}} 
+\index{ParamFileTest@{ParamFileTest}!tearDown@{tearDown}}
+\index{tearDown@{tearDown}!ParamFileTest@{ParamFileTest}}
+\doxyparagraph{\texorpdfstring{tearDown()}{tearDown()}}
+{\footnotesize\ttfamily virtual void Param\+File\+Test\+::tear\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Close the input file. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classUnitTest_a2a0aee942c19fed4c39c4d6d51f37dc8}{Unit\+Test}}.
+
+
+
+Definition at line 36 of file Param\+File\+Test.\+h.
+
+
+
+References close\+File().
+
+\mbox{\Hypertarget{classParamFileTest_a906e5720c9b70230912b569a6dcd8607}\label{classParamFileTest_a906e5720c9b70230912b569a6dcd8607}} 
+\index{ParamFileTest@{ParamFileTest}!openFile@{openFile}}
+\index{openFile@{openFile}!ParamFileTest@{ParamFileTest}}
+\doxyparagraph{\texorpdfstring{openFile()}{openFile()}}
+{\footnotesize\ttfamily void Param\+File\+Test\+::open\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Open the input file. 
+
+
+
+Definition at line 42 of file Param\+File\+Test.\+h.
+
+
+
+References Unit\+Test\+::is\+Io\+Processor(), and Unit\+Test\+::open\+Input\+File().
+
+\mbox{\Hypertarget{classParamFileTest_af82db0494d599d93429594fc3c3fcf7d}\label{classParamFileTest_af82db0494d599d93429594fc3c3fcf7d}} 
+\index{ParamFileTest@{ParamFileTest}!closeFile@{closeFile}}
+\index{closeFile@{closeFile}!ParamFileTest@{ParamFileTest}}
+\doxyparagraph{\texorpdfstring{closeFile()}{closeFile()}}
+{\footnotesize\ttfamily void Param\+File\+Test\+::close\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Close the input file. 
+
+
+
+Definition at line 52 of file Param\+File\+Test.\+h.
+
+
+
+Referenced by tear\+Down(), and $\sim$\+Param\+File\+Test().
+
+\mbox{\Hypertarget{classParamFileTest_af82f6a8d2cdff97edddbb398ef5375c2}\label{classParamFileTest_af82f6a8d2cdff97edddbb398ef5375c2}} 
+\index{ParamFileTest@{ParamFileTest}!file@{file}}
+\index{file@{file}!ParamFileTest@{ParamFileTest}}
+\doxyparagraph{\texorpdfstring{file()}{file()}}
+{\footnotesize\ttfamily std\+::ifstream\& Param\+File\+Test\+::file (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns input file by reference. 
+
+
+
+Definition at line 58 of file Param\+File\+Test.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Param\+File\+Test.\+h\end{DoxyCompactItemize}

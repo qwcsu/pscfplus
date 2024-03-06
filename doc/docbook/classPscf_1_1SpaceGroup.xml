@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classPscf_1_1SpaceGroup">
+<title>Pscf::SpaceGroup&lt; D &gt; Class Template Reference</title>
+<indexterm><primary>Pscf::SpaceGroup&lt; D &gt;</primary></indexterm>
+<para>
+
+<para>Crystallographic space group. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;SpaceGroup.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Pscf::SpaceGroup&lt; D &gt;:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classPscf_1_1SpaceGroup.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>bool <link linkend="_classPscf_1_1SpaceGroup_1a41b1acb2167ebdef4615603f4ee1aa3a">hasInversionCenter</link> (typename <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link>&lt; D &gt;::Translation &amp;center) const</para>
+
+<para>Determines if this space group has an inversion center. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classPscf_1_1SpaceGroup_1ac10224823661878efd3c1cbc02a06941">shiftOrigin</link> (typename <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link>&lt; D &gt;::Translation const &amp;origin)</para>
+
+<para>Shift the origin of space used in the coordinate system. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classPscf_1_1SpaceGroup_1aa957eb9adeea2e3311a3ae3120f3447f">checkMeshDimensions</link> (<link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D &gt; const &amp;dimensions) const</para>
+
+<para>Check if input mesh dimensions are compatible with space group. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;int D&gt;
+class Pscf::SpaceGroup&lt; D &gt;</title></simplesect>
+
+
+<para>Crystallographic space group. </para>
+<para>
+Definition at line 29 of file SpaceGroup.h.</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classPscf_1_1SpaceGroup_1a41b1acb2167ebdef4615603f4ee1aa3a"/>    <section>
+    <title>hasInversionCenter()</title>
+<indexterm><primary>hasInversionCenter</primary><secondary>Pscf::SpaceGroup&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::SpaceGroup&lt; D &gt;</primary><secondary>hasInversionCenter</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>bool <link linkend="_classPscf_1_1SpaceGroup">Pscf::SpaceGroup</link>&lt; D &gt;::hasInversionCenter (typename <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link>&lt; D &gt;::Translation &amp; center) const</computeroutput></para><para>
+
+<para>Determines if this space group has an inversion center. </para>
+</para>
+
+<para>Returns true if an inversion center exists, and false otherwise. If an inversion center exists, its location is returned as the output value of output argument &quot;center&quot;.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>center</entry>
+                                <entry>
+<para>location of inversion center, if any (output) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 24 of file SpaceGroup.tpp.</para>
+    </section><anchor xml:id="_classPscf_1_1SpaceGroup_1ac10224823661878efd3c1cbc02a06941"/>    <section>
+    <title>shiftOrigin()</title>
+<indexterm><primary>shiftOrigin</primary><secondary>Pscf::SpaceGroup&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::SpaceGroup&lt; D &gt;</primary><secondary>shiftOrigin</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>void <link linkend="_classPscf_1_1SpaceGroup">Pscf::SpaceGroup</link>&lt; D &gt;::shiftOrigin (typename <link linkend="_classPscf_1_1SpaceSymmetry">SpaceSymmetry</link>&lt; D &gt;::Translation const &amp; origin)</computeroutput></para><para>
+
+<para>Shift the origin of space used in the coordinate system. </para>
+</para>
+
+<para>This function modifies each symmetry elements in the group so as to refer to an equivalent symmetry defined using a new coordinate system with a shifted origin. The argument gives the coordinates of the origin of the new coordinate system as defined in the old coordinate system.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>origin</entry>
+                                <entry>
+<para>location of origin of the new coordinate system </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 52 of file SpaceGroup.tpp.</para>
+    </section><anchor xml:id="_classPscf_1_1SpaceGroup_1aa957eb9adeea2e3311a3ae3120f3447f"/>    <section>
+    <title>checkMeshDimensions()</title>
+<indexterm><primary>checkMeshDimensions</primary><secondary>Pscf::SpaceGroup&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::SpaceGroup&lt; D &gt;</primary><secondary>checkMeshDimensions</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>void <link linkend="_classPscf_1_1SpaceGroup">Pscf::SpaceGroup</link>&lt; D &gt;::checkMeshDimensions (<link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D &gt; const &amp; dimensions) const</computeroutput></para><para>
+
+<para>Check if input mesh dimensions are compatible with space group. </para>
+</para>
+
+<para>This function checks if a mesh with the specified dimensions is invariant under all operations of this space group, i.e., whether each crystal symmetry operation maps the position of every node of the mesh onto the position of another node. It is only possible define how a symmetry operation transforms a function that is defined only on the nodes of mesh if the mesh is invariant under the symmetry operation, in this sense. An invariant mesh must thus be used necessary to describe a function whose values on the mesh nodes are invariant under all operations in the space group.</para>
+
+<para>If the mesh is not invariant under all operations of the space group, an explanatory error message is printed and an Exception is thrown to halt execution.</para>
+
+<para>The mesh for a unit cell within a Bravais lattice is assumed to be a regular orthogonal mesh in a space of reduced coordinates, which are the components of position defined using a Bravais basis (i.e., a basis of Bravais lattice basis vectors). Each element of the dimensions vector is equal to the number of grid points along a direction corresponding to a Bravais lattice vector. A Bravais basis is also used to define elements of the matrix representation of the point group operation and the translation vector in the representation of a crystal symmetry operation as an instance of class Pscf::SpaceSymmetry&lt;D&gt;.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>dimensions</entry>
+                                <entry>
+<para>vector of mesh dimensions </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 64 of file SpaceGroup.tpp.</para>
+<para>
+References Util::Log::file(), UTIL_CHECK, and UTIL_THROW.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+SpaceGroup.hSpaceGroup.tpp</section>
+</section>

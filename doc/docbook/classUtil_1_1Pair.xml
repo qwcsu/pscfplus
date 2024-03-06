@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1Pair">
+<title>Util::Pair&lt; Data &gt; Class Template Reference</title>
+<indexterm><primary>Util::Pair&lt; Data &gt;</primary></indexterm>
+<para>
+
+<para>An array of exactly 2 objects. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;Pair.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Util::Pair&lt; Data &gt;:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classUtil_1_1Pair.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static void <link linkend="_classUtil_1_1Pair_1a895c64b78e9dac32196231986c7f9fdf">commitMpiType</link> ()</para>
+
+<para>Commit associated MPI DataType. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;typename Data&gt;
+class Util::Pair&lt; Data &gt;</title></simplesect>
+
+
+<para>An array of exactly 2 objects. </para>
+<para>
+Definition at line 23 of file Pair.h.</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1Pair_1a895c64b78e9dac32196231986c7f9fdf"/>    <section>
+    <title>commitMpiType()</title>
+<indexterm><primary>commitMpiType</primary><secondary>Util::Pair&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::Pair&lt; Data &gt;</primary><secondary>commitMpiType</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1Pair">Util::Pair</link>&lt; Data &gt;::commitMpiType<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Commit associated MPI DataType. </para>
+</para>
+<para>
+Definition at line 69 of file Pair.h.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Pair.h</section>
+</section>

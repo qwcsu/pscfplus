@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classPscf_1_1Pspg_1_1Discrete_1_1AmIterator">
+<title>Pscf::Pspg::Discrete::AmIterator&lt; D &gt; Class Template Reference</title>
+<indexterm><primary>Pscf::Pspg::Discrete::AmIterator&lt; D &gt;</primary></indexterm>
+<para>
+
+<para>Anderson mixing iterator for the pseudo spectral method. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;AmIterator.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Pscf::Pspg::Discrete::AmIterator&lt; D &gt;:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classPscf_1_1Pspg_1_1Discrete_1_1AmIterator.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classPscf_1_1Pspg_1_1Discrete_1_1AmIterator_1a155ded688efea5ea59ccd2ce704c83f5">AmIterator</link> ()</para>
+
+<para>Default constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classPscf_1_1Pspg_1_1Discrete_1_1AmIterator_1a31a041d15cbd6546a14e2d931445ca0a">~AmIterator</link> ()</para>
+
+<para>Destructor. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classPscf_1_1Pspg_1_1Discrete_1_1AmIterator_1ac0518d7d3f1907a4b3bfc92e1547e037">readParameters</link> (std::istream &amp;in)</para>
+
+<para>Read all parameters and initialize. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;int D&gt;
+class Pscf::Pspg::Discrete::AmIterator&lt; D &gt;</title></simplesect>
+
+
+<para>Anderson mixing iterator for the pseudo spectral method. </para>
+<para>
+Definition at line 28 of file pgd/iterator/AmIterator.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classPscf_1_1Pspg_1_1Discrete_1_1AmIterator_1a155ded688efea5ea59ccd2ce704c83f5"/>    <section>
+    <title>AmIterator()</title>
+<indexterm><primary>AmIterator</primary><secondary>Pscf::Pspg::Discrete::AmIterator&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Discrete::AmIterator&lt; D &gt;</primary><secondary>AmIterator</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput><link linkend="_classPscf_1_1Pspg_1_1Discrete_1_1AmIterator">Pscf::Pspg::Discrete::AmIterator</link>&lt; D &gt;::<link linkend="_classPscf_1_1Pspg_1_1Discrete_1_1AmIterator">AmIterator</link></computeroutput></para><para>
+
+<para>Default constructor. </para>
+</para>
+<para>
+Definition at line 21 of file pgd/iterator/AmIterator.tpp.</para>
+<para>
+References Util::ParamComposite::setClassName().</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1Discrete_1_1AmIterator_1a31a041d15cbd6546a14e2d931445ca0a"/>    <section>
+    <title>~AmIterator()</title>
+<indexterm><primary>~AmIterator</primary><secondary>Pscf::Pspg::Discrete::AmIterator&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Discrete::AmIterator&lt; D &gt;</primary><secondary>~AmIterator</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput><link linkend="_classPscf_1_1Pspg_1_1Discrete_1_1AmIterator">Pscf::Pspg::Discrete::AmIterator</link>&lt; D &gt;::~<link linkend="_classPscf_1_1Pspg_1_1Discrete_1_1AmIterator">AmIterator</link></computeroutput></para><para>
+
+<para>Destructor. </para>
+</para>
+<para>
+Definition at line 45 of file pgd/iterator/AmIterator.tpp.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classPscf_1_1Pspg_1_1Discrete_1_1AmIterator_1ac0518d7d3f1907a4b3bfc92e1547e037"/>    <section>
+    <title>readParameters()</title>
+<indexterm><primary>readParameters</primary><secondary>Pscf::Pspg::Discrete::AmIterator&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::Discrete::AmIterator&lt; D &gt;</primary><secondary>readParameters</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>void <link linkend="_classPscf_1_1Pspg_1_1Discrete_1_1AmIterator">Pscf::Pspg::Discrete::AmIterator</link>&lt; D &gt;::readParameters (std::istream &amp; in)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Read all parameters and initialize. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input filestream </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Reimplemented from <link linkend="_classUtil_1_1ParamComposite_1a172a3a656b5829c8d758424ad09a22a6">Util::ParamComposite</link>.</para>
+<para>
+Definition at line 50 of file pgd/iterator/AmIterator.tpp.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+pgd/iterator/AmIterator.hpgd/iterator/AmIterator.tpp</section>
+</section>

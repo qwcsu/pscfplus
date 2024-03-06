@@ -1,0 +1,225 @@
+\hypertarget{classUtil_1_1MpiLoader}{}\doxysubsection{Util\+::Mpi\+Loader$<$ I\+Archive $>$ Class Template Reference}
+\label{classUtil_1_1MpiLoader}\index{Util::MpiLoader$<$ IArchive $>$@{Util::MpiLoader$<$ IArchive $>$}}
+
+
+Provides methods for M\+P\+I-\/aware loading of data from input archive.  
+
+
+
+
+{\ttfamily \#include $<$Mpi\+Loader.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1MpiLoader_ad0c46043b00a27cb738ebf0b25cc00f2}{Mpi\+Loader}} (\mbox{\hyperlink{classUtil_1_1MpiFileIo}{Mpi\+File\+Io}} \&mpi\+File\+Io, I\+Archive \&archive)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Data $>$ }\\void \mbox{\hyperlink{classUtil_1_1MpiLoader_a8d2998ecd3fe41b2ac2ccda7f4f7ca97}{load}} (Data \&value)
+\begin{DoxyCompactList}\small\item\em Load and broadcast a single Data value. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Data $>$ }\\void \mbox{\hyperlink{classUtil_1_1MpiLoader_a5cfcf66d73c7ed9974805633fe193485}{load}} (Data $\ast$value, int n)
+\begin{DoxyCompactList}\small\item\em Load and broadcast a C array. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Data $>$ }\\void \mbox{\hyperlink{classUtil_1_1MpiLoader_a96fad52aeedb08968ee143d23ff5d7e8}{load}} (\mbox{\hyperlink{classUtil_1_1DArray}{D\+Array}}$<$ Data $>$ \&array, int n)
+\begin{DoxyCompactList}\small\item\em Load and broadcast a \mbox{\hyperlink{classUtil_1_1DArray}{D\+Array}} $<$ Data $>$ container. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Data , int N$>$ }\\void \mbox{\hyperlink{classUtil_1_1MpiLoader_a79b195f896dc7a2cf87dd4b9b51cb125}{load}} (\mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}}$<$ Data, N $>$ \&array)
+\begin{DoxyCompactList}\small\item\em Load and broadcast an \mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}} $<$Data , N $>$ object. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Data $>$ }\\void \mbox{\hyperlink{classUtil_1_1MpiLoader_a1a2acb9078cc8cd7ac092252a89b46ea}{load}} (Data $\ast$value, int m, int n, int np)
+\begin{DoxyCompactList}\small\item\em Load and broadcast a 2D C\+Array of Data objects. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Data $>$ }\\void \mbox{\hyperlink{classUtil_1_1MpiLoader_a1b747eb6f4c30250ab55c193b39a3d08}{load}} (\mbox{\hyperlink{classUtil_1_1DMatrix}{D\+Matrix}}$<$ Data $>$ \&matrix, int m, int n)
+\begin{DoxyCompactList}\small\item\em Load and broadcast a D\+Matrix$<$\+Data$>$ object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$class I\+Archive$>$\newline
+class Util\+::\+Mpi\+Loader$<$ I\+Archive $>$}
+
+Provides methods for M\+P\+I-\/aware loading of data from input archive. 
+
+Each \mbox{\hyperlink{classUtil_1_1MpiLoader}{Mpi\+Loader}} is associated with an I\+Archive input archive, and with a \mbox{\hyperlink{classUtil_1_1MpiFileIo}{Mpi\+File\+Io}}, which are passed as arguments to the constructor. The \mbox{\hyperlink{classUtil_1_1MpiFileIo}{Mpi\+File\+Io}} argument is often a \mbox{\hyperlink{classUtil_1_1ParamComposite}{Param\+Composite}}, which is derived from \mbox{\hyperlink{classUtil_1_1MpiFileIo}{Mpi\+File\+Io}}.
+
+The \char`\"{}load\char`\"{} function templates all load data from the archive and (if appropriate) broadcast data among processors. If M\+PI is not enabled (i.\+e., if U\+T\+I\+L\+\_\+\+M\+PI is not defined), then the data is simply loaded from the archive. If M\+PI is enabled and a parameter communicator is set, data is loaded from the archive by the io\+Processor and then broadcast to all other processors in the IO communicator. If M\+PI is enabled but no parameter communicator is set, every processor loads data independently. 
+
+Definition at line 43 of file Mpi\+Loader.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1MpiLoader_ad0c46043b00a27cb738ebf0b25cc00f2}\label{classUtil_1_1MpiLoader_ad0c46043b00a27cb738ebf0b25cc00f2}} 
+\index{Util::MpiLoader$<$ IArchive $>$@{Util::MpiLoader$<$ IArchive $>$}!MpiLoader@{MpiLoader}}
+\index{MpiLoader@{MpiLoader}!Util::MpiLoader$<$ IArchive $>$@{Util::MpiLoader$<$ IArchive $>$}}
+\doxyparagraph{\texorpdfstring{MpiLoader()}{MpiLoader()}}
+{\footnotesize\ttfamily template$<$typename I\+Archive $>$ \\
+\mbox{\hyperlink{classUtil_1_1MpiLoader}{Util\+::\+Mpi\+Loader}}$<$ I\+Archive $>$\+::\mbox{\hyperlink{classUtil_1_1MpiLoader}{Mpi\+Loader}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1MpiFileIo}{Mpi\+File\+Io}} \&}]{mpi\+File\+Io,  }\item[{I\+Archive \&}]{archive }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mpi\+File\+Io} & associated \mbox{\hyperlink{classUtil_1_1MpiFileIo}{Mpi\+File\+Io}} object \\
+\hline
+{\em archive} & input archive from which data will be loaded \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 127 of file Mpi\+Loader.\+h.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1MpiLoader_a8d2998ecd3fe41b2ac2ccda7f4f7ca97}\label{classUtil_1_1MpiLoader_a8d2998ecd3fe41b2ac2ccda7f4f7ca97}} 
+\index{Util::MpiLoader$<$ IArchive $>$@{Util::MpiLoader$<$ IArchive $>$}!load@{load}}
+\index{load@{load}!Util::MpiLoader$<$ IArchive $>$@{Util::MpiLoader$<$ IArchive $>$}}
+\doxyparagraph{\texorpdfstring{load()}{load()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$typename I\+Archive $>$ \\
+template$<$typename Data $>$ \\
+void \mbox{\hyperlink{classUtil_1_1MpiLoader}{Util\+::\+Mpi\+Loader}}$<$ I\+Archive $>$\+::load (\begin{DoxyParamCaption}\item[{Data \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Load and broadcast a single Data value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & reference to a Data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 137 of file Mpi\+Loader.\+h.
+
+
+
+Referenced by Util\+::\+File\+Master\+::load\+Parameters().
+
+\mbox{\Hypertarget{classUtil_1_1MpiLoader_a5cfcf66d73c7ed9974805633fe193485}\label{classUtil_1_1MpiLoader_a5cfcf66d73c7ed9974805633fe193485}} 
+\index{Util::MpiLoader$<$ IArchive $>$@{Util::MpiLoader$<$ IArchive $>$}!load@{load}}
+\index{load@{load}!Util::MpiLoader$<$ IArchive $>$@{Util::MpiLoader$<$ IArchive $>$}}
+\doxyparagraph{\texorpdfstring{load()}{load()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$typename I\+Archive $>$ \\
+template$<$typename Data $>$ \\
+void \mbox{\hyperlink{classUtil_1_1MpiLoader}{Util\+::\+Mpi\+Loader}}$<$ I\+Archive $>$\+::load (\begin{DoxyParamCaption}\item[{Data $\ast$}]{value,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Load and broadcast a C array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & pointer to array \\
+\hline
+{\em n} & number of elements \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 154 of file Mpi\+Loader.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1MpiLoader_a96fad52aeedb08968ee143d23ff5d7e8}\label{classUtil_1_1MpiLoader_a96fad52aeedb08968ee143d23ff5d7e8}} 
+\index{Util::MpiLoader$<$ IArchive $>$@{Util::MpiLoader$<$ IArchive $>$}!load@{load}}
+\index{load@{load}!Util::MpiLoader$<$ IArchive $>$@{Util::MpiLoader$<$ IArchive $>$}}
+\doxyparagraph{\texorpdfstring{load()}{load()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$typename I\+Archive $>$ \\
+template$<$typename Data $>$ \\
+void \mbox{\hyperlink{classUtil_1_1MpiLoader}{Util\+::\+Mpi\+Loader}}$<$ I\+Archive $>$\+::load (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1DArray}{D\+Array}}$<$ Data $>$ \&}]{array,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Load and broadcast a \mbox{\hyperlink{classUtil_1_1DArray}{D\+Array}} $<$ Data $>$ container. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & \mbox{\hyperlink{classUtil_1_1DArray}{D\+Array}} object \\
+\hline
+{\em n} & number of elements \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 174 of file Mpi\+Loader.\+h.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1MpiLoader_a79b195f896dc7a2cf87dd4b9b51cb125}\label{classUtil_1_1MpiLoader_a79b195f896dc7a2cf87dd4b9b51cb125}} 
+\index{Util::MpiLoader$<$ IArchive $>$@{Util::MpiLoader$<$ IArchive $>$}!load@{load}}
+\index{load@{load}!Util::MpiLoader$<$ IArchive $>$@{Util::MpiLoader$<$ IArchive $>$}}
+\doxyparagraph{\texorpdfstring{load()}{load()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$typename I\+Archive $>$ \\
+template$<$typename Data , int N$>$ \\
+void \mbox{\hyperlink{classUtil_1_1MpiLoader}{Util\+::\+Mpi\+Loader}}$<$ I\+Archive $>$\+::load (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}}$<$ Data, N $>$ \&}]{array }\end{DoxyParamCaption})}
+
+
+
+Load and broadcast an \mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}} $<$Data , N $>$ object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & \mbox{\hyperlink{classUtil_1_1FArray}{F\+Array}} object to be loaded \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 194 of file Mpi\+Loader.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1MpiLoader_a1a2acb9078cc8cd7ac092252a89b46ea}\label{classUtil_1_1MpiLoader_a1a2acb9078cc8cd7ac092252a89b46ea}} 
+\index{Util::MpiLoader$<$ IArchive $>$@{Util::MpiLoader$<$ IArchive $>$}!load@{load}}
+\index{load@{load}!Util::MpiLoader$<$ IArchive $>$@{Util::MpiLoader$<$ IArchive $>$}}
+\doxyparagraph{\texorpdfstring{load()}{load()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$typename I\+Archive $>$ \\
+template$<$typename Data $>$ \\
+void \mbox{\hyperlink{classUtil_1_1MpiLoader}{Util\+::\+Mpi\+Loader}}$<$ I\+Archive $>$\+::load (\begin{DoxyParamCaption}\item[{Data $\ast$}]{value,  }\item[{int}]{m,  }\item[{int}]{n,  }\item[{int}]{np }\end{DoxyParamCaption})}
+
+
+
+Load and broadcast a 2D C\+Array of Data objects. 
+
+Loads m rows of n elements into array declared as Data array\mbox{[}\mbox{]}\mbox{[}np\mbox{]}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & pointer to first element or row in array \\
+\hline
+{\em m} & logical number of rows (1st dimension) \\
+\hline
+{\em n} & logical number of columns (2nd dimension) \\
+\hline
+{\em np} & physcial number of columns (elements allocated per row) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 214 of file Mpi\+Loader.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1MpiLoader_a1b747eb6f4c30250ab55c193b39a3d08}\label{classUtil_1_1MpiLoader_a1b747eb6f4c30250ab55c193b39a3d08}} 
+\index{Util::MpiLoader$<$ IArchive $>$@{Util::MpiLoader$<$ IArchive $>$}!load@{load}}
+\index{load@{load}!Util::MpiLoader$<$ IArchive $>$@{Util::MpiLoader$<$ IArchive $>$}}
+\doxyparagraph{\texorpdfstring{load()}{load()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$typename I\+Archive $>$ \\
+template$<$typename Data $>$ \\
+void \mbox{\hyperlink{classUtil_1_1MpiLoader}{Util\+::\+Mpi\+Loader}}$<$ I\+Archive $>$\+::load (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1DMatrix}{D\+Matrix}}$<$ Data $>$ \&}]{matrix,  }\item[{int}]{m,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Load and broadcast a D\+Matrix$<$\+Data$>$ object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & \mbox{\hyperlink{classUtil_1_1DMatrix}{D\+Matrix}} object \\
+\hline
+{\em m} & number of rows (1st dimension) \\
+\hline
+{\em n} & number of columns (2nd dimension) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 237 of file Mpi\+Loader.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Mpi\+Loader.\+h\end{DoxyCompactItemize}

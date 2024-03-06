@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1FMatrix">
+<title>Util::FMatrix&lt; Data, M, N &gt; Class Template Reference</title>
+<indexterm><primary>Util::FMatrix&lt; Data, M, N &gt;</primary></indexterm>
+<para>
+
+<para>Fixed Size <link linkend="_classUtil_1_1Matrix">Matrix</link>. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;FMatrix.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Util::FMatrix&lt; Data, M, N &gt;:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classUtil_1_1FMatrix.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1FMatrix_1ae293039712788558589c2ee63f39c34a">FMatrix</link> ()</para>
+
+<para>Default constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1FMatrix_1afcd8dcfdf56176ffb4d336a20792ddfb">FMatrix</link> (const <link linkend="_classUtil_1_1FMatrix">FMatrix</link>&lt; Data, M, N &gt; &amp;other)</para>
+
+<para>Copy constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1FMatrix_1a0d9e4cb03096ba7aa3c136085b77c7f4">~FMatrix</link> ()</para>
+
+<para>Destructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1FMatrix">FMatrix</link>&lt; Data, M, N &gt; &amp; <link linkend="_classUtil_1_1FMatrix_1a6839e442eb5199d04277160198502782">operator=</link> (const <link linkend="_classUtil_1_1FMatrix">FMatrix</link>&lt; Data, M, N &gt; &amp;other)</para>
+
+<para>Assignment. </para>
+</listitem>
+            <listitem><para>template&lt;class Archive &gt; </para><para>void <link linkend="_classUtil_1_1FMatrix_1addd653eb2871975495541af9018b698f">serialize</link> (Archive &amp;ar, const unsigned int version)</para>
+
+<para>Serialize an <link linkend="_classUtil_1_1FMatrix">FMatrix</link> to/from an Archive. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;typename Data, int M, int N&gt;
+class Util::FMatrix&lt; Data, M, N &gt;</title></simplesect>
+
+
+<para>Fixed Size <link linkend="_classUtil_1_1Matrix">Matrix</link>. </para>
+
+
+
+<para>The <link linkend="_classUtil_1_1FMatrix">FMatrix</link> class wraps a statically allocated 1D C array, but provides access to its elements via the A(i,j) <link linkend="_classUtil_1_1Matrix">Matrix</link> syntax.</para>
+
+<para>Template parameters M and N are the number of rows and columns respectively, so that capacity1 = M and capacity2 = N. </para>
+<para>
+Definition at line 28 of file FMatrix.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1FMatrix_1ae293039712788558589c2ee63f39c34a"/>    <section>
+    <title>FMatrix()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>FMatrix</primary><secondary>Util::FMatrix&lt; Data, M, N &gt;</secondary></indexterm>
+<indexterm><primary>Util::FMatrix&lt; Data, M, N &gt;</primary><secondary>FMatrix</secondary></indexterm>
+<computeroutput>template&lt;typename Data , int M, int N&gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1FMatrix">Util::FMatrix</link>&lt; Data, M, N &gt;::<link linkend="_classUtil_1_1FMatrix">FMatrix</link></computeroutput></para><para>
+
+<para>Default constructor. </para>
+</para>
+<para>
+Definition at line 77 of file FMatrix.h.</para>
+    </section><anchor xml:id="_classUtil_1_1FMatrix_1afcd8dcfdf56176ffb4d336a20792ddfb"/>    <section>
+    <title>FMatrix()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>FMatrix</primary><secondary>Util::FMatrix&lt; Data, M, N &gt;</secondary></indexterm>
+<indexterm><primary>Util::FMatrix&lt; Data, M, N &gt;</primary><secondary>FMatrix</secondary></indexterm>
+<computeroutput>template&lt;typename Data , int M, int N&gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1FMatrix">Util::FMatrix</link>&lt; Data, M, N &gt;::<link linkend="_classUtil_1_1FMatrix">FMatrix</link> (const <link linkend="_classUtil_1_1FMatrix">FMatrix</link>&lt; Data, M, N &gt; &amp; other)</computeroutput></para><para>
+
+<para>Copy constructor. </para>
+</para>
+<para>
+Definition at line 89 of file FMatrix.h.</para>
+    </section><anchor xml:id="_classUtil_1_1FMatrix_1a0d9e4cb03096ba7aa3c136085b77c7f4"/>    <section>
+    <title>~FMatrix()</title>
+<indexterm><primary>~FMatrix</primary><secondary>Util::FMatrix&lt; Data, M, N &gt;</secondary></indexterm>
+<indexterm><primary>Util::FMatrix&lt; Data, M, N &gt;</primary><secondary>~FMatrix</secondary></indexterm>
+<computeroutput>template&lt;typename Data , int M, int N&gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1FMatrix">Util::FMatrix</link>&lt; Data, M, N &gt;::~<link linkend="_classUtil_1_1FMatrix">FMatrix</link></computeroutput></para><para>
+
+<para>Destructor. </para>
+</para>
+<para>
+Definition at line 104 of file FMatrix.h.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1FMatrix_1a6839e442eb5199d04277160198502782"/>    <section>
+    <title>operator=()</title>
+<indexterm><primary>operator=</primary><secondary>Util::FMatrix&lt; Data, M, N &gt;</secondary></indexterm>
+<indexterm><primary>Util::FMatrix&lt; Data, M, N &gt;</primary><secondary>operator=</secondary></indexterm>
+<computeroutput>template&lt;typename Data , int M, int N&gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1FMatrix">FMatrix</link>&lt; Data, M, N &gt; &amp; <link linkend="_classUtil_1_1FMatrix">Util::FMatrix</link>&lt; Data, M, N &gt;::operator= (const <link linkend="_classUtil_1_1FMatrix">FMatrix</link>&lt; Data, M, N &gt; &amp; other)</computeroutput></para><para>
+
+<para>Assignment. </para>
+</para>
+<para>
+Definition at line 112 of file FMatrix.h.</para>
+    </section><anchor xml:id="_classUtil_1_1FMatrix_1addd653eb2871975495541af9018b698f"/>    <section>
+    <title>serialize()</title>
+<indexterm><primary>serialize</primary><secondary>Util::FMatrix&lt; Data, M, N &gt;</secondary></indexterm>
+<indexterm><primary>Util::FMatrix&lt; Data, M, N &gt;</primary><secondary>serialize</secondary></indexterm>
+<computeroutput>template&lt;class Data , int M, int N&gt; </computeroutput><computeroutput>template&lt;class Archive &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1FMatrix">Util::FMatrix</link>&lt; Data, M, N &gt;::serialize (Archive &amp; ar, const unsigned int version)</computeroutput></para><para>
+
+<para>Serialize an <link linkend="_classUtil_1_1FMatrix">FMatrix</link> to/from an Archive. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>archive </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>version</entry>
+                                <entry>
+<para>archive version id </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 130 of file FMatrix.h.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+FMatrix.h</section>
+</section>

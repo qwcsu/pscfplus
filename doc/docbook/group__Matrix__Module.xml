@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_group__Matrix__Module">
+<title>Matrix Containers</title>
+<indexterm><primary>Matrix Containers</primary></indexterm>
+<para>
+
+<para>Two-dimensional array containers that store by objects value. </para>
+ 
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classUtil_1_1DMatrix">Util::DMatrix&lt; Data &gt;</link></para>
+
+<para>Dynamically allocated <link linkend="_classUtil_1_1Matrix">Matrix</link>. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classUtil_1_1DRaggedMatrix">Util::DRaggedMatrix&lt; Data &gt;</link></para>
+
+<para>Dynamically allocated <link linkend="_classUtil_1_1RaggedMatrix">RaggedMatrix</link>. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classUtil_1_1FMatrix">Util::FMatrix&lt; Data, M, N &gt;</link></para>
+
+<para>Fixed Size <link linkend="_classUtil_1_1Matrix">Matrix</link>. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classUtil_1_1Matrix">Util::Matrix&lt; Data &gt;</link></para>
+
+<para>Two-dimensional array container template (abstract). </para>
+</listitem>
+            <listitem><para>class <link linkend="_classUtil_1_1RaggedMatrix">Util::RaggedMatrix&lt; Data &gt;</link></para>
+
+<para>A 2D array in which different rows can have different lengths. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Two-dimensional array containers that store by objects value. </para>
+
+<para><link linkend="_classUtil_1_1Matrix">Matrix</link> containers overload the () operator to return elements by refernce. If A is a matrix object A(i, j) returns element i, j of the matrix.</para>
+
+<para>The <link linkend="_classUtil_1_1Matrix">Matrix</link> base class defines a conventional matrix, in which all rows are the same length. The <link linkend="_classUtil_1_1DMatrix">DMatrix</link> and <link linkend="_classUtil_1_1FMatrix">FMatrix</link> subclasses use dynamically allocated and fixed-size arrays, respectively.</para>
+
+<para>The <link linkend="_classUtil_1_1RaggedMatrix">RaggedMatrix</link> base class and <link linkend="_classUtil_1_1DRaggedMatrix">DRaggedMatrix</link> subclass define two-dimensional containers in which different rows can have different lengths, though the list of row dimensions can be specified only once. </para>
+</section>
+</section>

@@ -1,0 +1,483 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1AutoCorrArray">
+<title>Util::AutoCorrArray&lt; Data, Product &gt; Class Template Reference</title>
+<indexterm><primary>Util::AutoCorrArray&lt; Data, Product &gt;</primary></indexterm>
+<para>
+
+<para>Auto-correlation function for an ensemble of sequences. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;AutoCorrArray.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Util::AutoCorrArray&lt; Data, Product &gt;:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classUtil_1_1AutoCorrArray.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1AutoCorrArray_1afa591ea5711e042d12f3154592da9150">AutoCorrArray</link> ()</para>
+
+<para>Default constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1AutoCorrArray_1a5d99a6350001d9f8fc51ea74bbf4c3e2">~AutoCorrArray</link> ()</para>
+
+<para>Default destructor. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classUtil_1_1AutoCorrArray_1ad8a9f63ad088f3ed81f0775c264ff4ee">readParameters</link> (std::istream &amp;in)</para>
+
+<para>Read parameters, allocate memory and clear history. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1AutoCorrArray_1aa17cb46f612aae57fc021be24cbdeb62">setParam</link> (int ensembleCapacity, int <link linkend="_classUtil_1_1AutoCorrArray_1a8a4e3d11d7daf84556a0b390907c3e19">bufferCapacity</link>)</para>
+
+<para>Allocate memory, and clear history. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classUtil_1_1AutoCorrArray_1afbfcce2492f5dcb5cf0212c8eeb7bc92">loadParameters</link> (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp;ar)</para>
+
+<para>Load internal state from an archive. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classUtil_1_1AutoCorrArray_1aecc9a9d807bf780d2b5f0405f0f2f642">save</link> (<link linkend="_classUtil_1_1Serializable_1aca43a1eea5ec5f13189a57892a7a6d04">Serializable::OArchive</link> &amp;ar)</para>
+
+<para>Save internal state to an archive. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1AutoCorrArray_1a9e202d27d289360239677db99497aad8">setNEnsemble</link> (int <link linkend="_classUtil_1_1AutoCorrArray_1a4f060ef887c7b20312e94bf794042a3e">nEnsemble</link>)</para>
+
+<para>Set actual number of sequences in ensemble. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1AutoCorrArray_1afd62a0a7253a7efe96d466b3b923e288">clear</link> ()</para>
+
+<para>Reset to empty state. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1AutoCorrArray_1ac15ae9654f26c1a09507f4c15a92a465">sample</link> (const <link linkend="_classUtil_1_1Array">Array</link>&lt; Data &gt; &amp;values)</para>
+
+<para>Sample an array of current values. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1AutoCorrArray_1a70a8ae46f5bce1c56a45f85204659956">output</link> (std::ostream &amp;out)</para>
+
+<para>Output the autocorrelation function. </para>
+</listitem>
+            <listitem><para>template&lt;class Archive &gt; </para><para>void <link linkend="_classUtil_1_1AutoCorrArray_1a7a5053e644c8c8250e960121c4d818e8">serialize</link> (Archive &amp;ar, const unsigned int version)</para>
+
+<para>Serialize this <link linkend="_classUtil_1_1AutoCorrArray">AutoCorrArray</link> to/from an archive. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1AutoCorrArray_1a8a4e3d11d7daf84556a0b390907c3e19">bufferCapacity</link> () const</para>
+
+<para>Return maximum number of samples in history for each sequence. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1AutoCorrArray_1a4f060ef887c7b20312e94bf794042a3e">nEnsemble</link> () const</para>
+
+<para>Return nEnsemble. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1AutoCorrArray_1ab8e8d53f2ede32a39621603dc5784378">nSample</link> () const</para>
+
+<para>Return the total number of samples per sequence thus far. </para>
+</listitem>
+            <listitem><para>Data <link linkend="_classUtil_1_1AutoCorrArray_1aafdee7fd30fea8d50b4fcd4ac8b3e8b3">average</link> () const</para>
+
+<para>Return average of sampled values. </para>
+</listitem>
+            <listitem><para>double <link linkend="_classUtil_1_1AutoCorrArray_1a0159d538ab467b791d801327996dff56">corrTime</link> () const</para>
+
+<para>Numerical integral of autocorrelation function. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;typename Data, typename Product&gt;
+class Util::AutoCorrArray&lt; Data, Product &gt;</title></simplesect>
+
+
+<para>Auto-correlation function for an ensemble of sequences. </para>
+
+
+
+<para>This class calculates an autocorrelation function for a ensemble of statistically equivalent sequences x(i) of values of a variable of type Data. The resulting autocorrelation function is an array of values of type Product, where C(j) = &lt;x(i-j), x(i)&gt;. Here &lt;A,B&gt; denotes an inner product of type Product for objects A and B of type Data.</para>
+
+<para>The meaning of &lt;A,B&gt; for two Data values is defined for various data types by the overloaded functions product(Data, Data) defined in file &quot;product.h&quot; . These functions define a product as an arithmetic product for floating point numbers, and use the following definitions for complex numbers and <link linkend="_classUtil_1_1Vector">Vector</link> objects: <literallayout><computeroutput>double  product(double, double)   = A*B
+complex product(complex, complex) = conjug(A)*B
+double  product(Vector,  Vector)  = A.dot(B)
+</computeroutput></literallayout></para>
+
+<para>The meaning of setting a variable to zero is defined for various types of data by the overloaded functions setToZero(Data&amp;) that are defined in file <link linkend="_setToZero_8h_source">setToZero.h</link>. </para>
+<para>
+Definition at line 57 of file AutoCorrArray.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1AutoCorrArray_1afa591ea5711e042d12f3154592da9150"/>    <section>
+    <title>AutoCorrArray()</title>
+<indexterm><primary>AutoCorrArray</primary><secondary>Util::AutoCorrArray&lt; Data, Product &gt;</secondary></indexterm>
+<indexterm><primary>Util::AutoCorrArray&lt; Data, Product &gt;</primary><secondary>AutoCorrArray</secondary></indexterm>
+<computeroutput>template&lt;typename Data , typename Product &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1AutoCorrArray">Util::AutoCorrArray</link>&lt; Data, Product &gt;::<link linkend="_classUtil_1_1AutoCorrArray">AutoCorrArray</link></computeroutput></para><para>
+
+<para>Default constructor. </para>
+</para>
+<para>
+Definition at line 205 of file AutoCorrArray.h.</para>
+<para>
+References Util::ParamComposite::setClassName(), and Util::setToZero().</para>
+    </section><anchor xml:id="_classUtil_1_1AutoCorrArray_1a5d99a6350001d9f8fc51ea74bbf4c3e2"/>    <section>
+    <title>~AutoCorrArray()</title>
+<indexterm><primary>~AutoCorrArray</primary><secondary>Util::AutoCorrArray&lt; Data, Product &gt;</secondary></indexterm>
+<indexterm><primary>Util::AutoCorrArray&lt; Data, Product &gt;</primary><secondary>~AutoCorrArray</secondary></indexterm>
+<computeroutput>template&lt;typename Data , typename Product &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1AutoCorrArray">Util::AutoCorrArray</link>&lt; Data, Product &gt;::~<link linkend="_classUtil_1_1AutoCorrArray">AutoCorrArray</link></computeroutput></para><para>
+
+<para>Default destructor. </para>
+</para>
+<para>
+Definition at line 222 of file AutoCorrArray.h.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1AutoCorrArray_1ad8a9f63ad088f3ed81f0775c264ff4ee"/>    <section>
+    <title>readParameters()</title>
+<indexterm><primary>readParameters</primary><secondary>Util::AutoCorrArray&lt; Data, Product &gt;</secondary></indexterm>
+<indexterm><primary>Util::AutoCorrArray&lt; Data, Product &gt;</primary><secondary>readParameters</secondary></indexterm>
+<computeroutput>template&lt;typename Data , typename Product &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1AutoCorrArray">Util::AutoCorrArray</link>&lt; Data, Product &gt;::readParameters (std::istream &amp; in)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Read parameters, allocate memory and clear history. </para>
+</para>
+
+<para>Reads parameters ensembleCapacity and bufferCapacity, allocates memory, sets nEnsemble=ensembleCapacity, and calls <link linkend="_classUtil_1_1AutoCorrArray_1afd62a0a7253a7efe96d466b3b923e288">clear()</link>.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input parameter stream </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Reimplemented from <link linkend="_classUtil_1_1ParamComposite_1a172a3a656b5829c8d758424ad09a22a6">Util::ParamComposite</link>.</para>
+<para>
+Definition at line 229 of file AutoCorrArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1AutoCorrArray_1aa17cb46f612aae57fc021be24cbdeb62"/>    <section>
+    <title>setParam()</title>
+<indexterm><primary>setParam</primary><secondary>Util::AutoCorrArray&lt; Data, Product &gt;</secondary></indexterm>
+<indexterm><primary>Util::AutoCorrArray&lt; Data, Product &gt;</primary><secondary>setParam</secondary></indexterm>
+<computeroutput>template&lt;typename Data , typename Product &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1AutoCorrArray">Util::AutoCorrArray</link>&lt; Data, Product &gt;::setParam (int ensembleCapacity, int bufferCapacity)</computeroutput></para><para>
+
+<para>Allocate memory, and clear history. </para>
+</para>
+
+<para>Sets parameters ensembleCapacity and bufferCapacity, allocates memory, sets nEnsemble=ensembleCapacity, and calls <link linkend="_classUtil_1_1AutoCorrArray_1afd62a0a7253a7efe96d466b3b923e288">clear()</link>.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ensembleCapacity</entry>
+                                <entry>
+<para>maximum number of sequences in ensemble </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>bufferCapacity</entry>
+                                <entry>
+<para>maximum number of values in each history </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 241 of file AutoCorrArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1AutoCorrArray_1afbfcce2492f5dcb5cf0212c8eeb7bc92"/>    <section>
+    <title>loadParameters()</title>
+<indexterm><primary>loadParameters</primary><secondary>Util::AutoCorrArray&lt; Data, Product &gt;</secondary></indexterm>
+<indexterm><primary>Util::AutoCorrArray&lt; Data, Product &gt;</primary><secondary>loadParameters</secondary></indexterm>
+<computeroutput>template&lt;typename Data , typename Product &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1AutoCorrArray">Util::AutoCorrArray</link>&lt; Data, Product &gt;::loadParameters (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp; ar)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Load internal state from an archive. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>input/loading archive </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Reimplemented from <link linkend="_classUtil_1_1ParamComposite_1adec07dcba0895ba69463147314cde7ce">Util::ParamComposite</link>.</para>
+<para>
+Definition at line 253 of file AutoCorrArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1AutoCorrArray_1aecc9a9d807bf780d2b5f0405f0f2f642"/>    <section>
+    <title>save()</title>
+<indexterm><primary>save</primary><secondary>Util::AutoCorrArray&lt; Data, Product &gt;</secondary></indexterm>
+<indexterm><primary>Util::AutoCorrArray&lt; Data, Product &gt;</primary><secondary>save</secondary></indexterm>
+<computeroutput>template&lt;typename Data , typename Product &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1AutoCorrArray">Util::AutoCorrArray</link>&lt; Data, Product &gt;::save (<link linkend="_classUtil_1_1Serializable_1aca43a1eea5ec5f13189a57892a7a6d04">Serializable::OArchive</link> &amp; ar)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Save internal state to an archive. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>output/saving archive </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Reimplemented from <link linkend="_classUtil_1_1ParamComposite_1a3c430a4e31a9573eadb06ab89d3bf780">Util::ParamComposite</link>.</para>
+<para>
+Definition at line 269 of file AutoCorrArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1AutoCorrArray_1a9e202d27d289360239677db99497aad8"/>    <section>
+    <title>setNEnsemble()</title>
+<indexterm><primary>setNEnsemble</primary><secondary>Util::AutoCorrArray&lt; Data, Product &gt;</secondary></indexterm>
+<indexterm><primary>Util::AutoCorrArray&lt; Data, Product &gt;</primary><secondary>setNEnsemble</secondary></indexterm>
+<computeroutput>template&lt;typename Data , typename Product &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1AutoCorrArray">Util::AutoCorrArray</link>&lt; Data, Product &gt;::setNEnsemble (int nEnsemble)</computeroutput></para><para>
+
+<para>Set actual number of sequences in ensemble. </para>
+</para>
+
+<para><formalpara><title>Precondition</title>
+
+<para><link linkend="_classUtil_1_1ParamComposite_1a6fc094b057fd9a21641b089f6f063b39">readParam()</link> or <link linkend="_classUtil_1_1AutoCorrArray_1aa17cb46f612aae57fc021be24cbdeb62">setParam()</link> must have been called previously </para>
+
+<para>nEnsemble &lt;= ensembleCapacity</para>
+</formalpara>
+
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>nEnsemble</entry>
+                                <entry>
+<para>actual number of sequences in ensemble </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 276 of file AutoCorrArray.h.</para>
+<para>
+References UTIL_THROW.</para>
+    </section><anchor xml:id="_classUtil_1_1AutoCorrArray_1afd62a0a7253a7efe96d466b3b923e288"/>    <section>
+    <title>clear()</title>
+<indexterm><primary>clear</primary><secondary>Util::AutoCorrArray&lt; Data, Product &gt;</secondary></indexterm>
+<indexterm><primary>Util::AutoCorrArray&lt; Data, Product &gt;</primary><secondary>clear</secondary></indexterm>
+<computeroutput>template&lt;typename Data , typename Product &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1AutoCorrArray">Util::AutoCorrArray</link>&lt; Data, Product &gt;::clear</computeroutput></para><para>
+
+<para>Reset to empty state. </para>
+</para>
+<para>
+Definition at line 291 of file AutoCorrArray.h.</para>
+<para>
+References Util::setToZero().</para>
+    </section><anchor xml:id="_classUtil_1_1AutoCorrArray_1ac15ae9654f26c1a09507f4c15a92a465"/>    <section>
+    <title>sample()</title>
+<indexterm><primary>sample</primary><secondary>Util::AutoCorrArray&lt; Data, Product &gt;</secondary></indexterm>
+<indexterm><primary>Util::AutoCorrArray&lt; Data, Product &gt;</primary><secondary>sample</secondary></indexterm>
+<computeroutput>template&lt;typename Data , typename Product &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1AutoCorrArray">Util::AutoCorrArray</link>&lt; Data, Product &gt;::sample (const <link linkend="_classUtil_1_1Array">Array</link>&lt; Data &gt; &amp; values)</computeroutput></para><para>
+
+<para>Sample an array of current values. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>values</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Array">Array</link> of current values </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 331 of file AutoCorrArray.h.</para>
+<para>
+References Util::product().</para>
+    </section><anchor xml:id="_classUtil_1_1AutoCorrArray_1a70a8ae46f5bce1c56a45f85204659956"/>    <section>
+    <title>output()</title>
+<indexterm><primary>output</primary><secondary>Util::AutoCorrArray&lt; Data, Product &gt;</secondary></indexterm>
+<indexterm><primary>Util::AutoCorrArray&lt; Data, Product &gt;</primary><secondary>output</secondary></indexterm>
+<computeroutput>template&lt;typename Data , typename Product &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1AutoCorrArray">Util::AutoCorrArray</link>&lt; Data, Product &gt;::output (std::ostream &amp; out)</computeroutput></para><para>
+
+<para>Output the autocorrelation function. </para>
+</para>
+<para>
+Definition at line 386 of file AutoCorrArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1AutoCorrArray_1a7a5053e644c8c8250e960121c4d818e8"/>    <section>
+    <title>serialize()</title>
+<indexterm><primary>serialize</primary><secondary>Util::AutoCorrArray&lt; Data, Product &gt;</secondary></indexterm>
+<indexterm><primary>Util::AutoCorrArray&lt; Data, Product &gt;</primary><secondary>serialize</secondary></indexterm>
+<computeroutput>template&lt;typename Data , typename Product &gt; </computeroutput><computeroutput>template&lt;class Archive &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1AutoCorrArray">Util::AutoCorrArray</link>&lt; Data, Product &gt;::serialize (Archive &amp; ar, const unsigned int version)</computeroutput></para><para>
+
+<para>Serialize this <link linkend="_classUtil_1_1AutoCorrArray">AutoCorrArray</link> to/from an archive. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>input or output archive </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>version</entry>
+                                <entry>
+<para>file version id </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 436 of file AutoCorrArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1AutoCorrArray_1a8a4e3d11d7daf84556a0b390907c3e19"/>    <section>
+    <title>bufferCapacity()</title>
+<indexterm><primary>bufferCapacity</primary><secondary>Util::AutoCorrArray&lt; Data, Product &gt;</secondary></indexterm>
+<indexterm><primary>Util::AutoCorrArray&lt; Data, Product &gt;</primary><secondary>bufferCapacity</secondary></indexterm>
+<computeroutput>template&lt;typename Data , typename Product &gt; </computeroutput><para><computeroutput>int <link linkend="_classUtil_1_1AutoCorrArray">Util::AutoCorrArray</link>&lt; Data, Product &gt;::bufferCapacity</computeroutput></para><para>
+
+<para>Return maximum number of samples in history for each sequence. </para>
+</para>
+<para>
+Definition at line 354 of file AutoCorrArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1AutoCorrArray_1a4f060ef887c7b20312e94bf794042a3e"/>    <section>
+    <title>nEnsemble()</title>
+<indexterm><primary>nEnsemble</primary><secondary>Util::AutoCorrArray&lt; Data, Product &gt;</secondary></indexterm>
+<indexterm><primary>Util::AutoCorrArray&lt; Data, Product &gt;</primary><secondary>nEnsemble</secondary></indexterm>
+<computeroutput>template&lt;typename Data , typename Product &gt; </computeroutput><para><computeroutput>int <link linkend="_classUtil_1_1AutoCorrArray">Util::AutoCorrArray</link>&lt; Data, Product &gt;::nEnsemble</computeroutput></para><para>
+
+<para>Return nEnsemble. </para>
+</para>
+<para>
+Definition at line 361 of file AutoCorrArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1AutoCorrArray_1ab8e8d53f2ede32a39621603dc5784378"/>    <section>
+    <title>nSample()</title>
+<indexterm><primary>nSample</primary><secondary>Util::AutoCorrArray&lt; Data, Product &gt;</secondary></indexterm>
+<indexterm><primary>Util::AutoCorrArray&lt; Data, Product &gt;</primary><secondary>nSample</secondary></indexterm>
+<computeroutput>template&lt;typename Data , typename Product &gt; </computeroutput><para><computeroutput>int <link linkend="_classUtil_1_1AutoCorrArray">Util::AutoCorrArray</link>&lt; Data, Product &gt;::nSample</computeroutput></para><para>
+
+<para>Return the total number of samples per sequence thus far. </para>
+</para>
+<para>
+Definition at line 368 of file AutoCorrArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1AutoCorrArray_1aafdee7fd30fea8d50b4fcd4ac8b3e8b3"/>    <section>
+    <title>average()</title>
+<indexterm><primary>average</primary><secondary>Util::AutoCorrArray&lt; Data, Product &gt;</secondary></indexterm>
+<indexterm><primary>Util::AutoCorrArray&lt; Data, Product &gt;</primary><secondary>average</secondary></indexterm>
+<computeroutput>template&lt;typename Data , typename Product &gt; </computeroutput><para><computeroutput>Data <link linkend="_classUtil_1_1AutoCorrArray">Util::AutoCorrArray</link>&lt; Data, Product &gt;::average</computeroutput></para><para>
+
+<para>Return average of sampled values. </para>
+</para>
+<para>
+Definition at line 375 of file AutoCorrArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1AutoCorrArray_1a0159d538ab467b791d801327996dff56"/>    <section>
+    <title>corrTime()</title>
+<indexterm><primary>corrTime</primary><secondary>Util::AutoCorrArray&lt; Data, Product &gt;</secondary></indexterm>
+<indexterm><primary>Util::AutoCorrArray&lt; Data, Product &gt;</primary><secondary>corrTime</secondary></indexterm>
+<computeroutput>template&lt;typename Data , typename Product &gt; </computeroutput><para><computeroutput>double <link linkend="_classUtil_1_1AutoCorrArray">Util::AutoCorrArray</link>&lt; Data, Product &gt;::corrTime</computeroutput></para><para>
+
+<para>Numerical integral of autocorrelation function. </para>
+</para>
+<para>
+Definition at line 407 of file AutoCorrArray.h.</para>
+<para>
+References Util::product(), and Util::setToZero().</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+AutoCorrArray.h</section>
+</section>

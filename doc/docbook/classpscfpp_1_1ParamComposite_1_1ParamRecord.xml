@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classpscfpp_1_1ParamComposite_1_1ParamRecord">
+<title>pscfpp.ParamComposite.ParamRecord Class Reference</title>
+<indexterm><primary>pscfpp.ParamComposite.ParamRecord</primary></indexterm>
+<para>Inheritance diagram for pscfpp.ParamComposite.ParamRecord:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classpscfpp_1_1ParamComposite_1_1ParamRecord.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line 163 of file ParamComposite.py.</para>
+<para>
+The documentation for this class was generated from the following file:</para>
+ParamComposite.py</section>
+</section>

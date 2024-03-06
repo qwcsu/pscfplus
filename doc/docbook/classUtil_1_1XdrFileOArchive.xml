@@ -1,0 +1,236 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1XdrFileOArchive">
+<title>Util::XdrFileOArchive Class Reference</title>
+<indexterm><primary>Util::XdrFileOArchive</primary></indexterm>
+<para>
+
+<para>Saving / output archive for binary XDR file. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;XdrFileOArchive.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1XdrFileOArchive_1a1c24a64272524020b0bcf8047c1c3be4">XdrFileOArchive</link> ()</para>
+
+<para>Constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1XdrFileOArchive_1a115c77c0dc1834e7da1d1c85cc6db182">XdrFileOArchive</link> (std::string filename)</para>
+
+<para>Constructor. </para>
+</listitem>
+            <listitem><para>virtual <link linkend="_classUtil_1_1XdrFileOArchive_1a789f739701d39072acf51187438e031b">~XdrFileOArchive</link> ()</para>
+
+<para>Destructor. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1XdrFileOArchive_1a9f422f1ed1e581ebea5823ca37f2d128">init</link> (FILE *<link linkend="_classUtil_1_1XdrFileOArchive_1a696a7c35746bb7bd33f9bda337cb696f">file</link>)</para>
+
+<para>Associate with an open file and initialize. </para>
+</listitem>
+            <listitem><para>FILE * <link linkend="_classUtil_1_1XdrFileOArchive_1a696a7c35746bb7bd33f9bda337cb696f">file</link> ()</para>
+
+<para>Get the underlying ifstream by reference. </para>
+</listitem>
+            <listitem><para>template&lt;typename T &gt; </para><para><link linkend="_classUtil_1_1XdrFileOArchive">XdrFileOArchive</link> &amp; <link linkend="_classUtil_1_1XdrFileOArchive_1abef0bcc2500d37bcf6c135c89425eb9c">operator&amp;</link> (T &amp;data)</para>
+
+<para>Save one object. </para>
+</listitem>
+            <listitem><para>template&lt;typename T &gt; </para><para><link linkend="_classUtil_1_1XdrFileOArchive">XdrFileOArchive</link> &amp; <link linkend="_classUtil_1_1XdrFileOArchive_1ac3cbc16d92a3f62867437ee8af33db0d">operator&lt;&lt;</link> (T &amp;data)</para>
+
+<para>Save one object. </para>
+</listitem>
+            <listitem><para>XDR * <link linkend="_classUtil_1_1XdrFileOArchive_1a03597a56123ae288fb57a659782c6897">xdrPtr</link> ()</para>
+
+<para>Get a pointer to the enclosed XDR object. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static bool <link linkend="_classUtil_1_1XdrFileOArchive_1a70389c66a251146d08bab75df1825512">is_saving</link> ()</para>
+
+<para>Returns true;. </para>
+</listitem>
+            <listitem><para>static bool <link linkend="_classUtil_1_1XdrFileOArchive_1a404212e6af50803cd67c504dbf04c25f">is_loading</link> ()</para>
+
+<para>Returns false;. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Saving / output archive for binary XDR file. </para>
+
+
+
+<para>XDR is a standard protocol for writing and reading binary in a portable format. This archive saves data to an associated file in XDR format. It depends on the unix xdr library &lt;rpc/xdr.h&gt;. Because this library is written in C (not C++), this archive uses a standard C library file handle, not a C++ iostream. </para>
+<para>
+Definition at line 39 of file XdrFileOArchive.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1XdrFileOArchive_1a1c24a64272524020b0bcf8047c1c3be4"/>    <section>
+    <title>XdrFileOArchive()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>XdrFileOArchive</primary><secondary>Util::XdrFileOArchive</secondary></indexterm>
+<indexterm><primary>Util::XdrFileOArchive</primary><secondary>XdrFileOArchive</secondary></indexterm>
+<para><computeroutput>Util::XdrFileOArchive::XdrFileOArchive ( )</computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+<para>
+Definition at line 17 of file XdrFileOArchive.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1XdrFileOArchive_1a115c77c0dc1834e7da1d1c85cc6db182"/>    <section>
+    <title>XdrFileOArchive()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>XdrFileOArchive</primary><secondary>Util::XdrFileOArchive</secondary></indexterm>
+<indexterm><primary>Util::XdrFileOArchive</primary><secondary>XdrFileOArchive</secondary></indexterm>
+<para><computeroutput>Util::XdrFileOArchive::XdrFileOArchive (std::string filename)</computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>filename</entry>
+                                <entry>
+<para>name of file to open for reading. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 26 of file XdrFileOArchive.cpp.</para>
+<para>
+References UTIL_THROW.</para>
+    </section><anchor xml:id="_classUtil_1_1XdrFileOArchive_1a789f739701d39072acf51187438e031b"/>    <section>
+    <title>~XdrFileOArchive()</title>
+<indexterm><primary>~XdrFileOArchive</primary><secondary>Util::XdrFileOArchive</secondary></indexterm>
+<indexterm><primary>Util::XdrFileOArchive</primary><secondary>~XdrFileOArchive</secondary></indexterm>
+<para><computeroutput>Util::XdrFileOArchive::~XdrFileOArchive ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Destructor. </para>
+</para>
+<para>
+Definition at line 43 of file XdrFileOArchive.cpp.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1XdrFileOArchive_1a70389c66a251146d08bab75df1825512"/>    <section>
+    <title>is_saving()</title>
+<indexterm><primary>is_saving</primary><secondary>Util::XdrFileOArchive</secondary></indexterm>
+<indexterm><primary>Util::XdrFileOArchive</primary><secondary>is_saving</secondary></indexterm>
+<para><computeroutput>bool Util::XdrFileOArchive::is_saving ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Returns true;. </para>
+</para>
+<para>
+Definition at line 111 of file XdrFileOArchive.h.</para>
+    </section><anchor xml:id="_classUtil_1_1XdrFileOArchive_1a404212e6af50803cd67c504dbf04c25f"/>    <section>
+    <title>is_loading()</title>
+<indexterm><primary>is_loading</primary><secondary>Util::XdrFileOArchive</secondary></indexterm>
+<indexterm><primary>Util::XdrFileOArchive</primary><secondary>is_loading</secondary></indexterm>
+<para><computeroutput>bool Util::XdrFileOArchive::is_loading ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Returns false;. </para>
+</para>
+<para>
+Definition at line 114 of file XdrFileOArchive.h.</para>
+    </section><anchor xml:id="_classUtil_1_1XdrFileOArchive_1a9f422f1ed1e581ebea5823ca37f2d128"/>    <section>
+    <title>init()</title>
+<indexterm><primary>init</primary><secondary>Util::XdrFileOArchive</secondary></indexterm>
+<indexterm><primary>Util::XdrFileOArchive</primary><secondary>init</secondary></indexterm>
+<para><computeroutput>void Util::XdrFileOArchive::init (FILE * file)</computeroutput></para><para>
+
+<para>Associate with an open file and initialize. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>file</entry>
+                                <entry>
+<para>C file handle, must be open for writing. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 49 of file XdrFileOArchive.cpp.</para>
+<para>
+References file().</para>
+    </section><anchor xml:id="_classUtil_1_1XdrFileOArchive_1a696a7c35746bb7bd33f9bda337cb696f"/>    <section>
+    <title>file()</title>
+<indexterm><primary>file</primary><secondary>Util::XdrFileOArchive</secondary></indexterm>
+<indexterm><primary>Util::XdrFileOArchive</primary><secondary>file</secondary></indexterm>
+<para><computeroutput>FILE * Util::XdrFileOArchive::file ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get the underlying ifstream by reference. </para>
+</para>
+<para>
+Definition at line 142 of file XdrFileOArchive.h.</para>
+<para>
+Referenced by init().</para>
+    </section><anchor xml:id="_classUtil_1_1XdrFileOArchive_1abef0bcc2500d37bcf6c135c89425eb9c"/>    <section>
+    <title>operator&amp;()</title>
+<indexterm><primary>operator&amp;</primary><secondary>Util::XdrFileOArchive</secondary></indexterm>
+<indexterm><primary>Util::XdrFileOArchive</primary><secondary>operator&amp;</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1XdrFileOArchive">XdrFileOArchive</link> &amp; Util::XdrFileOArchive::operator&amp; (T &amp; data)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Save one object. </para>
+</para>
+<para>
+Definition at line 123 of file XdrFileOArchive.h.</para>
+    </section><anchor xml:id="_classUtil_1_1XdrFileOArchive_1ac3cbc16d92a3f62867437ee8af33db0d"/>    <section>
+    <title>operator&lt;&lt;()</title>
+<indexterm><primary>operator&lt;&lt;</primary><secondary>Util::XdrFileOArchive</secondary></indexterm>
+<indexterm><primary>Util::XdrFileOArchive</primary><secondary>operator&lt;&lt;</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1XdrFileOArchive">XdrFileOArchive</link> &amp; Util::XdrFileOArchive::operator&lt;&lt; (T &amp; data)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Save one object. </para>
+</para>
+<para>
+Definition at line 133 of file XdrFileOArchive.h.</para>
+    </section><anchor xml:id="_classUtil_1_1XdrFileOArchive_1a03597a56123ae288fb57a659782c6897"/>    <section>
+    <title>xdrPtr()</title>
+<indexterm><primary>xdrPtr</primary><secondary>Util::XdrFileOArchive</secondary></indexterm>
+<indexterm><primary>Util::XdrFileOArchive</primary><secondary>xdrPtr</secondary></indexterm>
+<para><computeroutput>XDR * Util::XdrFileOArchive::xdrPtr ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get a pointer to the enclosed XDR object. </para>
+</para>
+<para>
+Definition at line 148 of file XdrFileOArchive.h.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+XdrFileOArchive.hXdrFileOArchive.cpp</section>
+</section>

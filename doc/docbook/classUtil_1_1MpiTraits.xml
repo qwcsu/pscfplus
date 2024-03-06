@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1MpiTraits">
+<title>Util::MpiTraits&lt; T &gt; Class Template Reference</title>
+<indexterm><primary>Util::MpiTraits&lt; T &gt;</primary></indexterm>
+<para>
+
+<para>Default <link linkend="_classUtil_1_1MpiTraits">MpiTraits</link> class. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;MpiTraits.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Util::MpiTraits&lt; T &gt;:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classUtil_1_1MpiTraits.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Static Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>static const bool <link linkend="_classUtil_1_1MpiTraits_1a7b2f19996763edf3568bfa713b2270cf">hasType</link></para>
+
+<para>Is the MPI type initialized? </para>
+</listitem>
+            <listitem><para>static const MPI::Datatype <link linkend="_classUtil_1_1MpiTraits_1aebe290f3167de4e43b0f0d37a1d65027">type</link></para>
+
+<para>MPI Datatype (dummy - unused) </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;typename T&gt;
+class Util::MpiTraits&lt; T &gt;</title></simplesect>
+
+
+<para>Default <link linkend="_classUtil_1_1MpiTraits">MpiTraits</link> class. </para>
+
+
+
+<para>Each explicit specialization of <link linkend="_classUtil_1_1MpiTraits">MpiTraits</link> has a public static const member named type. This is the MPI data type associated with the C++ template type parameter. </para>
+<para>
+Definition at line 39 of file MpiTraits.h.</para>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classUtil_1_1MpiTraits_1a7b2f19996763edf3568bfa713b2270cf"/>    <section>
+    <title>hasType</title>
+<indexterm><primary>hasType</primary><secondary>Util::MpiTraits&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Util::MpiTraits&lt; T &gt;</primary><secondary>hasType</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>const bool Util::MpiTraitsNoType::hasType<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Is the MPI type initialized? </para>
+</para>
+<para>
+Definition at line 28 of file MpiTraits.h.</para>
+    </section><anchor xml:id="_classUtil_1_1MpiTraits_1aebe290f3167de4e43b0f0d37a1d65027"/>    <section>
+    <title>type</title>
+<indexterm><primary>type</primary><secondary>Util::MpiTraits&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Util::MpiTraits&lt; T &gt;</primary><secondary>type</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>const MPI::Datatype Util::MpiTraitsNoType::type<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>MPI Datatype (dummy - unused) </para>
+</para>
+<para>
+Definition at line 26 of file MpiTraits.h.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+MpiTraits.h</section>
+</section>

@@ -1,0 +1,238 @@
+\hypertarget{classPscf_1_1Field}{}\doxysubsection{Pscf\+::Field$<$ T $>$ Class Template Reference}
+\label{classPscf_1_1Field}\index{Pscf::Field$<$ T $>$@{Pscf::Field$<$ T $>$}}
+
+
+Base class template for a field defined on a spatial grid.  
+
+
+
+
+{\ttfamily \#include $<$Field.\+h$>$}
+
+Inheritance diagram for Pscf\+::Field$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classPscf_1_1Field}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPscf_1_1Field_a1234ba110bf8029e5d14db6429aafb56}{Field}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1Field_a75f6b080a6921128793ed6dafd5de2d9}{Field}} (\mbox{\hyperlink{classPscf_1_1Field}{Field}}$<$ T $>$ const \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1Field}{Field}}$<$ T $>$ \& \mbox{\hyperlink{classPscf_1_1Field_a6539f9221bc036cd6f87d20f02634c44}{operator=}} (\mbox{\hyperlink{classPscf_1_1Field}{Field}}$<$ T $>$ const \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1Field}{Field}}$<$ T $>$ \& \mbox{\hyperlink{classPscf_1_1Field_a699a4d4f888412d7445ec21ebd41d729}{operator=}} (T \&scalar)
+\begin{DoxyCompactList}\small\item\em Assignment -\/ assign all elements to a common scalar. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1Field}{Field}}$<$ T $>$ \& \mbox{\hyperlink{classPscf_1_1Field_ac25f1c5479f9721be0bbf888ff7c7dc3}{operator+=}} (\mbox{\hyperlink{classPscf_1_1Field}{Field}}$<$ T $>$ \&other)
+\begin{DoxyCompactList}\small\item\em Increment operator -\/ add one field by another. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1Field}{Field}}$<$ T $>$ \& \mbox{\hyperlink{classPscf_1_1Field_a28c83792287196c8af10198dac4be6ae}{operator-\/=}} (\mbox{\hyperlink{classPscf_1_1Field}{Field}}$<$ T $>$ \&other)
+\begin{DoxyCompactList}\small\item\em Decrement operator -\/ subtract one field from another. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1Field}{Field}}$<$ T $>$ \& \mbox{\hyperlink{classPscf_1_1Field_a2fbf86f45368fa003ef832579159f5dc}{operator$\ast$=}} (T scalar)
+\begin{DoxyCompactList}\small\item\em Multiplication operator -\/ multiply one field by a scalar. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1Field}{Field}}$<$ T $>$ \& \mbox{\hyperlink{classPscf_1_1Field_a4fd870ff7123117890068e9702f726d9}{operator$\ast$=}} (\mbox{\hyperlink{classPscf_1_1Field}{Field}}$<$ T $>$ \&other)
+\begin{DoxyCompactList}\small\item\em Pointwise multipication of one field by another. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1Field_a55db93e27afe33d040e28c0ba6adf2ef}{set\+To\+Zero}} ()
+\begin{DoxyCompactList}\small\item\em Set all elements to zero. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{classPscf_1_1Field_a2ca56c319df37cad6135ca97e0e49ad7}{average}} () const
+\begin{DoxyCompactList}\small\item\em Compute and return average of all elements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$typename T = double$>$\newline
+class Pscf\+::\+Field$<$ T $>$}
+
+Base class template for a field defined on a spatial grid. 
+
+Derived from D\+Array$<$\+T$>$, and provides useful arithmetic operations. 
+
+Definition at line 23 of file Field.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPscf_1_1Field_a1234ba110bf8029e5d14db6429aafb56}\label{classPscf_1_1Field_a1234ba110bf8029e5d14db6429aafb56}} 
+\index{Pscf::Field$<$ T $>$@{Pscf::Field$<$ T $>$}!Field@{Field}}
+\index{Field@{Field}!Pscf::Field$<$ T $>$@{Pscf::Field$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{Field()}{Field()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T  = double$>$ \\
+\mbox{\hyperlink{classPscf_1_1Field}{Pscf\+::\+Field}}$<$ T $>$\+::\mbox{\hyperlink{classPscf_1_1Field}{Field}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+\mbox{\Hypertarget{classPscf_1_1Field_a75f6b080a6921128793ed6dafd5de2d9}\label{classPscf_1_1Field_a75f6b080a6921128793ed6dafd5de2d9}} 
+\index{Pscf::Field$<$ T $>$@{Pscf::Field$<$ T $>$}!Field@{Field}}
+\index{Field@{Field}!Pscf::Field$<$ T $>$@{Pscf::Field$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{Field()}{Field()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classPscf_1_1Field}{Pscf\+::\+Field}}$<$ T $>$\+::\mbox{\hyperlink{classPscf_1_1Field}{Field}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPscf_1_1Field}{Field}}$<$ T $>$ const \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+
+Definition at line 98 of file Field.\+h.
+
+
+
+References Util\+::\+Memory\+::allocate(), Util\+::\+Array$<$ double $>$\+::capacity\+\_\+, Util\+::\+Array$<$ double $>$\+::data\+\_\+, Util\+::\+D\+Array$<$ double $>$\+::is\+Allocated(), and U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPscf_1_1Field_a6539f9221bc036cd6f87d20f02634c44}\label{classPscf_1_1Field_a6539f9221bc036cd6f87d20f02634c44}} 
+\index{Pscf::Field$<$ T $>$@{Pscf::Field$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Pscf::Field$<$ T $>$@{Pscf::Field$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classPscf_1_1Field}{Field}}$<$ T $>$ \& \mbox{\hyperlink{classPscf_1_1Field}{Pscf\+::\+Field}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPscf_1_1Field}{Field}}$<$ T $>$ const \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Assignment operator. 
+
+
+
+Definition at line 122 of file Field.\+h.
+
+
+
+References Util\+::\+Array$<$ double $>$\+::capacity(), Util\+::\+Array$<$ double $>$\+::capacity\+\_\+, Util\+::\+D\+Array$<$ double $>$\+::is\+Allocated(), and U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classPscf_1_1Field_a699a4d4f888412d7445ec21ebd41d729}\label{classPscf_1_1Field_a699a4d4f888412d7445ec21ebd41d729}} 
+\index{Pscf::Field$<$ T $>$@{Pscf::Field$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Pscf::Field$<$ T $>$@{Pscf::Field$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classPscf_1_1Field}{Field}}$<$ T $>$ \& \mbox{\hyperlink{classPscf_1_1Field}{Pscf\+::\+Field}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{T \&}]{scalar }\end{DoxyParamCaption})}
+
+
+
+Assignment -\/ assign all elements to a common scalar. 
+
+
+
+Definition at line 150 of file Field.\+h.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classPscf_1_1Field_ac25f1c5479f9721be0bbf888ff7c7dc3}\label{classPscf_1_1Field_ac25f1c5479f9721be0bbf888ff7c7dc3}} 
+\index{Pscf::Field$<$ T $>$@{Pscf::Field$<$ T $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Pscf::Field$<$ T $>$@{Pscf::Field$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classPscf_1_1Field}{Field}}$<$ T $>$ \& \mbox{\hyperlink{classPscf_1_1Field}{Pscf\+::\+Field}}$<$ T $>$\+::operator+= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPscf_1_1Field}{Field}}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Increment operator -\/ add one field by another. 
+
+
+
+Definition at line 165 of file Field.\+h.
+
+
+
+References Util\+::\+Array$<$ double $>$\+::capacity\+\_\+, Util\+::\+Array$<$ double $>$\+::data\+\_\+, Util\+::\+D\+Array$<$ double $>$\+::is\+Allocated(), and U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classPscf_1_1Field_a28c83792287196c8af10198dac4be6ae}\label{classPscf_1_1Field_a28c83792287196c8af10198dac4be6ae}} 
+\index{Pscf::Field$<$ T $>$@{Pscf::Field$<$ T $>$}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!Pscf::Field$<$ T $>$@{Pscf::Field$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{operator-\/=()}{operator-=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classPscf_1_1Field}{Field}}$<$ T $>$ \& \mbox{\hyperlink{classPscf_1_1Field}{Pscf\+::\+Field}}$<$ T $>$\+::operator-\/= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPscf_1_1Field}{Field}}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Decrement operator -\/ subtract one field from another. 
+
+
+
+Definition at line 186 of file Field.\+h.
+
+
+
+References Util\+::\+Array$<$ double $>$\+::capacity\+\_\+, Util\+::\+Array$<$ double $>$\+::data\+\_\+, Util\+::\+D\+Array$<$ double $>$\+::is\+Allocated(), and U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classPscf_1_1Field_a2fbf86f45368fa003ef832579159f5dc}\label{classPscf_1_1Field_a2fbf86f45368fa003ef832579159f5dc}} 
+\index{Pscf::Field$<$ T $>$@{Pscf::Field$<$ T $>$}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!Pscf::Field$<$ T $>$@{Pscf::Field$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{operator$\ast$=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classPscf_1_1Field}{Field}}$<$ T $>$ \& \mbox{\hyperlink{classPscf_1_1Field}{Pscf\+::\+Field}}$<$ T $>$\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{T}]{scalar }\end{DoxyParamCaption})}
+
+
+
+Multiplication operator -\/ multiply one field by a scalar. 
+
+
+
+Definition at line 210 of file Field.\+h.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classPscf_1_1Field_a4fd870ff7123117890068e9702f726d9}\label{classPscf_1_1Field_a4fd870ff7123117890068e9702f726d9}} 
+\index{Pscf::Field$<$ T $>$@{Pscf::Field$<$ T $>$}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!Pscf::Field$<$ T $>$@{Pscf::Field$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{operator$\ast$=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classPscf_1_1Field}{Field}}$<$ T $>$ \& \mbox{\hyperlink{classPscf_1_1Field}{Pscf\+::\+Field}}$<$ T $>$\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPscf_1_1Field}{Field}}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Pointwise multipication of one field by another. 
+
+
+
+Definition at line 227 of file Field.\+h.
+
+
+
+References Util\+::\+Array$<$ double $>$\+::capacity\+\_\+, Util\+::\+Array$<$ double $>$\+::data\+\_\+, Util\+::\+D\+Array$<$ double $>$\+::is\+Allocated(), and U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classPscf_1_1Field_a55db93e27afe33d040e28c0ba6adf2ef}\label{classPscf_1_1Field_a55db93e27afe33d040e28c0ba6adf2ef}} 
+\index{Pscf::Field$<$ T $>$@{Pscf::Field$<$ T $>$}!setToZero@{setToZero}}
+\index{setToZero@{setToZero}!Pscf::Field$<$ T $>$@{Pscf::Field$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{setToZero()}{setToZero()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classPscf_1_1Field}{Pscf\+::\+Field}}$<$ T $>$\+::set\+To\+Zero}
+
+
+
+Set all elements to zero. 
+
+
+
+Definition at line 250 of file Field.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Field_a2ca56c319df37cad6135ca97e0e49ad7}\label{classPscf_1_1Field_a2ca56c319df37cad6135ca97e0e49ad7}} 
+\index{Pscf::Field$<$ T $>$@{Pscf::Field$<$ T $>$}!average@{average}}
+\index{average@{average}!Pscf::Field$<$ T $>$@{Pscf::Field$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{average()}{average()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{classPscf_1_1Field}{Pscf\+::\+Field}}$<$ T $>$\+::average}
+
+
+
+Compute and return average of all elements. 
+
+
+
+Definition at line 261 of file Field.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Field.\+h\end{DoxyCompactItemize}

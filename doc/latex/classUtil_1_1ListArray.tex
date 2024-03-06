@@ -1,0 +1,281 @@
+\hypertarget{classUtil_1_1ListArray}{}\doxysubsection{Util\+::List\+Array$<$ Data $>$ Class Template Reference}
+\label{classUtil_1_1ListArray}\index{Util::ListArray$<$ Data $>$@{Util::ListArray$<$ Data $>$}}
+
+
+An array of objects that are accessible by one or more linked \mbox{\hyperlink{classUtil_1_1List}{List}} objects.  
+
+
+
+
+{\ttfamily \#include $<$List\+Array.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1ListArray_a20d38a4076d6a04c3347fb53eb2d0006}{List\+Array}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classUtil_1_1ListArray_a9948be428d296da982a1bd2d4562b598}{$\sim$\+List\+Array}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1ListArray_a93c26acd9ebe997d7f4444d30117e9dc}{allocate}} (int \mbox{\hyperlink{classUtil_1_1ListArray_abf810ede4cacbff3aeb9d8ad5c438afd}{capacity}}, int \mbox{\hyperlink{classUtil_1_1ListArray_ae776e332dfa9cb2f2dcffd3dbee95f0a}{n\+List}})
+\begin{DoxyCompactList}\small\item\em Allocate arrays of \mbox{\hyperlink{classUtil_1_1Node}{Node}} and \mbox{\hyperlink{classUtil_1_1List}{List}} objects. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUtil_1_1ListArray_ae776e332dfa9cb2f2dcffd3dbee95f0a}{n\+List}} () const
+\begin{DoxyCompactList}\small\item\em Get the number of associated linked lists. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUtil_1_1ListArray_abf810ede4cacbff3aeb9d8ad5c438afd}{capacity}} () const
+\begin{DoxyCompactList}\small\item\em Return allocated size of underlying array of nodes. \end{DoxyCompactList}\item 
+Data \& \mbox{\hyperlink{classUtil_1_1ListArray_aca3130f7a272ecd0927eac958517ddcd}{operator\mbox{[}$\,$\mbox{]}}} (int i)
+\begin{DoxyCompactList}\small\item\em Return data for node element i. \end{DoxyCompactList}\item 
+const Data \& \mbox{\hyperlink{classUtil_1_1ListArray_a37e294eb1db44a8865adaaf762479341}{operator\mbox{[}$\,$\mbox{]}}} (int i) const
+\begin{DoxyCompactList}\small\item\em Return const refereence to Data in \mbox{\hyperlink{classUtil_1_1Node}{Node}} element number i. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1List}{List}}$<$ Data $>$ \& \mbox{\hyperlink{classUtil_1_1ListArray_a48ca662d8520cdb00dae13fc1f616e62}{list}} (int i)
+\begin{DoxyCompactList}\small\item\em Return a reference to a specific \mbox{\hyperlink{classUtil_1_1List}{List}}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classUtil_1_1List}{List}}$<$ Data $>$ \& \mbox{\hyperlink{classUtil_1_1ListArray_aedb6834b5c07d78b57bde641dca45520}{list}} (int i) const
+\begin{DoxyCompactList}\small\item\em Return a const reference to a specific \mbox{\hyperlink{classUtil_1_1List}{List}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1Node}{Node}}$<$ Data $>$ \& \mbox{\hyperlink{classUtil_1_1ListArray_a2f63c3fe99c544c18d5c8158b8f4424d}{node}} (int i)
+\begin{DoxyCompactList}\small\item\em Return reference to node number i. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUtil_1_1ListArray_acab13c984810b53e1dea452897dc33b6}{is\+Valid}} () const
+\begin{DoxyCompactList}\small\item\em Return true if the List\+Aray is valid, or throw an exception. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$typename Data$>$\newline
+class Util\+::\+List\+Array$<$ Data $>$}
+
+An array of objects that are accessible by one or more linked \mbox{\hyperlink{classUtil_1_1List}{List}} objects. 
+
+A \mbox{\hyperlink{classUtil_1_1ListArray}{List\+Array}} is an allocatable array of data objects that also provides access to some or all of its via one or more associated \mbox{\hyperlink{classUtil_1_1List}{List}} objects. Each element of the array may be part of at most one \mbox{\hyperlink{classUtil_1_1List}{List}}. 
+
+Definition at line 30 of file List\+Array.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1ListArray_a20d38a4076d6a04c3347fb53eb2d0006}\label{classUtil_1_1ListArray_a20d38a4076d6a04c3347fb53eb2d0006}} 
+\index{Util::ListArray$<$ Data $>$@{Util::ListArray$<$ Data $>$}!ListArray@{ListArray}}
+\index{ListArray@{ListArray}!Util::ListArray$<$ Data $>$@{Util::ListArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{ListArray()}{ListArray()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+\mbox{\hyperlink{classUtil_1_1ListArray}{Util\+::\+List\+Array}}$<$ Data $>$\+::\mbox{\hyperlink{classUtil_1_1ListArray}{List\+Array}}}
+
+
+
+Constructor. 
+
+
+
+Definition at line 148 of file List\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1ListArray_a9948be428d296da982a1bd2d4562b598}\label{classUtil_1_1ListArray_a9948be428d296da982a1bd2d4562b598}} 
+\index{Util::ListArray$<$ Data $>$@{Util::ListArray$<$ Data $>$}!````~ListArray@{$\sim$ListArray}}
+\index{````~ListArray@{$\sim$ListArray}!Util::ListArray$<$ Data $>$@{Util::ListArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{$\sim$ListArray()}{~ListArray()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+\mbox{\hyperlink{classUtil_1_1ListArray}{Util\+::\+List\+Array}}$<$ Data $>$\+::$\sim$\mbox{\hyperlink{classUtil_1_1ListArray}{List\+Array}}\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+Delete dynamically allocated arrays of \mbox{\hyperlink{classUtil_1_1Node}{Node}} and \mbox{\hyperlink{classUtil_1_1List}{List}} objects. 
+
+Definition at line 161 of file List\+Array.\+h.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1ListArray_a93c26acd9ebe997d7f4444d30117e9dc}\label{classUtil_1_1ListArray_a93c26acd9ebe997d7f4444d30117e9dc}} 
+\index{Util::ListArray$<$ Data $>$@{Util::ListArray$<$ Data $>$}!allocate@{allocate}}
+\index{allocate@{allocate}!Util::ListArray$<$ Data $>$@{Util::ListArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{allocate()}{allocate()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+void \mbox{\hyperlink{classUtil_1_1ListArray}{Util\+::\+List\+Array}}$<$ Data $>$\+::allocate (\begin{DoxyParamCaption}\item[{int}]{capacity,  }\item[{int}]{n\+List }\end{DoxyParamCaption})}
+
+
+
+Allocate arrays of \mbox{\hyperlink{classUtil_1_1Node}{Node}} and \mbox{\hyperlink{classUtil_1_1List}{List}} objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & size of array Node$<$\+Data$>$ objects \\
+\hline
+{\em n\+List} & size of array of List$<$\+Data$>$ linked list objects \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 178 of file List\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1ListArray_ae776e332dfa9cb2f2dcffd3dbee95f0a}\label{classUtil_1_1ListArray_ae776e332dfa9cb2f2dcffd3dbee95f0a}} 
+\index{Util::ListArray$<$ Data $>$@{Util::ListArray$<$ Data $>$}!nList@{nList}}
+\index{nList@{nList}!Util::ListArray$<$ Data $>$@{Util::ListArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{nList()}{nList()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+int \mbox{\hyperlink{classUtil_1_1ListArray}{Util\+::\+List\+Array}}$<$ Data $>$\+::n\+List\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the number of associated linked lists. 
+
+\begin{DoxyReturn}{Returns}
+size of array of associated List$<$\+Data$>$ objects. 
+\end{DoxyReturn}
+
+
+Definition at line 201 of file List\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1ListArray_abf810ede4cacbff3aeb9d8ad5c438afd}\label{classUtil_1_1ListArray_abf810ede4cacbff3aeb9d8ad5c438afd}} 
+\index{Util::ListArray$<$ Data $>$@{Util::ListArray$<$ Data $>$}!capacity@{capacity}}
+\index{capacity@{capacity}!Util::ListArray$<$ Data $>$@{Util::ListArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{capacity()}{capacity()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+int \mbox{\hyperlink{classUtil_1_1ListArray}{Util\+::\+List\+Array}}$<$ Data $>$\+::capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return allocated size of underlying array of nodes. 
+
+\begin{DoxyReturn}{Returns}
+Number of elements allocated in array. 
+\end{DoxyReturn}
+
+
+Definition at line 67 of file List\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1ListArray_aca3130f7a272ecd0927eac958517ddcd}\label{classUtil_1_1ListArray_aca3130f7a272ecd0927eac958517ddcd}} 
+\index{Util::ListArray$<$ Data $>$@{Util::ListArray$<$ Data $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Util::ListArray$<$ Data $>$@{Util::ListArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+Data\& \mbox{\hyperlink{classUtil_1_1ListArray}{Util\+::\+List\+Array}}$<$ Data $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return data for node element i. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & array index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to element i 
+\end{DoxyReturn}
+
+
+Definition at line 76 of file List\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1ListArray_a37e294eb1db44a8865adaaf762479341}\label{classUtil_1_1ListArray_a37e294eb1db44a8865adaaf762479341}} 
+\index{Util::ListArray$<$ Data $>$@{Util::ListArray$<$ Data $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Util::ListArray$<$ Data $>$@{Util::ListArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+const Data\& \mbox{\hyperlink{classUtil_1_1ListArray}{Util\+::\+List\+Array}}$<$ Data $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return const refereence to Data in \mbox{\hyperlink{classUtil_1_1Node}{Node}} element number i. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & array index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const reference to element i 
+\end{DoxyReturn}
+
+
+Definition at line 90 of file List\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1ListArray_a48ca662d8520cdb00dae13fc1f616e62}\label{classUtil_1_1ListArray_a48ca662d8520cdb00dae13fc1f616e62}} 
+\index{Util::ListArray$<$ Data $>$@{Util::ListArray$<$ Data $>$}!list@{list}}
+\index{list@{list}!Util::ListArray$<$ Data $>$@{Util::ListArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{list()}{list()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+\mbox{\hyperlink{classUtil_1_1List}{List}}$<$ Data $>$ \& \mbox{\hyperlink{classUtil_1_1ListArray}{Util\+::\+List\+Array}}$<$ Data $>$\+::list (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Return a reference to a specific \mbox{\hyperlink{classUtil_1_1List}{List}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & array index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{classUtil_1_1List}{List}} number i 
+\end{DoxyReturn}
+
+
+Definition at line 211 of file List\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1ListArray_aedb6834b5c07d78b57bde641dca45520}\label{classUtil_1_1ListArray_aedb6834b5c07d78b57bde641dca45520}} 
+\index{Util::ListArray$<$ Data $>$@{Util::ListArray$<$ Data $>$}!list@{list}}
+\index{list@{list}!Util::ListArray$<$ Data $>$@{Util::ListArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{list()}{list()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+const \mbox{\hyperlink{classUtil_1_1List}{List}}$<$ Data $>$ \& \mbox{\hyperlink{classUtil_1_1ListArray}{Util\+::\+List\+Array}}$<$ Data $>$\+::list (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const}
+
+
+
+Return a const reference to a specific \mbox{\hyperlink{classUtil_1_1List}{List}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & array index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{classUtil_1_1List}{List}} number i 
+\end{DoxyReturn}
+
+
+Definition at line 227 of file List\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1ListArray_a2f63c3fe99c544c18d5c8158b8f4424d}\label{classUtil_1_1ListArray_a2f63c3fe99c544c18d5c8158b8f4424d}} 
+\index{Util::ListArray$<$ Data $>$@{Util::ListArray$<$ Data $>$}!node@{node}}
+\index{node@{node}!Util::ListArray$<$ Data $>$@{Util::ListArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{node()}{node()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+\mbox{\hyperlink{classUtil_1_1Node}{Node}}$<$ Data $>$ \& \mbox{\hyperlink{classUtil_1_1ListArray}{Util\+::\+List\+Array}}$<$ Data $>$\+::node (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Return reference to node number i. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & array index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to Data object element number i 
+\end{DoxyReturn}
+
+
+Definition at line 243 of file List\+Array.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1ListArray_acab13c984810b53e1dea452897dc33b6}\label{classUtil_1_1ListArray_acab13c984810b53e1dea452897dc33b6}} 
+\index{Util::ListArray$<$ Data $>$@{Util::ListArray$<$ Data $>$}!isValid@{isValid}}
+\index{isValid@{isValid}!Util::ListArray$<$ Data $>$@{Util::ListArray$<$ Data $>$}}
+\doxyparagraph{\texorpdfstring{isValid()}{isValid()}}
+{\footnotesize\ttfamily template$<$typename Data $>$ \\
+bool \mbox{\hyperlink{classUtil_1_1ListArray}{Util\+::\+List\+Array}}$<$ Data $>$\+::is\+Valid}
+
+
+
+Return true if the List\+Aray is valid, or throw an exception. 
+
+
+
+Definition at line 256 of file List\+Array.\+h.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+List\+Array.\+h\end{DoxyCompactItemize}

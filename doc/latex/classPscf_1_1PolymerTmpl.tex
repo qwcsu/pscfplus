@@ -1,0 +1,355 @@
+\hypertarget{classPscf_1_1PolymerTmpl}{}\doxysubsection{Pscf\+::Polymer\+Tmpl$<$ Block $>$ Class Template Reference}
+\label{classPscf_1_1PolymerTmpl}\index{Pscf::PolymerTmpl$<$ Block $>$@{Pscf::PolymerTmpl$<$ Block $>$}}
+
+
+Descriptor and M\+DE solver for an acyclic block polymer.  
+
+
+
+
+{\ttfamily \#include $<$Polymer\+Tmpl.\+h$>$}
+
+Inheritance diagram for Pscf\+::Polymer\+Tmpl$<$ Block $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classPscf_1_1PolymerTmpl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPscf_1_1PolymerTmpl_a1b77410f660ee170b1e56bdeb4464b1a}{Polymer\+Tmpl}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1PolymerTmpl_a9f6ba3982034f5350aff96744571db80}{$\sim$\+Polymer\+Tmpl}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPscf_1_1PolymerTmpl_a073d3ff2294ca1fa5dc34274cc6cb3e2}{read\+Parameters}} (std\+::istream \&in)
+\begin{DoxyCompactList}\small\item\em Read and initialize. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPscf_1_1PolymerTmpl_a723466d0f7535df23e92bc18bc904871}{solve}} ()
+\begin{DoxyCompactList}\small\item\em Solve modified diffusion equation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Accessors (objects, by reference)}\par
+\begin{DoxyCompactItemize}
+\item 
+Block \& \mbox{\hyperlink{classPscf_1_1PolymerTmpl_a18dcd41277db86c9684db597fa353389}{block}} (int id)
+\begin{DoxyCompactList}\small\item\em Get a specified Block. \end{DoxyCompactList}\item 
+const Block \& \mbox{\hyperlink{classPscf_1_1PolymerTmpl_a0f9ef6dba30ce24e1d2c28361323deb6}{block}} (int id) const
+\begin{DoxyCompactList}\small\item\em Get a specified Block by const reference. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classPscf_1_1Vertex}{Vertex}} \& \mbox{\hyperlink{classPscf_1_1PolymerTmpl_ae3f75b4edbbcd3433b1da6eb77cfd9ae}{vertex}} (int id) const
+\begin{DoxyCompactList}\small\item\em Get a specified \mbox{\hyperlink{classPscf_1_1Vertex}{Vertex}} by const reference. \end{DoxyCompactList}\item 
+Propagator \& \mbox{\hyperlink{classPscf_1_1PolymerTmpl_a3d2dc3051a58ffae7debd59cb7a1769a}{propagator}} (int block\+Id, int direction\+Id)
+\begin{DoxyCompactList}\small\item\em Get propagator for a specific block and direction. \end{DoxyCompactList}\item 
+const Propagator \& \mbox{\hyperlink{classPscf_1_1PolymerTmpl_a755951fed441002f3a1e27c555127bd3}{propagator}} (int block\+Id, int direction\+Id) const
+\begin{DoxyCompactList}\small\item\em Get a const propagator for a specific block and direction. \end{DoxyCompactList}\item 
+Propagator \& \mbox{\hyperlink{classPscf_1_1PolymerTmpl_aaeef5a5d49e12212d0e35a65641f81ba}{propagator}} (int id)
+\begin{DoxyCompactList}\small\item\em Get propagator indexed in order of computation. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classUtil_1_1Pair}{Pair}}$<$ int $>$ \& \mbox{\hyperlink{classPscf_1_1PolymerTmpl_a80e6304c5d32705fe5976b5d191d3efa}{propagator\+Id}} (int i) const
+\begin{DoxyCompactList}\small\item\em Propagator identifier, indexed by order of computation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Accessors (by value)}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classPscf_1_1PolymerTmpl_a33c218694c2c53f2bea85bd68966ecd1}{n\+Block}} () const
+\begin{DoxyCompactList}\small\item\em Number of blocks. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPscf_1_1PolymerTmpl_ab0abf4a76ea5a3f7329533c393c4f805}{n\+Vertex}} () const
+\begin{DoxyCompactList}\small\item\em Number of vertices (junctions and chain ends). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPscf_1_1PolymerTmpl_a513718536291ac70376a262aef4f6019}{n\+Propagator}} () const
+\begin{DoxyCompactList}\small\item\em Number of propagators (twice n\+Block). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classPscf_1_1PolymerTmpl_ac3388e103d9977766cb3cc50c369f8a1}{length}} () const
+\begin{DoxyCompactList}\small\item\em Total length of all blocks = volume / reference volume. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPscf_1_1PolymerTmpl_ad79c25f26a53335d33071e25d0fd5c31}\label{classPscf_1_1PolymerTmpl_ad79c25f26a53335d33071e25d0fd5c31}} 
+double {\bfseries Q} () const
+\item 
+\mbox{\Hypertarget{classPscf_1_1PolymerTmpl_a171d46ce73983482af492c6b2a5ff019}\label{classPscf_1_1PolymerTmpl_a171d46ce73983482af492c6b2a5ff019}} 
+virtual void {\bfseries make\+Plan} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$class Block$>$\newline
+class Pscf\+::\+Polymer\+Tmpl$<$ Block $>$}
+
+Descriptor and M\+DE solver for an acyclic block polymer. 
+
+A Polymer\+Tmpl$<$\+Block$>$ object has arrays of Block and \mbox{\hyperlink{classPscf_1_1Vertex}{Vertex}} objects. Each Block has two propagator M\+DE solver objects. The compute() member function solves the modified diffusion equation (M\+DE) for the entire molecule and computes monomer concentration fields for all blocks. 
+
+Definition at line 42 of file Polymer\+Tmpl.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPscf_1_1PolymerTmpl_a1b77410f660ee170b1e56bdeb4464b1a}\label{classPscf_1_1PolymerTmpl_a1b77410f660ee170b1e56bdeb4464b1a}} 
+\index{Pscf::PolymerTmpl$<$ Block $>$@{Pscf::PolymerTmpl$<$ Block $>$}!PolymerTmpl@{PolymerTmpl}}
+\index{PolymerTmpl@{PolymerTmpl}!Pscf::PolymerTmpl$<$ Block $>$@{Pscf::PolymerTmpl$<$ Block $>$}}
+\doxyparagraph{\texorpdfstring{PolymerTmpl()}{PolymerTmpl()}}
+{\footnotesize\ttfamily template$<$class Block $>$ \\
+\mbox{\hyperlink{classPscf_1_1PolymerTmpl}{Pscf\+::\+Polymer\+Tmpl}}$<$ Block $>$\+::\mbox{\hyperlink{classPscf_1_1PolymerTmpl}{Polymer\+Tmpl}}}
+
+
+
+Constructor. 
+
+
+
+Definition at line 319 of file Polymer\+Tmpl.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1PolymerTmpl_a9f6ba3982034f5350aff96744571db80}\label{classPscf_1_1PolymerTmpl_a9f6ba3982034f5350aff96744571db80}} 
+\index{Pscf::PolymerTmpl$<$ Block $>$@{Pscf::PolymerTmpl$<$ Block $>$}!````~PolymerTmpl@{$\sim$PolymerTmpl}}
+\index{````~PolymerTmpl@{$\sim$PolymerTmpl}!Pscf::PolymerTmpl$<$ Block $>$@{Pscf::PolymerTmpl$<$ Block $>$}}
+\doxyparagraph{\texorpdfstring{$\sim$PolymerTmpl()}{~PolymerTmpl()}}
+{\footnotesize\ttfamily template$<$class Block $>$ \\
+\mbox{\hyperlink{classPscf_1_1PolymerTmpl}{Pscf\+::\+Polymer\+Tmpl}}$<$ Block $>$\+::$\sim$\mbox{\hyperlink{classPscf_1_1PolymerTmpl}{Polymer\+Tmpl}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPscf_1_1PolymerTmpl_a073d3ff2294ca1fa5dc34274cc6cb3e2}\label{classPscf_1_1PolymerTmpl_a073d3ff2294ca1fa5dc34274cc6cb3e2}} 
+\index{Pscf::PolymerTmpl$<$ Block $>$@{Pscf::PolymerTmpl$<$ Block $>$}!readParameters@{readParameters}}
+\index{readParameters@{readParameters}!Pscf::PolymerTmpl$<$ Block $>$@{Pscf::PolymerTmpl$<$ Block $>$}}
+\doxyparagraph{\texorpdfstring{readParameters()}{readParameters()}}
+{\footnotesize\ttfamily template$<$class Block $>$ \\
+void \mbox{\hyperlink{classPscf_1_1PolymerTmpl}{Pscf\+::\+Polymer\+Tmpl}}$<$ Block $>$\+::read\+Parameters (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Read and initialize. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & input parameter stream \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classUtil_1_1ParamComposite_a172a3a656b5829c8d758424ad09a22a6}{Util\+::\+Param\+Composite}}.
+
+
+
+Definition at line 338 of file Polymer\+Tmpl.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1PolymerTmpl_a723466d0f7535df23e92bc18bc904871}\label{classPscf_1_1PolymerTmpl_a723466d0f7535df23e92bc18bc904871}} 
+\index{Pscf::PolymerTmpl$<$ Block $>$@{Pscf::PolymerTmpl$<$ Block $>$}!solve@{solve}}
+\index{solve@{solve}!Pscf::PolymerTmpl$<$ Block $>$@{Pscf::PolymerTmpl$<$ Block $>$}}
+\doxyparagraph{\texorpdfstring{solve()}{solve()}}
+{\footnotesize\ttfamily template$<$class Block $>$ \\
+void \mbox{\hyperlink{classPscf_1_1PolymerTmpl}{Pscf\+::\+Polymer\+Tmpl}}$<$ Block $>$\+::solve\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Solve modified diffusion equation. 
+
+Upon return, q functions and block concentration fields are computed for all propagators and blocks. 
+
+Definition at line 480 of file Polymer\+Tmpl.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1PolymerTmpl_a18dcd41277db86c9684db597fa353389}\label{classPscf_1_1PolymerTmpl_a18dcd41277db86c9684db597fa353389}} 
+\index{Pscf::PolymerTmpl$<$ Block $>$@{Pscf::PolymerTmpl$<$ Block $>$}!block@{block}}
+\index{block@{block}!Pscf::PolymerTmpl$<$ Block $>$@{Pscf::PolymerTmpl$<$ Block $>$}}
+\doxyparagraph{\texorpdfstring{block()}{block()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class Block $>$ \\
+Block \& \mbox{\hyperlink{classPscf_1_1PolymerTmpl}{Pscf\+::\+Polymer\+Tmpl}}$<$ Block $>$\+::block (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get a specified Block. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & block index, 0 $<$= id $<$ n\+Block \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 254 of file Polymer\+Tmpl.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1PolymerTmpl_a0f9ef6dba30ce24e1d2c28361323deb6}\label{classPscf_1_1PolymerTmpl_a0f9ef6dba30ce24e1d2c28361323deb6}} 
+\index{Pscf::PolymerTmpl$<$ Block $>$@{Pscf::PolymerTmpl$<$ Block $>$}!block@{block}}
+\index{block@{block}!Pscf::PolymerTmpl$<$ Block $>$@{Pscf::PolymerTmpl$<$ Block $>$}}
+\doxyparagraph{\texorpdfstring{block()}{block()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class Block $>$ \\
+const Block \& \mbox{\hyperlink{classPscf_1_1PolymerTmpl}{Pscf\+::\+Polymer\+Tmpl}}$<$ Block $>$\+::block (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get a specified Block by const reference. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & block index, 0 $<$= id $<$ n\+Block \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 263 of file Polymer\+Tmpl.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1PolymerTmpl_ae3f75b4edbbcd3433b1da6eb77cfd9ae}\label{classPscf_1_1PolymerTmpl_ae3f75b4edbbcd3433b1da6eb77cfd9ae}} 
+\index{Pscf::PolymerTmpl$<$ Block $>$@{Pscf::PolymerTmpl$<$ Block $>$}!vertex@{vertex}}
+\index{vertex@{vertex}!Pscf::PolymerTmpl$<$ Block $>$@{Pscf::PolymerTmpl$<$ Block $>$}}
+\doxyparagraph{\texorpdfstring{vertex()}{vertex()}}
+{\footnotesize\ttfamily template$<$class Block $>$ \\
+const \mbox{\hyperlink{classPscf_1_1Vertex}{Vertex}} \& \mbox{\hyperlink{classPscf_1_1PolymerTmpl}{Pscf\+::\+Polymer\+Tmpl}}$<$ Block $>$\+::vertex (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get a specified \mbox{\hyperlink{classPscf_1_1Vertex}{Vertex}} by const reference. 
+
+Both chain ends and junctions are vertices.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & vertex index, 0 $<$= id $<$ n\+Vertex \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 245 of file Polymer\+Tmpl.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1PolymerTmpl_a3d2dc3051a58ffae7debd59cb7a1769a}\label{classPscf_1_1PolymerTmpl_a3d2dc3051a58ffae7debd59cb7a1769a}} 
+\index{Pscf::PolymerTmpl$<$ Block $>$@{Pscf::PolymerTmpl$<$ Block $>$}!propagator@{propagator}}
+\index{propagator@{propagator}!Pscf::PolymerTmpl$<$ Block $>$@{Pscf::PolymerTmpl$<$ Block $>$}}
+\doxyparagraph{\texorpdfstring{propagator()}{propagator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$class Block $>$ \\
+Block\+::\+Propagator \& \mbox{\hyperlink{classPscf_1_1PolymerTmpl}{Pscf\+::\+Polymer\+Tmpl}}$<$ Block $>$\+::propagator (\begin{DoxyParamCaption}\item[{int}]{block\+Id,  }\item[{int}]{direction\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get propagator for a specific block and direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em block\+Id} & integer index of associated block \\
+\hline
+{\em direction\+Id} & integer index for direction (0 or 1) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 285 of file Polymer\+Tmpl.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1PolymerTmpl_a755951fed441002f3a1e27c555127bd3}\label{classPscf_1_1PolymerTmpl_a755951fed441002f3a1e27c555127bd3}} 
+\index{Pscf::PolymerTmpl$<$ Block $>$@{Pscf::PolymerTmpl$<$ Block $>$}!propagator@{propagator}}
+\index{propagator@{propagator}!Pscf::PolymerTmpl$<$ Block $>$@{Pscf::PolymerTmpl$<$ Block $>$}}
+\doxyparagraph{\texorpdfstring{propagator()}{propagator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$class Block $>$ \\
+const Block\+::\+Propagator \& \mbox{\hyperlink{classPscf_1_1PolymerTmpl}{Pscf\+::\+Polymer\+Tmpl}}$<$ Block $>$\+::propagator (\begin{DoxyParamCaption}\item[{int}]{block\+Id,  }\item[{int}]{direction\+Id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get a const propagator for a specific block and direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em block\+Id} & integer index of associated block \\
+\hline
+{\em direction\+Id} & integer index for direction (0 or 1) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 296 of file Polymer\+Tmpl.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1PolymerTmpl_aaeef5a5d49e12212d0e35a65641f81ba}\label{classPscf_1_1PolymerTmpl_aaeef5a5d49e12212d0e35a65641f81ba}} 
+\index{Pscf::PolymerTmpl$<$ Block $>$@{Pscf::PolymerTmpl$<$ Block $>$}!propagator@{propagator}}
+\index{propagator@{propagator}!Pscf::PolymerTmpl$<$ Block $>$@{Pscf::PolymerTmpl$<$ Block $>$}}
+\doxyparagraph{\texorpdfstring{propagator()}{propagator()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$class Block $>$ \\
+Block\+::\+Propagator \& \mbox{\hyperlink{classPscf_1_1PolymerTmpl}{Pscf\+::\+Polymer\+Tmpl}}$<$ Block $>$\+::propagator (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get propagator indexed in order of computation. 
+
+The propagator index must satisfy 0 $<$= id $<$ 2$\ast$n\+Block.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & integer index, in order of computation plan \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 307 of file Polymer\+Tmpl.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1PolymerTmpl_a80e6304c5d32705fe5976b5d191d3efa}\label{classPscf_1_1PolymerTmpl_a80e6304c5d32705fe5976b5d191d3efa}} 
+\index{Pscf::PolymerTmpl$<$ Block $>$@{Pscf::PolymerTmpl$<$ Block $>$}!propagatorId@{propagatorId}}
+\index{propagatorId@{propagatorId}!Pscf::PolymerTmpl$<$ Block $>$@{Pscf::PolymerTmpl$<$ Block $>$}}
+\doxyparagraph{\texorpdfstring{propagatorId()}{propagatorId()}}
+{\footnotesize\ttfamily template$<$class Block $>$ \\
+const \mbox{\hyperlink{classUtil_1_1Pair}{Pair}}$<$ int $>$ \& \mbox{\hyperlink{classPscf_1_1PolymerTmpl}{Pscf\+::\+Polymer\+Tmpl}}$<$ Block $>$\+::propagator\+Id (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Propagator identifier, indexed by order of computation. 
+
+The return value is a pair of integers. The first of which is a block index between 0 and n\+Block -\/ 1 and the second is a direction id, which must be 0 or 1. 
+
+Definition at line 272 of file Polymer\+Tmpl.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1PolymerTmpl_a33c218694c2c53f2bea85bd68966ecd1}\label{classPscf_1_1PolymerTmpl_a33c218694c2c53f2bea85bd68966ecd1}} 
+\index{Pscf::PolymerTmpl$<$ Block $>$@{Pscf::PolymerTmpl$<$ Block $>$}!nBlock@{nBlock}}
+\index{nBlock@{nBlock}!Pscf::PolymerTmpl$<$ Block $>$@{Pscf::PolymerTmpl$<$ Block $>$}}
+\doxyparagraph{\texorpdfstring{nBlock()}{nBlock()}}
+{\footnotesize\ttfamily template$<$class Block $>$ \\
+int \mbox{\hyperlink{classPscf_1_1PolymerTmpl}{Pscf\+::\+Polymer\+Tmpl}}$<$ Block $>$\+::n\+Block\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Number of blocks. 
+
+
+
+Definition at line 213 of file Polymer\+Tmpl.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1PolymerTmpl_ab0abf4a76ea5a3f7329533c393c4f805}\label{classPscf_1_1PolymerTmpl_ab0abf4a76ea5a3f7329533c393c4f805}} 
+\index{Pscf::PolymerTmpl$<$ Block $>$@{Pscf::PolymerTmpl$<$ Block $>$}!nVertex@{nVertex}}
+\index{nVertex@{nVertex}!Pscf::PolymerTmpl$<$ Block $>$@{Pscf::PolymerTmpl$<$ Block $>$}}
+\doxyparagraph{\texorpdfstring{nVertex()}{nVertex()}}
+{\footnotesize\ttfamily template$<$class Block $>$ \\
+int \mbox{\hyperlink{classPscf_1_1PolymerTmpl}{Pscf\+::\+Polymer\+Tmpl}}$<$ Block $>$\+::n\+Vertex\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Number of vertices (junctions and chain ends). 
+
+
+
+Definition at line 204 of file Polymer\+Tmpl.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1PolymerTmpl_a513718536291ac70376a262aef4f6019}\label{classPscf_1_1PolymerTmpl_a513718536291ac70376a262aef4f6019}} 
+\index{Pscf::PolymerTmpl$<$ Block $>$@{Pscf::PolymerTmpl$<$ Block $>$}!nPropagator@{nPropagator}}
+\index{nPropagator@{nPropagator}!Pscf::PolymerTmpl$<$ Block $>$@{Pscf::PolymerTmpl$<$ Block $>$}}
+\doxyparagraph{\texorpdfstring{nPropagator()}{nPropagator()}}
+{\footnotesize\ttfamily template$<$class Block $>$ \\
+int \mbox{\hyperlink{classPscf_1_1PolymerTmpl}{Pscf\+::\+Polymer\+Tmpl}}$<$ Block $>$\+::n\+Propagator\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Number of propagators (twice n\+Block). 
+
+
+
+Definition at line 222 of file Polymer\+Tmpl.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1PolymerTmpl_ac3388e103d9977766cb3cc50c369f8a1}\label{classPscf_1_1PolymerTmpl_ac3388e103d9977766cb3cc50c369f8a1}} 
+\index{Pscf::PolymerTmpl$<$ Block $>$@{Pscf::PolymerTmpl$<$ Block $>$}!length@{length}}
+\index{length@{length}!Pscf::PolymerTmpl$<$ Block $>$@{Pscf::PolymerTmpl$<$ Block $>$}}
+\doxyparagraph{\texorpdfstring{length()}{length()}}
+{\footnotesize\ttfamily template$<$class Block $>$ \\
+double \mbox{\hyperlink{classPscf_1_1PolymerTmpl}{Pscf\+::\+Polymer\+Tmpl}}$<$ Block $>$\+::length\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Total length of all blocks = volume / reference volume. 
+
+
+
+Definition at line 231 of file Polymer\+Tmpl.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Polymer\+Tmpl.\+h\end{DoxyCompactItemize}

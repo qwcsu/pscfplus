@@ -1,0 +1,297 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classPscf_1_1Pspg_1_1DField">
+<title>Pscf::Pspg::DField&lt; Data &gt; Class Template Reference</title>
+<indexterm><primary>Pscf::Pspg::DField&lt; Data &gt;</primary></indexterm>
+<para>
+
+<para>Dynamic array with aligned data, for use with cufftw library/device code. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;DField.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classPscf_1_1Pspg_1_1DField_1aaaee5aac26c12db38ec21a16bc2214fb">DField</link> ()</para>
+
+<para>Default constructor. </para>
+</listitem>
+            <listitem><para>virtual <link linkend="_classPscf_1_1Pspg_1_1DField_1a9eb98f576144678f813ea3b3d3bf9274">~DField</link> ()</para>
+
+<para>Destructor. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classPscf_1_1Pspg_1_1DField_1a475908bd3dba4c04dae2765f052c8317">allocate</link> (int <link linkend="_classPscf_1_1Pspg_1_1DField_1ad2f3b27aaa1fd4036e98682e7a9bf9ee">capacity</link>)</para>
+
+<para>Allocate the underlying C array. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classPscf_1_1Pspg_1_1DField_1a8b0201ff34469e72a846425c2fc2fcea">deallocate</link> ()</para>
+
+<para>Dellocate the underlying C array. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_classPscf_1_1Pspg_1_1DField_1ad5f43a7acca82072c2c129b1e66bc60e">isAllocated</link> () const</para>
+
+<para>Return true if the <link linkend="_classPscf_1_1Field">Field</link> has been allocated, false otherwise. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classPscf_1_1Pspg_1_1DField_1ad2f3b27aaa1fd4036e98682e7a9bf9ee">capacity</link> () const</para>
+
+<para>Return allocated size. </para>
+</listitem>
+            <listitem><para>Data * <link linkend="_classPscf_1_1Pspg_1_1DField_1a0fdcc5df3209790f0b5777c927fa996b">cDField</link> ()</para>
+
+<para>Return pointer to underlying C array. </para>
+</listitem>
+            <listitem><para>const Data * <link linkend="_classPscf_1_1Pspg_1_1DField_1a33852417c6feab0546b5d24d875155d6">cDField</link> () const</para>
+
+<para>Return pointer to const to underlying C array. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para>Data * <link linkend="_classPscf_1_1Pspg_1_1DField_1a93f604a563809edd9f760ee891495b33">data_</link></para>
+
+<para>Serialize a <link linkend="_classPscf_1_1Field">Field</link> to/from an Archive. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classPscf_1_1Pspg_1_1DField_1a7b3f28ac98c0973710e0d32ac70dc9bf">capacity_</link></para>
+
+<para>Allocated size of the data_ array. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;typename Data&gt;
+class Pscf::Pspg::DField&lt; Data &gt;</title></simplesect>
+
+
+<para>Dynamic array with aligned data, for use with cufftw library/device code. </para>
+
+
+
+<para>This class does not offer memory access via operator[] </para>
+<para>
+Definition at line 25 of file DField.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classPscf_1_1Pspg_1_1DField_1aaaee5aac26c12db38ec21a16bc2214fb"/>    <section>
+    <title>DField()</title>
+<indexterm><primary>DField</primary><secondary>Pscf::Pspg::DField&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::DField&lt; Data &gt;</primary><secondary>DField</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput><link linkend="_classPscf_1_1Pspg_1_1DField">Pscf::Pspg::DField</link>&lt; Data &gt;::<link linkend="_classPscf_1_1Pspg_1_1DField">DField</link></computeroutput></para><para>
+
+<para>Default constructor. </para>
+</para>
+<para>
+Definition at line 25 of file DField.tpp.</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1DField_1a9eb98f576144678f813ea3b3d3bf9274"/>    <section>
+    <title>~DField()</title>
+<indexterm><primary>~DField</primary><secondary>Pscf::Pspg::DField&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::DField&lt; Data &gt;</primary><secondary>~DField</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput><link linkend="_classPscf_1_1Pspg_1_1DField">Pscf::Pspg::DField</link>&lt; Data &gt;::~<link linkend="_classPscf_1_1Pspg_1_1DField">DField</link><computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Destructor. </para>
+</para>
+
+<para>Deletes underlying C array, if allocated previously. </para>
+<para>
+Definition at line 34 of file DField.tpp.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classPscf_1_1Pspg_1_1DField_1a475908bd3dba4c04dae2765f052c8317"/>    <section>
+    <title>allocate()</title>
+<indexterm><primary>allocate</primary><secondary>Pscf::Pspg::DField&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::DField&lt; Data &gt;</primary><secondary>allocate</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classPscf_1_1Pspg_1_1DField">Pscf::Pspg::DField</link>&lt; Data &gt;::allocate (int capacity)</computeroutput></para><para>
+
+<para>Allocate the underlying C array. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Exceptions                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>Exception</entry>
+                                <entry>
+<para>if the <link linkend="_classPscf_1_1Field">Field</link> is already allocated.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>capacity</entry>
+                                <entry>
+<para>number of elements to allocate. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 50 of file DField.tpp.</para>
+<para>
+Referenced by Pscf::Pspg::RDFieldDft&lt; D &gt;::allocate(), and Pscf::Pspg::RDField&lt; D &gt;::allocate().</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1DField_1a8b0201ff34469e72a846425c2fc2fcea"/>    <section>
+    <title>deallocate()</title>
+<indexterm><primary>deallocate</primary><secondary>Pscf::Pspg::DField&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::DField&lt; Data &gt;</primary><secondary>deallocate</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classPscf_1_1Pspg_1_1DField">Pscf::Pspg::DField</link>&lt; Data &gt;::deallocate</computeroutput></para><para>
+
+<para>Dellocate the underlying C array. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Exceptions                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>Exception</entry>
+                                <entry>
+<para>if the <link linkend="_classPscf_1_1Field">Field</link> is not allocated. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 68 of file DField.tpp.</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1DField_1ad5f43a7acca82072c2c129b1e66bc60e"/>    <section>
+    <title>isAllocated()</title>
+<indexterm><primary>isAllocated</primary><secondary>Pscf::Pspg::DField&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::DField&lt; Data &gt;</primary><secondary>isAllocated</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>bool <link linkend="_classPscf_1_1Pspg_1_1DField">Pscf::Pspg::DField</link>&lt; Data &gt;::isAllocated<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return true if the <link linkend="_classPscf_1_1Field">Field</link> has been allocated, false otherwise. </para>
+</para>
+<para>
+Definition at line 133 of file DField.h.</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1DField_1ad2f3b27aaa1fd4036e98682e7a9bf9ee"/>    <section>
+    <title>capacity()</title>
+<indexterm><primary>capacity</primary><secondary>Pscf::Pspg::DField&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::DField&lt; Data &gt;</primary><secondary>capacity</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>int <link linkend="_classPscf_1_1Pspg_1_1DField">Pscf::Pspg::DField</link>&lt; Data &gt;::capacity<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return allocated size. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Number of elements allocated in array. </para>
+</formalpara>
+</para>
+<para>
+Definition at line 112 of file DField.h.</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1DField_1a0fdcc5df3209790f0b5777c927fa996b"/>    <section>
+    <title>cDField()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>cDField</primary><secondary>Pscf::Pspg::DField&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::DField&lt; Data &gt;</primary><secondary>cDField</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>const Data * <link linkend="_classPscf_1_1Pspg_1_1DField">Pscf::Pspg::DField</link>&lt; Data &gt;::cDField<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return pointer to underlying C array. </para>
+</para>
+<para>
+Definition at line 119 of file DField.h.</para>
+<para>
+Referenced by Pscf::Pspg::Continuous::Mixture&lt; D &gt;::compute(), and Pscf::Pspg::Continuous::Block&lt; D &gt;::setupSolver().</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1DField_1a33852417c6feab0546b5d24d875155d6"/>    <section>
+    <title>cDField()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>cDField</primary><secondary>Pscf::Pspg::DField&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::DField&lt; Data &gt;</primary><secondary>cDField</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>const Data* <link linkend="_classPscf_1_1Pspg_1_1DField">Pscf::Pspg::DField</link>&lt; Data &gt;::cDField ( ) const</computeroutput></para><para>
+
+<para>Return pointer to const to underlying C array. </para>
+</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classPscf_1_1Pspg_1_1DField_1a93f604a563809edd9f760ee891495b33"/>    <section>
+    <title>data_</title>
+<indexterm><primary>data_</primary><secondary>Pscf::Pspg::DField&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::DField&lt; Data &gt;</primary><secondary>data_</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>Data* <link linkend="_classPscf_1_1Pspg_1_1DField">Pscf::Pspg::DField</link>&lt; Data &gt;::data_<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Serialize a <link linkend="_classPscf_1_1Field">Field</link> to/from an Archive. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>archive </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>version</entry>
+                                <entry>
+<para>archive version id Pointer to an array of Data elements. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 100 of file DField.h.</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1DField_1a7b3f28ac98c0973710e0d32ac70dc9bf"/>    <section>
+    <title>capacity_</title>
+<indexterm><primary>capacity_</primary><secondary>Pscf::Pspg::DField&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::DField&lt; Data &gt;</primary><secondary>capacity_</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>int <link linkend="_classPscf_1_1Pspg_1_1DField">Pscf::Pspg::DField</link>&lt; Data &gt;::capacity_<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Allocated size of the data_ array. </para>
+</para>
+<para>
+Definition at line 103 of file DField.h.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+DField.hDField.tpp</section>
+</section>

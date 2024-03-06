@@ -1,0 +1,252 @@
+\hypertarget{classPscf_1_1Interaction}{}\doxysubsection{Pscf\+::Interaction Class Reference}
+\label{classPscf_1_1Interaction}\index{Pscf::Interaction@{Pscf::Interaction}}
+
+
+Base class for excess free energy models.  
+
+
+
+
+{\ttfamily \#include $<$Interaction.\+h$>$}
+
+Inheritance diagram for Pscf\+::Interaction\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{classPscf_1_1Interaction}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPscf_1_1Interaction_ab6da42cc852871efa04333d6ebfbfff5}{Interaction}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classPscf_1_1Interaction_ac957ae1e545a2a4e16e6c01490b516ec}{$\sim$\+Interaction}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1Interaction_ab62a4747d748f9465f5844833331d7fa}{set\+N\+Monomer}} (int \mbox{\hyperlink{classPscf_1_1Interaction_acdc4ce924e6998c50d291295d3cda0a1}{n\+Monomer}})
+\begin{DoxyCompactList}\small\item\em Set the number of monomer types. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{classPscf_1_1Interaction_a3ec2bef30f4763bf5b64e4d12fc65acd}{f\+Helmholtz}} (\mbox{\hyperlink{classUtil_1_1Array}{Array}}$<$ double $>$ const \&c) const =0
+\begin{DoxyCompactList}\small\item\em Compute excess Helmholtz free energy per monomer. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPscf_1_1Interaction_aa04ae1ec8eecdcece17b04137c73b9a7}{computeW}} (\mbox{\hyperlink{classUtil_1_1Array}{Array}}$<$ double $>$ const \&c, \mbox{\hyperlink{classUtil_1_1Array}{Array}}$<$ double $>$ \&w) const =0
+\begin{DoxyCompactList}\small\item\em Compute interaction contributions to chemical potentials. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPscf_1_1Interaction_af89cdbdd9a054d5bfe33bbbfcabffa77}{computeC}} (\mbox{\hyperlink{classUtil_1_1Array}{Array}}$<$ double $>$ const \&w, \mbox{\hyperlink{classUtil_1_1Array}{Array}}$<$ double $>$ \&c, double \&xi) const =0
+\begin{DoxyCompactList}\small\item\em Compute concentration and xi from chemical potentials. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPscf_1_1Interaction_ab77996b50808f636b0bdb7b6ed7c8d0f}{compute\+Xi}} (\mbox{\hyperlink{classUtil_1_1Array}{Array}}$<$ double $>$ const \&w, double \&xi) const =0
+\begin{DoxyCompactList}\small\item\em Compute Langrange multiplier xi from chemical potentials. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPscf_1_1Interaction_a979231dcf58ef659e167ddbb397b0514}{compute\+Dw\+Dc}} (\mbox{\hyperlink{classUtil_1_1Array}{Array}}$<$ double $>$ const \&c, \mbox{\hyperlink{classUtil_1_1Matrix}{Matrix}}$<$ double $>$ \&d\+WdC) const =0
+\begin{DoxyCompactList}\small\item\em Compute matrix of derivatives of w fields w/ respect to c fields. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPscf_1_1Interaction_acdc4ce924e6998c50d291295d3cda0a1}{n\+Monomer}} () const
+\begin{DoxyCompactList}\small\item\em Get number of monomer types. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+
+
+\doxysubsubsection{Detailed Description}
+Base class for excess free energy models. 
+
+Definition at line 25 of file Interaction.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPscf_1_1Interaction_ab6da42cc852871efa04333d6ebfbfff5}\label{classPscf_1_1Interaction_ab6da42cc852871efa04333d6ebfbfff5}} 
+\index{Pscf::Interaction@{Pscf::Interaction}!Interaction@{Interaction}}
+\index{Interaction@{Interaction}!Pscf::Interaction@{Pscf::Interaction}}
+\doxyparagraph{\texorpdfstring{Interaction()}{Interaction()}}
+{\footnotesize\ttfamily Pscf\+::\+Interaction\+::\+Interaction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+
+Definition at line 14 of file Interaction.\+cpp.
+
+
+
+References Util\+::\+Param\+Composite\+::set\+Class\+Name().
+
+\mbox{\Hypertarget{classPscf_1_1Interaction_ac957ae1e545a2a4e16e6c01490b516ec}\label{classPscf_1_1Interaction_ac957ae1e545a2a4e16e6c01490b516ec}} 
+\index{Pscf::Interaction@{Pscf::Interaction}!````~Interaction@{$\sim$Interaction}}
+\index{````~Interaction@{$\sim$Interaction}!Pscf::Interaction@{Pscf::Interaction}}
+\doxyparagraph{\texorpdfstring{$\sim$Interaction()}{~Interaction()}}
+{\footnotesize\ttfamily Pscf\+::\+Interaction\+::$\sim$\+Interaction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+Definition at line 18 of file Interaction.\+cpp.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPscf_1_1Interaction_ab62a4747d748f9465f5844833331d7fa}\label{classPscf_1_1Interaction_ab62a4747d748f9465f5844833331d7fa}} 
+\index{Pscf::Interaction@{Pscf::Interaction}!setNMonomer@{setNMonomer}}
+\index{setNMonomer@{setNMonomer}!Pscf::Interaction@{Pscf::Interaction}}
+\doxyparagraph{\texorpdfstring{setNMonomer()}{setNMonomer()}}
+{\footnotesize\ttfamily void Pscf\+::\+Interaction\+::set\+N\+Monomer (\begin{DoxyParamCaption}\item[{int}]{n\+Monomer }\end{DoxyParamCaption})}
+
+
+
+Set the number of monomer types. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n\+Monomer} & number of monomer types. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 21 of file Interaction.\+cpp.
+
+
+
+References n\+Monomer().
+
+\mbox{\Hypertarget{classPscf_1_1Interaction_a3ec2bef30f4763bf5b64e4d12fc65acd}\label{classPscf_1_1Interaction_a3ec2bef30f4763bf5b64e4d12fc65acd}} 
+\index{Pscf::Interaction@{Pscf::Interaction}!fHelmholtz@{fHelmholtz}}
+\index{fHelmholtz@{fHelmholtz}!Pscf::Interaction@{Pscf::Interaction}}
+\doxyparagraph{\texorpdfstring{fHelmholtz()}{fHelmholtz()}}
+{\footnotesize\ttfamily virtual double Pscf\+::\+Interaction\+::f\+Helmholtz (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1Array}{Array}}$<$ double $>$ const \&}]{c }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Compute excess Helmholtz free energy per monomer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & array of concentrations, for each type (input) \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classPscf_1_1ChiInteraction_a9ebc634b8b5b8834c61d29ac75896bfa}{Pscf\+::\+Chi\+Interaction}}.
+
+
+
+Referenced by Pscf\+::\+Homogeneous\+::\+Mixture\+::compute\+Free\+Energy().
+
+\mbox{\Hypertarget{classPscf_1_1Interaction_aa04ae1ec8eecdcece17b04137c73b9a7}\label{classPscf_1_1Interaction_aa04ae1ec8eecdcece17b04137c73b9a7}} 
+\index{Pscf::Interaction@{Pscf::Interaction}!computeW@{computeW}}
+\index{computeW@{computeW}!Pscf::Interaction@{Pscf::Interaction}}
+\doxyparagraph{\texorpdfstring{computeW()}{computeW()}}
+{\footnotesize\ttfamily virtual void Pscf\+::\+Interaction\+::computeW (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1Array}{Array}}$<$ double $>$ const \&}]{c,  }\item[{\mbox{\hyperlink{classUtil_1_1Array}{Array}}$<$ double $>$ \&}]{w }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Compute interaction contributions to chemical potentials. 
+
+The resulting chemical potential fields are those obtained with a vanishing Lagrange multiplier / pressure field, xi = 0.
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & array of concentrations, for each type (input) \\
+\hline
+{\em w} & array of chemical potentials, for each type (output) \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classPscf_1_1ChiInteraction_a1609f12544f165c29f3542cf6ec544ac}{Pscf\+::\+Chi\+Interaction}}.
+
+
+
+Referenced by Pscf\+::\+Homogeneous\+::\+Mixture\+::compute\+Mu().
+
+\mbox{\Hypertarget{classPscf_1_1Interaction_af89cdbdd9a054d5bfe33bbbfcabffa77}\label{classPscf_1_1Interaction_af89cdbdd9a054d5bfe33bbbfcabffa77}} 
+\index{Pscf::Interaction@{Pscf::Interaction}!computeC@{computeC}}
+\index{computeC@{computeC}!Pscf::Interaction@{Pscf::Interaction}}
+\doxyparagraph{\texorpdfstring{computeC()}{computeC()}}
+{\footnotesize\ttfamily virtual void Pscf\+::\+Interaction\+::computeC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1Array}{Array}}$<$ double $>$ const \&}]{w,  }\item[{\mbox{\hyperlink{classUtil_1_1Array}{Array}}$<$ double $>$ \&}]{c,  }\item[{double \&}]{xi }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Compute concentration and xi from chemical potentials. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & array of chemical potentials, for each type (input) \\
+\hline
+{\em c} & array of concentrations, for each type (output) \\
+\hline
+{\em xi} & Lagrange multiplier pressure (output) \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classPscf_1_1ChiInteraction_a8c7f57c8ca96a643fe1914d994df5ccc}{Pscf\+::\+Chi\+Interaction}}.
+
+\mbox{\Hypertarget{classPscf_1_1Interaction_ab77996b50808f636b0bdb7b6ed7c8d0f}\label{classPscf_1_1Interaction_ab77996b50808f636b0bdb7b6ed7c8d0f}} 
+\index{Pscf::Interaction@{Pscf::Interaction}!computeXi@{computeXi}}
+\index{computeXi@{computeXi}!Pscf::Interaction@{Pscf::Interaction}}
+\doxyparagraph{\texorpdfstring{computeXi()}{computeXi()}}
+{\footnotesize\ttfamily virtual void Pscf\+::\+Interaction\+::compute\+Xi (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1Array}{Array}}$<$ double $>$ const \&}]{w,  }\item[{double \&}]{xi }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Compute Langrange multiplier xi from chemical potentials. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & array of chemical potentials, for each type (input) \\
+\hline
+{\em xi} & Lagrange multiplier pressure (output) \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classPscf_1_1ChiInteraction_a5a4fbcd72ead10de48b0eddf59bd2eef}{Pscf\+::\+Chi\+Interaction}}.
+
+\mbox{\Hypertarget{classPscf_1_1Interaction_a979231dcf58ef659e167ddbb397b0514}\label{classPscf_1_1Interaction_a979231dcf58ef659e167ddbb397b0514}} 
+\index{Pscf::Interaction@{Pscf::Interaction}!computeDwDc@{computeDwDc}}
+\index{computeDwDc@{computeDwDc}!Pscf::Interaction@{Pscf::Interaction}}
+\doxyparagraph{\texorpdfstring{computeDwDc()}{computeDwDc()}}
+{\footnotesize\ttfamily virtual void Pscf\+::\+Interaction\+::compute\+Dw\+Dc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1Array}{Array}}$<$ double $>$ const \&}]{c,  }\item[{\mbox{\hyperlink{classUtil_1_1Matrix}{Matrix}}$<$ double $>$ \&}]{d\+WdC }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Compute matrix of derivatives of w fields w/ respect to c fields. 
+
+Upon return, the elements of the matrix d\+WdC are given by derivatives elements d\+Wd\+C(i,j) = d\+W(i)/dC(j), which are also second derivatives of f\+Helmholtz with respect to concentrations.
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & array of concentrations, for each type (input) \\
+\hline
+{\em d\+WdC} & square symmetric matrix of derivatives (output) \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classPscf_1_1ChiInteraction_a62ebea2ebb240a0ec101555b37eba3bc}{Pscf\+::\+Chi\+Interaction}}.
+
+
+
+Referenced by Pscf\+::\+Homogeneous\+::\+Mixture\+::compute\+Phi().
+
+\mbox{\Hypertarget{classPscf_1_1Interaction_acdc4ce924e6998c50d291295d3cda0a1}\label{classPscf_1_1Interaction_acdc4ce924e6998c50d291295d3cda0a1}} 
+\index{Pscf::Interaction@{Pscf::Interaction}!nMonomer@{nMonomer}}
+\index{nMonomer@{nMonomer}!Pscf::Interaction@{Pscf::Interaction}}
+\doxyparagraph{\texorpdfstring{nMonomer()}{nMonomer()}}
+{\footnotesize\ttfamily int Pscf\+::\+Interaction\+::n\+Monomer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get number of monomer types. 
+
+
+
+Definition at line 118 of file Interaction.\+h.
+
+
+
+Referenced by Pscf\+::\+Chi\+Interaction\+::compute\+C(), Pscf\+::\+Chi\+Interaction\+::compute\+Dw\+Dc(), Pscf\+::\+Homogeneous\+::\+Mixture\+::compute\+Mu(), Pscf\+::\+Homogeneous\+::\+Mixture\+::compute\+Phi(), Pscf\+::\+Chi\+Interaction\+::compute\+W(), Pscf\+::\+Chi\+Interaction\+::compute\+Xi(), Pscf\+::\+Chi\+Interaction\+::f\+Helmholtz(), Pscf\+::\+Chi\+Interaction\+::read\+Parameters(), and set\+N\+Monomer().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Interaction.\+h\item 
+Interaction.\+cpp\end{DoxyCompactItemize}

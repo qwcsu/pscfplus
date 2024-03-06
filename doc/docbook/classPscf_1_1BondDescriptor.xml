@@ -1,0 +1,404 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classPscf_1_1BondDescriptor">
+<title>Pscf::BondDescriptor Class Reference</title>
+<indexterm><primary>Pscf::BondDescriptor</primary></indexterm>
+<para>
+
+<para>A linear bond (including block-bond and joint-bond) within a block copolymer. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;BondDescriptor.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Pscf::BondDescriptor:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classPscf_1_1BondDescriptor.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classPscf_1_1BondDescriptor_1a64011515311da34469592637cde0c35d">BondDescriptor</link> ()</para>
+
+<para>Constructor. </para>
+</listitem>
+            <listitem><para>template&lt;class Archive &gt; </para><para>void <link linkend="_classPscf_1_1BondDescriptor_1af27436805b4e5255c9a581934518c6dc">serialize</link> (Archive &amp;ar, unsigned int versionId)</para>
+
+<para>Serialize to/from archive. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect><title>Setters</title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_classPscf_1_1BondDescriptor_1a12f138365146eaa870b8539bf23f30ea">setId</link> (int <link linkend="_classPscf_1_1BondDescriptor_1a14f9ff7be509ac88dba624124e8fb47c">id</link>)</para>
+
+<para>Set the id for this block. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classPscf_1_1BondDescriptor_1a1d6254862d044c54cfc7c46f7e49f6b7">setVertexIds</link> (int vertexAId, int vertexBId)</para>
+
+<para>Set indices of associated vertices. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classPscf_1_1BondDescriptor_1ae5da87f7a83646b2466bc31bbbd362bd">setLength</link> (int N)</para>
+
+<para>Set the length of this bond. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Accessors (getters)    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_classPscf_1_1BondDescriptor_1a14f9ff7be509ac88dba624124e8fb47c">id</link> () const</para>
+
+<para>Get the id of this bond. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classPscf_1_1BondDescriptor_1aaa6dcf7b293a5b412cb5b433d0a0a80f">monomerId</link> (int i) const</para>
+
+<para>Get the monomer type id at vertex i. </para>
+</listitem>
+            <listitem><para>const <link linkend="_classUtil_1_1Pair">Pair</link>&lt; int &gt; &amp; <link linkend="_classPscf_1_1BondDescriptor_1a0141cb73857f02a51b546a87879214d4">vertexIds</link> () const</para>
+
+<para>Get the pair of associated vertex ids. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classPscf_1_1BondDescriptor_1a71f5d648b30bfdd20a107c4a345fcc02">vertexId</link> (int i) const</para>
+
+<para>Get id of an associated vertex. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classPscf_1_1BondDescriptor_1a872a90ee3d43766af8c5b2a3a85af60b">length</link> () const</para>
+
+<para>Get the number of segments in this bond. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_classPscf_1_1BondDescriptor_1a65d86dc623dbba3a0c13955f4d067246">bondtype</link> () const</para>
+
+<para>Get the type of this bond. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_classPscf_1_1BondDescriptor_1a779d29595326e1fbd965dc43f9561a67"/>bool <emphasis role="strong">hasJointSegment</emphasis> () const</para>
+</listitem>
+            <listitem><para>std::istream &amp; <link linkend="_classPscf_1_1BondDescriptor_1a810711b0758e103c05bbb068abb6ebcc">operator&gt;&gt;</link> (std::istream &amp;in, <link linkend="_classPscf_1_1BondDescriptor">BondDescriptor</link> &amp;bond)</para>
+
+<para>istream extractor for a <link linkend="_classPscf_1_1BlockDescriptor">BlockDescriptor</link>. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_classPscf_1_1BondDescriptor_1ab49b32bceaeadbd7c28c72bdb5b3690f"/>std::ostream &amp; <emphasis role="strong">operator&lt;&lt;</emphasis> (std::ostream &amp;out, const <link linkend="_classPscf_1_1BondDescriptor">BondDescriptor</link> &amp;bond)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>A linear bond (including block-bond and joint-bond) within a block copolymer. </para>
+
+
+
+<para>(discrete chain) </para>
+<para>
+Definition at line 19 of file BondDescriptor.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classPscf_1_1BondDescriptor_1a64011515311da34469592637cde0c35d"/>    <section>
+    <title>BondDescriptor()</title>
+<indexterm><primary>BondDescriptor</primary><secondary>Pscf::BondDescriptor</secondary></indexterm>
+<indexterm><primary>Pscf::BondDescriptor</primary><secondary>BondDescriptor</secondary></indexterm>
+<para><computeroutput>Pscf::BondDescriptor::BondDescriptor ( )</computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+<para>
+Definition at line 11 of file BondDescriptor.cpp.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classPscf_1_1BondDescriptor_1af27436805b4e5255c9a581934518c6dc"/>    <section>
+    <title>serialize()</title>
+<indexterm><primary>serialize</primary><secondary>Pscf::BondDescriptor</secondary></indexterm>
+<indexterm><primary>Pscf::BondDescriptor</primary><secondary>serialize</secondary></indexterm>
+<computeroutput>template&lt;class Archive &gt; </computeroutput><para><computeroutput>void Pscf::BondDescriptor::serialize (Archive &amp; ar, unsigned int versionId)</computeroutput></para><para>
+
+<para>Serialize to/from archive. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>input or output Archive </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>versionId</entry>
+                                <entry>
+<para>archive format version index </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 204 of file BondDescriptor.h.</para>
+    </section><anchor xml:id="_classPscf_1_1BondDescriptor_1a12f138365146eaa870b8539bf23f30ea"/>    <section>
+    <title>setId()</title>
+<indexterm><primary>setId</primary><secondary>Pscf::BondDescriptor</secondary></indexterm>
+<indexterm><primary>Pscf::BondDescriptor</primary><secondary>setId</secondary></indexterm>
+<para><computeroutput>void Pscf::BondDescriptor::setId (int id)</computeroutput></para><para>
+
+<para>Set the id for this block. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>id</entry>
+                                <entry>
+<para>integer index for this bond </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 20 of file BondDescriptor.cpp.</para>
+<para>
+References id().</para>
+    </section><anchor xml:id="_classPscf_1_1BondDescriptor_1a1d6254862d044c54cfc7c46f7e49f6b7"/>    <section>
+    <title>setVertexIds()</title>
+<indexterm><primary>setVertexIds</primary><secondary>Pscf::BondDescriptor</secondary></indexterm>
+<indexterm><primary>Pscf::BondDescriptor</primary><secondary>setVertexIds</secondary></indexterm>
+<para><computeroutput>void Pscf::BondDescriptor::setVertexIds (int vertexAId, int vertexBId)</computeroutput></para><para>
+
+<para>Set indices of associated vertices. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>vertexAId</entry>
+                                <entry>
+<para>integer id of vertex A </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>vertexBId</entry>
+                                <entry>
+<para>integer id of vertex B </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 26 of file BondDescriptor.cpp.</para>
+    </section><anchor xml:id="_classPscf_1_1BondDescriptor_1ae5da87f7a83646b2466bc31bbbd362bd"/>    <section>
+    <title>setLength()</title>
+<indexterm><primary>setLength</primary><secondary>Pscf::BondDescriptor</secondary></indexterm>
+<indexterm><primary>Pscf::BondDescriptor</primary><secondary>setLength</secondary></indexterm>
+<para><computeroutput>void Pscf::BondDescriptor::setLength (int N)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Set the length of this bond. </para>
+</para>
+
+<para>The &quot;length&quot; is the number of segments on this bond.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>length</entry>
+                                <entry>
+<para>block length (number of monomers). </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 35 of file BondDescriptor.cpp.</para>
+    </section><anchor xml:id="_classPscf_1_1BondDescriptor_1a14f9ff7be509ac88dba624124e8fb47c"/>    <section>
+    <title>id()</title>
+<indexterm><primary>id</primary><secondary>Pscf::BondDescriptor</secondary></indexterm>
+<indexterm><primary>Pscf::BondDescriptor</primary><secondary>id</secondary></indexterm>
+<para><computeroutput>int Pscf::BondDescriptor::id ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get the id of this bond. </para>
+</para>
+<para>
+Definition at line 156 of file BondDescriptor.h.</para>
+<para>
+Referenced by Pscf::Vertex::addBond(), and setId().</para>
+    </section><anchor xml:id="_classPscf_1_1BondDescriptor_1aaa6dcf7b293a5b412cb5b433d0a0a80f"/>    <section>
+    <title>monomerId()</title>
+<indexterm><primary>monomerId</primary><secondary>Pscf::BondDescriptor</secondary></indexterm>
+<indexterm><primary>Pscf::BondDescriptor</primary><secondary>monomerId</secondary></indexterm>
+<para><computeroutput>int Pscf::BondDescriptor::monomerId (int i) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get the monomer type id at vertex i. </para>
+</para>
+<para>
+Definition at line 163 of file BondDescriptor.h.</para>
+    </section><anchor xml:id="_classPscf_1_1BondDescriptor_1a0141cb73857f02a51b546a87879214d4"/>    <section>
+    <title>vertexIds()</title>
+<indexterm><primary>vertexIds</primary><secondary>Pscf::BondDescriptor</secondary></indexterm>
+<indexterm><primary>Pscf::BondDescriptor</primary><secondary>vertexIds</secondary></indexterm>
+<para><computeroutput>const <link linkend="_classUtil_1_1Pair">Pair</link>&lt; int &gt; &amp; Pscf::BondDescriptor::vertexIds ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get the pair of associated vertex ids. </para>
+</para>
+<para>
+Definition at line 171 of file BondDescriptor.h.</para>
+    </section><anchor xml:id="_classPscf_1_1BondDescriptor_1a71f5d648b30bfdd20a107c4a345fcc02"/>    <section>
+    <title>vertexId()</title>
+<indexterm><primary>vertexId</primary><secondary>Pscf::BondDescriptor</secondary></indexterm>
+<indexterm><primary>Pscf::BondDescriptor</primary><secondary>vertexId</secondary></indexterm>
+<para><computeroutput>int Pscf::BondDescriptor::vertexId (int i) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get id of an associated vertex. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>i</entry>
+                                <entry>
+<para>index of vertex (0 or 1) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 178 of file BondDescriptor.h.</para>
+<para>
+Referenced by Pscf::Vertex::addBond().</para>
+    </section><anchor xml:id="_classPscf_1_1BondDescriptor_1a872a90ee3d43766af8c5b2a3a85af60b"/>    <section>
+    <title>length()</title>
+<indexterm><primary>length</primary><secondary>Pscf::BondDescriptor</secondary></indexterm>
+<indexterm><primary>Pscf::BondDescriptor</primary><secondary>length</secondary></indexterm>
+<para><computeroutput>int Pscf::BondDescriptor::length ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get the number of segments in this bond. </para>
+</para>
+
+<para>For a block bond, the return value should be a positive integer number. </para>
+<para>
+Definition at line 185 of file BondDescriptor.h.</para>
+    </section><anchor xml:id="_classPscf_1_1BondDescriptor_1a65d86dc623dbba3a0c13955f4d067246"/>    <section>
+    <title>bondtype()</title>
+<indexterm><primary>bondtype</primary><secondary>Pscf::BondDescriptor</secondary></indexterm>
+<indexterm><primary>Pscf::BondDescriptor</primary><secondary>bondtype</secondary></indexterm>
+<para><computeroutput>bool Pscf::BondDescriptor::bondtype ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get the type of this bond. </para>
+</para>
+
+<para>true for block-bond; false for joint-bond </para>
+<para>
+Definition at line 193 of file BondDescriptor.h.</para>
+</section>
+</section>
+<section>
+<title>Friends And Related Function Documentation</title>
+<anchor xml:id="_classPscf_1_1BondDescriptor_1a810711b0758e103c05bbb068abb6ebcc"/>    <section>
+    <title>operator&gt;&gt;</title>
+<indexterm><primary>operator&gt;&gt;</primary><secondary>Pscf::BondDescriptor</secondary></indexterm>
+<indexterm><primary>Pscf::BondDescriptor</primary><secondary>operator&gt;&gt;</secondary></indexterm>
+<para><computeroutput>std::istream&amp; operator&gt;&gt; (std::istream &amp; in, <link linkend="_classPscf_1_1BondDescriptor">BondDescriptor</link> &amp; bond)<computeroutput>[friend]</computeroutput></computeroutput></para><para>
+
+<para>istream extractor for a <link linkend="_classPscf_1_1BlockDescriptor">BlockDescriptor</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>bond</entry>
+                                <entry>
+<para><link linkend="_classPscf_1_1BondDescriptor">BondDescriptor</link> to be read from stream </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified input stream </para>
+</formalpara>
+</para>
+<para>
+Definition at line 41 of file BondDescriptor.cpp.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+BondDescriptor.hBondDescriptor.cpp</section>
+</section>

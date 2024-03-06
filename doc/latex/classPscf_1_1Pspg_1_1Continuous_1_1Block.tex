@@ -1,0 +1,591 @@
+\hypertarget{classPscf_1_1Pspg_1_1Continuous_1_1Block}{}\doxysubsection{Pscf\+::Pspg\+::Continuous\+::Block$<$ D $>$ Class Template Reference}
+\label{classPscf_1_1Pspg_1_1Continuous_1_1Block}\index{Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}}
+
+
+\mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block}{Block}} within a branched polymer.  
+
+
+
+
+{\ttfamily \#include $<$Block.\+h$>$}
+
+Inheritance diagram for Pscf\+::Pspg\+::Continuous\+::Block$<$ D $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classPscf_1_1Pspg_1_1Continuous_1_1Block}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Propagator}{Pscf\+::\+Pspg\+::\+Continuous\+::\+Propagator}}$<$ D $>$\+::\mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block_a92f623fc5e663aa2452727ede198b463}{Field}} \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block_a92f623fc5e663aa2452727ede198b463}{Field}}
+\begin{DoxyCompactList}\small\item\em Generic field (base class) \end{DoxyCompactList}\item 
+typedef \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Propagator}{Pscf\+::\+Pspg\+::\+Continuous\+::\+Propagator}}$<$ D $>$\+::\mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block_a592dc978fb65bdbea2d3f975a7f9cbb3}{W\+Field}} \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block_a592dc978fb65bdbea2d3f975a7f9cbb3}{W\+Field}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classPscf_1_1Monomer}{Monomer}} chemical potential field. \end{DoxyCompactList}\item 
+typedef \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Propagator}{Pscf\+::\+Pspg\+::\+Continuous\+::\+Propagator}}$<$ D $>$\+::\mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block_ae33b6c239ebb8cdce5dacc3567c3e4d1}{Q\+Field}} \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block_ae33b6c239ebb8cdce5dacc3567c3e4d1}{Q\+Field}}
+\begin{DoxyCompactList}\small\item\em Constrained partition function q(r,s) for fixed s. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block_a5907a3ccd3a06daba93dd36532ea9360}{Block}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block_a1bd806151a7aa9d8f27c7fd3394e0562}{$\sim$\+Block}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block_af48c90573d96160cd1c8c0c778bf1f3e}{set\+Discretization}} (double \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block_a5153e1dcbdeab426d9747b029218844d}{ds}}, const \mbox{\hyperlink{classPscf_1_1Mesh}{Mesh}}$<$ D $>$ \&\mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block_aaa1acc7d8d890ffc06082c00982e4cf7}{mesh}})
+\begin{DoxyCompactList}\small\item\em Initialize discretization and allocate required memory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block_aada75114932c8fd0b58cf7a5ca5063a7}{setup\+Unit\+Cell}} (const \mbox{\hyperlink{classPscf_1_1UnitCell}{Unit\+Cell}}$<$ D $>$ \&unit\+Cell, const \mbox{\hyperlink{classPscf_1_1Pspg_1_1WaveList}{Wave\+List}}$<$ D $>$ \&wavelist)
+\begin{DoxyCompactList}\small\item\em Setup parameters that depend on the unit cell. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block_acbe2b9e40ebc7a766f85adf9215dca8f}{setup\+Solver}} (\mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block_a592dc978fb65bdbea2d3f975a7f9cbb3}{W\+Field}} const \&w)
+\begin{DoxyCompactList}\small\item\em Set solver for this block. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block_a3e6440e1c223eb2d92efeb26268e92df}{setup\+F\+FT}} ()
+\begin{DoxyCompactList}\small\item\em Initialize \mbox{\hyperlink{classPscf_1_1Pspg_1_1FFT}{F\+FT}} and batch \mbox{\hyperlink{classPscf_1_1Pspg_1_1FFT}{F\+FT}} classes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block_ae700b2422a5de629aca4f4e91c0e5fb4}{step}} (const cuda\+Real $\ast$q, cuda\+Real $\ast$q\+New)
+\begin{DoxyCompactList}\small\item\em Compute step of integration loop, from i to i+1. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block_a563cc6e0a07baa7d04fb04f77bc9a091}{compute\+Stress}} (double prefactor)
+\begin{DoxyCompactList}\small\item\em Compute derivatives of free energy with respect to cell parameters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block_af2b7511e4c242a0f386cbcf112f9de67}{compute\+Int}} (cuda\+Real $\ast$q, cuda\+Real $\ast$qs, int ic)
+\begin{DoxyCompactList}\small\item\em Compute the integral using R\+I-\/K while the backword propagtors are being computed from \char`\"{}slices\char`\"{}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block_ae32b0a0d0229112beea0b1feb2dd561f}{stress}} (int n)
+\begin{DoxyCompactList}\small\item\em Get derivative of free energy with respect to a unit cell parameter. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classPscf_1_1Mesh}{Mesh}}$<$ D $>$ \& \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block_aaa1acc7d8d890ffc06082c00982e4cf7}{mesh}} () const
+\begin{DoxyCompactList}\small\item\em Return associated spatial \mbox{\hyperlink{classPscf_1_1Mesh}{Mesh}} by reference. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block_a5153e1dcbdeab426d9747b029218844d}{ds}} () const
+\begin{DoxyCompactList}\small\item\em Contour length step size. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block_aa7eb0d81f097cd0c154ada32f41da84a}{ns}} () const
+\begin{DoxyCompactList}\small\item\em Number of contour length steps. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPscf_1_1Pspg_1_1FFT}{F\+FT}}$<$ D $>$ \& \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block_ae70390994f52d6c366114cfa334e0357}{fft}} ()
+\begin{DoxyCompactList}\small\item\em Return the fast Fourier transform object by reference. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block_ae6d146ea95e29c6dd75810a1173e25d7}{id}} () const
+\begin{DoxyCompactList}\small\item\em Get the id of this block. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block_a23abf25dda80acdeff037dae2265bebf}{length}} () const
+\begin{DoxyCompactList}\small\item\em Get the length (number of monomers) in this block. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block_aa019c69765cd0a85b0c7ff1f6357ebb6}{monomer\+Id}} () const
+\begin{DoxyCompactList}\small\item\em Get the monomer type id. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block_a425c0ead6ab355b97a465b71fbf9251c}{set\+Id}} (int \mbox{\hyperlink{classPscf_1_1BlockDescriptor_ae6d146ea95e29c6dd75810a1173e25d7}{id}})
+\begin{DoxyCompactList}\small\item\em Set the id for this block. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block_ac8a6edca57fc63695babcea1c683ff8a}{set\+Length}} (double \mbox{\hyperlink{classPscf_1_1BlockDescriptor_a23abf25dda80acdeff037dae2265bebf}{length}})
+\begin{DoxyCompactList}\small\item\em Set the length of this block. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block_ae9dfbf2184bff9d4538c0ec969013233}{set\+Monomer\+Id}} (int \mbox{\hyperlink{classPscf_1_1BlockDescriptor_aa019c69765cd0a85b0c7ff1f6357ebb6}{monomer\+Id}})
+\begin{DoxyCompactList}\small\item\em Set the monomer id. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block_ade41946abd1ca05ff74d41822d2de716}{set\+Vertex\+Ids}} (int vertex\+A\+Id, int vertex\+B\+Id)
+\begin{DoxyCompactList}\small\item\em Set indices of associated vertices. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block_a2eab787ed2d40088285e59e847a65396}{vertex\+Id}} (int i) const
+\begin{DoxyCompactList}\small\item\em Get id of an associated vertex. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classUtil_1_1Pair}{Pair}}$<$ int $>$ \& \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block_aa20c2133084d74b7757abef3111cf1c4}{vertex\+Ids}} () const
+\begin{DoxyCompactList}\small\item\em Get the pair of associated vertex ids. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$int D$>$\newline
+class Pscf\+::\+Pspg\+::\+Continuous\+::\+Block$<$ D $>$}
+
+\mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block}{Block}} within a branched polymer. 
+
+(\mbox{\hyperlink{namespacePscf_1_1Pspg_1_1Continuous}{Continuous}} Gaussian chain)
+
+Derived from \mbox{\hyperlink{classPscf_1_1BlockTmpl}{Block\+Tmpl}}$<$ Propagator$<$\+D$>$ $>$. A \mbox{\hyperlink{classPscf_1_1BlockTmpl}{Block\+Tmpl}}$<$ Propagator$<$\+D$>$ $>$ has two Propagator$<$\+D$>$ members and is derived from \mbox{\hyperlink{classPscf_1_1BlockDescriptor}{Block\+Descriptor}}. 
+
+Definition at line 48 of file Block.\+h.
+
+
+
+\doxysubsubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1Continuous_1_1Block_a92f623fc5e663aa2452727ede198b463}\label{classPscf_1_1Pspg_1_1Continuous_1_1Block_a92f623fc5e663aa2452727ede198b463}} 
+\index{Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}!Field@{Field}}
+\index{Field@{Field}!Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{Field}{Field}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+typedef \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Propagator}{Pscf\+::\+Pspg\+::\+Continuous\+::\+Propagator}}$<$D$>$\+::\mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block_a92f623fc5e663aa2452727ede198b463}{Field}} \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block}{Pscf\+::\+Pspg\+::\+Continuous\+::\+Block}}$<$ D $>$\+::\mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block_a92f623fc5e663aa2452727ede198b463}{Field}}}
+
+
+
+Generic field (base class) 
+
+
+
+Definition at line 55 of file Block.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1Continuous_1_1Block_a592dc978fb65bdbea2d3f975a7f9cbb3}\label{classPscf_1_1Pspg_1_1Continuous_1_1Block_a592dc978fb65bdbea2d3f975a7f9cbb3}} 
+\index{Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}!WField@{WField}}
+\index{WField@{WField}!Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{WField}{WField}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+typedef \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Propagator}{Pscf\+::\+Pspg\+::\+Continuous\+::\+Propagator}}$<$D$>$\+::\mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block_a592dc978fb65bdbea2d3f975a7f9cbb3}{W\+Field}} \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block}{Pscf\+::\+Pspg\+::\+Continuous\+::\+Block}}$<$ D $>$\+::\mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block_a592dc978fb65bdbea2d3f975a7f9cbb3}{W\+Field}}}
+
+
+
+\mbox{\hyperlink{classPscf_1_1Monomer}{Monomer}} chemical potential field. 
+
+
+
+Definition at line 60 of file Block.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1Continuous_1_1Block_ae33b6c239ebb8cdce5dacc3567c3e4d1}\label{classPscf_1_1Pspg_1_1Continuous_1_1Block_ae33b6c239ebb8cdce5dacc3567c3e4d1}} 
+\index{Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}!QField@{QField}}
+\index{QField@{QField}!Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{QField}{QField}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+typedef \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Propagator}{Pscf\+::\+Pspg\+::\+Continuous\+::\+Propagator}}$<$D$>$\+::\mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block_ae33b6c239ebb8cdce5dacc3567c3e4d1}{Q\+Field}} \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block}{Pscf\+::\+Pspg\+::\+Continuous\+::\+Block}}$<$ D $>$\+::\mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block_ae33b6c239ebb8cdce5dacc3567c3e4d1}{Q\+Field}}}
+
+
+
+Constrained partition function q(r,s) for fixed s. 
+
+
+
+Definition at line 65 of file Block.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1Continuous_1_1Block_a5907a3ccd3a06daba93dd36532ea9360}\label{classPscf_1_1Pspg_1_1Continuous_1_1Block_a5907a3ccd3a06daba93dd36532ea9360}} 
+\index{Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}!Block@{Block}}
+\index{Block@{Block}!Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{Block()}{Block()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block}{Pscf\+::\+Pspg\+::\+Continuous\+::\+Block}}$<$ D $>$\+::\mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block}{Block}}}
+
+
+
+Constructor. 
+
+
+
+Definition at line 328 of file Block.\+tpp.
+
+
+
+References Pscf\+::\+Block\+Tmpl$<$ Propagator$<$ D $>$ $>$\+::propagator().
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1Continuous_1_1Block_a1bd806151a7aa9d8f27c7fd3394e0562}\label{classPscf_1_1Pspg_1_1Continuous_1_1Block_a1bd806151a7aa9d8f27c7fd3394e0562}} 
+\index{Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}!````~Block@{$\sim$Block}}
+\index{````~Block@{$\sim$Block}!Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{$\sim$Block()}{~Block()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block}{Pscf\+::\+Pspg\+::\+Continuous\+::\+Block}}$<$ D $>$\+::$\sim$\mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block}{Block}}}
+
+
+
+Destructor. 
+
+
+
+Definition at line 341 of file Block.\+tpp.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1Continuous_1_1Block_af48c90573d96160cd1c8c0c778bf1f3e}\label{classPscf_1_1Pspg_1_1Continuous_1_1Block_af48c90573d96160cd1c8c0c778bf1f3e}} 
+\index{Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}!setDiscretization@{setDiscretization}}
+\index{setDiscretization@{setDiscretization}!Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{setDiscretization()}{setDiscretization()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+void \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block}{Pscf\+::\+Pspg\+::\+Continuous\+::\+Block}}$<$ D $>$\+::set\+Discretization (\begin{DoxyParamCaption}\item[{double}]{ds,  }\item[{const \mbox{\hyperlink{classPscf_1_1Mesh}{Mesh}}$<$ D $>$ \&}]{mesh }\end{DoxyParamCaption})}
+
+
+
+Initialize discretization and allocate required memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ds} & desired (optimal) value for contour length step \\
+\hline
+{\em mesh} & spatial discretization mesh \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 407 of file Block.\+tpp.
+
+
+
+References Pscf\+::\+Pspg\+::\+Thread\+Grid\+::set\+Threads\+Logical(), Pscf\+::\+Mesh$<$ D $>$\+::size(), and U\+T\+I\+L\+\_\+\+C\+H\+E\+CK.
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1Continuous_1_1Block_aada75114932c8fd0b58cf7a5ca5063a7}\label{classPscf_1_1Pspg_1_1Continuous_1_1Block_aada75114932c8fd0b58cf7a5ca5063a7}} 
+\index{Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}!setupUnitCell@{setupUnitCell}}
+\index{setupUnitCell@{setupUnitCell}!Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{setupUnitCell()}{setupUnitCell()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+void \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block}{Pscf\+::\+Pspg\+::\+Continuous\+::\+Block}}$<$ D $>$\+::setup\+Unit\+Cell (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPscf_1_1UnitCell}{Unit\+Cell}}$<$ D $>$ \&}]{unit\+Cell,  }\item[{const \mbox{\hyperlink{classPscf_1_1Pspg_1_1WaveList}{Wave\+List}}$<$ D $>$ \&}]{wavelist }\end{DoxyParamCaption})}
+
+
+
+Setup parameters that depend on the unit cell. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em unit\+Cell} & unit cell, defining cell dimensions \\
+\hline
+{\em wave\+List} & container for properties of recip wavevectors \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 689 of file Block.\+tpp.
+
+
+
+References Pscf\+::\+Mesh\+Iterator$<$ D $>$\+::at\+End(), Pscf\+::\+Mesh\+Iterator$<$ D $>$\+::begin(), Pscf\+::\+Unit\+Cell\+Base$<$ D $>$\+::dksq(), Pscf\+::\+Unit\+Cell\+Base$<$ D $>$\+::ksq(), Pscf\+::\+Unit\+Cell\+Base$<$ D $>$\+::n\+Parameter(), Pscf\+::\+Mesh\+Iterator$<$ D $>$\+::position(), Pscf\+::\+Mesh\+Iterator$<$ D $>$\+::rank(), and Pscf\+::\+Mesh\+Iterator$<$ D $>$\+::set\+Dimensions().
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1Continuous_1_1Block_acbe2b9e40ebc7a766f85adf9215dca8f}\label{classPscf_1_1Pspg_1_1Continuous_1_1Block_acbe2b9e40ebc7a766f85adf9215dca8f}} 
+\index{Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}!setupSolver@{setupSolver}}
+\index{setupSolver@{setupSolver}!Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{setupSolver()}{setupSolver()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+void \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block}{Pscf\+::\+Pspg\+::\+Continuous\+::\+Block}}$<$ D $>$\+::setup\+Solver (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block_a592dc978fb65bdbea2d3f975a7f9cbb3}{W\+Field}} const \&}]{w }\end{DoxyParamCaption})}
+
+
+
+Set solver for this block. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & chemical potential field for this monomer type \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 858 of file Block.\+tpp.
+
+
+
+References Pscf\+::\+Pspg\+::\+D\+Field$<$ Data $>$\+::c\+D\+Field(), Pscf\+::\+Pspg\+::\+Thread\+Grid\+::set\+Threads\+Logical(), and U\+T\+I\+L\+\_\+\+C\+H\+E\+CK.
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1Continuous_1_1Block_a3e6440e1c223eb2d92efeb26268e92df}\label{classPscf_1_1Pspg_1_1Continuous_1_1Block_a3e6440e1c223eb2d92efeb26268e92df}} 
+\index{Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}!setupFFT@{setupFFT}}
+\index{setupFFT@{setupFFT}!Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{setupFFT()}{setupFFT()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+void \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block}{Pscf\+::\+Pspg\+::\+Continuous\+::\+Block}}$<$ D $>$\+::setup\+F\+FT}
+
+
+
+Initialize \mbox{\hyperlink{classPscf_1_1Pspg_1_1FFT}{F\+FT}} and batch \mbox{\hyperlink{classPscf_1_1Pspg_1_1FFT}{F\+FT}} classes. 
+
+
+
+Definition at line 899 of file Block.\+tpp.
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1Continuous_1_1Block_ae700b2422a5de629aca4f4e91c0e5fb4}\label{classPscf_1_1Pspg_1_1Continuous_1_1Block_ae700b2422a5de629aca4f4e91c0e5fb4}} 
+\index{Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}!step@{step}}
+\index{step@{step}!Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{step()}{step()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+void \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block}{Pscf\+::\+Pspg\+::\+Continuous\+::\+Block}}$<$ D $>$\+::step (\begin{DoxyParamCaption}\item[{const cuda\+Real $\ast$}]{q,  }\item[{cuda\+Real $\ast$}]{q\+New }\end{DoxyParamCaption})}
+
+
+
+Compute step of integration loop, from i to i+1. 
+
+Apply pseudo-\/spectral algorithm
+
+Definition at line 943 of file Block.\+tpp.
+
+
+
+References Pscf\+::\+Pspg\+::\+Thread\+Grid\+::set\+Threads\+Logical(), and U\+T\+I\+L\+\_\+\+C\+H\+E\+CK.
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1Continuous_1_1Block_a563cc6e0a07baa7d04fb04f77bc9a091}\label{classPscf_1_1Pspg_1_1Continuous_1_1Block_a563cc6e0a07baa7d04fb04f77bc9a091}} 
+\index{Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}!computeStress@{computeStress}}
+\index{computeStress@{computeStress}!Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{computeStress()}{computeStress()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+void \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block}{Pscf\+::\+Pspg\+::\+Continuous\+::\+Block}}$<$ D $>$\+::compute\+Stress (\begin{DoxyParamCaption}\item[{double}]{prefactor }\end{DoxyParamCaption})}
+
+
+
+Compute derivatives of free energy with respect to cell parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wave\+List} & container for properties of recip. latt. wavevectors. \\
+\hline
+{\em prefactor} & prefactor = exp(mu\+\_\+)/length(), where mu\+\_\+ and \mbox{\hyperlink{classPscf_1_1BlockDescriptor_a23abf25dda80acdeff037dae2265bebf}{length()}} is the chemical potential and chain length of the corresponding polymer, respectively. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1181 of file Block.\+tpp.
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1Continuous_1_1Block_af2b7511e4c242a0f386cbcf112f9de67}\label{classPscf_1_1Pspg_1_1Continuous_1_1Block_af2b7511e4c242a0f386cbcf112f9de67}} 
+\index{Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}!computeInt@{computeInt}}
+\index{computeInt@{computeInt}!Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{computeInt()}{computeInt()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+void \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block}{Pscf\+::\+Pspg\+::\+Continuous\+::\+Block}}$<$ D $>$\+::compute\+Int (\begin{DoxyParamCaption}\item[{cuda\+Real $\ast$}]{q,  }\item[{cuda\+Real $\ast$}]{qs,  }\item[{int}]{ic }\end{DoxyParamCaption})}
+
+
+
+Compute the integral using R\+I-\/K while the backword propagtors are being computed from \char`\"{}slices\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & Foward propagator. \\
+\hline
+{\em qs} & Backward propagtor. \\
+\hline
+{\em ic} & Coefficient given by R\+I-\/K method. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1201 of file Block.\+tpp.
+
+
+
+References Pscf\+::\+Pspg\+::\+Thread\+Grid\+::set\+Threads\+Logical(), and U\+T\+I\+L\+\_\+\+C\+H\+E\+CK.
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1Continuous_1_1Block_ae32b0a0d0229112beea0b1feb2dd561f}\label{classPscf_1_1Pspg_1_1Continuous_1_1Block_ae32b0a0d0229112beea0b1feb2dd561f}} 
+\index{Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}!stress@{stress}}
+\index{stress@{stress}!Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{stress()}{stress()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+double \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block}{Pscf\+::\+Pspg\+::\+Continuous\+::\+Block}}$<$ D $>$\+::stress (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get derivative of free energy with respect to a unit cell parameter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & unit cell parameter index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 336 of file Block.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1Continuous_1_1Block_aaa1acc7d8d890ffc06082c00982e4cf7}\label{classPscf_1_1Pspg_1_1Continuous_1_1Block_aaa1acc7d8d890ffc06082c00982e4cf7}} 
+\index{Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}!mesh@{mesh}}
+\index{mesh@{mesh}!Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{mesh()}{mesh()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+const \mbox{\hyperlink{classPscf_1_1Mesh}{Mesh}}$<$ D $>$ \& \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block}{Pscf\+::\+Pspg\+::\+Continuous\+::\+Block}}$<$ D $>$\+::mesh\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return associated spatial \mbox{\hyperlink{classPscf_1_1Mesh}{Mesh}} by reference. 
+
+Get \mbox{\hyperlink{classPscf_1_1Mesh}{Mesh}} by reference. 
+
+Definition at line 343 of file Block.\+h.
+
+
+
+References U\+T\+I\+L\+\_\+\+A\+S\+S\+E\+RT.
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1Continuous_1_1Block_a5153e1dcbdeab426d9747b029218844d}\label{classPscf_1_1Pspg_1_1Continuous_1_1Block_a5153e1dcbdeab426d9747b029218844d}} 
+\index{Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}!ds@{ds}}
+\index{ds@{ds}!Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{ds()}{ds()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+double \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block}{Pscf\+::\+Pspg\+::\+Continuous\+::\+Block}}$<$ D $>$\+::ds\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Contour length step size. 
+
+Get number of contour steps. 
+
+Definition at line 329 of file Block.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1Continuous_1_1Block_aa7eb0d81f097cd0c154ada32f41da84a}\label{classPscf_1_1Pspg_1_1Continuous_1_1Block_aa7eb0d81f097cd0c154ada32f41da84a}} 
+\index{Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}!ns@{ns}}
+\index{ns@{ns}!Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{ns()}{ns()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+int \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block}{Pscf\+::\+Pspg\+::\+Continuous\+::\+Block}}$<$ D $>$\+::ns\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Number of contour length steps. 
+
+Get number of contour steps. 
+
+Definition at line 322 of file Block.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1Continuous_1_1Block_ae70390994f52d6c366114cfa334e0357}\label{classPscf_1_1Pspg_1_1Continuous_1_1Block_ae70390994f52d6c366114cfa334e0357}} 
+\index{Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}!fft@{fft}}
+\index{fft@{fft}!Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{fft()}{fft()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classPscf_1_1Pspg_1_1FFT}{F\+FT}}$<$ D $>$ \& \mbox{\hyperlink{classPscf_1_1Pspg_1_1Continuous_1_1Block}{Pscf\+::\+Pspg\+::\+Continuous\+::\+Block}}$<$ D $>$\+::fft\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the fast Fourier transform object by reference. 
+
+
+
+Definition at line 350 of file Block.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1Continuous_1_1Block_ae6d146ea95e29c6dd75810a1173e25d7}\label{classPscf_1_1Pspg_1_1Continuous_1_1Block_ae6d146ea95e29c6dd75810a1173e25d7}} 
+\index{Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}!id@{id}}
+\index{id@{id}!Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+int Pscf\+::\+Block\+Descriptor\+::id\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the id of this block. 
+
+
+
+Definition at line 156 of file Block\+Descriptor.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1Continuous_1_1Block_a23abf25dda80acdeff037dae2265bebf}\label{classPscf_1_1Pspg_1_1Continuous_1_1Block_a23abf25dda80acdeff037dae2265bebf}} 
+\index{Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}!length@{length}}
+\index{length@{length}!Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{length()}{length()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+double Pscf\+::\+Block\+Descriptor\+::length\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the length (number of monomers) in this block. 
+
+
+
+Definition at line 180 of file Block\+Descriptor.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1Continuous_1_1Block_aa019c69765cd0a85b0c7ff1f6357ebb6}\label{classPscf_1_1Pspg_1_1Continuous_1_1Block_aa019c69765cd0a85b0c7ff1f6357ebb6}} 
+\index{Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}!monomerId@{monomerId}}
+\index{monomerId@{monomerId}!Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{monomerId()}{monomerId()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+int Pscf\+::\+Block\+Descriptor\+::monomer\+Id\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the monomer type id. 
+
+
+
+Definition at line 162 of file Block\+Descriptor.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1Continuous_1_1Block_a425c0ead6ab355b97a465b71fbf9251c}\label{classPscf_1_1Pspg_1_1Continuous_1_1Block_a425c0ead6ab355b97a465b71fbf9251c}} 
+\index{Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}!setId@{setId}}
+\index{setId@{setId}!Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{setId()}{setId()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+void Pscf\+::\+Block\+Descriptor\+::set\+Id}
+
+
+
+Set the id for this block. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & integer index for this block \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 26 of file Block\+Descriptor.\+cpp.
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1Continuous_1_1Block_ac8a6edca57fc63695babcea1c683ff8a}\label{classPscf_1_1Pspg_1_1Continuous_1_1Block_ac8a6edca57fc63695babcea1c683ff8a}} 
+\index{Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}!setLength@{setLength}}
+\index{setLength@{setLength}!Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{setLength()}{setLength()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+void Pscf\+::\+Block\+Descriptor\+::set\+Length}
+
+
+
+Set the length of this block. 
+
+The \char`\"{}length\char`\"{} is steric volume / reference volume.
+
+
+\begin{DoxyParams}{Parameters}
+{\em length} & block length (number of monomers). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 47 of file Block\+Descriptor.\+cpp.
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1Continuous_1_1Block_ae9dfbf2184bff9d4538c0ec969013233}\label{classPscf_1_1Pspg_1_1Continuous_1_1Block_ae9dfbf2184bff9d4538c0ec969013233}} 
+\index{Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}!setMonomerId@{setMonomerId}}
+\index{setMonomerId@{setMonomerId}!Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{setMonomerId()}{setMonomerId()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+void Pscf\+::\+Block\+Descriptor\+::set\+Monomer\+Id}
+
+
+
+Set the monomer id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em monomer\+Id} & integer id of monomer type ($>$=0) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 41 of file Block\+Descriptor.\+cpp.
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1Continuous_1_1Block_ade41946abd1ca05ff74d41822d2de716}\label{classPscf_1_1Pspg_1_1Continuous_1_1Block_ade41946abd1ca05ff74d41822d2de716}} 
+\index{Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}!setVertexIds@{setVertexIds}}
+\index{setVertexIds@{setVertexIds}!Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{setVertexIds()}{setVertexIds()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+void Pscf\+::\+Block\+Descriptor\+::set\+Vertex\+Ids}
+
+
+
+Set indices of associated vertices. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+A\+Id} & integer id of vertex A \\
+\hline
+{\em vertex\+B\+Id} & integer id of vertex B \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 32 of file Block\+Descriptor.\+cpp.
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1Continuous_1_1Block_a2eab787ed2d40088285e59e847a65396}\label{classPscf_1_1Pspg_1_1Continuous_1_1Block_a2eab787ed2d40088285e59e847a65396}} 
+\index{Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}!vertexId@{vertexId}}
+\index{vertexId@{vertexId}!Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{vertexId()}{vertexId()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+int Pscf\+::\+Block\+Descriptor\+::vertex\+Id\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get id of an associated vertex. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & index of vertex (0 or 1) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 174 of file Block\+Descriptor.\+h.
+
+\mbox{\Hypertarget{classPscf_1_1Pspg_1_1Continuous_1_1Block_aa20c2133084d74b7757abef3111cf1c4}\label{classPscf_1_1Pspg_1_1Continuous_1_1Block_aa20c2133084d74b7757abef3111cf1c4}} 
+\index{Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}!vertexIds@{vertexIds}}
+\index{vertexIds@{vertexIds}!Pscf::Pspg::Continuous::Block$<$ D $>$@{Pscf::Pspg::Continuous::Block$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{vertexIds()}{vertexIds()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+const \mbox{\hyperlink{classUtil_1_1Pair}{Pair}}$<$ int $>$ \& Pscf\+::\+Block\+Descriptor\+::vertex\+Ids\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the pair of associated vertex ids. 
+
+
+
+Definition at line 168 of file Block\+Descriptor.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Block.\+h\item 
+Block.\+tpp\end{DoxyCompactItemize}

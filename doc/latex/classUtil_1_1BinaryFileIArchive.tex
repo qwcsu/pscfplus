@@ -1,0 +1,267 @@
+\hypertarget{classUtil_1_1BinaryFileIArchive}{}\doxysubsection{Util\+::Binary\+File\+I\+Archive Class Reference}
+\label{classUtil_1_1BinaryFileIArchive}\index{Util::BinaryFileIArchive@{Util::BinaryFileIArchive}}
+
+
+Saving archive for binary istream.  
+
+
+
+
+{\ttfamily \#include $<$Binary\+File\+I\+Archive.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1BinaryFileIArchive_ad5174be566fe2cafb982e269bb1527d5}{Binary\+File\+I\+Archive}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1BinaryFileIArchive_a97f7bdd5924d9b8aa917ffdbf2f2f308}{Binary\+File\+I\+Archive}} (std\+::string filename)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1BinaryFileIArchive_a5efac3bbbbb5e1ec7dd7f799e805da01}{Binary\+File\+I\+Archive}} (std\+::ifstream \&\mbox{\hyperlink{classUtil_1_1BinaryFileIArchive_a3da261733c9d8099c2326c7e43241e63}{file}})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classUtil_1_1BinaryFileIArchive_a4bf663b84ea5eca5c572530e8ff5fd31}{$\sim$\+Binary\+File\+I\+Archive}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+std\+::ifstream \& \mbox{\hyperlink{classUtil_1_1BinaryFileIArchive_a3da261733c9d8099c2326c7e43241e63}{file}} ()
+\begin{DoxyCompactList}\small\item\em Get the underlying ifstream by reference. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{classUtil_1_1BinaryFileIArchive}{Binary\+File\+I\+Archive}} \& \mbox{\hyperlink{classUtil_1_1BinaryFileIArchive_a595588d7b3e7e51eda11be4e5aa7d434}{operator\&}} (T \&data)
+\begin{DoxyCompactList}\small\item\em Read one object. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{classUtil_1_1BinaryFileIArchive}{Binary\+File\+I\+Archive}} \& \mbox{\hyperlink{classUtil_1_1BinaryFileIArchive_a0cadf7863507460503a54b4a0b6cc16e}{operator$>$$>$}} (T \&data)
+\begin{DoxyCompactList}\small\item\em Read one object. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classUtil_1_1BinaryFileIArchive_a31e6f783bdf9a7f8c2a6b5bf62a08773}{unpack}} (T \&data)
+\begin{DoxyCompactList}\small\item\em Unpack a single T object. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classUtil_1_1BinaryFileIArchive_a613c61724f5389ea1ec8250dcd0c8ab7}{unpack}} (T $\ast$array, int n)
+\begin{DoxyCompactList}\small\item\em Unpack a C array. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classUtil_1_1BinaryFileIArchive_a8a4ecf6761f971733a09e6efe477c7b0}{unpack}} (T $\ast$array, int m, int n, int np)
+\begin{DoxyCompactList}\small\item\em Unpack a 2D C array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classUtil_1_1BinaryFileIArchive_a8b1befd1d6bb0bcf0a331dff17e1defa}{is\+\_\+saving}} ()
+\begin{DoxyCompactList}\small\item\em Returns true;. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classUtil_1_1BinaryFileIArchive_a13ee15265390400fad8754bd75c82efe}{is\+\_\+loading}} ()
+\begin{DoxyCompactList}\small\item\em Returns false;. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Saving archive for binary istream. 
+
+Definition at line 30 of file Binary\+File\+I\+Archive.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1BinaryFileIArchive_ad5174be566fe2cafb982e269bb1527d5}\label{classUtil_1_1BinaryFileIArchive_ad5174be566fe2cafb982e269bb1527d5}} 
+\index{Util::BinaryFileIArchive@{Util::BinaryFileIArchive}!BinaryFileIArchive@{BinaryFileIArchive}}
+\index{BinaryFileIArchive@{BinaryFileIArchive}!Util::BinaryFileIArchive@{Util::BinaryFileIArchive}}
+\doxyparagraph{\texorpdfstring{BinaryFileIArchive()}{BinaryFileIArchive()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Util\+::\+Binary\+File\+I\+Archive\+::\+Binary\+File\+I\+Archive (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+
+Definition at line 18 of file Binary\+File\+I\+Archive.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1BinaryFileIArchive_a97f7bdd5924d9b8aa917ffdbf2f2f308}\label{classUtil_1_1BinaryFileIArchive_a97f7bdd5924d9b8aa917ffdbf2f2f308}} 
+\index{Util::BinaryFileIArchive@{Util::BinaryFileIArchive}!BinaryFileIArchive@{BinaryFileIArchive}}
+\index{BinaryFileIArchive@{BinaryFileIArchive}!Util::BinaryFileIArchive@{Util::BinaryFileIArchive}}
+\doxyparagraph{\texorpdfstring{BinaryFileIArchive()}{BinaryFileIArchive()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Util\+::\+Binary\+File\+I\+Archive\+::\+Binary\+File\+I\+Archive (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & name of file to open for reading. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 27 of file Binary\+File\+I\+Archive.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1BinaryFileIArchive_a5efac3bbbbb5e1ec7dd7f799e805da01}\label{classUtil_1_1BinaryFileIArchive_a5efac3bbbbb5e1ec7dd7f799e805da01}} 
+\index{Util::BinaryFileIArchive@{Util::BinaryFileIArchive}!BinaryFileIArchive@{BinaryFileIArchive}}
+\index{BinaryFileIArchive@{BinaryFileIArchive}!Util::BinaryFileIArchive@{Util::BinaryFileIArchive}}
+\doxyparagraph{\texorpdfstring{BinaryFileIArchive()}{BinaryFileIArchive()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Util\+::\+Binary\+File\+I\+Archive\+::\+Binary\+File\+I\+Archive (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{file }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & output file \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 36 of file Binary\+File\+I\+Archive.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1BinaryFileIArchive_a4bf663b84ea5eca5c572530e8ff5fd31}\label{classUtil_1_1BinaryFileIArchive_a4bf663b84ea5eca5c572530e8ff5fd31}} 
+\index{Util::BinaryFileIArchive@{Util::BinaryFileIArchive}!````~BinaryFileIArchive@{$\sim$BinaryFileIArchive}}
+\index{````~BinaryFileIArchive@{$\sim$BinaryFileIArchive}!Util::BinaryFileIArchive@{Util::BinaryFileIArchive}}
+\doxyparagraph{\texorpdfstring{$\sim$BinaryFileIArchive()}{~BinaryFileIArchive()}}
+{\footnotesize\ttfamily Util\+::\+Binary\+File\+I\+Archive\+::$\sim$\+Binary\+File\+I\+Archive (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+Definition at line 45 of file Binary\+File\+I\+Archive.\+cpp.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1BinaryFileIArchive_a8b1befd1d6bb0bcf0a331dff17e1defa}\label{classUtil_1_1BinaryFileIArchive_a8b1befd1d6bb0bcf0a331dff17e1defa}} 
+\index{Util::BinaryFileIArchive@{Util::BinaryFileIArchive}!is\_saving@{is\_saving}}
+\index{is\_saving@{is\_saving}!Util::BinaryFileIArchive@{Util::BinaryFileIArchive}}
+\doxyparagraph{\texorpdfstring{is\_saving()}{is\_saving()}}
+{\footnotesize\ttfamily bool Util\+::\+Binary\+File\+I\+Archive\+::is\+\_\+saving (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns true;. 
+
+
+
+Definition at line 128 of file Binary\+File\+I\+Archive.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1BinaryFileIArchive_a13ee15265390400fad8754bd75c82efe}\label{classUtil_1_1BinaryFileIArchive_a13ee15265390400fad8754bd75c82efe}} 
+\index{Util::BinaryFileIArchive@{Util::BinaryFileIArchive}!is\_loading@{is\_loading}}
+\index{is\_loading@{is\_loading}!Util::BinaryFileIArchive@{Util::BinaryFileIArchive}}
+\doxyparagraph{\texorpdfstring{is\_loading()}{is\_loading()}}
+{\footnotesize\ttfamily bool Util\+::\+Binary\+File\+I\+Archive\+::is\+\_\+loading (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns false;. 
+
+
+
+Definition at line 131 of file Binary\+File\+I\+Archive.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1BinaryFileIArchive_a3da261733c9d8099c2326c7e43241e63}\label{classUtil_1_1BinaryFileIArchive_a3da261733c9d8099c2326c7e43241e63}} 
+\index{Util::BinaryFileIArchive@{Util::BinaryFileIArchive}!file@{file}}
+\index{file@{file}!Util::BinaryFileIArchive@{Util::BinaryFileIArchive}}
+\doxyparagraph{\texorpdfstring{file()}{file()}}
+{\footnotesize\ttfamily std\+::ifstream \& Util\+::\+Binary\+File\+I\+Archive\+::file (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the underlying ifstream by reference. 
+
+
+
+Definition at line 55 of file Binary\+File\+I\+Archive.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1BinaryFileIArchive_a595588d7b3e7e51eda11be4e5aa7d434}\label{classUtil_1_1BinaryFileIArchive_a595588d7b3e7e51eda11be4e5aa7d434}} 
+\index{Util::BinaryFileIArchive@{Util::BinaryFileIArchive}!operator\&@{operator\&}}
+\index{operator\&@{operator\&}!Util::BinaryFileIArchive@{Util::BinaryFileIArchive}}
+\doxyparagraph{\texorpdfstring{operator\&()}{operator\&()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classUtil_1_1BinaryFileIArchive}{Binary\+File\+I\+Archive}} \& Util\+::\+Binary\+File\+I\+Archive\+::operator\& (\begin{DoxyParamCaption}\item[{T \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Read one object. 
+
+
+
+Definition at line 140 of file Binary\+File\+I\+Archive.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1BinaryFileIArchive_a0cadf7863507460503a54b4a0b6cc16e}\label{classUtil_1_1BinaryFileIArchive_a0cadf7863507460503a54b4a0b6cc16e}} 
+\index{Util::BinaryFileIArchive@{Util::BinaryFileIArchive}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Util::BinaryFileIArchive@{Util::BinaryFileIArchive}}
+\doxyparagraph{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classUtil_1_1BinaryFileIArchive}{Binary\+File\+I\+Archive}} \& Util\+::\+Binary\+File\+I\+Archive\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{T \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Read one object. 
+
+
+
+Definition at line 150 of file Binary\+File\+I\+Archive.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1BinaryFileIArchive_a31e6f783bdf9a7f8c2a6b5bf62a08773}\label{classUtil_1_1BinaryFileIArchive_a31e6f783bdf9a7f8c2a6b5bf62a08773}} 
+\index{Util::BinaryFileIArchive@{Util::BinaryFileIArchive}!unpack@{unpack}}
+\index{unpack@{unpack}!Util::BinaryFileIArchive@{Util::BinaryFileIArchive}}
+\doxyparagraph{\texorpdfstring{unpack()}{unpack()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Util\+::\+Binary\+File\+I\+Archive\+::unpack (\begin{DoxyParamCaption}\item[{T \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Unpack a single T object. 
+
+
+
+Definition at line 162 of file Binary\+File\+I\+Archive.\+h.
+
+
+
+Referenced by Util\+::\+C\+Array\+Param$<$ Type $>$\+::load\+Value(), and Util\+::\+C\+Array2\+D\+Param$<$ Type $>$\+::load\+Value().
+
+\mbox{\Hypertarget{classUtil_1_1BinaryFileIArchive_a613c61724f5389ea1ec8250dcd0c8ab7}\label{classUtil_1_1BinaryFileIArchive_a613c61724f5389ea1ec8250dcd0c8ab7}} 
+\index{Util::BinaryFileIArchive@{Util::BinaryFileIArchive}!unpack@{unpack}}
+\index{unpack@{unpack}!Util::BinaryFileIArchive@{Util::BinaryFileIArchive}}
+\doxyparagraph{\texorpdfstring{unpack()}{unpack()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Util\+::\+Binary\+File\+I\+Archive\+::unpack (\begin{DoxyParamCaption}\item[{T $\ast$}]{array,  }\item[{int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Unpack a C array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & pointer to array (or first element) \\
+\hline
+{\em n} & number of elements \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 169 of file Binary\+File\+I\+Archive.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1BinaryFileIArchive_a8a4ecf6761f971733a09e6efe477c7b0}\label{classUtil_1_1BinaryFileIArchive_a8a4ecf6761f971733a09e6efe477c7b0}} 
+\index{Util::BinaryFileIArchive@{Util::BinaryFileIArchive}!unpack@{unpack}}
+\index{unpack@{unpack}!Util::BinaryFileIArchive@{Util::BinaryFileIArchive}}
+\doxyparagraph{\texorpdfstring{unpack()}{unpack()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Util\+::\+Binary\+File\+I\+Archive\+::unpack (\begin{DoxyParamCaption}\item[{T $\ast$}]{array,  }\item[{int}]{m,  }\item[{int}]{n,  }\item[{int}]{np }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Unpack a 2D C array. 
+
+This unpacks the elements of an m x n logical array into a physical 2D C array of type array\mbox{[}\mbox{]}\mbox{[}np\mbox{]}, where np is the physical length of a row, i.\+e., the amount of memory allocated per row.
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & pointer to first row \\
+\hline
+{\em m} & number of rows \\
+\hline
+{\em n} & logical number of columns \\
+\hline
+{\em np} & physical number of columns \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 180 of file Binary\+File\+I\+Archive.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Binary\+File\+I\+Archive.\+h\item 
+Binary\+File\+I\+Archive.\+cpp\end{DoxyCompactItemize}

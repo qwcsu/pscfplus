@@ -1,0 +1,200 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1RArray">
+<title>Util::RArray&lt; Data &gt; Class Template Reference</title>
+<indexterm><primary>Util::RArray&lt; Data &gt;</primary></indexterm>
+<para>
+
+<para>An <link linkend="_classUtil_1_1Array">Array</link> that acts as a reference to another <link linkend="_classUtil_1_1Array">Array</link> or C array. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;RArray.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Util::RArray&lt; Data &gt;:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classUtil_1_1RArray.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1RArray_1a6d8ee52dffba3b46778aea7ead3e3fc6">RArray</link> ()</para>
+
+<para>Constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1RArray_1a6e504f52bf81c81ea57772777da0a275">RArray</link> (const <link linkend="_classUtil_1_1RArray">RArray</link>&lt; Data &gt; &amp;other)</para>
+
+<para>Copy constructor. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1RArray_1a5ce7d0c2e141487a265591cc8e6d00dc">associate</link> (<link linkend="_classUtil_1_1Array">Array</link>&lt; Data &gt; &amp;array)</para>
+
+<para>Associate this <link linkend="_classUtil_1_1RArray">RArray</link> with an existing <link linkend="_classUtil_1_1Array">Array</link> object. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1RArray_1a5367ce59399bd1c03c09842bd5b047c6">associate</link> (Data *array, int <link linkend="_classUtil_1_1Array_1a66a4be07c83c3b49eae3536a3afd9fb0">capacity</link>)</para>
+
+<para>Associate this <link linkend="_classUtil_1_1RArray">RArray</link> with an existing C array. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;typename Data&gt;
+class Util::RArray&lt; Data &gt;</title></simplesect>
+
+
+<para>An <link linkend="_classUtil_1_1Array">Array</link> that acts as a reference to another <link linkend="_classUtil_1_1Array">Array</link> or C array. </para>
+
+
+
+<para>An <link linkend="_classUtil_1_1RArray">RArray</link> is associated with a &quot;target&quot; <link linkend="_classUtil_1_1DArray">DArray</link> or C array by the <link linkend="_classUtil_1_1RArray_1a5ce7d0c2e141487a265591cc8e6d00dc">associate()</link> method. The <link linkend="_classUtil_1_1RArray">RArray</link> and its target array then wrap the same underlying C array, and so access the same data. The <link linkend="_classUtil_1_1RArray_1a5ce7d0c2e141487a265591cc8e6d00dc">associate()</link> method simply copies the address and capacity of a C array. An <link linkend="_classUtil_1_1RArray">RArray</link> can be associated only once, after which it can be safely used as an alias for its target.</para>
+
+<para>An <link linkend="_classUtil_1_1RArray">RArray</link> can only be associated with a <link linkend="_classUtil_1_1DArray">DArray</link> after the target <link linkend="_classUtil_1_1DArray">DArray</link> has been allocated. Because a <link linkend="_classUtil_1_1DArray">DArray</link> can be allocated only once, this association cannot be corrupted by re-allocation or re-sizing of the target <link linkend="_classUtil_1_1DArray">DArray</link>.</para>
+
+<para>An <link linkend="_classUtil_1_1RArray">RArray</link> can be created from another <link linkend="_classUtil_1_1RArray">RArray</link> only after the target <link linkend="_classUtil_1_1RArray">RArray</link> has already been associated with some other <link linkend="_classUtil_1_1Array">Array</link>.</para>
+
+<para>An <link linkend="_classUtil_1_1RArray">RArray</link> differs from a C++ reference to an <link linkend="_classUtil_1_1Array">Array</link> because a C++ reference must be initialized when it is instantiated, whereas an <link linkend="_classUtil_1_1RArray">RArray</link> is associated after it is instantiated. Because association is implemented by copying the address and capacity of a shared C array, access through an <link linkend="_classUtil_1_1RArray">RArray</link> should be exactly as efficient as access through a <link linkend="_classUtil_1_1DArray">DArray</link>. </para>
+<para>
+Definition at line 46 of file RArray.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1RArray_1a6d8ee52dffba3b46778aea7ead3e3fc6"/>    <section>
+    <title>RArray()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>RArray</primary><secondary>Util::RArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::RArray&lt; Data &gt;</primary><secondary>RArray</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1RArray">Util::RArray</link>&lt; Data &gt;::<link linkend="_classUtil_1_1RArray">RArray</link> ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+<para>
+Definition at line 57 of file RArray.h.</para>
+    </section><anchor xml:id="_classUtil_1_1RArray_1a6e504f52bf81c81ea57772777da0a275"/>    <section>
+    <title>RArray()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>RArray</primary><secondary>Util::RArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::RArray&lt; Data &gt;</primary><secondary>RArray</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1RArray">Util::RArray</link>&lt; Data &gt;::<link linkend="_classUtil_1_1RArray">RArray</link> (const <link linkend="_classUtil_1_1RArray">RArray</link>&lt; Data &gt; &amp; other)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Copy constructor. </para>
+</para>
+
+<para>Shallow copy of another <link linkend="_classUtil_1_1RArray">RArray</link></para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>other</entry>
+                                <entry>
+<para>another RArray&lt;Data&gt; for which this is an alias. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 68 of file RArray.h.</para>
+<para>
+References Util::Array&lt; Data &gt;::capacity_, and Util::Array&lt; Data &gt;::data_.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1RArray_1a5ce7d0c2e141487a265591cc8e6d00dc"/>    <section>
+    <title>associate()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>associate</primary><secondary>Util::RArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::RArray&lt; Data &gt;</primary><secondary>associate</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1RArray">Util::RArray</link>&lt; Data &gt;::associate (<link linkend="_classUtil_1_1Array">Array</link>&lt; Data &gt; &amp; array)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Associate this <link linkend="_classUtil_1_1RArray">RArray</link> with an existing <link linkend="_classUtil_1_1Array">Array</link> object. </para>
+</para>
+
+<para>The target (i.e., the parameter array) must be allocated when this method is invoked, as discussed in the <link linkend="_classUtil_1_1RArray">RArray</link> class documentation.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>array</entry>
+                                <entry>
+<para>the target <link linkend="_classUtil_1_1Array">Array</link> </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 83 of file RArray.h.</para>
+<para>
+References Util::Array&lt; Data &gt;::capacity(), Util::Array&lt; Data &gt;::capacity_, Util::Array&lt; Data &gt;::data_, and UTIL_THROW.</para>
+    </section><anchor xml:id="_classUtil_1_1RArray_1a5367ce59399bd1c03c09842bd5b047c6"/>    <section>
+    <title>associate()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>associate</primary><secondary>Util::RArray&lt; Data &gt;</secondary></indexterm>
+<indexterm><primary>Util::RArray&lt; Data &gt;</primary><secondary>associate</secondary></indexterm>
+<computeroutput>template&lt;typename Data &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1RArray">Util::RArray</link>&lt; Data &gt;::associate (Data * array, int capacity)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Associate this <link linkend="_classUtil_1_1RArray">RArray</link> with an existing C array. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>array</entry>
+                                <entry>
+<para>the target C array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>capacity</entry>
+                                <entry>
+<para>the number of elements in the target array </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 101 of file RArray.h.</para>
+<para>
+References Util::Array&lt; Data &gt;::capacity(), Util::Array&lt; Data &gt;::capacity_, Util::Array&lt; Data &gt;::data_, and UTIL_THROW.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+RArray.h</section>
+</section>

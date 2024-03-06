@@ -1,0 +1,199 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1Str">
+<title>Util::Str Class Reference</title>
+<indexterm><primary>Util::Str</primary></indexterm>
+<para>
+
+<para>Wrapper for a std::string, for formatted ostream output. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;Str.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+<simplesect><title>Constructors</title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1Str_1a4f76794713df0d02cfb747fd247282d7">Str</link> ()</para>
+
+<para>Default constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Str_1a389bbf7735b729155f0a40812f55bfdf">Str</link> (std::string value)</para>
+
+<para>Constructor, value only. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1Str_1a2ae0107289db1bed30404142b457f93f">Str</link> (std::string value, int width)</para>
+
+<para>Constructor, value and width. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</simplesect>
+<simplesect><title>Mutators</title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classUtil_1_1Str_1a6778659b0acf57ea3e3370b136fc8c4a"/>void <emphasis role="strong">setValue</emphasis> (std::string value)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classUtil_1_1Str_1aad2f566dd62dbb2a4b8879e7d8d38aaf"/>void <emphasis role="strong">setWidth</emphasis> (int width)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Accessors    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classUtil_1_1Str_1a8529cba736956972934b026307911de7"/>std::string <emphasis role="strong">value</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classUtil_1_1Str_1a10936fee621b45f7b47aa284504f98a4"/>int <emphasis role="strong">width</emphasis> () const</para>
+</listitem>
+            <listitem><para>std::istream &amp; <link linkend="_classUtil_1_1Str_1abac24720fec933797c7ea80a8cc21812">operator&gt;&gt;</link> (std::istream &amp;in, <link linkend="_classUtil_1_1Str">Str</link> &amp;object)</para>
+
+<para>Input stream extractor for an <link linkend="_classUtil_1_1Str">Str</link> object. </para>
+</listitem>
+            <listitem><para>std::ostream &amp; <link linkend="_classUtil_1_1Str_1a9be0de2f7aa154ea0ffbd4bf95239858">operator&lt;&lt;</link> (std::ostream &amp;out, const <link linkend="_classUtil_1_1Str">Str</link> &amp;object)</para>
+
+<para>Output stream inserter for an <link linkend="_classUtil_1_1Str">Str</link> object. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Wrapper for a std::string, for formatted ostream output. </para>
+
+
+
+<para>An <link linkend="_classUtil_1_1Str">Str</link> object has std::string value, and an integer output field width. The &lt;&lt; operator for an <link linkend="_classUtil_1_1Str">Str</link> object uses the specified width. The value and width may both be specified as parameters to a constructor. If the width is not specified as a constructor parameter, it is set within the constructor to a default value given by <link linkend="_classUtil_1_1Format_1ac6cf6620e160c66757429bec0fb4dd23">Format::defaultWidth()</link>.</para>
+
+<para>An <link linkend="_classUtil_1_1Str">Str</link> object may be passed to an ostream as a temporary object. For example, the expression: <literallayout><computeroutput>std::cout&#32;&lt;&lt;&#32;Str(&quot;Hello&quot;)&#32;&lt;&lt;&#32;Str(&quot;World&quot;,&#32;20)&#32;&lt;&lt;&#32;std::endl;
+</computeroutput></literallayout> outputs &quot;Hello&quot; using the default width, followed by &quot;World&quot; in a field of width 20. </para>
+<para>
+Definition at line 36 of file Str.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1Str_1a4f76794713df0d02cfb747fd247282d7"/>    <section>
+    <title>Str()<computeroutput>[1/3]</computeroutput></title>
+<indexterm><primary>Str</primary><secondary>Util::Str</secondary></indexterm>
+<indexterm><primary>Util::Str</primary><secondary>Str</secondary></indexterm>
+<para><computeroutput>Util::Str::Str ( )</computeroutput></para><para>
+
+<para>Default constructor. </para>
+</para>
+<para>
+Definition at line 17 of file Str.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1Str_1a389bbf7735b729155f0a40812f55bfdf"/>    <section>
+    <title>Str()<computeroutput>[2/3]</computeroutput></title>
+<indexterm><primary>Str</primary><secondary>Util::Str</secondary></indexterm>
+<indexterm><primary>Util::Str</primary><secondary>Str</secondary></indexterm>
+<para><computeroutput>Util::Str::Str (std::string value)<computeroutput>[explicit]</computeroutput></computeroutput></para><para>
+
+<para>Constructor, value only. </para>
+</para>
+
+<para>Constructor, value only (explicit). </para>
+<para>
+Definition at line 23 of file Str.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1Str_1a2ae0107289db1bed30404142b457f93f"/>    <section>
+    <title>Str()<computeroutput>[3/3]</computeroutput></title>
+<indexterm><primary>Str</primary><secondary>Util::Str</secondary></indexterm>
+<indexterm><primary>Util::Str</primary><secondary>Str</secondary></indexterm>
+<para><computeroutput>Util::Str::Str (std::string value, int width)</computeroutput></para><para>
+
+<para>Constructor, value and width. </para>
+</para>
+<para>
+Definition at line 29 of file Str.cpp.</para>
+</section>
+</section>
+<section>
+<title>Friends And Related Function Documentation</title>
+<anchor xml:id="_classUtil_1_1Str_1abac24720fec933797c7ea80a8cc21812"/>    <section>
+    <title>operator&gt;&gt;</title>
+<indexterm><primary>operator&gt;&gt;</primary><secondary>Util::Str</secondary></indexterm>
+<indexterm><primary>Util::Str</primary><secondary>operator&gt;&gt;</secondary></indexterm>
+<para><computeroutput>std::istream&amp; operator&gt;&gt; (std::istream &amp; in, <link linkend="_classUtil_1_1Str">Str</link> &amp; object)<computeroutput>[friend]</computeroutput></computeroutput></para><para>
+
+<para>Input stream extractor for an <link linkend="_classUtil_1_1Str">Str</link> object. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>object</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Str">Str</link> object to be read from stream </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified input stream </para>
+</formalpara>
+</para>
+<para>
+Definition at line 49 of file Str.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1Str_1a9be0de2f7aa154ea0ffbd4bf95239858"/>    <section>
+    <title>operator&lt;&lt;</title>
+<indexterm><primary>operator&lt;&lt;</primary><secondary>Util::Str</secondary></indexterm>
+<indexterm><primary>Util::Str</primary><secondary>operator&lt;&lt;</secondary></indexterm>
+<para><computeroutput>std::ostream&amp; operator&lt;&lt; (std::ostream &amp; out, const <link linkend="_classUtil_1_1Str">Str</link> &amp; object)<computeroutput>[friend]</computeroutput></computeroutput></para><para>
+
+<para>Output stream inserter for an <link linkend="_classUtil_1_1Str">Str</link> object. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>out</entry>
+                                <entry>
+<para>output stream </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>object</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1Str">Str</link> to be written to stream </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>modified output stream </para>
+</formalpara>
+</para>
+<para>
+Definition at line 58 of file Str.cpp.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+Str.hStr.cpp</section>
+</section>

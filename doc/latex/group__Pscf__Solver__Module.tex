@@ -1,0 +1,39 @@
+\hypertarget{group__Pscf__Solver__Module}{}\doxysubsection{Solver Templates}
+\label{group__Pscf__Solver__Module}\index{Solver Templates@{Solver Templates}}
+
+
+Templates for classes that solve modified diffusion equations.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classPscf_1_1BlockTmpl}{Pscf\+::\+Block\+Tmpl$<$ T\+P $>$}}
+\begin{DoxyCompactList}\small\item\em Class template for a block in a block copolymer. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classPscf_1_1MixtureTmpl}{Pscf\+::\+Mixture\+Tmpl$<$ T\+P, T\+S $>$}}
+\begin{DoxyCompactList}\small\item\em A mixture of polymer and solvent species. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classPscf_1_1PolymerTmpl}{Pscf\+::\+Polymer\+Tmpl$<$ Block $>$}}
+\begin{DoxyCompactList}\small\item\em Descriptor and M\+DE solver for an acyclic block polymer. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classPscf_1_1PropagatorTmpl}{Pscf\+::\+Propagator\+Tmpl$<$ T\+P $>$}}
+\begin{DoxyCompactList}\small\item\em Template for propagator classes. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classPscf_1_1SolventTmpl}{Pscf\+::\+Solvent\+Tmpl$<$ T\+P $>$}}
+\begin{DoxyCompactList}\small\item\em Template for a class representing a solvent species. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classPscf_1_1Pspg_1_1Discrete_1_1DMixtureTmpl}{Pscf\+::\+Pspg\+::\+Discrete\+::\+D\+Mixture\+Tmpl$<$ T\+P, T\+S $>$}}
+\begin{DoxyCompactList}\small\item\em A mixture of polymer and solvent species. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Templates for classes that solve modified diffusion equations. 
+
+The templates defined in this module are designed to be used as base classes for classes that define a variety of different implementations of self-\/consistent field theory (S\+C\+FT), in which each implementation uses a particular set of algorithms to solve the modified diffusion equation (M\+DE) in a particular type of geometry.
+
+To define an implementation of S\+C\+FT, one must define the following set of solver classes derived from these templates\+:
+
+
+\begin{DoxyItemize}
+\item A Propagator class, derived from \mbox{\hyperlink{classPscf_1_1PropagatorTmpl}{Propagator\+Tmpl}}
+\item A Block class, derived from Block\+Tmpl$<$\+Propagator$>$
+\item A Polymer class, derived from Polymer\+Tmpl$<$\+Block$>$
+\item A Solvent class, derived from Solvent\+Tmpl$<$\+Block$>$
+\item A Mixture class, derived from Mixture\+Tmpl$<$\+Polymer, Solvent$>$ 
+\end{DoxyItemize}

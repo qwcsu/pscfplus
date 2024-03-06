@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1Observer">
+<title>Util::Observer&lt; Event &gt; Class Template Reference</title>
+<indexterm><primary>Util::Observer&lt; Event &gt;</primary></indexterm>
+<para>
+
+<para>Abstract class template for observer in the observer design pattern. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;Observer.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>virtual <link linkend="_classUtil_1_1Observer_1a223e504829d471e5f53bddacb65c51b3">~Observer</link> ()</para>
+
+<para>Destructor. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classUtil_1_1Observer_1a518cb0d0b98052c436d4a52c61edc80b">update</link> (const Event &amp;event)=0</para>
+
+<para>Respond to news of an event. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;typename Event&gt;
+class Util::Observer&lt; Event &gt;</title></simplesect>
+
+
+<para>Abstract class template for observer in the observer design pattern. </para>
+
+
+
+<para>An <link linkend="_classUtil_1_1Observer">Observer</link> is notified of an event by calling its update method. The template class parameter Event is the type of object that is passed to the <link linkend="_classUtil_1_1Observer_1a518cb0d0b98052c436d4a52c61edc80b">update()</link> method as a message about an event. </para>
+<para>
+Definition at line 19 of file Notifier.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1Observer_1a223e504829d471e5f53bddacb65c51b3"/>    <section>
+    <title>~Observer()</title>
+<indexterm><primary>~Observer</primary><secondary>Util::Observer&lt; Event &gt;</secondary></indexterm>
+<indexterm><primary>Util::Observer&lt; Event &gt;</primary><secondary>~Observer</secondary></indexterm>
+<computeroutput>template&lt;typename Event &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1Observer">Util::Observer</link>&lt; Event &gt;::~<link linkend="_classUtil_1_1Observer">Observer</link><computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Destructor. </para>
+</para>
+<para>
+Definition at line 47 of file Observer.h.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1Observer_1a518cb0d0b98052c436d4a52c61edc80b"/>    <section>
+    <title>update()</title>
+<indexterm><primary>update</primary><secondary>Util::Observer&lt; Event &gt;</secondary></indexterm>
+<indexterm><primary>Util::Observer&lt; Event &gt;</primary><secondary>update</secondary></indexterm>
+<computeroutput>template&lt;typename Event &gt; </computeroutput><para><computeroutput>virtual void <link linkend="_classUtil_1_1Observer">Util::Observer</link>&lt; Event &gt;::update (const Event &amp; event)<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para>Respond to news of an event. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>event</entry>
+                                <entry>
+<para>Object containing information about the event. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+Notifier.hObserver.h</section>
+</section>

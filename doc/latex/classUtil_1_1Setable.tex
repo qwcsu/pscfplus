@@ -1,0 +1,262 @@
+\hypertarget{classUtil_1_1Setable}{}\doxysubsection{Util\+::Setable$<$ T $>$ Class Template Reference}
+\label{classUtil_1_1Setable}\index{Util::Setable$<$ T $>$@{Util::Setable$<$ T $>$}}
+
+
+Template for a value that can be set or declared null (i.\+e., unknown).  
+
+
+
+
+{\ttfamily \#include $<$Setable.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1Setable_a4a0820c2ff52c216b875ce3f4558f458}{Setable}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1Setable_a5becf77ef5a191ba65b255a55259dda5}{Setable}} (const \mbox{\hyperlink{classUtil_1_1Setable}{Setable}}$<$ T $>$ \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1Setable_a6ac4a3dcfd5767805ff6d25c7b8efb71}{Setable}} (const T \&\mbox{\hyperlink{classUtil_1_1Setable_a7191b64bd103c2e39120e12fd453b540}{value}})
+\begin{DoxyCompactList}\small\item\em Construct from T value (explicit). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1Setable}{Setable}}$<$ T $>$ \& \mbox{\hyperlink{classUtil_1_1Setable_a65ac19b4ef112486b372c480a202b864}{operator=}} (const \mbox{\hyperlink{classUtil_1_1Setable}{Setable}}$<$ T $>$ \&other)
+\begin{DoxyCompactList}\small\item\em Assignment from another Setable$<$\+T$>$ object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1Setable}{Setable}}$<$ T $>$ \& \mbox{\hyperlink{classUtil_1_1Setable_a65502c843ce57d45295b0e6c83d8d910}{operator=}} (const T \&\mbox{\hyperlink{classUtil_1_1Setable_a7191b64bd103c2e39120e12fd453b540}{value}})
+\begin{DoxyCompactList}\small\item\em Assignment from T value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1Setable_a55b427d5a875e0b74c58d050306dd20d}{set}} (const T \&\mbox{\hyperlink{classUtil_1_1Setable_a7191b64bd103c2e39120e12fd453b540}{value}})
+\begin{DoxyCompactList}\small\item\em Set the value and mark as set. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1Setable_a9273330685b8af63ffba35c28a3631fb}{unset}} ()
+\begin{DoxyCompactList}\small\item\em Unset the value (mark as unknown). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUtil_1_1Setable_a8ec573c9e46a3e531e26bcf72522ef13}{is\+Set}} () const
+\begin{DoxyCompactList}\small\item\em Is this object set (is the value known)? \end{DoxyCompactList}\item 
+const T \& \mbox{\hyperlink{classUtil_1_1Setable_a7191b64bd103c2e39120e12fd453b540}{value}} () const
+\begin{DoxyCompactList}\small\item\em Return value (if set). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUtil_1_1Setable_a589788f3143f3efd84d81ac0b6fce085}{is\+Valid}} (M\+P\+I\+::\+Intracomm \&communicator) const
+\begin{DoxyCompactList}\small\item\em Test consistency of states on different processors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class Util\+::\+Setable$<$ T $>$}
+
+Template for a value that can be set or declared null (i.\+e., unknown). 
+
+Type T must be copy-\/constructable and have an assignment (=) operator.
+
+Convention for M\+PI programs\+: In parallel M\+PI programs in which a value for a variable is calculated by a reduce operation and is set only on a master processor, a default value should be set on all other processors whenever the true value is set on the master. This indicates on all processors that the value is known, though it may only be available on the master processor. Similarly, when a value is unset, the \mbox{\hyperlink{classUtil_1_1Setable_a9273330685b8af63ffba35c28a3631fb}{unset()}} function should be called on all processors. This convention allows the \mbox{\hyperlink{classUtil_1_1Setable_a8ec573c9e46a3e531e26bcf72522ef13}{is\+Set()}} function to be used on all processors to query whether the value is known, which may be then be used to decide when to initiate a recomputation that may require computation on all processors. This convention is imposed by the \mbox{\hyperlink{classUtil_1_1Setable_a589788f3143f3efd84d81ac0b6fce085}{is\+Valid()}} function, which requires that is\+Set have the same value on all processors within a communicator (i.\+e., all true or all false). 
+
+Definition at line 38 of file Setable.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1Setable_a4a0820c2ff52c216b875ce3f4558f458}\label{classUtil_1_1Setable_a4a0820c2ff52c216b875ce3f4558f458}} 
+\index{Util::Setable$<$ T $>$@{Util::Setable$<$ T $>$}!Setable@{Setable}}
+\index{Setable@{Setable}!Util::Setable$<$ T $>$@{Util::Setable$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{Setable()}{Setable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classUtil_1_1Setable}{Util\+::\+Setable}}$<$ T $>$\+::\mbox{\hyperlink{classUtil_1_1Setable}{Setable}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor. 
+
+
+
+Definition at line 46 of file Setable.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Setable_a5becf77ef5a191ba65b255a55259dda5}\label{classUtil_1_1Setable_a5becf77ef5a191ba65b255a55259dda5}} 
+\index{Util::Setable$<$ T $>$@{Util::Setable$<$ T $>$}!Setable@{Setable}}
+\index{Setable@{Setable}!Util::Setable$<$ T $>$@{Util::Setable$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{Setable()}{Setable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classUtil_1_1Setable}{Util\+::\+Setable}}$<$ T $>$\+::\mbox{\hyperlink{classUtil_1_1Setable}{Setable}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1Setable}{Setable}}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{classUtil_1_1Setable}{Setable}} object being copied. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 56 of file Setable.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Setable_a6ac4a3dcfd5767805ff6d25c7b8efb71}\label{classUtil_1_1Setable_a6ac4a3dcfd5767805ff6d25c7b8efb71}} 
+\index{Util::Setable$<$ T $>$@{Util::Setable$<$ T $>$}!Setable@{Setable}}
+\index{Setable@{Setable}!Util::Setable$<$ T $>$@{Util::Setable$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{Setable()}{Setable()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classUtil_1_1Setable}{Util\+::\+Setable}}$<$ T $>$\+::\mbox{\hyperlink{classUtil_1_1Setable}{Setable}} (\begin{DoxyParamCaption}\item[{const T \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Construct from T value (explicit). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & value of wrapped object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 66 of file Setable.\+h.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1Setable_a65ac19b4ef112486b372c480a202b864}\label{classUtil_1_1Setable_a65ac19b4ef112486b372c480a202b864}} 
+\index{Util::Setable$<$ T $>$@{Util::Setable$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Util::Setable$<$ T $>$@{Util::Setable$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classUtil_1_1Setable}{Setable}}$<$T$>$\& \mbox{\hyperlink{classUtil_1_1Setable}{Util\+::\+Setable}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1Setable}{Setable}}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Assignment from another Setable$<$\+T$>$ object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & object on R\+HS of assignment \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 76 of file Setable.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Setable_a65502c843ce57d45295b0e6c83d8d910}\label{classUtil_1_1Setable_a65502c843ce57d45295b0e6c83d8d910}} 
+\index{Util::Setable$<$ T $>$@{Util::Setable$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Util::Setable$<$ T $>$@{Util::Setable$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classUtil_1_1Setable}{Setable}}$<$T$>$\& \mbox{\hyperlink{classUtil_1_1Setable}{Util\+::\+Setable}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const T \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Assignment from T value. 
+
+Equivalent to set(value). Sets the value and marks it as set.
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & T value on R\+HS of assignment \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+this object 
+\end{DoxyReturn}
+
+
+Definition at line 95 of file Setable.\+h.
+
+
+
+References Util\+::\+Setable$<$ T $>$\+::value().
+
+\mbox{\Hypertarget{classUtil_1_1Setable_a55b427d5a875e0b74c58d050306dd20d}\label{classUtil_1_1Setable_a55b427d5a875e0b74c58d050306dd20d}} 
+\index{Util::Setable$<$ T $>$@{Util::Setable$<$ T $>$}!set@{set}}
+\index{set@{set}!Util::Setable$<$ T $>$@{Util::Setable$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classUtil_1_1Setable}{Util\+::\+Setable}}$<$ T $>$\+::set (\begin{DoxyParamCaption}\item[{const T \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the value and mark as set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & value to be assigned. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 107 of file Setable.\+h.
+
+
+
+References Util\+::\+Setable$<$ T $>$\+::value().
+
+\mbox{\Hypertarget{classUtil_1_1Setable_a9273330685b8af63ffba35c28a3631fb}\label{classUtil_1_1Setable_a9273330685b8af63ffba35c28a3631fb}} 
+\index{Util::Setable$<$ T $>$@{Util::Setable$<$ T $>$}!unset@{unset}}
+\index{unset@{unset}!Util::Setable$<$ T $>$@{Util::Setable$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{unset()}{unset()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classUtil_1_1Setable}{Util\+::\+Setable}}$<$ T $>$\+::unset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Unset the value (mark as unknown). 
+
+
+
+Definition at line 116 of file Setable.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Setable_a8ec573c9e46a3e531e26bcf72522ef13}\label{classUtil_1_1Setable_a8ec573c9e46a3e531e26bcf72522ef13}} 
+\index{Util::Setable$<$ T $>$@{Util::Setable$<$ T $>$}!isSet@{isSet}}
+\index{isSet@{isSet}!Util::Setable$<$ T $>$@{Util::Setable$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{isSet()}{isSet()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classUtil_1_1Setable}{Util\+::\+Setable}}$<$ T $>$\+::is\+Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Is this object set (is the value known)? 
+
+\begin{DoxyReturn}{Returns}
+true if set (known), false if null (unknown). 
+\end{DoxyReturn}
+
+
+Definition at line 124 of file Setable.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Setable_a7191b64bd103c2e39120e12fd453b540}\label{classUtil_1_1Setable_a7191b64bd103c2e39120e12fd453b540}} 
+\index{Util::Setable$<$ T $>$@{Util::Setable$<$ T $>$}!value@{value}}
+\index{value@{value}!Util::Setable$<$ T $>$@{Util::Setable$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{value()}{value()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+const T\& \mbox{\hyperlink{classUtil_1_1Setable}{Util\+::\+Setable}}$<$ T $>$\+::value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return value (if set). 
+
+Throws an \mbox{\hyperlink{classUtil_1_1Exception}{Exception}} if value is not set. 
+
+Definition at line 132 of file Setable.\+h.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+
+
+Referenced by Util\+::\+Setable$<$ T $>$\+::operator=(), and Util\+::\+Setable$<$ T $>$\+::set().
+
+\mbox{\Hypertarget{classUtil_1_1Setable_a589788f3143f3efd84d81ac0b6fce085}\label{classUtil_1_1Setable_a589788f3143f3efd84d81ac0b6fce085}} 
+\index{Util::Setable$<$ T $>$@{Util::Setable$<$ T $>$}!isValid@{isValid}}
+\index{isValid@{isValid}!Util::Setable$<$ T $>$@{Util::Setable$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{isValid()}{isValid()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classUtil_1_1Setable}{Util\+::\+Setable}}$<$ T $>$\+::is\+Valid (\begin{DoxyParamCaption}\item[{M\+P\+I\+::\+Intracomm \&}]{communicator }\end{DoxyParamCaption}) const}
+
+
+
+Test consistency of states on different processors. 
+
+If valid, return true, else throws an \mbox{\hyperlink{classUtil_1_1Exception}{Exception}}. The state is valid if the value of is\+Set is the same on all processors. 
+
+Definition at line 163 of file Setable.\+h.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Setable.\+h\end{DoxyCompactItemize}

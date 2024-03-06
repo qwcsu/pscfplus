@@ -1,0 +1,119 @@
+\hypertarget{classPscf_1_1SpaceGroup}{}\doxysubsection{Pscf\+::Space\+Group$<$ D $>$ Class Template Reference}
+\label{classPscf_1_1SpaceGroup}\index{Pscf::SpaceGroup$<$ D $>$@{Pscf::SpaceGroup$<$ D $>$}}
+
+
+Crystallographic space group.  
+
+
+
+
+{\ttfamily \#include $<$Space\+Group.\+h$>$}
+
+Inheritance diagram for Pscf\+::Space\+Group$<$ D $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPscf_1_1SpaceGroup}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classPscf_1_1SpaceGroup_a41b1acb2167ebdef4615603f4ee1aa3a}{has\+Inversion\+Center}} (typename \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$\+::Translation \&center) const
+\begin{DoxyCompactList}\small\item\em Determines if this space group has an inversion center. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1SpaceGroup_ac10224823661878efd3c1cbc02a06941}{shift\+Origin}} (typename \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$\+::Translation const \&origin)
+\begin{DoxyCompactList}\small\item\em Shift the origin of space used in the coordinate system. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPscf_1_1SpaceGroup_aa957eb9adeea2e3311a3ae3120f3447f}{check\+Mesh\+Dimensions}} (\mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec}}$<$ D $>$ const \&dimensions) const
+\begin{DoxyCompactList}\small\item\em Check if input mesh dimensions are compatible with space group. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$int D$>$\newline
+class Pscf\+::\+Space\+Group$<$ D $>$}
+
+Crystallographic space group. 
+
+Definition at line 29 of file Space\+Group.\+h.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPscf_1_1SpaceGroup_a41b1acb2167ebdef4615603f4ee1aa3a}\label{classPscf_1_1SpaceGroup_a41b1acb2167ebdef4615603f4ee1aa3a}} 
+\index{Pscf::SpaceGroup$<$ D $>$@{Pscf::SpaceGroup$<$ D $>$}!hasInversionCenter@{hasInversionCenter}}
+\index{hasInversionCenter@{hasInversionCenter}!Pscf::SpaceGroup$<$ D $>$@{Pscf::SpaceGroup$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{hasInversionCenter()}{hasInversionCenter()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+bool \mbox{\hyperlink{classPscf_1_1SpaceGroup}{Pscf\+::\+Space\+Group}}$<$ D $>$\+::has\+Inversion\+Center (\begin{DoxyParamCaption}\item[{typename \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$\+::Translation \&}]{center }\end{DoxyParamCaption}) const}
+
+
+
+Determines if this space group has an inversion center. 
+
+Returns true if an inversion center exists, and false otherwise. If an inversion center exists, its location is returned as the output value of output argument \char`\"{}center\char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em center} & location of inversion center, if any (output) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 24 of file Space\+Group.\+tpp.
+
+\mbox{\Hypertarget{classPscf_1_1SpaceGroup_ac10224823661878efd3c1cbc02a06941}\label{classPscf_1_1SpaceGroup_ac10224823661878efd3c1cbc02a06941}} 
+\index{Pscf::SpaceGroup$<$ D $>$@{Pscf::SpaceGroup$<$ D $>$}!shiftOrigin@{shiftOrigin}}
+\index{shiftOrigin@{shiftOrigin}!Pscf::SpaceGroup$<$ D $>$@{Pscf::SpaceGroup$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{shiftOrigin()}{shiftOrigin()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+void \mbox{\hyperlink{classPscf_1_1SpaceGroup}{Pscf\+::\+Space\+Group}}$<$ D $>$\+::shift\+Origin (\begin{DoxyParamCaption}\item[{typename \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$\+::Translation const \&}]{origin }\end{DoxyParamCaption})}
+
+
+
+Shift the origin of space used in the coordinate system. 
+
+This function modifies each symmetry elements in the group so as to refer to an equivalent symmetry defined using a new coordinate system with a shifted origin. The argument gives the coordinates of the origin of the new coordinate system as defined in the old coordinate system.
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin} & location of origin of the new coordinate system \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 52 of file Space\+Group.\+tpp.
+
+\mbox{\Hypertarget{classPscf_1_1SpaceGroup_aa957eb9adeea2e3311a3ae3120f3447f}\label{classPscf_1_1SpaceGroup_aa957eb9adeea2e3311a3ae3120f3447f}} 
+\index{Pscf::SpaceGroup$<$ D $>$@{Pscf::SpaceGroup$<$ D $>$}!checkMeshDimensions@{checkMeshDimensions}}
+\index{checkMeshDimensions@{checkMeshDimensions}!Pscf::SpaceGroup$<$ D $>$@{Pscf::SpaceGroup$<$ D $>$}}
+\doxyparagraph{\texorpdfstring{checkMeshDimensions()}{checkMeshDimensions()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+void \mbox{\hyperlink{classPscf_1_1SpaceGroup}{Pscf\+::\+Space\+Group}}$<$ D $>$\+::check\+Mesh\+Dimensions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec}}$<$ D $>$ const \&}]{dimensions }\end{DoxyParamCaption}) const}
+
+
+
+Check if input mesh dimensions are compatible with space group. 
+
+This function checks if a mesh with the specified dimensions is invariant under all operations of this space group, i.\+e., whether each crystal symmetry operation maps the position of every node of the mesh onto the position of another node. It is only possible define how a symmetry operation transforms a function that is defined only on the nodes of mesh if the mesh is invariant under the symmetry operation, in this sense. An invariant mesh must thus be used necessary to describe a function whose values on the mesh nodes are invariant under all operations in the space group.
+
+If the mesh is not invariant under all operations of the space group, an explanatory error message is printed and an Exception is thrown to halt execution.
+
+The mesh for a unit cell within a Bravais lattice is assumed to be a regular orthogonal mesh in a space of reduced coordinates, which are the components of position defined using a Bravais basis (i.\+e., a basis of Bravais lattice basis vectors). Each element of the dimensions vector is equal to the number of grid points along a direction corresponding to a Bravais lattice vector. A Bravais basis is also used to define elements of the matrix representation of the point group operation and the translation vector in the representation of a crystal symmetry operation as an instance of class Pscf\+::\+Space\+Symmetry$<$\+D$>$.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dimensions} & vector of mesh dimensions \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 64 of file Space\+Group.\+tpp.
+
+
+
+References Util\+::\+Log\+::file(), U\+T\+I\+L\+\_\+\+C\+H\+E\+CK, and U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Space\+Group.\+h\item 
+Space\+Group.\+tpp\end{DoxyCompactItemize}

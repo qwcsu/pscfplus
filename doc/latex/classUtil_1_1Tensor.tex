@@ -1,0 +1,944 @@
+\hypertarget{classUtil_1_1Tensor}{}\doxysubsection{Util\+::Tensor Class Reference}
+\label{classUtil_1_1Tensor}\index{Util::Tensor@{Util::Tensor}}
+
+
+A \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} represents a Cartesian tensor.  
+
+
+
+
+{\ttfamily \#include $<$Tensor.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{Indent}\textbf{ Constructors}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1Tensor_a742164de495b221bc10bf98b974df39c}{Tensor}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1Tensor_a496bdc1bf0a852ca414cf29f42c558e2}{Tensor}} (const \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \&t)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1Tensor_a719e784eec4529cc0935da8ac924725a}{Tensor}} (double scalar)
+\begin{DoxyCompactList}\small\item\em Constructor, initialize all elements to a scalar value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1Tensor_a3ba10f8939f5d9521194d3cadd844ab6}{Tensor}} (const double a\mbox{[}$\,$\mbox{]}\mbox{[}\mbox{\hyperlink{group__Space__Module_ga2772f5ec799816685d37798d8d358ef7}{Dimension}}\mbox{]})
+\begin{DoxyCompactList}\small\item\em Construct \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} from double \mbox{[}\mbox{]}\mbox{[}Dimension\mbox{]} 2D C array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Assignment}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \& \mbox{\hyperlink{classUtil_1_1Tensor_ab4d94f20d3b11ca7f7997854fee27c59}{operator=}} (const \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \&t)
+\begin{DoxyCompactList}\small\item\em Copy assignment. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \& \mbox{\hyperlink{classUtil_1_1Tensor_a9623859327629bb7a4c607441ec5f2c5}{operator=}} (const double a\mbox{[}$\,$\mbox{]}\mbox{[}\mbox{\hyperlink{group__Space__Module_ga2772f5ec799816685d37798d8d358ef7}{Dimension}}\mbox{]})
+\begin{DoxyCompactList}\small\item\em Assignment from C double \mbox{[}Dimension\mbox{]}\mbox{[}Dimension\mbox{]} 2D array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Arithmetic Assignment}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classUtil_1_1Tensor_ac98b79462df1e9c5587f7cc705ce6de0}{operator+=}} (const \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \&dt)
+\begin{DoxyCompactList}\small\item\em Add tensor dt to this tensor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1Tensor_a9e4809aba09d563d81ed3b0adc1aecd8}{operator-\/=}} (const \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \&dt)
+\begin{DoxyCompactList}\small\item\em Subtract tensor dt from this tensor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1Tensor_aaa8b59bdbb55943de626045ba4ad3aa8}{operator$\ast$=}} (double s)
+\begin{DoxyCompactList}\small\item\em Multiply this tensor by scalar s. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1Tensor_a35bf37b54c6704459183df0829e03d32}{operator/=}} (double s)
+\begin{DoxyCompactList}\small\item\em Divide this tensor by scalar s. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Array Subscript}\par
+\begin{DoxyCompactItemize}
+\item 
+const double \& \mbox{\hyperlink{classUtil_1_1Tensor_a792fce0410f396ffbb43a64af497d6cb}{operator()}} (int i, int j) const
+\begin{DoxyCompactList}\small\item\em Return one element by value. \end{DoxyCompactList}\item 
+double \& \mbox{\hyperlink{classUtil_1_1Tensor_aa6c03f6146d3ab0c9c3f65f15db3ddf1}{operator()}} (int i, int j)
+\begin{DoxyCompactList}\small\item\em Return one element by non-\/const reference. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Tensor valued functions (result assigned to invoking object)}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \& \mbox{\hyperlink{classUtil_1_1Tensor_aac0c50df8b2fddfa0a2264e9b0866441}{zero}} ()
+\begin{DoxyCompactList}\small\item\em Set all elements of this tensor to zero. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \& \mbox{\hyperlink{classUtil_1_1Tensor_ad572359e94fe7bb2978e03dd232a4a14}{identity}} ()
+\begin{DoxyCompactList}\small\item\em Set this to the identity (unity) tensor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \& \mbox{\hyperlink{classUtil_1_1Tensor_acc7765b96a570176187318c29e367eb1}{set\+Row}} (int i, const \mbox{\hyperlink{classUtil_1_1Vector}{Vector}} \&r)
+\begin{DoxyCompactList}\small\item\em Set row i of this \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} to elements of \mbox{\hyperlink{classUtil_1_1Vector}{Vector}} r. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \& \mbox{\hyperlink{classUtil_1_1Tensor_a930742044d17d87706afd826bf416e7a}{set\+Column}} (int i, const \mbox{\hyperlink{classUtil_1_1Vector}{Vector}} \&r)
+\begin{DoxyCompactList}\small\item\em Set column i of this \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} to elements of \mbox{\hyperlink{classUtil_1_1Vector}{Vector}} r. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \& \mbox{\hyperlink{classUtil_1_1Tensor_a4cea7d3360169503bbc6c611849d2b64}{add}} (const \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \&t1, const \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \&t2)
+\begin{DoxyCompactList}\small\item\em Add tensors t1 and t2. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \& \mbox{\hyperlink{classUtil_1_1Tensor_a75b8bb7a97457441188540abfc541f76}{subtract}} (const \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \&t1, const \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \&t2)
+\begin{DoxyCompactList}\small\item\em Subtract tensor t2 from t1. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \& \mbox{\hyperlink{classUtil_1_1Tensor_a63c6e5a3ee3c7f6a3a517a109358203e}{multiply}} (const \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \&t, double s)
+\begin{DoxyCompactList}\small\item\em Multiply a tensor t by a scalar s. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \& \mbox{\hyperlink{classUtil_1_1Tensor_abdcd1b61cffc679faf6bb3911c199948}{divide}} (const \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \&t, double s)
+\begin{DoxyCompactList}\small\item\em Divide a \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} t by a scalar s. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \& \mbox{\hyperlink{classUtil_1_1Tensor_ac9942abf0a3805738acc1f866e4870b5}{transpose}} (const \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \&t)
+\begin{DoxyCompactList}\small\item\em Compute transpose of a tensor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \& \mbox{\hyperlink{classUtil_1_1Tensor_af7e15fba7a10a96e59d6e42f740fb185}{transpose}} ()
+\begin{DoxyCompactList}\small\item\em Transpose this tensor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \& \mbox{\hyperlink{classUtil_1_1Tensor_a1a34bb71f1b728afb8f28e84c8eb5466}{symmetrize}} (const \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \&t)
+\begin{DoxyCompactList}\small\item\em Compute symmetric part of a tensor t. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \& \mbox{\hyperlink{classUtil_1_1Tensor_a70239ee5060596eaebcc3d7d3c76b8ff}{symmetrize}} ()
+\begin{DoxyCompactList}\small\item\em Symmetrize this tensor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \& \mbox{\hyperlink{classUtil_1_1Tensor_a7571741bc53301d594df62d27899a000}{dyad}} (const \mbox{\hyperlink{classUtil_1_1Vector}{Vector}} \&v1, const \mbox{\hyperlink{classUtil_1_1Vector}{Vector}} \&v2)
+\begin{DoxyCompactList}\small\item\em Create dyad of two vectors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Miscellaneous}\par
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classUtil_1_1Tensor_a9e8380021677804a89cf5bb914330629}{trace}} () const
+\begin{DoxyCompactList}\small\item\em Return the trace of this tensor. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Archive $>$ }\\void \mbox{\hyperlink{classUtil_1_1Tensor_af4a0aa68c4e835b7f182c1647d238b1a}{serialize}} (Archive \&ar, const unsigned int version)
+\begin{DoxyCompactList}\small\item\em Serialize this to/from an archive. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Static Members}
+\begin{DoxyCompactItemize}
+\item 
+static const \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \mbox{\hyperlink{classUtil_1_1Tensor_ac1dd4f6bf592cc81526289c6b7e867bf}{Zero}} = \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}}(0.\+0)
+\begin{DoxyCompactList}\small\item\em Constant \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} with all zero elements. \end{DoxyCompactList}\item 
+static const \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \mbox{\hyperlink{classUtil_1_1Tensor_afdab38efabeda2b45fae618ac19802ca}{Identity}} = \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}}().\mbox{\hyperlink{classUtil_1_1Tensor_ad572359e94fe7bb2978e03dd232a4a14}{identity}}()
+\begin{DoxyCompactList}\small\item\em Constant idenity \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} (diagonal diagonal elements all 1). \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classUtil_1_1Tensor_ace1048c4742dfb965e80e59f50afa488}{init\+Static}} ()
+\begin{DoxyCompactList}\small\item\em Call to guarantee initialization of Zero and Identity tensors. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classUtil_1_1Tensor_ad57a483c6b720ba31bc5560d5b49cd2e}{commit\+Mpi\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Commit M\+PI datatype \mbox{\hyperlink{classUtil_1_1MpiTraits_3_01Tensor_01_4_a68faa4fee8fbbc9664afee720874ce5c}{Mpi\+Traits$<$\+Tensor$>$\+::type}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUtil_1_1Tensor_a390070739cdb38a698e2b2e6ec993579}{operator==}} (const \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \&t1, const \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \&t2)
+\begin{DoxyCompactList}\small\item\em Equality for Tensors. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUtil_1_1Tensor_a93d24a9bf32d221e3518e6366ecc6013}{operator==}} (const \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \&t1, const double t2\mbox{[}$\,$\mbox{]}\mbox{[}\mbox{\hyperlink{group__Space__Module_ga2772f5ec799816685d37798d8d358ef7}{Dimension}}\mbox{]})
+\begin{DoxyCompactList}\small\item\em Equality of \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} and 2D C array. \end{DoxyCompactList}\item 
+std\+::istream \& \mbox{\hyperlink{classUtil_1_1Tensor_ada145e28745704482ec13be3acfbe3b0}{operator$>$$>$}} (std\+::istream \&in, \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \&tensor)
+\begin{DoxyCompactList}\small\item\em istream extractor for a \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}}. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{classUtil_1_1Tensor_aef436d3b7e66d1410ead8b7aedcbe18c}{operator$<$$<$}} (std\+::ostream \&out, const \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \&tensor)
+\begin{DoxyCompactList}\small\item\em ostream inserter for a \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+A \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} represents a Cartesian tensor. 
+
+Definition at line 32 of file Tensor.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1Tensor_a742164de495b221bc10bf98b974df39c}\label{classUtil_1_1Tensor_a742164de495b221bc10bf98b974df39c}} 
+\index{Util::Tensor@{Util::Tensor}!Tensor@{Tensor}}
+\index{Tensor@{Tensor}!Util::Tensor@{Util::Tensor}}
+\doxyparagraph{\texorpdfstring{Tensor()}{Tensor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Util\+::\+Tensor\+::\+Tensor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor. 
+
+
+
+Definition at line 399 of file Tensor.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Tensor_a496bdc1bf0a852ca414cf29f42c558e2}\label{classUtil_1_1Tensor_a496bdc1bf0a852ca414cf29f42c558e2}} 
+\index{Util::Tensor@{Util::Tensor}!Tensor@{Tensor}}
+\index{Tensor@{Tensor}!Util::Tensor@{Util::Tensor}}
+\doxyparagraph{\texorpdfstring{Tensor()}{Tensor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Util\+::\+Tensor\+::\+Tensor (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \&}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy constructor. 
+
+
+
+Definition at line 406 of file Tensor.\+h.
+
+
+
+References Util\+::\+Dimension\+Sq.
+
+\mbox{\Hypertarget{classUtil_1_1Tensor_a719e784eec4529cc0935da8ac924725a}\label{classUtil_1_1Tensor_a719e784eec4529cc0935da8ac924725a}} 
+\index{Util::Tensor@{Util::Tensor}!Tensor@{Tensor}}
+\index{Tensor@{Tensor}!Util::Tensor@{Util::Tensor}}
+\doxyparagraph{\texorpdfstring{Tensor()}{Tensor()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Util\+::\+Tensor\+::\+Tensor (\begin{DoxyParamCaption}\item[{double}]{scalar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructor, initialize all elements to a scalar value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & initial value for all elements. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 417 of file Tensor.\+h.
+
+
+
+References Util\+::\+Dimension\+Sq.
+
+\mbox{\Hypertarget{classUtil_1_1Tensor_a3ba10f8939f5d9521194d3cadd844ab6}\label{classUtil_1_1Tensor_a3ba10f8939f5d9521194d3cadd844ab6}} 
+\index{Util::Tensor@{Util::Tensor}!Tensor@{Tensor}}
+\index{Tensor@{Tensor}!Util::Tensor@{Util::Tensor}}
+\doxyparagraph{\texorpdfstring{Tensor()}{Tensor()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Util\+::\+Tensor\+::\+Tensor (\begin{DoxyParamCaption}\item[{const double}]{a\mbox{[}$\,$\mbox{]}\mbox{[}\+Dimension\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Construct \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} from double \mbox{[}\mbox{]}\mbox{[}Dimension\mbox{]} 2D C array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & 2D array a\mbox{[}Dimension\mbox{]}\mbox{[}Dimension\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 428 of file Tensor.\+h.
+
+
+
+References Util\+::\+Dimension.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1Tensor_ab4d94f20d3b11ca7f7997854fee27c59}\label{classUtil_1_1Tensor_ab4d94f20d3b11ca7f7997854fee27c59}} 
+\index{Util::Tensor@{Util::Tensor}!operator=@{operator=}}
+\index{operator=@{operator=}!Util::Tensor@{Util::Tensor}}
+\doxyparagraph{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \& Util\+::\+Tensor\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \&}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy assignment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} to assign. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 468 of file Tensor.\+h.
+
+
+
+References Util\+::\+Dimension\+Sq.
+
+\mbox{\Hypertarget{classUtil_1_1Tensor_a9623859327629bb7a4c607441ec5f2c5}\label{classUtil_1_1Tensor_a9623859327629bb7a4c607441ec5f2c5}} 
+\index{Util::Tensor@{Util::Tensor}!operator=@{operator=}}
+\index{operator=@{operator=}!Util::Tensor@{Util::Tensor}}
+\doxyparagraph{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \& Util\+::\+Tensor\+::operator= (\begin{DoxyParamCaption}\item[{const double}]{a\mbox{[}$\,$\mbox{]}\mbox{[}\+Dimension\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Assignment from C double \mbox{[}Dimension\mbox{]}\mbox{[}Dimension\mbox{]} 2D array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & 2D array a\mbox{[}Dimension\mbox{]}\mbox{[}Dimension\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 480 of file Tensor.\+h.
+
+
+
+References Util\+::\+Dimension.
+
+\mbox{\Hypertarget{classUtil_1_1Tensor_ac98b79462df1e9c5587f7cc705ce6de0}\label{classUtil_1_1Tensor_ac98b79462df1e9c5587f7cc705ce6de0}} 
+\index{Util::Tensor@{Util::Tensor}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Util::Tensor@{Util::Tensor}}
+\doxyparagraph{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily void Util\+::\+Tensor\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \&}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add tensor dt to this tensor. 
+
+Upon return, $\ast$this = $\ast$this + dt.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & tensor increment (input) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 495 of file Tensor.\+h.
+
+
+
+References Util\+::\+Dimension\+Sq.
+
+\mbox{\Hypertarget{classUtil_1_1Tensor_a9e4809aba09d563d81ed3b0adc1aecd8}\label{classUtil_1_1Tensor_a9e4809aba09d563d81ed3b0adc1aecd8}} 
+\index{Util::Tensor@{Util::Tensor}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!Util::Tensor@{Util::Tensor}}
+\doxyparagraph{\texorpdfstring{operator-\/=()}{operator-=()}}
+{\footnotesize\ttfamily void Util\+::\+Tensor\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \&}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Subtract tensor dt from this tensor. 
+
+Upon return, $\ast$this = $\ast$this -\/ dt.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & tensor increment (input) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 506 of file Tensor.\+h.
+
+
+
+References Util\+::\+Dimension\+Sq.
+
+\mbox{\Hypertarget{classUtil_1_1Tensor_aaa8b59bdbb55943de626045ba4ad3aa8}\label{classUtil_1_1Tensor_aaa8b59bdbb55943de626045ba4ad3aa8}} 
+\index{Util::Tensor@{Util::Tensor}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!Util::Tensor@{Util::Tensor}}
+\doxyparagraph{\texorpdfstring{operator$\ast$=()}{operator*=()}}
+{\footnotesize\ttfamily void Util\+::\+Tensor\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{double}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Multiply this tensor by scalar s. 
+
+Upon return, $\ast$this = ($\ast$this)$\ast$s.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & scalar multiplier \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 517 of file Tensor.\+h.
+
+
+
+References Util\+::\+Dimension\+Sq.
+
+\mbox{\Hypertarget{classUtil_1_1Tensor_a35bf37b54c6704459183df0829e03d32}\label{classUtil_1_1Tensor_a35bf37b54c6704459183df0829e03d32}} 
+\index{Util::Tensor@{Util::Tensor}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!Util::Tensor@{Util::Tensor}}
+\doxyparagraph{\texorpdfstring{operator/=()}{operator/=()}}
+{\footnotesize\ttfamily void Util\+::\+Tensor\+::operator/= (\begin{DoxyParamCaption}\item[{double}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Divide this tensor by scalar s. 
+
+Upon return, $\ast$this = ($\ast$this)/s.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & scalar divisor (input) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 528 of file Tensor.\+h.
+
+
+
+References Util\+::\+Dimension\+Sq.
+
+\mbox{\Hypertarget{classUtil_1_1Tensor_a792fce0410f396ffbb43a64af497d6cb}\label{classUtil_1_1Tensor_a792fce0410f396ffbb43a64af497d6cb}} 
+\index{Util::Tensor@{Util::Tensor}!operator()@{operator()}}
+\index{operator()@{operator()}!Util::Tensor@{Util::Tensor}}
+\doxyparagraph{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const double \& Util\+::\+Tensor\+::operator() (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return one element by value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & row element index \\
+\hline
+{\em j} & column element index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+element (i, j) of the tensor 
+\end{DoxyReturn}
+
+
+Definition at line 539 of file Tensor.\+h.
+
+
+
+References Util\+::\+Dimension.
+
+\mbox{\Hypertarget{classUtil_1_1Tensor_aa6c03f6146d3ab0c9c3f65f15db3ddf1}\label{classUtil_1_1Tensor_aa6c03f6146d3ab0c9c3f65f15db3ddf1}} 
+\index{Util::Tensor@{Util::Tensor}!operator()@{operator()}}
+\index{operator()@{operator()}!Util::Tensor@{Util::Tensor}}
+\doxyparagraph{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily double \& Util\+::\+Tensor\+::operator() (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return one element by non-\/const reference. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & row element index \\
+\hline
+{\em j} & column element index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+element i of the tensor 
+\end{DoxyReturn}
+
+
+Definition at line 552 of file Tensor.\+h.
+
+
+
+References Util\+::\+Dimension.
+
+\mbox{\Hypertarget{classUtil_1_1Tensor_aac0c50df8b2fddfa0a2264e9b0866441}\label{classUtil_1_1Tensor_aac0c50df8b2fddfa0a2264e9b0866441}} 
+\index{Util::Tensor@{Util::Tensor}!zero@{zero}}
+\index{zero@{zero}!Util::Tensor@{Util::Tensor}}
+\doxyparagraph{\texorpdfstring{zero()}{zero()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \& Util\+::\+Tensor\+::zero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set all elements of this tensor to zero. 
+
+\begin{DoxyReturn}{Returns}
+reference to this tensor 
+\end{DoxyReturn}
+
+
+Definition at line 441 of file Tensor.\+h.
+
+
+
+References Util\+::\+Dimension\+Sq.
+
+
+
+Referenced by Util\+::set\+To\+Zero().
+
+\mbox{\Hypertarget{classUtil_1_1Tensor_ad572359e94fe7bb2978e03dd232a4a14}\label{classUtil_1_1Tensor_ad572359e94fe7bb2978e03dd232a4a14}} 
+\index{Util::Tensor@{Util::Tensor}!identity@{identity}}
+\index{identity@{identity}!Util::Tensor@{Util::Tensor}}
+\doxyparagraph{\texorpdfstring{identity()}{identity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \& Util\+::\+Tensor\+::identity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set this to the identity (unity) tensor. 
+
+\begin{DoxyReturn}{Returns}
+reference to this tensor 
+\end{DoxyReturn}
+
+
+Definition at line 453 of file Tensor.\+h.
+
+
+
+References Util\+::\+Dimension, and Util\+::\+Dimension\+Sq.
+
+\mbox{\Hypertarget{classUtil_1_1Tensor_acc7765b96a570176187318c29e367eb1}\label{classUtil_1_1Tensor_acc7765b96a570176187318c29e367eb1}} 
+\index{Util::Tensor@{Util::Tensor}!setRow@{setRow}}
+\index{setRow@{setRow}!Util::Tensor@{Util::Tensor}}
+\doxyparagraph{\texorpdfstring{setRow()}{setRow()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \& Util\+::\+Tensor\+::set\+Row (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{const \mbox{\hyperlink{classUtil_1_1Vector}{Vector}} \&}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set row i of this \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} to elements of \mbox{\hyperlink{classUtil_1_1Vector}{Vector}} r. 
+
+\begin{DoxyReturn}{Returns}
+reference to this tensor 
+\end{DoxyReturn}
+
+
+Definition at line 737 of file Tensor.\+h.
+
+
+
+References Util\+::\+Dimension.
+
+\mbox{\Hypertarget{classUtil_1_1Tensor_a930742044d17d87706afd826bf416e7a}\label{classUtil_1_1Tensor_a930742044d17d87706afd826bf416e7a}} 
+\index{Util::Tensor@{Util::Tensor}!setColumn@{setColumn}}
+\index{setColumn@{setColumn}!Util::Tensor@{Util::Tensor}}
+\doxyparagraph{\texorpdfstring{setColumn()}{setColumn()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \& Util\+::\+Tensor\+::set\+Column (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{const \mbox{\hyperlink{classUtil_1_1Vector}{Vector}} \&}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set column i of this \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} to elements of \mbox{\hyperlink{classUtil_1_1Vector}{Vector}} r. 
+
+\begin{DoxyReturn}{Returns}
+reference to this tensor 
+\end{DoxyReturn}
+
+
+Definition at line 749 of file Tensor.\+h.
+
+
+
+References Util\+::\+Dimension.
+
+\mbox{\Hypertarget{classUtil_1_1Tensor_a4cea7d3360169503bbc6c611849d2b64}\label{classUtil_1_1Tensor_a4cea7d3360169503bbc6c611849d2b64}} 
+\index{Util::Tensor@{Util::Tensor}!add@{add}}
+\index{add@{add}!Util::Tensor@{Util::Tensor}}
+\doxyparagraph{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \& Util\+::\+Tensor\+::add (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \&}]{t1,  }\item[{const \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \&}]{t2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add tensors t1 and t2. 
+
+Upon return, $\ast$this = t1 + t2.
+
+
+\begin{DoxyParams}{Parameters}
+{\em t1} & tensor \\
+\hline
+{\em t2} & tensor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this tensor 
+\end{DoxyReturn}
+
+
+Definition at line 567 of file Tensor.\+h.
+
+
+
+References Util\+::\+Dimension\+Sq.
+
+\mbox{\Hypertarget{classUtil_1_1Tensor_a75b8bb7a97457441188540abfc541f76}\label{classUtil_1_1Tensor_a75b8bb7a97457441188540abfc541f76}} 
+\index{Util::Tensor@{Util::Tensor}!subtract@{subtract}}
+\index{subtract@{subtract}!Util::Tensor@{Util::Tensor}}
+\doxyparagraph{\texorpdfstring{subtract()}{subtract()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \& Util\+::\+Tensor\+::subtract (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \&}]{t1,  }\item[{const \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \&}]{t2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Subtract tensor t2 from t1. 
+
+Upon return, $\ast$this == t1 -\/ t2.
+
+
+\begin{DoxyParams}{Parameters}
+{\em t1} & tensor (input) \\
+\hline
+{\em t2} & tensor (input) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this tensor 
+\end{DoxyReturn}
+
+
+Definition at line 581 of file Tensor.\+h.
+
+
+
+References Util\+::\+Dimension\+Sq.
+
+\mbox{\Hypertarget{classUtil_1_1Tensor_a63c6e5a3ee3c7f6a3a517a109358203e}\label{classUtil_1_1Tensor_a63c6e5a3ee3c7f6a3a517a109358203e}} 
+\index{Util::Tensor@{Util::Tensor}!multiply@{multiply}}
+\index{multiply@{multiply}!Util::Tensor@{Util::Tensor}}
+\doxyparagraph{\texorpdfstring{multiply()}{multiply()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \& Util\+::\+Tensor\+::multiply (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \&}]{t,  }\item[{double}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Multiply a tensor t by a scalar s. 
+
+Upon return, $\ast$this == v$\ast$s.
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & tensor factor \\
+\hline
+{\em s} & scalar factor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this tensor 
+\end{DoxyReturn}
+
+
+Definition at line 595 of file Tensor.\+h.
+
+
+
+References Util\+::\+Dimension\+Sq.
+
+\mbox{\Hypertarget{classUtil_1_1Tensor_abdcd1b61cffc679faf6bb3911c199948}\label{classUtil_1_1Tensor_abdcd1b61cffc679faf6bb3911c199948}} 
+\index{Util::Tensor@{Util::Tensor}!divide@{divide}}
+\index{divide@{divide}!Util::Tensor@{Util::Tensor}}
+\doxyparagraph{\texorpdfstring{divide()}{divide()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \& Util\+::\+Tensor\+::divide (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \&}]{t,  }\item[{double}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Divide a \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} t by a scalar s. 
+
+Upon return, $\ast$this = v/s;
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & tensor input \\
+\hline
+{\em s} & scalar denominator \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this tensor 
+\end{DoxyReturn}
+
+
+Definition at line 609 of file Tensor.\+h.
+
+
+
+References Util\+::\+Dimension\+Sq.
+
+\mbox{\Hypertarget{classUtil_1_1Tensor_ac9942abf0a3805738acc1f866e4870b5}\label{classUtil_1_1Tensor_ac9942abf0a3805738acc1f866e4870b5}} 
+\index{Util::Tensor@{Util::Tensor}!transpose@{transpose}}
+\index{transpose@{transpose}!Util::Tensor@{Util::Tensor}}
+\doxyparagraph{\texorpdfstring{transpose()}{transpose()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \& Util\+::\+Tensor\+::transpose (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \&}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compute transpose of a tensor. 
+
+Upon return, $\ast$this is the transpose of t
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & input tensor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this tensor 
+\end{DoxyReturn}
+
+
+Definition at line 636 of file Tensor.\+h.
+
+
+
+References Util\+::\+Dimension.
+
+\mbox{\Hypertarget{classUtil_1_1Tensor_af7e15fba7a10a96e59d6e42f740fb185}\label{classUtil_1_1Tensor_af7e15fba7a10a96e59d6e42f740fb185}} 
+\index{Util::Tensor@{Util::Tensor}!transpose@{transpose}}
+\index{transpose@{transpose}!Util::Tensor@{Util::Tensor}}
+\doxyparagraph{\texorpdfstring{transpose()}{transpose()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \& Util\+::\+Tensor\+::transpose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Transpose this tensor. 
+
+Upon return, $\ast$this is transposed.
+
+\begin{DoxyReturn}{Returns}
+reference to this tensor 
+\end{DoxyReturn}
+
+
+Definition at line 657 of file Tensor.\+h.
+
+
+
+References Util\+::\+Dimension.
+
+\mbox{\Hypertarget{classUtil_1_1Tensor_a1a34bb71f1b728afb8f28e84c8eb5466}\label{classUtil_1_1Tensor_a1a34bb71f1b728afb8f28e84c8eb5466}} 
+\index{Util::Tensor@{Util::Tensor}!symmetrize@{symmetrize}}
+\index{symmetrize@{symmetrize}!Util::Tensor@{Util::Tensor}}
+\doxyparagraph{\texorpdfstring{symmetrize()}{symmetrize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \& Util\+::\+Tensor\+::symmetrize (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \&}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compute symmetric part of a tensor t. 
+
+Upon return, $\ast$this = \mbox{[}t + t.\+transpose()\mbox{]}/2
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & tensor input \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this tensor 
+\end{DoxyReturn}
+
+
+Definition at line 678 of file Tensor.\+h.
+
+
+
+References Util\+::\+Dimension.
+
+\mbox{\Hypertarget{classUtil_1_1Tensor_a70239ee5060596eaebcc3d7d3c76b8ff}\label{classUtil_1_1Tensor_a70239ee5060596eaebcc3d7d3c76b8ff}} 
+\index{Util::Tensor@{Util::Tensor}!symmetrize@{symmetrize}}
+\index{symmetrize@{symmetrize}!Util::Tensor@{Util::Tensor}}
+\doxyparagraph{\texorpdfstring{symmetrize()}{symmetrize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \& Util\+::\+Tensor\+::symmetrize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Symmetrize this tensor. 
+
+Upon return, this is symmetrized, equal to half the sum of the original tensor and its transpose.
+
+\begin{DoxyReturn}{Returns}
+reference to this tensor 
+\end{DoxyReturn}
+
+
+Definition at line 701 of file Tensor.\+h.
+
+
+
+References Util\+::\+Dimension.
+
+\mbox{\Hypertarget{classUtil_1_1Tensor_a7571741bc53301d594df62d27899a000}\label{classUtil_1_1Tensor_a7571741bc53301d594df62d27899a000}} 
+\index{Util::Tensor@{Util::Tensor}!dyad@{dyad}}
+\index{dyad@{dyad}!Util::Tensor@{Util::Tensor}}
+\doxyparagraph{\texorpdfstring{dyad()}{dyad()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \& Util\+::\+Tensor\+::dyad (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1Vector}{Vector}} \&}]{v1,  }\item[{const \mbox{\hyperlink{classUtil_1_1Vector}{Vector}} \&}]{v2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create dyad of two vectors. 
+
+Upon return, $\ast$this equals the dyad v1 $^\wedge$ v2. Equivalently\+: ($\ast$this)(i , j) == v1\mbox{[}i\mbox{]}$\ast$v2\mbox{[}j\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em v1} & vector input \\
+\hline
+{\em v2} & vector input \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this tensor 
+\end{DoxyReturn}
+
+
+Definition at line 763 of file Tensor.\+h.
+
+
+
+References Util\+::\+Dimension.
+
+\mbox{\Hypertarget{classUtil_1_1Tensor_a9e8380021677804a89cf5bb914330629}\label{classUtil_1_1Tensor_a9e8380021677804a89cf5bb914330629}} 
+\index{Util::Tensor@{Util::Tensor}!trace@{trace}}
+\index{trace@{trace}!Util::Tensor@{Util::Tensor}}
+\doxyparagraph{\texorpdfstring{trace()}{trace()}}
+{\footnotesize\ttfamily double Util\+::\+Tensor\+::trace (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the trace of this tensor. 
+
+
+
+Definition at line 621 of file Tensor.\+h.
+
+
+
+References Util\+::\+Dimension.
+
+\mbox{\Hypertarget{classUtil_1_1Tensor_af4a0aa68c4e835b7f182c1647d238b1a}\label{classUtil_1_1Tensor_af4a0aa68c4e835b7f182c1647d238b1a}} 
+\index{Util::Tensor@{Util::Tensor}!serialize@{serialize}}
+\index{serialize@{serialize}!Util::Tensor@{Util::Tensor}}
+\doxyparagraph{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$class Archive $>$ \\
+void Util\+::\+Tensor\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{ar,  }\item[{const unsigned int}]{version }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Serialize this to/from an archive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & archive \\
+\hline
+{\em version} & archive version id \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 720 of file Tensor.\+h.
+
+
+
+References Util\+::\+Dimension\+Sq.
+
+\mbox{\Hypertarget{classUtil_1_1Tensor_ace1048c4742dfb965e80e59f50afa488}\label{classUtil_1_1Tensor_ace1048c4742dfb965e80e59f50afa488}} 
+\index{Util::Tensor@{Util::Tensor}!initStatic@{initStatic}}
+\index{initStatic@{initStatic}!Util::Tensor@{Util::Tensor}}
+\doxyparagraph{\texorpdfstring{initStatic()}{initStatic()}}
+{\footnotesize\ttfamily void Util\+::\+Tensor\+::init\+Static (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Call to guarantee initialization of Zero and Identity tensors. 
+
+Call this function once to guarantee that this file is linked. 
+
+Definition at line 27 of file Tensor.\+cpp.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+
+
+Referenced by Util\+::init\+Static().
+
+\mbox{\Hypertarget{classUtil_1_1Tensor_ad57a483c6b720ba31bc5560d5b49cd2e}\label{classUtil_1_1Tensor_ad57a483c6b720ba31bc5560d5b49cd2e}} 
+\index{Util::Tensor@{Util::Tensor}!commitMpiType@{commitMpiType}}
+\index{commitMpiType@{commitMpiType}!Util::Tensor@{Util::Tensor}}
+\doxyparagraph{\texorpdfstring{commitMpiType()}{commitMpiType()}}
+{\footnotesize\ttfamily void Util\+::\+Tensor\+::commit\+Mpi\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Commit M\+PI datatype \mbox{\hyperlink{classUtil_1_1MpiTraits_3_01Tensor_01_4_a68faa4fee8fbbc9664afee720874ce5c}{Mpi\+Traits$<$\+Tensor$>$\+::type}}. 
+
+
+
+Definition at line 125 of file Tensor.\+cpp.
+
+
+
+References Util\+::\+Mpi\+Struct\+Builder\+::add\+Member(), Util\+::\+Mpi\+Struct\+Builder\+::commit(), Util\+::\+Dimension, and Util\+::\+Mpi\+Struct\+Builder\+::set\+Base().
+
+
+
+\doxysubsubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1Tensor_a390070739cdb38a698e2b2e6ec993579}\label{classUtil_1_1Tensor_a390070739cdb38a698e2b2e6ec993579}} 
+\index{Util::Tensor@{Util::Tensor}!operator==@{operator==}}
+\index{operator==@{operator==}!Util::Tensor@{Util::Tensor}}
+\doxyparagraph{\texorpdfstring{operator==}{operator==}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \&}]{t1,  }\item[{const \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \&}]{t2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Equality for Tensors. 
+
+
+
+Definition at line 43 of file Tensor.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1Tensor_a93d24a9bf32d221e3518e6366ecc6013}\label{classUtil_1_1Tensor_a93d24a9bf32d221e3518e6366ecc6013}} 
+\index{Util::Tensor@{Util::Tensor}!operator==@{operator==}}
+\index{operator==@{operator==}!Util::Tensor@{Util::Tensor}}
+\doxyparagraph{\texorpdfstring{operator==}{operator==}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \&}]{t1,  }\item[{const double}]{t2\mbox{[}$\,$\mbox{]}\mbox{[}\+Dimension\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Equality of \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} and 2D C array. 
+
+
+
+Definition at line 56 of file Tensor.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1Tensor_ada145e28745704482ec13be3acfbe3b0}\label{classUtil_1_1Tensor_ada145e28745704482ec13be3acfbe3b0}} 
+\index{Util::Tensor@{Util::Tensor}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Util::Tensor@{Util::Tensor}}
+\doxyparagraph{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily std\+::istream\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in,  }\item[{\mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \&}]{tensor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+istream extractor for a \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}}. 
+
+Input elements of a tensor from stream, without line breaks.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & input stream \\
+\hline
+{\em tensor} & \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} to be read from stream \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+modified input stream 
+\end{DoxyReturn}
+
+
+Definition at line 93 of file Tensor.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1Tensor_aef436d3b7e66d1410ead8b7aedcbe18c}\label{classUtil_1_1Tensor_aef436d3b7e66d1410ead8b7aedcbe18c}} 
+\index{Util::Tensor@{Util::Tensor}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Util::Tensor@{Util::Tensor}}
+\doxyparagraph{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{const \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} \&}]{tensor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+ostream inserter for a \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}}. 
+
+Output elements of a tensor to stream, without line breaks. 
+\begin{DoxyParams}{Parameters}
+{\em out} & output stream \\
+\hline
+{\em tensor} & \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} to be written to stream \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+modified output stream 
+\end{DoxyReturn}
+
+
+Definition at line 104 of file Tensor.\+cpp.
+
+
+
+\doxysubsubsection{Member Data Documentation}
+\mbox{\Hypertarget{classUtil_1_1Tensor_ac1dd4f6bf592cc81526289c6b7e867bf}\label{classUtil_1_1Tensor_ac1dd4f6bf592cc81526289c6b7e867bf}} 
+\index{Util::Tensor@{Util::Tensor}!Zero@{Zero}}
+\index{Zero@{Zero}!Util::Tensor@{Util::Tensor}}
+\doxyparagraph{\texorpdfstring{Zero}{Zero}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} Util\+::\+Tensor\+::\+Zero = \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}}(0.\+0)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constant \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} with all zero elements. 
+
+
+
+Definition at line 297 of file Tensor.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Tensor_afdab38efabeda2b45fae618ac19802ca}\label{classUtil_1_1Tensor_afdab38efabeda2b45fae618ac19802ca}} 
+\index{Util::Tensor@{Util::Tensor}!Identity@{Identity}}
+\index{Identity@{Identity}!Util::Tensor@{Util::Tensor}}
+\doxyparagraph{\texorpdfstring{Identity}{Identity}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} Util\+::\+Tensor\+::\+Identity = \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}}().\mbox{\hyperlink{classUtil_1_1Tensor_ad572359e94fe7bb2978e03dd232a4a14}{identity}}()\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constant idenity \mbox{\hyperlink{classUtil_1_1Tensor}{Tensor}} (diagonal diagonal elements all 1). 
+
+
+
+Definition at line 302 of file Tensor.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Tensor.\+h\item 
+Tensor.\+cpp\end{DoxyCompactItemize}

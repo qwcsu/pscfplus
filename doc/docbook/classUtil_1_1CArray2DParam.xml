@@ -1,0 +1,281 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1CArray2DParam">
+<title>Util::CArray2DParam&lt; Type &gt; Class Template Reference</title>
+<indexterm><primary>Util::CArray2DParam&lt; Type &gt;</primary></indexterm>
+<para>
+
+<para>A <link linkend="_classUtil_1_1Parameter">Parameter</link> associated with a 2D built-in C array. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;CArray2DParam.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Util::CArray2DParam&lt; Type &gt;:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classUtil_1_1CArray2DParam.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1CArray2DParam_1aa98073c9239861cc4caf55c9beb673ab">CArray2DParam</link> (const char *<link linkend="_classUtil_1_1Parameter_1a2e6a63d5a0827ee3de51d481aee38174">label</link>, Type *ptr, int m, int n, int np, bool <link linkend="_classUtil_1_1Parameter_1accdc4c9c774b9394b387277543c1ba74">isRequired</link>=true)</para>
+
+<para>Constructor. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1CArray2DParam_1a10869aa76660f24fd722182efde9fabe">writeParam</link> (std::ostream &amp;out)</para>
+
+<para>Write 2D C array to file. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>virtual void <link linkend="_classUtil_1_1CArray2DParam_1a3f0b4d2c75432ed9c9804eee6cdc05dd">readValue</link> (std::istream &amp;in)</para>
+
+<para>Read 2D array parameter from an input stream. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classUtil_1_1CArray2DParam_1a57e818a24bd08df9fca0fbb76fdeb74b">loadValue</link> (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp;ar)</para>
+
+<para>Load 2D array from an archive. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classUtil_1_1CArray2DParam_1a851fef862a4f242a552e02f4b7c79a52">saveValue</link> (<link linkend="_classUtil_1_1Serializable_1aca43a1eea5ec5f13189a57892a7a6d04">Serializable::OArchive</link> &amp;ar)</para>
+
+<para>Save 2D array to an archive. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classUtil_1_1CArray2DParam_1a9ac64b6275cc9f3a30294eb3e67fa8b4">bcastValue</link> ()</para>
+
+<para>Broadcast 2D array within the ioCommunicator. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;class Type&gt;
+class Util::CArray2DParam&lt; Type &gt;</title></simplesect>
+
+
+<para>A <link linkend="_classUtil_1_1Parameter">Parameter</link> associated with a 2D built-in C array. </para>
+<para>
+Definition at line 29 of file CArray2DParam.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1CArray2DParam_1aa98073c9239861cc4caf55c9beb673ab"/>    <section>
+    <title>CArray2DParam()</title>
+<indexterm><primary>CArray2DParam</primary><secondary>Util::CArray2DParam&lt; Type &gt;</secondary></indexterm>
+<indexterm><primary>Util::CArray2DParam&lt; Type &gt;</primary><secondary>CArray2DParam</secondary></indexterm>
+<computeroutput>template&lt;class Type &gt; </computeroutput><para><computeroutput><link linkend="_classUtil_1_1CArray2DParam">Util::CArray2DParam</link>&lt; Type &gt;::<link linkend="_classUtil_1_1CArray2DParam">CArray2DParam</link> (const char * label, Type * ptr, int m, int n, int np, bool isRequired = <computeroutput>true</computeroutput>
+)</computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+
+<para>Example: A 2 X 2 matrix stored in an oversized 3 x 3 C array. <literallayout><computeroutput>double&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;matrix[3][3];
+CArray2DParam&lt;double&gt;&#32;param(&quot;matrix&quot;,&#32;matrix[0],&#32;2,&#32;2,&#32;3);
+</computeroutput></literallayout></para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>label</entry>
+                                <entry>
+<para>parameter label (usually a literal C-string) </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>ptr</entry>
+                                <entry>
+<para>pointer to first element of first row of 2D array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>m</entry>
+                                <entry>
+<para>logical number of rows </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>n</entry>
+                                <entry>
+<para>logical number of columns </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>np</entry>
+                                <entry>
+<para>physical number of columns (allocated elements per row). </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>isRequired</entry>
+                                <entry>
+<para>Is this a required parameter? </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 109 of file CArray2DParam.h.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1CArray2DParam_1a10869aa76660f24fd722182efde9fabe"/>    <section>
+    <title>writeParam()</title>
+<indexterm><primary>writeParam</primary><secondary>Util::CArray2DParam&lt; Type &gt;</secondary></indexterm>
+<indexterm><primary>Util::CArray2DParam&lt; Type &gt;</primary><secondary>writeParam</secondary></indexterm>
+<computeroutput>template&lt;class Type &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1CArray2DParam">Util::CArray2DParam</link>&lt; Type &gt;::writeParam (std::ostream &amp; out)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Write 2D C array to file. </para>
+</para>
+<para>
+Implements <link linkend="_classUtil_1_1ParamComponent_1ac17d6ab63f9b0e5f966d6a3cfbc26d86">Util::ParamComponent</link>.</para>
+<para>
+Definition at line 158 of file CArray2DParam.h.</para>
+<para>
+References Util::Parameter::Precision, and Util::Parameter::Width.</para>
+    </section><anchor xml:id="_classUtil_1_1CArray2DParam_1a3f0b4d2c75432ed9c9804eee6cdc05dd"/>    <section>
+    <title>readValue()</title>
+<indexterm><primary>readValue</primary><secondary>Util::CArray2DParam&lt; Type &gt;</secondary></indexterm>
+<indexterm><primary>Util::CArray2DParam&lt; Type &gt;</primary><secondary>readValue</secondary></indexterm>
+<computeroutput>template&lt;class Type &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1CArray2DParam">Util::CArray2DParam</link>&lt; Type &gt;::readValue (std::istream &amp; in)<computeroutput>[protected]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Read 2D array parameter from an input stream. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream from which to read </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Reimplemented from <link linkend="_classUtil_1_1Parameter_1a5817fa95bf2e32808d384a66e272dc37">Util::Parameter</link>.</para>
+<para>
+Definition at line 121 of file CArray2DParam.h.</para>
+    </section><anchor xml:id="_classUtil_1_1CArray2DParam_1a57e818a24bd08df9fca0fbb76fdeb74b"/>    <section>
+    <title>loadValue()</title>
+<indexterm><primary>loadValue</primary><secondary>Util::CArray2DParam&lt; Type &gt;</secondary></indexterm>
+<indexterm><primary>Util::CArray2DParam&lt; Type &gt;</primary><secondary>loadValue</secondary></indexterm>
+<computeroutput>template&lt;class Type &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1CArray2DParam">Util::CArray2DParam</link>&lt; Type &gt;::loadValue (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp; ar)<computeroutput>[protected]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Load 2D array from an archive. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>input archive from which to load </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Reimplemented from <link linkend="_classUtil_1_1Parameter_1a9e3d8dbd2198974017cd8711ae9c990d">Util::Parameter</link>.</para>
+<para>
+Definition at line 135 of file CArray2DParam.h.</para>
+<para>
+References Util::BinaryFileIArchive::unpack().</para>
+    </section><anchor xml:id="_classUtil_1_1CArray2DParam_1a851fef862a4f242a552e02f4b7c79a52"/>    <section>
+    <title>saveValue()</title>
+<indexterm><primary>saveValue</primary><secondary>Util::CArray2DParam&lt; Type &gt;</secondary></indexterm>
+<indexterm><primary>Util::CArray2DParam&lt; Type &gt;</primary><secondary>saveValue</secondary></indexterm>
+<computeroutput>template&lt;class Type &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1CArray2DParam">Util::CArray2DParam</link>&lt; Type &gt;::saveValue (<link linkend="_classUtil_1_1Serializable_1aca43a1eea5ec5f13189a57892a7a6d04">Serializable::OArchive</link> &amp; ar)<computeroutput>[protected]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Save 2D array to an archive. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>output archive to which to save </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Reimplemented from <link linkend="_classUtil_1_1Parameter_1a61858c5163b492f2618689a35ff05044">Util::Parameter</link>.</para>
+<para>
+Definition at line 142 of file CArray2DParam.h.</para>
+<para>
+References Util::BinaryFileOArchive::pack().</para>
+    </section><anchor xml:id="_classUtil_1_1CArray2DParam_1a9ac64b6275cc9f3a30294eb3e67fa8b4"/>    <section>
+    <title>bcastValue()</title>
+<indexterm><primary>bcastValue</primary><secondary>Util::CArray2DParam&lt; Type &gt;</secondary></indexterm>
+<indexterm><primary>Util::CArray2DParam&lt; Type &gt;</primary><secondary>bcastValue</secondary></indexterm>
+<computeroutput>template&lt;class Type &gt; </computeroutput><para><computeroutput>void <link linkend="_classUtil_1_1CArray2DParam">Util::CArray2DParam</link>&lt; Type &gt;::bcastValue<computeroutput>[protected]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Broadcast 2D array within the ioCommunicator. </para>
+</para>
+<para>
+Reimplemented from <link linkend="_classUtil_1_1Parameter_1ad93ad2700686a5a32755fdb67b2a0792">Util::Parameter</link>.</para>
+<para>
+Definition at line 150 of file CArray2DParam.h.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+CArray2DParam.h</section>
+</section>

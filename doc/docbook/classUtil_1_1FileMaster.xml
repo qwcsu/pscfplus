@@ -1,0 +1,1036 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1FileMaster">
+<title>Util::FileMaster Class Reference</title>
+<indexterm><primary>Util::FileMaster</primary></indexterm>
+<para>
+
+<para>A <link linkend="_classUtil_1_1FileMaster">FileMaster</link> manages input and output files for a simulation. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;FileMaster.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Util::FileMaster:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classUtil_1_1FileMaster.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1FileMaster_1a3a2076a0a99e8bf9771da07adddab445">FileMaster</link> ()</para>
+
+<para>Constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classUtil_1_1FileMaster_1ab8c226b9cc0eb69f8c4eb71b76a50431">FileMaster</link> (const <link linkend="_classUtil_1_1FileMaster">FileMaster</link> &amp;copy)</para>
+
+<para>Copy constructor. </para>
+</listitem>
+            <listitem><para>virtual <link linkend="_classUtil_1_1FileMaster_1ac6cfc4669da3c02c2817813e9b281bfb">~FileMaster</link> ()</para>
+
+<para>Destructor. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect><title>Initialization</title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_classUtil_1_1FileMaster_1ad3c7e95b9853b10bde9bcaf4c1cae60c">setRootPrefix</link> (const std::string &amp;rootPrefix)</para>
+
+<para>Set the path from current directory to root directory. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1FileMaster_1ae295d9dc32e5ee3b4ac2b4b2a8f185f1">setDirectoryId</link> (int directoryId)</para>
+
+<para>Set an integer directory identifier for this processor. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1FileMaster_1ad677773938f15a0e830088aaffeafbaa">setCommonControl</link> ()</para>
+
+<para>Enable &quot;replicated&quot; mode in multi-system simulations. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1FileMaster_1aaa8beea67ced5beb8f92d8bba48a6bae">setParamFileName</link> (const std::string &amp;<link linkend="_classUtil_1_1FileMaster_1af9a65511bc82cfc4ac8f70158eaeef14">paramFileName</link>)</para>
+
+<para>Set the parameter file name. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1FileMaster_1ade669815f45d05b720302848be13a316">setCommandFileName</link> (const std::string &amp;<link linkend="_classUtil_1_1FileMaster_1aac43a7dd477a2ce01b81c645a7378235">commandFileName</link>)</para>
+
+<para>Set the command file name. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1FileMaster_1aea52ab3720c8bb6696252ca4e4f190dd">setInputPrefix</link> (const std::string &amp;inputPrefix)</para>
+
+<para>Set the input file prefix string. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1FileMaster_1ad6fec8651e4f00d135e3572021ed3b7c">setOutputPrefix</link> (const std::string &amp;outputPrefix)</para>
+
+<para>Set the output file prefix string. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classUtil_1_1FileMaster_1a7feb4503d8a177959fb2e9625d74de7e">readParameters</link> (std::istream &amp;in)</para>
+
+<para>Read parameter file. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect><title>Serialization</title>
+        <itemizedlist>
+            <listitem><para>virtual void <link linkend="_classUtil_1_1FileMaster_1adbbb16a44ffcad1347d963d2539fea49">loadParameters</link> (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp;ar)</para>
+
+<para>Load internal state from file. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classUtil_1_1FileMaster_1a242dce8b12bc4a5d8539308f2a702500">save</link> (<link linkend="_classUtil_1_1Serializable_1aca43a1eea5ec5f13189a57892a7a6d04">Serializable::OArchive</link> &amp;ar)</para>
+
+<para>Save internal state to file. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect><title>File Opening</title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_classUtil_1_1FileMaster_1a7181498c4c42b1fefb17408dcf64af93">open</link> (const std::string &amp;name, std::ifstream &amp;in, std::ios_base::openmode mode=std::ios_base::in) const</para>
+
+<para>Open an input file with a known path and open mode. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1FileMaster_1a0a4e7620f0febbad5e89b219586cc20d">open</link> (const std::string &amp;name, std::ofstream &amp;out, std::ios_base::openmode mode=std::ios_base::out) const</para>
+
+<para>Open an output file with a known path and open mode. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1FileMaster_1a54848e2f2f46ebf6231b225f92bf1fe4">openControlFile</link> (const std::string &amp;name, std::ifstream &amp;in) const</para>
+
+<para>Open an input parameter or command file. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1FileMaster_1a3e09c03947988d2863e71e2a426c681c">openRestartIFile</link> (const std::string &amp;name, std::ifstream &amp;in, std::ios_base::openmode mode=std::ios_base::in) const</para>
+
+<para>Open an input restart dump file for reading. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1FileMaster_1afa350e3054cef8196727b06e9c61fb76">openRestartOFile</link> (const std::string &amp;name, std::ofstream &amp;out, std::ios_base::openmode mode=std::ios_base::out) const</para>
+
+<para>Open an output restart file for writing. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1FileMaster_1a752d77ce79afadfb49f76b5ff898912a">openInputFile</link> (const std::string &amp;filename, std::ifstream &amp;in, std::ios_base::openmode mode=std::ios_base::in) const</para>
+
+<para>Open an input file. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1FileMaster_1a2166cd153810243b47666f0281da41aa">openOutputFile</link> (const std::string &amp;filename, std::ofstream &amp;out, std::ios_base::openmode mode=std::ios_base::out) const</para>
+
+<para>Open an output file. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Control Files    </title>
+        <itemizedlist>
+            <listitem><para>bool <link linkend="_classUtil_1_1FileMaster_1acc6bcda9964f9cfedd85745d1f207c10">isCommonControl</link> () const</para>
+
+<para>Is set for common param and command files? </para>
+</listitem>
+            <listitem><para>std::string <link linkend="_classUtil_1_1FileMaster_1af9a65511bc82cfc4ac8f70158eaeef14">paramFileName</link> () const</para>
+
+<para>Return the param file name, if any. </para>
+</listitem>
+            <listitem><para>std::string <link linkend="_classUtil_1_1FileMaster_1aac43a7dd477a2ce01b81c645a7378235">commandFileName</link> () const</para>
+
+<para>Return the command file name. </para>
+</listitem>
+            <listitem><para>std::istream &amp; <link linkend="_classUtil_1_1FileMaster_1aa6e2bee2242001a0eeadc50d1a0a3837">paramFile</link> ()</para>
+
+<para>Get a default parameter stream by reference. </para>
+</listitem>
+            <listitem><para>std::istream &amp; <link linkend="_classUtil_1_1FileMaster_1a4dfc5422ef408b9ea55f011dd298a9d2">commandFile</link> ()</para>
+
+<para>Get the command input stream by reference. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>A <link linkend="_classUtil_1_1FileMaster">FileMaster</link> manages input and output files for a simulation. </para>
+
+
+
+<para><formalpara><title>File types </title></formalpara>
+</para>
+
+<para>A <link linkend="_classUtil_1_1FileMaster">FileMaster</link> manages a set of input and output files for a 
+<literallayout>&#160;&#xa;</literallayout>
+ molecular simulation. It provides methods to open four different types of file, which are located in different places within a standard directory structure. These file types are:</para>
+
+<para><itemizedlist>
+<listitem>
+<para>Control input files, i.e., parameter and command files</para>
+</listitem><listitem>
+<para>Restart files, which can be opened for input or output</para>
+</listitem><listitem>
+<para>Input data files (e.g., input configuration files)</para>
+</listitem><listitem>
+<para>Output data files (e.g., trajectories and analysis output files)</para>
+</listitem></itemizedlist>
+</para>
+
+<para>Several member functions are provided to open different types of file:</para>
+
+<para><itemizedlist>
+<listitem>
+<para>openControlFile opens a control file for reading</para>
+</listitem><listitem>
+<para>openRestartIFile opens a restart file for reading</para>
+</listitem><listitem>
+<para>openRestartOFile opens a restart file for writing</para>
+</listitem><listitem>
+<para>openInputFile opens an input data file</para>
+</listitem><listitem>
+<para>openOutputFile opens an output data file</para>
+</listitem></itemizedlist>
+</para>
+
+<para>Each of these functions takes a base file name and a file stream as an argument, constructs a complete path by prepending an appropriate prefix to the base name, and opens the file.</para>
+
+<para>Slightly different directory structures are used for file paths in simulations of a single system and for parallel simulations of multiple systems, as discussed below.</para>
+
+<para><formalpara><title>Single-system simulations </title></formalpara>
+</para>
+
+<para>In simulations of a single system, paths to the different types of file are constructed by prepending some combination of the following elements before a base file name:</para>
+
+<para><itemizedlist>
+<listitem>
+<para>Root directory prefix: This is the path from the current working directory to the root level directory for all files associated with a simulation run. It defaults to an empty string and may be reset by calling the <link linkend="_classUtil_1_1FileMaster_1ad3c7e95b9853b10bde9bcaf4c1cae60c">setRootPrefix()</link> function.</para>
+</listitem><listitem>
+<para>Input prefix: This string is prepended to the base name of all input data files.</para>
+</listitem><listitem>
+<para>Output prefix: This string is prepended to the base name of all output data files.</para>
+</listitem></itemizedlist>
+</para>
+
+<para>Prefix strings that represent directories must end with the directory separator character &quot;/&quot; in order to give a valid path when prepended to a file name. The root directory prefix must be either the empty string or such a directory path. The input and output prefix strings are often also chosen to be directory paths, in order to place input and output files in different subdirectories (e.g., &quot;in/&quot; and &quot;out/&quot;).</para>
+
+<para>In simulations of a single systems, paths to control and restart files are constructed by concatenating the root prefix (if any) to the base file name.</para>
+
+<para>Paths to input and output files are constructed are constructed by concatenating the root prefix (if any), the input or output prefix, and the base file.</para>
+
+<para><formalpara><title>Multi-system simulations </title></formalpara>
+</para>
+
+<para>A parallel simulation of multiple systems use a directory structure in which the root directory (specified by the root directory prefix) contains a set of numbered subdirectories named &quot;0/&quot;, &quot;1/&quot;, &quot;2/&quot;, etc. Each such numbered directory contains input, output and restart files that are specific to a particular system. Each such numbered directory will be referred to in what follows as the system directory for the associated system. The integer index for the system, which is also the directory name, must be set by the <link linkend="_classUtil_1_1FileMaster_1ae295d9dc32e5ee3b4ac2b4b2a8f185f1">setDirectoryId()</link> method before any files are opened.</para>
+
+<para>In such simulations, a path to a restart files for a system is constructed by concatentaing the system directory path and the restart file base name, thus placing these files in the system directory. Paths to input and output data files are constructed by concatenating the system directory path, an input or output prefix string, and the file base name.</para>
+
+<para>Two different modes of operation are possible for simulations of multiple systems, which differ in the treatment of control files. In &quot;independent&quot; mode, simulations of multiple systems are assumed to be completely independent and to require separate parameter and command control files for each system. In this case, the <link linkend="_classUtil_1_1FileMaster_1a54848e2f2f46ebf6231b225f92bf1fe4">openControlFile()</link> function for each system opens a file in the system directory for that system. In &quot;replicated&quot; mode, all simulations are controlled by a single parameter file and a single command file, both of which are assumed to be in the shared root directory. &quot;Independent&quot; mode is enabled by default. &quot;Replicated&quot; mode may be chosen by calling the function &quot;setCommonControl()&quot; before opening any any control files.</para>
+
+<para><formalpara><title>Control Files </title></formalpara>
+</para>
+
+<para>The functions setParameterFileName() and <link linkend="_classUtil_1_1FileMaster_1ade669815f45d05b720302848be13a316">setCommandFileName()</link> can be used to programmatically set the parameter and command file base names before reading a parameter file. If <link linkend="_classUtil_1_1FileMaster_1ade669815f45d05b720302848be13a316">setCommandFileName()</link> is not called before <link linkend="_classUtil_1_1FileMaster_1a7feb4503d8a177959fb2e9625d74de7e">readParameters()</link>, the <link linkend="_classUtil_1_1FileMaster_1a7feb4503d8a177959fb2e9625d74de7e">readParameters()</link> function expects to find a &quot;commandFileName&quot; as the first parameter in the <link linkend="_classUtil_1_1FileMaster">FileMaster</link> parameter file block.</para>
+
+<para>After parameter and command file names have been set, the <link linkend="_classUtil_1_1FileMaster_1aa6e2bee2242001a0eeadc50d1a0a3837">paramFile()</link> and <link linkend="_classUtil_1_1FileMaster_1a4dfc5422ef408b9ea55f011dd298a9d2">commandFile()</link> functions return references to the files. The first time each of these functions is called, it calls <link linkend="_classUtil_1_1FileMaster_1a54848e2f2f46ebf6231b225f92bf1fe4">openControlFile()</link> internally to open the appropriate file. </para>
+<para>
+Definition at line 142 of file FileMaster.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1FileMaster_1a3a2076a0a99e8bf9771da07adddab445"/>    <section>
+    <title>FileMaster()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>FileMaster</primary><secondary>Util::FileMaster</secondary></indexterm>
+<indexterm><primary>Util::FileMaster</primary><secondary>FileMaster</secondary></indexterm>
+<para><computeroutput>Util::FileMaster::FileMaster ( )</computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+<para>
+Definition at line 23 of file FileMaster.cpp.</para>
+<para>
+References Util::ParamComposite::setClassName().</para>
+    </section><anchor xml:id="_classUtil_1_1FileMaster_1ab8c226b9cc0eb69f8c4eb71b76a50431"/>    <section>
+    <title>FileMaster()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>FileMaster</primary><secondary>Util::FileMaster</secondary></indexterm>
+<indexterm><primary>Util::FileMaster</primary><secondary>FileMaster</secondary></indexterm>
+<para><computeroutput>Util::FileMaster::FileMaster (const <link linkend="_classUtil_1_1FileMaster">FileMaster</link> &amp; copy)</computeroutput></para><para>
+
+<para>Copy constructor. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>copy</entry>
+                                <entry>
+<para><link linkend="_classUtil_1_1FileMaster">FileMaster</link> object to be copied </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 39 of file FileMaster.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1FileMaster_1ac6cfc4669da3c02c2817813e9b281bfb"/>    <section>
+    <title>~FileMaster()</title>
+<indexterm><primary>~FileMaster</primary><secondary>Util::FileMaster</secondary></indexterm>
+<indexterm><primary>Util::FileMaster</primary><secondary>~FileMaster</secondary></indexterm>
+<para><computeroutput>Util::FileMaster::~FileMaster ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Destructor. </para>
+</para>
+<para>
+Definition at line 55 of file FileMaster.cpp.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1FileMaster_1ad3c7e95b9853b10bde9bcaf4c1cae60c"/>    <section>
+    <title>setRootPrefix()</title>
+<indexterm><primary>setRootPrefix</primary><secondary>Util::FileMaster</secondary></indexterm>
+<indexterm><primary>Util::FileMaster</primary><secondary>setRootPrefix</secondary></indexterm>
+<para><computeroutput>void Util::FileMaster::setRootPrefix (const std::string &amp; rootPrefix)</computeroutput></para><para>
+
+<para>Set the path from current directory to root directory. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>rootPrefix</entry>
+                                <entry>
+<para>root directory prefix string for all paths </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 70 of file FileMaster.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1FileMaster_1ae295d9dc32e5ee3b4ac2b4b2a8f185f1"/>    <section>
+    <title>setDirectoryId()</title>
+<indexterm><primary>setDirectoryId</primary><secondary>Util::FileMaster</secondary></indexterm>
+<indexterm><primary>Util::FileMaster</primary><secondary>setDirectoryId</secondary></indexterm>
+<para><computeroutput>void Util::FileMaster::setDirectoryId (int directoryId)</computeroutput></para><para>
+
+<para>Set an integer directory identifier for this processor. </para>
+</para>
+
+<para>This method should be called only for simulations of multiple systems, to set an integer identifier for the physical system associated with this processor. After calling this function with an integer n, a directory id prefix &quot;n/&quot; will be prepended to the paths of input, output and restart files associated with that system.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>directoryId</entry>
+                                <entry>
+<para>integer subdirectory name </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 76 of file FileMaster.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1FileMaster_1ad677773938f15a0e830088aaffeafbaa"/>    <section>
+    <title>setCommonControl()</title>
+<indexterm><primary>setCommonControl</primary><secondary>Util::FileMaster</secondary></indexterm>
+<indexterm><primary>Util::FileMaster</primary><secondary>setCommonControl</secondary></indexterm>
+<para><computeroutput>void Util::FileMaster::setCommonControl ( )</computeroutput></para><para>
+
+<para>Enable &quot;replicated&quot; mode in multi-system simulations. </para>
+</para>
+
+<para>Call this function to enable the use of single parameter and command files to control simulations of multiple systems. </para>
+<para>
+Definition at line 88 of file FileMaster.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1FileMaster_1aaa8beea67ced5beb8f92d8bba48a6bae"/>    <section>
+    <title>setParamFileName()</title>
+<indexterm><primary>setParamFileName</primary><secondary>Util::FileMaster</secondary></indexterm>
+<indexterm><primary>Util::FileMaster</primary><secondary>setParamFileName</secondary></indexterm>
+<para><computeroutput>void Util::FileMaster::setParamFileName (const std::string &amp; paramFileName)</computeroutput></para><para>
+
+<para>Set the parameter file name. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>paramFileName</entry>
+                                <entry>
+<para>name of parameter file </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 106 of file FileMaster.cpp.</para>
+<para>
+References paramFileName().</para>
+    </section><anchor xml:id="_classUtil_1_1FileMaster_1ade669815f45d05b720302848be13a316"/>    <section>
+    <title>setCommandFileName()</title>
+<indexterm><primary>setCommandFileName</primary><secondary>Util::FileMaster</secondary></indexterm>
+<indexterm><primary>Util::FileMaster</primary><secondary>setCommandFileName</secondary></indexterm>
+<para><computeroutput>void Util::FileMaster::setCommandFileName (const std::string &amp; commandFileName)</computeroutput></para><para>
+
+<para>Set the command file name. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>commandFileName</entry>
+                                <entry>
+<para>name of command file </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 112 of file FileMaster.cpp.</para>
+<para>
+References commandFileName().</para>
+    </section><anchor xml:id="_classUtil_1_1FileMaster_1aea52ab3720c8bb6696252ca4e4f190dd"/>    <section>
+    <title>setInputPrefix()</title>
+<indexterm><primary>setInputPrefix</primary><secondary>Util::FileMaster</secondary></indexterm>
+<indexterm><primary>Util::FileMaster</primary><secondary>setInputPrefix</secondary></indexterm>
+<para><computeroutput>void Util::FileMaster::setInputPrefix (const std::string &amp; inputPrefix)</computeroutput></para><para>
+
+<para>Set the input file prefix string. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>inputPrefix</entry>
+                                <entry>
+<para>input file prefix string </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 94 of file FileMaster.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1FileMaster_1ad6fec8651e4f00d135e3572021ed3b7c"/>    <section>
+    <title>setOutputPrefix()</title>
+<indexterm><primary>setOutputPrefix</primary><secondary>Util::FileMaster</secondary></indexterm>
+<indexterm><primary>Util::FileMaster</primary><secondary>setOutputPrefix</secondary></indexterm>
+<para><computeroutput>void Util::FileMaster::setOutputPrefix (const std::string &amp; outputPrefix)</computeroutput></para><para>
+
+<para>Set the output file prefix string. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>outputPrefix</entry>
+                                <entry>
+<para>output file prefix string </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 100 of file FileMaster.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1FileMaster_1a7feb4503d8a177959fb2e9625d74de7e"/>    <section>
+    <title>readParameters()</title>
+<indexterm><primary>readParameters</primary><secondary>Util::FileMaster</secondary></indexterm>
+<indexterm><primary>Util::FileMaster</primary><secondary>readParameters</secondary></indexterm>
+<para><computeroutput>void Util::FileMaster::readParameters (std::istream &amp; in)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Read parameter file. </para>
+</para>
+
+<para>Reads the inputPrefix and outputPrefix string variables.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>pararameter file input stream </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Reimplemented from <link linkend="_classUtil_1_1ParamComposite_1a172a3a656b5829c8d758424ad09a22a6">Util::ParamComposite</link>.</para>
+<para>
+Definition at line 118 of file FileMaster.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1FileMaster_1adbbb16a44ffcad1347d963d2539fea49"/>    <section>
+    <title>loadParameters()</title>
+<indexterm><primary>loadParameters</primary><secondary>Util::FileMaster</secondary></indexterm>
+<indexterm><primary>Util::FileMaster</primary><secondary>loadParameters</secondary></indexterm>
+<para><computeroutput>void Util::FileMaster::loadParameters (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp; ar)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Load internal state from file. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>input/loading archive </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Reimplemented from <link linkend="_classUtil_1_1ParamComposite_1adec07dcba0895ba69463147314cde7ce">Util::ParamComposite</link>.</para>
+<para>
+Definition at line 130 of file FileMaster.cpp.</para>
+<para>
+References Util::MpiLoader&lt; IArchive &gt;::load().</para>
+    </section><anchor xml:id="_classUtil_1_1FileMaster_1a242dce8b12bc4a5d8539308f2a702500"/>    <section>
+    <title>save()</title>
+<indexterm><primary>save</primary><secondary>Util::FileMaster</secondary></indexterm>
+<indexterm><primary>Util::FileMaster</primary><secondary>save</secondary></indexterm>
+<para><computeroutput>void Util::FileMaster::save (<link linkend="_classUtil_1_1Serializable_1aca43a1eea5ec5f13189a57892a7a6d04">Serializable::OArchive</link> &amp; ar)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Save internal state to file. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>output/saving archive </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Reimplemented from <link linkend="_classUtil_1_1ParamComposite_1a3c430a4e31a9573eadb06ab89d3bf780">Util::ParamComposite</link>.</para>
+<para>
+Definition at line 145 of file FileMaster.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1FileMaster_1a7181498c4c42b1fefb17408dcf64af93"/>    <section>
+    <title>open()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>open</primary><secondary>Util::FileMaster</secondary></indexterm>
+<indexterm><primary>Util::FileMaster</primary><secondary>open</secondary></indexterm>
+<para><computeroutput>void Util::FileMaster::open (const std::string &amp; name, std::ifstream &amp; in, std::ios_base::openmode mode = <computeroutput>std::ios_base::in</computeroutput>
+) const</computeroutput></para><para>
+
+<para>Open an input file with a known path and open mode. </para>
+</para>
+
+<para>Adds error checking to C++ ifstream::open function.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>name</entry>
+                                <entry>
+<para>complete file path </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>ifstream object to associated with a file </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>mode</entry>
+                                <entry>
+<para>read mode </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 198 of file FileMaster.cpp.</para>
+<para>
+References UTIL_THROW.</para>
+<para>
+Referenced by openControlFile(), openInputFile(), openOutputFile(), openRestartIFile(), and openRestartOFile().</para>
+    </section><anchor xml:id="_classUtil_1_1FileMaster_1a0a4e7620f0febbad5e89b219586cc20d"/>    <section>
+    <title>open()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>open</primary><secondary>Util::FileMaster</secondary></indexterm>
+<indexterm><primary>Util::FileMaster</primary><secondary>open</secondary></indexterm>
+<para><computeroutput>void Util::FileMaster::open (const std::string &amp; name, std::ofstream &amp; out, std::ios_base::openmode mode = <computeroutput>std::ios_base::out</computeroutput>
+) const</computeroutput></para><para>
+
+<para>Open an output file with a known path and open mode. </para>
+</para>
+
+<para>Add error checking to C++ ofstream::open function.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>name</entry>
+                                <entry>
+<para>complete file path </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>out</entry>
+                                <entry>
+<para>ofstream object to associated with a file </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>mode</entry>
+                                <entry>
+<para>write mode </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 213 of file FileMaster.cpp.</para>
+<para>
+References UTIL_THROW.</para>
+    </section><anchor xml:id="_classUtil_1_1FileMaster_1a54848e2f2f46ebf6231b225f92bf1fe4"/>    <section>
+    <title>openControlFile()</title>
+<indexterm><primary>openControlFile</primary><secondary>Util::FileMaster</secondary></indexterm>
+<indexterm><primary>Util::FileMaster</primary><secondary>openControlFile</secondary></indexterm>
+<para><computeroutput>void Util::FileMaster::openControlFile (const std::string &amp; name, std::ifstream &amp; in) const</computeroutput></para><para>
+
+<para>Open an input parameter or command file. </para>
+</para>
+
+<para>The path to this file constructed by concatenating: [rootPrefix] + [directoryIdPrefix] + name + &quot;.&quot; + ext</para>
+
+<para>The directoryIdPrefix is included only if a directory id has not been set and the <link linkend="_classUtil_1_1FileMaster_1ad677773938f15a0e830088aaffeafbaa">setCommonControl()</link> function has not been called.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>name</entry>
+                                <entry>
+<para>base file name, without any prefix </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>ifstream object to open </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 227 of file FileMaster.cpp.</para>
+<para>
+References open().</para>
+<para>
+Referenced by commandFile(), and paramFile().</para>
+    </section><anchor xml:id="_classUtil_1_1FileMaster_1a3e09c03947988d2863e71e2a426c681c"/>    <section>
+    <title>openRestartIFile()</title>
+<indexterm><primary>openRestartIFile</primary><secondary>Util::FileMaster</secondary></indexterm>
+<indexterm><primary>Util::FileMaster</primary><secondary>openRestartIFile</secondary></indexterm>
+<para><computeroutput>void Util::FileMaster::openRestartIFile (const std::string &amp; name, std::ifstream &amp; in, std::ios_base::openmode mode = <computeroutput>std::ios_base::in</computeroutput>
+) const</computeroutput></para><para>
+
+<para>Open an input restart dump file for reading. </para>
+</para>
+
+<para>The path to this file constructed by concatenating: [rootPrefix] + [directoryIdPrefix] + name + &quot;.&quot; + ext</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>name</entry>
+                                <entry>
+<para>base file name, without any prefix or extension </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>ifstream object to open </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>mode</entry>
+                                <entry>
+<para>open mode </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 242 of file FileMaster.cpp.</para>
+<para>
+References open().</para>
+    </section><anchor xml:id="_classUtil_1_1FileMaster_1afa350e3054cef8196727b06e9c61fb76"/>    <section>
+    <title>openRestartOFile()</title>
+<indexterm><primary>openRestartOFile</primary><secondary>Util::FileMaster</secondary></indexterm>
+<indexterm><primary>Util::FileMaster</primary><secondary>openRestartOFile</secondary></indexterm>
+<para><computeroutput>void Util::FileMaster::openRestartOFile (const std::string &amp; name, std::ofstream &amp; out, std::ios_base::openmode mode = <computeroutput>std::ios_base::out</computeroutput>
+) const</computeroutput></para><para>
+
+<para>Open an output restart file for writing. </para>
+</para>
+
+<para>The path to this file constructed by concatenating: [rootPrefix] + [directoryIdPrefix] + name</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>name</entry>
+                                <entry>
+<para>base file name </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>out</entry>
+                                <entry>
+<para>ofstream object to open </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>mode</entry>
+                                <entry>
+<para>open mode </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 257 of file FileMaster.cpp.</para>
+<para>
+References open().</para>
+    </section><anchor xml:id="_classUtil_1_1FileMaster_1a752d77ce79afadfb49f76b5ff898912a"/>    <section>
+    <title>openInputFile()</title>
+<indexterm><primary>openInputFile</primary><secondary>Util::FileMaster</secondary></indexterm>
+<indexterm><primary>Util::FileMaster</primary><secondary>openInputFile</secondary></indexterm>
+<para><computeroutput>void Util::FileMaster::openInputFile (const std::string &amp; filename, std::ifstream &amp; in, std::ios_base::openmode mode = <computeroutput>std::ios_base::in</computeroutput>
+) const</computeroutput></para><para>
+
+<para>Open an input file. </para>
+</para>
+
+<para>The path to this file constructed by concatenating: [rootPrefix] + [directoryIdPrefix] + inputPrefix + filename.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>filename</entry>
+                                <entry>
+<para>file name, without any prefix </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>ifstream object to associated with a file </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>mode</entry>
+                                <entry>
+<para>bit mask that specifies opening mode </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 273 of file FileMaster.cpp.</para>
+<para>
+References open().</para>
+    </section><anchor xml:id="_classUtil_1_1FileMaster_1a2166cd153810243b47666f0281da41aa"/>    <section>
+    <title>openOutputFile()</title>
+<indexterm><primary>openOutputFile</primary><secondary>Util::FileMaster</secondary></indexterm>
+<indexterm><primary>Util::FileMaster</primary><secondary>openOutputFile</secondary></indexterm>
+<para><computeroutput>void Util::FileMaster::openOutputFile (const std::string &amp; filename, std::ofstream &amp; out, std::ios_base::openmode mode = <computeroutput>std::ios_base::out</computeroutput>
+) const</computeroutput></para><para>
+
+<para>Open an output file. </para>
+</para>
+
+<para>The path to this file constructed by concatenating: [rootPrefix] + [directoryIdPrefix] + outputPrefix + filename.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>filename</entry>
+                                <entry>
+<para>file name, without any prefix </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>out</entry>
+                                <entry>
+<para>ofstream object to associated with a file </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>mode</entry>
+                                <entry>
+<para>bit mask that specifies opening mode </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 290 of file FileMaster.cpp.</para>
+<para>
+References open().</para>
+    </section><anchor xml:id="_classUtil_1_1FileMaster_1acc6bcda9964f9cfedd85745d1f207c10"/>    <section>
+    <title>isCommonControl()</title>
+<indexterm><primary>isCommonControl</primary><secondary>Util::FileMaster</secondary></indexterm>
+<indexterm><primary>Util::FileMaster</primary><secondary>isCommonControl</secondary></indexterm>
+<para><computeroutput>bool Util::FileMaster::isCommonControl ( ) const</computeroutput></para><para>
+
+<para>Is set for common param and command files? </para>
+</para>
+<para>
+Definition at line 308 of file FileMaster.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1FileMaster_1af9a65511bc82cfc4ac8f70158eaeef14"/>    <section>
+    <title>paramFileName()</title>
+<indexterm><primary>paramFileName</primary><secondary>Util::FileMaster</secondary></indexterm>
+<indexterm><primary>Util::FileMaster</primary><secondary>paramFileName</secondary></indexterm>
+<para><computeroutput>std::string Util::FileMaster::paramFileName ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return the param file name, if any. </para>
+</para>
+<para>
+Definition at line 466 of file FileMaster.h.</para>
+<para>
+Referenced by setParamFileName().</para>
+    </section><anchor xml:id="_classUtil_1_1FileMaster_1aac43a7dd477a2ce01b81c645a7378235"/>    <section>
+    <title>commandFileName()</title>
+<indexterm><primary>commandFileName</primary><secondary>Util::FileMaster</secondary></indexterm>
+<indexterm><primary>Util::FileMaster</primary><secondary>commandFileName</secondary></indexterm>
+<para><computeroutput>std::string Util::FileMaster::commandFileName ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return the command file name. </para>
+</para>
+
+<para>The base name of the command file is read from the parameter file by the <link linkend="_classUtil_1_1FileMaster_1a7feb4503d8a177959fb2e9625d74de7e">readParameters()</link> method. </para>
+<para>
+Definition at line 472 of file FileMaster.h.</para>
+<para>
+Referenced by setCommandFileName().</para>
+    </section><anchor xml:id="_classUtil_1_1FileMaster_1aa6e2bee2242001a0eeadc50d1a0a3837"/>    <section>
+    <title>paramFile()</title>
+<indexterm><primary>paramFile</primary><secondary>Util::FileMaster</secondary></indexterm>
+<indexterm><primary>Util::FileMaster</primary><secondary>paramFile</secondary></indexterm>
+<para><computeroutput>std::istream &amp; Util::FileMaster::paramFile ( )</computeroutput></para><para>
+
+<para>Get a default parameter stream by reference. </para>
+</para>
+
+<para>If <link linkend="_classUtil_1_1FileMaster_1ae295d9dc32e5ee3b4ac2b4b2a8f185f1">setDirectoryId()</link> has not been called, of if <link linkend="_classUtil_1_1FileMaster_1ad677773938f15a0e830088aaffeafbaa">setCommonControl()</link> has been called, this method returns std::cin.</para>
+
+<para>If <link linkend="_classUtil_1_1FileMaster_1ae295d9dc32e5ee3b4ac2b4b2a8f185f1">setDirectoryId()</link> has been called and setCommonControld() has not, this method returns a reference to a file &quot;n/param&quot;. This file is opened for reading the first time it is returned by this function. </para>
+<para>
+Definition at line 155 of file FileMaster.cpp.</para>
+<para>
+References openControlFile().</para>
+    </section><anchor xml:id="_classUtil_1_1FileMaster_1a4dfc5422ef408b9ea55f011dd298a9d2"/>    <section>
+    <title>commandFile()</title>
+<indexterm><primary>commandFile</primary><secondary>Util::FileMaster</secondary></indexterm>
+<indexterm><primary>Util::FileMaster</primary><secondary>commandFile</secondary></indexterm>
+<para><computeroutput>std::istream &amp; Util::FileMaster::commandFile ( )</computeroutput></para><para>
+
+<para>Get the command input stream by reference. </para>
+</para>
+
+<para>If the commandFileName string is equal to the string literal &quot;paramfile&quot;, this method returns the same stream as <link linkend="_classUtil_1_1FileMaster_1aa6e2bee2242001a0eeadc50d1a0a3837">paramFile()</link>. Otherwise, it returns a reference to a file whose name is given by the commandFileName string. If <link linkend="_classUtil_1_1FileMaster_1ae295d9dc32e5ee3b4ac2b4b2a8f185f1">setDirectoryId(int)</link> has not been called, the path to this file (absolute or relative to the working directory) is equal to the commandFileName string. If setDirectory() has been called with an integer argument n, the path to this file is obtained adding &quot;n/&quot; as a prefix to the commandFileName. In either case, if the commandFileName is not &quot;paramfile&quot;, the required file is opened for reading the first time it is returned by this method. </para>
+<para>
+Definition at line 178 of file FileMaster.cpp.</para>
+<para>
+References openControlFile().</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+FileMaster.hFileMaster.cpp</section>
+</section>

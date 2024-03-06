@@ -1,0 +1,290 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classPscf_1_1Pspg_1_1RDField">
+<title>Pscf::Pspg::RDField&lt; D &gt; Class Template Reference</title>
+<indexterm><primary>Pscf::Pspg::RDField&lt; D &gt;</primary></indexterm>
+<para>
+
+<para><link linkend="_classPscf_1_1Field">Field</link> of real single precision values on an <link linkend="_classPscf_1_1Pspg_1_1FFT">FFT</link> mesh on a device. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;RDField.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Pscf::Pspg::RDField&lt; D &gt;:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classPscf_1_1Pspg_1_1RDField.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classPscf_1_1Pspg_1_1RDField_1a158f81c275b802ff8e0a49f9ef658911">RDField</link> ()</para>
+
+<para>Default constructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classPscf_1_1Pspg_1_1RDField_1a849298ee7d4be4a10d19b2bae135292b">RDField</link> (<link linkend="_classPscf_1_1Pspg_1_1RDField">RDField</link>&lt; D &gt; const &amp;other)</para>
+
+<para>Copy constructor. </para>
+</listitem>
+            <listitem><para>virtual <link linkend="_classPscf_1_1Pspg_1_1RDField_1a9a5d78e3dbb9e8bcc7ec94d92a22eb7f">~RDField</link> ()</para>
+
+<para>Destructor. </para>
+</listitem>
+            <listitem><para><link linkend="_classPscf_1_1Pspg_1_1RDField">RDField</link> &amp; <link linkend="_classPscf_1_1Pspg_1_1RDField_1aac0a37511918b2cb3bb84b491ee80c2b">operator=</link> (<link linkend="_classPscf_1_1Pspg_1_1RDField">RDField</link>&lt; D &gt; const &amp;other)</para>
+
+<para>Assignment operator. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classPscf_1_1Pspg_1_1RDField_1a0f2a07c766fbc4cc0597afcd5de3ef47">allocate</link> (const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D &gt; &amp;<link linkend="_classPscf_1_1Pspg_1_1RDField_1ad7293a28930285b9b91f36946b62c5cc">meshDimensions</link>)</para>
+
+<para>Allocate the underlying C array for an <link linkend="_classPscf_1_1Pspg_1_1FFT">FFT</link> grid. </para>
+</listitem>
+            <listitem><para>const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D &gt; &amp; <link linkend="_classPscf_1_1Pspg_1_1RDField_1ad7293a28930285b9b91f36946b62c5cc">meshDimensions</link> () const</para>
+
+<para>Return mesh dimensions by constant reference. </para>
+</listitem>
+            <listitem><para>template&lt;class Archive &gt; </para><para>void <link linkend="_classPscf_1_1Pspg_1_1RDField_1a4d9ca041a8183f219b4f443befa7d6bd">serialize</link> (Archive &amp;ar, const unsigned int version)</para>
+
+<para>Serialize a <link linkend="_classPscf_1_1Field">Field</link> to/from an Archive. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<simplesect><title>template&lt;int D&gt;
+class Pscf::Pspg::RDField&lt; D &gt;</title></simplesect>
+
+
+<para><link linkend="_classPscf_1_1Field">Field</link> of real single precision values on an <link linkend="_classPscf_1_1Pspg_1_1FFT">FFT</link> mesh on a device. </para>
+
+
+
+<para>cudaReal = float </para>
+<para>
+Definition at line 33 of file RDField.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classPscf_1_1Pspg_1_1RDField_1a158f81c275b802ff8e0a49f9ef658911"/>    <section>
+    <title>RDField()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>RDField</primary><secondary>Pscf::Pspg::RDField&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::RDField&lt; D &gt;</primary><secondary>RDField</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput><link linkend="_classPscf_1_1Pspg_1_1RDField">Pscf::Pspg::RDField</link>&lt; D &gt;::<link linkend="_classPscf_1_1Pspg_1_1RDField">RDField</link></computeroutput></para><para>
+
+<para>Default constructor. </para>
+</para>
+<para>
+Definition at line 22 of file RDField.tpp.</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1RDField_1a849298ee7d4be4a10d19b2bae135292b"/>    <section>
+    <title>RDField()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>RDField</primary><secondary>Pscf::Pspg::RDField&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::RDField&lt; D &gt;</primary><secondary>RDField</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput><link linkend="_classPscf_1_1Pspg_1_1RDField">Pscf::Pspg::RDField</link>&lt; D &gt;::<link linkend="_classPscf_1_1Pspg_1_1RDField">RDField</link> (<link linkend="_classPscf_1_1Pspg_1_1RDField">RDField</link>&lt; D &gt; const &amp; other)</computeroutput></para><para>
+
+<para>Copy constructor. </para>
+</para>
+
+<para>Allocates new memory and copies all elements by value.</para>
+
+<para>uses memcpy! slow! 
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>other</entry>
+                                <entry>
+<para>the RField to be copied. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 41 of file RDField.tpp.</para>
+<para>
+References Pscf::Pspg::DField&lt; cudaReal &gt;::capacity_, Pscf::Pspg::DField&lt; cudaReal &gt;::cDField(), Pscf::Pspg::DField&lt; cudaReal &gt;::data_, Pscf::Pspg::DField&lt; cudaReal &gt;::isAllocated(), and UTIL_THROW.</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1RDField_1a9a5d78e3dbb9e8bcc7ec94d92a22eb7f"/>    <section>
+    <title>~RDField()</title>
+<indexterm><primary>~RDField</primary><secondary>Pscf::Pspg::RDField&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::RDField&lt; D &gt;</primary><secondary>~RDField</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput><link linkend="_classPscf_1_1Pspg_1_1RDField">Pscf::Pspg::RDField</link>&lt; D &gt;::~<link linkend="_classPscf_1_1Pspg_1_1RDField">RDField</link><computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Destructor. </para>
+</para>
+
+<para>Deletes underlying C array, if allocated previously. </para>
+<para>
+Definition at line 30 of file RDField.tpp.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classPscf_1_1Pspg_1_1RDField_1aac0a37511918b2cb3bb84b491ee80c2b"/>    <section>
+    <title>operator=()</title>
+<indexterm><primary>operator=</primary><secondary>Pscf::Pspg::RDField&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::RDField&lt; D &gt;</primary><secondary>operator=</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput><link linkend="_classPscf_1_1Pspg_1_1RDField">RDField</link>&lt; D &gt; &amp; <link linkend="_classPscf_1_1Pspg_1_1RDField">Pscf::Pspg::RDField</link>&lt; D &gt;::operator= (<link linkend="_classPscf_1_1Pspg_1_1RDField">RDField</link>&lt; D &gt; const &amp; other)</computeroutput></para><para>
+
+<para>Assignment operator. </para>
+</para>
+
+<para>If this <link linkend="_classPscf_1_1Field">Field</link> is not allocated, launch a kernel to swap memory.</para>
+
+<para>If this and the other <link linkend="_classPscf_1_1Field">Field</link> are both allocated, the capacities must be exactly equal. If so, this method copies all elements.</para>
+
+<para>uses memcpy! slow! 
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>other</entry>
+                                <entry>
+<para>the RHS RField </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 67 of file RDField.tpp.</para>
+<para>
+References Pscf::Pspg::DField&lt; cudaReal &gt;::capacity(), Pscf::Pspg::DField&lt; cudaReal &gt;::capacity_, Pscf::Pspg::DField&lt; cudaReal &gt;::cDField(), Pscf::Pspg::DField&lt; cudaReal &gt;::isAllocated(), and UTIL_THROW.</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1RDField_1a0f2a07c766fbc4cc0597afcd5de3ef47"/>    <section>
+    <title>allocate()</title>
+<indexterm><primary>allocate</primary><secondary>Pscf::Pspg::RDField&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::RDField&lt; D &gt;</primary><secondary>allocate</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>void <link linkend="_classPscf_1_1Pspg_1_1RDField">Pscf::Pspg::RDField</link>&lt; D &gt;::allocate (const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D &gt; &amp; meshDimensions)</computeroutput></para><para>
+
+<para>Allocate the underlying C array for an <link linkend="_classPscf_1_1Pspg_1_1FFT">FFT</link> grid. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Exceptions                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>Exception</entry>
+                                <entry>
+<para>if the RField is already allocated.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>meshDimensions</entry>
+                                <entry>
+<para>vector containing number of grid points in each direction </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 109 of file RDField.h.</para>
+<para>
+References Pscf::Pspg::DField&lt; Data &gt;::allocate(), and UTIL_CHECK.</para>
+<para>
+Referenced by Pscf::Pspg::Continuous::AmIterator&lt; D &gt;::minimizeCoeff().</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1RDField_1ad7293a28930285b9b91f36946b62c5cc"/>    <section>
+    <title>meshDimensions()</title>
+<indexterm><primary>meshDimensions</primary><secondary>Pscf::Pspg::RDField&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::RDField&lt; D &gt;</primary><secondary>meshDimensions</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><para><computeroutput>const <link linkend="_classPscf_1_1IntVec">IntVec</link>&lt; D &gt; &amp; <link linkend="_classPscf_1_1Pspg_1_1RDField">Pscf::Pspg::RDField</link>&lt; D &gt;::meshDimensions<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Return mesh dimensions by constant reference. </para>
+</para>
+<para>
+Definition at line 124 of file RDField.h.</para>
+<para>
+Referenced by Pscf::Pspg::FFT&lt; D &gt;::setup(), and Pscf::Pspg::FFTBatched&lt; D &gt;::setup().</para>
+    </section><anchor xml:id="_classPscf_1_1Pspg_1_1RDField_1a4d9ca041a8183f219b4f443befa7d6bd"/>    <section>
+    <title>serialize()</title>
+<indexterm><primary>serialize</primary><secondary>Pscf::Pspg::RDField&lt; D &gt;</secondary></indexterm>
+<indexterm><primary>Pscf::Pspg::RDField&lt; D &gt;</primary><secondary>serialize</secondary></indexterm>
+<computeroutput>template&lt;int D&gt; </computeroutput><computeroutput>template&lt;class Archive &gt; </computeroutput><para><computeroutput>void <link linkend="_classPscf_1_1Pspg_1_1RDField">Pscf::Pspg::RDField</link>&lt; D &gt;::serialize (Archive &amp; ar, const unsigned int version)</computeroutput></para><para>
+
+<para>Serialize a <link linkend="_classPscf_1_1Field">Field</link> to/from an Archive. </para>
+</para>
+
+<para>Temporarily uses a memcpy 
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>archive </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>version</entry>
+                                <entry>
+<para>archive version id </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 132 of file RDField.h.</para>
+<para>
+References UTIL_THROW.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+RDField.hRDField.tpp</section>
+</section>

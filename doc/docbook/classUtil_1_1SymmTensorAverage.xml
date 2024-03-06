@@ -1,0 +1,483 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUtil_1_1SymmTensorAverage">
+<title>Util::SymmTensorAverage Class Reference</title>
+<indexterm><primary>Util::SymmTensorAverage</primary></indexterm>
+<para>
+
+<para>Calculates averages of all components of a Tensor-valued variable. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;SymmTensorAverage.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for Util::SymmTensorAverage:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classUtil_1_1SymmTensorAverage.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classUtil_1_1SymmTensorAverage_1a01d81060ea71c772f1839de5981feb6b">SymmTensorAverage</link> (int blockFactor=2)</para>
+
+<para>Constructor. </para>
+</listitem>
+            <listitem><para>virtual <link linkend="_classUtil_1_1SymmTensorAverage_1a5c085b4ee6e98d7fa5be4997f3b403f2">~SymmTensorAverage</link> ()</para>
+
+<para>Destructor. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1SymmTensorAverage_1aab7468b58c20e227a6363c3f0aac6367">setNSamplePerBlock</link> (int <link linkend="_classUtil_1_1SymmTensorAverage_1afbebd511272d73f2f06dcff4acf302a9">nSamplePerBlock</link>)</para>
+
+<para>Set nSamplePerBlock. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1SymmTensorAverage_1a52499c115d2758ac4c29d1a831fbb362">readParameters</link> (std::istream &amp;in)</para>
+
+<para>Read parameter nSamplePerBlock from file and initialize. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classUtil_1_1SymmTensorAverage_1a25445a4678141cd1de7c616f1f6f6186">loadParameters</link> (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp;ar)</para>
+
+<para>Load internal state from an archive. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_classUtil_1_1SymmTensorAverage_1adbf1f3a1efc1eac27d43516d8490e7a9">save</link> (<link linkend="_classUtil_1_1Serializable_1aca43a1eea5ec5f13189a57892a7a6d04">Serializable::OArchive</link> &amp;ar)</para>
+
+<para>Save internal state to an archive. </para>
+</listitem>
+            <listitem><para>template&lt;class Archive &gt; </para><para>void <link linkend="_classUtil_1_1SymmTensorAverage_1a27462adc66648f113f15bea479ea5db8">serialize</link> (Archive &amp;ar, const unsigned int version)</para>
+
+<para>Serialize this to or from an archive. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1SymmTensorAverage_1a838b73ab5838515adbb301072c17cf64">clear</link> ()</para>
+
+<para>Clear all accumulators, set to empty initial state. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classUtil_1_1SymmTensorAverage_1a8ed3d9ae1a0e09e5377b01e17c91bf9a">sample</link> (const <link linkend="_classUtil_1_1Tensor">Tensor</link> &amp;value)</para>
+
+<para>Add a sampled value to the ensemble. </para>
+</listitem>
+            <listitem><para>const <link linkend="_classUtil_1_1Average">Average</link> &amp; <link linkend="_classUtil_1_1SymmTensorAverage_1a687fa78757526919b263ada5834f938b">operator()</link> (int i, int j)</para>
+
+<para>Access the <link linkend="_classUtil_1_1Average">Average</link> object for one tensor component. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1SymmTensorAverage_1afbebd511272d73f2f06dcff4acf302a9">nSamplePerBlock</link> () const</para>
+
+<para>Get number of samples per block average. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classUtil_1_1SymmTensorAverage_1a8a95165fdd539e594d1a9d148ecc0a30">iBlock</link> () const</para>
+
+<para>Get number of samples in current block average. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_classUtil_1_1SymmTensorAverage_1a12bbca01633af8c5dadc5c3704d550d1">isBlockComplete</link> () const</para>
+
+<para>Is the current block average complete? </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Calculates averages of all components of a Tensor-valued variable. </para>
+
+
+
+<para><link linkend="_classUtil_1_1SymmTensorAverage">SymmTensorAverage</link> is a simple container for an array of <link linkend="_classUtil_1_1Average">Average</link> objects, each of which calculates averages and error estimates for one component of a <link linkend="_classUtil_1_1Tensor">Tensor</link>. </para>
+<para>
+Definition at line 31 of file SymmTensorAverage.h.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classUtil_1_1SymmTensorAverage_1a01d81060ea71c772f1839de5981feb6b"/>    <section>
+    <title>SymmTensorAverage()</title>
+<indexterm><primary>SymmTensorAverage</primary><secondary>Util::SymmTensorAverage</secondary></indexterm>
+<indexterm><primary>Util::SymmTensorAverage</primary><secondary>SymmTensorAverage</secondary></indexterm>
+<para><computeroutput>Util::SymmTensorAverage::SymmTensorAverage (int blockFactor = <computeroutput>2</computeroutput>
+)</computeroutput></para><para>
+
+<para>Constructor. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>blockFactor</entry>
+                                <entry>
+<para>ratio of block sizes for subsequent stages. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 19 of file SymmTensorAverage.cpp.</para>
+<para>
+References Util::Dimension, and Util::ParamComposite::setClassName().</para>
+    </section><anchor xml:id="_classUtil_1_1SymmTensorAverage_1a5c085b4ee6e98d7fa5be4997f3b403f2"/>    <section>
+    <title>~SymmTensorAverage()</title>
+<indexterm><primary>~SymmTensorAverage</primary><secondary>Util::SymmTensorAverage</secondary></indexterm>
+<indexterm><primary>Util::SymmTensorAverage</primary><secondary>~SymmTensorAverage</secondary></indexterm>
+<para><computeroutput>Util::SymmTensorAverage::~SymmTensorAverage ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Destructor. </para>
+</para>
+<para>
+Definition at line 38 of file SymmTensorAverage.cpp.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classUtil_1_1SymmTensorAverage_1aab7468b58c20e227a6363c3f0aac6367"/>    <section>
+    <title>setNSamplePerBlock()</title>
+<indexterm><primary>setNSamplePerBlock</primary><secondary>Util::SymmTensorAverage</secondary></indexterm>
+<indexterm><primary>Util::SymmTensorAverage</primary><secondary>setNSamplePerBlock</secondary></indexterm>
+<para><computeroutput>void Util::SymmTensorAverage::setNSamplePerBlock (int nSamplePerBlock)</computeroutput></para><para>
+
+<para>Set nSamplePerBlock. </para>
+</para>
+
+<para>If nSamplePerBlock &gt; 0, the sample function will increment block averages, and reset the average every nSamplePerBlock samples.</para>
+
+<para>If nSamplePerBlock == 0, block averaging is disabled. This is the default (i.e., the initial value set in the constructor).</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>nSamplePerBlock</entry>
+                                <entry>
+<para>number of samples per block average output </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 44 of file SymmTensorAverage.cpp.</para>
+<para>
+References Util::Dimension, nSamplePerBlock(), and UTIL_THROW.</para>
+    </section><anchor xml:id="_classUtil_1_1SymmTensorAverage_1a52499c115d2758ac4c29d1a831fbb362"/>    <section>
+    <title>readParameters()</title>
+<indexterm><primary>readParameters</primary><secondary>Util::SymmTensorAverage</secondary></indexterm>
+<indexterm><primary>Util::SymmTensorAverage</primary><secondary>readParameters</secondary></indexterm>
+<para><computeroutput>void Util::SymmTensorAverage::readParameters (std::istream &amp; in)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Read parameter nSamplePerBlock from file and initialize. </para>
+</para>
+
+<para>See <link linkend="_classUtil_1_1SymmTensorAverage_1aab7468b58c20e227a6363c3f0aac6367">setNSamplePerBlock()</link> for discussion of value.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in</entry>
+                                <entry>
+<para>input stream </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Reimplemented from <link linkend="_classUtil_1_1ParamComposite_1a172a3a656b5829c8d758424ad09a22a6">Util::ParamComposite</link>.</para>
+<para>
+Definition at line 63 of file SymmTensorAverage.cpp.</para>
+<para>
+References Util::Dimension, and UTIL_THROW.</para>
+    </section><anchor xml:id="_classUtil_1_1SymmTensorAverage_1a25445a4678141cd1de7c616f1f6f6186"/>    <section>
+    <title>loadParameters()</title>
+<indexterm><primary>loadParameters</primary><secondary>Util::SymmTensorAverage</secondary></indexterm>
+<indexterm><primary>Util::SymmTensorAverage</primary><secondary>loadParameters</secondary></indexterm>
+<para><computeroutput>void Util::SymmTensorAverage::loadParameters (<link linkend="_classUtil_1_1Serializable_1ac6bcbf9bac926cada5a398804410e891">Serializable::IArchive</link> &amp; ar)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Load internal state from an archive. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>input/loading archive </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Reimplemented from <link linkend="_classUtil_1_1ParamComposite_1adec07dcba0895ba69463147314cde7ce">Util::ParamComposite</link>.</para>
+<para>
+Definition at line 82 of file SymmTensorAverage.cpp.</para>
+<para>
+References Util::Dimension, and UTIL_THROW.</para>
+    </section><anchor xml:id="_classUtil_1_1SymmTensorAverage_1adbf1f3a1efc1eac27d43516d8490e7a9"/>    <section>
+    <title>save()</title>
+<indexterm><primary>save</primary><secondary>Util::SymmTensorAverage</secondary></indexterm>
+<indexterm><primary>Util::SymmTensorAverage</primary><secondary>save</secondary></indexterm>
+<para><computeroutput>void Util::SymmTensorAverage::save (<link linkend="_classUtil_1_1Serializable_1aca43a1eea5ec5f13189a57892a7a6d04">Serializable::OArchive</link> &amp; ar)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Save internal state to an archive. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>output/saving archive </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Reimplemented from <link linkend="_classUtil_1_1ParamComposite_1a3c430a4e31a9573eadb06ab89d3bf780">Util::ParamComposite</link>.</para>
+<para>
+Definition at line 102 of file SymmTensorAverage.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1SymmTensorAverage_1a27462adc66648f113f15bea479ea5db8"/>    <section>
+    <title>serialize()</title>
+<indexterm><primary>serialize</primary><secondary>Util::SymmTensorAverage</secondary></indexterm>
+<indexterm><primary>Util::SymmTensorAverage</primary><secondary>serialize</secondary></indexterm>
+<computeroutput>template&lt;class Archive &gt; </computeroutput><para><computeroutput>void Util::SymmTensorAverage::serialize (Archive &amp; ar, const unsigned int version)</computeroutput></para><para>
+
+<para>Serialize this to or from an archive. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ar</entry>
+                                <entry>
+<para>input or output archive </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>version</entry>
+                                <entry>
+<para>file version id </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 181 of file SymmTensorAverage.h.</para>
+<para>
+References Util::Dimension.</para>
+    </section><anchor xml:id="_classUtil_1_1SymmTensorAverage_1a838b73ab5838515adbb301072c17cf64"/>    <section>
+    <title>clear()</title>
+<indexterm><primary>clear</primary><secondary>Util::SymmTensorAverage</secondary></indexterm>
+<indexterm><primary>Util::SymmTensorAverage</primary><secondary>clear</secondary></indexterm>
+<para><computeroutput>void Util::SymmTensorAverage::clear ( )</computeroutput></para><para>
+
+<para>Clear all accumulators, set to empty initial state. </para>
+</para>
+<para>
+Definition at line 108 of file SymmTensorAverage.cpp.</para>
+<para>
+References Util::Dimension.</para>
+    </section><anchor xml:id="_classUtil_1_1SymmTensorAverage_1a8ed3d9ae1a0e09e5377b01e17c91bf9a"/>    <section>
+    <title>sample()</title>
+<indexterm><primary>sample</primary><secondary>Util::SymmTensorAverage</secondary></indexterm>
+<indexterm><primary>Util::SymmTensorAverage</primary><secondary>sample</secondary></indexterm>
+<para><computeroutput>void Util::SymmTensorAverage::sample (const <link linkend="_classUtil_1_1Tensor">Tensor</link> &amp; value)</computeroutput></para><para>
+
+<para>Add a sampled value to the ensemble. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>value</entry>
+                                <entry>
+<para>sampled value </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line 124 of file SymmTensorAverage.cpp.</para>
+<para>
+References Util::Dimension.</para>
+    </section><anchor xml:id="_classUtil_1_1SymmTensorAverage_1a687fa78757526919b263ada5834f938b"/>    <section>
+    <title>operator()()</title>
+<indexterm><primary>operator()</primary><secondary>Util::SymmTensorAverage</secondary></indexterm>
+<indexterm><primary>Util::SymmTensorAverage</primary><secondary>operator()</secondary></indexterm>
+<para><computeroutput>const <link linkend="_classUtil_1_1Average">Average</link> &amp; Util::SymmTensorAverage::operator() (int i, int j)</computeroutput></para><para>
+
+<para>Access the <link linkend="_classUtil_1_1Average">Average</link> object for one tensor component. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>i</entry>
+                                <entry>
+<para>first index of associated tensor component </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>j</entry>
+                                <entry>
+<para>second index of associated tensor component </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para><link linkend="_classUtil_1_1Average">Average</link> object associated with element (i, j) </para>
+</formalpara>
+</para>
+<para>
+Definition at line 145 of file SymmTensorAverage.cpp.</para>
+    </section><anchor xml:id="_classUtil_1_1SymmTensorAverage_1afbebd511272d73f2f06dcff4acf302a9"/>    <section>
+    <title>nSamplePerBlock()</title>
+<indexterm><primary>nSamplePerBlock</primary><secondary>Util::SymmTensorAverage</secondary></indexterm>
+<indexterm><primary>Util::SymmTensorAverage</primary><secondary>nSamplePerBlock</secondary></indexterm>
+<para><computeroutput>int Util::SymmTensorAverage::nSamplePerBlock ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get number of samples per block average. </para>
+</para>
+
+<para>Returns zero if block averaging is disabled.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>number of samples per block (or 0 if disabled). </para>
+</formalpara>
+</para>
+<para>
+Definition at line 162 of file SymmTensorAverage.h.</para>
+<para>
+Referenced by setNSamplePerBlock().</para>
+    </section><anchor xml:id="_classUtil_1_1SymmTensorAverage_1a8a95165fdd539e594d1a9d148ecc0a30"/>    <section>
+    <title>iBlock()</title>
+<indexterm><primary>iBlock</primary><secondary>Util::SymmTensorAverage</secondary></indexterm>
+<indexterm><primary>Util::SymmTensorAverage</primary><secondary>iBlock</secondary></indexterm>
+<para><computeroutput>int Util::SymmTensorAverage::iBlock ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get number of samples in current block average. </para>
+</para>
+
+<para>Returns 0 if block averaging is disabled (i.e., nSamplePerBlock == 0).</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>number of samples in current block (or 0 if disabled). </para>
+</formalpara>
+</para>
+<para>
+Definition at line 168 of file SymmTensorAverage.h.</para>
+    </section><anchor xml:id="_classUtil_1_1SymmTensorAverage_1a12bbca01633af8c5dadc5c3704d550d1"/>    <section>
+    <title>isBlockComplete()</title>
+<indexterm><primary>isBlockComplete</primary><secondary>Util::SymmTensorAverage</secondary></indexterm>
+<indexterm><primary>Util::SymmTensorAverage</primary><secondary>isBlockComplete</secondary></indexterm>
+<para><computeroutput>bool Util::SymmTensorAverage::isBlockComplete ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Is the current block average complete? </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>(iBlock &gt; 0) &amp;&amp; (iBlock == nSamplePerBlock) </para>
+</formalpara>
+</para>
+<para>
+Definition at line 174 of file SymmTensorAverage.h.</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+SymmTensorAverage.hSymmTensorAverage.cpp</section>
+</section>

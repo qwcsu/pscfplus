@@ -1,0 +1,42 @@
+\hypertarget{classTestA}{}\doxysubsection{TestA Class Reference}
+\label{classTestA}\index{TestA@{TestA}}
+
+
+This example shows how to construct and run a single \mbox{\hyperlink{classUnitTest}{Unit\+Test}} class.  
+
+
+Inheritance diagram for TestA\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTestA}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Additional Inherited Members}
+
+
+\doxysubsubsection{Detailed Description}
+This example shows how to construct and run a single \mbox{\hyperlink{classUnitTest}{Unit\+Test}} class. 
+
+Trivial example of \mbox{\hyperlink{classUnitTest}{Unit\+Test}} use for parallel M\+PI job.
+
+This file demonstrates the usage of a composite test runner.
+
+We create a subclass of \mbox{\hyperlink{classUnitTest}{Unit\+Test}} named \mbox{\hyperlink{classTestA}{TestA}}, which has 3 test methods. We then use a set of preprocessor macros to define an associated subclass of \mbox{\hyperlink{classUnitTestRunner}{Unit\+Test\+Runner}}. The name of the \mbox{\hyperlink{classUnitTestRunner}{Unit\+Test\+Runner}} subclass is given by the macro T\+E\+S\+T\+\_\+\+R\+U\+N\+N\+E\+R(\+Test\+A), which expands to Test\+A\+\_\+\+Runner.
+
+In the main program, we create an instance of T\+E\+S\+T\+\_\+\+R\+U\+N\+N\+E\+R(\+Test\+A) and call its run method, which runs all 3 test methods in sequence. Trivial subclass of \mbox{\hyperlink{classUnitTest}{Unit\+Test}}, for illustration.
+
+A \mbox{\hyperlink{classCompositeTestRunner}{Composite\+Test\+Runner}} is a \mbox{\hyperlink{classTestRunner}{Test\+Runner}} that runs and accumulates statistics of the tests associated with several child \mbox{\hyperlink{classTestRunner}{Test\+Runner}} objects. The child runners are usually instances of \mbox{\hyperlink{classUnitTestRunner}{Unit\+Test\+Runner}}.
+
+To demonstrate the usage, we define two trivial unit tests, \mbox{\hyperlink{classTestA}{TestA}} and \mbox{\hyperlink{classTestB}{TestB}}, and use macros to define associated \mbox{\hyperlink{classUnitTestRunner}{Unit\+Test\+Runner}} subclasses, T\+E\+S\+T\+\_\+\+R\+U\+N\+N\+E\+R(\+Test\+A) and T\+E\+S\+T\+\_\+\+R\+U\+N\+N\+E\+R(\+Test\+B). The preprocessor macros in the main program then define a class Composite\+Example that is derived from \mbox{\hyperlink{classCompositeTestRunner}{Composite\+Test\+Runner}}, which contains instances of the T\+E\+S\+T\+\_\+\+R\+U\+N\+N\+E\+R(\+Test\+A) and T\+E\+S\+T\+\_\+\+R\+U\+N\+N\+E\+R(\+Test\+B). Calling the run() method of the Composite\+Example then runs the all of the tests defined in \mbox{\hyperlink{classTestA}{TestA}} and \mbox{\hyperlink{classTestB}{TestB}}. Trivial \mbox{\hyperlink{classUnitTest}{Unit\+Test}} A.
+
+Trivial subclass of \mbox{\hyperlink{classUnitTest}{Unit\+Test}} for an M\+PI job. 
+
+Definition at line 20 of file example1.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+example1.\+cpp\item 
+example2.\+cpp\item 
+example3.\+cpp\end{DoxyCompactItemize}

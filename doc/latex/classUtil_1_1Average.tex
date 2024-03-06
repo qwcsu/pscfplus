@@ -1,0 +1,415 @@
+\hypertarget{classUtil_1_1Average}{}\doxysubsection{Util\+::Average Class Reference}
+\label{classUtil_1_1Average}\index{Util::Average@{Util::Average}}
+
+
+Calculates the average and variance of a sampled property.  
+
+
+
+
+{\ttfamily \#include $<$Average.\+h$>$}
+
+Inheritance diagram for Util\+::Average\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classUtil_1_1Average}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtil_1_1Average_a72b1537be5987dae3964ece96f41c212}{Average}} (int block\+Factor=2)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classUtil_1_1Average_a365dbabdde7ff7e10445168b8563f1c7}{$\sim$\+Average}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1Average_aa6d118dd419b70295caa1aa099d76d65}{read\+Parameters}} (std\+::istream \&in)
+\begin{DoxyCompactList}\small\item\em Read parameter n\+Sample\+Per\+Block from file and initialize. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1Average_ae11f951ab1e57545f3c580f904fff5ad}{set\+N\+Sample\+Per\+Block}} (int \mbox{\hyperlink{classUtil_1_1Average_a438f84be90697f8c8e339e96fbd659aa}{n\+Sample\+Per\+Block}})
+\begin{DoxyCompactList}\small\item\em Set n\+Sample\+Per\+Block. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUtil_1_1Average_a786731986dc750f59cdbc8f57dbc3783}{load\+Parameters}} (\mbox{\hyperlink{classUtil_1_1Serializable_ac6bcbf9bac926cada5a398804410e891}{Serializable\+::\+I\+Archive}} \&ar)
+\begin{DoxyCompactList}\small\item\em Load internal state from an archive. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUtil_1_1Average_a6bb1a12d32f87d40483ae7bb0d8c4708}{save}} (\mbox{\hyperlink{classUtil_1_1Serializable_aca43a1eea5ec5f13189a57892a7a6d04}{Serializable\+::\+O\+Archive}} \&ar)
+\begin{DoxyCompactList}\small\item\em Save internal state to an archive. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Archive $>$ }\\void \mbox{\hyperlink{classUtil_1_1Average_a7d6d580125c1ae4b86c0b797192dc8ce}{serialize}} (Archive \&ar, const unsigned int version)
+\begin{DoxyCompactList}\small\item\em Serialize this \mbox{\hyperlink{classUtil_1_1Average}{Average}} to or from an archive. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1Average_a03fe5551e0a62d22ef7b923c94a457de}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Clear all accumulators, set to empty initial state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1Average_adf13dad094b6b95cbbd7d7a7dc9fb65c}{sample}} (double value)
+\begin{DoxyCompactList}\small\item\em Add a sampled value to the ensemble. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1Average_a872c4954766036d6603b3a8d81f117de}{sample}} (double value, std\+::ostream \&out)
+\begin{DoxyCompactList}\small\item\em Add a sampled value to ensemble, and output block averages. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUtil_1_1Average_a93d290ee5c38deb7475ca5c615113ffd}{output}} (std\+::ostream \&out) const
+\begin{DoxyCompactList}\small\item\em Output final statistical properties to file. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classUtil_1_1Average_abfb06bd8497f4ec92ca6e11948f7ea82}{blocking\+Error}} () const
+\begin{DoxyCompactList}\small\item\em Return estimated error on average from blocking analysis. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUtil_1_1Average_a438f84be90697f8c8e339e96fbd659aa}{n\+Sample\+Per\+Block}} () const
+\begin{DoxyCompactList}\small\item\em Get number of samples per block average. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classUtil_1_1Average_a3c8c1da604d88913b2e512d9f6dd0e85}{i\+Block}} () const
+\begin{DoxyCompactList}\small\item\em Get number of samples in current block average. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUtil_1_1Average_ad90d391e8c6be845d7537c0d2da55029}{is\+Block\+Complete}} () const
+\begin{DoxyCompactList}\small\item\em Is the current block average complete? \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+
+
+\doxysubsubsection{Detailed Description}
+Calculates the average and variance of a sampled property. 
+
+\mbox{\hyperlink{classUtil_1_1Average}{Average}} calculates block and global averages of a sampled value and its square, from which it obtains a global average and variance for a sequence. A hierarchical blocking algorithm is used to estimate the error on the average. No error estimate is provided for the variance.
+
+The sample function of also optionally calculates block averages, which can be useful for reducing how frequently values are logged to a file. The parameter n\+Sample\+Per\+Block is the number of samples per block average. This is initialized to zero. A zero value disables calculation of block averages. An overloaded method of the sample function that takes an std\+::ostream file as an argument outputs block averages to file as blocks are completed.
+
+The hierarchical blocking algorithm is implemented using a linked list of \mbox{\hyperlink{classUtil_1_1AverageStage}{Util\+::\+Average\+Stage}} objects. See documentation of that class for further details, and a literature reference. 
+
+Definition at line 43 of file Average.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtil_1_1Average_a72b1537be5987dae3964ece96f41c212}\label{classUtil_1_1Average_a72b1537be5987dae3964ece96f41c212}} 
+\index{Util::Average@{Util::Average}!Average@{Average}}
+\index{Average@{Average}!Util::Average@{Util::Average}}
+\doxyparagraph{\texorpdfstring{Average()}{Average()}}
+{\footnotesize\ttfamily Util\+::\+Average\+::\+Average (\begin{DoxyParamCaption}\item[{int}]{block\+Factor = {\ttfamily 2} }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em block\+Factor} & ratio of block sizes for subsequent stages. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 20 of file Average.\+cpp.
+
+
+
+References Util\+::\+Param\+Composite\+::set\+Class\+Name().
+
+\mbox{\Hypertarget{classUtil_1_1Average_a365dbabdde7ff7e10445168b8563f1c7}\label{classUtil_1_1Average_a365dbabdde7ff7e10445168b8563f1c7}} 
+\index{Util::Average@{Util::Average}!````~Average@{$\sim$Average}}
+\index{````~Average@{$\sim$Average}!Util::Average@{Util::Average}}
+\doxyparagraph{\texorpdfstring{$\sim$Average()}{~Average()}}
+{\footnotesize\ttfamily Util\+::\+Average\+::$\sim$\+Average (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+Definition at line 36 of file Average.\+cpp.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtil_1_1Average_aa6d118dd419b70295caa1aa099d76d65}\label{classUtil_1_1Average_aa6d118dd419b70295caa1aa099d76d65}} 
+\index{Util::Average@{Util::Average}!readParameters@{readParameters}}
+\index{readParameters@{readParameters}!Util::Average@{Util::Average}}
+\doxyparagraph{\texorpdfstring{readParameters()}{readParameters()}}
+{\footnotesize\ttfamily void Util\+::\+Average\+::read\+Parameters (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Read parameter n\+Sample\+Per\+Block from file and initialize. 
+
+See \mbox{\hyperlink{classUtil_1_1Average_ae11f951ab1e57545f3c580f904fff5ad}{set\+N\+Sample\+Per\+Block()}} for discussion of value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & input stream \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classUtil_1_1ParamComposite_a172a3a656b5829c8d758424ad09a22a6}{Util\+::\+Param\+Composite}}.
+
+
+
+Definition at line 52 of file Average.\+cpp.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1Average_ae11f951ab1e57545f3c580f904fff5ad}\label{classUtil_1_1Average_ae11f951ab1e57545f3c580f904fff5ad}} 
+\index{Util::Average@{Util::Average}!setNSamplePerBlock@{setNSamplePerBlock}}
+\index{setNSamplePerBlock@{setNSamplePerBlock}!Util::Average@{Util::Average}}
+\doxyparagraph{\texorpdfstring{setNSamplePerBlock()}{setNSamplePerBlock()}}
+{\footnotesize\ttfamily void Util\+::\+Average\+::set\+N\+Sample\+Per\+Block (\begin{DoxyParamCaption}\item[{int}]{n\+Sample\+Per\+Block }\end{DoxyParamCaption})}
+
+
+
+Set n\+Sample\+Per\+Block. 
+
+If n\+Sample\+Per\+Block $>$ 0, the sample function will increment block averages, and reset the average every n\+Sample\+Per\+Block samples.
+
+If n\+Sample\+Per\+Block == 0, block averaging is disabled. This is the default (i.\+e., the initial value set in the constructor).
+
+
+\begin{DoxyParams}{Parameters}
+{\em n\+Sample\+Per\+Block} & number of samples per block average output \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 63 of file Average.\+cpp.
+
+
+
+References n\+Sample\+Per\+Block(), and U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1Average_a786731986dc750f59cdbc8f57dbc3783}\label{classUtil_1_1Average_a786731986dc750f59cdbc8f57dbc3783}} 
+\index{Util::Average@{Util::Average}!loadParameters@{loadParameters}}
+\index{loadParameters@{loadParameters}!Util::Average@{Util::Average}}
+\doxyparagraph{\texorpdfstring{loadParameters()}{loadParameters()}}
+{\footnotesize\ttfamily void Util\+::\+Average\+::load\+Parameters (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1Serializable_ac6bcbf9bac926cada5a398804410e891}{Serializable\+::\+I\+Archive}} \&}]{ar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Load internal state from an archive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & input/loading archive \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classUtil_1_1ParamComposite_adec07dcba0895ba69463147314cde7ce}{Util\+::\+Param\+Composite}}.
+
+
+
+Definition at line 74 of file Average.\+cpp.
+
+
+
+References Util\+::\+Average\+Stage\+::serialize(), and U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{classUtil_1_1Average_a6bb1a12d32f87d40483ae7bb0d8c4708}\label{classUtil_1_1Average_a6bb1a12d32f87d40483ae7bb0d8c4708}} 
+\index{Util::Average@{Util::Average}!save@{save}}
+\index{save@{save}!Util::Average@{Util::Average}}
+\doxyparagraph{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily void Util\+::\+Average\+::save (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUtil_1_1Serializable_aca43a1eea5ec5f13189a57892a7a6d04}{Serializable\+::\+O\+Archive}} \&}]{ar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Save internal state to an archive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & output/saving archive \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classUtil_1_1ParamComposite_a3c430a4e31a9573eadb06ab89d3bf780}{Util\+::\+Param\+Composite}}.
+
+
+
+Definition at line 88 of file Average.\+cpp.
+
+\mbox{\Hypertarget{classUtil_1_1Average_a7d6d580125c1ae4b86c0b797192dc8ce}\label{classUtil_1_1Average_a7d6d580125c1ae4b86c0b797192dc8ce}} 
+\index{Util::Average@{Util::Average}!serialize@{serialize}}
+\index{serialize@{serialize}!Util::Average@{Util::Average}}
+\doxyparagraph{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$class Archive $>$ \\
+void Util\+::\+Average\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{ar,  }\item[{const unsigned int}]{version }\end{DoxyParamCaption})}
+
+
+
+Serialize this \mbox{\hyperlink{classUtil_1_1Average}{Average}} to or from an archive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & input or output archive \\
+\hline
+{\em version} & file version id \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 252 of file Average.\+h.
+
+
+
+References Util\+::\+Average\+Stage\+::serialize().
+
+\mbox{\Hypertarget{classUtil_1_1Average_a03fe5551e0a62d22ef7b923c94a457de}\label{classUtil_1_1Average_a03fe5551e0a62d22ef7b923c94a457de}} 
+\index{Util::Average@{Util::Average}!clear@{clear}}
+\index{clear@{clear}!Util::Average@{Util::Average}}
+\doxyparagraph{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void Util\+::\+Average\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Clear all accumulators, set to empty initial state. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classUtil_1_1AverageStage_a2c9065506a570a96cf72e66b574f9f1a}{Util\+::\+Average\+Stage}}.
+
+
+
+Definition at line 42 of file Average.\+cpp.
+
+
+
+References Util\+::\+Average\+Stage\+::clear().
+
+\mbox{\Hypertarget{classUtil_1_1Average_adf13dad094b6b95cbbd7d7a7dc9fb65c}\label{classUtil_1_1Average_adf13dad094b6b95cbbd7d7a7dc9fb65c}} 
+\index{Util::Average@{Util::Average}!sample@{sample}}
+\index{sample@{sample}!Util::Average@{Util::Average}}
+\doxyparagraph{\texorpdfstring{sample()}{sample()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Util\+::\+Average\+::sample (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Add a sampled value to the ensemble. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & sampled value \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classUtil_1_1AverageStage_a27a1cf9ab8b5478c5ff655705bf1e380}{Util\+::\+Average\+Stage}}.
+
+
+
+Definition at line 94 of file Average.\+cpp.
+
+
+
+References Util\+::\+Average\+Stage\+::sample().
+
+\mbox{\Hypertarget{classUtil_1_1Average_a872c4954766036d6603b3a8d81f117de}\label{classUtil_1_1Average_a872c4954766036d6603b3a8d81f117de}} 
+\index{Util::Average@{Util::Average}!sample@{sample}}
+\index{sample@{sample}!Util::Average@{Util::Average}}
+\doxyparagraph{\texorpdfstring{sample()}{sample()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Util\+::\+Average\+::sample (\begin{DoxyParamCaption}\item[{double}]{value,  }\item[{std\+::ostream \&}]{out }\end{DoxyParamCaption})}
+
+
+
+Add a sampled value to ensemble, and output block averages. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & sampled value \\
+\hline
+{\em out} & output stream to which to write block averages \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 112 of file Average.\+cpp.
+
+
+
+References Util\+::\+Average\+Stage\+::sample().
+
+\mbox{\Hypertarget{classUtil_1_1Average_a93d290ee5c38deb7475ca5c615113ffd}\label{classUtil_1_1Average_a93d290ee5c38deb7475ca5c615113ffd}} 
+\index{Util::Average@{Util::Average}!output@{output}}
+\index{output@{output}!Util::Average@{Util::Average}}
+\doxyparagraph{\texorpdfstring{output()}{output()}}
+{\footnotesize\ttfamily void Util\+::\+Average\+::output (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out }\end{DoxyParamCaption}) const}
+
+
+
+Output final statistical properties to file. 
+
+This function outputs the average value, an estimate of the error on the average, the variance. It also outputs a sequence of naive values for the error on the average obtained from sequences of block averages, with different levels of blocking. The naive estimate obtained from each stage is calculated as if subsequent values were uncorrelated. This gives sqrt(variance/n\+Sample), where variance is the variance of the sequence of block averages processed by that stage, and n\+Sample is the number of such block averages thus far. The final estimate of the error on the average is obtained by trying to identify several stages of block averaging that yield statistically indistinguishable naive estimates.
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & output stream \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 178 of file Average.\+cpp.
+
+
+
+References Util\+::\+Average\+Stage\+::average(), blocking\+Error(), Util\+::\+Average\+Stage\+::error(), Util\+::\+Average\+Stage\+::n\+Sample(), Util\+::\+Average\+Stage\+::stage\+Interval(), Util\+::\+Average\+Stage\+::std\+Deviation(), and Util\+::\+Average\+Stage\+::variance().
+
+\mbox{\Hypertarget{classUtil_1_1Average_abfb06bd8497f4ec92ca6e11948f7ea82}\label{classUtil_1_1Average_abfb06bd8497f4ec92ca6e11948f7ea82}} 
+\index{Util::Average@{Util::Average}!blockingError@{blockingError}}
+\index{blockingError@{blockingError}!Util::Average@{Util::Average}}
+\doxyparagraph{\texorpdfstring{blockingError()}{blockingError()}}
+{\footnotesize\ttfamily double Util\+::\+Average\+::blocking\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return estimated error on average from blocking analysis. 
+
+
+
+Definition at line 133 of file Average.\+cpp.
+
+
+
+References Util\+::\+Average\+Stage\+::error(), and Util\+::\+Average\+Stage\+::n\+Sample().
+
+
+
+Referenced by output().
+
+\mbox{\Hypertarget{classUtil_1_1Average_a438f84be90697f8c8e339e96fbd659aa}\label{classUtil_1_1Average_a438f84be90697f8c8e339e96fbd659aa}} 
+\index{Util::Average@{Util::Average}!nSamplePerBlock@{nSamplePerBlock}}
+\index{nSamplePerBlock@{nSamplePerBlock}!Util::Average@{Util::Average}}
+\doxyparagraph{\texorpdfstring{nSamplePerBlock()}{nSamplePerBlock()}}
+{\footnotesize\ttfamily int Util\+::\+Average\+::n\+Sample\+Per\+Block (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get number of samples per block average. 
+
+A zero value indicates that block averaging is disabled. 
+
+Definition at line 220 of file Average.\+h.
+
+
+
+Referenced by set\+N\+Sample\+Per\+Block().
+
+\mbox{\Hypertarget{classUtil_1_1Average_a3c8c1da604d88913b2e512d9f6dd0e85}\label{classUtil_1_1Average_a3c8c1da604d88913b2e512d9f6dd0e85}} 
+\index{Util::Average@{Util::Average}!iBlock@{iBlock}}
+\index{iBlock@{iBlock}!Util::Average@{Util::Average}}
+\doxyparagraph{\texorpdfstring{iBlock()}{iBlock()}}
+{\footnotesize\ttfamily int Util\+::\+Average\+::i\+Block (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get number of samples in current block average. 
+
+Return 0 if block averaging disabled, if !n\+Sample\+Per\+Block. 
+
+Definition at line 226 of file Average.\+h.
+
+\mbox{\Hypertarget{classUtil_1_1Average_ad90d391e8c6be845d7537c0d2da55029}\label{classUtil_1_1Average_ad90d391e8c6be845d7537c0d2da55029}} 
+\index{Util::Average@{Util::Average}!isBlockComplete@{isBlockComplete}}
+\index{isBlockComplete@{isBlockComplete}!Util::Average@{Util::Average}}
+\doxyparagraph{\texorpdfstring{isBlockComplete()}{isBlockComplete()}}
+{\footnotesize\ttfamily bool Util\+::\+Average\+::is\+Block\+Complete (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Is the current block average complete? 
+
+\begin{DoxyReturn}{Returns}
+(i\+Block $>$ 0) \&\& (i\+Block == n\+Sample\+Per\+Block) 
+\end{DoxyReturn}
+
+
+Definition at line 232 of file Average.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Average.\+h\item 
+Average.\+cpp\end{DoxyCompactItemize}

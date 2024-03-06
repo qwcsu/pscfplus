@@ -1,0 +1,635 @@
+\hypertarget{group__Pscf__Crystal__Module}{}\doxysubsection{Crystallography}
+\label{group__Pscf__Crystal__Module}\index{Crystallography@{Crystallography}}
+
+
+Classes that describe crystallographic information.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classPscf_1_1Basis}{Pscf\+::\+Basis$<$ D $>$}}
+\begin{DoxyCompactList}\small\item\em Symmetry-\/adapted basis for pseudo-\/spectral scft. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classPscf_1_1SpaceGroup}{Pscf\+::\+Space\+Group$<$ D $>$}}
+\begin{DoxyCompactList}\small\item\em Crystallographic space group. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Pscf\+::\+Space\+Symmetry$<$ D $>$}}
+\begin{DoxyCompactList}\small\item\em A \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}} represents a crystallographic space group symmetry. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structPscf_1_1TWave}{Pscf\+::\+T\+Wave$<$ D $>$}}
+\begin{DoxyCompactList}\small\item\em Simple wave struct for use within \mbox{\hyperlink{classPscf_1_1Basis}{Basis}} construction. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structPscf_1_1TWaveNormComp}{Pscf\+::\+T\+Wave\+Norm\+Comp$<$ D $>$}}
+\begin{DoxyCompactList}\small\item\em Comparator for \mbox{\hyperlink{structPscf_1_1TWave}{T\+Wave}} objects, based on T\+Wave\+::sq\+Norm. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structPscf_1_1TWaveDftComp}{Pscf\+::\+T\+Wave\+Dft\+Comp$<$ D $>$}}
+\begin{DoxyCompactList}\small\item\em Comparator for \mbox{\hyperlink{structPscf_1_1TWave}{T\+Wave}} objects, based on T\+Wave\+::indices\+Dft. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structPscf_1_1TWaveBzComp}{Pscf\+::\+T\+Wave\+Bz\+Comp$<$ D $>$}}
+\begin{DoxyCompactList}\small\item\em Comparator for \mbox{\hyperlink{structPscf_1_1TWave}{T\+Wave}} objects, based on T\+Wave\+::indices\+Bz. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classPscf_1_1UnitCell}{Pscf\+::\+Unit\+Cell$<$ D $>$}}
+\begin{DoxyCompactList}\small\item\em Base template for Unit\+Cell$<$\+D$>$ classes, D=1, 2 or 3. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classPscf_1_1UnitCell_3_011_01_4}{Pscf\+::\+Unit\+Cell$<$ 1 $>$}}
+\begin{DoxyCompactList}\small\item\em 1D crystal unit cell. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classPscf_1_1UnitCell_3_012_01_4}{Pscf\+::\+Unit\+Cell$<$ 2 $>$}}
+\begin{DoxyCompactList}\small\item\em 2D crystal unit cell. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classPscf_1_1UnitCell_3_013_01_4}{Pscf\+::\+Unit\+Cell$<$ 3 $>$}}
+\begin{DoxyCompactList}\small\item\em 3D crystal unit cell. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classPscf_1_1UnitCellBase}{Pscf\+::\+Unit\+Cell\+Base$<$ D $>$}}
+\begin{DoxyCompactList}\small\item\em Base class template for a crystallographic unit cell. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{group__Pscf__Crystal__Module_ga5b918f86652c69b69ced3fc7d775d2a6}{Pscf\+::make\+Group\+File\+Name}} (int D, std\+::string group\+Name)
+\begin{DoxyCompactList}\small\item\em Generates the file name from a group name. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int D$>$ }\\std\+::ostream \& \mbox{\hyperlink{group__Pscf__Crystal__Module_ga8b2619c49933e1111118fd631cf72560}{Pscf\+::operator$<$$<$}} (std\+::ostream \&out, const \mbox{\hyperlink{classPscf_1_1SpaceGroup}{Space\+Group}}$<$ D $>$ \&g)
+\begin{DoxyCompactList}\small\item\em Output stream inserter operator for a Space\+Group$<$\+D$>$. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int D$>$ }\\std\+::istream \& \mbox{\hyperlink{group__Pscf__Crystal__Module_ga90fb8dc1da5bf7b51f1e947f79135bf0}{Pscf\+::operator$>$$>$}} (std\+::istream \&in, \mbox{\hyperlink{classPscf_1_1SpaceGroup}{Space\+Group}}$<$ D $>$ \&g)
+\begin{DoxyCompactList}\small\item\em Input stream extractor operator for a Space\+Group$<$\+D$>$. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int D$>$ }\\bool \mbox{\hyperlink{group__Pscf__Crystal__Module_gabcd342be1403c21b4a639e64564c194a}{Pscf\+::operator==}} (const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&A, const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&B)
+\begin{DoxyCompactList}\small\item\em Are two \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}} objects equivalent? \end{DoxyCompactList}\item 
+{\footnotesize template$<$int D$>$ }\\bool \mbox{\hyperlink{group__Pscf__Crystal__Module_ga08fd7ca8322df2599d3869a7fb2231c7}{Pscf\+::operator!=}} (const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&A, const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&B)
+\begin{DoxyCompactList}\small\item\em Are two \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}} objects not equivalent? \end{DoxyCompactList}\item 
+{\footnotesize template$<$int D$>$ }\\\mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \mbox{\hyperlink{group__Pscf__Crystal__Module_ga69926403edde9211e7c6bdc9e24f6a4b}{Pscf\+::operator$\ast$}} (const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&A, const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&B)
+\begin{DoxyCompactList}\small\item\em Return the product A$\ast$B of two symmetry objects. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int D$>$ }\\\mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec}}$<$ D $>$ \mbox{\hyperlink{group__Pscf__Crystal__Module_ga12bc79d00309ecdf9fb5ddc6516b496c}{Pscf\+::operator$\ast$}} (const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&S, const \mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec}}$<$ D $>$ \&V)
+\begin{DoxyCompactList}\small\item\em Return the \mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec$<$\+D$>$}} product S$\ast$V of a rotation matrix and an \mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec$<$\+D$>$}}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int D$>$ }\\\mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec}}$<$ D $>$ \mbox{\hyperlink{group__Pscf__Crystal__Module_ga8f35475c6cdeb8ab404cbbb7db344bd0}{Pscf\+::operator$\ast$}} (const \mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec}}$<$ D $>$ \&V, const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&S)
+\begin{DoxyCompactList}\small\item\em Return the \mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec$<$\+D$>$}} product V$\ast$S of an \mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec$<$\+D$>$}} and a rotation matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int D$>$ }\\std\+::ostream \& \mbox{\hyperlink{group__Pscf__Crystal__Module_ga475a04acb4a4b2db0064c8228cbceb67}{Pscf\+::operator$<$$<$}} (std\+::ostream \&out, const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&A)
+\begin{DoxyCompactList}\small\item\em Output stream inserter for a Space\+Symmetry$<$\+D$>$ \end{DoxyCompactList}\item 
+{\footnotesize template$<$int D$>$ }\\std\+::istream \& \mbox{\hyperlink{group__Pscf__Crystal__Module_gad66a282db936d4fcf167a509ff719766}{Pscf\+::operator$>$$>$}} (std\+::istream \&in, \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&A)
+\begin{DoxyCompactList}\small\item\em Input stream extractor for a Space\+Symmetry$<$\+D$>$ \end{DoxyCompactList}\item 
+{\footnotesize template$<$int D$>$ }\\std\+::istream \& \mbox{\hyperlink{group__Pscf__Crystal__Module_gaa2e3dd3166079cb3f1189958aee1e490}{Pscf\+::operator$>$$>$}} (std\+::istream \&in, \mbox{\hyperlink{classPscf_1_1UnitCell}{Unit\+Cell}}$<$ D $>$ \&cell)
+\begin{DoxyCompactList}\small\item\em istream input extractor for a Unit\+Cell$<$\+D$>$. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int D$>$ }\\std\+::ostream \& \mbox{\hyperlink{group__Pscf__Crystal__Module_ga5c0068ecd9c37496d62393eadfdaa9c0}{Pscf\+::operator$<$$<$}} (std\+::ostream \&out, \mbox{\hyperlink{classPscf_1_1UnitCell}{Unit\+Cell}}$<$ D $>$ const \&cell)
+\begin{DoxyCompactList}\small\item\em ostream output inserter for a Unit\+Cell$<$\+D$>$. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Archive , int D$>$ }\\void \mbox{\hyperlink{group__Pscf__Crystal__Module_gae07fa76fe1b0212122e9d74841f80f42}{Pscf\+::serialize}} (Archive \&ar, \mbox{\hyperlink{classPscf_1_1UnitCell}{Unit\+Cell}}$<$ D $>$ \&cell, const unsigned int version)
+\begin{DoxyCompactList}\small\item\em Serialize to/from an archive. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int D$>$ }\\void \mbox{\hyperlink{group__Pscf__Crystal__Module_gac7f60dc3995e66e904e3351dc11a66ff}{Pscf\+::read\+Unit\+Cell\+Header}} (std\+::istream \&in, \mbox{\hyperlink{classPscf_1_1UnitCell}{Unit\+Cell}}$<$ D $>$ \&cell)
+\begin{DoxyCompactList}\small\item\em Read Unit\+Cell$<$\+D$>$ from a field file header (fortran pscf format). \end{DoxyCompactList}\item 
+{\footnotesize template$<$int D$>$ }\\void \mbox{\hyperlink{group__Pscf__Crystal__Module_ga087934de419a07908fea9bdcdcc33019}{Pscf\+::write\+Unit\+Cell\+Header}} (std\+::ostream \&out, \mbox{\hyperlink{classPscf_1_1UnitCell}{Unit\+Cell}}$<$ D $>$ const \&cell)
+\begin{DoxyCompactList}\small\item\em Write Unit\+Cell$<$\+D$>$ to a field file header (fortran pscf format). \end{DoxyCompactList}\item 
+std\+::istream \& \mbox{\hyperlink{group__Pscf__Crystal__Module_ga68893ea5cb523144d7855456648dac1f}{Pscf\+::operator$>$$>$}} (std\+::istream \&in, \mbox{\hyperlink{classPscf_1_1UnitCell}{Unit\+Cell}}$<$ 1 $>$\+::Lattice\+System \&lattice)
+\begin{DoxyCompactList}\small\item\em istream extractor for a 1D \mbox{\hyperlink{classPscf_1_1UnitCell_3_011_01_4_ad71e2d50a03b39f720f88a2ca041c2bc}{Unit\+Cell$<$1$>$\+::\+Lattice\+System}}. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{group__Pscf__Crystal__Module_gab28c33f2c3f0a68262c9c56e1d51947c}{Pscf\+::operator$<$$<$}} (std\+::ostream \&out, \mbox{\hyperlink{classPscf_1_1UnitCell}{Unit\+Cell}}$<$ 1 $>$\+::Lattice\+System lattice)
+\begin{DoxyCompactList}\small\item\em ostream inserter for a 1D \mbox{\hyperlink{classPscf_1_1UnitCell_3_011_01_4_ad71e2d50a03b39f720f88a2ca041c2bc}{Unit\+Cell$<$1$>$\+::\+Lattice\+System}}. \end{DoxyCompactList}\item 
+std\+::istream \& \mbox{\hyperlink{group__Pscf__Crystal__Module_ga6e7889474f0a07a055ddad7b5eabbc07}{Pscf\+::operator$>$$>$}} (std\+::istream \&in, \mbox{\hyperlink{classPscf_1_1UnitCell}{Unit\+Cell}}$<$ 2 $>$\+::Lattice\+System \&lattice)
+\begin{DoxyCompactList}\small\item\em istream extractor for a 2D \mbox{\hyperlink{classPscf_1_1UnitCell_3_012_01_4_aef9fcf7153b54d7fa86fa47e46e67a3a}{Unit\+Cell$<$2$>$\+::\+Lattice\+System}}. \end{DoxyCompactList}\item 
+std\+::istream \& \mbox{\hyperlink{group__Pscf__Crystal__Module_ga0c8f60ddb4acc73eea670633b7e3221a}{Pscf\+::operator$>$$>$}} (std\+::istream \&in, \mbox{\hyperlink{classPscf_1_1UnitCell}{Unit\+Cell}}$<$ 3 $>$\+::Lattice\+System \&lattice)
+\begin{DoxyCompactList}\small\item\em istream extractor for a 3D \mbox{\hyperlink{classPscf_1_1UnitCell_3_013_01_4_afde1231bed1b0ae8014dc81ba18068d8}{Unit\+Cell$<$3$>$\+::\+Lattice\+System}}. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{group__Pscf__Crystal__Module_gaef2aa7d97bba2051cab3d1c042a4ea87}{Pscf\+::operator$<$$<$}} (std\+::ostream \&out, \mbox{\hyperlink{classPscf_1_1UnitCell}{Unit\+Cell}}$<$ 3 $>$\+::Lattice\+System lattice)
+\begin{DoxyCompactList}\small\item\em ostream inserter for an 3D \mbox{\hyperlink{classPscf_1_1UnitCell_3_013_01_4_afde1231bed1b0ae8014dc81ba18068d8}{Unit\+Cell$<$3$>$\+::\+Lattice\+System}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Classes that describe crystallographic information. 
+
+
+
+\doxysubsubsection{Function Documentation}
+\mbox{\Hypertarget{group__Pscf__Crystal__Module_ga5b918f86652c69b69ced3fc7d775d2a6}\label{group__Pscf__Crystal__Module_ga5b918f86652c69b69ced3fc7d775d2a6}} 
+\index{Crystallography@{Crystallography}!makeGroupFileName@{makeGroupFileName}}
+\index{makeGroupFileName@{makeGroupFileName}!Crystallography@{Crystallography}}
+\doxyparagraph{\texorpdfstring{makeGroupFileName()}{makeGroupFileName()}}
+{\footnotesize\ttfamily std\+::string Pscf\+::make\+Group\+File\+Name (\begin{DoxyParamCaption}\item[{int}]{D,  }\item[{std\+::string}]{group\+Name }\end{DoxyParamCaption})}
+
+
+
+Generates the file name from a group name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em group\+Name} & standard name of space group\\
+\hline
+{\em D} & dimensionality of space (D=1,2 or 3) \\
+\hline
+{\em group\+Name} & standard name of space group \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 25 of file group\+File.\+cpp.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+
+
+Referenced by Pscf\+::\+Basis$<$ D $>$\+::make\+Basis().
+
+\mbox{\Hypertarget{group__Pscf__Crystal__Module_ga8b2619c49933e1111118fd631cf72560}\label{group__Pscf__Crystal__Module_ga8b2619c49933e1111118fd631cf72560}} 
+\index{Crystallography@{Crystallography}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Crystallography@{Crystallography}}
+\doxyparagraph{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+std\+::ostream\& Pscf\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{const \mbox{\hyperlink{classPscf_1_1SpaceGroup}{Space\+Group}}$<$ D $>$ \&}]{g }\end{DoxyParamCaption})}
+
+
+
+Output stream inserter operator for a Space\+Group$<$\+D$>$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & output stream \\
+\hline
+{\em g} & space group \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 106 of file Space\+Group.\+h.
+
+
+
+References Pscf\+::\+Symmetry\+Group$<$ Space\+Symmetry$<$ D $>$ $>$\+::size().
+
+\mbox{\Hypertarget{group__Pscf__Crystal__Module_ga90fb8dc1da5bf7b51f1e947f79135bf0}\label{group__Pscf__Crystal__Module_ga90fb8dc1da5bf7b51f1e947f79135bf0}} 
+\index{Crystallography@{Crystallography}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Crystallography@{Crystallography}}
+\doxyparagraph{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+std\+::istream\& Pscf\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in,  }\item[{\mbox{\hyperlink{classPscf_1_1SpaceGroup}{Space\+Group}}$<$ D $>$ \&}]{g }\end{DoxyParamCaption})}
+
+
+
+Input stream extractor operator for a Space\+Group$<$\+D$>$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & input stream \\
+\hline
+{\em g} & space group \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 127 of file Space\+Group.\+h.
+
+
+
+References Pscf\+::\+Symmetry\+Group$<$ Space\+Symmetry$<$ D $>$ $>$\+::add(), Pscf\+::\+Symmetry\+Group$<$ Space\+Symmetry$<$ D $>$ $>$\+::clear(), and U\+T\+I\+L\+\_\+\+C\+H\+E\+CK.
+
+\mbox{\Hypertarget{group__Pscf__Crystal__Module_gabcd342be1403c21b4a639e64564c194a}\label{group__Pscf__Crystal__Module_gabcd342be1403c21b4a639e64564c194a}} 
+\index{Crystallography@{Crystallography}!operator==@{operator==}}
+\index{operator==@{operator==}!Crystallography@{Crystallography}}
+\doxyparagraph{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+bool Pscf\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&}]{A,  }\item[{const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&}]{B }\end{DoxyParamCaption})}
+
+
+
+Are two \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}} objects equivalent? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & first symmetry \\
+\hline
+{\em B} & second symmetry \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if A == B, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 357 of file Space\+Symmetry.\+h.
+
+\mbox{\Hypertarget{group__Pscf__Crystal__Module_ga08fd7ca8322df2599d3869a7fb2231c7}\label{group__Pscf__Crystal__Module_ga08fd7ca8322df2599d3869a7fb2231c7}} 
+\index{Crystallography@{Crystallography}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Crystallography@{Crystallography}}
+\doxyparagraph{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+bool Pscf\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&}]{A,  }\item[{const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&}]{B }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Are two \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}} objects not equivalent? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & first symmetry \\
+\hline
+{\em B} & second symmetry \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if A != B, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 305 of file Space\+Symmetry.\+h.
+
+\mbox{\Hypertarget{group__Pscf__Crystal__Module_ga69926403edde9211e7c6bdc9e24f6a4b}\label{group__Pscf__Crystal__Module_ga69926403edde9211e7c6bdc9e24f6a4b}} 
+\index{Crystallography@{Crystallography}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Crystallography@{Crystallography}}
+\doxyparagraph{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ Pscf\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&}]{A,  }\item[{const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&}]{B }\end{DoxyParamCaption})}
+
+
+
+Return the product A$\ast$B of two symmetry objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & first symmetry \\
+\hline
+{\em B} & second symmetry \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+product A$\ast$B 
+\end{DoxyReturn}
+
+
+Definition at line 378 of file Space\+Symmetry.\+h.
+
+
+
+References Pscf\+::\+Space\+Symmetry$<$ D $>$\+::normalize().
+
+\mbox{\Hypertarget{group__Pscf__Crystal__Module_ga12bc79d00309ecdf9fb5ddc6516b496c}\label{group__Pscf__Crystal__Module_ga12bc79d00309ecdf9fb5ddc6516b496c}} 
+\index{Crystallography@{Crystallography}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Crystallography@{Crystallography}}
+\doxyparagraph{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec}}$<$ D $>$ Pscf\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&}]{S,  }\item[{const \mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec}}$<$ D $>$ \&}]{V }\end{DoxyParamCaption})}
+
+
+
+Return the \mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec$<$\+D$>$}} product S$\ast$V of a rotation matrix and an \mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec$<$\+D$>$}}. 
+
+The product is defined to be the matrix product of the rotation matrix and the integer vector S.\+R $\ast$ V.
+
+
+\begin{DoxyParams}{Parameters}
+{\em S} & symmetry operation \\
+\hline
+{\em V} & integer vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+product S$\ast$V 
+\end{DoxyReturn}
+
+
+Definition at line 411 of file Space\+Symmetry.\+h.
+
+\mbox{\Hypertarget{group__Pscf__Crystal__Module_ga8f35475c6cdeb8ab404cbbb7db344bd0}\label{group__Pscf__Crystal__Module_ga8f35475c6cdeb8ab404cbbb7db344bd0}} 
+\index{Crystallography@{Crystallography}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Crystallography@{Crystallography}}
+\doxyparagraph{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+\mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec}}$<$ D $>$ Pscf\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec}}$<$ D $>$ \&}]{V,  }\item[{const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&}]{S }\end{DoxyParamCaption})}
+
+
+
+Return the \mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec$<$\+D$>$}} product V$\ast$S of an \mbox{\hyperlink{classPscf_1_1IntVec}{Int\+Vec$<$\+D$>$}} and a rotation matrix. 
+
+The product is defined to be the matrix product of the integer vector and the space group rotation matrix S.\+R $\ast$ V.
+
+
+\begin{DoxyParams}{Parameters}
+{\em V} & integer vector \\
+\hline
+{\em S} & symmetry operation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+product V$\ast$S 
+\end{DoxyReturn}
+
+
+Definition at line 428 of file Space\+Symmetry.\+h.
+
+\mbox{\Hypertarget{group__Pscf__Crystal__Module_ga475a04acb4a4b2db0064c8228cbceb67}\label{group__Pscf__Crystal__Module_ga475a04acb4a4b2db0064c8228cbceb67}} 
+\index{Crystallography@{Crystallography}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Crystallography@{Crystallography}}
+\doxyparagraph{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+std\+::ostream \& Pscf\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{const \mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&}]{A }\end{DoxyParamCaption})}
+
+
+
+Output stream inserter for a Space\+Symmetry$<$\+D$>$ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & output stream \\
+\hline
+{\em A} & Space\+Symmetry$<$\+D$>$ object to be output \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+modified output stream 
+\end{DoxyReturn}
+
+
+Definition at line 445 of file Space\+Symmetry.\+h.
+
+\mbox{\Hypertarget{group__Pscf__Crystal__Module_gad66a282db936d4fcf167a509ff719766}\label{group__Pscf__Crystal__Module_gad66a282db936d4fcf167a509ff719766}} 
+\index{Crystallography@{Crystallography}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Crystallography@{Crystallography}}
+\doxyparagraph{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+std\+::istream \& Pscf\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in,  }\item[{\mbox{\hyperlink{classPscf_1_1SpaceSymmetry}{Space\+Symmetry}}$<$ D $>$ \&}]{A }\end{DoxyParamCaption})}
+
+
+
+Input stream extractor for a Space\+Symmetry$<$\+D$>$ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & input stream \\
+\hline
+{\em A} & Space\+Symmetry$<$\+D$>$ object to be input \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+modified input stream 
+\end{DoxyReturn}
+
+
+Definition at line 465 of file Space\+Symmetry.\+h.
+
+\mbox{\Hypertarget{group__Pscf__Crystal__Module_gaa2e3dd3166079cb3f1189958aee1e490}\label{group__Pscf__Crystal__Module_gaa2e3dd3166079cb3f1189958aee1e490}} 
+\index{Crystallography@{Crystallography}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Crystallography@{Crystallography}}
+\doxyparagraph{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+std\+::istream \& Pscf\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in,  }\item[{\mbox{\hyperlink{classPscf_1_1UnitCell}{Unit\+Cell}}$<$ D $>$ \&}]{cell }\end{DoxyParamCaption})}
+
+
+
+istream input extractor for a Unit\+Cell$<$\+D$>$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & input stream \\
+\hline
+{\em cell} & Unit\+Cell$<$\+D$>$ to be read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+modified input stream 
+\end{DoxyReturn}
+
+
+Definition at line 21 of file Unit\+Cell.\+tpp.
+
+
+
+References Pscf\+::\+Unit\+Cell\+Base$<$ D $>$\+::n\+Parameter\+\_\+, Pscf\+::\+Unit\+Cell\+Base$<$ D $>$\+::parameters\+\_\+, and Pscf\+::\+Unit\+Cell\+Base$<$ D $>$\+::set\+Lattice().
+
+\mbox{\Hypertarget{group__Pscf__Crystal__Module_ga5c0068ecd9c37496d62393eadfdaa9c0}\label{group__Pscf__Crystal__Module_ga5c0068ecd9c37496d62393eadfdaa9c0}} 
+\index{Crystallography@{Crystallography}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Crystallography@{Crystallography}}
+\doxyparagraph{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+std\+::ostream \& Pscf\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\mbox{\hyperlink{classPscf_1_1UnitCell}{Unit\+Cell}}$<$ D $>$ const \&}]{cell }\end{DoxyParamCaption})}
+
+
+
+ostream output inserter for a Unit\+Cell$<$\+D$>$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & output stream \\
+\hline
+{\em cell} & Unit\+Cell$<$\+D$>$ to be written \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+modified output stream 
+\end{DoxyReturn}
+
+
+Definition at line 34 of file Unit\+Cell.\+tpp.
+
+
+
+References Pscf\+::\+Unit\+Cell\+Base$<$ D $>$\+::n\+Parameter\+\_\+, and Pscf\+::\+Unit\+Cell\+Base$<$ D $>$\+::parameters\+\_\+.
+
+\mbox{\Hypertarget{group__Pscf__Crystal__Module_gae07fa76fe1b0212122e9d74841f80f42}\label{group__Pscf__Crystal__Module_gae07fa76fe1b0212122e9d74841f80f42}} 
+\index{Crystallography@{Crystallography}!serialize@{serialize}}
+\index{serialize@{serialize}!Crystallography@{Crystallography}}
+\doxyparagraph{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$class Archive , int D$>$ \\
+void Pscf\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{ar,  }\item[{\mbox{\hyperlink{classPscf_1_1UnitCell}{Unit\+Cell}}$<$ D $>$ \&}]{cell,  }\item[{const unsigned int}]{version }\end{DoxyParamCaption})}
+
+
+
+Serialize to/from an archive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & input or output archive \\
+\hline
+{\em cell} & Unit\+Cell$<$\+D$>$ object to be serialized \\
+\hline
+{\em version} & archive version id \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 48 of file Unit\+Cell.\+tpp.
+
+
+
+References Pscf\+::\+Unit\+Cell\+Base$<$ D $>$\+::n\+Parameter\+\_\+, Pscf\+::\+Unit\+Cell\+Base$<$ D $>$\+::parameters\+\_\+, and Util\+::serialize\+Enum().
+
+\mbox{\Hypertarget{group__Pscf__Crystal__Module_gac7f60dc3995e66e904e3351dc11a66ff}\label{group__Pscf__Crystal__Module_gac7f60dc3995e66e904e3351dc11a66ff}} 
+\index{Crystallography@{Crystallography}!readUnitCellHeader@{readUnitCellHeader}}
+\index{readUnitCellHeader@{readUnitCellHeader}!Crystallography@{Crystallography}}
+\doxyparagraph{\texorpdfstring{readUnitCellHeader()}{readUnitCellHeader()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+void Pscf\+::read\+Unit\+Cell\+Header (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in,  }\item[{\mbox{\hyperlink{classPscf_1_1UnitCell}{Unit\+Cell}}$<$ D $>$ \&}]{cell }\end{DoxyParamCaption})}
+
+
+
+Read Unit\+Cell$<$\+D$>$ from a field file header (fortran pscf format). 
+
+If the unit cell has a non-\/null lattice system on entry, the value read from file must match this existing value, or this function throws an exception. If the lattice system is null on entry, the lattice system value is read from file. In either case, unit cell parameters (dimensions and angles) are updated using values read from file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & input stream \\
+\hline
+{\em cell} & Unit\+Cell$<$\+D$>$ to be read \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 59 of file Unit\+Cell.\+tpp.
+
+
+
+References Pscf\+::\+Unit\+Cell\+Base$<$ D $>$\+::n\+Parameter\+\_\+, Pscf\+::\+Unit\+Cell\+Base$<$ D $>$\+::parameters\+\_\+, Pscf\+::\+Unit\+Cell\+Base$<$ D $>$\+::set\+Lattice(), and U\+T\+I\+L\+\_\+\+C\+H\+E\+CK.
+
+\mbox{\Hypertarget{group__Pscf__Crystal__Module_ga087934de419a07908fea9bdcdcc33019}\label{group__Pscf__Crystal__Module_ga087934de419a07908fea9bdcdcc33019}} 
+\index{Crystallography@{Crystallography}!writeUnitCellHeader@{writeUnitCellHeader}}
+\index{writeUnitCellHeader@{writeUnitCellHeader}!Crystallography@{Crystallography}}
+\doxyparagraph{\texorpdfstring{writeUnitCellHeader()}{writeUnitCellHeader()}}
+{\footnotesize\ttfamily template$<$int D$>$ \\
+void Pscf\+::write\+Unit\+Cell\+Header (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\mbox{\hyperlink{classPscf_1_1UnitCell}{Unit\+Cell}}$<$ D $>$ const \&}]{cell }\end{DoxyParamCaption})}
+
+
+
+Write Unit\+Cell$<$\+D$>$ to a field file header (fortran pscf format). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & output stream \\
+\hline
+{\em cell} & Unit\+Cell$<$\+D$>$ to be written \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 88 of file Unit\+Cell.\+tpp.
+
+
+
+References Pscf\+::\+Unit\+Cell\+Base$<$ D $>$\+::n\+Parameter\+\_\+, and Pscf\+::\+Unit\+Cell\+Base$<$ D $>$\+::parameters\+\_\+.
+
+
+
+Referenced by Pscf\+::\+Pspg\+::\+Field\+Io$<$ D $>$\+::write\+Field\+Header().
+
+\mbox{\Hypertarget{group__Pscf__Crystal__Module_ga68893ea5cb523144d7855456648dac1f}\label{group__Pscf__Crystal__Module_ga68893ea5cb523144d7855456648dac1f}} 
+\index{Crystallography@{Crystallography}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Crystallography@{Crystallography}}
+\doxyparagraph{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily std\+::istream \& Pscf\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in,  }\item[{\mbox{\hyperlink{classPscf_1_1UnitCell}{Unit\+Cell}}$<$ 1 $>$\+::Lattice\+System \&}]{lattice }\end{DoxyParamCaption})}
+
+
+
+istream extractor for a 1D \mbox{\hyperlink{classPscf_1_1UnitCell_3_011_01_4_ad71e2d50a03b39f720f88a2ca041c2bc}{Unit\+Cell$<$1$>$\+::\+Lattice\+System}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & input stream \\
+\hline
+{\em lattice} & \mbox{\hyperlink{classPscf_1_1UnitCell_3_011_01_4_ad71e2d50a03b39f720f88a2ca041c2bc}{Unit\+Cell$<$1$>$\+::\+Lattice\+System}} to be read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+modified input stream 
+\end{DoxyReturn}
+
+
+Definition at line 52 of file Unit\+Cell1.\+cpp.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{group__Pscf__Crystal__Module_gab28c33f2c3f0a68262c9c56e1d51947c}\label{group__Pscf__Crystal__Module_gab28c33f2c3f0a68262c9c56e1d51947c}} 
+\index{Crystallography@{Crystallography}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Crystallography@{Crystallography}}
+\doxyparagraph{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily std\+::ostream \& Pscf\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\mbox{\hyperlink{classPscf_1_1UnitCell}{Unit\+Cell}}$<$ 1 $>$\+::Lattice\+System}]{lattice }\end{DoxyParamCaption})}
+
+
+
+ostream inserter for a 1D \mbox{\hyperlink{classPscf_1_1UnitCell_3_011_01_4_ad71e2d50a03b39f720f88a2ca041c2bc}{Unit\+Cell$<$1$>$\+::\+Lattice\+System}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & output stream \\
+\hline
+{\em lattice} & \mbox{\hyperlink{classPscf_1_1UnitCell_3_011_01_4_ad71e2d50a03b39f720f88a2ca041c2bc}{Unit\+Cell$<$1$>$\+::\+Lattice\+System}} to be written \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+modified output stream 
+\end{DoxyReturn}
+
+
+Definition at line 69 of file Unit\+Cell1.\+cpp.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{group__Pscf__Crystal__Module_ga6e7889474f0a07a055ddad7b5eabbc07}\label{group__Pscf__Crystal__Module_ga6e7889474f0a07a055ddad7b5eabbc07}} 
+\index{Crystallography@{Crystallography}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Crystallography@{Crystallography}}
+\doxyparagraph{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily std\+::istream \& Pscf\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in,  }\item[{\mbox{\hyperlink{classPscf_1_1UnitCell}{Unit\+Cell}}$<$ 2 $>$\+::Lattice\+System \&}]{lattice }\end{DoxyParamCaption})}
+
+
+
+istream extractor for a 2D \mbox{\hyperlink{classPscf_1_1UnitCell_3_012_01_4_aef9fcf7153b54d7fa86fa47e46e67a3a}{Unit\+Cell$<$2$>$\+::\+Lattice\+System}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & input stream \\
+\hline
+{\em lattice} & \mbox{\hyperlink{classPscf_1_1UnitCell_3_012_01_4_aef9fcf7153b54d7fa86fa47e46e67a3a}{Unit\+Cell$<$2$>$\+::\+Lattice\+System}} to be read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+modified input stream 
+\end{DoxyReturn}
+
+
+Definition at line 157 of file Unit\+Cell2.\+cpp.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{group__Pscf__Crystal__Module_ga0c8f60ddb4acc73eea670633b7e3221a}\label{group__Pscf__Crystal__Module_ga0c8f60ddb4acc73eea670633b7e3221a}} 
+\index{Crystallography@{Crystallography}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Crystallography@{Crystallography}}
+\doxyparagraph{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily std\+::istream \& Pscf\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in,  }\item[{\mbox{\hyperlink{classPscf_1_1UnitCell}{Unit\+Cell}}$<$ 3 $>$\+::Lattice\+System \&}]{lattice }\end{DoxyParamCaption})}
+
+
+
+istream extractor for a 3D \mbox{\hyperlink{classPscf_1_1UnitCell_3_013_01_4_afde1231bed1b0ae8014dc81ba18068d8}{Unit\+Cell$<$3$>$\+::\+Lattice\+System}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & input stream \\
+\hline
+{\em lattice} & \mbox{\hyperlink{classPscf_1_1UnitCell_3_013_01_4_afde1231bed1b0ae8014dc81ba18068d8}{Unit\+Cell$<$3$>$\+::\+Lattice\+System}} to be read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+modified input stream 
+\end{DoxyReturn}
+
+
+Definition at line 330 of file Unit\+Cell3.\+cpp.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+
+\mbox{\Hypertarget{group__Pscf__Crystal__Module_gaef2aa7d97bba2051cab3d1c042a4ea87}\label{group__Pscf__Crystal__Module_gaef2aa7d97bba2051cab3d1c042a4ea87}} 
+\index{Crystallography@{Crystallography}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Crystallography@{Crystallography}}
+\doxyparagraph{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily std\+::ostream \& Pscf\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\mbox{\hyperlink{classPscf_1_1UnitCell}{Unit\+Cell}}$<$ 3 $>$\+::Lattice\+System}]{lattice }\end{DoxyParamCaption})}
+
+
+
+ostream inserter for an 3D \mbox{\hyperlink{classPscf_1_1UnitCell_3_013_01_4_afde1231bed1b0ae8014dc81ba18068d8}{Unit\+Cell$<$3$>$\+::\+Lattice\+System}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & output stream \\
+\hline
+{\em lattice} & \mbox{\hyperlink{classPscf_1_1UnitCell_3_013_01_4_afde1231bed1b0ae8014dc81ba18068d8}{Unit\+Cell$<$3$>$\+::\+Lattice\+System}} to be written \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+modified output stream 
+\end{DoxyReturn}
+
+
+Definition at line 365 of file Unit\+Cell3.\+cpp.
+
+
+
+References U\+T\+I\+L\+\_\+\+T\+H\+R\+OW.
+

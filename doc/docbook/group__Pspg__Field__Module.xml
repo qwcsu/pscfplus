@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_group__Pspg__Field__Module">
+<title>Fields</title>
+<indexterm><primary>Fields</primary></indexterm>
+<para>
+
+<para>Fields and <link linkend="_classPscf_1_1Pspg_1_1FFT">FFT</link> plans for use with pseudo-spectral algorithm on a GPU. </para>
+ 
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classPscf_1_1Pspg_1_1DField">Pscf::Pspg::DField&lt; Data &gt;</link></para>
+
+<para>Dynamic array with aligned data, for use with cufftw library/device code. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1Pspg_1_1FFT">Pscf::Pspg::FFT&lt; D &gt;</link></para>
+
+<para>Fourier transform wrapper for real data. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1Pspg_1_1FFTBatched">Pscf::Pspg::FFTBatched&lt; D &gt;</link></para>
+
+<para>Fourier transform wrapper for real data. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1Pspg_1_1FieldIo">Pscf::Pspg::FieldIo&lt; D &gt;</link></para>
+
+<para>File input/output operations for fields in several file formats. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1Pspg_1_1RDField">Pscf::Pspg::RDField&lt; D &gt;</link></para>
+
+<para><link linkend="_classPscf_1_1Field">Field</link> of real single precision values on an <link linkend="_classPscf_1_1Pspg_1_1FFT">FFT</link> mesh on a device. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classPscf_1_1Pspg_1_1RDFieldDft">Pscf::Pspg::RDFieldDft&lt; D &gt;</link></para>
+
+<para>Fourier transform of a real field on an <link linkend="_classPscf_1_1Pspg_1_1FFT">FFT</link> mesh. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Fields and <link linkend="_classPscf_1_1Pspg_1_1FFT">FFT</link> plans for use with pseudo-spectral algorithm on a GPU. </para>
+</section>
+</section>

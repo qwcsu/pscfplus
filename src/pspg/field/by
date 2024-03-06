@@ -1,0 +1,2 @@
+nvcc test.cu FCT.cu -I . -L /usr/local/cuda-11.7/lib64 -lcufft
+
