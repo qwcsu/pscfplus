@@ -26,7 +26,7 @@ Same as PSCF, the PSCF+ source code is written using C++ as the primary language
 The PSCF+ package depends on the [GNU scientific library](https://www.gnu.org/software/gsl/) (GSL), and can only run on a computer with an appropriate NVIDIA GPU. To compile or run these programs, the system must also have an NVIDIA CUDA development environment that provides the [cuFFT](https://docs.nvidia.com/cuda/cufft/index.html) fast Fourier transform library.
 
 ## Documentation
-The most recent version of [user manual](https://docs.nvidia.com/cuda/cufft/index.html](https://github.com/qwcsu/pscfplus/blob/master/doc/pdf/refman.pdf)  is available online.
+The most recent version of [user manual](https://github.com/qwcsu/pscfplus/blob/master/doc/pdf/refman.pdf)  is available online.
 
 ## Contributors
 - Qiang (David) Wang
