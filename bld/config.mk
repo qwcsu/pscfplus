@@ -126,7 +126,6 @@ BLD_DIR=$(ROOT_DIR)/bld
 # Path to the source directory (contains C++ source code files)
 SRC_DIR=$(ROOT_DIR)/src
 
-NVXXFLAGS= -O3 -arch=sm_75 -DREPS=4 -DCHN=2 -DDFT=0 -DNBP=1 -DCMP=1
 # Installation directory for binary executable program files
 BIN_DIR=$(ROOT_DIR)/bin
 
@@ -205,6 +204,9 @@ TESTFLAGS= -Wall $(CXX_STD)
 
 # ---------------------------------------------------------------
 # Cuda compiler and options (*.cu files)
+
+NVXXFLAGS= -O3 -arch=sm_75 -DREPS=1 -DCHN=0 -DDFT=0 -DNBP=0 -DCMP=0
+
 
 # Cuda compiler command
 NVXX=nvcc
@@ -326,8 +328,6 @@ UTIL_CXX11=1
 # same name as a corresponding makefile variable that must be defined
 # to enable the feature. Thus for, example, when the build system has 
 # been configured to enable debugging, the DEFINES string will include
-NVXXFLAGS= -O3 -arch=sm_75 -DREPS=4 -DCHN=2 -DDFT=0 -DNBP=1 -DCMP=1
-NVXXFLAGS= -O3 -arch=sm_75 -DREPS=4 -DCHN=2 -DDFT=0 -DNBP=1 -DCMP=1
 # a substring "-D UTIL_DEBUG" to define the UTIL_DEBUG preprocessor 
 # macro and thereby enable conditional compilation of blocks of code
 # that contain optional sanity checks.  

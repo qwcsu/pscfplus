@@ -205,6 +205,12 @@ TESTFLAGS= -Wall $(CXX_STD)
 # ---------------------------------------------------------------
 # Cuda compiler and options (*.cu files)
 
+MODLEFLAG = -DREPS=1 -DCHN=0 -DDFT=1 -DNBP=0 -DCMP=0
+
+
+NVXXFLAGS= -O3 -arch=sm_75 $(MODLEFLAG)
+
+
 # Cuda compiler command
 NVXX=nvcc
 

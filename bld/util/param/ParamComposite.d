@@ -41,5 +41,4 @@
         /home/juntong/CSU/pscfplus/bld/util/config.mk\
         /home/juntong/CSU/pscfplus/bld/pscf/config.mk\
         /home/juntong/CSU/pscfplus/bld/pspg/config.mk\
-        /home/juntong/CSU/pscfplus/bld/pgc/config.mk\
-        /home/juntong/CSU/pscfplus/bld/pgd/config.mk
+        /home/juntong/CSU/pscfplus/bld/pgc/config.mk
