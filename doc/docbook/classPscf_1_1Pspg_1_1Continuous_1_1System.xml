@@ -429,7 +429,7 @@ Parameters                    </title>
                 </formalpara>
                 </para>
 <para>
-Definition at line 928 of file pgc/System.tpp.</para>
+Definition at line 962 of file pgc/System.tpp.</para>
 <para>
 References Util::Log::file(), and UTIL_CHECK.</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1System_1a3919fd15dc1d1a4a51c715f626287377"/>    <section>
@@ -441,7 +441,7 @@ References Util::Log::file(), and UTIL_CHECK.</para>
 <para>Read commands from default command file. </para>
 </para>
 <para>
-Definition at line 913 of file pgc/System.tpp.</para>
+Definition at line 947 of file pgc/System.tpp.</para>
 <para>
 References UTIL_THROW.</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1System_1a7cf182526b29695c59987b4f2d4c5dd8"/>    <section>
@@ -454,7 +454,7 @@ References UTIL_THROW.</para>
 <para>Read commands from json-format command file. </para>
 </para>
 <para>
-Definition at line 466 of file pgc/System.tpp.</para>
+Definition at line 500 of file pgc/System.tpp.</para>
 <para>
 References UTIL_THROW.</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1System_1a2a47d0cce03015f3d01629bfe012520f"/>    <section>
@@ -468,7 +468,7 @@ References UTIL_THROW.</para>
 
 <para>This function should be called after a successful call of <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1System_1a10b3891afb372fe6c40f86bb4bfdcc99">iterator()</link>.solve(). Resulting values are returned by the freeEnergy() and <link linkend="_classPscf_1_1Pspg_1_1Continuous_1_1System_1a10f276991a266a8e3a675fb7e57ac215">pressure()</link> accessor functions. </para>
 <para>
-Definition at line 1458 of file pgc/System.tpp.</para>
+Definition at line 1492 of file pgc/System.tpp.</para>
 <para>
 References Pscf::PolymerTmpl&lt; Block&lt; D &gt; &gt;::length(), Pscf::Species::mu(), Pscf::Pspg::ThreadGrid::nBlocks(), Pscf::Pspg::ThreadGrid::nThreads(), Pscf::Species::phi(), and Pscf::Pspg::ThreadGrid::setThreadsLogical().</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1System_1a33c1b43cc8cbc12ba38e694636e9c10b"/>    <section>
@@ -484,7 +484,7 @@ References Pscf::PolymerTmpl&lt; Block&lt; D &gt; &gt;::length(), Pscf::Species:
 
 <para>/param out </para>
 <para>
-Definition at line 1600 of file pgc/System.tpp.</para>
+Definition at line 1634 of file pgc/System.tpp.</para>
     </section><anchor xml:id="_classPscf_1_1Pspg_1_1Continuous_1_1System_1add73cb408ec411737b8850bb8135cc67"/>    <section>
     <title>wFields()</title>
 <indexterm><primary>wFields</primary><secondary>Pscf::Pspg::Continuous::System&lt; D &gt;</secondary></indexterm>
