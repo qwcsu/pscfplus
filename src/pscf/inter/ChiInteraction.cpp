@@ -43,6 +43,7 @@ namespace Pscf {
       }
       readDSymmMatrix(in, "chi", chi_, nMonomer());
 
+#if CHN != 0
       for (int i = 0; i < nMonomer(); ++i)
       {
          for (int j = 0; j < nMonomer(); ++j)
@@ -50,7 +51,7 @@ namespace Pscf {
             chi_(i,j) *= nSegment();
          }
       }
-
+#endif
       if (nMonomer() == 2) {
          double det = chi_(0,0)*chi_(1, 1) - chi_(0,1)*chi_(1,0);
          double norm = chi_(0,0)*chi_(0, 0) + chi_(1,1)*chi_(1,1)

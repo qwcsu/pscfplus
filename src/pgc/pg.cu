@@ -126,7 +126,7 @@ int main(int argc, char **argv)
         break;
     }
   }
-  
+  std::cout << dim1 << " " << dim2 << "\n";
   if (dim1 == 3 && dim2 == -1)
   {
     Pscf::Pspg::Continuous::System<3> system;
