@@ -27,11 +27,11 @@ the nonlinear SCF equations and find the bulk periodicity for the ordered phases
 - In SCF calculations the (one-end-integrated) forward and backward propagators 
   $q$ and $q^\dagger$ of each block
   usually take the largest memory usage, but the GPU memory is rather limited. While in PSCF the size of
-  these propagators is $n_\bold{r}n_s$, where $n_\bold{r}$ denotes the number of grid points in real space and $n_s$ the number of
+  these propagators is $n_{\bold r}n_s$, where $n_{\bold r}$ denotes the number of grid points in real space and $n_s$ the number of
   contour discretization points on a continuous Gaussian chain (or the number of segments on a discrete
   chain), in PSCF+ the "slice" algorithm proposed by Li and Qiang can be used to reduce the size of $q$ to
-  $n_\bold{r}\sqrt{n_s}$
-  and that of $q^\dagger$ to just $n_\bold{r}$, thus greatly reducing the GPU memory usage at the cost of computing $q$
+  $n_{\bold r}\sqrt{n_s}$
+  and that of $q^\dagger$ to just $n_{\bold r}$, thus greatly reducing the GPU memory usage at the cost of computing $q$
   twice; see [SavMem.pdf](https://github.com/qwcsu/pscfplus/blob/master/doc/notes/SavMem.pdf) for more details.
 
 - While propagators for different blocks having the same segment type, block length and initial condition are
