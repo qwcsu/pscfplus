@@ -202,7 +202,7 @@ namespace Pscf
                     std::string fieldFileName = dir;
                     fieldFileName += "/";
                     fieldFileName += caseid;
-                    fieldFileName += "_omega.bf";
+                    fieldFileName += "_omega.basis";
                     Log::file() << Str(fieldFileName, 20) << std::endl;
                     Log::file() << std::endl;
                     fieldIo().readFieldsBasis(fieldFileName, wFields());
@@ -219,7 +219,7 @@ namespace Pscf
                     fieldFileName += "/";
                     fieldFileName += prefix;
                     fieldFileName += caseid;
-                    fieldFileName += "_omega.bf";
+                    fieldFileName += "_omega.basis";
                     Log::file() << Str(fieldFileName, 20) << std::endl;
                     Log::file() << std::endl;
                     fieldIo().convertRGridToBasis(wFieldsRGrid(), wFields());
@@ -250,7 +250,7 @@ namespace Pscf
                     Log::file() << "Reading omega field in real-space:" << std::endl;
                     std::string fieldFileName = dir;
                     fieldFileName += caseid;
-                    fieldFileName += "_omega.rf";
+                    fieldFileName += "_omega.real";
                     Log::file() << " " << Str(fieldFileName, 20) << std::endl;
                     fieldIo().readFieldsRGrid(fieldFileName, wFieldsRGrid());
                     hasWFields_ = true;
@@ -266,7 +266,7 @@ namespace Pscf
                     fieldFileName += "/";
                     fieldFileName += prefix;
                     fieldFileName += caseid;
-                    fieldFileName += "_omega.rf";
+                    fieldFileName += "_omega.real";
                     Log::file() << Str(fieldFileName, 20) << std::endl;
                     Log::file() << std::endl;
                     fieldIo().writeFieldsRGrid(fieldFileName, wFieldsRGrid());
@@ -282,7 +282,7 @@ namespace Pscf
                     fieldFileName += "/";
                     fieldFileName += prefix;
                     fieldFileName += caseid;
-                    fieldFileName += "_phi.rf";
+                    fieldFileName += "_phi.real";
                     Log::file() << Str(fieldFileName, 20) << std::endl;
                     Log::file() << std::endl;
                     fieldIo().writeFieldsRGrid(fieldFileName, cFieldsRGrid());
@@ -298,7 +298,7 @@ namespace Pscf
                     fieldFileName += "/";
                     fieldFileName += prefix;
                     fieldFileName += caseid;
-                    fieldFileName += "_phi.bf";
+                    fieldFileName += "_phi.basis";
                     Log::file() << Str(fieldFileName, 20) << std::endl;
                     Log::file() << std::endl;
                     fieldIo().convertRGridToBasis(cFieldsRGrid(), cFields());
@@ -366,6 +366,43 @@ namespace Pscf
                                     proc[0]["CaseId"].asString(),
                                     "");
 
+                    }
+                    if (!proc[i]["PhiToWBasis"].empty())
+                    {
+                        hasCFields_ = false;
+
+                        std::string fieldFileName = "./out/phi/";
+                        fieldFileName += caseid;
+                        fieldFileName += "_phi.real";
+
+                        Log::file() << " " << Str(fieldFileName, 20) << std::endl;
+                        fieldIo().readFieldsRGrid(fieldFileName, cFieldsRGrid());
+
+                        fieldIo().convertRGridToBasis(cFieldsRGrid(), cFields());
+
+                        std::string outFileName = "./out/phi/";
+                        outFileName += caseid;
+                        outFileName += "_phi.bf";
+                        Log::file() << " " << Str(outFileName, 20) << std::endl;
+                        fieldIo().writeFieldsBasis(outFileName, cFields());
+
+                        for (int m1 = 0; m1 < dmixture().nMonomer(); ++m1)
+                        {
+                            assignUniformReal<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>
+                            (wField(m1).cDField(), 0.0, basis().nStar());
+                            for (int m2 = 0; m2 < dmixture().nMonomer(); ++m2)
+                            {
+                                pointWiseAddScale<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(wField(m1).cDField(),
+                                                                                           cField(m2).cDField(),
+                                                                                           interaction().chi(m1, m2),
+                                                                                           basis().nStar());
+                            }
+                        }
+                        std::string outWFileName = "./out/omega/";
+                        outWFileName += caseid;
+                        outWFileName += "_omega.basis";
+                        Log::file() << " " << Str(outWFileName, 20) << std::endl;
+                        fieldIo().writeFieldsBasis(outWFileName, wFields());
                     }
                     else if(!proc[i]["SinglePhaseSCF"].empty())
                     {
@@ -535,9 +572,9 @@ namespace Pscf
                                         else
                                         {
                                             if (start_chi > end_chi)
-                                                inc = max_inc;
-                                            else
                                                 inc = -max_inc;
+                                            else
+                                                inc = max_inc;
                                         }
                                     }
 
@@ -780,11 +817,11 @@ namespace Pscf
                     }
                     // else if(!proc[i]["PhaseBoundary"].empty())
                     // {
-                    //     break;
+                    //     
                     // }
                     else
                     {
-                        std::cout << "Unknown Command" << "\n";
+                        continue;
                     }
                 }
             }
@@ -878,129 +915,129 @@ namespace Pscf
                     }
                     else if (command == "Nkp_PATH")
                     {
-                        Log::file() << std::endl;
-                        if (!hasWFields_)
-                        {
-                            std::cout << "No wFields input"
-                                      << "\n";
-                            exit(1);
-                        }
-                        // start point, current point, and end point.
-                        // end ponit is read from command file, while
-                        // start point is read from param file.
-                        double start_k, current_k, end_k;
-                        // current increment, maximum increment, minimum increment,
-                        // and adpative factor, which are read from command file
-                        double inc, max_inc, min_inc, fac;
-                        // Is finished? Set false initially
-                        bool isFinished = false;
-                        // Is chi increasing? Set true initially
-                        bool dir = true;
+                        // Log::file() << std::endl;
+                        // if (!hasWFields_)
+                        // {
+                        //     std::cout << "No wFields input"
+                        //               << "\n";
+                        //     exit(1);
+                        // }
+                        // // start point, current point, and end point.
+                        // // end ponit is read from command file, while
+                        // // start point is read from param file.
+                        // double start_k, current_k, end_k;
+                        // // current increment, maximum increment, minimum increment,
+                        // // and adpative factor, which are read from command file
+                        // double inc, max_inc, min_inc, fac;
+                        // // Is finished? Set false initially
+                        // bool isFinished = false;
+                        // // Is chi increasing? Set true initially
+                        // bool dir = true;
 
-                        std::ofstream outRunfile;
+                        // std::ofstream outRunfile;
 
-                        in >> end_k >> inc >> max_inc >> min_inc >> fac >> filename;
+                        // in >> end_k >> inc >> max_inc >> min_inc >> fac >> filename;
 
-                        outRunfile.open(filename, std::ios::app);
+                        // outRunfile.open(filename, std::ios::app);
 
-                        outRunfile << std::endl;
-                        outRunfile << "        kpN               fHelmholtz                 U                    UAB                    UCMP                   S                     SA                     SB              error      cell param1     cell param2     cell param3" << std::endl;
-                        outRunfile << "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
-                        outRunfile << std::endl;
+                        // outRunfile << std::endl;
+                        // outRunfile << "        kpN               fHelmholtz                 U                    UAB                    UCMP                   S                     SA                     SB              error      cell param1     cell param2     cell param3" << std::endl;
+                        // outRunfile << "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
+                        // outRunfile << std::endl;
 
-                        start_k = this->dmixture().kpN();
-                        current_k = start_k;
+                        // start_k = this->dmixture().kpN();
+                        // current_k = start_k;
 
-                        std::cout << "Run file name is " << filename << std::endl;
+                        // std::cout << "Run file name is " << filename << std::endl;
 
-                        Log::file() << "Calculation along the path with respect to chiN:"
-                                    << std::endl;
-                        Log::file() << "Starting point of chiN: "
-                                    << start_k << std::endl;
-                        Log::file() << " Current point of chiN: "
-                                    << current_k << std::endl;
-                        Log::file() << "    Stop point of chiN: "
-                                    << end_k << std::endl;
-                        Log::file() << "     Initial increment: "
-                                    << inc << std::endl;
+                        // Log::file() << "Calculation along the path with respect to chiN:"
+                        //             << std::endl;
+                        // Log::file() << "Starting point of chiN: "
+                        //             << start_k << std::endl;
+                        // Log::file() << " Current point of chiN: "
+                        //             << current_k << std::endl;
+                        // Log::file() << "    Stop point of chiN: "
+                        //             << end_k << std::endl;
+                        // Log::file() << "     Initial increment: "
+                        //             << inc << std::endl;
 
-                        if (start_k == end_k)
-                        {
-                            Log::file() << "The start point equals to the stop point."
-                                        << std::endl;
-                            exit(1);
-                        }
+                        // if (start_k == end_k)
+                        // {
+                        //     Log::file() << "The start point equals to the stop point."
+                        //                 << std::endl;
+                        //     exit(1);
+                        // }
 
-                        if (start_k > end_k)
-                        {
-                            inc *= -1;
-                            dir = false;
-                        }
-                        while (!isFinished)
-                        {
-                            // Step "forward" (of courese inc can be negative)
-                            current_k += inc;
-                            if ((dir && current_k >= end_k) || ((!dir) && current_k <= end_k))
-                            {
-                                current_k = end_k;
-                                isFinished = true;
-                            }
+                        // if (start_k > end_k)
+                        // {
+                        //     inc *= -1;
+                        //     dir = false;
+                        // }
+                        // while (!isFinished)
+                        // {
+                        //     // Step "forward" (of courese inc can be negative)
+                        //     current_k += inc;
+                        //     if ((dir && current_k >= end_k) || ((!dir) && current_k <= end_k))
+                        //     {
+                        //         current_k = end_k;
+                        //         isFinished = true;
+                        //     }
 
-                            dmixture().setKpN(current_k);
+                        //     dmixture().setKpN(current_k);
 
-                            // Attempt to iteratively solve SCFT equations
-                            Log::file() << std::endl;
-                            Log::file() << "================================================" << std::endl;
-                            Log::file() << "*Current kappa = " << current_k << "*" << std::endl
-                                        << std::endl;
-                            int fail = iterator().solve();
-                            hasCFields_ = true;
+                        //     // Attempt to iteratively solve SCFT equations
+                        //     Log::file() << std::endl;
+                        //     Log::file() << "================================================" << std::endl;
+                        //     Log::file() << "*Current kappa = " << current_k << "*" << std::endl
+                        //                 << std::endl;
+                        //     int fail = iterator().solve();
+                        //     hasCFields_ = true;
 
-                            if (!fail)
-                            {
-                                computeFreeEnergy();
-                                outputThermo(Log::file());
+                        //     if (!fail)
+                        //     {
+                        //         computeFreeEnergy();
+                        //         outputThermo(Log::file());
 
-                                outRunfile << Dbl(current_k, 19, 10)
-                                           << Dbl(fHelmholtz_, 23, 14)
-                                           << Dbl(U_, 23, 14)
-                                           << Dbl(UAB_, 23, 14)
-                                           << Dbl(UCMP_, 23, 14)
-                                           << Dbl(S_[0] + S_[1], 23, 14)
-                                           << Dbl(S_[0], 23, 14)
-                                           << Dbl(S_[1], 23, 14)
-                                           << Dbl(iterator().final_error, 11, 2);
+                        //         outRunfile << Dbl(current_k, 19, 10)
+                        //                    << Dbl(fHelmholtz_, 23, 14)
+                        //                    << Dbl(U_, 23, 14)
+                        //                    << Dbl(UAB_, 23, 14)
+                        //                    << Dbl(UCMP_, 23, 14)
+                        //                    << Dbl(S_[0] + S_[1], 23, 14)
+                        //                    << Dbl(S_[0], 23, 14)
+                        //                    << Dbl(S_[1], 23, 14)
+                        //                    << Dbl(iterator().final_error, 11, 2);
 
-                                for (int i = 0; i < dmixture().nParameter(); ++i)
-                                    outRunfile << Dbl(unitCell().parameter(i), 17, 8);
-                                outRunfile << std::endl;
+                        //         for (int i = 0; i < dmixture().nParameter(); ++i)
+                        //             outRunfile << Dbl(unitCell().parameter(i), 17, 8);
+                        //         outRunfile << std::endl;
 
-                                if (abs(inc * fac) <= max_inc)
-                                    inc *= fac;
-                                else
-                                {
-                                    if (dir)
-                                        inc = max_inc;
-                                    else
-                                        inc = -max_inc;
-                                }
-                            }
-                            else
-                            {
-                                Log::file() << "Iterate has failed." << std::endl;
-                                if (inc > min_inc)
-                                {
-                                    current_k -= inc;
-                                    inc /= fac;
-                                }
-                                else
-                                {
-                                    Log::file() << "Smallest increment reached." << std::endl;
-                                    exit(1);
-                                }
-                            }
-                        }
-                        outRunfile.close();
+                        //         if (abs(inc * fac) <= max_inc)
+                        //             inc *= fac;
+                        //         else
+                        //         {
+                        //             if (dir)
+                        //                 inc = max_inc;
+                        //             else
+                        //                 inc = -max_inc;
+                        //         }
+                        //     }
+                        //     else
+                        //     {
+                        //         Log::file() << "Iterate has failed." << std::endl;
+                        //         if (inc > min_inc)
+                        //         {
+                        //             current_k -= inc;
+                        //             inc /= fac;
+                        //         }
+                        //         else
+                        //         {
+                        //             Log::file() << "Smallest increment reached." << std::endl;
+                        //             exit(1);
+                        //         }
+                        //     }
+                        // }
+                        // outRunfile.close();
                     }
                     else if (command == "bA_PATH")
                     {
@@ -1135,130 +1172,130 @@ namespace Pscf
                     }
                     else if (command == "CHI_PATH")
                     {
-                        Log::file() << std::endl;
-                        if (!hasWFields_)
-                        {
-                            std::cout << "No wFields input"
-                                      << "\n";
-                            exit(1);
-                        }
-                        // start point, current point, and end point.
-                        // end ponit is read from command file, while
-                        // start point is read from param file.
-                        double start_chi, current_chi, end_chi;
-                        // current increment, maximum increment, minimum increment,
-                        // and adpative factor, which are read from command file
-                        double inc, max_inc, min_inc, fac;
-                        // Is finished? Set false initially
-                        bool isFinished = false;
-                        // Is chi increasing? Set true initially
-                        bool dir = true;
+                        // Log::file() << std::endl;
+                        // if (!hasWFields_)
+                        // {
+                        //     std::cout << "No wFields input"
+                        //               << "\n";
+                        //     exit(1);
+                        // }
+                        // // start point, current point, and end point.
+                        // // end ponit is read from command file, while
+                        // // start point is read from param file.
+                        // double start_chi, current_chi, end_chi;
+                        // // current increment, maximum increment, minimum increment,
+                        // // and adpative factor, which are read from command file
+                        // double inc, max_inc, min_inc, fac;
+                        // // Is finished? Set false initially
+                        // bool isFinished = false;
+                        // // Is chi increasing? Set true initially
+                        // bool dir = true;
 
-                        std::ofstream outRunfile;
+                        // std::ofstream outRunfile;
 
-                        in >> end_chi >> inc >> max_inc >> min_inc >> fac >> filename;
+                        // in >> end_chi >> inc >> max_inc >> min_inc >> fac >> filename;
 
-                        outRunfile.open(filename, std::ios::app);
+                        // outRunfile.open(filename, std::ios::app);
 
-                        outRunfile << std::endl;
-                        outRunfile << "        chiN               fHelmholtz                 U                    UAB                    UCMP                   S                     SA                     SB              error      cell param1     cell param2     cell param3" << std::endl;
-                        outRunfile << "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
-                        outRunfile << std::endl;
+                        // outRunfile << std::endl;
+                        // outRunfile << "        chiN               fHelmholtz                 U                    UAB                    UCMP                   S                     SA                     SB              error      cell param1     cell param2     cell param3" << std::endl;
+                        // outRunfile << "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
+                        // outRunfile << std::endl;
 
-                        start_chi = this->interactionPtr_->chi(0, 1);
-                        current_chi = start_chi;
+                        // start_chi = this->interactionPtr_->chi(0, 1);
+                        // current_chi = start_chi;
 
-                        std::cout << "Run file name is " << filename << std::endl;
+                        // std::cout << "Run file name is " << filename << std::endl;
 
-                        Log::file() << "Calculation along the path with respect to chiN:"
-                                    << std::endl;
-                        Log::file() << "Starting point of chiN: "
-                                    << start_chi << std::endl;
-                        Log::file() << " Current point of chiN: "
-                                    << current_chi << std::endl;
-                        Log::file() << "    Stop point of chiN: "
-                                    << end_chi << std::endl;
-                        Log::file() << "     Initial increment: "
-                                    << inc << std::endl;
+                        // Log::file() << "Calculation along the path with respect to chiN:"
+                        //             << std::endl;
+                        // Log::file() << "Starting point of chiN: "
+                        //             << start_chi << std::endl;
+                        // Log::file() << " Current point of chiN: "
+                        //             << current_chi << std::endl;
+                        // Log::file() << "    Stop point of chiN: "
+                        //             << end_chi << std::endl;
+                        // Log::file() << "     Initial increment: "
+                        //             << inc << std::endl;
 
-                        if (start_chi == end_chi)
-                        {
-                            Log::file() << "The start point equals to the stop point."
-                                        << std::endl;
-                            exit(1);
-                        }
+                        // if (start_chi == end_chi)
+                        // {
+                        //     Log::file() << "The start point equals to the stop point."
+                        //                 << std::endl;
+                        //     exit(1);
+                        // }
 
-                        if (start_chi > end_chi)
-                        {
-                            inc *= -1;
-                            dir = false;
-                        }
-                        while (!isFinished)
-                        {
-                            // Step "forward" (of courese inc can be negative)
-                            current_chi += inc;
-                            if ((dir && current_chi >= end_chi) || ((!dir) && current_chi <= end_chi))
-                            {
-                                current_chi = end_chi;
-                                isFinished = true;
-                            }
-                            this->interactionPtr_->setChi(0, 1, current_chi);
-                            this->interactionPtr_->setChi(1, 0, current_chi);
-                            // iteration
+                        // if (start_chi > end_chi)
+                        // {
+                        //     inc *= -1;
+                        //     dir = false;
+                        // }
+                        // while (!isFinished)
+                        // {
+                        //     // Step "forward" (of courese inc can be negative)
+                        //     current_chi += inc;
+                        //     if ((dir && current_chi >= end_chi) || ((!dir) && current_chi <= end_chi))
+                        //     {
+                        //         current_chi = end_chi;
+                        //         isFinished = true;
+                        //     }
+                        //     this->interactionPtr_->setChi(0, 1, current_chi);
+                        //     this->interactionPtr_->setChi(1, 0, current_chi);
+                        //     // iteration
 
-                            // Attempt to iteratively solve SCFT equations
-                            Log::file() << std::endl;
-                            Log::file() << "================================================" << std::endl;
-                            Log::file() << "*Current chi = " << current_chi << "*" << std::endl
-                                        << std::endl;
-                            int fail = iterator().solve();
-                            hasCFields_ = true;
+                        //     // Attempt to iteratively solve SCFT equations
+                        //     Log::file() << std::endl;
+                        //     Log::file() << "================================================" << std::endl;
+                        //     Log::file() << "*Current chi = " << current_chi << "*" << std::endl
+                        //                 << std::endl;
+                        //     int fail = iterator().solve();
+                        //     hasCFields_ = true;
 
-                            if (!fail)
-                            {
-                                computeFreeEnergy();
-                                outputThermo(Log::file());
+                        //     if (!fail)
+                        //     {
+                        //         computeFreeEnergy();
+                        //         outputThermo(Log::file());
 
-                                outRunfile << Dbl(current_chi, 19, 10)
-                                           << Dbl(fHelmholtz_, 23, 14)
-                                           << Dbl(U_, 23, 14)
-                                           << Dbl(UAB_, 23, 14)
-                                           << Dbl(UCMP_, 23, 14)
-                                           << Dbl(S_[0] + S_[1], 23, 14)
-                                           << Dbl(S_[0], 23, 14)
-                                           << Dbl(S_[1], 23, 14)
-                                           << Dbl(iterator().final_error, 11, 2);
+                        //         outRunfile << Dbl(current_chi, 19, 10)
+                        //                    << Dbl(fHelmholtz_, 23, 14)
+                        //                    << Dbl(U_, 23, 14)
+                        //                    << Dbl(UAB_, 23, 14)
+                        //                    << Dbl(UCMP_, 23, 14)
+                        //                    << Dbl(S_[0] + S_[1], 23, 14)
+                        //                    << Dbl(S_[0], 23, 14)
+                        //                    << Dbl(S_[1], 23, 14)
+                        //                    << Dbl(iterator().final_error, 11, 2);
 
-                                for (int i = 0; i < dmixture().nParameter(); ++i)
-                                    outRunfile << Dbl(unitCell().parameter(i), 17, 8);
-                                outRunfile << std::endl;
+                        //         for (int i = 0; i < dmixture().nParameter(); ++i)
+                        //             outRunfile << Dbl(unitCell().parameter(i), 17, 8);
+                        //         outRunfile << std::endl;
 
-                                if (abs(inc * fac) <= max_inc)
-                                    inc *= fac;
-                                else
-                                {
-                                    if (dir)
-                                        inc = max_inc;
-                                    else
-                                        inc = -max_inc;
-                                }
-                            }
-                            else
-                            {
-                                Log::file() << "Iterate has failed." << std::endl;
-                                if (inc > min_inc)
-                                {
-                                    current_chi -= inc;
-                                    inc /= fac;
-                                }
-                                else
-                                {
-                                    Log::file() << "Smallest increment reached." << std::endl;
-                                    exit(1);
-                                }
-                            }
-                        }
-                        outRunfile.close();
+                        //         if (abs(inc * fac) <= max_inc)
+                        //             inc *= fac;
+                        //         else
+                        //         {
+                        //             if (dir)
+                        //                 inc = max_inc;
+                        //             else
+                        //                 inc = -max_inc;
+                        //         }
+                        //     }
+                        //     else
+                        //     {
+                        //         Log::file() << "Iterate has failed." << std::endl;
+                        //         if (inc > min_inc)
+                        //         {
+                        //             current_chi -= inc;
+                        //             inc /= fac;
+                        //         }
+                        //         else
+                        //         {
+                        //             Log::file() << "Smallest increment reached." << std::endl;
+                        //             exit(1);
+                        //         }
+                        //     }
+                        // }
+                        // outRunfile.close();
                     }
                     else if (command == "WRITE_W_BASIS")
                     {
@@ -1408,19 +1445,19 @@ namespace Pscf
 
                 initHomogeneous();
 
-# if CHN == 0
-                interaction().setNSegment(1);
-# else
-                int nSeg = 0;
-                for (int p = 0 ; p < np; ++p)
-                {
-                    nSeg += dmixture().polymer(p).N();
-                }
-                interaction().setNSegment(nSeg);
+// # if (CHN == 0)
+//                 interaction().setNSegment(1);
+// # else
+//                 int nSeg = 0;
+//                 for (int p = 0 ; p < np; ++p)
+//                 {
+//                     nSeg += dmixture().polymer(p).N();
+//                 }
+//                 interaction().setNSegment(nSeg);
 
-                double kpN = nSeg/dmixture().kpN();
-                dmixture().setKpN(kpN);
-#endif                
+//                 double kpN = nSeg/dmixture().kpN();
+//                 dmixture().setKpN(kpN);
+// #endif                
                 interaction().setNMonomer(dmixture().nMonomer());
                 readParamComposite(in, interaction());
                 dmixture().setInteraction(interaction());
@@ -1457,7 +1494,6 @@ namespace Pscf
 
                 int nMonomer = dmixture().nMonomer();
 
-                S_ = new cudaReal[nMonomer];
 
                 wFields_.allocate(nMonomer);
                 wFieldsRGrid_.allocate(nMonomer);
@@ -1498,136 +1534,152 @@ namespace Pscf
                 }
 
                 // workArray.allocate(kSize_);
-                workArray.allocate(mesh().size());
-
+                workArray.allocate(mesh().dimensions());
+                workArrayDft.allocate(mesh().dimensions());
                 cudaMalloc((void **)&d_kernelWorkSpace_, NUMBER_OF_BLOCKS * sizeof(cudaReal));
                 kernelWorkSpace_ = new cudaReal[NUMBER_OF_BLOCKS];
-
+#if CMP == 1
+                cFieldTot_.allocate(mesh().dimensions());
+#endif
                 isAllocated_ = true;
             }
 
             template <int D>
             void System<D>::computeFreeEnergy()
             {
-                fHelmholtz_ = 0.0;
-
-                int np = dmixture().nPolymer();
-                int ns = basis().nStar();
                 int nx = mesh().size();
+                // GPU resources
+                int nBlocks, nThreads;
+                ThreadGrid::setThreadsLogical(nx, nBlocks, nThreads);
 
-                int NUMBER_OF_BLOCKS, THREADS_PER_BLOCK;
-                ThreadGrid::setThreadsLogical(ns, NUMBER_OF_BLOCKS, THREADS_PER_BLOCK);
+                fHelmholtz_ = 0.0;
+                UR_ = 0.0;
+                UCMP_ = 0;
+                S_ = 0.0;
+                // Compute ideal gas contributions to f_Helmholtz
+                DPolymer<D> *polymerPtr;
+                double phi, mu, r;
 
-                assignUniformReal<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK >>>
-                (workArray.cDField(), 0.0, nx);
+                assignUniformReal<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(workArray.cDField(), 0.0, nx);
 
                 int nm = dmixture().nMonomer();
-                for (int i = 0; i < nm; ++i)
-                    pointWiseAddScale2<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(workArray.cDField(),
-                                                                                wFields_[i].cDField(),
-                                                                                cFields_[i].cDField(),
-                                                                                -0.5,
-                                                                                ns);
 
-                // cudaReal *d_tmp;
-                // cudaMalloc(&d_tmp, sizeof(cudaReal));
-                // cudaMemset(d_tmp, 0, sizeof(cudaReal));
-                // sumArray<<<(basis().nStar() + 32 -1)/32, 32>>>
-                // (d_tmp, workArray.cDField(), ns);
-                // cudaMemcpy(&fHelmholtz_, d_tmp, sizeof(cudaReal), cudaMemcpyDeviceToHost);
-                // cudaFree(d_tmp);
-                fHelmholtz_ = gpuSum(workArray.cDField(), ns);
-
-                double lnQ;
-
-                for (int i = 0; i < np; ++i)
-                {
-                    lnQ = std::log(dmixture().polymer(i).Q());
-                    fHelmholtz_ -= lnQ;
-                }
-
-                assignUniformReal<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(workArray.cDField(), 0.0, ns);
+                assignUniformReal<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(workArray.cDField(), 0.0, nx);
 
                 for (int i = 0; i < nm; ++i)
                 {
-                    pointWiseAddScale2<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(workArray.cDField(),
-                                                                                wFields_[i].cDField(),
-                                                                                cFields_[i].cDField(),
-                                                                                0.5,
-                                                                                basis().nStar());
-                    // cudaMalloc(&d_tmp, sizeof(cudaReal));
-                    // cudaMemset(d_tmp, 0, sizeof(cudaReal));
-                    // sumArray<<<(basis().nStar() + 32 -1)/32, 32>>>
-                    // (d_tmp, workArray.cDField(), basis().nStar());
-                    // cudaMemcpy(&U_, d_tmp, sizeof(cudaReal), cudaMemcpyDeviceToHost);
-                    // cudaFree(d_tmp);
-                    
-                }
-                U_ = gpuSum(workArray.cDField(), ns);
+                    pointwiseMul<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(wFieldRGrid(i).cDField(),
+                                                                          cFieldRGrid(i).cDField(),
+                                                                          workArray.cDField(),
+                                                                          nx);
 
+                    fHelmholtz_ -= gpuSum(workArray.cDField(), nx) / double(nx);
+                }
+                C_ = 0.0;
+                int np = dmixture().nPolymer();
                 for (int i = 0; i < np; ++i)
                 {
-                    dmixture().polymer(i).computeSegment(mesh(),wFieldsRGrid());
+                    polymerPtr = &dmixture().polymer(i);
+                    phi = polymerPtr->phi();
+                    mu = polymerPtr->mu();
+                    r = polymerPtr->N()/dmixture().polymer(0).N();
+                    // Recall: mu = ln(phi/q)
+                    fHelmholtz_ += phi*mu/r;
+                    C_ += (1.0 - log(phi))*phi/r;
                 }
+                
+                S_ = fHelmholtz_;
 
-                for(int i = 0; i < nm; ++i)
+                for (int i = 0; i < nm; ++i)
                 {
-                    assignUniformReal<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK >>>
-                    (workArray.cDField(), 0.0, basis().nStar());
-                    pointWiseAddScale2<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK >>>
-                    (workArray.cDField(), 
-                     wFields_[i].cDField(), 
-                     cFields_[i].cDField(), 
-                     -1.0,
-                     basis().nStar());
-                    // cudaMalloc(&d_tmp, sizeof(cudaReal));
-                    // cudaMemset(d_tmp, 0, sizeof(cudaReal));
-                    // sumArray<<<(basis().nStar() + 32 -1)/32, 32>>>
-                    // (d_tmp, workArray.cDField(), basis().nStar());
-                    // cudaMemcpy(&S_[i], d_tmp, sizeof(cudaReal), cudaMemcpyDeviceToHost);
-                    // cudaFree(d_tmp);
-                    S_[i] = gpuSum(workArray.cDField(), ns);
-                    S_[i] -= lnQ * this->dmixture().polymer(0).bond(i).length() / this->dmixture().polymer(0).N();
+                    fft_.forwardTransform(cFieldRGrid(i), cFieldKGrid(i));
                 }
-                
-                
-                UAB_ = 0.0;
-                assignUniformReal<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK >>>
-                (workArray.cDField(), 0.0, nx);
+                for (int i = 0; i < D; ++i)
+                {
+                    if (i < D - 1)
+                    {
+                        kMeshDimensions_[i] = mesh().dimensions()[i];
+                    }
+                    else
+                    {
+                        kMeshDimensions_[i] = mesh().dimensions()[i] / 2 + 1;
+                    }
+                }
+                int kSize = 1;
+                for (int i = 0; i < D; ++i)
+                {
+                    kSize *= kMeshDimensions_[i];
+                }
 
                 for (int i = 0; i < nm; ++i)
                 {
                     for (int j = 0; j < nm; ++j)
                     {
-                        assignUniformReal<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(workArray.cDField(), 0.5 * interaction().chi(i, j), nx);
-                        inPlacePointwiseMul<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(workArray.cDField(), cFieldRGrid(i).cDField(), nx);
-                        inPlacePointwiseMul<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(workArray.cDField(), cFieldRGrid(j).cDField(), nx);
-
-                        UAB_ += gpuSum(workArray.cDField(), nx) / double(nx);
+                        cudaConv<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(workArrayDft.cDField(),
+                                                                          cFieldKGrid(i).cDField(),
+                                                                          dmixture().bu0k().cDField(),
+                                                                          kSize);
+                        fft_.inverseTransform(workArrayDft, workArray);
+                        inPlacePointwiseMul<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(workArray.cDField(),
+                                                                                     cFieldRGrid(j).cDField(),
+                                                                                     nx);
+             
+                        UR_ += 0.5 * interaction().chi(i, j) * gpuSum(workArray.cDField(), nx)/double(nx);
                     }
                 }
-                UCMP_ = U_ - UAB_;
 
+                fHelmholtz_ += UR_;
+#if CMP == 1
+                // UCMP_ -= fHelmholtz_;
+                // fHelmholtz_ += UCMP_;
+                assignUniformReal<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(cFieldTot_.cDField(), 0.0, nx);
+                for (int i = 0; i < nm; ++i)
+                {
+                    pointWiseAdd<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(cFieldTot_.cDField(), cFieldRGrid(i).cDField(), nx);
+                }
+                dmixture().computeBlockCMP(mesh(), cFieldsRGrid_, cFieldsKGrid_, fft());
+                for (int i = 0; i < dmixture().nUCompCMP(); ++i)
+                {
+                    UCMP_ += dmixture().uBlockCMP(i);
+                }
+                fHelmholtz_ += UCMP_;
+#endif
+                
+                dmixture().computeBlockRepulsion(mesh(), cFieldsRGrid_, cFieldsKGrid_, fft());
+                for (int i = 0; i < np; ++i)
+                {
+                    dmixture().polymer(i).computeSegment(mesh(),wFieldsRGrid());
+                }
             }
 
             template <int D>
             void System<D>::outputThermo(std::ostream &out)
             {
                 out << std::endl;
-                out << " fc      = " << Dbl(fHelmholtz_, 21, 16) << std::endl;
-                out << " uc      = " << Dbl(U_, 21, 16) << std::endl;
-                out << "uc,AB    = " << Dbl(UAB_, 21, 16) << std::endl;
-                out << "uc,CMP   = " << Dbl(UCMP_, 21, 16) << std::endl; 
-                out << "-sc      = " << Dbl(fHelmholtz_ - U_, 21, 16) << std::endl;
+                out << "fHelmholtz  = " << Dbl(fHelmholtz(), 21, 16) << std::endl;
+                out << "U_chi       = " << Dbl(UR_, 21, 16) << std::endl;
+                out << "U_CMP       = " << Dbl(UCMP_, 21, 16) << std::endl;
+                out << "-TS         = " << Dbl(fHelmholtz() - UR_ - UCMP_, 21, 16) << std::endl;
+                // out << "pressure = " << Dbl(pressure_, 21, 16) << std::endl;
                 out << std::endl;
-#if 0
-            out << "uc,AB    = " << Dbl(UAB_, 21, 16) << std::endl;
-            out << "uc,CMP   = " << Dbl(UCMP_, 21, 16) << std::endl;  
-            out << "sc,A     = " << Dbl(-S_[0], 21, 16) << std::endl;
-            out << "sc,B     = " << Dbl(-S_[1], 21, 16) << std::endl;
-            out << "Q        = " << Dbl(dmixture().polymer(0).Q(), 21, 16) << std::endl;
-            out << std::endl;
-#endif
+
+                out << std::endl;
+
+                out << std::endl;
+
+                out << "Polymers:" << std::endl;
+                out << "    i"
+                    << "        phi[i]      "
+                    << "        mu[i]       "
+                    << std::endl;
+                for (int i = 0; i < dmixture().nPolymer(); ++i)
+                {
+                    out << Int(i, 5)
+                        << "  " << Dbl(dmixture().polymer(i).phi(), 18, 11)
+                        << "  " << Dbl(dmixture().polymer(i).mu(), 18, 11)
+                        << std::endl;
+                }
+                out << std::endl;
             }
 
             template <int D>
@@ -1666,11 +1718,11 @@ namespace Pscf
 
                 HelmholtzFreeEnergy["Total"] = Json::Value(fHelmholtz());
 
-                InternalEnergyContribution["Total"] = Json::Value(UAB_ + UCMP_);
+                InternalEnergyContribution["Total"] = Json::Value(UR_ + UCMP_);
 
                 Json::Value FloryHugginsRepulsion;
 
-                FloryHugginsRepulsion["Total"] = Json::Value(UAB_);
+                FloryHugginsRepulsion["Total"] = Json::Value(UR_);
                 
                 Json::Value Compressibility  = Json::Value(UCMP_);
 
@@ -1682,8 +1734,27 @@ namespace Pscf
 
                 Json::Value EntropyContribution;
 
-                double Stot = 0.0;
+                for (int p = 0; p < dmixture().nPolymer(); ++p)
+                {   
+                    int nb = dmixture().polymer(p).nBond();
+                    int s = 0;
+                    for (int b = 0; b < nb; ++b)
+                    {
+                        if (dmixture().polymer(p).bond(b).bondtype())
+                        {
+                            Json::Value tmp;
+                                tmp[0] = p;
+                                tmp[1] = b;
+                                tmp[2] = dmixture().polymer(p).sB(s);
+                                EntropyContribution["BlockComponent"].append(tmp);
+                
+                                ++s;
+                        }
+                    } 
+                }
 
+                double Stot = 0.0;
+                
                 for (int p = 0; p < dmixture().nPolymer(); ++p)
                 {   
                     int nb = dmixture().polymer(p).nBond();
@@ -1701,7 +1772,9 @@ namespace Pscf
                                 tmp[2] = bs;
                                 tmp[3] = dmixture().polymer(p).sS(s);
                                 EntropyContribution["SegmentComponent"].append(tmp);
+                                
                                 Stot += dmixture().polymer(p).sS(s);
+                                
                                 ++s;
                             }
                         }
@@ -1713,6 +1786,25 @@ namespace Pscf
                 HelmholtzFreeEnergy["EntropyContribution"] = Json::Value(EntropyContribution);
 
                 out["HelmholtzFreeEnergy"] = Json::Value(HelmholtzFreeEnergy);
+
+                Json::Value C;
+                out["C"] = Json::Value(C_);
+
+                for (int p = 0; p < dmixture().nPolymer(); ++p)
+                {   
+                    Json::Value tmp;
+                    tmp[0] = p;
+                    tmp[1] = dmixture().polymer(p).mu();  
+                    out["ChemicalPotential"].append(tmp); 
+                }
+
+                for (int p = 0; p < dmixture().nPolymer(); ++p)
+                {   
+                    Json::Value tmp;
+                    tmp[0] = p;
+                    tmp[1] = dmixture().polymer(p).phi();  
+                    out["Phi"].append(tmp); 
+                }
 
                 Json::Value tmp;
                 tmp[0] = groupName();

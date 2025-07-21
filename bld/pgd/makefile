@@ -13,7 +13,7 @@ PGD_2D=$(BLD_DIR)/pgd/pg2d
 PGD_3D=$(BLD_DIR)/pgd/pg3d
 PGDD=$(BLD_DIR)/pgd/pg
 
-PGD_EXE=$(PGDD_EXE) $(PGD_3D_EXE) $(PGD_2D_EXE) $(PGD_1D_EXE) 
+PGD_EXE= $(PGDD_EXE) $(PGD_3D_EXE) $(PGD_2D_EXE) $(PGD_1D_EXE) 
 
 #-----------------------------------------------------------------------
 # Main targets 
@@ -47,6 +47,7 @@ $(PGD_3D_EXE): $(PGD_3D).o $(PGD_LIBS)
 
 $(PGDD_EXE): $(PGDD).o $(PGD_LIBS)
 	$(CXX) $(LDFLAGS) -o $(PGDD_EXE) $(PGDD).o $(LIBS)
+	
 
 # Short name for executable target (for convenience)
 pgd1d:
@@ -60,6 +61,7 @@ pgd3d:
 
 pgd:
 	$(MAKE) $(PGDD_EXE)
+
 
 
 #-----------------------------------------------------------------------

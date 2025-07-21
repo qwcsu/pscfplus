@@ -554,8 +554,7 @@ namespace Pscf
                 q5_.allocate(meshPtr_->dimensions());
 #endif
 
-                propagator(0).allocate(ns_, mesh);
-                propagator(1).allocate(ns_, mesh);
+                // propagator(1).setPropagator(propagator(0)); 
 
                 cField().allocate(meshPtr_->dimensions());
 
@@ -710,8 +709,6 @@ namespace Pscf
                 {
                     idx = iter.rank();
                     Gsq = unitCell.ksq(wavelist.minImage(iter.rank()));
-                    // std::cout << wavelist.minImage(iter.rank()) << "\n";
-                    // exit(1);
 #if REPS == 4 || REPS == 3 || REPS == 2 || REPS == 1 || REPS == 0
                     expKsq_host[idx] = exp(Gsq * factor);
 #endif
@@ -865,6 +862,7 @@ namespace Pscf
                 // Discretization of each block should satisfies the following
                 int NUMBER_OF_BLOCKS, THREADS_PER_BLOCK;
                 ThreadGrid::setThreadsLogical(size_ph_, NUMBER_OF_BLOCKS, THREADS_PER_BLOCK);
+
 #if REPS == 4
                 UTIL_CHECK(Discretization_of_each_block % 16 == 0)
 #endif
@@ -1207,8 +1205,8 @@ namespace Pscf
                 UTIL_CHECK(size_ph_ > 0)
                 UTIL_CHECK(ns_ > 0)
                 UTIL_CHECK(ds_ > 0)
-                UTIL_CHECK(propagator(0).isAllocated())
-                UTIL_CHECK(propagator(1).isAllocated())
+                // UTIL_CHECK(propagator(0).isAllocated())
+                // UTIL_CHECK(propagator(1).isAllocated())
 
                 int NUMBER_OF_BLOCKS, THREADS_PER_BLOCK;
                 ThreadGrid::setThreadsLogical(size_ph_, NUMBER_OF_BLOCKS, THREADS_PER_BLOCK);
@@ -1260,7 +1258,6 @@ namespace Pscf
                     //     std::cout << tmp_c[j] << "\n";
                     // inc_[i] += ic_[ic]*sum;
                     inc_[i] += ic_[ic] * gpuSum(tmp, kSize_);
-                    // std::cout << inc_[i] << "\n";
                     // inc_[i] += ic_[ic]*reductionH(tmp, kSize_);
                     // std::cout << reductionH(tmp, kSize_)<< "\n\n\n";
                     // delete [] tmp_c;

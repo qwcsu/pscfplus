@@ -33,18 +33,17 @@ namespace Pscf
             template <int D>
             DMixture<D>::DMixture()
             {
-                setClassName("DMixture");
+                setClassName("Mixture");
             }
 
             template <int D>
             void DMixture<D>::readParameters(std::istream &in)
             {
                 DMixtureTmpl<Pscf::Pspg::Discrete::DPolymer<D>, Pscf::Pspg::Solvent<D>>::readParameters(in);
-
-                read(in, "sigma", sigma_);
 #if CMP == 1
-                read(in, "kappa", kappa_);
+                read(in, "N/kappa", kappa_);
 #endif
+                read(in, "sigma", sigma_);
 
                 int total_nBond = 0;
                 for (int i = 0; i < nPolymer(); ++i)
@@ -67,7 +66,7 @@ namespace Pscf
             {
                 UTIL_CHECK(nMonomer() > 0)
                 UTIL_CHECK(nPolymer() + nSolvent() > 0)
-
+                
                 meshPtr_ = &mesh;
 
                 // Set discretization for all bonds
@@ -77,6 +76,12 @@ namespace Pscf
                     {
                         polymer(i).bond(j).setDiscretization(mesh, unitCell);
                     }
+                }
+
+                rSize_ = 1;
+                for (int i = 0; i < D; ++i)
+                {
+                    rSize_ *= meshPtr_->dimensions()[i];
                 }
 
                 for (int i = 0; i < D; ++i)
@@ -97,7 +102,8 @@ namespace Pscf
                 }
 
                 nParams_ = unitCell.nParameter();
-
+                
+                bu0k_.allocate(kSize_);
                 dbu0K_.allocate(kMeshDimensions_);
 
                 cFieldsKGrid_.allocate(nMonomer());
@@ -123,16 +129,16 @@ namespace Pscf
                 basisPtr_ = &basis;
                 int ns = basis.nStar();
                 dbu0_.allocate(ns);
+                bu0_.allocate(ns);
             }
 
             template <int D>
             void DMixture<D>::setU0(UnitCell<D> &unitCell, WaveList<D> &wavelist)
             {
                 int ns = basisPtr_->nStar();
-                bu0_.allocate(ns);
+                
                 int hkltmp[D];
                 double q;
-
                 bu0_host = new cudaReal[ns];
                 // dbu0_host = new cudaReal[ns];
 
@@ -144,21 +150,22 @@ namespace Pscf
                         for (int j = 0; j < D; ++j)
                         {
                             hkltmp[j] = basisPtr_->star(i).waveBz[j];
-                            // std::cout<< basis.star(i).waveBz[j] << "  ";
+                            // std::cout<< basisPtr_->star(i).waveBz[j] << "  ";
                         }
                         // std::cout << std::endl;
 
                         IntVec<D> hkl(hkltmp);
-
+                        // std::cout<< hkl<< std::endl;
                         q = unitCell.ksq(hkl);
                         q = sqrt(q);
-                        q *= sigma_;
                         // std::cout<< q << std::endl;
+                        q *= sigma_;
+                        
 
                         if (q != 0)
                         {
 #if NBP == 0
-                            bu0_host[i] = exp(-0.5 * q * q);
+                            bu0_host[i] = exp(-0.1666666666666667 * q * q);
 #endif
 #if NBP == 1
                             bu0_host[i] = 60.0 * (2 * q + q * cos(q) - 3 * sin(q)) / pow(q, 5.0);
@@ -185,6 +192,43 @@ namespace Pscf
                 cudaMemcpy(bu0_.cDField(), bu0_host, ns * sizeof(cudaReal), cudaMemcpyHostToDevice);
 
                 delete[] bu0_host;
+
+#if DFT == 0
+                IntVec<D> G;
+                int idx;
+                bu0k_host = new cudaReal[kSize_];
+                MeshIterator<D> iter;
+                iter.setDimensions(kMeshDimensions_);
+                for (iter.begin(); !iter.atEnd(); ++iter)
+                {
+                    idx = iter.rank();
+                    G = wavelist.minImage(iter.rank());
+                    q = sigma() * sqrt(unitCell.ksq(G));
+                    if (q != 0)
+                    {
+#if NBP == 0
+                        bu0k_host[idx] = exp(-q * q / 2.0);
+#endif
+#if NBP == 1
+                        bu0k_host[idx] = 60.0 * (2 * q + q * cos(q) - 3 * sin(q)) / pow(q, 5.0);
+#endif
+#if NBP == 2
+                        bu0k_host[idx] = 3 * (sin(q) - q * cos(q)) / (q * q * q);
+#endif
+                    }
+                    else
+                    {
+#if NBP == 3 || NBP == 2 || NBP == 1 || NBP == 0
+                        bu0k_host[idx] = 1.0;
+#endif
+                    }
+                }
+
+                cudaMemcpy(bu0k_.cDField(), bu0k_host, kSize_ * sizeof(cudaReal), cudaMemcpyHostToDevice);
+
+                delete[] bu0k_host;
+#endif                
+                // exit(1);
             }
 
             template <int D>
@@ -218,7 +262,7 @@ namespace Pscf
                     {
                         q = sigma() * sqrt(Gsq);
 #if NBP == 0
-                        dbu0_host[idx] = -0.5 * sigma() * sigma() * exp(-0.5 * q * q);
+                        dbu0_host[idx] =  -0.3333333333333333 *sigma() * q * exp(-0.1666666666666667 * q * q);
 #endif
 
 #if NBP == 1
@@ -270,6 +314,16 @@ namespace Pscf
                 for (i = 0; i < nPolymer(); ++i)
                 {
                     polymer(i).compute(wFields);
+                }
+
+                double phi_tot = 0.0;
+                for (i = 0; i < nPolymer(); ++i)
+                {
+                    phi_tot += polymer(i).phi();
+                }
+                for (i = 0; i < nPolymer(); ++i)
+                {
+                   polymer(i).setPhi(polymer(i).phi()/phi_tot);
                 }
 
                 // Accumulate monomer concentration fields
@@ -379,8 +433,160 @@ namespace Pscf
                 }
             }
 
-        }
-    }
+#if CMP==1
+            template <int D>
+            void DMixture<D>::computeBlockCMP(Mesh<D> const &mesh, 
+                                             DArray<CField> cFieldsRGrid, 
+                                             DArray<RDFieldDft<D>> cFieldsKGrid,
+                                             FFT<D> & fft)
+            {
+                int NUMBER_OF_BLOCKS, THREADS_PER_BLOCK;
+                Pspg::ThreadGrid::setThreadsLogical(rSize_, NUMBER_OF_BLOCKS, THREADS_PER_BLOCK);
+
+                RDField<D> tmp;
+                RDFieldDft<D> tmpDft;
+                tmp.allocate(mesh.dimensions());
+                tmpDft.allocate(mesh.dimensions());
+                DArray<int> list;
+                list.allocate(4);
+
+                int np = nPolymer();
+                int i = 0;
+                
+                for (int p1 = 0; p1 < np; ++p1)
+                {
+                    for (int p2 = p1; p2 < np; ++p2)
+                    {
+                        int nb1 = polymer(p1).nBond();
+                        int nb2 = polymer(p2).nBond();
+                        for (int b1 = 0; b1 < nb1; ++b1)
+                        {
+                            for (int b2 = 0; b2 < nb2; ++b2)
+                            {   
+                                if (polymer(p1).bond(b1).bondtype() == 0 ||
+                                    polymer(p2).bond(b2).bondtype() == 0)
+                                {
+                                    break;
+                                }
+                                int m1 = polymer(p1).bond(b1).monomerId(0);;
+                                int m2 = polymer(p2).bond(b2).monomerId(0);;
+                                list[0] = p1;
+                                list[1] = b1;
+                                list[2] = p2;
+                                list[3] = b2;
+
+
+                                double factor = polymer(p1).phi()
+                                              * polymer(p2).phi()
+                                              * kpN()
+                                              * 0.5
+                                              / mesh.size();
+                                cudaConv<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(tmpDft.cDField(),
+                                                                                  cFieldsKGrid[m1].cDField(),
+                                                                                  bu0k_.cDField(),
+                                                                                  kSize_);
+                                fft.inverseTransform(tmpDft, tmp);
+                                inPlacePointwiseMul1<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(tmp.cDField(),
+                                                                                              cFieldsRGrid[m2].cDField(),
+                                                                                              polymer(p2).phi()*polymer(p2).bond(b2).length()/polymer(p2).N(),
+                                                                                              rSize_);
+                                blockIds_.append(list);
+                                uBlockCMP_.append(factor*gpuSum(tmp.cDField(), rSize_));
+                                ++i;
+                            }
+                        }
+                    }
+                }
+                nUCompCMP_ = i;
+                list.deallocate();
+                tmp.deallocate();
+                tmpDft.deallocate();
+            }
+#endif
+
+            template <int D>
+            void DMixture<D>::computeBlockRepulsion(Mesh<D> const &mesh, 
+                                                    DArray<RDField<D>> cFieldsRGrid, 
+                                                    DArray<RDFieldDft<D>> cFieldsKGrid,
+                                                    FFT<D> & fft)
+            {
+                int NUMBER_OF_BLOCKS, THREADS_PER_BLOCK;
+                Pspg::ThreadGrid::setThreadsLogical(rSize_, NUMBER_OF_BLOCKS, THREADS_PER_BLOCK);
+
+                RDField<D> tmp;
+                RDFieldDft<D> tmpDft;
+                tmp.allocate(mesh.dimensions());
+                tmpDft.allocate(mesh.dimensions());
+                DArray<int> list;
+                list.allocate(4);
+
+                int np = nPolymer();
+                int i = 0;
+                
+                for (int p1 = 0; p1 < np; ++p1)
+                {
+                    for (int p2 = p1; p2 < np; ++p2)
+                    {
+                        int nb1 = polymer(p1).nBond();
+                        int nb2 = polymer(p2).nBond();
+                        for (int b1 = 0; b1 < nb1; ++b1)
+                        {
+                            for (int b2 = 0; b2 < nb2; ++b2)
+                            {   
+                                if (p1 == p2 && b1 == b2)
+                                {
+                                    break;
+                                }
+                                else
+                                {
+                                    if (polymer(p1).bond(b1).bondtype() == 0 ||
+                                        polymer(p2).bond(b2).bondtype() == 0)
+                                    {
+                                        break;
+                                    }
+                                    double chi;
+                                    int m1 = polymer(p1).bond(b1).monomerId(0);
+                                    int m2 = polymer(p2).bond(b2).monomerId(0);
+                                    chi = interaction_->chi(m1, m2);
+
+                                    if (chi != 0.0)
+                                    {
+                                        list[0] = p1;
+                                        list[1] = b1;
+                                        list[2] = p2;
+                                        list[3] = b2;
+
+
+                                        double factor = polymer(p1).phi()
+                                                      * polymer(p2).phi()
+                                                      * chi 
+                                                      / mesh.size();
+                                        
+                                        cudaConv<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(tmpDft.cDField(),
+                                                                                          cFieldsKGrid[m1].cDField(),
+                                                                                          bu0k_.cDField(),
+                                                                                          kSize_);
+                                        fft.inverseTransform(tmpDft, tmp);
+                                        inPlacePointwiseMul<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(tmp.cDField(),
+                                                                                                     cFieldsRGrid[m2].cDField(),
+                                                                                                     rSize_);
+                                        blockIds_.append(list);
+                                        uBlockChi_.append(factor*gpuSum(tmp.cDField(), rSize_));
+                                        ++i;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                nUCompChi_ = i;
+                list.deallocate();
+                tmp.deallocate();
+                tmpDft.deallocate();
+            }
+
+}
+}
 }
 
 #endif

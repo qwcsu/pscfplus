@@ -100,7 +100,9 @@ namespace Pscf
                 using Base::length;
                 using Base::phi;
                 using Base::nBlock;
+                using Base::reduce;
                 using Base::solve;
+                using Base::mapping;
 
             protected:
                 // protected inherited function with non-dependent names

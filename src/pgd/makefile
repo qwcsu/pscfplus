@@ -48,6 +48,7 @@ $(PGD_3D_EXE): $(PGD_3D).o $(PGD_LIBS)
 $(PGDD_EXE): $(PGDD).o $(PGD_LIBS)
 	$(CXX) $(LDFLAGS) -o $(PGDD_EXE) $(PGDD).o $(LIBS)
 
+
 # Short name for executable target (for convenience)
 pgd1d:
 	$(MAKE) $(PGD_1D_EXE)

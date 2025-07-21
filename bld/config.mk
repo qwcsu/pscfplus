@@ -32,92 +32,7 @@
 # and should not need to modified by the user.
 
 # Absolute path to the root simpatico directory
-ROOT_DIR=/home/juntong/CSU/pscfplus
-
-# Path to the build directory (location for intermediate generated files)
-# This should also be the directory that contains this script.
-BLD_DIR=$(ROOT_DIR)/bld
-
-# Path to the source directory (contains C++ source code files)
-SRC_DIR=$(ROOT_DIR)/src
-
-# Installation directory for binary executable program files
-BIN_DIR=$(ROOT_DIR)/bin
-
-# Directory for shared permanent (read-only) data used by programs.
-DAT_DIR=$(ROOT_DIR)/data
-
-#======================================================================
-# Conditional compilation of debugging.
-
-# Defining UTIL_DEBUG enables a variety of extra sanity checks, at some
-# cost in speed. Debugging is disabled (commented out) by default.
-#UTIL_DEBUG=1
-
-# Comment: After setup but before compilation, the above definitions of 
-# UTIL_DEBUG may be uncommented or commented out from the command line 
-# by using the "configure" script. To do so, invoke the configure script 
-# with the -g option prior to compilation from the directory that contains 
-# this main configuration file (e.g., from src/ or bld/). Specifically, 
-# invoke "./configure -g1" to enable debugging or "./configure -g0" to
-# disable debugging. 
-#
-#======================================================================
-# Compiler configuration variables.
-#
-# The following block of variable definitions is initialized by 
-# the setup script by copying a compiler configuration file in the 
-# make/compiler directory.  If the setup script is invoked with no 
-# argument, the file "make/compiler/default" is used by default.  
-# Users may add files to the make/compiler directory to store 
-# settings required for a particular environment. The name of a 
-# desired compiler configuration file may be specfied by invoking
-# the setup script with the base name of the desired file as an 
-# argument (e.g., "> ./setup local"). 
-#
-# Variables defined in this block define the names of the commands 
-# used to invoke the compiler when compiling and linking files, some
-# of the command line options passed to the compiler to control,
-# and search paths for header files and libraries files for required
-# external libraries.  See the section of this file entitled "Makefile 
-# Patterns and Recipes" for a discussion of how these variables are 
-# used.
-#
-#=========================================================================
-# file: $(BLD_DIR)/config.mk
-#
-# This makefile fragment is the main configuration file for the pscfpp
-# build system.  A copy of this file is included by all other makefiles. 
-# This file is created and installed by the "setup" script. One copy of 
-# this file is installed in the root directory of the src/ directory
-# tree, which is used for in-source compilation. Another copy is 
-# installed in the root directory of the bld/ directory tree, which is 
-# used for out-of-source compilation.
-#
-# This file contains user-modifiable definitions of several types of 
-# makefile variables:
-# 
-#  - Variables ROOT_DIR, SRC_DIR, BLD_DIR, BIN_DIR and DAT_DIR that 
-#    contain absolute paths for the simpatico root directory and some 
-#    of its subdirectories.
-#
-#  - A variable UTIL_DEBUG that if defined, enables compilation of
-#    a debugging version fo the code with additional sanity checks.
-#
-#  - Variables that control the command name by which the compiler 
-#    is invoked and command line options passed to the compiler 
-# 
-#  - A variable MAKEDEP that enables automatic dependency generation.
-#
-#=========================================================================
-# Variables that define absolute directory paths
-#
-# In the config.mk file installed in each build directory, correct
-# values of these variables should have been set by the setup script,
-# and should not need to modified by the user.
-
-# Absolute path to the root simpatico directory
-ROOT_DIR=/home/juntong/CSU/pscfplus
+ROOT_DIR=/home/juntong/Softwares/pscfplus
 
 # Path to the build directory (location for intermediate generated files)
 # This should also be the directory that contains this script.
@@ -194,18 +109,18 @@ CXX=g++
 CXX_STD = --std=c++11
 
 # Flags always passed to compiler when debugging is enabled
-CXXFLAGS_DEBUG= -Wall $(CXX_STD)
+CXXFLAGS_DEBUG= -Wall $(CXX_STD) 
 
 # Flags always passed to compiler when debugging is disabled (fast)
-CXXFLAGS_FAST= -Wall $(CXX_STD) -O3 -ffast-math -Winline 
+CXXFLAGS_FAST= -Wall $(CXX_STD) -O3 -ffast-math -Winline  
 
 # Compiler flags used in unit tests
-TESTFLAGS= -Wall $(CXX_STD)
+TESTFLAGS= -Wall $(CXX_STD) 
 
 # ---------------------------------------------------------------
 # Cuda compiler and options (*.cu files)
 
-NVXXFLAGS= -O3 -arch=sm_75 -DREPS=1 -DCHN=0 -DDFT=0 -DNBP=0 -DCMP=0
+NVXXFLAGS= -O3 -arch=sm_75 -DREPS=2 -DCHN=0 -DDFT=0 -DNBP=0 -DCMP=0
 
 
 # Cuda compiler command
@@ -244,12 +159,12 @@ JSONCPP_INC=
 JSONCPP_LIB=-ljsoncpp
 
 # CUDA libraries
-# PSSP_CUFFT_PREFIX=/usr/local/cuda
-# CUFFT_INC=-I$(PSSP_CUFFT_PREFIX)/include
-# CUFFT_LIB=-L$(PSSP_CUFFT_PREFIX)/lib -lcufft -lcudart
+PSSP_CUFFT_PREFIX=/usr/local/cuda-11.4
+CUFFT_INC=-I$(PSSP_CUFFT_PREFIX)/include
+CUFFT_LIB=-L$(PSSP_CUFFT_PREFIX)/lib64 -lcufft -lcudart -lcurand
 # CUFFT_LIB=-lcufft -lcudart -lcuda -lcurand
-CUFFT_INC=
-CUFFT_LIB= -lcufft -lcudart
+# CUFFT_INC=
+# CUFFT_LIB= -lcufft -lcudart
 
 # ======================================================================
 # General definitions for all systems (Do not modify)

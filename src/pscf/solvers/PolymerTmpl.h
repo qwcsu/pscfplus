@@ -77,6 +77,8 @@ namespace Pscf
          */
         virtual void solve();
 
+        virtual void reduce();
+
         /// \name Accessors (objects, by reference)
         //@{
 
@@ -137,6 +139,8 @@ namespace Pscf
          */
         const Pair<int> &propagatorId(int i) const;
 
+        const DArray<GArray<int>> mapping () const;
+
         //@}
         /// \name Accessors (by value)
         //@{
@@ -172,6 +176,8 @@ namespace Pscf
         /// Array of Block objects in this polymer.
         DArray<Block> blocks_;
 
+        DArray<GArray<int>> blockMapping_;
+
         /// Array of Vertex objects in this polymer.
         DArray<Vertex> vertices_;
 
@@ -188,6 +194,15 @@ namespace Pscf
         int nPropagator_;
 
         double Q_;
+
+        DArray<GArray<int>> propDependence_;
+        DArray<int> propReplace_;
+        DArray<Pair<int>> propPartners_;
+        std::vector<Pair<int>> propReduced_;
+        DArray<GArray<int>> propMapping_;
+        DArray<int> blockMonomer_;
+        DArray<double> blockLength_;
+        int nPropReduced_;
     };
 
     template <class Block>
@@ -310,6 +325,14 @@ namespace Pscf
         return propagator(propId[0], propId[1]);
     }
 
+    template <class Block>
+    inline 
+    const 
+    DArray<GArray<int>> PolymerTmpl<Block>::mapping() const
+    {
+        return propMapping_;
+    }
+
     // Non-inline functions
 
     /*
@@ -344,7 +367,9 @@ namespace Pscf
         blocks_.allocate(nBlock_);
         vertices_.allocate(nVertex_);
         propagatorIds_.allocate(2 * nBlock_);
-
+        blockMonomer_.allocate(2 * nBlock_);
+        blockLength_.allocate(2 * nBlock_);
+        propReplace_.allocate(2 * nBlock_);
         readDArray<Block>(in, "blocks", blocks_, nBlock_);
 
         // Set vertex indices
@@ -370,6 +395,9 @@ namespace Pscf
         // Read ensemble and phi or mu
         ensemble_ = Species::Closed;
         readOptional<Species::Ensemble>(in, "ensemble", ensemble_);
+#if CMP == 1
+        UTIL_CHECK(ensemble() == Species::Closed)
+#endif
         if (ensemble_ == Species::Closed)
         {
             read(in, "phi", phi_);
@@ -387,7 +415,7 @@ namespace Pscf
         Propagator const *sourcePtr = 0;
         Propagator *propagatorPtr = 0;
         Pair<int> propagatorId;
-        int blockId, directionId, vertexId, i;
+        int blockId, directionId, vertexId;
         for (blockId = 0; blockId < nBlock(); ++blockId)
         {
             // Add sources
@@ -396,7 +424,10 @@ namespace Pscf
                 vertexId = block(blockId).vertexId(directionId);
                 vertexPtr = &vertex(vertexId);
                 propagatorPtr = &block(blockId).propagator(directionId);
-                for (i = 0; i < vertexPtr->size(); ++i)
+                int order = propagatorPtr->order();
+                blockMonomer_[order] = block(blockId).monomerId();
+                blockLength_[order] = block(blockId).length();
+                for (int i = 0; i < vertexPtr->size(); ++i)
                 {
                     propagatorId = vertexPtr->inPropagatorId(i);
                     if (propagatorId[0] == blockId)
@@ -407,11 +438,133 @@ namespace Pscf
                     {
                         sourcePtr =
                             &block(propagatorId[0]).propagator(propagatorId[1]);
-                        propagatorPtr->addSource(*sourcePtr);
+                        int source = sourcePtr->order();
+                        // propagatorPtr->addSource(*sourcePtr);
+                        propDependence_[order].append(source);
                     }
                 }
             }
         }
+
+        for (int i = 0; i < nPropagator_; ++i)
+        {
+            propReplace_[i] = -1;
+        }
+        for (int i = 0; i < nPropagator_; ++i)
+        {
+            for (int j = 0; j < nPropagator_; ++j)
+            {
+                int size1 = propDependence_[i].size();
+                int size2 = propDependence_[j].size();
+                int m1 = blockMonomer_[i];
+                int m2 = blockMonomer_[j];
+                double l1 = blockLength_[i];
+                double l2 = blockLength_[j];
+                if (size1 == size2 &&
+                    m1 == m2 &&
+                    l1 == l2)
+                {
+                    if (size1 == 0)
+                    {
+                        if (propReplace_[j] == -1)
+                            propReplace_[j] = i;
+                        for (int k = 0; k < nPropagator_; ++k)
+                        {
+                            for (int s = 0; s < propDependence_[k].size(); ++s)
+                            {
+                                if (propDependence_[k][s] == j)
+                                    propDependence_[k][s] = propReplace_[j];
+                            }
+                        }
+                    }
+                    else 
+                    {
+                        bool depFlag = true;
+                        for (int l = 0; l < size1; ++l)
+                        {
+                            if (propDependence_[i][l] != propDependence_[j][l])
+                            {
+                                depFlag = false;
+                                break;
+                            } 
+                        }
+                        if (depFlag == true)
+                        {
+                            if (propReplace_[j] == -1)
+                                propReplace_[j] = i;
+                            for (int k = 0; k < nPropagator_; ++k)
+                            {
+                                for (int s = 0; s < propDependence_[k].size(); ++s)
+                                {
+                                    if (propDependence_[k][s] == j)
+                                        propDependence_[k][s] = propReplace_[j];
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+        // for (int i = 0; i < nPropagator_; ++i)
+        // {
+        //     std::cout << i << ", " 
+        //               << blockMonomer_[i] << ", " 
+        //               << blockLength_[i] << ": ";
+        //     for (int j = 0; j < propDependence_[i].size(); ++j)
+        //     {
+        //         std::cout << propDependence_[i][j] << "   ";
+        //     }
+        //     std::cout << "Replaced by " << propReplace_[i] << "   ";
+        //     std::cout << std::endl;
+        // }
+
+        nPropReduced_ = 0;
+        for (int i = 0; i < nPropagator_; ++i)
+        {
+            for (int j = 0; j < nPropagator_; ++j)
+            {
+                if (propReplace_[j] == i)
+                {
+                    ++nPropReduced_;
+                    break;
+                }
+            }
+        }
+
+        if (!propMapping_.isAllocated())
+            propMapping_.allocate(nPropagator_);
+
+        for (int i = 0; i < nPropagator_; ++i)
+        {
+            for (int j = 0; j < nPropagator_; ++j)
+            {                
+                if (propReplace_[j] == i)
+                {
+                    propMapping_[i].append(j);
+                }
+            }
+        }
+        // std::cout << nPropReduced_ << std::endl;
+        // for (int i = 0; i < nPropagator_; ++i)
+        // {
+        //     std::cout << i << ":   ";
+        //     for (int j = 0; j < propMapping_[i].size(); ++j)
+        //     {
+        //         std::cout << propMapping_[i][j] << "   ";
+        //     }
+        //     std::cout << std::endl;
+        // }
+
+        for (int i = 0; i < nPropagator_; ++i)
+        {
+            for (int j = 0; j < propDependence_[i].size(); ++j)
+            {
+                // std::cout << i << ": " << propDependence_[i][j] << "\n";
+                propagator(i).addSource(propagator(propDependence_[i][j]));
+            }
+        }
+        
     }
 
     template <class Block>
@@ -425,6 +578,9 @@ namespace Pscf
         // Allocate and initialize isFinished matrix
         DMatrix<bool> isFinished;
         isFinished.allocate(nBlock_, 2);
+        if (!propDependence_.isAllocated())
+            propDependence_.allocate(2*nBlock_);
+
         for (int iBlock = 0; iBlock < nBlock_; ++iBlock)
         {
             for (int iDirection = 0; iDirection < 2; ++iDirection)
@@ -437,6 +593,7 @@ namespace Pscf
         Vertex *inVertexPtr = nullptr;
         int inVertexId = -1;
         bool isReady;
+        Propagator *propagatorPtr = 0;
         while (nPropagator_ < nBlock_ * 2)
         {
             for (int iBlock = 0; iBlock < nBlock_; ++iBlock)
@@ -465,12 +622,117 @@ namespace Pscf
                             propagatorIds_[nPropagator_][0] = iBlock;
                             propagatorIds_[nPropagator_][1] = iDirection;
                             isFinished(iBlock, iDirection) = true;
+                            propagatorPtr = &block(iBlock).propagator(iDirection);
+                            propagatorPtr->setOrder(nPropagator_);
                             ++nPropagator_;
                         }
                     }
                 }
             }
         }
+        for (int iBlock = 0; iBlock < nBlock_; ++iBlock)
+        {
+            if (block(iBlock).propagator(0).order() < block(iBlock).propagator(1).order())
+            {
+                block(iBlock).propagator(0).setDirectionFlag(0);
+                block(iBlock).propagator(1).setDirectionFlag(1);
+            }
+            else
+            {
+                block(iBlock).propagator(0).setDirectionFlag(1);
+                block(iBlock).propagator(1).setDirectionFlag(0);
+            }
+            // std::cout << block(iBlock).propagator(0).order() << "(" << block(iBlock).propagator(0).directionFlag() << ")   ";
+            // std::cout << block(iBlock).propagator(1).order() << "(" << block(iBlock).propagator(1).directionFlag() << ")\n";
+        }
+    }
+
+    template <class Block>
+    void PolymerTmpl<Block>::reduce()
+    {
+        if (!propPartners_.isAllocated())
+            propPartners_.allocate(nPropagator_);
+        for (int i = 0; i < nPropagator_; ++i)
+        {
+            propPartners_[i][0] = propReplace_[i];
+            if (propagator(i).partner().isAllocated())
+                propPartners_[i][1] = propagator(i).partner().order();
+            else   
+                propPartners_[i][1] = propagator(propagator(i).partner().order()).ref().order();
+
+            int tmp;
+            if  (propPartners_[i][0] > propPartners_[i][1])
+            {
+                tmp = propPartners_[i][0];
+                propPartners_[i][0] = propPartners_[i][1];
+                propPartners_[i][1] = tmp; 
+            }
+            // std::cout << propPartners_[i] << "\n";
+        }
+
+        bool insertFlag;
+        for (int i = 0; i < nPropagator_; ++i)
+        {
+            insertFlag = true;
+            for (int j = 0; j < propReduced_.size(); ++j)
+            {
+                if (propReduced_[j][0] == propPartners_[i][0] && propReduced_[j][1] == propPartners_[i][1])
+                {
+                    insertFlag = false;
+                    break;
+                }
+            }
+            if (insertFlag)
+                propReduced_.insert(propReduced_.end(), propPartners_[i]);
+        }
+
+        if (!blockMapping_.isAllocated())
+            blockMapping_.allocate(propReduced_.size());
+        for (int j = 0; j < propReduced_.size(); ++j)
+        { 
+            for (int i = 0; i < propMapping_[propReduced_[j][0]].size(); ++i)
+            {
+                blockMapping_[j].append(propagator(propMapping_[propReduced_[j][0]][i]).block().id());
+            }
+        }
+        // for (int j = 0; j < propReduced_.size(); ++j)
+        // { 
+        //     for (int i = 0; i < propMapping_[propReduced_[j][0]].size(); ++i)
+        //     {
+        //         std::cout << blockMapping_[j][i] << " ";
+        //     }
+        //     std::cout << "\n";
+        // }
+        for (int j = 0; j < nBlock(); ++j)
+        {
+            // std::cout << "block " << j << " : ";
+            // if (blocks_[j].propagator(0).isAllocated())
+            //     std::cout << " p0 =  " << blocks_[j].propagator(0).order() << " and ";
+            // else 
+            //     std::cout << " p0 =  " << blocks_[j].propagator(0).ref().order() << " and ";
+            // if (blocks_[j].propagator(1).isAllocated())
+            //     std::cout << " p1 =  " << blocks_[j].propagator(1).order() << " \n ";
+            // else
+            //     std::cout << " p1 =  " << blocks_[j].propagator(1).ref().order() << " \n ";
+
+            if (!blocks_[j].propagator(0).isAllocated())
+            {
+                blocks_[j].propagator(0).setPropagator(blocks_[j].propagator(0).ref(), 
+                                                       blocks_[j].propagator(0).ref().order());
+                propagator(blocks_[j].propagator(0).ref().order()).setReused(true);        
+                // std::cout << propagator(blocks_[j].propagator(0).ref().order()).isReused() << "\n";                 
+            }
+                
+
+            if (!blocks_[j].propagator(1).isAllocated())
+            {
+                blocks_[j].propagator(1).setPropagator(blocks_[j].propagator(1).ref(),
+                                                       blocks_[j].propagator(1).ref().order());
+                propagator(blocks_[j].propagator(1).ref().order()).setReused(true);   
+                // std::cout << propagator(blocks_[j].propagator(1).ref().order()).isReused() << "\n";         
+            }
+        }
+        // exit(1);
     }
 
     /*
@@ -487,53 +749,39 @@ namespace Pscf
         {
             propagator(j).setIsSolved(false);
         }
-
-        DArray<Pair<int>> t;
-        int partner[nBlock()];
-        t.allocate(nBlock());
-        for (int i = 0; i < nBlock(); ++i)
+            
+        for (int j = 0; j < propReduced_.size(); ++j)
         {
-            for (int j = 0; j < nBlock(); ++j)
+            propagator(propReduced_[j][0]).solveForward();
+            //     
+            for (int i = 1; i < propMapping_[propReduced_[j][0]].size(); ++i)
             {
-                if (i == propagatorIds_[j][0])
-                {
-                    t[i][0] = j;
-                    // std::cout << t[i][0] << "\n";
-                }
+                // std::cout << propMapping_[propReduced_[j][0]][i] << "\n";
+                propagator(propMapping_[propReduced_[j][0]][i]).setIsSolved(true);
             }
         }
-        // std::cout << "\n";
-        for (int i = 0; i < nBlock(); ++i)
+        
+        
+        for (int j = propReduced_.size()-1; j >= 0; --j)
         {
-            for (int j = nBlock(); j < nPropagator(); ++j)
+            bool isReused = propagator(propReduced_[j][0]).isReused();
+            propagator(propReduced_[j][1]).solveBackward(propagator(propReduced_[j][0]).qhead(), isReused);
+            for (int i = 1; i < propMapping_[propReduced_[j][1]].size(); ++i)
             {
-                if (i == propagatorIds_[j][0])
-                {
-                    t[i][1] = j;
-                    // std::cout << t[i][0] << "\n";
-                }
+                // std::cout << propMapping_[propReduced_[j][1]][i] << "\n";
+                propagator(propMapping_[propReduced_[j][1]][i]).setIsSolved(true);
+                // std::cout << "block " << propagator(propMapping_[propReduced_[j][1]][i]).block() 
+                //           << " has not been calculated, which should be replaced by "
+                //           << propagator(propReduced_[j][1]).block() << "\n"; 
+                propagator(propMapping_[propReduced_[j][1]][i]).block().setField(propagator(propReduced_[j][1]).block().cField());
             }
         }
-        for (int j = 0; j < nBlock(); ++j)
-        {
-            partner[t[j][1] - nBlock()] = t[j][0];
-            // std::cout << t[j][1]-nBlock() << " " << t[j][0] << "\n";
-        }
-        t.deallocate();
+        // exit(1);
+        Q_ = propagator(propReduced_[0][1]).returnQ();
+        // std::cout << Q_ << "\n";
 
-        for (int j = 0; j < nBlock(); ++j)
-        {
-            UTIL_CHECK(propagator(j).isReady())
-            propagator(j).solveForward();
-        }
 
-        for (int j = nBlock(); j < nPropagator(); ++j)
-        {
-            UTIL_CHECK(propagator(j).isReady())
-            propagator(j).solveBackward(propagator(partner[j - nBlock()]).qhead(), j - nBlock());
-        }
-
-        Q_ = propagator(nBlock()).returnQ();
+        // exit(1);
         
         double scale = 1.0 / Q_;
 
@@ -550,6 +798,9 @@ namespace Pscf
         {
             phi_ = exp(mu_) * Q_;
         }
+        // std::cout << phi_ << "\n";
+        // std::cout << mu_ << "\n";
+        // exit(1);
     }
 
    

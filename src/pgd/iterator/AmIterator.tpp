@@ -295,6 +295,8 @@ namespace Pscf
                                                                                     1);
                 }
 
+                
+
                 for (int i = 0; i < nm; ++i)
                 {
                     for (int j = 0; j < nm; ++j)
@@ -305,6 +307,8 @@ namespace Pscf
                                                                                    nbs);
                     }
                 }
+                // std::cout << systemPtr_->interaction().chi(0,1) << "\n";
+                // exit(1);
                 for (int i = 0; i < nm; ++i)
                 {
                     inPlacePointwiseMul<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(tempDev[i].cDField(),
@@ -335,9 +339,9 @@ namespace Pscf
                     }
                 }
 
-                for (int i = 0; i < nm; ++i)
+                for (int i = 0; i < systemPtr_->dmixture().nMonomer(); ++i)
                 {
-                    for (int j = 0; j < nm; ++j)
+                    for (int j = 0; j < systemPtr_->dmixture().nMonomer(); ++j)
                     {
                         pointWiseAddScale<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(tempDev[i].cDField() + 1,
                                                                                    systemPtr_->wField(j).cDField() + 1,
@@ -346,18 +350,14 @@ namespace Pscf
                     }
                 }
 
-                for (int i = 0; i < nm; ++i)
+                for (int i = 0; i < systemPtr_->dmixture().nMonomer(); ++i)
                 {
                     pointWiseAddScale<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(tempDev[i].cDField(),
                                                                                systemPtr_->wField(i).cDField(),
                                                                                -1.0,
                                                                                1);
-
-                    // subtractUniform <<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>
-                    // (tempDev[i].cDField(),
-                    //  0.9,
-                    //  1);
                 }
+
 #endif
 
                 devHists_.append(tempDev);

@@ -126,6 +126,10 @@ namespace Pscf
                 Timer::TimePoint now;
                 // Solve MDE for initial state
                 solverTimer.start();
+
+                for (int i = 0; i < systemPtr_->mixture().nPolymer(); ++i)
+                    systemPtr_->mixture().polymer(i).reduce();
+                
                 systemPtr_->mixture().compute(systemPtr_->wFieldsRGridPh(),
                                               systemPtr_->cFieldsRGrid());
                 // cudaReal a[512];
@@ -640,6 +644,7 @@ namespace Pscf
                             invertMatrix_(j, i) = invertMatrix_(i, j);
                         }
                         vM_[i] = 0;
+                        
                         for (int j = 0; j < nMonomer; ++j)
                         {
                             RDField<D> temp;

@@ -1,3 +1,3 @@
-sed -i "/NVXXFLAGS/c\ NVXXFLAGS= -O3 -arch=sm_75 -DREPS=4 -DCHN=2 -DDFT=0 -DNBP=1 -DCMP=1" config.mk
+sed -i "/NVXXFLAGS/c\NVXXFLAGS= -O3 -arch=sm_75 -DREPS=4 -DCHN=2 -DDFT=0 -DNBP=1 -DCMP=0" config.mk
 cd pgd
 make all -j8

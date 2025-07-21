@@ -38,6 +38,8 @@ double dfc(Pscf::Pspg::Continuous::System<D> *system)
         }
     }
 
+    fhomo -= 1;
+
     system->iterate();
 
     return system->fHelmholtz()- fhomo;
@@ -84,8 +86,21 @@ double riddr(Pscf::Pspg::Continuous::System<D> *system,
         chih, chil, chim, chinew,
         s;
     int monomerId;
+    bool braket = false;
 
     flag = false;
+
+    if (chi1 < chi2)
+    {
+        chil = chi1;
+        chih = chi2;
+    }
+    else
+    {
+        chil = chi2;
+        chih = chi1;
+    }
+    
     
     system->mixture().monomer(monomer).setStep(b);
     for (int i = 0; i < system->mixture().nPolymer(); ++i)
@@ -100,74 +115,85 @@ double riddr(Pscf::Pspg::Continuous::System<D> *system,
         }
     }
 
-    system->interaction().setChi(monomer1, monomer2, chi1);
-    fl = dfc(system);
-    system->interaction().setChi(monomer1, monomer2, chi2);
-    fh = dfc(system);
-    if ((fl > 0.0 && fh < 0.0) || (fl < 0.0 && fh > 0.0))
+    while (!braket)
     {
-        chil = chi1;
-        chih = chi2;
-        ans = UNUSED;
-        for (int j = 1; j <= MAXIT; j++)
+        system->interaction().setChi(monomer1, monomer2, chil);
+        fl = dfc(system);
+        system->interaction().setChi(monomer1, monomer2, chih);
+        fh = dfc(system);
+        if ((fl > 0.0 && fh < 0.0) || (fl < 0.0 && fh > 0.0))
         {
-            chim = 0.5 * (chil + chih);
-            system->interaction().setChi(monomer1, monomer2, chim);
-            fm = dfc(system);
-            s = sqrt(fm * fm - fl * fh);
-
-            chinew = chim + (chim - chil) * ((fl >= fh ? 1.0 : -1.0) * fm / s);
-                
-            ans = chinew;
-            system->interaction().setChi(monomer1, monomer2, ans);
-            fnew = dfc(system);
-     
-            if (sign(fm, fnew) != fm)
+            braket = true;
+        }
+        else
+        {
+            std::cout << "Root is not in the origin bracket: ["
+                      << chil << " " << chih << "]" << std::endl;
+            double l = abs(chih - chil); 
+            if ((fl > 0.0 && fh > fl) || (fl < 0.0 && fh < fl))
             {
-                chil = chim;
-                fl = fm;
-                chih = ans;
-                fh = fnew;
-            }
-            else if (sign(fl, fnew) != fl)
-            {
-                chih = ans;
-                fh = fnew;
-            }
-            else if (sign(fh, fnew) != fh)
-            {
-                chil = ans;
-                fl = fnew;
+                chih = chil;
+                chil -= 0.95*l; 
             }
             else
             {
-                std::cout << " Ridders' method failed.\n";
-                exit(1);
+                chil = chih;
+                chih += l; 
             }
-            std::cout << "chiN(" << monomer1 << ", " << monomer2 << "): ["
-                      << chil << ", " << chih << "]" << "\n";
-            std::cout << "dchi = " << fabs(chih - chil) << "\n";
-            std::cout << "dfc = " << fabs(fnew) << "\n\n";
-
-            if (s == 0.0 || fabs(chih - chil) <= acc || fnew == 0.0)
-            {
-                flag = true;
-                return ans;
-            }
-
+            std::cout << "Try new bracket: ["
+                      << chil << " " << chih << "]" << std::endl;
         }
-        std::cout << " Ridders' method failed.\n";
-        exit(1);
     }
-    else
+
+    ans = UNUSED;
+ 
+    for (int j = 1; j <= MAXIT; j++)
     {
-        std::cout << "root must be bracketed using Ridders' method.\n";
-        if (fl <= 0.0)
-            return chi1;
-        if (fh == 0.0)
-            return chi2;
+        chim = 0.5 * (chil + chih);
+        system->interaction().setChi(monomer1, monomer2, chim);
+        fm = dfc(system);
+        s = sqrt(fm * fm - fl * fh);
+
+        chinew = chim + (chim - chil) * ((fl >= fh ? 1.0 : -1.0) * fm / s);
+            
+        ans = chinew;
+        system->interaction().setChi(monomer1, monomer2, ans);
+        fnew = dfc(system);
+    
+        if (sign(fm, fnew) != fm)
+        {
+            chil = chim;
+            fl = fm;
+            chih = ans;
+            fh = fnew;
+        }
+        else if (sign(fl, fnew) != fl)
+        {
+            chih = ans;
+            fh = fnew;
+        }
+        else if (sign(fh, fnew) != fh)
+        {
+            chil = ans;
+            fl = fnew;
+        }
+        else
+        {
+            std::cout << " Ridders' method failed.\n";
+            exit(1);
+        }
+        std::cout << "chiN(" << monomer1 << ", " << monomer2 << ") = "
+                  << ans << "\n";
+        std::cout << "dchi = " << fabs(chih - chil) << "\n";
+        std::cout << "dfc = " << fabs(fnew) << "\n\n";
+
+        if (s == 0.0 || fabs(chih - chil) <= acc || fnew == 0.0)
+        {
+            flag = true;
+            return ans;
+        }
+
     }
-    return 0.0;
 }
 
 template <int D1, int D2>
@@ -186,9 +212,21 @@ double riddr(Pscf::Pspg::Continuous::System<D1> *system1,
         chih, chil, chim, chinew,
         s;
     int monomerId;
+    bool braket = false;
 
     flag = false;
-    
+
+    if (chi1 < chi2)
+    {
+        chil = chi1;
+        chih = chi2;
+    }
+    else
+    {
+        chil = chi2;
+        chih = chi1;
+    }
+
     system1->mixture().monomer(monomer).setStep(b);
     for (int i = 0; i < system1->mixture().nPolymer(); ++i)
     {
@@ -214,80 +252,87 @@ double riddr(Pscf::Pspg::Continuous::System<D1> *system1,
         }
     }
 
-    system1->interaction().setChi(monomer1, monomer2, chi1);
-    system2->interaction().setChi(monomer1, monomer2, chi1);
-    fl = dfc(system1, system2);
-    system1->interaction().setChi(monomer1, monomer2, chi2);
-    system2->interaction().setChi(monomer1, monomer2, chi2);
-    fh = dfc(system1, system2);
-    if ((fl > 0.0 && fh < 0.0) || (fl < 0.0 && fh > 0.0))
+    while (!braket)
     {
-        chil = chi1;
-        chih = chi2;
-        ans = UNUSED;
-        for (int j = 1; j <= MAXIT; j++)
+        system1->interaction().setChi(monomer1, monomer2, chil);
+        system2->interaction().setChi(monomer1, monomer2, chil);
+        fl = dfc(system1, system2);
+        system1->interaction().setChi(monomer1, monomer2, chih);
+        system2->interaction().setChi(monomer1, monomer2, chih);
+        fh = dfc(system1, system2);
+        if ((fl > 0.0 && fh < 0.0) || (fl < 0.0 && fh > 0.0))
         {
-            chim = 0.5 * (chil + chih);
-            system1->interaction().setChi(monomer1, monomer2, chim);
-            system2->interaction().setChi(monomer1, monomer2, chim);
-            fm = dfc(system1, system2);
-            s = sqrt(fm * fm - fl * fh);
-
-            chinew = chim + (chim - chil) * ((fl >= fh ? 1.0 : -1.0) * fm / s);
-                
-            ans = chinew;
-            system1->interaction().setChi(monomer1, monomer2, ans);
-            system2->interaction().setChi(monomer1, monomer2, ans);
-            fnew = dfc(system1, system2);
-     
-            if (sign(fm, fnew) != fm)
+            braket = true;
+        }
+        else
+        {
+            std::cout << "Root is not in the origin bracket: ["
+                      << chil << " " << chih << "]" << std::endl;
+            double l = abs(chih - chil); 
+            if ((fl > 0.0 && fh > fl) || (fl < 0.0 && fh < fl))
             {
-                chil = chim;
-                fl = fm;
-                chih = ans;
-                fh = fnew;
-            }
-            else if (sign(fl, fnew) != fl)
-            {
-                chih = ans;
-                fh = fnew;
-            }
-            else if (sign(fh, fnew) != fh)
-            {
-                chil = ans;
-                fl = fnew;
+                chih = chil;
+                chil -= 1.05*l; 
             }
             else
             {
-                std::cout << " Ridders' method failed.\n";
-                exit(1);
+                chil = chih;
+                chih += 1.05*l; 
             }
-            std::cout << "chiN(" << monomer1 << ", " << monomer2 << "): ["
-                      << chil << ", " << chih << "]" << "\n";
-            std::cout << "dchi = " << fabs(chih - chil) << "\n";
-            std::cout << "dfc = " << fabs(fnew) << "\n\n";
-
-            if (s == 0.0 || fabs(chih - chil) <= acc || fnew == 0.0)
-            {
-                flag = true;
-                return ans;
-            }
-
+            std::cout << "Try new bracket: ["
+                      << chil << " " << chih << "]" << std::endl;
         }
-        std::cout << " Ridders' method failed.\n";
-        exit(1);
     }
-    else
+    
+    ans = UNUSED;
+    for (int j = 1; j <= MAXIT; j++)
     {
-        std::cout << "root must be bracketed using Ridders' method.\n";
-        if (fl <= 0.0)
-            return chi1;
-        if (fh == 0.0)
-            return chi2;
+        chim = 0.5 * (chil + chih);
+        system1->interaction().setChi(monomer1, monomer2, chim);
+        system2->interaction().setChi(monomer1, monomer2, chim);
+        fm = dfc(system1, system2);
+        s = sqrt(fm * fm - fl * fh);
+        chinew = chim + (chim - chil) * ((fl >= fh ? 1.0 : -1.0) * fm / s);
+            
+        ans = chinew;
+        system1->interaction().setChi(monomer1, monomer2, ans);
+        system2->interaction().setChi(monomer1, monomer2, ans);
+        fnew = dfc(system1, system2);
+    
+        if (sign(fm, fnew) != fm)
+        {
+            chil = chim;
+            fl = fm;
+            chih = ans;
+            fh = fnew;
+        }
+        else if (sign(fl, fnew) != fl)
+        {
+            chih = ans;
+            fh = fnew;
+        }
+        else if (sign(fh, fnew) != fh)
+        {
+            chil = ans;
+            fl = fnew;
+        }
+        else
+        {
+            std::cout << " Ridders' method failed.\n";
+            exit(1);
+        }
+        std::cout << "chiN(" << monomer1 << ", " << monomer2 << "): ["
+                  << chil << ", " << chih << "]" << "\n";
+        std::cout << "dchi = " << fabs(chih - chil) << "\n";
+        std::cout << "dfc = " << fabs(fnew) << "\n\n";
+        if (s == 0.0 || fabs(chih - chil) <= acc || fnew == 0.0)
+        {
+            flag = true;
+            return ans;
+        }
     }
-    return 0.0;
 }
-
+/*
 // template <int D1, int D2>
 // double newton(double chi0,
 //               Pscf::Pspg::Continuous::System<D1> *system1,
@@ -312,7 +357,7 @@ double riddr(Pscf::Pspg::Continuous::System<D1> *system1,
 //         iter++;
 //     }
 //     return chi;
-// }
+// }*/
 
 template <int D1, int D2>
 void computeTwoPhases(Pscf::Pspg::Continuous::System<D1> *system1,
@@ -333,36 +378,116 @@ void computeTwoPhases(Pscf::Pspg::Continuous::System<D1> *system1,
     Json::Value proc;
     procFile >> proc;
 
+    std::ofstream Out;
+    Out.open("out/PhaseBoundaryPoints");
+
     for (int i = 1; i < proc.size(); ++i)
     {
-      if (!proc[i]["PhaseBoundaryPoints"].empty())
-      {
-        int m, m1, m2;
-        double eps, b, c1, c2;
-        bool flag;
+        if (!proc[i]["PhaseBoundaryPoints"].empty())
+        {
+            int m, m1, m2;
+            double eps, b, c1, c2;
+            bool flag;
 
-        eps = proc[i]["PhaseBoundaryPoints"]["epsilon"].asDouble();
-        m = proc[i]["PhaseBoundaryPoints"]["b"][0].asInt();
-        b = proc[i]["PhaseBoundaryPoints"]["b"][1].asDouble();
-        m1 = proc[i]["PhaseBoundaryPoints"]["InitialGuess(chiN)"][0].asInt();
-        m2 = proc[i]["PhaseBoundaryPoints"]["InitialGuess(chiN)"][1].asInt();
-        c1 = proc[i]["PhaseBoundaryPoints"]["InitialGuess(chiN)"][2].asDouble();
-        c2 = proc[i]["PhaseBoundaryPoints"]["InitialGuess(chiN)"][3].asDouble();
+            eps = proc[i]["PhaseBoundaryPoints"]["epsilon"].asDouble();
+            m = proc[i]["PhaseBoundaryPoints"]["b"][0].asInt();
+            b = proc[i]["PhaseBoundaryPoints"]["b"][1].asDouble();
+            m1 = proc[i]["PhaseBoundaryPoints"]["InitialGuess(chiN)"][0].asInt();
+            m2 = proc[i]["PhaseBoundaryPoints"]["InitialGuess(chiN)"][1].asInt();
+            c1 = proc[i]["PhaseBoundaryPoints"]["InitialGuess(chiN)"][2].asDouble();
+            c2 = proc[i]["PhaseBoundaryPoints"]["InitialGuess(chiN)"][3].asDouble();
 
-        double chiN = riddr(system1, system2, m, b, m1, m2, c1, c2, dfc, eps, flag);
-        // double chiN = newton(2.2e+01, &system1, &system2, 0.01);
-        std::cout << "The phase boundry point is ("
-                  << chiN
-                  << ", "
-                  << system1->mixture().monomer(m).step() << ")"
-                  << std::endl;
-      }
+            double chiN = riddr(system1, system2, m, b, m1, m2, c1, c2, dfc, eps, flag);
+            // double chiN = newton(2.2e+01, &system1, &system2, 0.01);
+            std::cout << "The phase boundry point is ("
+                      << chiN
+                      << ", "
+                      << system1->mixture().monomer(m).step() << ")"
+                      << std::endl;
+            Out << std::setw(25) << "chiN";
+            Out << std::setw(25) << "kuhn" << std::endl;
+            Out << std::setw(25) << std::scientific << std::setprecision(16) << chiN;
+            Out << std::setw(25) << std::scientific << std::setprecision(16) << system1->mixture().monomer(m).step() << std::endl;
+            if (!proc[i]["PhaseBoundaryPoints"]["ACAP"].empty())
+            {
 
-      if (!proc[i]["PhaseBoundary"].empty())
-      {
+                double end,
+                       inc,
+                       smallestStep,
+                       largestStep,
+                       scale,
+                       current;
+                bool isFinished = false;
+                // Is chi increasing? Set true initially
+                bool dir = true;
 
-      }
+                current = b;
+                
+                end = proc[i]["PhaseBoundaryPoints"]["ACAP"]["FinalValue"].asDouble();
+                inc = proc[i]["PhaseBoundaryPoints"]["ACAP"]["InitialStep"].asDouble();
+                smallestStep = proc[i]["PhaseBoundaryPoints"]["ACAP"]["SmallestStep"].asDouble();
+                largestStep = proc[i]["PhaseBoundaryPoints"]["ACAP"]["LargestStep"].asDouble();
+                scale = proc[i]["PhaseBoundaryPoints"]["ACAP"]["StepScale"].asDouble();
+
+                if (b == end)
+                {
+                    Log::file() << "The start point equals to the stop point."
+                                << std::endl;
+                    exit(1);
+                }
+                if (b > end)
+                {
+                    inc *= -1;
+                    dir = false;
+                }
+                current = b + inc;
+                std::cout << std::endl;
+                std::cout << "Initial b(" << m << ") = " << b << std::endl;
+                std::cout << "Final b(" << m <<") value: "<< end << "\n";
+
+                while (!isFinished)
+                {
+                    if ((dir && current >= end) || ((!dir) && current <= end))
+                    {
+                        current = end;
+                        isFinished = true;
+                    }
+                    
+                    std::cout << "Current b(" << m << ") = " << current << std::endl;
+
+                    double l = 0.1*chiN;
+                    c1 = chiN - l;
+                    c2 = chiN + l;
+                    chiN = riddr(system1, system2, m, current, m1, m2, c1, c2, dfc, eps, flag);
+                    
+                    if (flag)
+                    {
+                        std::cout << "The phase boundry point is ("
+                        << chiN
+                        << ", "
+                        << system1->mixture().monomer(m).step() << ")"
+                        << std::endl;
+
+                        Out << std::setw(25) << std::scientific << std::setprecision(16) << chiN;
+                        Out << std::setw(25) << std::scientific << std::setprecision(16) << system1->mixture().monomer(m).step() << std::endl;
+
+                        if (abs(inc * scale) <= largestStep)
+                            inc *= scale;
+                        else
+                        {
+                            if (dir)
+                                inc = largestStep;
+                            else
+                                inc = -largestStep;
+                        }
+                        current += inc; // step forward
+                    }
+                }
+            }
+        }
     }
+
+    Out.close();
 }
 
 template <int D>
@@ -385,34 +510,114 @@ void computeTwoPhases(Pscf::Pspg::Continuous::System<D> *system, bool echo, int 
     Json::Value proc;
     procFile >> proc;
 
+    std::ofstream Out;
+    Out.open("out/PhaseBoundaryPoints");
+
     for (int i = 1; i < proc.size(); ++i)
     {
-      if (!proc[i]["PhaseBoundaryPoints"].empty())
-      {
-        int m, m1, m2;
-        double eps, b, c1, c2;
-        bool flag;
+        if (!proc[i]["PhaseBoundaryPoints"].empty())
+        {
+            int m, m1, m2;
+            double eps, b, c1, c2;
+            bool flag;
 
-        eps = proc[i]["PhaseBoundaryPoints"]["epsilon"].asDouble();
-        m = proc[i]["PhaseBoundaryPoints"]["b"][0].asInt();
-        b = proc[i]["PhaseBoundaryPoints"]["b"][1].asDouble();
-        m1 = proc[i]["PhaseBoundaryPoints"]["InitialGuess(chiN)"][0].asInt();
-        m2 = proc[i]["PhaseBoundaryPoints"]["InitialGuess(chiN)"][1].asInt();
-        c1 = proc[i]["PhaseBoundaryPoints"]["InitialGuess(chiN)"][2].asDouble();
-        c2 = proc[i]["PhaseBoundaryPoints"]["InitialGuess(chiN)"][3].asDouble();
+            eps = proc[i]["PhaseBoundaryPoints"]["epsilon"].asDouble();
+            m = proc[i]["PhaseBoundaryPoints"]["b"][0].asInt();
+            b = proc[i]["PhaseBoundaryPoints"]["b"][1].asDouble();
+            m1 = proc[i]["PhaseBoundaryPoints"]["InitialGuess(chiN)"][0].asInt();
+            m2 = proc[i]["PhaseBoundaryPoints"]["InitialGuess(chiN)"][1].asInt();
+            c1 = proc[i]["PhaseBoundaryPoints"]["InitialGuess(chiN)"][2].asDouble();
+            c2 = proc[i]["PhaseBoundaryPoints"]["InitialGuess(chiN)"][3].asDouble();
 
-        double chiN = riddr(system, m, b, m1, m2, c1, c2, dfc, eps, flag);
-        // double chiN = newton(2.2e+01, &system1, &system2, 0.01);
-        std::cout << "The phase boundry point is ("
-                  << chiN
-                  << ", "
-                  << system->mixture().monomer(m).step() << ")"
-                  << std::endl;
-      }
+            double chiN = riddr(system, m, b, m1, m2, c1, c2, dfc, eps, flag);
+            // double chiN = newton(2.2e+01, &system1, &system2, 0.01);
+            std::cout << "The phase boundry point is ("
+                      << chiN
+                      << ", "
+                      << system->mixture().monomer(m).step() << ")"
+                      << std::endl;
+            Out << std::setw(25) << "chiN";
+            Out << std::setw(25) << "kuhn" << std::endl;
+            Out << std::setw(25) << std::scientific << std::setprecision(16) << chiN;
+            Out << std::setw(25) << std::scientific << std::setprecision(16) << system->mixture().monomer(m).step() << std::endl;
 
-      if (!proc[i]["PhaseBoundary"].empty())
-      {
+            if (!proc[i]["PhaseBoundaryPoints"]["ACAP"].empty())
+            {
+                double end,
+                       inc,
+                       smallestStep,
+                       largestStep,
+                       scale,
+                       current;
+                bool isFinished = false;
+                // Is chi increasing? Set true initially
+                bool dir = true;
 
-      }
+                current = b;
+                
+                end = proc[i]["PhaseBoundaryPoints"]["ACAP"]["FinalValue"].asDouble();
+                inc = proc[i]["PhaseBoundaryPoints"]["ACAP"]["InitialStep"].asDouble();
+                smallestStep = proc[i]["PhaseBoundaryPoints"]["ACAP"]["SmallestStep"].asDouble();
+                largestStep = proc[i]["PhaseBoundaryPoints"]["ACAP"]["LargestStep"].asDouble();
+                scale = proc[i]["PhaseBoundaryPoints"]["ACAP"]["StepScale"].asDouble();
+
+                if (b == end)
+                {
+                    Log::file() << "The start point equals to the stop point."
+                                << std::endl;
+                    exit(1);
+                }
+                if (b > end)
+                {
+                    inc *= -1;
+                    dir = false;
+                }
+                current = b + inc;
+                std::cout << std::endl;
+                std::cout << "Initial b(" << m << ") = " << b << std::endl;
+                std::cout << "Final b(" << m <<") value: "<< end << "\n";
+
+                while (!isFinished)
+                {
+                    if ((dir && current >= end) || ((!dir) && current <= end))
+                    {
+                        current = end;
+                        isFinished = true;
+                    }
+                    
+                    std::cout << "Current b(" << m << ") = " << current << std::endl;
+
+                    double l = 0.001*chiN;
+                    c1 = chiN - l;
+                    c2 = chiN + l;
+                    chiN = riddr(system, m, current, m1, m2, c1, c2, dfc, eps, flag);
+                    
+                    if (flag)
+                    {
+                        std::cout << "The phase boundry point is ("
+                        << chiN
+                        << ", "
+                        << system->mixture().monomer(m).step() << ")"
+                        << std::endl;
+
+                        Out << std::setw(25) << std::scientific << std::setprecision(16) << chiN;
+                        Out << std::setw(25) << std::scientific << std::setprecision(16) << system->mixture().monomer(m).step() << std::endl;
+
+                        if (abs(inc * scale) <= largestStep)
+                            inc *= scale;
+                        else
+                        {
+                            if (dir)
+                                inc = largestStep;
+                            else
+                                inc = -largestStep;
+                        }
+                        current += inc; // step forward
+                    }
+                }
+            }
+        }
     }
+
+    Out.close();
 }

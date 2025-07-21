@@ -16,6 +16,23 @@ namespace Pscf
             }
 
             template <int D>
+            void DPolymer<D>::setPhi(double phi)
+            {
+                // UTIL_CHECK(ensemble() == Species::Closed)
+                UTIL_CHECK(phi >= 0.0)
+                UTIL_CHECK(phi <= 1.0)
+                phi_ = phi;
+            }
+
+            template <int D>
+            void DPolymer<D>::setMu(double mu)
+            {
+
+                UTIL_CHECK(ensemble() == Species::Open)
+                mu_ = mu;
+            }
+
+            template <int D>
             void DPolymer<D>::setupUnitCell(UnitCell<D> const &unitCell,
                                             const WaveList<D> &wavelist)
             {
@@ -108,16 +125,14 @@ namespace Pscf
                             sS_[s] = factor*gpuSum(tmp, nx);
                             // std::cout 
                             // << "Entropy component of "
-                                    //   << "bond " << b << "  "
-                                    //   << "segment " << bs << "  "
-                                    //   <<  sS_[s] << "\n";
+                            //           << "bond " << b << "  "
+                            //           << "segment " << bs << "  "
+                            //           <<  sS_[s] << "\n";
                             sB_[b] += sS_[s];
                             ++s;
                         }
                     }
                 }              
-                
-
                 cudaFree (tmp);
                 
             }

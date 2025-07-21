@@ -317,6 +317,10 @@ namespace Pscf
                 }
 #if DFT == 0
                 workArray.allocate(mesh().dimensions());
+#if CMP == 1
+                cFieldTot_.allocate(mesh().dimensions());
+#endif
+                workArrayDft.allocate(mesh().dimensions());
                 ThreadGrid::setThreadsLogical(mesh().size(), NUMBER_OF_BLOCKS, THREADS_PER_BLOCK);
 #endif
 #if DFT == 1
@@ -369,7 +373,7 @@ namespace Pscf
                     std::string fieldFileName = dir;
                     fieldFileName += "/";
                     fieldFileName += caseid;
-                    fieldFileName += "_omega.bf";
+                    fieldFileName += "_omega.basis";
                     Log::file() << Str(fieldFileName, 20) << std::endl;
                     Log::file() << std::endl;
                     fieldIo().readFieldsBasis(fieldFileName, wFields());
@@ -386,7 +390,7 @@ namespace Pscf
                     fieldFileName += "/";
                     fieldFileName += prefix;
                     fieldFileName += caseid;
-                    fieldFileName += "_omega.bf";
+                    fieldFileName += "_omega.basis";
                     Log::file() << Str(fieldFileName, 20) << std::endl;
                     Log::file() << std::endl;
                     fieldIo().convertRGridToBasis(wFieldsRGridPh(), wFields());
@@ -417,7 +421,7 @@ namespace Pscf
                     Log::file() << "Reading omega field in real-space:" << std::endl;
                     std::string fieldFileName = dir;
                     fieldFileName += caseid;
-                    fieldFileName += "_omega.rf";
+                    fieldFileName += "_omega.real";
                     Log::file() << " " << Str(fieldFileName, 20) << std::endl;
                     fieldIo().readFieldsRGrid(fieldFileName, wFieldsRGridPh());
                     hasWFields_ = true;
@@ -433,7 +437,7 @@ namespace Pscf
                     fieldFileName += "/";
                     fieldFileName += prefix;
                     fieldFileName += caseid;
-                    fieldFileName += "_omega.rf";
+                    fieldFileName += "_omega.real";
                     Log::file() << Str(fieldFileName, 20) << std::endl;
                     Log::file() << std::endl;
                     fieldIo().writeFieldsRGrid(fieldFileName, wFieldsRGridPh());
@@ -449,7 +453,7 @@ namespace Pscf
                     fieldFileName += "/";
                     fieldFileName += prefix;
                     fieldFileName += caseid;
-                    fieldFileName += "_phi.rf";
+                    fieldFileName += "_phi.real";
                     Log::file() << Str(fieldFileName, 20) << std::endl;
                     Log::file() << std::endl;
                     fieldIo().writeFieldsRGrid(fieldFileName, cFieldsRGrid());
@@ -465,7 +469,7 @@ namespace Pscf
                     fieldFileName += "/";
                     fieldFileName += prefix;
                     fieldFileName += caseid;
-                    fieldFileName += "_phi.bf";
+                    fieldFileName += "_phi.basis";
                     Log::file() << Str(fieldFileName, 20) << std::endl;
                     Log::file() << std::endl;
                     fieldIo().convertRGridToBasis(cFieldsRGrid(), cFields());
@@ -532,6 +536,43 @@ namespace Pscf
                                     proc[0]["CaseId"].asString(),
                                     "");
 
+                    }
+                    if (!proc[i]["PhiToWBasis"].empty())
+                    {
+                        hasCFields_ = false;
+
+                        std::string fieldFileName = "./out/phi/";
+                        fieldFileName += caseid;
+                        fieldFileName += "_phi.real";
+
+                        Log::file() << " " << Str(fieldFileName, 20) << std::endl;
+                        fieldIo().readFieldsRGrid(fieldFileName, cFieldsRGrid());
+
+                        fieldIo().convertRGridToBasis(cFieldsRGrid(), cFields());
+
+                        std::string outFileName = "./out/phi/";
+                        outFileName += caseid;
+                        outFileName += "_phi.basis";
+                        Log::file() << " " << Str(outFileName, 20) << std::endl;
+                        fieldIo().writeFieldsBasis(outFileName, cFields());
+
+                        for (int m1 = 0; m1 < mixture().nMonomer(); ++m1)
+                        {
+                            assignUniformReal<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>
+                            (wField(m1).cDField(), 0.0, basis().nStar());
+                            for (int m2 = 0; m2 < mixture().nMonomer(); ++m2)
+                            {
+                                pointWiseAddScale<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(wField(m1).cDField(),
+                                                                                           cField(m2).cDField(),
+                                                                                           interaction().chi(m1, m2),
+                                                                                           basis().nStar());
+                            }
+                        }
+                        std::string outWFileName = "./out/omega/";
+                        outWFileName += caseid;
+                        outWFileName += "_omega.basis";
+                        Log::file() << " " << Str(outWFileName, 20) << std::endl;
+                        fieldIo().writeFieldsBasis(outWFileName, wFields());
                     }
                     else if(!proc[i]["SinglePhaseSCF"].empty())
                     {
@@ -701,9 +742,9 @@ namespace Pscf
                                         else
                                         {
                                             if (start_chi > end_chi)
-                                                inc = max_inc;
-                                            else
                                                 inc = -max_inc;
+                                            else
+                                                inc = max_inc;
                                         }
                                     }
 
@@ -888,9 +929,9 @@ namespace Pscf
                                         else
                                         {
                                             if (start_b > end_b)
-                                                inc = max_inc;
-                                            else
                                                 inc = -max_inc;
+                                            else
+                                                inc = max_inc;
                                         }
                                     }
                                 }
@@ -922,20 +963,223 @@ namespace Pscf
 
                             exit(1);
                         }
+                        if (s == "chiN_all")
+                        {
+                            // start point, current point, and end point.
+                            // end ponit is read from command file, while
+                            // start point is read from param file.
+                            double start_chi, current_chi, end_chi;
+                            // current increment, maximum increment, minimum increment,
+                            // and adpative factor, which are read from command file
+                            double inc, max_inc, min_inc, fac;
+                            // Is finished? Set false initially
+                            bool isFinished = false;
+                            // Is chi increasing? Set true initially
+                            bool dir = true;
+
+                            std::cout << "ACAP:" << "\n";
+
+                            std::cout << "Variable: chi interaction between :"<< "\n";
+                            for (int m1 = 0; m1 < mixture().nMonomer(); ++m1)
+                            {
+                                for (int m2 = 0; m2 < mixture().nMonomer(); ++m2)
+                                {
+                                    if (m1 < m2)
+                                        std::cout << "      (" << m1 << "," << m2 << ")\n";
+                                }
+                            }
                             
+                        
+                            start_chi = proc[i]["ACAP"]["InitialValue"].asDouble();  
+                            std::cout << "Initial chi value: "<< start_chi << "\n";
+                            end_chi = proc[i]["ACAP"]["FinalValue"].asDouble();
+                            std::cout << "Final chi value: "<< end_chi << "\n";
+                            inc = proc[i]["ACAP"]["InitialStep"].asDouble();
+                            min_inc = proc[i]["ACAP"]["SmallestStep"].asDouble();
+                            max_inc = proc[i]["ACAP"]["LargestStep"].asDouble();
+                            fac = proc[i]["ACAP"]["StepScale"].asDouble();
+
+                            if (start_chi == end_chi)
+                            {
+                                Log::file() << "The start point equals to the stop point." << std::endl;
+                                exit(1);
+                            }
+
+                            if (start_chi > end_chi)
+                            {
+                                inc *= -1;
+                                dir = false;
+                            }
+                            bool intermediateFlag = false;
+                            int nip = 0;
+                            std::vector<double> point;
+                            if (!proc[i]["ACAP"]["IntermediateOuput"].empty())
+                            {
+                                nip = proc[i]["ACAP"]["IntermediateOuput"][0]["OutputPoints"].size();
+
+                                for (int j = 0; j < nip; ++j)
+                                {
+                                    point.push_back(proc[i]["ACAP"]["IntermediateOuput"][0]["OutputPoints"][j].asDouble());
+                                }
+
+                                if (dir)
+                                {
+                                    std::sort(point.begin(), point.end());
+                                }
+                                else
+                                {
+                                    std::sort(point.rbegin(), point.rend());
+                                }
+                                intermediateFlag = true;
+                            }
+                            
+
+                            current_chi = start_chi;
+
+                            Json::Value thermo;
+                            thermo.resize(0);
+
+                            int pointid = 0;
+
+                            while (!isFinished)
+                            {
+                                ++pointid;
+
+                                if ((dir && current_chi >= end_chi) || ((!dir) && current_chi <= end_chi))
+                                {
+                                    current_chi = end_chi;
+                                    intermediateFlag = true;
+                                    isFinished = true;
+                                }
+
+                                for (int m1 = 0; m1 < mixture().nMonomer(); ++m1)
+                                {
+                                    for (int m2 = 0; m2 < mixture().nMonomer(); ++m2)
+                                    {
+                                        if (m1 < m2)
+                                        {
+                                            interaction().chi_(m1, m2) = current_chi;
+                                            interaction().chi_(m2, m1) = current_chi;
+                                        }
+                                    }
+                                }
+                                unitCell().setParameters(unitCell().parameters()); // Reset cell parameters
+                                // iteration
+
+                                // Attempt to iteratively solve SCFT equations
+                                Log::file() << std::endl;
+                                Log::file() << "================================================" << std::endl;
+                                Log::file() << "*Current chi: " << "*" << std::endl
+                                            << std::endl;
+                                for (int m1 = 0; m1 < mixture().nMonomer(); ++m1)
+                                {
+                                    for (int m2 = 0; m2 < mixture().nMonomer(); ++m2)
+                                    {
+                                        if (m1 < m2)
+                                        {
+                                            Log::file() << "chi(" << m1 << "," << m2 << ") = " << interaction().chi_(m2, m1) << std::endl;
+                                        }
+                                    }
+                                }
+                                
+                                int fail = iterator().solve();
+
+                                if (!fail)
+                                {
+                                    hasCFields_ = true;
+                                    
+                                    computeFreeEnergy();
+
+                                    std::string outFileName = proc[i]["ACAP"]["OutputDirectory"].asString();
+                                    outFileName += "chi_";
+                                    outFileName += proc[0]["CaseId"].asString();
+                                    outFileName += "_out.json";
+                                    std::ofstream out(outFileName);
+                                    outputThermo(thermo);
+                                    out << thermo;
+                                    out.close();
+
+                                    outputThermo(Log::file());
+                                    if (intermediateFlag)
+                                    {
+                                        std::string prefix = "chi=";
+                                        prefix += std::to_string(current_chi);
+                                        prefix += "_";
+                                        for (int j = 1; j < proc[i]["ACAP"]["IntermediateOuput"].size(); ++j)
+                                        {
+                                            fieldIO("write",
+                                                    proc[i]["ACAP"]["IntermediateOuput"][j]["Field"].asString(),
+                                                    proc[i]["ACAP"]["IntermediateOuput"][j]["Format"].asString(),
+                                                    proc[i]["ACAP"]["IntermediateOuput"][j]["OutputDirectory"].asString(),
+                                                    proc[0]["CaseId"].asString(),
+                                                    prefix);
+                                        }
+                                        intermediateFlag = false;
+                                    }
+
+                                    if (!point.empty() && (point[0] != start_chi)
+                                        &&(dir && current_chi + inc >= point[0]
+                                        || !dir && current_chi + inc <= point[0]))
+                                    {
+                                        current_chi = point[0];
+                                        point.erase(point.begin());
+                                        intermediateFlag = true;
+                                    }
+                                    else
+                                    {
+                                        current_chi += inc; // step forward
+                                        if (abs(inc * fac) <= max_inc)
+                                            inc *= fac;
+                                        else
+                                        {
+                                            if (start_chi > end_chi)
+                                                inc = -max_inc;
+                                            else
+                                                inc = max_inc;
+                                        }
+                                    }
+
+                                }
+                                else
+                                {
+                                    Log::file() << "Iterate has failed." << std::endl;
+                                    
+                                    std::string outFileName = proc[i]["ACAP"]["OutputDirectory"].asString();
+                                    outFileName += "chi_";
+                                    outFileName += proc[0]["CaseId"].asString();
+                                    outFileName += "_out.json";
+                                    std::ofstream out(outFileName);
+                                    outputThermo(thermo);
+                                    out << thermo;
+                                    out.close();
+
+                                    if (abs(inc) < min_inc)
+                                    {
+                                        Log::file() << "Smallest increment reached." << std::endl;
+                                        // outRunfile.close();
+                                    }
+                                    else
+                                    {
+                                        current_chi -= inc;
+                                        inc /= fac;
+                                    }
+                                }
+                            }
+
+                        }  
                     }
                     else if(!proc[i]["PhaseBoundaryPoints"].empty())
                     {
                         break;
                     }
-                    // else if(!proc[i]["PhaseBoundary"].empty())
-                    // {
-                    //     break;
-                    // }
-                    else
+                    else if(!proc[i]["PhaseBoundary"].empty())
                     {
-                        std::cout << "Unknown Command" << "\n";
+                        break;
                     }
+                    // else
+                    // {
+                    //     std::cout << "Unknown Command" << "\n";
+                    // }
                 }
             }
 
@@ -1498,17 +1742,18 @@ namespace Pscf
                 ThreadGrid::setThreadsLogical(nx, nBlocks, nThreads);
 
                 fHelmholtz_ = 0.0;
-                UAB_ = 0.0;
+                UR_ = 0.0;
+                UCMP_ = 0;
                 S_ = 0.0;
                 // Compute ideal gas contributions to f_Helmholtz
                 Polymer<D> *polymerPtr;
-                double phi, mu, length;
+                double phi, mu, length, r;
 
                 assignUniformReal<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(workArray.cDField(), 0.0, nx);
 
                 int nm = mixture().nMonomer();
 
-               assignUniformReal<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(workArray.cDField(), 0.0, nx);
+                assignUniformReal<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(workArray.cDField(), 0.0, nx);
 
                 for (int i = 0; i < nm; ++i)
                 {
@@ -1520,6 +1765,7 @@ namespace Pscf
                     fHelmholtz_ -= gpuSum(workArray.cDField(), nx) / double(nx);
                 }
 
+                C_ = 0.0;
                 int np = mixture().nPolymer();
                 for (int i = 0; i < np; ++i)
                 {
@@ -1528,30 +1774,70 @@ namespace Pscf
                     mu = polymerPtr->mu();
                     // Recall: mu = ln(phi/q)
                     length = polymerPtr->length();
-                    // fHelmholtz_ += phi * (mu-1) / length;
-                    fHelmholtz_ -= phi * log(polymerPtr->Q()) / length;
+                    r = polymerPtr->length()/mixture().polymer(0).length();
+                    fHelmholtz_ += phi * mu / r;
+                    C_ += (1.0 - log(phi))*phi/r;
+                    // fHelmholtz_ -= phi * log(polymerPtr->Q()) / length;
                 }
                 
                 S_ = fHelmholtz_;
 
                 for (int i = 0; i < nm; ++i)
                 {
+                    fft_.forwardTransform(cFieldRGrid(i), cFieldKGrid(i));
+                }
+                for (int i = 0; i < D; ++i)
+                {
+                    if (i < D - 1)
+                    {
+                        kMeshDimensions_[i] = mesh().dimensions()[i];
+                    }
+                    else
+                    {
+                        kMeshDimensions_[i] = mesh().dimensions()[i] / 2 + 1;
+                    }
+                }
+                int kSize = 1;
+                for (int i = 0; i < D; ++i)
+                {
+                    kSize *= kMeshDimensions_[i];
+                }
+
+                for (int i = 0; i < nm; ++i)
+                {
                     for (int j = 0; j < nm; ++j)
                     {
-                        assignUniformReal<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(workArray.cDField(), 0.5 * interaction().chi(i, j), nx);
-                        inPlacePointwiseMul<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(workArray.cDField(), cFieldRGrid(i).cDField(), nx);
-                        inPlacePointwiseMul<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(workArray.cDField(), cFieldRGrid(j).cDField(), nx);
-
-                        UAB_ += gpuSum(workArray.cDField(), nx) / double(nx);
+                        cudaConv<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(workArrayDft.cDField(),
+                                                                          cFieldKGrid(i).cDField(),
+                                                                          mixture().bu0().cDField(),
+                                                                          kSize);
+                        fft_.inverseTransform(workArrayDft, workArray);
+                        inPlacePointwiseMul<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(workArray.cDField(),
+                                                                                     cFieldRGrid(j).cDField(),
+                                                                                     nx);
+             
+                        UR_ += 0.5 * interaction().chi(i, j) * gpuSum(workArray.cDField(), nx)/double(nx);
                     }
                 }
 
-                fHelmholtz_ += UAB_;
-#if CMP == 0
-                UCMP_ = 0;
+                fHelmholtz_ += UR_;
+#if CMP == 1
+                // UCMP_ -= fHelmholtz_;
+                // fHelmholtz_ += UCMP_;
+                assignUniformReal<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(cFieldTot_.cDField(), 0.0, nx);
+                for (int i = 0; i < nm; ++i)
+                {
+                    pointWiseAdd<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(cFieldTot_.cDField(), cFieldRGrid(i).cDField(), nx);
+                }
+                mixture().computeBlockCMP(mesh(), cFieldsRGrid_, cFieldsKGrid_, fft());
+                for (int i = 0; i < mixture().nUCompCMP(); ++i)
+                {
+                    UCMP_ += mixture().uBlockCMP(i);
+                }
+                fHelmholtz_ += UCMP_;
 #endif
-
-                mixture().computeBlockRepulsion(mesh());
+                
+                mixture().computeBlockRepulsion(mesh(), cFieldsRGrid_, cFieldsKGrid_, fft());
                 for (int i = 0; i < np; ++i)
                 {
                     mixture().polymer(i).computeVertex(mesh());
@@ -1560,9 +1846,152 @@ namespace Pscf
                 // Compute pressure
                 pressure_ = -fHelmholtz_;
                 for (int i = 0; i < np; ++i)
+                {
+                    polymerPtr = &mixture().polymer(i);
+                    phi = polymerPtr->phi();
+                    mu = polymerPtr->mu();
+                    // Recall: mu = ln(phi/q)
+                    length = polymerPtr->length();
                     pressure_ += mu * phi / length;
+                    // fHelmholtz_ -= phi * log(polymerPtr->Q()) / length;
+                }
+                
+/*               double *k1, *k2, *k3;
+                MeshIterator<D> iter;
+                kMeshDimensions_ = wavelist().dimensions();
+                kMeshDimensions_[2] = kMeshDimensions_[2]/2+1;
+                iter.setDimensions(kMeshDimensions_);
+                
+                int kSize = 1;
+                for (int i = 0; i < D; ++i)
+                    kSize *= kMeshDimensions_[i];
+                k1 = new double [kSize];
+                k2 = new double [kSize];
+                k3 = new double [kSize];
 
+                for (iter.begin(); !iter.atEnd(); ++iter)
+                {
+                    k1[iter.rank()] = wavelist().minImage(iter.rank())[0];
+                    k2[iter.rank()] = wavelist().minImage(iter.rank())[1];
+                    k3[iter.rank()] = wavelist().minImage(iter.rank())[2];
+                }
 
+                int ns = mixture().polymer(0).block(0).ns();
+                RDField<D> qA, tmp_q, tmp_dq;
+                RDField<D> dqA1,dqA2,dqA3;
+                RDFieldDft<D> qAk;
+                RDFieldDft<D> dqAk;
+                double *k1d,*k2d,*k3d;
+                qA.allocate(nx*ns);
+                dqA1.allocate(nx*ns);
+                dqA2.allocate(nx*ns);
+                dqA3.allocate(nx*ns);
+                tmp_q.allocate(nx);
+                tmp_dq.allocate(nx);
+                qAk.allocate(kSize);
+                dqAk.allocate(kSize);
+                cudaMalloc((void **)&k1d, kSize * sizeof(cudaReal));
+                cudaMalloc((void **)&k2d, kSize * sizeof(cudaReal));
+                cudaMalloc((void **)&k3d, kSize * sizeof(cudaReal));
+                cudaMemcpy(k1d, k1, sizeof(cudaReal) * kSize, cudaMemcpyHostToDevice);
+                cudaMemcpy(k2d, k2, sizeof(cudaReal) * kSize, cudaMemcpyHostToDevice);
+                cudaMemcpy(k3d, k3, sizeof(cudaReal) * kSize, cudaMemcpyHostToDevice);
+                
+                cudaMemcpy(qA.cDField(), mixture().polymer(0).block(0).propagator(0).qhead(), sizeof(cudaReal) * nx, cudaMemcpyHostToDevice);
+                for (int s = 0; s < ns; ++s)
+                {
+                    assignReal<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(tmp_q.cDField(), qA.cDField()+s*nx, nx);
+                    fft_.forwardTransform(tmp_q, qAk);
+
+                    cudaImMul<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(dqAk.cDField(), qAk.cDField(), k1d, kSize);
+                    fft_.inverseTransform(dqAk,tmp_dq);
+                    assignReal<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(dqA1.cDField()+s*nx, tmp_dq.cDField(), nx);
+
+                    cudaImMul<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(dqAk.cDField(), qAk.cDField(), k2d, kSize);
+                    fft_.inverseTransform(dqAk,tmp_dq);
+                    assignReal<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(dqA2.cDField()+s*nx, tmp_dq.cDField(), nx);
+
+                    cudaImMul<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(dqAk.cDField(), qAk.cDField(), k3d, kSize);
+                    fft_.inverseTransform(dqAk,tmp_dq);
+                    assignReal<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(dqA3.cDField()+s*nx, tmp_dq.cDField(), nx);
+                    
+                    if (s+1<ns)
+                    {
+                        mixture().polymer(0).block(0).step(qA.cDField()+s*nx, tmp_q.cDField());
+                        assignReal<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(qA.cDField()+(s+1)*nx, tmp_q.cDField(), nx);
+                    }
+                }
+
+                RDField<D> qAs;
+                RDField<D> dqAs1,dqAs2,dqAs3;
+                qAs.allocate(nx*ns);
+                dqAs1.allocate(nx*ns);
+                dqAs2.allocate(nx*ns);
+                dqAs3.allocate(nx*ns);
+
+                cudaMemcpy(qAs.cDField(), mixture().polymer(0).block(0).propagator(1).qhead(), sizeof(cudaReal) * nx, cudaMemcpyHostToDevice);
+                for (int s = 0; s < ns; ++s)
+                {
+                    assignReal<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(tmp_q.cDField(), qAs.cDField()+s*nx, nx);
+                    fft_.forwardTransform(tmp_q, qAk);
+
+                    cudaImMul<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(dqAk.cDField(), qAk.cDField(), k1d, kSize);
+                    fft_.inverseTransform(dqAk,tmp_dq);
+                    assignReal<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(dqAs1.cDField()+s*nx, tmp_dq.cDField(), nx);
+
+                    cudaImMul<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(dqAk.cDField(), qAk.cDField(), k2d, kSize);
+                    fft_.inverseTransform(dqAk,tmp_dq);
+                    assignReal<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(dqAs2.cDField()+s*nx, tmp_dq.cDField(), nx);
+
+                    cudaImMul<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(dqAk.cDField(), qAk.cDField(), k3d, kSize);
+                    fft_.inverseTransform(dqAk,tmp_dq);
+                    assignReal<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(dqAs3.cDField()+s*nx, tmp_dq.cDField(), nx);
+                    
+                    if (s+1<ns)
+                    {
+                        mixture().polymer(0).block(0).step(qAs.cDField()+s*nx, tmp_q.cDField());
+                        assignReal<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(qAs.cDField()+(s+1)*nx, tmp_q.cDField(), nx);
+                    }
+                }
+
+                cudaReal *px, *py, *pz;
+                cudaMalloc((void **)&px, nx * sizeof(cudaReal));
+                cudaMalloc((void **)&py, nx * sizeof(cudaReal));
+                cudaMalloc((void **)&pz, nx * sizeof(cudaReal));
+                cudaMemset(px, 0, nx*sizeof(cudaReal));
+                cudaMemset(py, 0, nx*sizeof(cudaReal));
+                cudaMemset(pz, 0, nx*sizeof(cudaReal));
+                for (int s = 0; s < ns; ++s)
+                {
+                    pointWiseAddScale2<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(px, qAs.cDField()+s*nx, dqA3.cDField()+(ns-1-s)*nx,  -1.0/mixture().polymer(0).Q()/6.0, nx);
+                    pointWiseAddScale2<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(px, qA.cDField()+s*nx,  dqAs3.cDField()+(ns-1-s)*nx,  1.0/mixture().polymer(0).Q()/6.0, nx);
+
+                    pointWiseAddScale2<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(py, qAs.cDField()+s*nx, dqA2.cDField()+(ns-1-s)*nx,  -1.0/mixture().polymer(0).Q()/6.0, nx);
+                    pointWiseAddScale2<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(py, qA.cDField()+s*nx,  dqAs2.cDField()+(ns-1-s)*nx,  1.0/mixture().polymer(0).Q()/6.0, nx);
+
+                    pointWiseAddScale2<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(pz, qAs.cDField()+s*nx, dqA1.cDField()+(ns-1-s)*nx,  -1.0/mixture().polymer(0).Q()/6.0, nx);
+                    pointWiseAddScale2<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(pz, qA.cDField()+s*nx,  dqAs1.cDField()+(ns-1-s)*nx,  1.0/mixture().polymer(0).Q()/6.0, nx);
+                }
+
+                cudaReal *pxc, *pyc, *pzc;
+                pxc = new cudaReal [nx];
+                pyc = new cudaReal [nx];
+                pzc = new cudaReal [nx];
+                cudaMemcpy(pxc, px, sizeof(cudaReal) * nx, cudaMemcpyDeviceToHost);
+                cudaMemcpy(pyc, py, sizeof(cudaReal) * nx, cudaMemcpyDeviceToHost);
+                cudaMemcpy(pzc, pz, sizeof(cudaReal) * nx, cudaMemcpyDeviceToHost);
+                for (int i = 0; i < 32*32*32; ++i)
+                    std::cout << pxc[i] << "    " << pyc[i] << "    " << pzc[i] << "\n";
+                delete [] k1;
+                delete [] k2;
+                delete [] k3;
+                delete [] pxc;
+                delete [] pyc;
+                delete [] pzc;
+                cudaFree (k1d);
+                cudaFree (k2d);
+                cudaFree (k3d);
+                */ 
 #endif
 
 #if DFT == 1
@@ -1635,15 +2064,15 @@ namespace Pscf
             {
                 out << std::endl;
                 out << "fHelmholtz  = " << Dbl(fHelmholtz(), 21, 16) << std::endl;
-                // out << "pressure   = " << Dbl(pressure(), 21, 16) << std::endl;
-                out << "U           = " << Dbl(UAB_ + UCMP_, 21, 16) << std::endl;
-                out << "-TS         = " << Dbl(fHelmholtz() - UAB_ - UCMP_, 21, 16) << std::endl;
+                out << "U_chi       = " << Dbl(UR_, 21, 16) << std::endl;
+                out << "U_CMP       = " << Dbl(UCMP_, 21, 16) << std::endl;
+                out << "-TS         = " << Dbl(fHelmholtz() - UR_ - UCMP_, 21, 16) << std::endl;
                 int np = mixture().nPolymer();
                 out << std::endl;
-                out << "Components of U:" << std::endl;
+                out << "Components of U due to Flory-Huggins repulsion:" << std::endl;
                 out << "    polymer1   block1   polymer2   block2      -U(block)" << std::endl;
                 
-                for (int i = 0; i < mixture().nUComp(); ++i)
+                for (int i = 0; i < mixture().nUCompChi(); ++i)
                 {
                     out << Int(mixture().uBlockList(i)[0],5) <<"  " 
                         << Int(mixture().uBlockList(i)[1],9) <<"  " 
@@ -1653,7 +2082,22 @@ namespace Pscf
                         << Dbl(mixture().uBlockRepulsion(i), 28, 16)
                         << std::endl;
                 }
-
+#if CMP==1
+                out << std::endl;
+                out << "Components of U due to compressibility:" << std::endl;
+                out << "    polymer1   block1   polymer2   block2      -U(block)" << std::endl;
+                
+                for (int i = 0; i < mixture().nUCompCMP(); ++i)
+                {
+                    out << Int(mixture().uBlockList(i)[0],5) <<"  " 
+                        << Int(mixture().uBlockList(i)[1],9) <<"  " 
+                        << Int(mixture().uBlockList(i)[2],7) <<"  " 
+                        << Int(mixture().uBlockList(i)[3],9) <<"  " 
+                        <<  "   "
+                        << Dbl(mixture().uBlockCMP(i), 28, 16)
+                        << std::endl;
+                }
+#endif
                 out << std::endl;
                 out << "Components of -TS:" << std::endl;
                 out << "    polymer   vertex       -TS(vertex)" << std::endl;
@@ -1738,13 +2182,13 @@ namespace Pscf
 
                 HelmholtzFreeEnergy["Total"] = Json::Value(fHelmholtz());
 
-                InternalEnergyContribution["Total"] = Json::Value(UAB_ + UCMP_);
+                InternalEnergyContribution["Total"] = Json::Value(UR_ + UCMP_);
 
                 Json::Value FloryHugginsRepulsion;
 
-                FloryHugginsRepulsion["Total"] = Json::Value(UAB_);
+                FloryHugginsRepulsion["Total"] = Json::Value(UR_);
 
-                for (int i = 0; i < mixture().nUComp(); ++i)
+                for (int i = 0; i < mixture().nUCompChi(); ++i)
                 {
                     Json::Value tmp;
                     tmp[0] = mixture().uBlockList(i)[0];
@@ -1797,6 +2241,25 @@ namespace Pscf
                 HelmholtzFreeEnergy["EntropyContribution"] = Json::Value(EntropyContribution);
 
                 out["HelmholtzFreeEnergy"] = Json::Value(HelmholtzFreeEnergy);
+
+                Json::Value C;
+                out["C"] = Json::Value(C_);
+
+                for (int p = 0; p < mixture().nPolymer(); ++p)
+                {   
+                    Json::Value tmp;
+                    tmp[0] = p;
+                    tmp[1] = mixture().polymer(p).mu();  
+                    out["ChemicalPotential"].append(tmp); 
+                }
+
+                for (int p = 0; p < mixture().nPolymer(); ++p)
+                {   
+                    Json::Value tmp;
+                    tmp[0] = p;
+                    tmp[1] = mixture().polymer(p).phi();  
+                    out["Phi"].append(tmp); 
+                }
 
                 Json::Value tmp;
                 tmp[0] = groupName();

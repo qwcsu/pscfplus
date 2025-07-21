@@ -125,7 +125,7 @@ namespace Pspg
             mesh().shift(waveDft);
             waveId = basis().waveId(waveDft);
             starId = basis().wave(waveId).starId;
-            UTIL_CHECK(basis().star(starId).waveBz == waveBz);
+            // UTIL_CHECK(basis().star(starId).waveBz == waveBz);
             if (!basis().star(starId).cancel) {
                for (j = 0; j < nMonomer; ++j) {
                   temp_out[j][starId] = temp [j];

@@ -66,12 +66,13 @@ namespace Pscf
                     nx *= meshPtr_->dimensions()[i];
                 }
                 nc_ = std::floor((std::sqrt(1 + 8 * ns_) - 1) * 0.5);
-
                 // std::cout << nc_ << "\n";
-
                 // cudaMalloc((void**)&qFields_d, sizeof(cudaReal)* nx * ns);
-                cudaMalloc((void **)&qFields_d, sizeof(cudaReal) * nx * (nc_ + 1));
-                cudaMalloc((void **)&q_cpy, nx* (nc_ + 1) * sizeof(cudaReal));
+                if (this->directionFlag() == 0)
+                    cudaMalloc((void **)&qFields_d, sizeof(cudaReal) * nx * (nc_ + 1));
+                else
+                    cudaMalloc((void **)&qFields_d, sizeof(cudaReal) * nx);
+
                 cudaMalloc((void **)&d_temp_, ThreadGrid::nBlocks() * sizeof(cudaReal));
                 temp_ = new cudaReal[ThreadGrid::nBlocks()];
 
@@ -86,10 +87,6 @@ namespace Pscf
             template <int D>
             void Propagator<D>::computeHead()
             {
-
-                // Reference to head of this propagator
-                // QField& qh = qFields_[0];
-
                 // Initialize qh field to 1.0 at all grid points
                 int nx = 1;
                 for (int i = 0; i < D; ++i)
@@ -101,23 +98,32 @@ namespace Pscf
                 // qh[ix] = 1.0;
                 // qFields_d points to the first float in gpu memory
                 assignUniformReal<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(qFields_d, 1.0, nx);
-
+                
                 // Pointwise multiply tail QFields of all sources
                 // this could be slow with many sources. Should launch 1 kernel for the whole
                 // function of computeHead
                 const cudaReal *qt;
                 for (int is = 0; is < nSource(); ++is)
                 {
+                    // need to modify tail to give the total_size - mesh_size pointer
                     if (!source(is).isSolved())
                     {
                         UTIL_THROW("Source not solved in computeHead");
                     }
-                    // need to modify tail to give the total_size - mesh_size pointer
-                    qt = source(is).qtail();
 
+                    if (source(is).directionFlag()==0)
+                        qt = source(is).qtail();
+                    else
+                        qt = source(is).head();
                     // qh[ix] *= qt[ix];
                     inPlacePointwiseMul<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(qFields_d, qt, nx);
                 }
+#if DFT == 0
+                block().setupFFT();
+#endif
+#if DFT == 1
+                block().setupFCT();
+#endif
             }
 
             template <int D>
@@ -132,23 +138,17 @@ namespace Pscf
 
                 computeHead();
 
-#if DFT == 0
-                block().setupFFT();
-#endif
-#if DFT == 1
-                block().setupFCT();
-#endif
-                // std::cout << "nc=" << nc_ << "\n";
-
                 int cl[nc_ + 1];
                 cl[0] = ns_ - nc_ * (nc_ + 1) * 0.5;
-                // std::cout << cl[0] << "!\n";
+                
 
                 for (int i = 1; i <= nc_; ++i)
                     cl[i] = nc_ - i + 1;
 
                 cudaReal *tmp;
                 cudaMalloc((void **)&tmp, sizeof(cudaReal) * nx);
+                // std::cout << block().fft().isSetup() << "\n";
+                
 
                 if (cl[0] == 2 || cl[0] == 0)
                 {
@@ -223,7 +223,7 @@ namespace Pscf
             }
 
             template <int D>
-            void Propagator<D>::solveBackward(cudaReal *q, int n)
+            void Propagator<D>::solveBackward(cudaReal *q, bool isReused)
             {
                 UTIL_CHECK(isAllocated())
                 int nx = 1;
@@ -233,22 +233,27 @@ namespace Pscf
                 }
                 int NUMBER_OF_BLOCKS, THREADS_PER_BLOCK;
                 ThreadGrid::setThreadsLogical(nx, NUMBER_OF_BLOCKS, THREADS_PER_BLOCK);
-
+                
                 computeHead();
-                // if (n == 0)
-                // {
-                //     Q_ = intQ(q, qFields_d + nc_ * nx);
-                // }
+                
                 Q_ = intQ(q + nc_ * nx, qFields_d);
-
+                
 #if DFT == 0
                 block().setupFFT();
 #endif
 #if DFT == 1
                 block().setupFCT();
 #endif
-
-                // std::cout << ns_ << "\n";
+                cudaReal *q_tmp, *qd_tmp;
+                cudaReal *rtmp;
+                cudaMalloc((void **)&q_tmp, sizeof(cudaReal) * nx);
+                cudaMalloc((void **)&qd_tmp, sizeof(cudaReal) * nx);
+                cudaMemcpy(q_tmp, q + nc_ * nx, sizeof(cudaReal) * nx, cudaMemcpyDeviceToDevice);
+                if (isReused)
+                {
+                    cudaMalloc((void **)&rtmp, sizeof(cudaReal)*(nc_+1)*nx);
+                    cudaMemcpy(rtmp, q, sizeof(cudaReal)*(nc_+1)*nx, cudaMemcpyDeviceToDevice);
+                }
 
                 int cb[nc_ + 1];
                 cb[nc_] = ns_ - nc_ * (nc_ + 1) * 0.5;
@@ -256,55 +261,70 @@ namespace Pscf
                 for (int i = 1; i <= nc_; ++i)
                     cb[i - 1] = i;
 
-                // for (int i = 0; i <= nc_; ++i)
-                //     std::cout << cb[i] << "\n";
-
                 int icount = 0;
-                // std::cout << "int(" << nc_ << "," << "0" <<")\n";
-                // std::cout << "q*(" << "0" << "," << nc_ <<")\n";
                 block().computeInt(q + nc_ * nx, qFields_d, icount);
-                
-                cudaMemcpy(q_cpy, q, sizeof(cudaReal) * (nc_+1) * nx, cudaMemcpyDeviceToDevice);
                 ++icount;
-                block().step(qFields_d, qFields_d + nc_ * nx);
-
+                // block().step(qFields_d, qd_tmp);
+                // cudaMemcpy(qFields_d, qd_tmp, sizeof(cudaReal) * nx, cudaMemcpyDeviceToDevice);
                 for (int i = 1; i < nc_; ++i)
                 {
                     for (int j = 0; j < cb[i] - 1; ++j)
                     {
                         // std::cout << "q (" << nc_-i+j << "," << nc_-i+j+1 <<")\n";
                         // std::cout << "q*(" << nc_-j << "," << nc_-j-1 <<")\n";
-                        block().step(q_cpy + (nc_ - i + j) * nx, q_cpy + (nc_ - i + j + 1) * nx);
-                        block().step(qFields_d + (nc_ - j) * nx, qFields_d + (nc_ - j - 1) * nx);
+                        block().step(q + (nc_ - i + j) * nx, q + (nc_ - i + j + 1) * nx);
                     }
+                    // std::cout << "\n";
                     for (int j = 0; j < cb[i]; ++j)
                     {
                         // std::cout << "int(" << nc_-j << "," << nc_-j <<")\n";
-                        block().computeInt(q_cpy + (nc_ - j) * nx, qFields_d + (nc_ - j) * nx, icount);
+                        block().step(qFields_d, qd_tmp);
+                        cudaMemcpy(qFields_d, qd_tmp, sizeof(cudaReal) * nx, cudaMemcpyDeviceToDevice);
+                        block().computeInt(q + (nc_ - j) * nx, qFields_d, icount);
                         ++icount;
+                        // double a[2];
+                        // cudaMemcpy(a, qFields_d, sizeof(cudaReal) * 2, cudaMemcpyDeviceToHost);
+                        // std::cout << a[0] <<"\n";
+                        // std::cout << a[1] <<"\n";
                     }
                     // std::cout << "q*(" << nc_-cb[i]+1 << "," << nc_ <<")\n";
                     // std::cout << "\n";
-                    block().step(qFields_d + (nc_ - cb[i] + 1) * nx, qFields_d + nc_ * nx);
                 }
+                // exit(1);
                 for (int j = 0; j < cb[nc_] - 1; ++j)
                 {
                     // std::cout << "q (" << j << "," << j+1 <<")\n";
                     // std::cout << "q*(" << nc_-j << "," << nc_-j-1 <<")\n";
-                    block().step(q_cpy + j * nx, q_cpy + (j + 1) * nx);
-                    block().step(qFields_d + (nc_ - j) * nx, qFields_d + (nc_ - j - 1) * nx);
+                    block().step(q + j * nx, q + (j + 1) * nx);
+                    
                 }
-
-                for (int j = 0; j < cb[nc_]; ++j)
+                for (int j = cb[nc_]-1; j >= 0; --j)
                 {
                     // std::cout << "int(" << j << "," << nc_-cb[nc_]+j+1 <<")\n";
-                    block().computeInt(q_cpy + j * nx, qFields_d + (nc_ - cb[nc_] + j + 1) * nx, icount);
+                    block().step(qFields_d, qd_tmp);
+                    cudaMemcpy(qFields_d, qd_tmp, sizeof(cudaReal) * nx, cudaMemcpyDeviceToDevice);
+                    block().computeInt(q + j * nx, qFields_d, icount);
                     ++icount;
                 }
+                
+                
                 // std::cout << icount << "\n";
-                assignReal<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(qFields_d + nc_ * nx, qFields_d + (nc_ - cb[nc_] + 1) * nx, nx);
-
+                // assignReal<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(qFields_d + nc_ * nx, qFields_d + (nc_ - cb[nc_] + 1) * nx, nx);
+                // std::cout << block().id() << "\n";
                 setIsSolved(true);
+                if (isReused)
+                {
+                    cudaMemcpy(q, rtmp, sizeof(cudaReal)*(nc_+1)*nx, cudaMemcpyDeviceToDevice);
+                    cudaFree(rtmp);
+                }
+                else
+                {
+                    cudaMemcpy(q + nc_ * nx, q_tmp, sizeof(cudaReal) * nx, cudaMemcpyDeviceToDevice);
+                }
+                
+                cudaFree(q_tmp);
+                cudaFree(qd_tmp);
+                // exit(1);
             }
 
             template <int D>
@@ -322,7 +342,7 @@ namespace Pscf
                 Q = gpuInnerProduct(q, qs, nx);
 
                 Q /= double(nx);
-                // std::cout << "Q=" << Q << "\n";exit(1);
+                // std::cout << "Q=" << Q << "\n";
                 return Q;
             }
 

@@ -59,6 +59,7 @@ namespace Pscf
       int  id_;
       double  step_;
       std::string  name_;
+      int charge_;
 
    //friends
 

@@ -9,7 +9,6 @@ pgd_=$(pspg_field_) \
      $(pgd_iterator_) \
      pgd/System.cu  
 
-
 pgd_SRCS=\
      $(addprefix $(SRC_DIR)/, $(pgd_))
 pgd_OBJS=\

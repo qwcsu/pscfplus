@@ -135,8 +135,16 @@ namespace Pscf
                  * Get monomer reference volume.
                  */
                 void computeStress(WaveList<D> &wavelist);
-
-                void computeBlockRepulsion(Mesh<D> const &mesh);
+#if CMP == 1
+                void computeBlockCMP(Mesh<D> const &mesh, 
+                                     DArray<CField> cFieldsRGrid, 
+                                     DArray<RDFieldDft<D>> cFieldsKGrid,
+                                     FFT<D> & fft);
+#endif
+                void computeBlockRepulsion(Mesh<D> const &mesh, 
+                                           DArray<CField> cFieldsRGrid, 
+                                           DArray<RDFieldDft<D>> cFieldsKGrid,
+                                           FFT<D> & fft);
 
                 void computeBlockEntropy(DArray<RDField<D>> const &wFields,
                                          Mesh<D> const &mesh);
@@ -165,11 +173,16 @@ namespace Pscf
                     return nParams_;
                 }
 
-                int nUComp()
+                int nUCompChi()
                 {
-                    return nUComp_;
+                    return nUCompChi_;
                 }
-
+#if CMP==1
+                int nUCompCMP()
+                {
+                    return nUCompCMP_;
+                }
+#endif
                 /**
                  * Get monomer reference volume.
                  */
@@ -178,7 +191,9 @@ namespace Pscf
                 cudaReal sBlock(int n);
 
                 cudaReal uBlockRepulsion(int n);
-
+#if CMP==1
+                cudaReal uBlockCMP(int id);
+#endif
                 DArray<int> uBlockList(int n);
 
                 using MixtureTmpl<Pscf::Pspg::Continuous::Polymer<D>,
@@ -215,8 +230,10 @@ namespace Pscf
 
                 int kSize_;
 
-                int nUComp_;
-
+                int nUCompChi_;
+#if CMP==1
+                int nUCompCMP_;
+#endif
                 /// Pointer to associated Mesh<D> object.
                 Mesh<D> const *meshPtr_;
 
@@ -255,7 +272,8 @@ namespace Pscf
 
                 GArray<DArray<int>> blockIds_;
 
-                GArray<cudaReal> uBlock_;
+                GArray<cudaReal> uBlockChi_;
+                GArray<cudaReal> uBlockCMP_;
             };
 
             // Inline member function
@@ -300,9 +318,15 @@ namespace Pscf
             template <int D>
             inline cudaReal Mixture<D>::uBlockRepulsion(int id)
             {
-                return uBlock_[id];
+                return uBlockChi_[id];
             }
-
+#if CMP==1
+            template <int D>
+            inline cudaReal Mixture<D>::uBlockCMP(int id)
+            {
+                return uBlockCMP_[id];
+            }
+#endif
             template <int D>
             inline DArray<int> Mixture<D>::uBlockList(int id)
             {

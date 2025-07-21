@@ -52,7 +52,7 @@ namespace Pscf
                 vMonomer_ = 1.0; // Default value
                 readOptional(in, "vMonomer", vMonomer_);
 #if CMP == 1
-                read(in, "kappa", kappa_);
+                read(in, "N/kappa", kappa_);
 #endif
                 read(in, "sigma", sigma_);
                 read(in, "ns", ns_);
@@ -88,14 +88,35 @@ namespace Pscf
                 meshPtr_ = &mesh;
 
                 // Set discretization for all blocks
-                int i, j;
+                int i, j, k;
                 for (i = 0; i < nPolymer(); ++i)
                 {
                     for (j = 0; j < polymer(i).nBlock(); ++j)
                     {
                         polymer(i).block(j).setDiscretization(ds_, mesh);
+                        
                     }
                 }
+                for (i = 0; i < nPolymer(); ++i)
+                {
+                    for (j = 0; j < polymer(i).nPropagator(); ++j)
+                    {
+                        int b = polymer(i).propagatorId(j)[0];
+                        // int order = polymer(i).propagator(j).order();
+                        if (polymer(i).mapping()[j].size() != 0)
+                        {
+                            polymer(i).propagator(j).allocate(polymer(i).block(b).ns(), mesh);
+                            // std::cout << j << " is allocated on block " << b  <<"\n";
+                            for (k = 1; k < polymer(i).mapping()[j].size(); ++k)
+                            {
+                                polymer(i).propagator(polymer(i).mapping()[j][k]).setPropagator(polymer(i).propagator(j), j);
+                                // std::cout << polymer(i).mapping()[j][k] << " is refered to "
+                                //           << j << "\n";
+                            }
+                        }        
+                    }
+                }
+                // exit(1);
                 for (int i = 0; i < D; ++i)
                 {
                     if (i < D - 1)
@@ -368,8 +389,16 @@ namespace Pscf
                 {
                     polymer(i).compute(wFields);
                 }
-
-                // Accumulate monomer concentration fields
+                double phi_tot = 0.0;
+                for (i = 0; i < nPolymer(); ++i)
+                {
+                    phi_tot += polymer(i).phi();
+                }
+                for (i = 0; i < nPolymer(); ++i)
+                {
+                   polymer(i).setPhi(polymer(i).phi()/phi_tot);
+                }
+                // Accumulate monomer concentration fields                
                 for (i = 0; i < nPolymer(); ++i)
                 {
                     for (j = 0; j < polymer(i).nBlock(); ++j)
@@ -383,14 +412,61 @@ namespace Pscf
                         accumulateConc<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(monomerField.cDField(),
                                                                                 polymer(i).phi()/polymer(i).length(), 
                                                                                 blockField.cDField(), nx);
-                        // cudaReal a[512];
-                        // cudaMemcpy(a, blockField.cDField(), sizeof(cudaReal)*512, cudaMemcpyDeviceToHost);
-                        // for(int i = 0; i < 6; ++i)
-                        //     std::cout << a[i] << "\n";
-                        // cudaFree(a);
-                        // std::cout << "\n";
                     }
                 }
+                // cudaReal a[32];
+                // cudaMemcpy(a, polymer(0).block(0).cField().cDField(), sizeof(cudaReal)*32, cudaMemcpyDeviceToHost);
+                // for(int i = 0; i < 32; ++i)
+                //     std::cout << a[i] << "\n";
+                // cudaFree(a);
+                // std::cout << "\n";
+                
+                // #include <fstream>
+                // #include <iomanip>
+                // std::ofstream file1("p1");
+                // cudaReal *a1, *b1, *a2, *b2;
+                // a1 = new cudaReal [nx];
+                // b1 = new cudaReal [nx];
+                // a2 = new cudaReal [nx];
+                // b2 = new cudaReal [nx];
+                // cudaMemcpy(a1, polymer(0).block(0).cField().cDField(), sizeof(cudaReal)*nx, cudaMemcpyDeviceToHost);
+                // cudaMemcpy(b1, polymer(0).block(1).cField().cDField(), sizeof(cudaReal)*nx, cudaMemcpyDeviceToHost);
+                // cudaMemcpy(a2, polymer(1).block(0).cField().cDField(), sizeof(cudaReal)*nx, cudaMemcpyDeviceToHost);
+                // cudaMemcpy(b2, polymer(1).block(1).cField().cDField(), sizeof(cudaReal)*nx, cudaMemcpyDeviceToHost);
+    
+                // for (int z = 0; z < mesh().dimension(2); ++z)
+                // {
+                //     for (int y = 0; y < mesh().dimension(1); ++y)
+                //     {
+                //         for (int x = 0; x < mesh().dimension(0); ++x)
+                //         {
+                //             file1 << std::setw(25) << std::scientific << std::setprecision(12) 
+                //                   << a1[z+y*mesh().dimension(2)+x*mesh().dimension(2)*mesh().dimension(1)]*polymer(0).phi()/polymer(0).length();
+                //             file1 << std::setw(25) << std::scientific << std::setprecision(12) 
+                //                   << b1[z+y*mesh().dimension(2)+x*mesh().dimension(2)*mesh().dimension(1)]*polymer(0).phi()/polymer(0).length();
+                //             file1 << "\n";
+                //         }
+                //     }
+                // }
+                // file1.close();
+
+                // std::ofstream file2("p2");
+    
+                // for (int z = 0; z < mesh().dimension(2); ++z)
+                // {
+                //     for (int y = 0; y < mesh().dimension(1); ++y)
+                //     {
+                //         for (int x = 0; x < mesh().dimension(0); ++x)
+                //         {
+                //             file2 << std::setw(25) << std::scientific << std::setprecision(12) 
+                //                   << a2[z+y*mesh().dimension(2)+x*mesh().dimension(2)*mesh().dimension(1)]*polymer(1).phi()/polymer(1).length();
+                //             file2 << std::setw(25) << std::scientific << std::setprecision(12) 
+                //                   << b2[z+y*mesh().dimension(2)+x*mesh().dimension(2)*mesh().dimension(1)]*polymer(1).phi()/polymer(1).length();
+                //             file2 << "\n";
+                //         }
+                //     }
+                // }
+                // file2.close();
                 // exit(1);
 
                 for (int i = 0; i < nm; ++i)
@@ -509,16 +585,49 @@ namespace Pscf
                             if (polymer(p).vertex(vId0).inPropagatorId(s)[0] == b)
                             {
                                 int dir = polymer(p).vertex(vId0).inPropagatorId(s)[1];
-                                sBlockHelper<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>
-                                (tmp, 
-                                polymer(p).vertexRho(vId0).cDField(), 
-                                polymer(p).block(b).propagator(dir).qtail(), 
-                                rSize_);
+                                if (polymer(p).block(b).propagator(dir).isAllocated())
+                                {
+                                    if (polymer(p).block(b).propagator(dir).directionFlag()==0)
+                                    {
+                                        sBlockHelper<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>
+                                        (tmp, 
+                                         polymer(p).vertexRho(vId0).cDField(), 
+                                         polymer(p).block(b).propagator(dir).qtail(), 
+                                         rSize_);
+                                    }
+                                    else
+                                    {
+                                        sBlockHelper<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>
+                                        (tmp, 
+                                         polymer(p).vertexRho(vId0).cDField(), 
+                                         polymer(p).block(b).propagator(dir).qhead(), 
+                                         rSize_);
+                                    }
+                                }
+                                else
+                                {   
+                                    if (polymer(p).block(b).propagator(dir).directionFlag()==0)
+                                    {
+                                        sBlockHelper<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>
+                                        (tmp, 
+                                         polymer(p).vertexRho(vId0).cDField(), 
+                                         polymer(p).block(b).propagator(dir).ref().qtail(), 
+                                         rSize_);
+                                    }
+                                    else
+                                    {
+                                        sBlockHelper<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>
+                                        (tmp, 
+                                         polymer(p).vertexRho(vId0).cDField(), 
+                                         polymer(p).block(b).propagator(dir).ref().qhead(), 
+                                         rSize_);
+                                    }
+                                }
                                 sBlock_[idx] -= factor*gpuSum(tmp, rSize_);
                                 break;
                             }
                         }
-                    
+
                         int vId1 = polymer(p).block(b).vertexId(1);
                         int vs1 = polymer(p).vertex(vId1).size();
                         for (int s = 0; s < vs1; ++s)
@@ -526,11 +635,44 @@ namespace Pscf
                             if (polymer(p).vertex(vId1).inPropagatorId(s)[0] == b)
                             {
                                 int dir = polymer(p).vertex(vId1).inPropagatorId(s)[1];
-                                sBlockHelper<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>
-                                (tmp, 
-                                polymer(p).vertexRho(vId1).cDField(), 
-                                polymer(p).block(b).propagator(dir).qtail(), 
-                                rSize_);
+                                if (polymer(p).block(b).propagator(dir).isAllocated())
+                                {
+                                    if (polymer(p).block(b).propagator(dir).directionFlag()==0)
+                                    {
+                                        sBlockHelper<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>
+                                        (tmp, 
+                                        polymer(p).vertexRho(vId1).cDField(), 
+                                        polymer(p).block(b).propagator(dir).qtail(), 
+                                        rSize_);
+                                    }
+                                    else
+                                    {
+                                        sBlockHelper<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>
+                                        (tmp, 
+                                        polymer(p).vertexRho(vId1).cDField(), 
+                                        polymer(p).block(b).propagator(dir).qhead(), 
+                                        rSize_);
+                                    }
+                                }
+                                else
+                                {
+                                    if (polymer(p).block(b).propagator(dir).directionFlag()==0)
+                                    {
+                                        sBlockHelper<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>
+                                        (tmp, 
+                                        polymer(p).vertexRho(vId1).cDField(), 
+                                        polymer(p).block(b).propagator(dir).ref().qtail(), 
+                                        rSize_);
+                                    }
+                                    else
+                                    {
+                                        sBlockHelper<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>
+                                        (tmp, 
+                                        polymer(p).vertexRho(vId1).cDField(), 
+                                        polymer(p).block(b).propagator(dir).ref().qhead(), 
+                                        rSize_);
+                                    }
+                                }
                                 sBlock_[idx] -= factor*gpuSum(tmp, rSize_);
                                 break;
                             }
@@ -541,21 +683,26 @@ namespace Pscf
 
                 cudaFree(tmp);
             }
-
+#if CMP==1
             template <int D>
-            void Mixture<D>::computeBlockRepulsion(Mesh<D> const &mesh)
+            void Mixture<D>::computeBlockCMP(Mesh<D> const &mesh, 
+                                             DArray<CField> cFieldsRGrid, 
+                                             DArray<RDFieldDft<D>> cFieldsKGrid,
+                                             FFT<D> & fft)
             {
-                                int NUMBER_OF_BLOCKS, THREADS_PER_BLOCK;
+                int NUMBER_OF_BLOCKS, THREADS_PER_BLOCK;
                 Pspg::ThreadGrid::setThreadsLogical(rSize_, NUMBER_OF_BLOCKS, THREADS_PER_BLOCK);
 
-                cudaReal *tmp;
-                cudaMalloc ((void **)&tmp, rSize_ * sizeof(cudaReal));
-
+                RDField<D> tmp;
+                RDFieldDft<D> tmpDft;
+                tmp.allocate(mesh.dimensions());
+                tmpDft.allocate(mesh.dimensions());
                 DArray<int> list;
                 list.allocate(4);
 
                 int np = nPolymer();
                 int i = 0;
+                
                 for (int p1 = 0; p1 < np; ++p1)
                 {
                     for (int p2 = p1; p2 < np; ++p2)
@@ -565,7 +712,71 @@ namespace Pscf
                         for (int b1 = 0; b1 < nb1; ++b1)
                         {
                             for (int b2 = 0; b2 < nb2; ++b2)
-                            {
+                            {   
+                                int m1 = polymer(p1).block(b1).monomerId();;
+                                int m2 = polymer(p2).block(b2).monomerId();;
+                                list[0] = p1;
+                                list[1] = b1;
+                                list[2] = p2;
+                                list[3] = b2;
+
+
+                                double factor = polymer(p1).phi()/polymer(p1).length()
+                                              * polymer(p2).phi()/polymer(p2).length()
+                                              * kpN()
+                                              * 0.5
+                                              / mesh.size();
+                                cudaConv<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(tmpDft.cDField(),
+                                                                                  cFieldsKGrid[m1].cDField(),
+                                                                                  bu0().cDField(),
+                                                                                  kSize_);
+                                fft.inverseTransform(tmpDft, tmp);
+                                inPlacePointwiseMul1<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(tmp.cDField(),
+                                                                                              cFieldsRGrid[m2].cDField(),
+                                                                                              polymer(p2).phi()*polymer(p2).block(b2).length(),
+                                                                                              rSize_);
+                                blockIds_.append(list);
+                                uBlockCMP_.append(factor*gpuSum(tmp.cDField(), rSize_));
+                                ++i;
+                            }
+                        }
+                    }
+                }
+                nUCompCMP_ = i;
+                list.deallocate();
+                tmp.deallocate();
+                tmpDft.deallocate();
+            }
+#endif
+            template <int D>
+            void Mixture<D>::computeBlockRepulsion(Mesh<D> const &mesh, 
+                                                   DArray<CField> cFieldsRGrid, 
+                                                   DArray<RDFieldDft<D>> cFieldsKGrid,
+                                                   FFT<D> & fft)
+            {
+                int NUMBER_OF_BLOCKS, THREADS_PER_BLOCK;
+                Pspg::ThreadGrid::setThreadsLogical(rSize_, NUMBER_OF_BLOCKS, THREADS_PER_BLOCK);
+
+                RDField<D> tmp;
+                RDFieldDft<D> tmpDft;
+                tmp.allocate(mesh.dimensions());
+                tmpDft.allocate(mesh.dimensions());
+                DArray<int> list;
+                list.allocate(4);
+
+                int np = nPolymer();
+                int i = 0;
+                
+                for (int p1 = 0; p1 < np; ++p1)
+                {
+                    for (int p2 = p1; p2 < np; ++p2)
+                    {
+                        int nb1 = polymer(p1).nBlock();
+                        int nb2 = polymer(p2).nBlock();
+                        for (int b1 = 0; b1 < nb1; ++b1)
+                        {
+                            for (int b2 = 0; b2 < nb2; ++b2)
+                            {   
                                 if (p1 == p2 && b1 == b2)
                                 {
                                     break;
@@ -575,7 +786,6 @@ namespace Pscf
                                     double chi;
                                     int m1 = polymer(p1).block(b1).monomerId();
                                     int m2 = polymer(p2).block(b2).monomerId();
-
                                     chi = interaction_->chi(m1, m2);
 
                                     if (chi != 0.0)
@@ -584,19 +794,23 @@ namespace Pscf
                                         list[1] = b1;
                                         list[2] = p2;
                                         list[3] = b2;
+
+
                                         double factor = polymer(p1).phi()/polymer(p1).length()
                                                       * polymer(p2).phi()/polymer(p2).length()
                                                       * chi 
                                                       / mesh.size();
-
-                                        assignReal<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>
-                                        (tmp, polymer(p1).block(b1).cField().cDField(), rSize_);
-                                        inPlacePointwiseMul<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>
-                                        (tmp, polymer(p2).block(b2).cField().cDField(), rSize_);
-                                        scaleReal<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>
-                                        (tmp, factor, rSize_);
+                                        
+                                        cudaConv<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(tmpDft.cDField(),
+                                                                                          cFieldsKGrid[m1].cDField(),
+                                                                                          bu0().cDField(),
+                                                                                          kSize_);
+                                        fft.inverseTransform(tmpDft, tmp);
+                                        inPlacePointwiseMul<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(tmp.cDField(),
+                                                                                                     cFieldsRGrid[m2].cDField(),
+                                                                                                     rSize_);
                                         blockIds_.append(list);
-                                        uBlock_.append(gpuSum(tmp, rSize_));
+                                        uBlockChi_.append(factor*gpuSum(tmp.cDField(), rSize_));
                                         ++i;
                                     }
                                 }
@@ -604,9 +818,10 @@ namespace Pscf
                         }
                     }
                 }
-                nUComp_ = i;
+                nUCompChi_ = i;
                 list.deallocate();
-                cudaFree(tmp);
+                tmp.deallocate();
+                tmpDft.deallocate();
             }
         }
     } // namespace Pspg

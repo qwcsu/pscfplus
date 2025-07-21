@@ -223,13 +223,16 @@ namespace Pscf
 
         ensemble_ = Species::Closed;
         readOptional<Species::Ensemble>(in, "ensemble", ensemble_);
+#if CMP == 1
+        UTIL_CHECK(ensemble() == Species::Closed)
+#endif
         if (ensemble_ == Species::Closed)
         {
             read(in, "phi", phi_);
         }
         else
         {
-            UTIL_THROW("Cannot set the ensemble not to be closed");
+            read(in, "mu", mu_);
         }
 
         Vertex const *vertexPtr = nullptr;
@@ -350,6 +353,16 @@ namespace Pscf
         {
             if (bond(i).bondtype() == 1)
                 bond(i).computeConcentration(prefactor);
+        }
+        if (ensemble() == Species::Closed)
+        {
+            mu_ = log(phi_ / q_);
+        }
+        else if (ensemble() == Species::Open)
+        {
+            phi_ = exp(mu_) * q_;
+            // phi_ = 1.0;
+            // std::cout << exp(mu_) * q_ << "\n";
         }
     }
 

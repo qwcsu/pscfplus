@@ -70,8 +70,26 @@ namespace Pscf
 
                 void computeStress(WaveList<D> &wavelist);
 
+#if CMP == 1
+                void computeBlockCMP(Mesh<D> const &mesh, 
+                                     DArray<CField> cFieldsRGrid, 
+                                     DArray<RDFieldDft<D>> cFieldsKGrid,
+                                     FFT<D> & fft);
+#endif
+                void computeBlockRepulsion(Mesh<D> const &mesh, 
+                                           DArray<RDField<D>> cFieldsRGrid, 
+                                           DArray<RDFieldDft<D>> cFieldsKGrid,
+                                           FFT<D> & fft);
+                
+                void computeBlockEntropy(DArray<RDField<D>> const &wFields,
+                                         Mesh<D> const &mesh);
+
                 RDField<D> &bu0();
+                
+                RDField<D> &bu0k();
+
                 RDField<D> &dbu0();
+                
                 RDField<D> &dbu0K();
 
                 double kpN();
@@ -89,6 +107,22 @@ namespace Pscf
                 {
                     return nParams_;
                 }
+
+                int nUCompChi()
+                {
+                    return nUCompChi_;
+                }
+#if CMP==1
+                int nUCompCMP()
+                {
+                    return nUCompCMP_;
+                }
+#endif
+
+                cudaReal uBlockRepulsion(int n);
+#if CMP==1
+                cudaReal uBlockCMP(int id);
+#endif
 
                 using DMixtureTmpl<Pscf::Pspg::Discrete::DPolymer<D>,
                                    Pscf::Pspg::Solvent<D>>::nPolymer;
@@ -112,7 +146,6 @@ namespace Pscf
                 using ParamComposite::readOptional;
 
             private:
-                cudaReal reductionH(cudaReal *a, int size);
 
                 double sigma_;
 
@@ -132,9 +165,18 @@ namespace Pscf
 
                 IntVec<D> kMeshDimensions_;
 
+                int rSize_;
+
                 int kSize_;
 
+                int nUCompChi_;
+#if CMP==1
+                int nUCompCMP_;
+#endif
+
                 RDField<D> bu0_;
+
+                RDField<D> bu0k_;
 
                 RDField<D> dbu0_;
 
@@ -146,6 +188,8 @@ namespace Pscf
 
                 cudaReal *bu0_host;
 
+                cudaReal *bu0k_host;
+
                 cudaReal *Chiphi_;
 
                 cudaComplex *Kappaphi1_;
@@ -156,6 +200,11 @@ namespace Pscf
 
                 cudaReal *d_temp_;
                 cudaReal *temp_;
+
+                GArray<DArray<int>> blockIds_;
+
+                GArray<cudaReal> uBlockChi_;
+                GArray<cudaReal> uBlockCMP_;
             };
 
             template <int D>
@@ -169,6 +218,12 @@ namespace Pscf
             inline RDField<D> &DMixture<D>::bu0()
             {
                 return bu0_;
+            }
+
+            template <int D>
+            inline RDField<D> &DMixture<D>::bu0k()
+            {
+                return bu0k_;
             }
 
             template <int D>
@@ -195,6 +250,18 @@ namespace Pscf
                 return sigma_;
             }
 
+            template <int D>
+            inline cudaReal DMixture<D>::uBlockRepulsion(int id)
+            {
+                return uBlockChi_[id];
+            }
+#if CMP==1
+            template <int D>
+            inline cudaReal DMixture<D>::uBlockCMP(int id)
+            {
+                return uBlockCMP_[id];
+            }
+#endif
 #ifndef D_MIXTURE_TPP
             // Suppress implicit instantiation
             extern template class DMixture<1>;

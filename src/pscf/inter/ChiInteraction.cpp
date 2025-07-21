@@ -17,7 +17,7 @@ namespace Pscf {
    */
    ChiInteraction::ChiInteraction()
     : Interaction()
-   {  setClassName("ChiInteraction"); }
+   {  setClassName("Interaction"); }
 
    /*
    * Destructor.
@@ -41,17 +41,20 @@ namespace Pscf {
             chi_(i,j) = 0.0;
          }
       }
-      readDSymmMatrix(in, "chi", chi_, nMonomer());
+      readDSymmMatrix(in, "chiN", chi_, nMonomer());
 
-#if CHN != 0
-      for (int i = 0; i < nMonomer(); ++i)
-      {
-         for (int j = 0; j < nMonomer(); ++j)
-         {
-            chi_(i,j) *= nSegment();
-         }
-      }
-#endif
+// #if (CHN != 0)
+//       for (int i = 0; i < nMonomer(); ++i)
+//       {
+//          for (int j = 0; j < nMonomer(); ++j)
+//          {
+//             chi_(i,j) *= nSegment();
+//             // std::cout << chi(i,j) << "\n";
+//          }
+//       }
+//       // exit(1);
+// #endif
+
       if (nMonomer() == 2) {
          double det = chi_(0,0)*chi_(1, 1) - chi_(0,1)*chi_(1,0);
          double norm = chi_(0,0)*chi_(0, 0) + chi_(1,1)*chi_(1,1)

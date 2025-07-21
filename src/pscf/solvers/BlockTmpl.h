@@ -116,6 +116,8 @@ namespace Pscf
          */
         virtual void setKuhn(double kuhn);
 
+        virtual void setField(CField & cField);
+
         /**
          * Get a Propagator for a specified direction.
          *
@@ -228,5 +230,12 @@ namespace Pscf
         kuhn_ = kuhn;
     }
 
+    template <class TP>
+    void BlockTmpl<TP>::setField(CField & cField)
+    {
+        cField_ = cField;
+    }
+
+    
 }
 #endif

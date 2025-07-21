@@ -31,6 +31,8 @@ __global__ void pointWiseAddScale2(cudaReal* result, const cudaReal* rhs, const 
 
 __global__ void inPlacePointwiseMul(cudaReal* a, const cudaReal* b, int size);
 
+__global__ void inPlacePointwiseMul1(cudaReal* a, const cudaReal* b, cudaReal phi, int size);
+
 __global__ void pointwiseMul(const cudaReal* a, const cudaReal* b, cudaReal* result, int size);
 
 __global__ void assignUniformReal(cudaReal* result, cudaReal uniform, int size);
@@ -46,6 +48,22 @@ __global__ void cudaComplexMulAdd(cudaReal* result,
                                   const cudaComplex* c2,
                                   const cudaReal scale,
                                   int size);
+
+__global__ void cudaConv(      cudaComplex *result,
+                         const cudaComplex *c,
+                         const cudaReal    *u,
+                               int          size);
+
+__global__ void cudaComplexMulTriple(      cudaComplex *result,
+                                     const cudaComplex *c1,
+                                     const cudaComplex *c2,
+                                     const cudaReal    *u,
+                                     int size);
+
+__global__ void cudaImMul(cudaComplex* result, 
+                          const cudaComplex* c1, 
+                          const cudaReal*    r2,
+                          int size);
 
 __global__ 
 void cudaComplexAdd(cudaComplex* result, 

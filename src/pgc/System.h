@@ -487,7 +487,9 @@ namespace Pscf
                 DArray<CField> cFieldsRGrid_;
 
                 DArray<RDFieldDft<D>> cFieldsKGrid_;
-
+#if CMP == 1
+                RDField<D> cFieldTot_;
+#endif
                 /**
                  * Work array (size = # of grid points).
                  */
@@ -513,7 +515,7 @@ namespace Pscf
                  */
                 double E_{};
 
-                double UAB_{};
+                double UR_{};
 
                 double UCMP_{};
 
@@ -522,7 +524,7 @@ namespace Pscf
                  */
                 double S_{};
 
-                double Si_[2];
+                double C_{};
 
                 /**
                  * Has the mixture been initialized?
@@ -561,6 +563,8 @@ namespace Pscf
                 IntVec<D> kMeshDimensions_;
 
                 RDField<D> workArray;
+
+                RDFieldDft<D> workArrayDft;
 
                 cudaReal *d_kernelWorkSpace_{};
 

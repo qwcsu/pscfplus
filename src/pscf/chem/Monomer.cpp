@@ -29,6 +29,7 @@ namespace Pscf
       in >> monomer.id_;
       in >> monomer.name_;
       in >> monomer.step_;
+
       return in;
    }
    
@@ -37,6 +38,7 @@ namespace Pscf
    */
    std::ostream& operator << (std::ostream& out, const Monomer& monomer) 
    {
+      
       out << monomer.id_;
       out << "  " << monomer.name_;
       out << "  ";

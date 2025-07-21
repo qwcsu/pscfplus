@@ -108,7 +108,7 @@ namespace Pscf
                  * function that are needed for concentration
                  * fields and for the corresponding block.  
                  */
-                void solveBackward(cudaReal *q, int n);
+                void solveBackward(cudaReal *q, bool isReused);
 
                 /**
                  * Compute and return partition function for the molecule.
@@ -142,6 +142,8 @@ namespace Pscf
                 // const cudaReal *tail() const;
                 const cudaReal *qtail() const;
 
+                cudaReal *qtail();
+
                 /**
                  * Get the associated Block object by reference.
                  */
@@ -157,11 +159,14 @@ namespace Pscf
                 using PropagatorTmpl<Propagator<D>>::nSource;
                 using PropagatorTmpl<Propagator<D>>::source;
                 using PropagatorTmpl<Propagator<D>>::partner;
+                using PropagatorTmpl<Propagator<D>>::ref;
+                using PropagatorTmpl<Propagator<D>>::setPropagator;
                 using PropagatorTmpl<Propagator<D>>::setIsSolved;
                 using PropagatorTmpl<Propagator<D>>::isSolved;
                 using PropagatorTmpl<Propagator<D>>::hasPartner;
+                using PropagatorTmpl<Propagator<D>>::sourceId;
 
-            protected:
+            // protected:
                 /**
                  * Compute initial QField at head from tail QFields of sources.
                  */
@@ -230,6 +235,12 @@ namespace Pscf
 
             template <int D>
             inline const cudaReal *Propagator<D>::qtail() const
+            {
+                return qFields_d + (nc_ * meshPtr_->size());
+            }
+
+            template <int D>
+            inline cudaReal *Propagator<D>::qtail() 
             {
                 return qFields_d + (nc_ * meshPtr_->size());
             }

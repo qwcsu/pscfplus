@@ -108,6 +108,16 @@ namespace Pscf
          }
       }
 
+      __global__ void inPlacePointwiseMul1(cudaReal *a, const cudaReal *b, cudaReal phi, int size)
+      {
+         int nThreads = blockDim.x * gridDim.x;
+         int startID = blockIdx.x * blockDim.x + threadIdx.x;
+         for (int i = startID; i < size; i += nThreads)
+         {
+            a[i] *= (b[i]-phi);
+         }
+      }
+
       __global__ void pointwiseMul(const cudaReal *a, const cudaReal *b, cudaReal *result, int size)
       {
          int nThreads = blockDim.x * gridDim.x;
@@ -170,6 +180,49 @@ namespace Pscf
          for (int i = startID; i < size; i += nThreads)
          {
             result[i] += scale * cuCmul(c1[i], cuConj(c2[i])).x;
+         }
+      }
+
+      __global__ void cudaComplexMulTriple(      cudaComplex *result,
+                                           const cudaComplex *c1,
+                                           const cudaComplex *c2,
+                                           const cudaReal    *u,
+                                           int size)
+      {
+         int nThreads = blockDim.x * gridDim.x;
+         int startID = blockIdx.x * blockDim.x + threadIdx.x;
+         for (int i = startID; i < size; i += nThreads)
+         {
+            result[i].x = u[i] * cuCmul(c1[i], cuConj(c2[i])).x;
+            result[i].y = u[i] * cuCmul(c1[i], cuConj(c2[i])).y;
+         }
+      }
+
+       __global__ void cudaConv(      cudaComplex *result,
+                                const cudaComplex *c,
+                                const cudaReal    *u,
+                                      int          size)
+      {
+         int nThreads = blockDim.x * gridDim.x;
+         int startID = blockIdx.x * blockDim.x + threadIdx.x;
+         for (int i = startID; i < size; i += nThreads)
+         {
+            result[i].x = u[i] * c[i].x;
+            result[i].y = u[i] * c[i].y;
+         }
+      }
+
+      __global__ void cudaImMul(cudaComplex* result, 
+                                const cudaComplex* c1, 
+                                const cudaReal*    r2,
+                                int size)
+      {
+         int nThreads = blockDim.x * gridDim.x;
+         int startID = blockIdx.x * blockDim.x + threadIdx.x;
+         for (int i = startID; i < size; i += nThreads)
+         {
+            result[i].x = -r2[i]*c1[i].y;
+            result[i].y =  r2[i]*c1[i].x;
          }
       }
 

@@ -45,6 +45,10 @@ namespace Pscf
 
                 ~DPolymer() = default;
 
+                void setPhi(double phi);
+
+                void setMu(double mu);
+
                 void setupUnitCell(UnitCell<D> const &unitCell,
                                    const WaveList<D> &wavelist);
 
@@ -58,6 +62,8 @@ namespace Pscf
                 double stress(int n);
 
                 cudaReal sS(int n);
+
+                cudaReal sB(int n);
 
                 using Base::bond;
                 using Base::ensemble;
@@ -82,6 +88,9 @@ namespace Pscf
                 DArray<cudaReal> sS_;
 
                 DArray<cudaReal> sB_;
+
+                using Base::mu_;
+                using Base::phi_;
             };
 
             template <int D>
@@ -95,6 +104,13 @@ namespace Pscf
             cudaReal DPolymer<D>::sS(int n)
             {
                 return sS_[n];
+            }
+
+            template <int D>
+            inline
+            cudaReal DPolymer<D>::sB(int n)
+            {
+                return sB_[n];
             }
 
 #ifndef D_POLYMER_TPP

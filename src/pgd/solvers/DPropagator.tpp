@@ -175,9 +175,11 @@ namespace Pscf
                 // (d_tmp, tmp, nx);
                 // cudaMemcpy(&Q, d_tmp, sizeof(cudaReal), cudaMemcpyDeviceToHost);
                 // cudaFree(d_tmp);
+               
                 Q = gpuSum(tmp, nx);
                 Q /= double(nx);
                 cudaFree(tmp);
+                // std::cout << "Q = " << Q << std::endl;
                 // exit(1);
                 return Q;
             }

@@ -33,7 +33,7 @@ namespace Pscf
             template <int D>
             void Polymer<D>::setPhi(double phi)
             {
-                UTIL_CHECK(ensemble() == Species::Closed)
+                // UTIL_CHECK(ensemble() == Species::Closed)
                 UTIL_CHECK(phi >= 0.0)
                 UTIL_CHECK(phi <= 1.0)
                 phi_ = phi;
@@ -72,6 +72,7 @@ namespace Pscf
                     monomerId = block(j).monomerId();
                     block(j).setupSolver(wFields[monomerId]);
                 }
+                
                 solve();
             }
 
@@ -147,6 +148,7 @@ namespace Pscf
                     sV_.allocate(nv);
                 double factor;
                 factor = phi()/double(nVertex()*length()*nx);
+
                 for (int v = 0; v < nv; ++v)
                 {
                     if (!vRho_[v].isAllocated())
@@ -160,17 +162,80 @@ namespace Pscf
                     {
                         int blockId = vertex(v).inPropagatorId(i)[0];
                         int dir = vertex(v).inPropagatorId(i)[1];
-            
-                        inPlacePointwiseMul<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>
-                        (vRho_[v].cDField(), block(blockId).propagator(dir).qtail(), nx);
+
+                        if (block(blockId).propagator(dir).isAllocated())
+                        {
+                            if (block(blockId).propagator(dir).directionFlag()==0)
+                            {
+                                inPlacePointwiseMul<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>
+                                (vRho_[v].cDField(), block(blockId).propagator(dir).qtail(), nx);
+                            }
+                            else
+                            {
+                                inPlacePointwiseMul<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>
+                                (vRho_[v].cDField(), block(blockId).propagator(dir).qhead(), nx);
+                            }
+                            
+                        }    
+                        else
+                        {
+                            if (block(blockId).propagator(dir).directionFlag()==0)
+                            {
+                                inPlacePointwiseMul<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>
+                                (vRho_[v].cDField(), block(blockId).propagator(dir).ref().qtail(), nx);
+                            }
+                            else
+                            {
+                                inPlacePointwiseMul<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>
+                                (vRho_[v].cDField(), block(blockId).propagator(dir).ref().qhead(), nx);
+                            }
+                        }        
                     }
                     
                     scaleReal<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>
                     (vRho_[v].cDField(),1.0/Q(), nx);
-
                     
                     sVHelper<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>
                     (tmp, vRho_[v].cDField(), nx);
+
+                    #include <iostream>
+                    #include <fstream>
+                    #include <iomanip>
+
+                    std::string fieldFileName = std::to_string(v);
+                    std::ofstream file;
+                    file.open(fieldFileName);
+                    double *vrho;
+                    vrho = new double [nx];
+                    cudaMemcpy(vrho, vRho_[v].cDField(), sizeof(cudaReal) * nx, cudaMemcpyDeviceToHost);
+                    // for (int i = 0; i < nx; ++i)
+                    //     file << std::scientific << std::setprecision(8) << vrho[i] << "\n";
+                    if (D == 3)
+                    {
+                        for (int z = 0; z < mesh.dimensions()[2]; ++z)
+                        {
+                            for (int y = 0; y < mesh.dimensions()[1]; ++y)
+                            {
+                                for (int x = 0; x < mesh.dimensions()[0]; ++x)
+                                {
+                                    file << std::scientific << std::setprecision(8) << vrho[z+y*mesh.dimensions()[2]+x*mesh.dimensions()[1]*mesh.dimensions()[2]] << "\n";
+                                }
+                            }
+                        }
+                    }
+                    else if (D == 2)
+                    {
+                        for (int y = 0; y < mesh.dimensions()[1]; ++y)
+                        {
+                            for (int x = 0; x < mesh.dimensions()[0]; ++x)
+                            {
+                                file << std::scientific << std::setprecision(8) << vrho[y+x*mesh.dimensions()[1]] << "\n";
+                            }
+                        }
+                    }
+                    
+                    delete [] vrho;
+                    file.close();
                                                                            
                     sV_[v] = factor*gpuSum(tmp, nx);
                     

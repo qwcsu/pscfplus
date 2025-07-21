@@ -9,6 +9,7 @@
 */
 
 #include <util/containers/GArray.h>
+#include <util/containers/Pair.h>
 
 namespace Pscf
 {
@@ -93,6 +94,8 @@ namespace Pscf
          */
         void setDirectionId(int directionId);
 
+        void setDirectionFlag(int directionFlag);
+
         /**
         * Set the partner of this propagator.
         *
@@ -103,6 +106,7 @@ namespace Pscf
         */
         void setPartner(const TP& partner);
 
+        void setPropagator (TP& propagator, int source);
         /**
         * Add a propagator to the list of sources for this one.
         *
@@ -113,6 +117,10 @@ namespace Pscf
         * \param source reference to source propagator
         */
         void addSource(const TP& source);
+
+        void setOrder (int order);
+
+        void setReused (bool isReused);
 
         /**
         * Set the isSolved flag to true or false.
@@ -134,6 +142,8 @@ namespace Pscf
         * Get partner propagator.
         */
         const TP& partner() const;
+
+        TP& ref();
 
         /**
         * Get direction index for this propagator.
@@ -160,12 +170,30 @@ namespace Pscf
         */
         bool isReady() const;
 
+        bool isReused() const;
+
+        int order() const;
+
+        /**
+        * Forward: 0
+        * Backward: 1
+        */
+        int directionFlag() const;
+
+        int sourceId() const;
+
         //@}
 
     private:
 
+        int orderId_;
+        
         /// Direction of propagation (0 or 1).
         int directionId_;
+
+        int directionFlag_;
+
+        TP * refPtr_;
 
         /// Pointer to partner - same block,opposite direction.
         TP const * partnerPtr_;
@@ -173,9 +201,13 @@ namespace Pscf
         /// Pointers to propagators that feed source vertex.
         GArray<TP const *> sourcePtrs_;
 
+
         /// Set true after solving modified diffusion equation.
         bool isSolved_;
 
+        int sourceId_;
+
+        bool isReused_ = false;
     };
 
     // Inline member functions
@@ -186,6 +218,10 @@ namespace Pscf
     template <class TP>
     inline int PropagatorTmpl<TP>::directionId() const
     {  return directionId_; }
+
+    template <class TP>
+    inline int PropagatorTmpl<TP>::directionFlag() const
+    {  return directionFlag_; }
 
     /*
     * Get the number of source propagators.
@@ -202,6 +238,7 @@ namespace Pscf
     PropagatorTmpl<TP>::source(int id) const
     {  return *(sourcePtrs_[id]); }
 
+
     /**
     * Does this have a partner propagator?
     */
@@ -216,6 +253,18 @@ namespace Pscf
     template <class TP>
     inline bool PropagatorTmpl<TP>::isSolved() const
     {  return isSolved_; }
+
+    template <class TP>
+    inline int PropagatorTmpl<TP>::order() const
+    {  return orderId_; }
+
+    template <class TP>
+    inline int PropagatorTmpl<TP>::sourceId() const
+    {  return sourceId_; }
+    
+    template <class TP>
+    inline bool PropagatorTmpl<TP>::isReused() const
+    {  return isReused_; }
 
     // Non-inline member functions
 
@@ -237,12 +286,24 @@ namespace Pscf
     void PropagatorTmpl<TP>::setDirectionId(int directionId)
     {  directionId_ = directionId; }
 
+    template <class TP>
+    void PropagatorTmpl<TP>::setDirectionFlag(int directionFlag)
+    {  directionFlag_ = directionFlag; }
+
+
     /*
     * Set the partner propagator.
     */
     template <class TP>
     void PropagatorTmpl<TP>::setPartner(const TP& partner)
     {  partnerPtr_ = &partner; }
+
+    template <class TP>
+    void PropagatorTmpl<TP>::setPropagator(TP& propagator, int source)
+    {  
+        refPtr_ = &propagator; 
+        sourceId_ = source;
+    }
 
     /*
     * Add a source propagator to the list.
@@ -260,6 +321,13 @@ namespace Pscf
     {
         UTIL_CHECK(partnerPtr_)
         return *partnerPtr_;
+    }
+
+    template <class TP>
+    TP& PropagatorTmpl<TP>::ref()
+    {
+        UTIL_CHECK(refPtr_)
+        return *refPtr_;
     }
 
     /*
@@ -283,6 +351,18 @@ namespace Pscf
             }
         }
         return true;
+    }
+
+    template <class TP>
+    void PropagatorTmpl<TP>::setOrder (int order)
+    {
+        orderId_ = order;
+    }
+
+    template <class TP>
+    void PropagatorTmpl<TP>::setReused (bool isReused)
+    {
+        isReused_ = isReused;
     }
 
 }

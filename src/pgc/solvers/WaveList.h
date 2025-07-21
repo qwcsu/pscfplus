@@ -49,6 +49,7 @@ namespace Pspg {
       
       void computeKSq(Mesh<D>& mesh, UnitCell<D>& unitCell);
       void computedKSq(UnitCell<D>& unitCell);
+     
 
       // Accessors: Return pointer to arrays, which are allocated in 
       // the allocate function(). I assume this is the form needed
@@ -58,6 +59,7 @@ namespace Pspg {
       cudaReal* kSq() const;
       cudaReal* dkSq() const;
       int kSize() const;
+      IntVec<D> dimensions() const;
 
    private:
 
@@ -105,6 +107,10 @@ namespace Pspg {
    template <int D>
    inline int WaveList<D>::kSize() const
    { return kSize_; }
+
+   template <int D>
+   inline IntVec<D> WaveList<D>::dimensions() const
+   { return dimensions_; }
 
    #ifndef PSPG_WAVE_LIST_TPP
    // Suppress implicit instantiation

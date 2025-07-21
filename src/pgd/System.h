@@ -160,7 +160,9 @@ namespace Pscf
                 DArray<CField> cFieldsRGrid_;
 
                 DArray<RDFieldDft<D>> cFieldsKGrid_;
-
+#if CMP == 1
+                RDField<D> cFieldTot_;
+#endif
                 int rSize_;
 
                 int kSize_;
@@ -187,15 +189,21 @@ namespace Pscf
 
                 cudaReal fHelmholtz_;
 
+                cudaReal pressure_;
+
                 cudaReal U_;
 
-                cudaReal UAB_;
+                cudaReal UR_;
 
                 cudaReal UCMP_;
 
-                cudaReal *S_;
+                cudaReal S_;
+
+                cudaReal C_;
 
                 RDField<D> workArray;
+
+                RDFieldDft<D> workArrayDft;
 
                 cudaReal *d_kernelWorkSpace_{};
 

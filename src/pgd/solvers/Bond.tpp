@@ -198,6 +198,7 @@ namespace Pscf
                 double Gsq;
 #if (CHN == 1)
                 double factor = kuhn() * sqrt(6.0 / double(N));
+                // double factor = kuhn();
 #endif
 #if (CHN == 2)
                 double factor = -kuhn() * kuhn() / double(N);
@@ -206,8 +207,10 @@ namespace Pscf
                 for (iter.begin(); !iter.atEnd(); ++iter)
                 {
                     i = iter.rank();
-                    G = waveList.minImage(i);
+                    G = waveList.minImage(i); 
                     Gsq = unitCell.ksq(G);
+                    // std::cout << Gsq << std::endl;
+                    
 #if (CHN == 1)
                     double B = factor * sqrt(Gsq);
                     if (Gsq != 0)
@@ -224,13 +227,14 @@ namespace Pscf
 #endif
 #if (CHN == 2)
                     expKsq_host[i] = exp(factor * Gsq);
+                    // std::cout << expKsq_host[i] << "\n";
                     if (Gsq != 0)
                         dexpKsq_host[i] = factor * exp(factor * Gsq);
                     else
                         dexpKsq_host[i] = 0.0;
 #endif
                 }
-
+                // exit(1);
                 cudaMemcpy(expKsq_.cDField(),
                            expKsq_host,
                            kSize_ * sizeof(cudaReal),
@@ -309,7 +313,7 @@ namespace Pscf
                     fft_.forwardTransform(qr_, qk_);
 
                     scaleComplex<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(qk_.cDField(), expKsq_.cDField(), kSize_);
-
+        
                     fft_.inverseTransform(qk_, qr_);
 
                     scaleReal<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(qr_.cDField(), expW().cDField(), nx);

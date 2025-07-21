@@ -100,6 +100,7 @@ namespace Pscf
    
       GArray< Pair<int> > inPropagatorIds_;
       GArray< Pair<int> > outPropagatorIds_;
+      
       int id_;
    
    };
@@ -117,6 +118,7 @@ namespace Pscf
    inline 
    const Pair<int>& Vertex::outPropagatorId(int i) const
    {  return outPropagatorIds_[i]; }
+
 
 } 
 #endif 
