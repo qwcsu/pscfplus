@@ -30,7 +30,7 @@ the nonlinear SCF equations and find the bulk periodicity for the ordered phases
   these propagators is $n_{\bold r}n_s$, where $n_{\bold r}$ denotes the number of grid points in real space and $n_s$ the number of
   contour discretization points on a continuous Gaussian chain (or the number of segments on a discrete
   chain), in PSCF+ the "slice" algorithm proposed by Li and Qiang can be used to reduce the size of $q$ to
-  $n{\bold {r}}\sqrt{n_s}$
+  $\mathit{n_{\bold r}\sqrt{n_s}}$
   and that of $q^\dagger$ to just $n_{\bold r}$, thus greatly reducing the GPU memory usage at the cost of computing $q$
   twice; see [SavMem.pdf](https://github.com/qwcsu/pscfplus/blob/master/doc/notes/SavMem.pdf) for more details.
 
