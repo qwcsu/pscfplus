@@ -6,7 +6,7 @@ incompressible melts of continuous Gaussian chains with the Dirac δ-function in
 polymer field theories) originally developed by Prof. David Morse and co-workers, but is improved with better
 numerical methods, less GPU memory usage and more flexible algorithms, and is extended to various discrete-chain models. 
 Similar to the C++/CUDA version of PSCF, PSCF+ is written primarily in C++ with
-GPU accelerated code in CUDA.
+GPU accelerated code in CUDA. Please see the [user manual](https://github.com/qwcsu/pscfplus-man/blob/master/refman.md) for details.
 
 Same as the C++/CUDA version of PSCF, PSCF+ is applicable to mixtures containing arbitrary acyclic copolymers,
 and preserves all of the nice features already implemented in the former, including the use of 
