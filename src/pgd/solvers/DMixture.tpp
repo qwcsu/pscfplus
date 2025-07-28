@@ -445,8 +445,10 @@ namespace Pscf
 
                 RDField<D> tmp;
                 RDFieldDft<D> tmpDft;
+                RDFieldDft<D> tmpC;
                 tmp.allocate(mesh.dimensions());
                 tmpDft.allocate(mesh.dimensions());
+                tmpC.allocate(mesh.dimensions());
                 DArray<int> list;
                 list.allocate(4);
 
@@ -481,9 +483,10 @@ namespace Pscf
                                               * kpN()
                                               * 0.5
                                               / mesh.size();
+                                fft.forwardTransform(polymer(p1).bond(b1).cField(), tmpC);
                                 cudaConv<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(tmpDft.cDField(),
-                                                                                  cFieldsKGrid[m1].cDField(),
-                                                                                  bu0k_.cDField(),
+                                                                                  tmpC.cDField(),
+                                                                                  bu0().cDField(),
                                                                                   kSize_);
                                 fft.inverseTransform(tmpDft, tmp);
                                 inPlacePointwiseMul1<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(tmp.cDField(),
@@ -501,6 +504,7 @@ namespace Pscf
                 list.deallocate();
                 tmp.deallocate();
                 tmpDft.deallocate();
+                tmpC.deallocate();
             }
 #endif
 
@@ -515,8 +519,10 @@ namespace Pscf
 
                 RDField<D> tmp;
                 RDFieldDft<D> tmpDft;
+                RDFieldDft<D> tmpC;
                 tmp.allocate(mesh.dimensions());
                 tmpDft.allocate(mesh.dimensions());
+                tmpC.allocate(mesh.dimensions());
                 DArray<int> list;
                 list.allocate(4);
 
@@ -562,13 +568,14 @@ namespace Pscf
                                                       * chi 
                                                       / mesh.size();
                                         
+                                        fft.forwardTransform(polymer(p1).bond(b1).cField(), tmpC);
                                         cudaConv<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(tmpDft.cDField(),
-                                                                                          cFieldsKGrid[m1].cDField(),
-                                                                                          bu0k_.cDField(),
+                                                                                          tmpC.cDField(),
+                                                                                          bu0().cDField(),
                                                                                           kSize_);
                                         fft.inverseTransform(tmpDft, tmp);
                                         inPlacePointwiseMul<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(tmp.cDField(),
-                                                                                                     cFieldsRGrid[m2].cDField(),
+                                                                                                     polymer(p2).bond(b2).cField().cDField(),
                                                                                                      rSize_);
                                         blockIds_.append(list);
                                         uBlockChi_.append(factor*gpuSum(tmp.cDField(), rSize_));
@@ -583,6 +590,7 @@ namespace Pscf
                 list.deallocate();
                 tmp.deallocate();
                 tmpDft.deallocate();
+                tmpC.deallocate();
             }
 
 }

@@ -597,7 +597,7 @@ namespace Pscf
                         std::string s;
                         
                         s = proc[i]["ACAP"]["Variable"][0].asString();
-                        if (s == "chi")
+                        if (s == "chiN")
                         {
                             // start point, current point, and end point.
                             // end ponit is read from command file, while

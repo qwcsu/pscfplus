@@ -414,9 +414,9 @@ namespace Pscf
                                                                                 blockField.cDField(), nx);
                     }
                 }
-                // cudaReal a[32];
-                // cudaMemcpy(a, polymer(0).block(0).cField().cDField(), sizeof(cudaReal)*32, cudaMemcpyDeviceToHost);
-                // for(int i = 0; i < 32; ++i)
+                // cudaReal a[64];
+                // cudaMemcpy(a, polymer(0).block(10).cField().cDField(), sizeof(cudaReal)*64, cudaMemcpyDeviceToHost);
+                // for(int i = 0; i < 64; ++i)
                 //     std::cout << a[i] << "\n";
                 // cudaFree(a);
                 // std::cout << "\n";
@@ -695,8 +695,10 @@ namespace Pscf
 
                 RDField<D> tmp;
                 RDFieldDft<D> tmpDft;
+                RDFieldDft<D> tmpC;
                 tmp.allocate(mesh.dimensions());
                 tmpDft.allocate(mesh.dimensions());
+                tmpC.allocate(mesh.dimensions());
                 DArray<int> list;
                 list.allocate(4);
 
@@ -726,8 +728,9 @@ namespace Pscf
                                               * kpN()
                                               * 0.5
                                               / mesh.size();
+                                fft.forwardTransform(polymer(p1).block(b1).cField(), tmpC);
                                 cudaConv<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(tmpDft.cDField(),
-                                                                                  cFieldsKGrid[m1].cDField(),
+                                                                                  tmpC.cDField(),
                                                                                   bu0().cDField(),
                                                                                   kSize_);
                                 fft.inverseTransform(tmpDft, tmp);
@@ -746,6 +749,7 @@ namespace Pscf
                 list.deallocate();
                 tmp.deallocate();
                 tmpDft.deallocate();
+                tmpC.deallocate();
             }
 #endif
             template <int D>
@@ -759,8 +763,10 @@ namespace Pscf
 
                 RDField<D> tmp;
                 RDFieldDft<D> tmpDft;
+                RDFieldDft<D> tmpC;
                 tmp.allocate(mesh.dimensions());
                 tmpDft.allocate(mesh.dimensions());
+                tmpC.allocate(mesh.dimensions());
                 DArray<int> list;
                 list.allocate(4);
 
@@ -801,13 +807,14 @@ namespace Pscf
                                                       * chi 
                                                       / mesh.size();
                                         
+                                        fft.forwardTransform(polymer(p1).block(b1).cField(), tmpC);
                                         cudaConv<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(tmpDft.cDField(),
-                                                                                          cFieldsKGrid[m1].cDField(),
+                                                                                          tmpC.cDField(),
                                                                                           bu0().cDField(),
                                                                                           kSize_);
                                         fft.inverseTransform(tmpDft, tmp);
                                         inPlacePointwiseMul<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(tmp.cDField(),
-                                                                                                     cFieldsRGrid[m2].cDField(),
+                                                                                                     polymer(p2).block(b2).cField().cDField(),
                                                                                                      rSize_);
                                         blockIds_.append(list);
                                         uBlockChi_.append(factor*gpuSum(tmp.cDField(), rSize_));
@@ -822,6 +829,7 @@ namespace Pscf
                 list.deallocate();
                 tmp.deallocate();
                 tmpDft.deallocate();
+                tmpC.deallocate();
             }
         }
     } // namespace Pspg
