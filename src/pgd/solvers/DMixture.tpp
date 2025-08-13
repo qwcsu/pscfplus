@@ -470,32 +470,36 @@ namespace Pscf
                                 {
                                     break;
                                 }
-                                int m1 = polymer(p1).bond(b1).monomerId(0);;
-                                int m2 = polymer(p2).bond(b2).monomerId(0);;
-                                list[0] = p1;
-                                list[1] = b1;
-                                list[2] = p2;
-                                list[3] = b2;
+                                else
+                                {
+                                    int m1 = polymer(p1).bond(b1).monomerId(0);;
+                                    int m2 = polymer(p2).bond(b2).monomerId(0);;
+                                    list[0] = p1;
+                                    list[1] = b1;
+                                    list[2] = p2;
+                                    list[3] = b2;
 
 
-                                double factor = polymer(p1).phi()
-                                              * polymer(p2).phi()
-                                              * kpN()
-                                              * 0.5
-                                              / mesh.size();
-                                fft.forwardTransform(polymer(p1).bond(b1).cField(), tmpC);
-                                cudaConv<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(tmpDft.cDField(),
-                                                                                  tmpC.cDField(),
-                                                                                  bu0().cDField(),
-                                                                                  kSize_);
-                                fft.inverseTransform(tmpDft, tmp);
-                                inPlacePointwiseMul1<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(tmp.cDField(),
-                                                                                              cFieldsRGrid[m2].cDField(),
-                                                                                              polymer(p2).phi()*polymer(p2).bond(b2).length()/polymer(p2).N(),
-                                                                                              rSize_);
-                                blockIds_.append(list);
-                                uBlockCMP_.append(factor*gpuSum(tmp.cDField(), rSize_));
-                                ++i;
+                                    double factor = polymer(p1).phi()
+                                                  * polymer(p2).phi()
+                                                  * kpN()
+                                                  * 0.5
+                                                  / mesh.size();
+                                    fft.forwardTransform(polymer(p1).bond(b1).cField(), tmpC);
+                                    cudaConv<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(tmpDft.cDField(),
+                                                                                      tmpC.cDField(),
+                                                                                      bu0k_.cDField(),
+                                                                                      kSize_);
+                                    fft.inverseTransform(tmpDft, tmp);
+                                    inPlacePointwiseMul1<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(tmp.cDField(),
+                                                                                                  cFieldsRGrid[m2].cDField(),
+                                                                                                  polymer(p2).phi()*polymer(p2).bond(b2).length()/polymer(p2).N(),
+                                                                                                  rSize_);
+                                    blockIds_.append(list);
+                                    uBlockCMP_.append(factor*gpuSum(tmp.cDField(), rSize_));
+                                    // std::cout << factor*gpuSum(tmp.cDField(), rSize_) << "\n";
+                                    ++i;
+                                }
                             }
                         }
                     }
@@ -550,37 +554,41 @@ namespace Pscf
                                     {
                                         break;
                                     }
-                                    double chi;
-                                    int m1 = polymer(p1).bond(b1).monomerId(0);
-                                    int m2 = polymer(p2).bond(b2).monomerId(0);
-                                    chi = interaction_->chi(m1, m2);
-
-                                    if (chi != 0.0)
+                                    else
                                     {
-                                        list[0] = p1;
-                                        list[1] = b1;
-                                        list[2] = p2;
-                                        list[3] = b2;
+                                        double chi;
+                                        int m1 = polymer(p1).bond(b1).monomerId(0);
+                                        int m2 = polymer(p2).bond(b2).monomerId(0);
+                                        chi = interaction_->chi(m1, m2);
+
+                                        if (chi != 0.0)
+                                        {
+                                            list[0] = p1;
+                                            list[1] = b1;
+                                            list[2] = p2;
+                                            list[3] = b2;
 
 
-                                        double factor = polymer(p1).phi()
-                                                      * polymer(p2).phi()
-                                                      * chi 
-                                                      / mesh.size();
-                                        
-                                        fft.forwardTransform(polymer(p1).bond(b1).cField(), tmpC);
-                                        cudaConv<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(tmpDft.cDField(),
-                                                                                          tmpC.cDField(),
-                                                                                          bu0().cDField(),
-                                                                                          kSize_);
-                                        fft.inverseTransform(tmpDft, tmp);
-                                        inPlacePointwiseMul<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(tmp.cDField(),
-                                                                                                     polymer(p2).bond(b2).cField().cDField(),
-                                                                                                     rSize_);
-                                        blockIds_.append(list);
-                                        uBlockChi_.append(factor*gpuSum(tmp.cDField(), rSize_));
-                                        ++i;
+                                            double factor = polymer(p1).phi()
+                                                          * polymer(p2).phi()
+                                                          * chi 
+                                                          / mesh.size();
+
+                                            fft.forwardTransform(polymer(p1).bond(b1).cField(), tmpC);
+                                            cudaConv<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(tmpDft.cDField(),
+                                                                                              tmpC.cDField(),
+                                                                                              bu0k_.cDField(),
+                                                                                              kSize_);
+                                            fft.inverseTransform(tmpDft, tmp);
+                                            inPlacePointwiseMul<<<NUMBER_OF_BLOCKS, THREADS_PER_BLOCK>>>(tmp.cDField(),
+                                                                                                         polymer(p2).bond(b2).cField().cDField(),
+                                                                                                         rSize_);
+                                            blockIds_.append(list);
+                                            uBlockChi_.append(factor*gpuSum(tmp.cDField(), rSize_));
+                                            ++i;
+                                        }
                                     }
+                                    
                                 }
                             }
                         }

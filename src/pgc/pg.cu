@@ -19,9 +19,10 @@ int main(int argc, char **argv)
   int dim1 = -1;
   int dim2 = -1;
   bool eFlag = false;
-  char *dArg;
+  char *dArg, *cArg;
+  std::string caseId;
   opterr = 0;
-  while ((c = getopt(argc, argv, "er:d:")) != -1)
+  while ((c = getopt(argc, argv, "er:d:c:")) != -1)
   {
     switch (c)
     {
@@ -124,31 +125,40 @@ int main(int argc, char **argv)
       case 'e':
         eFlag = true;
         break;
+      case 'c':
+        cArg = optarg;
+        caseId = std::string(cArg);
+        std::cout << caseId << "\n";
+        break;
     }
   }
+
+  std::string paramFileName, comFileName;
+
+  paramFileName = caseId + ".prm";
+  comFileName = caseId + ".cmd";
 
   if (dim1 == 3 && dim2 == -1)
   {
     Pscf::Pspg::Continuous::System<3> system;
-    system.setOptionsOutside("param", "command", eFlag);
+    system.setOptionsOutside(paramFileName, comFileName, eFlag);
     system.readParam();
-    system.readCommandsJson();
-
+    system.readCommandsJson(caseId);
   }
   else if (dim1 == 2 && dim2 == -1)
   {
     Pscf::Pspg::Continuous::System<2> system;
-    system.setOptionsOutside("param", "command", eFlag);
+    system.setOptionsOutside(paramFileName, comFileName, eFlag);
     system.readParam();
-    system.readCommandsJson();
+    system.readCommandsJson(caseId);
 
   }
   else if (dim1 == 1 && dim2 == -1)
-  {
+  {\
     Pscf::Pspg::Continuous::System<1> system;
-    system.setOptionsOutside("param", "command", eFlag);
+    system.setOptionsOutside(paramFileName, comFileName, eFlag);
     system.readParam();
-    system.readCommandsJson();
+    system.readCommandsJson(caseId);
 
   }
   else if (dim1 == 3 && dim2 == 3)
@@ -156,7 +166,7 @@ int main(int argc, char **argv)
     Pscf::Pspg::Continuous::System<3> system1;
     Pscf::Pspg::Continuous::System<3> system2;
 
-    computeTwoPhases(&system1, &system2, eFlag);
+    computeTwoPhases(caseId, &system1, &system2, eFlag);
 
     return 0;
   }
@@ -165,7 +175,7 @@ int main(int argc, char **argv)
     Pscf::Pspg::Continuous::System<3> system1;
     Pscf::Pspg::Continuous::System<2> system2;
 
-    computeTwoPhases(&system1, &system2, eFlag);
+    computeTwoPhases(caseId, &system1, &system2, eFlag);
 
     return 0;
   }
@@ -174,7 +184,7 @@ int main(int argc, char **argv)
     Pscf::Pspg::Continuous::System<2> system1;
     Pscf::Pspg::Continuous::System<3> system2;
 
-    computeTwoPhases(&system1, &system2, eFlag);
+    computeTwoPhases(caseId, &system1, &system2, eFlag);
 
     return 0;
   }
@@ -183,7 +193,7 @@ int main(int argc, char **argv)
     Pscf::Pspg::Continuous::System<3> system1;
     Pscf::Pspg::Continuous::System<1> system2;
 
-    computeTwoPhases(&system1, &system2, eFlag);
+    computeTwoPhases(caseId, &system1, &system2, eFlag);
 
     return 0;
   }
@@ -192,7 +202,7 @@ int main(int argc, char **argv)
     Pscf::Pspg::Continuous::System<1> system1;
     Pscf::Pspg::Continuous::System<3> system2;
 
-    computeTwoPhases(&system1, &system2, eFlag);
+    computeTwoPhases(caseId, &system1, &system2, eFlag);
 
     return 0;
   }
@@ -200,7 +210,7 @@ int main(int argc, char **argv)
   {
     Pscf::Pspg::Continuous::System<3> system1;
 
-    computeTwoPhases(&system1, eFlag, 1);
+    computeTwoPhases(caseId, &system1, eFlag, 1);
 
     return 0;
   }
@@ -208,7 +218,7 @@ int main(int argc, char **argv)
   {
     Pscf::Pspg::Continuous::System<3> system2;
 
-    computeTwoPhases(&system2, eFlag, 2);
+    computeTwoPhases(caseId, &system2, eFlag, 2);
 
     return 0;
   }
@@ -217,7 +227,7 @@ int main(int argc, char **argv)
     Pscf::Pspg::Continuous::System<2> system1;
     Pscf::Pspg::Continuous::System<2> system2;
 
-    computeTwoPhases(&system1, &system2, eFlag);
+    computeTwoPhases(caseId, &system1, &system2, eFlag);
 
     return 0;
   }
@@ -226,7 +236,7 @@ int main(int argc, char **argv)
     Pscf::Pspg::Continuous::System<2> system1;
     Pscf::Pspg::Continuous::System<1> system2;
 
-    computeTwoPhases(&system1, &system2, eFlag);
+    computeTwoPhases(caseId, &system1, &system2, eFlag);
 
     return 0;
   }
@@ -235,7 +245,7 @@ int main(int argc, char **argv)
     Pscf::Pspg::Continuous::System<1> system1;
     Pscf::Pspg::Continuous::System<2> system2;
 
-    computeTwoPhases(&system1, &system2, eFlag);
+    computeTwoPhases(caseId, &system1, &system2, eFlag);
 
     return 0;
   }
@@ -243,7 +253,7 @@ int main(int argc, char **argv)
   {
     Pscf::Pspg::Continuous::System<2> system1;
 
-    computeTwoPhases(&system1, eFlag, 1);
+    computeTwoPhases(caseId, &system1, eFlag, 1);
 
     return 0;
   }
@@ -251,7 +261,7 @@ int main(int argc, char **argv)
   {
     Pscf::Pspg::Continuous::System<2> system2;
 
-    computeTwoPhases(&system2, eFlag, 2);
+    computeTwoPhases(caseId, &system2, eFlag, 2);
 
     return 0;
   }
@@ -260,7 +270,7 @@ int main(int argc, char **argv)
     Pscf::Pspg::Continuous::System<1> system1;
     Pscf::Pspg::Continuous::System<1> system2;
 
-    computeTwoPhases(&system1, &system2, eFlag);
+    computeTwoPhases(caseId, &system1, &system2, eFlag);
 
     return 0;
   }
@@ -268,7 +278,7 @@ int main(int argc, char **argv)
   {
     Pscf::Pspg::Continuous::System<1> system1;
 
-    computeTwoPhases(&system1, eFlag, 1);
+    computeTwoPhases(caseId, &system1, eFlag, 1);
 
     return 0;
   }
@@ -276,7 +286,7 @@ int main(int argc, char **argv)
   {
     Pscf::Pspg::Continuous::System<1> system2;
 
-    computeTwoPhases(&system2, eFlag, 2);
+    computeTwoPhases(caseId, &system2, eFlag, 2);
 
     return 0;
   }

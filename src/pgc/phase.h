@@ -360,21 +360,27 @@ double riddr(Pscf::Pspg::Continuous::System<D1> *system1,
 // }*/
 
 template <int D1, int D2>
-void computeTwoPhases(Pscf::Pspg::Continuous::System<D1> *system1,
+void computeTwoPhases(std::string caseId, 
+                      Pscf::Pspg::Continuous::System<D1> *system1,
                       Pscf::Pspg::Continuous::System<D2> *system2,
                       bool echo)
 {
+    std::string paramFileName1, paramFileName2, comFileName;
+
+    paramFileName1 = caseId + ".prm1";
+    paramFileName2 = caseId + ".prm2";
+    comFileName = caseId + ".cmd";
     // Process command line options
-    system1->setOptionsOutside("param1", "command", echo, 1);
-    system2->setOptionsOutside("param2", "command", echo, 2);
+    system1->setOptionsOutside(paramFileName1, comFileName, echo, 1);
+    system2->setOptionsOutside(paramFileName2, comFileName, echo, 2);
     
     system1->readParam();
     system2->readParam();
 
-    system1->readCommandsJson(1);
-    system2->readCommandsJson(2);
+    system1->readCommandsJson(caseId, 1);
+    system2->readCommandsJson(caseId, 2);
 
-    std::ifstream procFile ("command", std::ifstream::binary);
+    std::ifstream procFile (comFileName, std::ifstream::binary);
     Json::Value proc;
     procFile >> proc;
 
@@ -491,22 +497,26 @@ void computeTwoPhases(Pscf::Pspg::Continuous::System<D1> *system1,
 }
 
 template <int D>
-void computeTwoPhases(Pscf::Pspg::Continuous::System<D> *system, bool echo, int id)
+void computeTwoPhases(std::string caseId, Pscf::Pspg::Continuous::System<D> *system, bool echo, int id)
 {
+    std::string paramFileName1, paramFileName2, comFileName;
+    paramFileName1 = caseId + ".prm1";
+    paramFileName2 = caseId + ".prm2";
+    comFileName = caseId + ".cmd";
     // Process command line options
     if (id == 1)
-        system->setOptionsOutside("param1", "command", echo, 1);
+        system->setOptionsOutside(paramFileName1, comFileName, echo, 1);
     else
-        system->setOptionsOutside("param2", "command", echo, 2);
+        system->setOptionsOutside(paramFileName2, comFileName, echo, 2);
     
     system->readParam();
 
     if (id == 1)
-    system->readCommandsJson(1);
+    system->readCommandsJson(caseId, 1);
     else
-    system->readCommandsJson(1);
+    system->readCommandsJson(caseId, 1);
 
-    std::ifstream procFile ("command", std::ifstream::binary);
+    std::ifstream procFile (comFileName, std::ifstream::binary);
     Json::Value proc;
     procFile >> proc;
 

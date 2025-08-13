@@ -186,9 +186,10 @@ namespace Pscf
             }
 
             template <int D>
-            void System<D>::setOptionsOutside(char *pArg, char *cArg, bool echo, int s)
+            void System<D>::setOptionsOutside(std::string pArg, std::string cArg, bool echo, int s)
             {
                 systemId_ = s;
+  
                 Util::ParamComponent::setEcho(echo);
                 fileMaster().setParamFileName(std::string(pArg));
                 fileMaster().setCommandFileName(std::string(cArg));
@@ -501,19 +502,19 @@ namespace Pscf
 
 
             template <int D>
-            void System<D>::readCommandsJson(int s)
+            void System<D>::readCommandsJson(std::string caseId, int s)
             {
                 if (fileMaster().commandFileName().empty())
                 {
                     UTIL_THROW("Empty command file name");
                 }
-                readCommandsJson(fileMaster().commandFileName(), s);
+                readCommandsJson(caseId, fileMaster().commandFileName(), s);
                 fileMaster().commandFile().clear();
                 fileMaster().commandFile().seekg(0);
             }
 
             template <int D>
-            void System<D>::readCommandsJson(std::string filename, int s)
+            void System<D>::readCommandsJson(std::string caseId, std::string filename, int s)
             {
                 std::ifstream procFile (filename,
                              std::ifstream::binary);
@@ -521,9 +522,9 @@ namespace Pscf
 
                 procFile >> proc;
 
-                std::string caseid = proc[0]["CaseId"].asString();
+                std::string caseid = caseId;
 
-                for (int i = 1; i < proc.size(); ++i)
+                for (int i = 0; i < proc.size(); ++i)
                 {
                     if (!proc[i]["FieldIO"].empty())
                     {
@@ -533,7 +534,7 @@ namespace Pscf
                                     proc[i]["FieldIO"]["Type"].asString(),
                                     proc[i]["FieldIO"]["Format"].asString(),
                                     proc[i]["FieldIO"]["Directory"].asString(),
-                                    proc[0]["CaseId"].asString(),
+                                    caseId,
                                     "");
 
                     }
@@ -577,14 +578,14 @@ namespace Pscf
                     else if(!proc[i]["SinglePhaseSCF"].empty())
                     {
                         Log::file() << "Single phase calculation: " << "\n";
-                        Log::file() << "      case: " << proc[0]["CaseId"] << "\n";
+                        Log::file() << "      case: " << caseId << "\n";
                         Log::file() << std::endl;
 
                         iterate();
 
                         std::string outFileName;
                         outFileName = proc[i]["SinglePhaseSCF"]["OutputDirectory"].asString();
-                        outFileName += proc[0]["CaseId"].asString();
+                        outFileName += caseId;
                         outFileName += "_out.json";
                         Json::Value thermo;
                         thermo.resize(0);
@@ -701,7 +702,7 @@ namespace Pscf
 
                                     std::string outFileName = proc[i]["ACAP"]["OutputDirectory"].asString();
                                     outFileName += "chi_";
-                                    outFileName += proc[0]["CaseId"].asString();
+                                    outFileName += caseId;
                                     outFileName += "_out.json";
                                     std::ofstream out(outFileName);
                                     outputThermo(thermo);
@@ -720,10 +721,10 @@ namespace Pscf
                                                     proc[i]["ACAP"]["IntermediateOuput"][j]["Field"].asString(),
                                                     proc[i]["ACAP"]["IntermediateOuput"][j]["Format"].asString(),
                                                     proc[i]["ACAP"]["IntermediateOuput"][j]["OutputDirectory"].asString(),
-                                                    proc[0]["CaseId"].asString(),
+                                                    caseId,
                                                     prefix);
                                         }
-                                        intermediateFlag = false;
+                                        intermediateFlag = true;
                                     }
 
                                     if (!point.empty() && (point[0] != start_chi)
@@ -755,7 +756,7 @@ namespace Pscf
                                     
                                     std::string outFileName = proc[i]["ACAP"]["OutputDirectory"].asString();
                                     outFileName += "chi_";
-                                    outFileName += proc[0]["CaseId"].asString();
+                                    outFileName += caseId;
                                     outFileName += "_out.json";
                                     std::ofstream out(outFileName);
                                     outputThermo(thermo);
@@ -888,7 +889,7 @@ namespace Pscf
 
                                     std::string outFileName = proc[i]["ACAP"]["OutputDirectory"].asString();
                                     outFileName += "b_";
-                                    outFileName += proc[0]["CaseId"].asString();
+                                    outFileName += caseId;
                                     outFileName += "_out.json";
                                     std::ofstream out(outFileName);
                                     outputThermo(thermo);
@@ -907,7 +908,7 @@ namespace Pscf
                                                     proc[i]["ACAP"]["IntermediateOuput"][j]["Field"].asString(),
                                                     proc[i]["ACAP"]["IntermediateOuput"][j]["Format"].asString(),
                                                     proc[i]["ACAP"]["IntermediateOuput"][j]["OutputDirectory"].asString(),
-                                                    proc[0]["CaseId"].asString(),
+                                                    caseId,
                                                     prefix);
                                         }
                                         intermediateFlag = false;
@@ -941,7 +942,7 @@ namespace Pscf
                                     
                                     std::string outFileName = proc[i]["ACAP"]["OutputDirectory"].asString();
                                     outFileName += "b_";
-                                    outFileName += proc[0]["CaseId"].asString();
+                                    outFileName += caseId;
                                     outFileName += "_out.json";
                                     std::ofstream out(outFileName);
                                     outputThermo(thermo);
@@ -1092,7 +1093,7 @@ namespace Pscf
 
                                     std::string outFileName = proc[i]["ACAP"]["OutputDirectory"].asString();
                                     outFileName += "chi_";
-                                    outFileName += proc[0]["CaseId"].asString();
+                                    outFileName += caseId;
                                     outFileName += "_out.json";
                                     std::ofstream out(outFileName);
                                     outputThermo(thermo);
@@ -1111,7 +1112,7 @@ namespace Pscf
                                                     proc[i]["ACAP"]["IntermediateOuput"][j]["Field"].asString(),
                                                     proc[i]["ACAP"]["IntermediateOuput"][j]["Format"].asString(),
                                                     proc[i]["ACAP"]["IntermediateOuput"][j]["OutputDirectory"].asString(),
-                                                    proc[0]["CaseId"].asString(),
+                                                    caseId,
                                                     prefix);
                                         }
                                         intermediateFlag = false;
@@ -1146,7 +1147,7 @@ namespace Pscf
                                     
                                     std::string outFileName = proc[i]["ACAP"]["OutputDirectory"].asString();
                                     outFileName += "chi_";
-                                    outFileName += proc[0]["CaseId"].asString();
+                                    outFileName += caseId;
                                     outFileName += "_out.json";
                                     std::ofstream out(outFileName);
                                     outputThermo(thermo);

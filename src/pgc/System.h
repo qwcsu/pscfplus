@@ -78,7 +78,7 @@ namespace Pscf
                  */
                 void setOptions(int argc, char **argv);
 
-                void setOptionsOutside(char *pArg, char *cArg, bool echo, int s = 1);
+                void setOptionsOutside(std::string pArg, std::string cArg, bool echo, int s=1);
 
                 /**
                  * Read input parameters (with opening and closing lines).
@@ -114,9 +114,9 @@ namespace Pscf
                 /**
                  * Read commands from json-format command file.
                  */
-                void readCommandsJson(int = 1);
+                void readCommandsJson(std::string caseId, int = 1);
 
-                void readCommandsJson(std::string filename, int s);
+                void readCommandsJson(std::string caseId, std::string filename, int s);
 
                 void iterate();
 
