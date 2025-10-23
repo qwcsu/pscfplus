@@ -66,5 +66,5 @@ the nonlinear SCF equations and find the bulk periodicity for the ordered phases
 
 ## Citation
 
-[J. He and Q. Wang, PSCF+: An Extended and Improved Open-Source Software Package for Polymer Self-Consistent Field Calculations. *J. Chem. Theory Comput.* **2025** (in press) ](https://pubs.acs.org/doi/10.1021/acs.jctc.5c01171)
+[J. He and Q. Wang, PSCF+: An Extended and Improved Open-Source Software Package for Polymer Self-Consistent Field Calculations. *J. Chem. Theory Comput.* **2025**,21, 9879](https://pubs.acs.org/doi/10.1021/acs.jctc.5c01171)
 
